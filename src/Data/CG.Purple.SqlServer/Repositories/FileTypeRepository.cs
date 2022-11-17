@@ -326,6 +326,61 @@ internal class FileTypeRepository : IFileTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<FileType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching file types."
+                );
+
+            // Perform the file type search.
+            var fileTypes = await dbContext.FileTypes
+                .ToListAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Convert the entities to a models.
+            var models = fileTypes.Select(x =>
+                _mapper.Map<FileType>(x)
+                );
+
+            // Return the results.
+            return models;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for file types"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for a file types",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<FileType?> FindByExtensionAsync(
         string extension,
         CancellationToken cancellationToken = default

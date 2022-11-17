@@ -8,6 +8,19 @@ namespace CG.Purple.Managers;
 internal class ParameterTypeManager : IParameterTypeManager
 {
     // *******************************************************************
+    // Constants.
+    // *******************************************************************
+
+    #region Constants
+
+    /// <summary>
+    /// This constants contains the cache key for this manager.
+    /// </summary>
+    internal protected const string CACHE_KEY = "ParameterTypeManager";
+
+    #endregion
+
+    // *******************************************************************
     // Fields.
     // *******************************************************************
 
@@ -17,6 +30,11 @@ internal class ParameterTypeManager : IParameterTypeManager
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly IParameterTypeRepository _parameterTypeRepository = null!;
+
+    /// <summary>
+    /// This field contains the distributed cache for this manager.
+    /// </summary>
+    internal protected IDistributedCache _distributedCache;
 
     /// <summary>
     /// This field contains the logger for this manager.
@@ -37,20 +55,25 @@ internal class ParameterTypeManager : IParameterTypeManager
     /// </summary>
     /// <param name="parameterTypeRepository">The parameter type repository to use
     /// with this manager.</param>
+    /// <param name="distributedCache">The distributed cache to use for 
+    /// this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public ParameterTypeManager(
         IParameterTypeRepository parameterTypeRepository,
+        IDistributedCache distributedCache,
         ILogger<IParameterTypeManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(parameterTypeRepository, nameof(parameterTypeRepository))
+            .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _parameterTypeRepository = parameterTypeRepository;
+        _distributedCache = distributedCache;
         _logger = logger;
     }
 

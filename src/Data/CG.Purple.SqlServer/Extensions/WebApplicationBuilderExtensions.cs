@@ -41,14 +41,14 @@ public static partial class WebApplicationBuilderExtensions
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Configuring DAL startup options from the {section} section",
+            "Configuring DAL options from the {section} section",
             sectionName
             );
 
-        // Configure the DAL startup options.
-        webApplicationBuilder.Services.ConfigureOptions<DALStartupOptions>(
+        // Configure the DAL options.
+        webApplicationBuilder.Services.ConfigureOptions<DalOptions>(
             webApplicationBuilder.Configuration.GetSection(sectionName),
-            out var dalStartupOptions
+            out var dalOptions
             );
 
         // Tell the world what we are about to do.
@@ -71,7 +71,7 @@ public static partial class WebApplicationBuilderExtensions
         {
             // Use SQL-Server with our migrations and basic retry logic.
             options.UseSqlServer(
-                dalStartupOptions.ConnectionString,
+                dalOptions.ConnectionString,
                 sqlServerOptionsAction: sqlOptions =>
                 {
                     sqlOptions.MigrationsAssembly(migrationAssembly);

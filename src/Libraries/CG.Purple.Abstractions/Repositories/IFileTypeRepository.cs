@@ -71,6 +71,19 @@ public interface IFileTypeRepository
         );
 
     /// <summary>
+    /// This method searches for all the <ee cref="FileType"/> objects.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of 
+    /// <see cref="FileType"/> objects.</returns>
+    /// <exception cref="RepositoryException">This exception is thrown whenever the
+    /// repository fails to complete the operation.</exception>
+    Task<IEnumerable<FileType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method searches for a single matching <see cref="FileType"/> object using
     /// the given file extension.
     /// </summary>
@@ -86,7 +99,7 @@ public interface IFileTypeRepository
     Task<FileType?> FindByExtensionAsync(
         string extension,
         CancellationToken cancellationToken = default
-        );
+        );    
 
     /// <summary>
     /// This method updates an existing <see cref="FileType"/> object in the 

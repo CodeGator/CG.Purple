@@ -45,7 +45,7 @@ public static partial class WebApplicationExtensions
 
             // Get the DAL startup options.
             var dalStartOptions = webApplication.Services.GetRequiredService<
-                IOptions<DALStartupOptions>
+                IOptions<DalOptions>
                 >();
 
             // Should we drop the underlying database?

@@ -19,6 +19,8 @@ public static partial class WebApplicationBuilderExtensions
     /// </summary>
     /// <param name="webApplicationBuilder">The web application builder to
     /// use for the operation.</param>
+    /// <param name="sectionName">The configuration section to use for the 
+    /// operation. Defaults to <c>BusinessLogic</c>.</param>
     /// <param name="bootstrapLogger">The bootstrap logger to use for the 
     /// operation.</param>
     /// <returns>The value of the <paramref name="webApplicationBuilder"/>
@@ -27,11 +29,24 @@ public static partial class WebApplicationBuilderExtensions
     /// one or more arguments are missing, or invalid.</exception>
     public static WebApplicationBuilder AddBusinessLayer(
         this WebApplicationBuilder webApplicationBuilder,
+        string sectionName = "BusinessLogic",
         ILogger? bootstrapLogger = null
         )
     {
         // Validate the parameters before attempting to use them.
         Guard.Instance().ThrowIfNull(webApplicationBuilder, nameof(webApplicationBuilder));
+
+        // Tell the world what we are about to do.
+        bootstrapLogger?.LogDebug(
+            "Configuring BLL options from the {section} section",
+            sectionName
+            );
+
+        // Configure the BLL options.
+        webApplicationBuilder.Services.ConfigureOptions<BllOptions>(
+            webApplicationBuilder.Configuration.GetSection(sectionName),
+            out var bllOptions
+            );
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
@@ -45,6 +60,14 @@ public static partial class WebApplicationBuilderExtensions
         webApplicationBuilder.Services.AddScoped<IPropertyTypeManager, PropertyTypeManager>();
         webApplicationBuilder.Services.AddScoped<IProviderTypeManager, ProviderTypeManager>();
         webApplicationBuilder.Services.AddScoped<IProviderParameterManager, ProviderParameterManager>();
+
+        // Tell the world what we are about to do.
+        bootstrapLogger?.LogDebug(
+            "Wiring up the distributed cache for the managers"
+            );
+
+        // Wire up the in-memory cache, for now.
+        webApplicationBuilder.Services.AddDistributedMemoryCache();
 
         // Return the application builder.
         return webApplicationBuilder;

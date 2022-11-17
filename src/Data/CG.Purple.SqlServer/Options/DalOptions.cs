@@ -4,7 +4,7 @@ namespace CG.Purple.SqlServer.Options;
 /// <summary>
 /// This class contains configuration settings for the data access layer.
 /// </summary>
-public class DALStartupOptions
+public class DalOptions
 {
     // *******************************************************************
     // Properties.
@@ -38,7 +38,7 @@ public class DALStartupOptions
     /// This property is ignored in production.
     /// </para>
     /// <para>
-    /// If the <see cref="DALStartupOptions.DropDatabaseOnStartup"/> property is set to 
+    /// If the <see cref="DalOptions.DropDatabaseOnStartup"/> property is set to 
     /// true then migrations are always applied, since the database is 
     /// then dropped and re-created. This property allows migrations to 
     /// be applied without dropping and re-creating the database.
