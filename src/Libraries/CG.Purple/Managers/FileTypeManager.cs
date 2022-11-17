@@ -29,7 +29,7 @@ internal class FileTypeManager : IFileTypeManager
     /// <summary>
     /// This field contains the business logic layer options for this manager.
     /// </summary>
-    internal protected readonly IOptions<BllOptions> _bllOptions;
+    internal protected readonly FileTypeOptions? _fileTypeOptions;
 
     /// <summary>
     /// This field contains the repository for this manager.
@@ -81,7 +81,7 @@ internal class FileTypeManager : IFileTypeManager
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
-        _bllOptions = bllOptions;
+        _fileTypeOptions = bllOptions.Value?.FileTypes;
         _fileTypeRepository = fileTypeRepository;
         _distributedCache = distributedCache;
         _logger = logger;
@@ -516,7 +516,7 @@ internal class FileTypeManager : IFileTypeManager
             CACHE_KEY,
             new DistributedCacheEntryOptions() 
             { 
-                SlidingExpiration = _bllOptions.Value.FileTypes?.DefaultCacheDuration 
+                SlidingExpiration = _fileTypeOptions?.DefaultCacheDuration 
                     ?? TimeSpan.FromHours(1)
             },
             () =>

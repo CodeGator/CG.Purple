@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.SqlServer.Repositories;
-
 namespace Microsoft.AspNetCore.Builder;
 
 /// <summary>
@@ -22,7 +20,7 @@ public static partial class WebApplicationBuilderExtensions
     /// <param name="webApplicationBuilder">The web application builder to
     /// use for the operation.</param>
     /// <param name="sectionName">The configuration section to use for the 
-    /// operation. Defaults to <c>DataAccess</c>.</param>
+    /// operation. Defaults to <c>DAL</c>.</param>
     /// <param name="bootstrapLogger">A bootstrap logger to use for the
     /// operation.</param>
     /// <returns>The value of the <paramref name="webApplicationBuilder"/>
@@ -31,7 +29,7 @@ public static partial class WebApplicationBuilderExtensions
     /// one or more arguments are missing, or invalid.</exception>
     public static WebApplicationBuilder AddDataAccessLayer(
         this WebApplicationBuilder webApplicationBuilder,
-        string sectionName = "DataAccess",
+        string sectionName = "DAL",
         ILogger? bootstrapLogger = null
         )
     {
@@ -62,7 +60,7 @@ public static partial class WebApplicationBuilderExtensions
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Wiring up the {ctx} data-context",
+            "Wiring up the DAL {ctx} data-context",
             nameof(PurpleDbContext)
             );
 
@@ -97,7 +95,7 @@ public static partial class WebApplicationBuilderExtensions
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Wiring up the auto-mapper for the DAL"
+            "Wiring up the DAL auto-mapper"
             );
 
         // Wire up the auto-mapper.
@@ -114,7 +112,7 @@ public static partial class WebApplicationBuilderExtensions
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Wiring up the repositories for the DAL"
+            "Wiring up the DAL repositories"
             );
 
         // Wire up the repositories.

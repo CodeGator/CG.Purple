@@ -20,7 +20,7 @@ public static partial class WebApplicationBuilderExtensions
     /// <param name="webApplicationBuilder">The web application builder to
     /// use for the operation.</param>
     /// <param name="sectionName">The configuration section to use for the 
-    /// operation. Defaults to <c>BusinessLogic</c>.</param>
+    /// operation. Defaults to <c>BLL</c>.</param>
     /// <param name="bootstrapLogger">The bootstrap logger to use for the 
     /// operation.</param>
     /// <returns>The value of the <paramref name="webApplicationBuilder"/>
@@ -29,7 +29,7 @@ public static partial class WebApplicationBuilderExtensions
     /// one or more arguments are missing, or invalid.</exception>
     public static WebApplicationBuilder AddBusinessLayer(
         this WebApplicationBuilder webApplicationBuilder,
-        string sectionName = "BusinessLogic",
+        string sectionName = "BLL",
         ILogger? bootstrapLogger = null
         )
     {
@@ -44,13 +44,12 @@ public static partial class WebApplicationBuilderExtensions
 
         // Configure the BLL options.
         webApplicationBuilder.Services.ConfigureOptions<BllOptions>(
-            webApplicationBuilder.Configuration.GetSection(sectionName),
-            out var bllOptions
+            webApplicationBuilder.Configuration.GetSection(sectionName)
             );
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Wiring up the purple managers"
+            "Wiring up the BLL managers"
             );
 
         // Add the managers.

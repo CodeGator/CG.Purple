@@ -6,6 +6,7 @@ global using CG.Purple.Repositories;
 global using CG.Purple.SqlServer;
 global using CG.Purple.SqlServer.Maps;
 global using CG.Purple.SqlServer.Options;
+global using CG.Purple.SqlServer.Repositories;
 global using CG.Validations;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Infrastructure;
