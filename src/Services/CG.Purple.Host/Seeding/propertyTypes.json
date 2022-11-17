@@ -1,0 +1,12 @@
+{
+  "PropertyTypes": [
+    {
+      "Name": "TestProperty1",
+      "Description": "This is test property # 1"
+    },
+    {
+      "Name": "TestProperty2",
+      "Description": "This is test property # 2"
+    }
+  ]
+}

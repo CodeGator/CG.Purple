@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Libraries", "10. Libraries", "{732BA5A9-FCF5-4E83-9591-40E2E81B78D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Data", "20. Data", "{D6BF6182-6F50-4363-A2BA-442D348FE799}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40. Services", "40. Services", "{A5DEC09A-A686-40A9-BA59-3E42BC3228F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50. Tools", "50. Tools", "{B95F6A28-0F0C-4DEB-BE0E-0C0362628283}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "60. Tests", "60. Tests", "{FDE87B11-4823-427C-A13F-3F79320F0AA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30. Providers", "30. Providers", "{9BD080FB-416D-43EE-8344-A029AE6C1816}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEC32BA8-889C-4B43-9C02-A0A4AA7DFE38}
+	EndGlobalSection
+EndGlobal

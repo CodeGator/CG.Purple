@@ -1,0 +1,16 @@
+{
+  "ProviderTypes": [
+    {
+      "Name": "Smtp",
+      "Description": "A generic SMTP provider"
+    },
+    {
+      "Name": "Twillio",
+      "Description": "Twillio provider"
+    },
+    {
+      "Name": "SendGrid",
+      "Description": "SendGrid provider"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<Project>
+	<PropertyGroup>
+		<!-- Use Windows PDBs so OpenCover works -->
+		<DebugType Condition=" '$(Configuration)' == 'Debug' ">Full</DebugType>
+		<DebugType Condition=" '$(Configuration)' == 'Release' ">pdbonly</DebugType>
+		<!-- Use latest C# version. -->
+		<LangVersion>latest</LangVersion>
+		<!-- For WASM debugging -->
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>embedded</DebugType>
+		<!-- Common package properties -->
+		<Authors>Martin Cook</Authors>
+		<Company>CodeGator</Company>
+		<Copyright>Copyright © 2000 - 2023 by CodeGator. All rights reserved.</Copyright>
+		<Title>$(AssemblyName)</Title>
+		<PackageProjectUrl>https://github.com/CodeGator/CG.Purple</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/CodeGator/CG.Purple</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageIcon>packageDefaultIcon-50x50.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+</Project>
