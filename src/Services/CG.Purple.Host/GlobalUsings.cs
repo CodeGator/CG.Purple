@@ -2,3 +2,8 @@
 global using Microsoft.AspNetCore.Mvc.RazorPages;
 global using System.Diagnostics;
 global using System.Reflection;
+global using MudBlazor.Services;
+global using MudBlazor;
+global using CG.Validations;
+global using Microsoft.AspNetCore.Builder;
+global using CG.Reflection;

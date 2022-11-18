@@ -1,7 +1,4 @@
 ﻿
-using CG.Validations;
-using Microsoft.AspNetCore.Builder;
-
 namespace CG.Purple.Host.Pages
 {
     /// <summary>

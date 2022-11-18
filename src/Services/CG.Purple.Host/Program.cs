@@ -1,4 +1,6 @@
 
+using MudBlazor.Extensions;
+
 BootstrapLogger.LogLevelToDebug();
 
 try
@@ -15,6 +17,9 @@ try
     // Add the standard Blazor stuff.
     builder.Services.AddRazorPages();
     builder.Services.AddServerSideBlazor();
+
+    // Add MudBlazor stuff
+    builder.Services.AddMudServices();
 
     // Add CodeGator stuff.
     builder.AddCryptographyWithSharedKeys(

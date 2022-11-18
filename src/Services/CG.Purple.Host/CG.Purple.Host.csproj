@@ -1,72 +1,79 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dc2318b5-eabf-41b4-900f-cde45ecc9b7b</UserSecretsId>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dc2318b5-eabf-41b4-900f-cde45ecc9b7b</UserSecretsId>
+        <Description>Blazor host for the Purple microservice.</Description>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Seeding\file1.txt" />
-    <None Remove="Seeding\file2.txt" />
-    <None Remove="Seeding\file3.txt" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="Seeding\file1.txt" />
+        <None Remove="Seeding\file2.txt" />
+        <None Remove="Seeding\file3.txt" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="Seeding\file1.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Seeding\file2.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Seeding\file3.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+    <ItemGroup>
+        <Content Include="Seeding\file1.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Seeding\file2.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Seeding\file3.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="CG.Cryptography.Shared" Version="2023.1.2" />
-    <PackageReference Include="CG.DataProtection" Version="2023.1.2" />
-    <PackageReference Include="CG.Logging" Version="2023.1.1" />
-    <PackageReference Include="Nerdbank.GitVersioning" Version="3.5.119">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="CG.Cryptography.Shared" Version="2023.1.2" />
+        <PackageReference Include="CG.DataProtection" Version="2023.1.3" />
+        <PackageReference Include="CG.Logging" Version="2023.1.1" />
+        <PackageReference Include="CG.Reflection" Version="2023.1.2" />
+        <PackageReference Include="MudBlazor" Version="6.1.2" />
+        <PackageReference Include="Nerdbank.GitVersioning" Version="3.5.119">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Data\CG.Purple.SqlServer\CG.Purple.SqlServer.csproj" />
-    <ProjectReference Include="..\..\Libraries\CG.Purple.Seeding\CG.Purple.Seeding.csproj" />
-    <ProjectReference Include="..\..\Libraries\CG.Purple\CG.Purple.csproj" />
-    <ProjectReference Include="..\..\Providers\CG.Purple.SendGrid\CG.Purple.SendGrid.csproj" />
-    <ProjectReference Include="..\..\Providers\CG.Purple.Smtp\CG.Purple.Smtp.csproj" />
-    <ProjectReference Include="..\..\Providers\CG.Purple.Twillio\CG.Purple.Twillio.csproj" />
-    <ProjectReference Include="..\CG.Purple.Controllers\CG.Purple.Controllers.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\Data\CG.Purple.SqlServer\CG.Purple.SqlServer.csproj" />
+        <ProjectReference Include="..\..\Libraries\CG.Purple.Seeding\CG.Purple.Seeding.csproj" />
+        <ProjectReference Include="..\..\Libraries\CG.Purple\CG.Purple.csproj" />
+        <ProjectReference Include="..\..\Providers\CG.Purple.SendGrid\CG.Purple.SendGrid.csproj" />
+        <ProjectReference Include="..\..\Providers\CG.Purple.Smtp\CG.Purple.Smtp.csproj" />
+        <ProjectReference Include="..\..\Providers\CG.Purple.Twillio\CG.Purple.Twillio.csproj" />
+        <ProjectReference Include="..\CG.Purple.Controllers\CG.Purple.Controllers.csproj" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="Seeding\mailMessages.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Seeding\mimeTypes.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Seeding\parameterTypes.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Seeding\propertyTypes.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Seeding\providerParameters.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Seeding\providerTypes.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Seeding\textMessages.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+    <ItemGroup>
+        <Content Update="Seeding\mailMessages.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Seeding\mimeTypes.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Seeding\parameterTypes.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Seeding\propertyTypes.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Seeding\providerParameters.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Seeding\providerTypes.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Seeding\textMessages.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Pages\Help\About\Index.razor" />
+    </ItemGroup>
 
 </Project>

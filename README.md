@@ -8,7 +8,7 @@
 ### What does it do?
 Purple is an idea for a self contained messaging microservice. The scenario is: You give Purple an email, or text, via a REST call, and it takes care of sending that message on your behalf.
 
-* The service will handle retry logic, fallbacks, notifications, etc. 
+* The service will handle retry logic, fallbacks, notifications, etc.
 
 * Messages are kept for some number of days before they are deleted. 
 
@@ -16,16 +16,16 @@ Purple is an idea for a self contained messaging microservice. The scenario is: 
 
 * There will be a REST interface, for information about messages, history, etc.
 
-* There will (hopefully) be a mobile app, for administering the service remotely.
+* There will (maybe) be a mobile app, for administering the service remotely.
 
 ### What platform(s) does it support?
 * .NET 7.x or higher
 
-### What databases does it support?
+### What database(s) does it support?
 * For now, SqlServer 2019, or higher.
 
-### What databases does it support?
-* For sure, SMTP and SendGrid. Possibly also Twillio. Maybe others, at some point.
+### What 3rd party providers does it support?
+* For sure, SMTP and SendGrid. Possibly also Twillio. Maybe others, who knows.
 
 ### How do I contact you?
 If you've spotted a bug in the code please use the project Issues [HERE](https://github.com/CodeGator/CG.Purple/issues)
