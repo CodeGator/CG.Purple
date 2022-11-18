@@ -35,9 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Twillio", "Provid
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Seeding", "Libraries\CG.Purple.Seeding\CG.Purple.Seeding.csproj", "{23101016-F562-4C60-B24F-657F37B4C5B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.Purple.Controllers", "Services\CG.Purple.Controllers\CG.Purple.Controllers.csproj", "{5289AEDE-F07C-42AD-918E-2160BC5E7909}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Controllers", "Services\CG.Purple.Controllers\CG.Purple.Controllers.csproj", "{5289AEDE-F07C-42AD-918E-2160BC5E7909}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.Purple.Host", "Services\CG.Purple.Host\CG.Purple.Host.csproj", "{C63E8619-299E-4A3D-B3F3-51068054F966}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Host", "Services\CG.Purple.Host\CG.Purple.Host.csproj", "{C63E8619-299E-4A3D-B3F3-51068054F966}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

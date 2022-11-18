@@ -1,7 +1,6 @@
 
-using MudBlazor.Extensions;
-
-BootstrapLogger.LogLevelToDebug();
+// By default log information level events.
+BootstrapLogger.LogLevelToInformation();
 
 try
 {
@@ -41,6 +40,9 @@ try
     // Add the controllers.
     builder.Services.AddControllers()
         .AddApplicationPart(Assembly.Load("CG.Purple.Controllers"));
+
+    // Add misc stuff we'll need.
+    builder.Services.AddHttpContextAccessor();
 
     // Build the application.
     var app = builder.Build();

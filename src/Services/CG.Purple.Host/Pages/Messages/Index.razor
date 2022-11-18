@@ -1,0 +1,82 @@
+﻿@page "/messages"
+
+<PageTitle>Message</PageTitle>
+
+<MudBreadcrumbs Items="_crumbs"></MudBreadcrumbs>
+
+<MudTabs>
+    <MudTabPanel Text="Emails" Icon="@Icons.Material.Filled.Email">
+        <MudTable Items="@_mailMessages" Dense Striped Filter="new Func<MailMessage,bool>(MailFilterFunc1)" Loading="@_isBusy">
+            <ToolBarContent>
+                <MudSpacer />
+                <MudTextField @bind-Value="mailGridSearchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <HeaderContent>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.IsDisabled)">Disabled</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.CreatedOnUtc)">Created</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.CreatedBy)">By</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageState)">State</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.Attachments.Count())">Attachments</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageProperties.Count())">Properties</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.Subject)">Subject</MudTableSortLabel></MudTh>
+                <MudTh>&nbsp;</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Disabled"><MudCheckBox Checked="@context.IsDisabled" ReadOnly /></MudTd>
+                <MudTd DataLabel="Created">@context.CreatedOnUtc.ToLocalTime()</MudTd>
+                <MudTd DataLabel="By">@context.CreatedBy</MudTd>
+                <MudTd DataLabel="State">@context.MessageState</MudTd>
+                <MudTd DataLabel="Attachments">@context.Attachments.Count()</MudTd>
+                <MudTd DataLabel="Properties">@context.MessageProperties.Count()</MudTd>
+                <MudTd DataLabel="Subject">@context.Subject</MudTd>
+                <MudTh>&nbsp;</MudTh>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager />
+            </PagerContent>
+            <NoRecordsContent>
+                No emails were found.
+            </NoRecordsContent>
+            <LoadingContent>
+                Loading emails ...
+            </LoadingContent>
+        </MudTable>
+    </MudTabPanel>
+    <MudTabPanel Text="Texts" Icon="@Icons.Material.Filled.Message">
+        <MudTable Items="@_textMessages" Dense Striped Filter="new Func<TextMessage,bool>(TextFilterFunc1)" Loading="@_isBusy">
+            <ToolBarContent>
+                <MudSpacer />
+                <MudTextField @bind-Value="textGridSearchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <HeaderContent>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.IsDisabled)">Disabled</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.CreatedOnUtc)">Created</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.CreatedBy)">By</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageState)">State</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageProperties.Count())">Properties</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.To)">To</MudTableSortLabel></MudTh>                
+                <MudTh>&nbsp;</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Disabled"><MudCheckBox Checked="@context.IsDisabled" ReadOnly /></MudTd>
+                <MudTd DataLabel="Created">@context.CreatedOnUtc.ToLocalTime()</MudTd>
+                <MudTd DataLabel="By">@context.CreatedBy</MudTd>
+                <MudTd DataLabel="State">@context.MessageState</MudTd>
+                <MudTd DataLabel="Properties">@context.MessageProperties.Count()</MudTd>
+                <MudTd DataLabel="To">@context.To</MudTd>                
+                <MudTd>
+
+                </MudTd>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager />
+            </PagerContent>
+            <NoRecordsContent>
+                No texts were found.
+            </NoRecordsContent>
+            <LoadingContent>
+                Loading texts ...
+            </LoadingContent>
+        </MudTable>
+    </MudTabPanel>
+</MudTabs>
