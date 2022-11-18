@@ -6,11 +6,17 @@
 [![Github discussion](https://img.shields.io/badge/Discussion-online-blue)](https://github.com/CodeGator/CG.Purple/discussions)
 
 ### What does it do?
-Purple is an idea for a self contained messaging microservice. 
+Purple is an idea for a self contained messaging microservice. The scenario is: You give Purple an email, or text, via a REST call, and it takes care of sending that message on your behalf.
 
-In other words, you give Purple an email, or text, and it takes care of sending the message via various providers, complete with retry logic, notifications, etc. 
+* The service will handle retry logic, fallbacks, notifications, etc. 
 
-Once stored, messages are kept for some number of days before they are deleted. 
+* Messages are kept for some number of days before they are deleted. 
+
+* Notifications are sent, via SignalR, to the caller, for updated status.
+
+* There will be a REST interface, for information about messages, history, etc.
+
+* There will (hopefully) be a mobile app, for administering the service remotely.
 
 ### What platform(s) does it support?
 * .NET 7.x or higher
