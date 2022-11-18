@@ -30,5 +30,10 @@ public class TextMessageOptions
     /// </summary>
     public bool IsDisabled { get; set; }
 
+    /// <summary>
+    /// This property contains the properties for the message.
+    /// </summary>
+    public List<MessagePropertyOptions> Properties { get; set; } = new();
+
     #endregion
 }

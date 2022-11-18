@@ -57,6 +57,7 @@ public static partial class WebApplicationBuilderExtensions
         webApplicationBuilder.Services.AddScoped<IFileTypeManager, FileTypeManager>();
         webApplicationBuilder.Services.AddScoped<IMailMessageManager, MailMessageManager>();
         webApplicationBuilder.Services.AddScoped<IMimeTypeManager, MimeTypeManager>();
+        webApplicationBuilder.Services.AddScoped<IMessagePropertyManager, MessagePropertyManager>();
         webApplicationBuilder.Services.AddScoped<IParameterTypeManager, ParameterTypeManager>();
         webApplicationBuilder.Services.AddScoped<IPropertyTypeManager, PropertyTypeManager>();
         webApplicationBuilder.Services.AddScoped<IProviderTypeManager, ProviderTypeManager>();

@@ -13,19 +13,9 @@ public class MessageProperty : ModelBase
     #region Properties
 
     /// <summary>
-    /// This property contains the unique identifier for the associated message.
-    /// </summary>
-    public long MessageId { get; set; }
-
-    /// <summary>
     /// This property contains the associate message.
     /// </summary>
     public virtual Message Message { get; set; } = null!;
-
-    /// <summary>
-    /// This property contains the unique identifier for the associated property type.
-    /// </summary>
-    public int PropertyTypeId { get; set; }
 
     /// <summary>
     /// This property contains the associate property type.

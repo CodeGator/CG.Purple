@@ -55,6 +55,11 @@ public class MailMessageOptions
     public List<string> Attachments { get; set; } = new();
 
     /// <summary>
+    /// This property contains the properties for the message.
+    /// </summary>
+    public List<MessagePropertyOptions> Properties { get; set; } = new();
+
+    /// <summary>
     /// This property indicates whether the message is disabled, or not.
     /// </summary>
     public bool IsDisabled { get; set; }

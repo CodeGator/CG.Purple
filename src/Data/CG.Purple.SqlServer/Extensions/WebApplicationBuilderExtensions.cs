@@ -107,8 +107,8 @@ public static partial class WebApplicationBuilderExtensions
             cfg.CreateMap<FileType, CG.Purple.SqlServer.Entities.FileType>().ReverseMap();
             cfg.CreateMap<MailMessage, CG.Purple.SqlServer.Entities.MailMessage>().ReverseMap();
             cfg.CreateMap<Message, CG.Purple.SqlServer.Entities.Message>().ReverseMap();
+            cfg.CreateMap<MessageProperty, CG.Purple.SqlServer.Entities.MessageProperty>().ReverseMap();
             cfg.CreateMap<MimeType, CG.Purple.SqlServer.Entities.MimeType>().ReverseMap();
-            //cfg.CreateMap<ModelBase, CG.Purple.SqlServer.Entities.EntityBase>().ReverseMap();
             cfg.CreateMap<ParameterType, CG.Purple.SqlServer.Entities.ParameterType>().ReverseMap();
             cfg.CreateMap<PropertyType, CG.Purple.SqlServer.Entities.PropertyType>().ReverseMap();
             cfg.CreateMap<ProviderType, CG.Purple.SqlServer.Entities.ProviderType>().ReverseMap();
@@ -126,6 +126,7 @@ public static partial class WebApplicationBuilderExtensions
         webApplicationBuilder.Services.AddScoped<IFileTypeRepository, FileTypeRepository>();
         webApplicationBuilder.Services.AddScoped<IMailMessageRepository, MailMessageRepository>();
         webApplicationBuilder.Services.AddScoped<IMimeTypeRepository, MimeTypeRepository>();
+        webApplicationBuilder.Services.AddScoped<IMessagePropertyRepository, MessagePropertyRepository>();
         webApplicationBuilder.Services.AddScoped<IParameterTypeRepository, ParameterTypeRepository>();
         webApplicationBuilder.Services.AddScoped<IPropertyTypeRepository, PropertyTypeRepository>();
         webApplicationBuilder.Services.AddScoped<IProviderTypeRepository, ProviderTypeRepository>();

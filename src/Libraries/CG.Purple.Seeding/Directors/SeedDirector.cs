@@ -1,5 +1,6 @@
 ﻿
-using CG.Purple.Seeding.Options;
+using CG.Purple.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CG.Purple.Seeding.Directors;
 
@@ -29,6 +30,11 @@ internal class SeedDirector : ISeedDirector
     /// This field contains the mail message manager for this director.
     /// </summary>
     internal protected readonly IMailMessageManager _mailMessageManager;
+
+    /// <summary>
+    /// This field contains the message property manager for this director.
+    /// </summary>
+    internal protected readonly IMessagePropertyManager _messagePropertyManager;
 
     /// <summary>
     /// This field contains the mime type manager for this director.
@@ -79,10 +85,12 @@ internal class SeedDirector : ISeedDirector
     /// </summary>
     /// <param name="attachmenteManager">The attachment manager to use with 
     /// this director.</param>
-    /// <param name="mailMessageManager">The mail message manager to use with 
-    /// this director.</param>
     /// <param name="fileTypeManager">The file type manager to use with this
     /// director.</param>
+    /// <param name="mailMessageManager">The mail message manager to use with 
+    /// this director.</param>
+    /// <param name="messagePropertyManager">The message property manager to use 
+    /// with this director.</param>
     /// <param name="mimeTypeManager">The mime type manager to use with this
     /// director.</param>
     /// <param name="parameterTypeManager">The parameter type manager to use 
@@ -100,6 +108,7 @@ internal class SeedDirector : ISeedDirector
         IAttachmentManager attachmenteManager,
         IFileTypeManager fileTypeManager,
         IMailMessageManager mailMessageManager,
+        IMessagePropertyManager messagePropertyManager,
         IMimeTypeManager mimeTypeManager,
         IParameterTypeManager parameterTypeManager,
         IPropertyTypeManager propertyTypeManager,
@@ -113,6 +122,7 @@ internal class SeedDirector : ISeedDirector
         Guard.Instance().ThrowIfNull(attachmenteManager, nameof(attachmenteManager))
             .ThrowIfNull(fileTypeManager, nameof(fileTypeManager))
             .ThrowIfNull(mailMessageManager, nameof(mailMessageManager))
+            .ThrowIfNull(messagePropertyManager, nameof(messagePropertyManager))
             .ThrowIfNull(mimeTypeManager, nameof(mimeTypeManager))
             .ThrowIfNull(parameterTypeManager, nameof(parameterTypeManager))
             .ThrowIfNull(propertyTypeManager, nameof(propertyTypeManager))
@@ -125,6 +135,7 @@ internal class SeedDirector : ISeedDirector
         _attachmentManager = attachmenteManager;
         _fileTypeManager = fileTypeManager;
         _mailMessageManager = mailMessageManager;
+        _messagePropertyManager = messagePropertyManager;
         _mimeTypeManager = mimeTypeManager;
         _parameterTypeManager = parameterTypeManager;
         _propertyTypeManager = propertyTypeManager;
@@ -646,7 +657,7 @@ internal class SeedDirector : ISeedDirector
                         {
                             // Panic!!
                             throw new KeyNotFoundException(
-                                $"No mime type was found for extension: {ext} is missing!"
+                                $"No mime type was found for extension: {ext}!"
                                 );
                         }
 
@@ -665,6 +676,47 @@ internal class SeedDirector : ISeedDirector
                                 OriginalFileName = Path.GetFileName(attachment),
                                 Length = bytes.Length,
                                 Data = bytes
+                            },
+                            userName,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+                    }
+                }
+                                
+                // Are there any properties?
+                if (mailMessageOption.Properties.Any())
+                {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Seeding {count} properties.",
+                        mailMessageOption.Properties.Count
+                        );
+
+                    // Loop through the options.
+                    foreach (var property in mailMessageOption.Properties)
+                    {
+                        // Find the property type.
+                        var propertyType = await _propertyTypeManager.FindByNameAsync(
+                            property.Name,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+
+                        // Did we fail?
+                        if (propertyType is null)
+                        {
+                            // Panic!!
+                            throw new KeyNotFoundException(
+                                $"No property type was found for name: {property.Name}!"
+                                );
+                        }
+
+                        // Create the message property.
+                        _ = _messagePropertyManager.CreateAsync(
+                            new MessageProperty()
+                            {
+                                Message = mailMessage,
+                                PropertyType = propertyType,
+                                Value = property.Value
                             },
                             userName,
                             cancellationToken
