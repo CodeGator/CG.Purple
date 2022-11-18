@@ -206,15 +206,15 @@ internal class MailMessageRepository : IMailMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            //dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+            // We always want the key stored in upper case.
+            entity.MessageKey = entity.MessageKey.ToUpper();
 
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
                 nameof(MailMessage),
                 nameof(PurpleDbContext)
-                );
+                );            
 
             // Add the entity to the data-store.
             _ = await dbContext.MailMessages.AddAsync(
@@ -355,12 +355,12 @@ internal class MailMessageRepository : IMailMessageRepository
                 ).ConfigureAwait(false);
 
             // Convert the entities to a models.
-            var models = mailMessages.Select(x =>
+            var result = mailMessages.Select(x =>
                 _mapper.Map<MailMessage>(x)
                 );
 
             // Return the results.
-            return models;
+            return result;
         }
         catch (Exception ex)
         {
@@ -414,13 +414,19 @@ internal class MailMessageRepository : IMailMessageRepository
                     cancellationToken
                     ).ConfigureAwait(false);
 
+            // Did we fail?
+            if (mailMessage is null)
+            {
+                return null; // Nothing found!
+            }
+
             // Convert the entity to a model.
-            var model = _mapper.Map<MailMessage>(
+            var result = _mapper.Map<MailMessage>(
                 mailMessage
                 );
 
             // Did we fail?
-            if (mailMessage is null)
+            if (result is null)
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
@@ -429,7 +435,7 @@ internal class MailMessageRepository : IMailMessageRepository
             }
 
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {
@@ -443,6 +449,82 @@ internal class MailMessageRepository : IMailMessageRepository
             throw new RepositoryException(
                 message: $"The repository failed to search for a mail " +
                 "message by id",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<MailMessage?> FindByKeyAsync(
+        string messageKey,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNullOrEmpty(messageKey, nameof(messageKey));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for a matching mail message."
+                );
+
+            // Perform the mail message search.
+            var mailMessage = await dbContext.MailMessages.Where(x =>
+                x.MessageKey == messageKey.ToUpper()
+                ).FirstOrDefaultAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Did we fail?
+            if (mailMessage is null) 
+            {
+                return null; // Nothing found!
+            }
+
+            // Convert the entity to a model.
+            var result = _mapper.Map<MailMessage>(
+                mailMessage
+                );
+
+            // Did we fail?
+            if (result is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(MailMessage)} entity to a model."
+                    );
+            }
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for a mail message by key"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for a mail " +
+                "message by key",
                 innerException: ex
                 );
         }
@@ -489,8 +571,12 @@ internal class MailMessageRepository : IMailMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            //dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+            // We don't change 'read only' properties.
+            dbContext.Entry(entity.MessageKey).State = EntityState.Unchanged;
+            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
+            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
+            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+            dbContext.Entry(entity.MessageKey).State = EntityState.Unchanged;
 
             // Log what we are about to do.
             _logger.LogDebug(

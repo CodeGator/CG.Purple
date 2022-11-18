@@ -1,11 +1,13 @@
 {
   "TextMessages": [
     {
+      "MessageKey": "3374BC9C-CCC1-4008-8519-625BA4F0F34E",
       "To": "9188675309",
       "Body": "This is test text # 1",
       "Properties": []
     },
     {
+      "MessageKey": "5F1BAA0C-C6D3-4989-921C-0F6D5452B3B0",
       "To": "9188675309",
       "Body": "This is test text # 2",
       "Properties": [
@@ -16,15 +18,16 @@
       ]
     },
     {
+      "MessageKey": "0C53209D-5689-46ED-8A62-F45CBF61BA4B",
       "To": "9188675309",
       "Body": "This is test text # 3",
       "Properties": [
         {
-          "Name": "TestProperty1",
+          "PropertyTypeName": "TestProperty1",
           "Value": "value 1"
         },
         {
-          "Name": "TestProperty2",
+          "PropertyTypeName": "TestProperty2",
           "Value": "value 2"
         }
       ]

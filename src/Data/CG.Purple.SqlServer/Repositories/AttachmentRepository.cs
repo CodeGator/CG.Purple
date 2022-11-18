@@ -207,10 +207,8 @@ internal class AttachmentRepository : IAttachmentRepository
                 ).ConfigureAwait(false);
 
             // We don't mess with associated entity types.
-            dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
             dbContext.Entry(entity.Message).State = EntityState.Unchanged;
-            //dbContext.Entry(entity.Message.Attachments).State = EntityState.Unchanged;
-            //dbContext.Entry(entity.Message.MessageProperties).State = EntityState.Unchanged;
+            dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -368,7 +366,13 @@ internal class AttachmentRepository : IAttachmentRepository
                 ).ConfigureAwait(false);
 
             // We don't mess with associated entity types.
-            //dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+            dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
+
+            // We don't change 'read only' properties.
+            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
+            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
+            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
 
             // Log what we are about to do.
             _logger.LogDebug(

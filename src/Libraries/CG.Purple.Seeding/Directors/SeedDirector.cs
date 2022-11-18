@@ -1,6 +1,6 @@
 ﻿
 using CG.Purple.Models;
-using static System.Net.Mime.MediaTypeNames;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace CG.Purple.Seeding.Directors;
 
@@ -57,6 +57,11 @@ internal class SeedDirector : ISeedDirector
     internal protected readonly IProviderParameterManager _providerParameterManager;
 
     /// <summary>
+    /// This field contains the provider log manager for this director.
+    /// </summary>
+    internal protected readonly IProviderLogManager _providerLogManager;
+
+    /// <summary>
     /// This field contains the provider type manager for this director.
     /// </summary>
     internal protected readonly IProviderTypeManager _providerTypeManager;
@@ -101,6 +106,8 @@ internal class SeedDirector : ISeedDirector
     /// to use with this director.</param>
     /// <param name="providerTypeManager">The provider type manager to use 
     /// with this director.</param>
+    /// <param name="providerLogManager">The provider log manager to use 
+    /// with this director.</param>
     /// <param name="textMessageManager">The text message manager to use with 
     /// this director.</param>
     /// <param name="logger">The logger to use with this director.</param>
@@ -114,6 +121,7 @@ internal class SeedDirector : ISeedDirector
         IPropertyTypeManager propertyTypeManager,
         IProviderParameterManager providerParameterManager,
         IProviderTypeManager providerTypeManager,
+        IProviderLogManager providerLogManager,
         ITextMessageManager textMessageManager,
         ILogger<ISeedDirector> logger
         )
@@ -128,6 +136,7 @@ internal class SeedDirector : ISeedDirector
             .ThrowIfNull(propertyTypeManager, nameof(propertyTypeManager))
             .ThrowIfNull(providerParameterManager, nameof(providerParameterManager))
             .ThrowIfNull(providerTypeManager, nameof(providerTypeManager))
+            .ThrowIfNull(providerLogManager, nameof(providerLogManager))
             .ThrowIfNull(textMessageManager, nameof(textMessageManager))
             .ThrowIfNull(logger, nameof(logger));
 
@@ -141,6 +150,7 @@ internal class SeedDirector : ISeedDirector
         _propertyTypeManager = propertyTypeManager;
         _providerParameterManager = providerParameterManager;
         _providerTypeManager = providerTypeManager;
+        _providerLogManager = providerLogManager;
         _textMessageManager = textMessageManager;
         _logger = logger;
     }
@@ -472,6 +482,59 @@ internal class SeedDirector : ISeedDirector
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task SeedProviderLogsAsync(
+        IConfiguration configuration,
+        string userName,
+        bool force = false,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(configuration, nameof(configuration));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Binding provider log options."
+                );
+
+            // Bind the options.
+            var providerLogOptions = new List<ProviderLogOptions>();
+            configuration.GetSection("ProviderLogs").Bind(providerLogOptions);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Seeding provider logs from the configuration."
+                );
+
+            // Seed the provider logs from the options.
+            await SeedProviderLogsAsync(
+                providerLogOptions,
+                userName,
+                force,
+                cancellationToken
+                );
+        }
+        catch (Exception ex)
+        {
+            // Let the world know what happened.
+            _logger.LogError(
+                ex,
+                "Failed to seed provider logs!"
+                );
+
+            // Provider better context.
+            throw new DirectorException(
+                message: $"The director failed to seed provider logs!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task SeedTextMessagesAsync(
         IConfiguration configuration,
         string userName,
@@ -610,6 +673,7 @@ internal class SeedDirector : ISeedDirector
                 var mailMessage = await _mailMessageManager.CreateAsync(
                     new MailMessage()
                     {
+                        MessageKey = mailMessageOption.MessageKey,
                         To = mailMessageOption.To,
                         CC = mailMessageOption.CC,
                         BCC = mailMessageOption.BCC,
@@ -697,7 +761,7 @@ internal class SeedDirector : ISeedDirector
                     {
                         // Find the property type.
                         var propertyType = await _propertyTypeManager.FindByNameAsync(
-                            property.Name,
+                            property.PropertyTypeName,
                             cancellationToken
                             ).ConfigureAwait(false);
 
@@ -706,7 +770,7 @@ internal class SeedDirector : ISeedDirector
                         {
                             // Panic!!
                             throw new KeyNotFoundException(
-                                $"No property type was found for name: {property.Name}!"
+                                $"No property type was found for name: {property.PropertyTypeName}!"
                                 );
                         }
 
@@ -1264,6 +1328,211 @@ internal class SeedDirector : ISeedDirector
 
     /// <summary>
     /// This method performs a seeding operation for the given list of
+    /// <see cref="ProviderLogOptions"/> objects.
+    /// </summary>
+    /// <param name="providerLogOptions">The options to use for the operation.</param>
+    /// <param name="userName">The name of the user performing the operation.</param>
+    /// <param name="force"><c>true</c> to force the operation; <c>false</c>
+    /// otherwise.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    /// <exception cref="DirectorException"></exception>
+    private async Task SeedProviderLogsAsync(
+        List<ProviderLogOptions> providerLogOptions,
+        string userName,
+        bool force = false,
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Should we check for existing data?
+            if (!force)
+            {
+                // Are there existing provider logs?
+                var hasExistingData = await _providerLogManager.AnyAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Should we stop?
+                if (hasExistingData)
+                {
+                    // Log what we didn't do.
+                    _logger.LogWarning(
+                        "Skipping seeding provider logs because the 'force' flag " +
+                        "was not specified and there are existing provider logs " +
+                        "in the database.",
+                        providerLogOptions.Count
+                        );
+                    return; // Nothing else to do!
+                }
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Seeding {count} provider logs.",
+                providerLogOptions.Count
+                );
+
+            // Loop through the options.
+            foreach (var providerLogOption in providerLogOptions)
+            {
+                // Parse the enumeration.
+                if (!Enum.TryParse<MessageType>(
+                    providerLogOption.MessageType,
+                    out var messageType
+                    ))
+                {
+                    // Panic!!
+                    throw new KeyNotFoundException(
+                        $"The message type: {providerLogOption.MessageType} was not found!"
+                        );
+                }
+
+                // Is a provider specified?
+                ProviderType? providerType = null;
+                if (!string.IsNullOrEmpty(providerLogOption.ProviderTypeName))
+                {
+                    // Look for the provider type.
+                    providerType = await _providerTypeManager.FindByNameAsync(
+                        providerLogOption.ProviderTypeName,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+
+                    // Did we fail?
+                    if (providerType is null)
+                    {
+                        // Panic!!
+                        throw new KeyNotFoundException(
+                            $"The provider type name: {providerLogOption.ProviderTypeName} was not found!"
+                            );
+                    }
+                }
+
+                // Parse the optional enumeration.
+                MessageState? optionalBeforeState = null;
+                if (Enum.TryParse<MessageState>(
+                    providerLogOption.BeforeState,
+                    out var beforeState
+                    ))
+                {
+                    optionalBeforeState = beforeState;
+                }
+
+                // Parse the optional enumeration.
+                MessageState? optionalAfterState = null;
+                if (Enum.TryParse<MessageState>(
+                    providerLogOption.AfterState,
+                    out var afterState
+                    ))
+                {
+                    optionalAfterState = afterState;
+                }
+
+                // Is this an email message?
+                if (messageType == MessageType.Mail)
+                {
+                    // Look for the message.
+                    var mailMessage = await _mailMessageManager.FindByKeyAsync(
+                        providerLogOption.MessageKey,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+
+                    // Did we fail?
+                    if (mailMessage is null)
+                    {
+                        // Panic!!
+                        throw new KeyNotFoundException(
+                            $"The message key: {providerLogOption.MessageKey} was not found!"
+                            );
+                    }
+
+                    // Log what we are about to do.
+                    _logger.LogTrace(
+                        "Deferring to {name}",
+                        nameof(IProviderLogManager.CreateAsync)
+                        );
+
+                    // Create the provider log.
+                    _ = await _providerLogManager.CreateAsync(
+                        new ProviderLog()
+                        {
+                            Message = mailMessage,
+                            ProviderType = providerType,
+                            Event = Enum.Parse<ProcessEvent>(providerLogOption.Event),
+                            Error = providerLogOption.Error,
+                            BeforeState = optionalBeforeState,
+                            AfterState = optionalAfterState,
+                            Data = providerLogOption.Data
+                        },
+                        userName,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+
+                // Is this a text message?
+                else if (messageType == MessageType.Text)
+                {
+                    // Look for the message.
+                    var textMessage = await _textMessageManager.FindByKeyAsync(
+                        providerLogOption.MessageKey,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+
+                    // Did we fail?
+                    if (textMessage is null)
+                    {
+                        // Panic!!
+                        throw new KeyNotFoundException(
+                            $"The message key: {providerLogOption.MessageKey} was not found!"
+                            );
+                    }
+
+                    // Log what we are about to do.
+                    _logger.LogTrace(
+                        "Deferring to {name}",
+                        nameof(IProviderLogManager.CreateAsync)
+                        );
+
+                    // Create the provider log.
+                    _ = await _providerLogManager.CreateAsync(
+                        new ProviderLog()
+                        {
+                            Message = textMessage,
+                            ProviderType = providerType,
+                            Event = Enum.Parse<ProcessEvent>(providerLogOption.Event),
+                            Error = providerLogOption.Error,
+                            BeforeState = optionalBeforeState,
+                            AfterState = optionalAfterState,
+                            Data = providerLogOption.Data
+                        },
+                        userName,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Let the world know what happened.
+            _logger.LogError(
+                ex,
+                "Failed to seed provider logs!"
+                );
+
+            // Provider better context.
+            throw new DirectorException(
+                message: $"The director failed to seed provider logs!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method performs a seeding operation for the given list of
     /// <see cref="TextMessageOptions"/> objects.
     /// </summary>
     /// <param name="textMessageOptions">The options to use for the operation.</param>
@@ -1342,6 +1611,7 @@ internal class SeedDirector : ISeedDirector
                 _ = await _textMessageManager.CreateAsync(
                     new TextMessage()
                     {
+                        MessageKey = textMessageOption.MessageKey,
                         To = textMessageOption.To,
                         Body = textMessageOption.Body,
                         IsDisabled = textMessageOption.IsDisabled,

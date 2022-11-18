@@ -220,6 +220,13 @@ public static partial class WebApplicationExtensions
                     seedStartupOptions.Force
                     ).Wait();
                 break;
+            case "ProviderLogs":
+                seedDirector.SeedProviderLogsAsync(
+                    configuration,
+                    userName,
+                    seedStartupOptions.Force
+                    ).Wait();
+                break;
             case "TextMessages":
                 seedDirector.SeedTextMessagesAsync(
                     configuration,

@@ -13,6 +13,13 @@ public class MailMessageOptions
     #region Properties
 
     /// <summary>
+    /// This property contains the key for the message.
+    /// </summary>
+    [Required]
+    [MaxLength(36)]
+    public string MessageKey { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the 'To' address for the message.
     /// </summary>
     [Required]

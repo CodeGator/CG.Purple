@@ -374,6 +374,12 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
             dbContext.Entry(entity.Message).State = EntityState.Unchanged;
             dbContext.Entry(entity.PropertyType).State = EntityState.Unchanged;
 
+            // We don't change 'read only' properties.
+            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
+            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
+            dbContext.Entry(entity.MessageId).State = EntityState.Unchanged;
+            dbContext.Entry(entity.PropertyTypeId).State = EntityState.Unchanged;
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",

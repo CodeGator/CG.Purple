@@ -60,6 +60,7 @@ public static partial class WebApplicationBuilderExtensions
         webApplicationBuilder.Services.AddScoped<IMessagePropertyManager, MessagePropertyManager>();
         webApplicationBuilder.Services.AddScoped<IParameterTypeManager, ParameterTypeManager>();
         webApplicationBuilder.Services.AddScoped<IPropertyTypeManager, PropertyTypeManager>();
+        webApplicationBuilder.Services.AddScoped<IProviderLogManager, ProviderLogManager>();
         webApplicationBuilder.Services.AddScoped<IProviderTypeManager, ProviderTypeManager>();
         webApplicationBuilder.Services.AddScoped<IProviderParameterManager, ProviderParameterManager>();
         webApplicationBuilder.Services.AddScoped<ITextMessageManager, TextMessageManager>();

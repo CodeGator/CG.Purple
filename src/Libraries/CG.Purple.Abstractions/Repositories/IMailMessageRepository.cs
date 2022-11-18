@@ -99,7 +99,25 @@ public interface IMailMessageRepository
     Task<MailMessage?> FindByIdAsync(
         long id,
         CancellationToken cancellationToken = default
-        );    
+        );
+
+    /// <summary>
+    /// This method searches for a single matching <see cref="MailMessage"/> object 
+    /// using the given message key.
+    /// </summary>
+    /// <param name="messageKey">The message key to use for the search.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a matching <see cref="MailMessage"/> 
+    /// object, if one was found, or NULL otherwise.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="RepositoryException">This exception is thrown whenever the
+    /// repository fails to complete the operation.</exception>
+    Task<MailMessage?> FindByKeyAsync(
+        string messageKey,
+        CancellationToken cancellationToken = default
+        );
 
     /// <summary>
     /// This method updates an existing <see cref="MailMessage"/> object in the 

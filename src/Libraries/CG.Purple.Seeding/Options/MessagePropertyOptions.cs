@@ -13,11 +13,11 @@ public class MessagePropertyOptions
     #region Properties
 
     /// <summary>
-    /// This property contains the name of the property type.
+    /// This property contains the name of the associated property type.
     /// </summary>
     [Required]
     [MaxLength(64)]
-    public string Name { get; set; } = null!;
+    public string PropertyTypeName { get; set; } = null!;
 
     /// <summary>
     /// This property contains the value of the property.

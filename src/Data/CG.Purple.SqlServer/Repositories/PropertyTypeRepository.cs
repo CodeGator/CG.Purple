@@ -422,6 +422,11 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // We don't change 'read only' properties.
+            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
+            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
+            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",

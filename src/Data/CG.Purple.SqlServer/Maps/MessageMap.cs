@@ -56,6 +56,12 @@ internal class MessageMap : EntityMapBase<Entities.Message>
         builder.HasKey(e => new { e.Id });
 
         // Setup the column.
+        builder.Property(e => e.MessageKey)
+            .HasMaxLength(36)
+            .IsUnicode(false)
+            .IsRequired();
+
+        // Setup the column.
         builder.Property(e => e.MessageState)
             .HasMaxLength(30)
             .IsUnicode(false)
@@ -90,6 +96,7 @@ internal class MessageMap : EntityMapBase<Entities.Message>
         // Setup the index.
         builder.HasIndex(e => new
         {
+            e.MessageKey,
             e.MessageType,
             e.MessageState,
             e.IsDisabled

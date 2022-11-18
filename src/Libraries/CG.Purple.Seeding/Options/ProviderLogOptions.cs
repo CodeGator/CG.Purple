@@ -1,10 +1,10 @@
 ﻿
-namespace CG.Purple.Models;
+namespace CG.Purple.Seeding.Options;
 
 /// <summary>
-/// This class represents a provider log model.
+/// This class contains configuration options related to provider log seeding.
 /// </summary>
-public class ProviderLog : ModelBase
+public class ProviderLogOptions
 {
     // *******************************************************************
     // Properties.
@@ -13,36 +13,36 @@ public class ProviderLog : ModelBase
     #region Properties
 
     /// <summary>
-    /// This property contains the unique identifier for the entry.
+    /// This property contains the key for the associated message.
     /// </summary>
-    public long Id { get; set; }
+    public string MessageKey { get; set; } = null!;
 
     /// <summary>
-    /// This property contains the associate message.
+    /// This property contains the type of the associated message.
     /// </summary>
-    public virtual Message Message { get; set; } = null!;
+    public string MessageType { get; set; } = null!;
 
     /// <summary>
-    /// This property contains the associated provider type.
+    /// This property contains the name of the associated provider type.
     /// </summary>
-    public virtual ProviderType? ProviderType { get; set; }
+    public string? ProviderTypeName { get; set; }
 
     /// <summary>
-    /// This property contains the associate processing event.
+    /// This property contains the associated processing event.
     /// </summary>
-    public ProcessEvent Event { get; set; }
+    public string Event { get; set; } = null!;
 
     /// <summary>
     /// This property contains the state of the message before the 
     /// event took place.
     /// </summary>
-    public MessageState? BeforeState { get; set; }
+    public string? BeforeState { get; set; }
 
     /// <summary>
     /// This property contains the state of the message after the
     /// event took place.
     /// </summary>
-    public MessageState? AfterState { get; set; }
+    public string? AfterState { get; set; }
 
     /// <summary>
     /// This property contains extra data associated with the event.

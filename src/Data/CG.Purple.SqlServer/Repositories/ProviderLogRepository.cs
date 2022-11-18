@@ -2,10 +2,10 @@
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
-/// This class is an EFCORE implementation of the <see cref="IMimeTypeRepository"/>
+/// This class is an EFCORE implementation of the <see cref="IProviderLogRepository"/>
 /// interface.
 /// </summary>
-internal class MimeTypeRepository : IMimeTypeRepository
+internal class ProviderLogRepository : IProviderLogRepository
 {
     // *******************************************************************
     // Fields.
@@ -26,7 +26,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
     /// <summary>
     /// This field contains the logger for this repository.
     /// </summary>
-    internal protected readonly ILogger<IMimeTypeRepository> _logger;
+    internal protected readonly ILogger<IProviderLogRepository> _logger;
 
     #endregion
 
@@ -37,17 +37,17 @@ internal class MimeTypeRepository : IMimeTypeRepository
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="MimeTypeRepository"/>
+    /// This constructor creates a new instance of the <see cref="ProviderLogRepository"/>
     /// class.
     /// </summary>
     /// <param name="dbContextFactory">The EFCORE data-context factory
     /// to use with this repository.</param>
     /// <param name="mapper">The auto-mapper to use with this repository.</param>
     /// <param name="logger">The logger to use with this repository.</param>
-    public MimeTypeRepository(
+    public ProviderLogRepository(
         IDbContextFactory<PurpleDbContext> dbContextFactory,
         IMapper mapper,
-        ILogger<IMimeTypeRepository> logger
+        ILogger<IProviderLogRepository> logger
         )
     {
         // Validate the parameters before attempting to use them.
@@ -89,11 +89,11 @@ internal class MimeTypeRepository : IMimeTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for mime types"
+                "Searching for provider logs"
                 );
 
             // Search for any entities in the data-store.
-            var data = await dbContext.MimeTypes.AnyAsync(
+            var data = await dbContext.ProviderLogs.AnyAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -105,12 +105,12 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for mime types"
+                "Failed to search for provider logs"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for mime types!",
+                message: $"The repository failed to search for provider logs!",
                 innerException: ex
                 );
         }
@@ -138,11 +138,11 @@ internal class MimeTypeRepository : IMimeTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for mime types"
+                "Searching for provider logs"
                 );
 
             // Search for any entities in the data-store.
-            var data = await dbContext.MimeTypes.CountAsync(
+            var data = await dbContext.ProviderLogs.CountAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -154,12 +154,12 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count mime types"
+                "Failed to count provider logs"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to count mime types!",
+                message: $"The repository failed to count provider logs!",
                 innerException: ex
                 );
         }
@@ -168,8 +168,8 @@ internal class MimeTypeRepository : IMimeTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<MimeType> CreateAsync(
-        MimeType mimeType,
+    public virtual async Task<ProviderLog> CreateAsync(
+        ProviderLog providerLog,
         CancellationToken cancellationToken = default
         )
     {
@@ -178,12 +178,12 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(MimeType)
+                nameof(ProviderLog)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.MimeType>(
-                mimeType
+            var entity = _mapper.Map<Entities.ProviderLog>(
+                providerLog
                 );
 
             // Did we fail?
@@ -191,7 +191,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(MimeType)} model to an entity."
+                    $"Failed to map the {nameof(ProviderLog)} model to an entity."
                     );
             }
 
@@ -206,15 +206,22 @@ internal class MimeTypeRepository : IMimeTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // We don't mess with associated entity types.
+            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
+            if (entity.ProviderType is not null)
+            {
+                dbContext.Entry(entity.ProviderType).State = EntityState.Unchanged;
+            }
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
-                nameof(MimeType),
+                nameof(ProviderLog),
                 nameof(PurpleDbContext)
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.MimeTypes.AddAsync(
+            _ = await dbContext.ProviderLogs.AddAsync(
                     entity,
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -233,11 +240,11 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(MimeType)
+                nameof(ProviderLog)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<MimeType>(
+            var result = _mapper.Map<ProviderLog>(
                 entity
                 );
 
@@ -246,7 +253,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(MimeType)} entity to a model."
+                    $"Failed to map the {nameof(ProviderLog)} entity to a model."
                     );
             }
 
@@ -258,12 +265,12 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a mime type"
+                "Failed to create a provider log"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to create a mime type!",
+                message: $"The repository failed to create a provider log!",
                 innerException: ex
                 );
         }
@@ -273,7 +280,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        MimeType model,
+        ProviderLog model,
         CancellationToken cancellationToken = default
         )
     {
@@ -293,13 +300,13 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
-                nameof(MimeType),
+                nameof(ProviderLog),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[MimeTypes] WHERE [Id] = {0}",
+                "DELETE FROM [Purple].[ProviderLogs] WHERE [Id] = {0}",
                 parameters: new object[] { model.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
@@ -309,12 +316,12 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a mime type"
+                "Failed to delete a provider log"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to delete a mime type!",
+                message: $"The repository failed to delete a provider log!",
                 innerException: ex
                 );
         }
@@ -323,204 +330,8 @@ internal class MimeTypeRepository : IMimeTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<MimeType>> FindByTypeAsync(
-        string type,
-        string subType,        
-        CancellationToken cancellationToken = default
-        )
-    {
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a {ctx} data-context",
-                nameof(PurpleDbContext)
-                );
-
-            // Create a database context.
-            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            List<Entities.MimeType> data = new();
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Searching for matching mime type(s)."
-                );            
-
-            // Search for all mime types.
-            if (string.IsNullOrEmpty(type) && string.IsNullOrEmpty(subType)) 
-            {
-                data = await dbContext.MimeTypes
-                    .OrderBy(x => x.Type)
-                    .ThenBy(x => x.SubType)
-                    .Include(x => x.FileTypes)
-                    .ToListAsync(
-                        cancellationToken
-                        ).ConfigureAwait(false);
-            }
-
-            // Search for mime types that match the type.
-            else if (!string.IsNullOrEmpty(type) && string.IsNullOrEmpty(subType))
-            {
-                data = await dbContext.MimeTypes.Where(x => 
-                    x.Type == type
-                    ).OrderBy(x => x.Type)
-                    .ThenBy(x => x.SubType)
-                    .Include(x => x.FileTypes)
-                    .ToListAsync(
-                        cancellationToken
-                        ).ConfigureAwait(false);
-            }
-
-            // Search for mime types that match the sub-type.
-            else if (string.IsNullOrEmpty(type) && !string.IsNullOrEmpty(subType))
-            {
-                data = await dbContext.MimeTypes.Where(x => 
-                    x.SubType == subType
-                    ).OrderBy(x => x.Type)
-                    .ThenBy(x => x.SubType)
-                    .Include(x => x.FileTypes)
-                    .ToListAsync(
-                        cancellationToken
-                        ).ConfigureAwait(false);
-            }
-
-            // Search for mime types that match the type and sub-type.
-            else
-            {
-                data = await dbContext.MimeTypes.Where(x => 
-                    x.Type == type && 
-                    x.SubType == subType
-                    ).OrderBy(x => x.Type)
-                    .ThenBy(x => x.SubType)
-                    .Include(x => x.FileTypes)
-                    .ToListAsync(
-                        cancellationToken
-                        ).ConfigureAwait(false);
-            }
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Converting the {entity} entities to models",
-                nameof(MimeType)
-                );
-
-            // Convert the entities to models.
-            var models = data.Select(x => 
-                _mapper.Map<MimeType>(x)
-                );
-
-            // Return the result.
-            return models;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to search for mime types by type and/or sub-type"
-                );
-
-            // Provider better context.
-            throw new RepositoryException(
-                message: $"The repository failed to search for mime " +
-                "types by type and/or sub-type!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<MimeType?> FindByExtensionAsync(
-        string extension,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNullOrEmpty(extension, nameof(extension));
-
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a {ctx} data-context",
-                nameof(PurpleDbContext)
-                );
-
-            // Create a database context.
-            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Searching for a matching file type."
-                );
-
-            // Perform the file type search.
-            var fileType = await dbContext.FileTypes.Where(x => 
-                x.Extension == extension
-                ).FirstOrDefaultAsync(
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-            // Did we fail?
-            if (fileType is null)
-            {
-                return null; // Not found!
-            }
-
-            // Perform the mime type search.
-            var entity = await dbContext.MimeTypes.Where(x =>
-                x.Id == fileType.MimeTypeId
-                ).Include(x => x.FileTypes)
-                .FirstOrDefaultAsync(
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-            // Convert the entity to a model.
-            var model = _mapper.Map<MimeType>(
-                entity
-                );
-
-            // Did we fail?
-            if (entity is null)
-            {
-                // Panic!!
-                throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(MimeType)} entity to a model."
-                    );
-            }
-
-            // Return the results.
-            return model;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to search for a mime type by extension"
-                );
-
-            // Provider better context.
-            throw new RepositoryException(
-                message: $"The repository failed to search for a mime " +
-                "type by extension",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<MimeType> UpdateAsync(
-        MimeType mimeType,
+    public virtual async Task<ProviderLog> UpdateAsync(
+        ProviderLog providerLog,
         CancellationToken cancellationToken = default
         )
     {
@@ -529,12 +340,12 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(MimeType)
+                nameof(ProviderLog)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.MimeType>(
-                mimeType
+            var entity = _mapper.Map<Entities.ProviderLog>(
+                providerLog
                 );
 
             // Did we fail?
@@ -542,7 +353,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(MimeType)} model to an entity."
+                    $"Failed to map the {nameof(ProviderLog)} model to an entity."
                     );
             }
 
@@ -562,15 +373,22 @@ internal class MimeTypeRepository : IMimeTypeRepository
             dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
             dbContext.Entry(entity.Id).State = EntityState.Unchanged;
 
+            // We don't mess with associated entity types.
+            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
+            if (entity.ProviderType is not null)
+            {
+                dbContext.Entry(entity.ProviderType).State = EntityState.Unchanged;
+            }
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
-                nameof(MimeType),
+                nameof(ProviderLog),
                 nameof(PurpleDbContext)
                 );
 
             // Update the data-store.
-            _= dbContext.MimeTypes.Update(
+            _= dbContext.ProviderLogs.Update(
                 entity
                 );
 
@@ -588,11 +406,11 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(MimeType)
+                nameof(ProviderLog)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<MimeType>(
+            var result = _mapper.Map<ProviderLog>(
                 entity
                 );
 
@@ -601,7 +419,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(MimeType)} entity to a model."
+                    $"Failed to map the {nameof(ProviderLog)} entity to a model."
                     );
             }
 
@@ -613,12 +431,12 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a mime type"
+                "Failed to update a provider log"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to update a mime type!",
+                message: $"The repository failed to update a provider log!",
                 innerException: ex
                 );
         }

@@ -64,6 +64,11 @@ internal class PurpleDbContext : DbContext
     public virtual DbSet<Entities.ProviderParameter> ProviderParameters { get; set; } = null!;
 
     /// <summary>
+    /// This property contains the collection of provider log entries.
+    /// </summary>
+    public virtual DbSet<Entities.ProviderLog> ProviderLogs { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the collection of message provider types.
     /// </summary>
     public virtual DbSet<Entities.ProviderType> ProviderTypes { get; set; } = null!;

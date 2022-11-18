@@ -206,8 +206,8 @@ internal class TextMessageRepository : ITextMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            //dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+            // We always want the key stored in upper case.
+            entity.MessageKey = entity.MessageKey.ToUpper();
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -451,6 +451,76 @@ internal class TextMessageRepository : ITextMessageRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<TextMessage?> FindByKeyAsync(
+        string messageKey,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNullOrEmpty(messageKey, nameof(messageKey));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for a matching text message."
+                );
+
+            // Perform the text message search.
+            var textMessage = await dbContext.TextMessages.Where(x =>
+                x.MessageKey == messageKey.ToUpper()
+                ).FirstOrDefaultAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entity to a model.
+            var model = _mapper.Map<TextMessage>(
+                textMessage
+                );
+
+            // Did we fail?
+            if (textMessage is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(TextMessage)} entity to a model."
+                    );
+            }
+
+            // Return the results.
+            return model;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for a text message by key"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for a text " +
+                "message by key",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<TextMessage> UpdateAsync(
         TextMessage textMessage,
         CancellationToken cancellationToken = default
@@ -489,8 +559,12 @@ internal class TextMessageRepository : ITextMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            //dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+
+            // We don't change 'read only' properties.
+            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
+            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
+            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+            dbContext.Entry(entity.MessageKey).State = EntityState.Unchanged;
 
             // Log what we are about to do.
             _logger.LogDebug(

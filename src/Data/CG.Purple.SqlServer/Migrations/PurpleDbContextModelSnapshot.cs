@@ -134,6 +134,12 @@ namespace CG.Purple.SqlServer.Migrations
                     b.Property<DateTime?>("LastUpdatedOnUtc")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("MessageKey")
+                        .IsRequired()
+                        .HasMaxLength(36)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(36)");
+
                     b.Property<string>("MessageState")
                         .IsRequired()
                         .HasMaxLength(30)
@@ -148,7 +154,7 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "MessageType", "MessageState", "IsDisabled" }, "IX_Messages");
+                    b.HasIndex(new[] { "MessageKey", "MessageType", "MessageState", "IsDisabled" }, "IX_Messages");
 
                     b.ToTable("Messages", "Purple");
 

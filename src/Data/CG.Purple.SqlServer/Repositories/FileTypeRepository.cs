@@ -505,6 +505,11 @@ internal class FileTypeRepository : IFileTypeRepository
             // We don't mess with associated entity types.
             dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
 
+            // We don't change 'read only' properties.
+            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
+            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
+            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",

@@ -182,6 +182,18 @@ internal class TextMessageManager : ITextMessageManager
             textMessage.LastUpdatedBy = null;
             textMessage.LastUpdatedOnUtc = null;
 
+            // Should we generate a message key?
+            if (string.IsNullOrEmpty(textMessage.MessageKey))
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Generating a unique key for the message."
+                    );
+
+                // Generate the unique message key.
+                textMessage.MessageKey = $"{Guid.NewGuid()}";
+            }
+
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
@@ -337,6 +349,48 @@ internal class TextMessageManager : ITextMessageManager
             throw new ManagerException(
                 message: $"The manager failed to search for a text " +
                 "message by id!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<TextMessage?> FindByKeyAsync(
+        string messageKey,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNullOrEmpty(messageKey, nameof(messageKey));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(ITextMessageRepository.FindByKeyAsync)
+                );
+
+            // Perform the operation.
+            return await _textMessageRepository.FindByKeyAsync(
+                messageKey,
+                cancellationToken
+                ).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            // Let the world know what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for a text message by key!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for a text " +
+                "message by key!",
                 innerException: ex
                 );
         }

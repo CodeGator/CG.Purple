@@ -1,0 +1,24 @@
+{
+  "ProviderLogs": [
+    {
+      "MessageKey": "9D29C7EC-3BB2-4A5D-A3A4-DE3F19F15928",
+      "MessageType": "Mail",
+      "ProviderTypeName": "",
+      "Event": "Stored",
+      "BeforeState": "",
+      "AfterState": "Pending",
+      "Data": "",
+      "Error": ""
+    },
+    {
+      "MessageKey": "3374BC9C-CCC1-4008-8519-625BA4F0F34E",
+      "MessageType": "Text",
+      "ProviderTypeName": "",
+      "Event": "Stored",
+      "BeforeState": "",
+      "AfterState": "Pending",
+      "Data": "",
+      "Error": ""
+    }
+  ]
+}

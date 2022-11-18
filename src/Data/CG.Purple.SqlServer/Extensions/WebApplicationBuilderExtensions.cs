@@ -111,6 +111,7 @@ public static partial class WebApplicationBuilderExtensions
             cfg.CreateMap<MimeType, CG.Purple.SqlServer.Entities.MimeType>().ReverseMap();
             cfg.CreateMap<ParameterType, CG.Purple.SqlServer.Entities.ParameterType>().ReverseMap();
             cfg.CreateMap<PropertyType, CG.Purple.SqlServer.Entities.PropertyType>().ReverseMap();
+            cfg.CreateMap<ProviderLog, CG.Purple.SqlServer.Entities.ProviderLog>().ReverseMap();
             cfg.CreateMap<ProviderType, CG.Purple.SqlServer.Entities.ProviderType>().ReverseMap();
             cfg.CreateMap<ProviderParameter, CG.Purple.SqlServer.Entities.ProviderParameter>().ReverseMap();
             cfg.CreateMap<TextMessage, CG.Purple.SqlServer.Entities.TextMessage>().ReverseMap();
@@ -129,6 +130,7 @@ public static partial class WebApplicationBuilderExtensions
         webApplicationBuilder.Services.AddScoped<IMessagePropertyRepository, MessagePropertyRepository>();
         webApplicationBuilder.Services.AddScoped<IParameterTypeRepository, ParameterTypeRepository>();
         webApplicationBuilder.Services.AddScoped<IPropertyTypeRepository, PropertyTypeRepository>();
+        webApplicationBuilder.Services.AddScoped<IProviderLogRepository, ProviderLogRepository>();
         webApplicationBuilder.Services.AddScoped<IProviderTypeRepository, ProviderTypeRepository>();
         webApplicationBuilder.Services.AddScoped<IProviderParameterRepository, ProviderParameterRepository>();
         webApplicationBuilder.Services.AddScoped<ITextMessageRepository, TextMessageRepository>();

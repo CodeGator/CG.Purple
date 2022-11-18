@@ -18,6 +18,11 @@ public class Message : ModelBase
     public long Id { get; set; }
 
     /// <summary>
+    /// This property contains a unique key for the message.
+    /// </summary>
+    public string MessageKey { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the message type.
     /// </summary>
     public MessageType MessageType { get; set; }

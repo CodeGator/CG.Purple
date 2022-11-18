@@ -1,6 +1,7 @@
 {
   "MailMessages": [
     {
+      "MessageKey": "9D29C7EC-3BB2-4A5D-A3A4-DE3F19F15928",
       "To": "test1@codegator.com",
       "CC": "",
       "BCC": "",
@@ -11,6 +12,7 @@
       "Properties": []
     },
     {
+      "MessageKey": "AE24BAF7-07A5-4445-970F-445323936674",
       "To": "test2@codegator.com",
       "CC": "test1@codegator.com",
       "BCC": "",
@@ -21,6 +23,7 @@
       "Properties": []
     },
     {
+      "MessageKey": "70B6BD35-7E51-474E-A23C-0A60985F0976",
       "To": "test3@codegator.com",
       "CC": "test2@codegator.com",
       "BCC": "test1@codegator.com",
@@ -31,6 +34,7 @@
       "Properties": []
     },
     {
+      "MessageKey": "C9D4EAF7-4C10-43CC-9DD8-C2587107E29E",
       "To": "test4@codegator.com",
       "CC": "",
       "BCC": "",
@@ -40,12 +44,13 @@
       "Attachments": [ "Seeding/file1.txt" ],
       "Properties": [
         {
-          "Name": "TestProperty1",
+          "PropertyTypeName": "TestProperty1",
           "Value": "value 1"
         }
       ]
     },
     {
+      "MessageKey": "E2B10639-6807-4CDF-ACDA-ED36B9530F9E",
       "To": "test5@codegator.com",
       "CC": "",
       "BCC": "",
@@ -55,16 +60,17 @@
       "Attachments": [ "Seeding/file1.txt", "Seeding/file2.txt" ],
       "Properties": [
         {
-          "Name": "TestProperty1",
+          "PropertyTypeName": "TestProperty1",
           "Value": "value 1"
         },
         {
-          "Name": "TestProperty2",
+          "PropertyTypeName": "TestProperty2",
           "Value": "value 2"
         }
       ]
     },
     {
+      "MessageKey": "05468A3D-E3AE-40EC-853D-20116582F15A",
       "To": "test6@codegator.com",
       "CC": "",
       "BCC": "",
@@ -75,6 +81,7 @@
       "Properties": []
     },
     {
+      "MessageKey": "10EB0BDF-601C-4541-9A4E-69993FE52E76",
       "To": "test1@codegator.com;test2@codegator.com;test3@codegator.com;test4@codegator.com;test5@codegator.com;test6@codegator.com;",
       "CC": "test1@codegator.com;test2@codegator.com;test3@codegator.com;test4@codegator.com;test5@codegator.com;test6@codegator.com;",
       "BCC": "test1@codegator.com;test2@codegator.com;test3@codegator.com;test4@codegator.com;test5@codegator.com;test6@codegator.com;",
