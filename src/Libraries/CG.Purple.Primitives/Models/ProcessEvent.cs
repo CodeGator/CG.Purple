@@ -1,9 +1,10 @@
-﻿namespace CG.Purple.SqlServer.Entities;
+﻿
+namespace CG.Purple.Models;
 
 /// <summary>
 /// This enumeration represents the valid process events.
 /// </summary>
-internal enum ProcessEvent
+public enum ProcessEvent
 {
     /// <summary>
     /// This enumeration represents a message storage event.

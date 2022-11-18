@@ -178,6 +178,13 @@ public static partial class WebApplicationExtensions
         // What type of seeding are we doing?
         switch (rootValue.Key)
         {
+            case "MailMessages":
+                seedDirector.SeedMailMessagesAsync(
+                    configuration,
+                    userName,
+                    seedStartupOptions.Force
+                    ).Wait();
+                break;
             case "MimeTypes":
                 seedDirector.SeedMimeTypesAsync(
                     configuration,
@@ -208,6 +215,13 @@ public static partial class WebApplicationExtensions
                 break;
             case "ProviderTypes":
                 seedDirector.SeedProviderTypesAsync(
+                    configuration,
+                    userName,
+                    seedStartupOptions.Force
+                    ).Wait();
+                break;
+            case "TextMessages":
+                seedDirector.SeedTextMessagesAsync(
                     configuration,
                     userName,
                     seedStartupOptions.Force

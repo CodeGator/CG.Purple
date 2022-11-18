@@ -240,12 +240,12 @@ internal class FileTypeRepository : IFileTypeRepository
                 );
 
             // Convert the entity to a model.
-            var model = _mapper.Map<FileType>(
+            var result = _mapper.Map<FileType>(
                 entity
                 );
 
             // Did we fail?
-            if (entity is null)
+            if (result is null)
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
@@ -254,7 +254,7 @@ internal class FileTypeRepository : IFileTypeRepository
             }
 
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {
@@ -535,12 +535,12 @@ internal class FileTypeRepository : IFileTypeRepository
                 );
 
             // Convert the entity to a model.
-            var model = _mapper.Map<FileType>(
+            var result = _mapper.Map<FileType>(
                 entity
                 );
 
             // Did we fail?
-            if (entity is null)
+            if (result is null)
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
@@ -549,7 +549,7 @@ internal class FileTypeRepository : IFileTypeRepository
             }
 
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {

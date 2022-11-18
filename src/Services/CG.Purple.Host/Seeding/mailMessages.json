@@ -1,0 +1,88 @@
+{
+  "MailMessages": [
+    {
+      "To": "test1@codegator.com",
+      "CC": "",
+      "BCC": "",
+      "Subject": "test email # 1",
+      "Body": "This is test email # 1",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": []
+    },
+    {
+      "To": "test2@codegator.com",
+      "CC": "test1@codegator.com",
+      "BCC": "",
+      "Subject": "test email # 2",
+      "Body": "This is test email # 2",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": []
+    },
+    {
+      "To": "test3@codegator.com",
+      "CC": "test2@codegator.com",
+      "BCC": "test1@codegator.com",
+      "Subject": "test email # 3",
+      "Body": "This is test email # 3",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": []
+    },
+    {
+      "To": "test4@codegator.com",
+      "CC": "",
+      "BCC": "",
+      "Subject": "test email # 4",
+      "Body": "This is test email # 4",
+      "IsHtml": false,
+      "Attachments": [ "Seeding/file1.txt" ],
+      "Properties": [
+        {
+          "Name": "TestProperty1",
+          "Value": "value 1"
+        }
+      ]
+    },
+    {
+      "To": "test5@codegator.com",
+      "CC": "",
+      "BCC": "",
+      "Subject": "test email # 5",
+      "Body": "This is test email # 5",
+      "IsHtml": false,
+      "Attachments": [ "Seeding/file1.txt", "Seeding/file2.txt" ],
+      "Properties": [
+        {
+          "Name": "TestProperty1",
+          "Value": "value 1"
+        },
+        {
+          "Name": "TestProperty2",
+          "Value": "value 2"
+        }
+      ]
+    },
+    {
+      "To": "test6@codegator.com",
+      "CC": "",
+      "BCC": "",
+      "Subject": "test email # 6",
+      "Body": "<p>This is test email # <b>6</b></p>",
+      "IsHtml": true,
+      "Attachments": [],
+      "Properties": []
+    },
+    {
+      "To": "test1@codegator.com;test2@codegator.com;test3@codegator.com;test4@codegator.com;test5@codegator.com;test6@codegator.com;",
+      "CC": "test1@codegator.com;test2@codegator.com;test3@codegator.com;test4@codegator.com;test5@codegator.com;test6@codegator.com;",
+      "BCC": "test1@codegator.com;test2@codegator.com;test3@codegator.com;test4@codegator.com;test5@codegator.com;test6@codegator.com;",
+      "Subject": "test email # 7",
+      "Body": "This is test email # 7",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": []
+    }
+  ]
+}

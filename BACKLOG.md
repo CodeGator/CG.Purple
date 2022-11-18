@@ -35,6 +35,8 @@ Things left to be done on the project as of 11/18/2022
 
 * Possibly need to integrate with a file storage service.
 
+* Possibly need to integrate with a REDIS cache service.
+
 ### Testing
 
 * Need to write a test plan

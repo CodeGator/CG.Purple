@@ -18,5 +18,17 @@ internal class BllOptions
     /// </summary>
     public FileTypeOptions? FileTypes { get; set; }
 
+    /// <summary>
+    /// This property contains configuration settings for the <see cref="IMailMessageManager"/>
+    /// type.
+    /// </summary>
+    public MailMessageOptions? MailMessages { get; set; }
+
+    /// <summary>
+    /// This property contains configuration settings for the <see cref="ITextMessageManager"/>
+    /// type.
+    /// </summary>
+    public TextMessageOptions? TextMessages { get; set; }
+
     #endregion
 }

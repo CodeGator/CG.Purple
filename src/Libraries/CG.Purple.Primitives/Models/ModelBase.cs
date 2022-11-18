@@ -4,7 +4,7 @@ namespace CG.Purple.Models;
 /// <summary>
 /// This class represents a base model.
 /// </summary>
-public abstract class ModelBase
+public class ModelBase
 {
     // *******************************************************************
     // Properties.

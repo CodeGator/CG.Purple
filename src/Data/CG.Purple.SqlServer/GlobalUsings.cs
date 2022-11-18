@@ -18,6 +18,8 @@ global using Microsoft.Extensions.Options;
 global using System.ComponentModel;
 global using System.ComponentModel.DataAnnotations;
 global using System.Reflection;
+global using Microsoft.EntityFrameworkCore.Design;
+global using Microsoft.Extensions.Configuration;
 
 
 

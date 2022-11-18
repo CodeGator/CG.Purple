@@ -1,0 +1,33 @@
+{
+  "TextMessages": [
+    {
+      "To": "9188675309",
+      "Body": "This is test text # 1",
+      "Properties": []
+    },
+    {
+      "To": "9188675309",
+      "Body": "This is test text # 2",
+      "Properties": [
+        {
+          "Name": "TestProperty1",
+          "Value": "value 1"
+        }
+      ]
+    },
+    {
+      "To": "9188675309",
+      "Body": "This is test text # 3",
+      "Properties": [
+        {
+          "Name": "TestProperty1",
+          "Value": "value 1"
+        },
+        {
+          "Name": "TestProperty2",
+          "Value": "value 2"
+        }
+      ]
+    }
+  ]
+}

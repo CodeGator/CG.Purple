@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace CG.Purple.SqlServer.EfCore.Migrations
+namespace CG.Purple.SqlServer.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

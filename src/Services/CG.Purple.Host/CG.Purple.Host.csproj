@@ -8,6 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Seeding\file1.txt" />
+    <None Remove="Seeding\file2.txt" />
+    <None Remove="Seeding\file3.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Seeding\file1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Seeding\file2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Seeding\file3.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CG.Cryptography.Shared" Version="2023.1.2" />
     <PackageReference Include="CG.DataProtection" Version="2023.1.2" />
     <PackageReference Include="CG.Logging" Version="2023.1.1" />
@@ -25,6 +43,30 @@
     <ProjectReference Include="..\..\Providers\CG.Purple.Smtp\CG.Purple.Smtp.csproj" />
     <ProjectReference Include="..\..\Providers\CG.Purple.Twillio\CG.Purple.Twillio.csproj" />
     <ProjectReference Include="..\CG.Purple.Controllers\CG.Purple.Controllers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Seeding\mailMessages.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Seeding\mimeTypes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Seeding\parameterTypes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Seeding\propertyTypes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Seeding\providerParameters.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Seeding\providerTypes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Seeding\textMessages.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

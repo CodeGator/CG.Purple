@@ -53,12 +53,15 @@ public static partial class WebApplicationBuilderExtensions
             );
 
         // Add the managers.
+        webApplicationBuilder.Services.AddScoped<IAttachmentManager, AttachmentManager>();
         webApplicationBuilder.Services.AddScoped<IFileTypeManager, FileTypeManager>();
+        webApplicationBuilder.Services.AddScoped<IMailMessageManager, MailMessageManager>();
         webApplicationBuilder.Services.AddScoped<IMimeTypeManager, MimeTypeManager>();
         webApplicationBuilder.Services.AddScoped<IParameterTypeManager, ParameterTypeManager>();
         webApplicationBuilder.Services.AddScoped<IPropertyTypeManager, PropertyTypeManager>();
         webApplicationBuilder.Services.AddScoped<IProviderTypeManager, ProviderTypeManager>();
         webApplicationBuilder.Services.AddScoped<IProviderParameterManager, ProviderParameterManager>();
+        webApplicationBuilder.Services.AddScoped<ITextMessageManager, TextMessageManager>();
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(

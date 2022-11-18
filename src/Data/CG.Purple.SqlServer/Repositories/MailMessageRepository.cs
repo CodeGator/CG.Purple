@@ -2,10 +2,10 @@
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
-/// This class is an EFCORE implementation of the <see cref="IParameterTypeRepository"/>
+/// This class is an EFCORE implementation of the <see cref="IMailMessageRepository"/>
 /// interface.
 /// </summary>
-internal class ParameterTypeRepository : IParameterTypeRepository
+internal class MailMessageRepository : IMailMessageRepository
 {
     // *******************************************************************
     // Fields.
@@ -26,7 +26,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     /// <summary>
     /// This field contains the logger for this repository.
     /// </summary>
-    internal protected readonly ILogger<IParameterTypeRepository> _logger;
+    internal protected readonly ILogger<IMailMessageRepository> _logger;
 
     #endregion
 
@@ -37,17 +37,17 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="ParameterTypeRepository"/>
+    /// This constructor creates a new instance of the <see cref="MailMessageRepository"/>
     /// class.
     /// </summary>
     /// <param name="dbContextFactory">The EFCORE data-context factory
     /// to use with this repository.</param>
     /// <param name="mapper">The auto-mapper to use with this repository.</param>
     /// <param name="logger">The logger to use with this repository.</param>
-    public ParameterTypeRepository(
+    public MailMessageRepository(
         IDbContextFactory<PurpleDbContext> dbContextFactory,
         IMapper mapper,
-        ILogger<IParameterTypeRepository> logger
+        ILogger<IMailMessageRepository> logger
         )
     {
         // Validate the parameters before attempting to use them.
@@ -89,11 +89,11 @@ internal class ParameterTypeRepository : IParameterTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for parameter types"
+                "Searching for mail messages"
                 );
 
             // Search for any entities in the data-store.
-            var data = await dbContext.ParameterTypes.AnyAsync(
+            var data = await dbContext.MailMessages.AnyAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -105,12 +105,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for parameter types"
+                "Failed to search for mail messages"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for parameter types!",
+                message: $"The repository failed to search for mail messages!",
                 innerException: ex
                 );
         }
@@ -138,11 +138,11 @@ internal class ParameterTypeRepository : IParameterTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for parameter types"
+                "Searching for mail messages"
                 );
 
             // Search for any entities in the data-store.
-            var data = await dbContext.ParameterTypes.CountAsync(
+            var data = await dbContext.MailMessages.CountAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -154,12 +154,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count parameter types"
+                "Failed to count mail messages"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to count parameter types!",
+                message: $"The repository failed to count mail messages!",
                 innerException: ex
                 );
         }
@@ -168,8 +168,8 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ParameterType> CreateAsync(
-        ParameterType parameterType,
+    public virtual async Task<MailMessage> CreateAsync(
+        MailMessage mailMessage,
         CancellationToken cancellationToken = default
         )
     {
@@ -178,12 +178,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(ParameterType)
+                nameof(MailMessage)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.ParameterType>(
-                parameterType
+            var entity = _mapper.Map<Entities.MailMessage>(
+                mailMessage
                 );
 
             // Did we fail?
@@ -191,7 +191,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ParameterType)} model to an entity."
+                    $"Failed to map the {nameof(MailMessage)} model to an entity."
                     );
             }
 
@@ -206,15 +206,18 @@ internal class ParameterTypeRepository : IParameterTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // We don't mess with associated entity types.
+            //dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
-                nameof(ParameterType),
+                nameof(MailMessage),
                 nameof(PurpleDbContext)
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.ParameterTypes.AddAsync(
+            _ = await dbContext.MailMessages.AddAsync(
                     entity,
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -233,11 +236,11 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(ParameterType)
+                nameof(MailMessage)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<ParameterType>(
+            var result = _mapper.Map<MailMessage>(
                 entity
                 );
 
@@ -246,7 +249,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ParameterType)} entity to a model."
+                    $"Failed to map the {nameof(MailMessage)} entity to a model."
                     );
             }
 
@@ -258,12 +261,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a parameter type"
+                "Failed to create a mail message"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to create a parameter type!",
+                message: $"The repository failed to create a mail message!",
                 innerException: ex
                 );
         }
@@ -273,7 +276,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ParameterType model,
+        MailMessage model,
         CancellationToken cancellationToken = default
         )
     {
@@ -293,13 +296,13 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
-                nameof(ParameterType),
+                nameof(MailMessage),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[ParameterTypes] WHERE [Id] = {0}",
+                "DELETE FROM [Purple].[MailMessages] WHERE [Id] = {0}",
                 parameters: new object[] { model.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
@@ -309,12 +312,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a parameter type"
+                "Failed to delete a mail message"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to delete a parameter type!",
+                message: $"The repository failed to delete a mail message!",
                 innerException: ex
                 );
         }
@@ -323,13 +326,68 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ParameterType?> FindByNameAsync(
-        string name,
+    public virtual async Task<IEnumerable<MailMessage>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching mail messages."
+                );
+
+            // Perform the mail message search.
+            var mailMessages = await dbContext.MailMessages
+                .ToListAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Convert the entities to a models.
+            var models = mailMessages.Select(x =>
+                _mapper.Map<MailMessage>(x)
+                );
+
+            // Return the results.
+            return models;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for mail messages"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for a mail messages",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<MailMessage?> FindByIdAsync(
+        long id,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNullOrEmpty(name, nameof(name));
+        Guard.Instance().ThrowIfZero(id, nameof(id));
 
         try
         {
@@ -346,20 +404,29 @@ internal class ParameterTypeRepository : IParameterTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for a matching parameter type."
+                "Searching for a matching mail message."
                 );
 
-            // Perform the parameter type search.
-            var parameterType = await dbContext.ParameterTypes.Where(x => 
-                x.Name == name
+            // Perform the mail message search.
+            var mailMessage = await dbContext.MailMessages.Where(x => 
+                x.Id == id
                 ).FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
 
             // Convert the entity to a model.
-            var model = _mapper.Map<ParameterType>(
-                parameterType
+            var model = _mapper.Map<MailMessage>(
+                mailMessage
                 );
+
+            // Did we fail?
+            if (mailMessage is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(MailMessage)} entity to a model."
+                    );
+            }
 
             // Return the results.
             return model;
@@ -369,13 +436,13 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for a parameter type by name"
+                "Failed to search for a mail message by id"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for a parameter " +
-                "type by name",
+                message: $"The repository failed to search for a mail " +
+                "message by id",
                 innerException: ex
                 );
         }
@@ -384,8 +451,8 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ParameterType> UpdateAsync(
-        ParameterType parameterType,
+    public virtual async Task<MailMessage> UpdateAsync(
+        MailMessage mailMessage,
         CancellationToken cancellationToken = default
         )
     {
@@ -394,12 +461,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(ParameterType)
+                nameof(MailMessage)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.ParameterType>(
-                parameterType
+            var entity = _mapper.Map<Entities.MailMessage>(
+                mailMessage
                 );
 
             // Did we fail?
@@ -407,7 +474,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ParameterType)} model to an entity."
+                    $"Failed to map the {nameof(MailMessage)} model to an entity."
                     );
             }
 
@@ -422,15 +489,18 @@ internal class ParameterTypeRepository : IParameterTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // We don't mess with associated entity types.
+            //dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
-                nameof(ParameterType),
+                nameof(MailMessage),
                 nameof(PurpleDbContext)
                 );
 
             // Update the data-store.
-            _= dbContext.ParameterTypes.Update(
+            _= dbContext.MailMessages.Update(
                 entity
                 );
 
@@ -448,11 +518,11 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(ParameterType)
+                nameof(MailMessage)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<ParameterType>(
+            var result = _mapper.Map<MailMessage>(
                 entity
                 );
 
@@ -461,7 +531,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ParameterType)} entity to a model."
+                    $"Failed to map the {nameof(MailMessage)} entity to a model."
                     );
             }
 
@@ -473,12 +543,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a parameter type"
+                "Failed to update a mail message"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to update a parameter type!",
+                message: $"The repository failed to update a mail message!",
                 innerException: ex
                 );
         }

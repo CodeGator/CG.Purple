@@ -31,7 +31,7 @@ internal class PurpleDbContext : DbContext
     /// <summary>
     /// This property contains the collection of mail messages.
     /// </summary>
-    public virtual DbSet<Entities.MailMessage> MailMessagess { get; set; } = null!;
+    public virtual DbSet<Entities.MailMessage> MailMessages { get; set; } = null!;
 
     /// <summary>
     /// This property contains the collection of message properties.
@@ -71,7 +71,7 @@ internal class PurpleDbContext : DbContext
     /// <summary>
     /// This property contains the collection of text messages.
     /// </summary>
-    public virtual DbSet<Entities.TextMessage> TextMessagess { get; set; } = null!;
+    public virtual DbSet<Entities.TextMessage> TextMessages { get; set; } = null!;
 
     #endregion
 

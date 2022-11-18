@@ -237,12 +237,12 @@ internal class ProviderParameterRepository : IProviderParameterRepository
                 );
 
             // Convert the entity to a model.
-            var model = _mapper.Map<ProviderParameter>(
+            var result = _mapper.Map<ProviderParameter>(
                 entity
                 );
 
             // Did we fail?
-            if (entity is null)
+            if (result is null)
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
@@ -251,7 +251,7 @@ internal class ProviderParameterRepository : IProviderParameterRepository
             }
 
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {
@@ -396,12 +396,12 @@ internal class ProviderParameterRepository : IProviderParameterRepository
                 );
 
             // Convert the entity to a model.
-            var model = _mapper.Map<ProviderParameter>(
+            var result = _mapper.Map<ProviderParameter>(
                 entity
                 );
 
             // Did we fail?
-            if (entity is null)
+            if (result is null)
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
@@ -410,7 +410,7 @@ internal class ProviderParameterRepository : IProviderParameterRepository
             }
 
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {

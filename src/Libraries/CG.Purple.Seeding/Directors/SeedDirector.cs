@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Seeding.Options;
+
 namespace CG.Purple.Seeding.Directors;
 
 /// <summary>
@@ -14,9 +16,19 @@ internal class SeedDirector : ISeedDirector
     #region Fields
 
     /// <summary>
+    /// This field contains the attachment manager for this director.
+    /// </summary>
+    internal protected readonly IAttachmentManager _attachmentManager;
+
+    /// <summary>
     /// This field contains the file type manager for this director.
     /// </summary>
     internal protected readonly IFileTypeManager _fileTypeManager;
+
+    /// <summary>
+    /// This field contains the mail message manager for this director.
+    /// </summary>
+    internal protected readonly IMailMessageManager _mailMessageManager;
 
     /// <summary>
     /// This field contains the mime type manager for this director.
@@ -44,6 +56,11 @@ internal class SeedDirector : ISeedDirector
     internal protected readonly IProviderTypeManager _providerTypeManager;
 
     /// <summary>
+    /// This field contains the text message manager for this director.
+    /// </summary>
+    internal protected readonly ITextMessageManager _textMessageManager;
+
+    /// <summary>
     /// This field contains the logger for this director.
     /// </summary>
     internal protected readonly ILogger<ISeedDirector> _logger;
@@ -60,6 +77,10 @@ internal class SeedDirector : ISeedDirector
     /// This constructor creates a new instance of the <see cref="SeedDirector"/>
     /// class.
     /// </summary>
+    /// <param name="attachmenteManager">The attachment manager to use with 
+    /// this director.</param>
+    /// <param name="mailMessageManager">The mail message manager to use with 
+    /// this director.</param>
     /// <param name="fileTypeManager">The file type manager to use with this
     /// director.</param>
     /// <param name="mimeTypeManager">The mime type manager to use with this
@@ -72,33 +93,44 @@ internal class SeedDirector : ISeedDirector
     /// to use with this director.</param>
     /// <param name="providerTypeManager">The provider type manager to use 
     /// with this director.</param>
+    /// <param name="textMessageManager">The text message manager to use with 
+    /// this director.</param>
     /// <param name="logger">The logger to use with this director.</param>
     public SeedDirector(
+        IAttachmentManager attachmenteManager,
         IFileTypeManager fileTypeManager,
+        IMailMessageManager mailMessageManager,
         IMimeTypeManager mimeTypeManager,
         IParameterTypeManager parameterTypeManager,
         IPropertyTypeManager propertyTypeManager,
         IProviderParameterManager providerParameterManager,
         IProviderTypeManager providerTypeManager,
+        ITextMessageManager textMessageManager,
         ILogger<ISeedDirector> logger
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(fileTypeManager, nameof(fileTypeManager))
+        Guard.Instance().ThrowIfNull(attachmenteManager, nameof(attachmenteManager))
+            .ThrowIfNull(fileTypeManager, nameof(fileTypeManager))
+            .ThrowIfNull(mailMessageManager, nameof(mailMessageManager))
             .ThrowIfNull(mimeTypeManager, nameof(mimeTypeManager))
             .ThrowIfNull(parameterTypeManager, nameof(parameterTypeManager))
             .ThrowIfNull(propertyTypeManager, nameof(propertyTypeManager))
             .ThrowIfNull(providerParameterManager, nameof(providerParameterManager))
             .ThrowIfNull(providerTypeManager, nameof(providerTypeManager))
+            .ThrowIfNull(textMessageManager, nameof(textMessageManager))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
+        _attachmentManager = attachmenteManager;
         _fileTypeManager = fileTypeManager;
+        _mailMessageManager = mailMessageManager;
         _mimeTypeManager = mimeTypeManager;
         _parameterTypeManager = parameterTypeManager;
         _propertyTypeManager = propertyTypeManager;
         _providerParameterManager = providerParameterManager;
         _providerTypeManager = providerTypeManager;
+        _textMessageManager = textMessageManager;
         _logger = logger;
     }
 
@@ -109,6 +141,59 @@ internal class SeedDirector : ISeedDirector
     // *******************************************************************
 
     #region Public methods
+
+    /// <inheritdoc/>
+    public virtual async Task SeedMailMessagesAsync(
+        IConfiguration configuration,
+        string userName,
+        bool force = false,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(configuration, nameof(configuration));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Binding mail message options."
+                );
+
+            // Bind the options.
+            var mailMessageOptions = new List<MailMessageOptions>();
+            configuration.GetSection("MailMessages").Bind(mailMessageOptions);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Seeding mail messages from the configuration."
+                );
+
+            // Seed the mail messages from the options.
+            await SeedMailMessagesAsync(
+                mailMessageOptions,
+                userName,
+                force,
+                cancellationToken
+                );
+        }
+        catch (Exception ex)
+        {
+            // Let the world know what happened.
+            _logger.LogError(
+                ex,
+                "Failed to seed mail messages!"
+                );
+
+            // Provider better context.
+            throw new DirectorException(
+                message: $"The director failed to seed mail messages!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
 
     /// <inheritdoc/>
     public virtual async Task SeedMimeTypesAsync(
@@ -373,6 +458,59 @@ internal class SeedDirector : ISeedDirector
         }
     }
 
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task SeedTextMessagesAsync(
+        IConfiguration configuration,
+        string userName,
+        bool force = false,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(configuration, nameof(configuration));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Binding text message options."
+                );
+
+            // Bind the options.
+            var textMessageOptions = new List<TextMessageOptions>();
+            configuration.GetSection("TextMessages").Bind(textMessageOptions);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Seeding text messages from the configuration."
+                );
+
+            // Seed the text messages from the options.
+            await SeedTextMessagesAsync(
+                textMessageOptions,
+                userName,
+                force,
+                cancellationToken
+                );
+        }
+        catch (Exception ex)
+        {
+            // Let the world know what happened.
+            _logger.LogError(
+                ex,
+                "Failed to seed text messages!"
+                );
+
+            // Provider better context.
+            throw new DirectorException(
+                message: $"The director failed to seed text messages!",
+                innerException: ex
+                );
+        }
+    }
+
     #endregion
 
     // *******************************************************************
@@ -380,6 +518,178 @@ internal class SeedDirector : ISeedDirector
     // *******************************************************************
 
     #region Private methods
+
+    /// <summary>
+    /// This method performs a seeding operation for the given list of
+    /// <see cref="MailMessageOptions"/> objects.
+    /// </summary>
+    /// <param name="mailMessageOptions">The options to use for the operation.</param>
+    /// <param name="userName">The name of the user performing the operation.</param>
+    /// <param name="force"><c>true</c> to force the operation; <c>false</c>
+    /// otherwise.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    /// <exception cref="DirectorException"></exception>
+    private async Task SeedMailMessagesAsync(
+        List<MailMessageOptions> mailMessageOptions,
+        string userName,
+        bool force = false,
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Should we check for existing data?
+            if (!force)
+            {
+                // Are the existing mail messages?
+                var hasExistingData = await _mailMessageManager.AnyAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Should we stop?
+                if (hasExistingData)
+                {
+                    // Log what we didn't do.
+                    _logger.LogWarning(
+                        "Skipping seeding mail messages because the 'force' flag " +
+                        "was not specified and there are existing mail messages " +
+                        "in the database.",
+                        mailMessageOptions.Count
+                        );
+                    return; // Nothing else to do!
+                }
+
+                // Are there existing file types?
+                hasExistingData = await _fileTypeManager.AnyAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Should we stop?
+                if (hasExistingData)
+                {
+                    // Log what we didn't do.
+                    _logger.LogWarning(
+                        "Skipping seeding mail messages because the 'force' flag " +
+                        "was not specified and there are existing mail messages " +
+                        "in the database.",
+                        mailMessageOptions.Count
+                        );
+                    return; // Nothing else to do!
+                }
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Seeding {count} mail messages.",
+                mailMessageOptions.Count
+                );
+
+            // Loop through the options.
+            foreach (var mailMessageOption in mailMessageOptions)
+            {
+                // Log what we are about to do.
+                _logger.LogTrace(
+                    "Deferring to {name}",
+                    nameof(IMailMessageManager.CreateAsync)
+                    );
+
+                // Create the mail message.
+                var mailMessage = await _mailMessageManager.CreateAsync(
+                    new MailMessage()
+                    {
+                        To = mailMessageOption.To,
+                        CC = mailMessageOption.CC,
+                        BCC = mailMessageOption.BCC,
+                        Subject = mailMessageOption.Subject,
+                        Body = mailMessageOption.Body,
+                        IsHtml = mailMessageOption.IsHtml,
+                        IsDisabled = mailMessageOption.IsDisabled,  
+                    },
+                    userName,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Are there any attachments?
+                if (mailMessageOption.Attachments.Any())
+                {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Seeding {count} attachments.",
+                        mailMessageOption.Attachments.Count
+                        );
+
+                    // Loop through the options.
+                    foreach (var attachment in mailMessageOption.Attachments)
+                    {
+                        // Is the file missing?
+                        if (!File.Exists(attachment))
+                        {
+                            // Panic!!
+                            throw new FileNotFoundException(
+                                $"The attachment: {attachment} is missing!"
+                                );
+                        }
+
+                        // Get the attachments' file extension.
+                        var ext = Path.GetExtension(attachment);
+
+                        // Look for a mime type, for that extension.
+                        var mimeType = await _mimeTypeManager.FindByExtensionAsync(
+                            ext,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+
+                        // Did we fail?
+                        if (mimeType is null)
+                        {
+                            // Panic!!
+                            throw new KeyNotFoundException(
+                                $"No mime type was found for extension: {ext} is missing!"
+                                );
+                        }
+
+                        // Read the bytes for the file.
+                        var bytes = await File.ReadAllBytesAsync(
+                            attachment,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+
+                        // Create the attachment.
+                        _ = await _attachmentManager.CreateAsync(
+                            new Attachment()
+                            {
+                                Message = mailMessage,
+                                MimeType = mimeType,
+                                OriginalFileName = Path.GetFileName(attachment),
+                                Length = bytes.Length,
+                                Data = bytes
+                            },
+                            userName,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Let the world know what happened.
+            _logger.LogError(
+                ex,
+                "Failed to seed mail messages!"
+                );
+
+            // Provider better context.
+            throw new DirectorException(
+                message: $"The director failed to seed mail messages!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
 
     /// <summary>
     /// This method performs a seeding operation for the given list of
@@ -893,6 +1203,113 @@ internal class SeedDirector : ISeedDirector
             // Provider better context.
             throw new DirectorException(
                 message: $"The director failed to seed provider types!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method performs a seeding operation for the given list of
+    /// <see cref="TextMessageOptions"/> objects.
+    /// </summary>
+    /// <param name="textMessageOptions">The options to use for the operation.</param>
+    /// <param name="userName">The name of the user performing the operation.</param>
+    /// <param name="force"><c>true</c> to force the operation; <c>false</c>
+    /// otherwise.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    /// <exception cref="DirectorException"></exception>
+    private async Task SeedTextMessagesAsync(
+        List<TextMessageOptions> textMessageOptions,
+        string userName,
+        bool force = false,
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Should we check for existing data?
+            if (!force)
+            {
+                // Are the existing text messages?
+                var hasExistingData = await _textMessageManager.AnyAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Should we stop?
+                if (hasExistingData)
+                {
+                    // Log what we didn't do.
+                    _logger.LogWarning(
+                        "Skipping seeding text messages because the 'force' flag " +
+                        "was not specified and there are existing text messages " +
+                        "in the database.",
+                        textMessageOptions.Count
+                        );
+                    return; // Nothing else to do!
+                }
+
+                // Are there existing file types?
+                hasExistingData = await _fileTypeManager.AnyAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Should we stop?
+                if (hasExistingData)
+                {
+                    // Log what we didn't do.
+                    _logger.LogWarning(
+                        "Skipping seeding text messages because the 'force' flag " +
+                        "was not specified and there are existing text messages " +
+                        "in the database.",
+                        textMessageOptions.Count
+                        );
+                    return; // Nothing else to do!
+                }
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Seeding {count} text messages.",
+                textMessageOptions.Count
+                );
+
+            // Loop through the options.
+            foreach (var textMessageOption in textMessageOptions)
+            {
+                // Log what we are about to do.
+                _logger.LogTrace(
+                    "Deferring to {name}",
+                    nameof(ITextMessageManager.CreateAsync)
+                    );
+
+                // Create the text message.
+                _ = await _textMessageManager.CreateAsync(
+                    new TextMessage()
+                    {
+                        To = textMessageOption.To,
+                        Body = textMessageOption.Body,
+                        IsDisabled = textMessageOption.IsDisabled,
+                    },
+                    userName,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+            }
+        }
+        catch (Exception ex)
+        {
+            // Let the world know what happened.
+            _logger.LogError(
+                ex,
+                "Failed to seed text messages!"
+                );
+
+            // Provider better context.
+            throw new DirectorException(
+                message: $"The director failed to seed text messages!",
                 innerException: ex
                 );
         }

@@ -84,7 +84,7 @@ internal class ProviderLogMap : EntityMapBase<Entities.ProviderLog>
             .Property(e => e.Event)
             .HasConversion(
                 e => e.ToString(),
-                e => Enum.Parse<Entities.ProcessEvent>(e)
+                e => Enum.Parse<ProcessEvent>(e)
                 );
 
         // Setup the conversion.

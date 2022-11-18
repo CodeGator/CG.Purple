@@ -2,10 +2,10 @@
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
-/// This class is an EFCORE implementation of the <see cref="IParameterTypeRepository"/>
+/// This class is an EFCORE implementation of the <see cref="IAttachmentRepository"/>
 /// interface.
 /// </summary>
-internal class ParameterTypeRepository : IParameterTypeRepository
+internal class AttachmentRepository : IAttachmentRepository
 {
     // *******************************************************************
     // Fields.
@@ -26,7 +26,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     /// <summary>
     /// This field contains the logger for this repository.
     /// </summary>
-    internal protected readonly ILogger<IParameterTypeRepository> _logger;
+    internal protected readonly ILogger<IAttachmentRepository> _logger;
 
     #endregion
 
@@ -37,17 +37,17 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="ParameterTypeRepository"/>
+    /// This constructor creates a new instance of the <see cref="AttachmentRepository"/>
     /// class.
     /// </summary>
     /// <param name="dbContextFactory">The EFCORE data-context factory
     /// to use with this repository.</param>
     /// <param name="mapper">The auto-mapper to use with this repository.</param>
     /// <param name="logger">The logger to use with this repository.</param>
-    public ParameterTypeRepository(
+    public AttachmentRepository(
         IDbContextFactory<PurpleDbContext> dbContextFactory,
         IMapper mapper,
-        ILogger<IParameterTypeRepository> logger
+        ILogger<IAttachmentRepository> logger
         )
     {
         // Validate the parameters before attempting to use them.
@@ -89,11 +89,11 @@ internal class ParameterTypeRepository : IParameterTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for parameter types"
+                "Searching for attachments"
                 );
 
             // Search for any entities in the data-store.
-            var data = await dbContext.ParameterTypes.AnyAsync(
+            var data = await dbContext.Attachments.AnyAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -105,12 +105,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for parameter types"
+                "Failed to search for attachments"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for parameter types!",
+                message: $"The repository failed to search for attachments!",
                 innerException: ex
                 );
         }
@@ -138,11 +138,11 @@ internal class ParameterTypeRepository : IParameterTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for parameter types"
+                "Searching for attachments"
                 );
 
             // Search for any entities in the data-store.
-            var data = await dbContext.ParameterTypes.CountAsync(
+            var data = await dbContext.Attachments.CountAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -154,12 +154,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count parameter types"
+                "Failed to count attachments"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to count parameter types!",
+                message: $"The repository failed to count attachments!",
                 innerException: ex
                 );
         }
@@ -168,8 +168,8 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ParameterType> CreateAsync(
-        ParameterType parameterType,
+    public virtual async Task<Attachment> CreateAsync(
+        Attachment attachment,
         CancellationToken cancellationToken = default
         )
     {
@@ -178,12 +178,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(ParameterType)
+                nameof(Attachment)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.ParameterType>(
-                parameterType
+            var entity = _mapper.Map<Entities.Attachment>(
+                attachment
                 );
 
             // Did we fail?
@@ -191,7 +191,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ParameterType)} model to an entity."
+                    $"Failed to map the {nameof(Attachment)} model to an entity."
                     );
             }
 
@@ -206,15 +206,21 @@ internal class ParameterTypeRepository : IParameterTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // We don't mess with associated entity types.
+            dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
+            //dbContext.Entry(entity.Message.Attachments).State = EntityState.Unchanged;
+            //dbContext.Entry(entity.Message.MessageProperties).State = EntityState.Unchanged;
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
-                nameof(ParameterType),
+                nameof(Attachment),
                 nameof(PurpleDbContext)
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.ParameterTypes.AddAsync(
+            _ = await dbContext.Attachments.AddAsync(
                     entity,
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -233,11 +239,11 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(ParameterType)
+                nameof(Attachment)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<ParameterType>(
+            var result = _mapper.Map<Attachment>(
                 entity
                 );
 
@@ -246,7 +252,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ParameterType)} entity to a model."
+                    $"Failed to map the {nameof(Attachment)} entity to a model."
                     );
             }
 
@@ -258,12 +264,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a parameter type"
+                "Failed to create a attachment"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to create a parameter type!",
+                message: $"The repository failed to create a attachment!",
                 innerException: ex
                 );
         }
@@ -273,7 +279,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ParameterType model,
+        Attachment model,
         CancellationToken cancellationToken = default
         )
     {
@@ -293,13 +299,13 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
-                nameof(ParameterType),
+                nameof(Attachment),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[ParameterTypes] WHERE [Id] = {0}",
+                "DELETE FROM [Purple].[Attachments] WHERE [Id] = {0}",
                 parameters: new object[] { model.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
@@ -309,12 +315,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a parameter type"
+                "Failed to delete a attachment"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to delete a parameter type!",
+                message: $"The repository failed to delete a attachment!",
                 innerException: ex
                 );
         }
@@ -323,69 +329,8 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ParameterType?> FindByNameAsync(
-        string name,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNullOrEmpty(name, nameof(name));
-
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a {ctx} data-context",
-                nameof(PurpleDbContext)
-                );
-
-            // Create a database context.
-            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Searching for a matching parameter type."
-                );
-
-            // Perform the parameter type search.
-            var parameterType = await dbContext.ParameterTypes.Where(x => 
-                x.Name == name
-                ).FirstOrDefaultAsync(
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-            // Convert the entity to a model.
-            var model = _mapper.Map<ParameterType>(
-                parameterType
-                );
-
-            // Return the results.
-            return model;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to search for a parameter type by name"
-                );
-
-            // Provider better context.
-            throw new RepositoryException(
-                message: $"The repository failed to search for a parameter " +
-                "type by name",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<ParameterType> UpdateAsync(
-        ParameterType parameterType,
+    public virtual async Task<Attachment> UpdateAsync(
+        Attachment attachment,
         CancellationToken cancellationToken = default
         )
     {
@@ -394,12 +339,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(ParameterType)
+                nameof(Attachment)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.ParameterType>(
-                parameterType
+            var entity = _mapper.Map<Entities.Attachment>(
+                attachment
                 );
 
             // Did we fail?
@@ -407,7 +352,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ParameterType)} model to an entity."
+                    $"Failed to map the {nameof(Attachment)} model to an entity."
                     );
             }
 
@@ -422,15 +367,18 @@ internal class ParameterTypeRepository : IParameterTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // We don't mess with associated entity types.
+            //dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
-                nameof(ParameterType),
+                nameof(Attachment),
                 nameof(PurpleDbContext)
                 );
 
             // Update the data-store.
-            _= dbContext.ParameterTypes.Update(
+            _= dbContext.Attachments.Update(
                 entity
                 );
 
@@ -448,11 +396,11 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(ParameterType)
+                nameof(Attachment)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<ParameterType>(
+            var result = _mapper.Map<Attachment>(
                 entity
                 );
 
@@ -461,7 +409,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ParameterType)} entity to a model."
+                    $"Failed to map the {nameof(Attachment)} entity to a model."
                     );
             }
 
@@ -473,12 +421,12 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a parameter type"
+                "Failed to update a attachment"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to update a parameter type!",
+                message: $"The repository failed to update a attachment!",
                 innerException: ex
                 );
         }
