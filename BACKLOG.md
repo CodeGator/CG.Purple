@@ -9,13 +9,13 @@ Things left to be done on the project as of 11/18/2022
 
 ### Database
 
-* Need to verify the initial DB design.
-
-* Need to finish a first pass of the repositories.
+* Need to test the DB design.
 
 ### Libraries
 
-* Need to finish a first pass of the managers.
+* Need to add search methods to managers / repositories, as needed.
+
+* Need to test the managers / repositories.
 
 ### Providers
 
@@ -39,7 +39,7 @@ Things left to be done on the project as of 11/18/2022
 
 ### Testing
 
-* Need to write a test plan
+* Need to write an overall test plan
 
 * Need to stand up test projects and fixtures.
 
