@@ -15,7 +15,8 @@
           "Name": "TestProperty1",
           "Value": "value 1"
         }
-      ]
+      ],
+      "IsDisabled": false
     },
     {
       "MessageKey": "0C53209D-5689-46ED-8A62-F45CBF61BA4B",
@@ -30,7 +31,15 @@
           "PropertyTypeName": "TestProperty2",
           "Value": "value 2"
         }
-      ]
+      ],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "0C53209D-5689-46ED-8A62-F45CBF61BA4B",
+      "To": "9188675309",
+      "Body": "This is test text # 4",
+      "Properties": [],
+      "IsDisabled" : true
     }
   ]
 }

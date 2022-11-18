@@ -2,7 +2,7 @@
 namespace CG.Purple.Directors;
 
 /// <summary>
-/// This interface represents an object that performs seeding operations.
+/// This interface represents an object that performs data seeding operations.
 /// </summary>
 public interface ISeedDirector
 {

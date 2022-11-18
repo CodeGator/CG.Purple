@@ -9,7 +9,8 @@
       "Body": "This is test email # 1",
       "IsHtml": false,
       "Attachments": [],
-      "Properties": []
+      "Properties": [],
+      "IsDisabled": false
     },
     {
       "MessageKey": "AE24BAF7-07A5-4445-970F-445323936674",
@@ -20,7 +21,8 @@
       "Body": "This is test email # 2",
       "IsHtml": false,
       "Attachments": [],
-      "Properties": []
+      "Properties": [],
+      "IsDisabled": false
     },
     {
       "MessageKey": "70B6BD35-7E51-474E-A23C-0A60985F0976",
@@ -31,7 +33,8 @@
       "Body": "This is test email # 3",
       "IsHtml": false,
       "Attachments": [],
-      "Properties": []
+      "Properties": [],
+      "IsDisabled": false
     },
     {
       "MessageKey": "C9D4EAF7-4C10-43CC-9DD8-C2587107E29E",
@@ -47,7 +50,8 @@
           "PropertyTypeName": "TestProperty1",
           "Value": "value 1"
         }
-      ]
+      ],
+      "IsDisabled": false
     },
     {
       "MessageKey": "E2B10639-6807-4CDF-ACDA-ED36B9530F9E",
@@ -67,7 +71,8 @@
           "PropertyTypeName": "TestProperty2",
           "Value": "value 2"
         }
-      ]
+      ],
+      "IsDisabled": false
     },
     {
       "MessageKey": "05468A3D-E3AE-40EC-853D-20116582F15A",
@@ -89,7 +94,20 @@
       "Body": "This is test email # 7",
       "IsHtml": false,
       "Attachments": [],
-      "Properties": []
+      "Properties": [],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "F3358732-BD3C-49C5-BE4D-0511495D5C97",
+      "To": "test1@codegator.com",
+      "CC": "",
+      "BCC": "",
+      "Subject": "test email # 8",
+      "Body": "This is test email # 8",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": [],
+      "IsDisabled": true
     }
   ]
 }
