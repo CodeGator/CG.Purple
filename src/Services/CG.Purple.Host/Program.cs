@@ -39,7 +39,9 @@ try
 
     // Add the controllers.
     builder.Services.AddControllers()
-        .AddApplicationPart(Assembly.Load("CG.Purple.Controllers"));
+        .AddApplicationPart(
+            Assembly.Load("CG.Purple.Host.Controllers")
+            );
 
     // Add misc stuff we'll need.
     builder.Services.AddHttpContextAccessor();

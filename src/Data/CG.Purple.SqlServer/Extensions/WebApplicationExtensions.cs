@@ -83,7 +83,7 @@ public static partial class WebApplicationExtensions
         else
         {
             // Log what we didn't do.
-            webApplication.Logger.LogWarning(
+            webApplication.Logger.LogInformation(
                 "Ignoring DAL startup because we aren't in a development " +
                 "environment."
                 );

@@ -48,6 +48,19 @@ public static partial class WebApplicationExtensions
                 IOptions<SeedStartupOptions>
                 >();
 
+            // Should we skip seeding altogether?
+            if (!seedStartupOptions.Value.SeedOnStartup)
+            {
+                // Log what we didn't do.
+                webApplication.Logger.LogWarning(
+                    "Ignoring seeding startup because the SeedOnStartup flag " +
+                    "is either false, or missing."
+                    );
+
+                // Return the application.
+                return webApplication;
+            }
+
             // Are there any files to process?
             if (seedStartupOptions.Value.FileNames is not null &&
                 seedStartupOptions.Value.FileNames.Any())
@@ -62,7 +75,7 @@ public static partial class WebApplicationExtensions
             else
             {
                 // Log what we didn't do.
-                webApplication.Logger.LogWarning(
+                webApplication.Logger.LogInformation(
                     "Ignoring seeding startup because the FileNames collection " +
                     "is empty, or missing."
                     );

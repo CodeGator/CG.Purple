@@ -1,7 +1,7 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things left to be done on the project as of 11/18/2022
+Things left to be done on the project as of 11/19/2022
 
 ### Design
 
@@ -17,15 +17,21 @@ Things left to be done on the project as of 11/18/2022
 
 * Need to test the managers / repositories.
 
+* Need to encrypt the provider parameters, at rest.
+
+* Need to add the caching code to the managers.
+
 ### Providers
 
 * Need to design the providers.
 
-### Services
+### Services 
 
-* Need to design the REST controllers.
+* Need to design and build the REST controllers.
 
-* Need to design the UI.
+* Need to design and complete the hosted services.
+
+* Need to complete the UI.
 
 ### Other Integrations
 

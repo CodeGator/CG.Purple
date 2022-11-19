@@ -34,8 +34,8 @@ public class DefaultTheme : MudTheme
         // Create the default palette
         Palette = new Palette()
         {
-            Primary = Colors.Purple.Lighten1,
-            Secondary = Colors.DeepOrange.Default,
+            Primary = Colors.Green.Default,
+            Secondary = Colors.Yellow.Darken2,
             Background = Colors.Grey.Lighten5,
             AppbarBackground = Colors.DeepPurple.Default,
             DrawerBackground = "#FFF",

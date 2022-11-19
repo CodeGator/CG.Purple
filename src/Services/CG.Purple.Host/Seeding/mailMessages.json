@@ -108,6 +108,109 @@
       "Attachments": [],
       "Properties": [],
       "IsDisabled": true
+    },
+    {
+      "MessageKey": "",
+      "To": "test1@codegator.com",
+      "CC": "",
+      "BCC": "test2@codegator.com",
+      "Subject": "test email # 9",
+      "Body": "This is test email # 9",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": [
+        {
+          "PropertyTypeName": "TestProperty1",
+          "Value": "value 1 for email # 9"
+        },
+        {
+          "PropertyTypeName": "TestProperty2",
+          "Value": "value 2 for email # 9"
+        }
+      ],
+      "IsDisabled": true
+    },
+    {
+      "MessageKey": "",
+      "To": "test1@codegator.com",
+      "CC": "",
+      "BCC": "test2@codegator.com",
+      "Subject": "test email # 10",
+      "Body": "This is test email # 10",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": [],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "test1@codegator.com",
+      "CC": "",
+      "BCC": "test2@codegator.com",
+      "Subject": "test email # 11",
+      "Body": "This is test email # 11",
+      "IsHtml": false,
+      "Attachments": [ "Seeding/file1.txt" ],
+      "Properties": [
+        {
+          "PropertyTypeName": "TestProperty1",
+          "Value": "value 1 for email # 11"
+        }
+      ],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "test1@codegator.com",
+      "CC": "test2@codegator.com",
+      "BCC": "",
+      "Subject": "test email # 12",
+      "Body": "This is test email # 12",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": [],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "test1@codegator.com",
+      "CC": "",
+      "BCC": "test2@codegator.com",
+      "Subject": "test email # 13",
+      "Body": "This is test email # 13",
+      "IsHtml": false,
+      "Attachments": [ "Seeding/file3.txt" ],
+      "Properties": [],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "test1@codegator.com",
+      "CC": "",
+      "BCC": "",
+      "Subject": "test email # 14",
+      "Body": "This is test email # 14",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": [
+        {
+          "PropertyTypeName": "TestProperty1",
+          "Value": "value 1 for email # 14"
+        }
+      ],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "test1@codegator.com",
+      "CC": "",
+      "BCC": "test2@codegator.com",
+      "Subject": "test email # 15",
+      "Body": "This is test email # 15",
+      "IsHtml": false,
+      "Attachments": [],
+      "Properties": [],
+      "IsDisabled": false
     }
   ]
 }

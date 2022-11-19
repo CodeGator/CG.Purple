@@ -96,13 +96,20 @@ internal class MessageMap : EntityMapBase<Entities.Message>
         // Setup the index.
         builder.HasIndex(e => new
         {
-            e.MessageKey,
             e.MessageType,
             e.MessageState,
             e.IsDisabled
         },
         "IX_Messages"
         );
+
+        // Setup the index.
+        builder.HasIndex(e => new
+        {
+            e.MessageKey
+        },
+        "IX_Messages_Keys"
+        ).IsUnique();
     }
 
     #endregion

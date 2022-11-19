@@ -39,7 +39,130 @@
       "To": "9188675309",
       "Body": "This is test text # 4",
       "Properties": [],
-      "IsDisabled" : true
+      "IsDisabled": true
+    },
+    {
+      "MessageKey": "16B4DDC0-9067-4A94-8120-8A0DCF8D2504",
+      "To": "9188675309",
+      "Body": "This is test text # 5",
+      "Properties": [
+        {
+          "PropertyTypeName": "TestProperty1",
+          "Value": "value 1"
+        }
+      ],
+      "IsDisabled": true
+    },
+    {
+      "MessageKey": "C4CAEBF3-1C79-4059-8CA3-2687139AD552",
+      "To": "9188675309;9188675309",
+      "Body": "This is test text # 6",
+      "Properties": [
+        {
+          "PropertyTypeName": "TestProperty1",
+          "Value": "value for 1 text # 6"
+        }
+      ],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "7C9DC501-F1EC-4801-9928-18DAD32ED717",
+      "To": "9188675309;9188675309;9188675309",
+      "Body": "This is test text # 7",
+      "Properties": [
+        {
+          "PropertyTypeName": "TestProperty1",
+          "Value": "value 1 for text # 7"
+        },
+        {
+          "PropertyTypeName": "TestProperty2",
+          "Value": "value 2 for text # 7"
+        }
+      ],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "175081ED-028D-46C8-850A-3413405FC474",
+      "To": "9188675309",
+      "Body": "This is test text # 8",
+      "Properties": [
+        {
+          "PropertyTypeName": "TestProperty1",
+          "Value": "value 1 for text # 8"
+        },
+        {
+          "PropertyTypeName": "TestProperty2",
+          "Value": "value 2 for text # 8"
+        }
+      ],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "45C3EF5E-F69A-490B-8792-346DB69C8D70",
+      "To": "9188675309",
+      "Body": "This is test text # 9",
+      "Properties": [
+        {
+          "PropertyTypeName": "TestProperty1",
+          "Value": "value 1 for text # 9"
+        },
+        {
+          "PropertyTypeName": "TestProperty2",
+          "Value": "value 2 for text # 9"
+        }
+      ],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "9188675309",
+      "Body": "This is test text # 10",
+      "Properties": [
+        {
+          "PropertyTypeName": "TestProperty1",
+          "Value": "value 1 for text # 10"
+        },
+        {
+          "PropertyTypeName": "TestProperty2",
+          "Value": "value 2 for text # 10"
+        }
+      ],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "9188675309",
+      "Body": "This is test text # 11",
+      "Properties": [],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "9188675309",
+      "Body": "This is test text # 12",
+      "Properties": [],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "9188675309",
+      "Body": "This is test text # 13",
+      "Properties": [],
+      "IsDisabled": false
+    },
+    {
+      "MessageKey": "",
+      "To": "9188675309",
+      "Body": "This is test text # 14",
+      "Properties": [],
+      "IsDisabled": true
+    },
+    {
+      "MessageKey": "",
+      "To": "9188675309",
+      "Body": "This is test text # 15",
+      "Properties": [],
+      "IsDisabled": true
     }
   ]
 }

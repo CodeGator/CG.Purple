@@ -29,7 +29,7 @@
     <ItemGroup>
         <PackageReference Include="CG.Cryptography.Shared" Version="2023.1.2" />
         <PackageReference Include="CG.DataProtection" Version="2023.1.3" />
-        <PackageReference Include="CG.Logging" Version="2023.1.1" />
+        <PackageReference Include="CG.Logging" Version="2023.1.2" />
         <PackageReference Include="CG.Reflection" Version="2023.1.2" />
         <PackageReference Include="MudBlazor" Version="6.1.2" />
         <PackageReference Include="Nerdbank.GitVersioning" Version="3.5.119">
@@ -45,7 +45,8 @@
         <ProjectReference Include="..\..\Providers\CG.Purple.SendGrid\CG.Purple.SendGrid.csproj" />
         <ProjectReference Include="..\..\Providers\CG.Purple.Smtp\CG.Purple.Smtp.csproj" />
         <ProjectReference Include="..\..\Providers\CG.Purple.Twillio\CG.Purple.Twillio.csproj" />
-        <ProjectReference Include="..\CG.Purple.Controllers\CG.Purple.Controllers.csproj" />
+        <ProjectReference Include="..\CG.Purple.Host.Controllers\CG.Purple.Host.Controllers.csproj" />
+        <ProjectReference Include="..\CG.Purple.Host.Services\CG.Purple.Host.Services.csproj" />
     </ItemGroup>
 
     <ItemGroup>
