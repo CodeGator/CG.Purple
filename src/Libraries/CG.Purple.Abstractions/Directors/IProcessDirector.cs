@@ -2,7 +2,7 @@
 namespace CG.Purple.Directors;
 
 /// <summary>
-/// This interface represents an object that processes messages.
+/// This interface represents an object that performs message processing operations.
 /// </summary>
 public interface IProcessDirector
 {

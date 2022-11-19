@@ -36,7 +36,7 @@ internal class ProviderTypeManager : IProviderTypeManager
     /// <summary>
     /// This field contains the distributed cache for this manager.
     /// </summary>
-    internal protected IDistributedCache _distributedCache;
+    internal protected IDistributedCache _distributedCache = null!;
 
     /// <summary>
     /// This field contains the logger for this manager.

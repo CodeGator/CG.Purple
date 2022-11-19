@@ -16,62 +16,62 @@ internal class SeedDirector : ISeedDirector
     /// <summary>
     /// This field contains the attachment manager for this director.
     /// </summary>
-    internal protected readonly IAttachmentManager _attachmentManager;
+    internal protected readonly IAttachmentManager _attachmentManager = null!;
 
     /// <summary>
     /// This field contains the file type manager for this director.
     /// </summary>
-    internal protected readonly IFileTypeManager _fileTypeManager;
+    internal protected readonly IFileTypeManager _fileTypeManager = null!;
 
     /// <summary>
     /// This field contains the mail message manager for this director.
     /// </summary>
-    internal protected readonly IMailMessageManager _mailMessageManager;
+    internal protected readonly IMailMessageManager _mailMessageManager = null!;
 
     /// <summary>
     /// This field contains the message property manager for this director.
     /// </summary>
-    internal protected readonly IMessagePropertyManager _messagePropertyManager;
+    internal protected readonly IMessagePropertyManager _messagePropertyManager = null!;
 
     /// <summary>
     /// This field contains the mime type manager for this director.
     /// </summary>
-    internal protected readonly IMimeTypeManager _mimeTypeManager;
+    internal protected readonly IMimeTypeManager _mimeTypeManager = null!;
 
     /// <summary>
     /// This field contains the parameter type manager for this director.
     /// </summary>
-    internal protected readonly IParameterTypeManager _parameterTypeManager;
+    internal protected readonly IParameterTypeManager _parameterTypeManager = null!;
 
     /// <summary>
     /// This field contains the property type manager for this director.
     /// </summary>
-    internal protected readonly IPropertyTypeManager _propertyTypeManager;
+    internal protected readonly IPropertyTypeManager _propertyTypeManager = null!;
 
     /// <summary>
     /// This field contains the provider parameter manager for this director.
     /// </summary>
-    internal protected readonly IProviderParameterManager _providerParameterManager;
+    internal protected readonly IProviderParameterManager _providerParameterManager = null!;
 
     /// <summary>
     /// This field contains the provider log manager for this director.
     /// </summary>
-    internal protected readonly IProviderLogManager _providerLogManager;
+    internal protected readonly IProviderLogManager _providerLogManager = null!;
 
     /// <summary>
     /// This field contains the provider type manager for this director.
     /// </summary>
-    internal protected readonly IProviderTypeManager _providerTypeManager;
+    internal protected readonly IProviderTypeManager _providerTypeManager = null!;
 
     /// <summary>
     /// This field contains the text message manager for this director.
     /// </summary>
-    internal protected readonly ITextMessageManager _textMessageManager;
+    internal protected readonly ITextMessageManager _textMessageManager = null!;
 
     /// <summary>
     /// This field contains the logger for this director.
     /// </summary>
-    internal protected readonly ILogger<ISeedDirector> _logger;
+    internal protected readonly ILogger<ISeedDirector> _logger = null!;
 
     #endregion
 
