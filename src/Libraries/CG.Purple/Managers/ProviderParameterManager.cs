@@ -37,6 +37,11 @@ internal class ProviderParameterManager : IProviderParameterManager
     internal protected IDistributedCache _distributedCache = null!;
 
     /// <summary>
+    /// This field contains the cryptographer for this manager.
+    /// </summary>
+    internal protected ICryptographer _cryptographer = null!;
+
+    /// <summary>
     /// This field contains the logger for this manager.
     /// </summary>
     internal protected readonly ILogger<IProviderParameterManager> _logger = null!;
@@ -53,26 +58,30 @@ internal class ProviderParameterManager : IProviderParameterManager
     /// This constructor creates a new instance of the <see cref="ProviderParameterManager"/>
     /// class.
     /// </summary>
-    /// <param name="providerParameterRepository">The provider parameter repository to use
-    /// with this manager.</param>
-    /// <param name="distributedCache">The distributed cache to use for 
+    /// <param name="providerParameterRepository">The provider parameter 
+    /// repository to use with this manager.</param>
+    /// <param name="distributedCache">The distributed cache to use with
     /// this manager.</param>
+    /// <param name="cryptographer">The cryptographer to use with this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ArgumentException">This exception is thrown whenever 
+    /// one or more arguments are missing, or invalid.</exception>
     public ProviderParameterManager(
         IProviderParameterRepository providerParameterRepository,
         IDistributedCache distributedCache,
+        ICryptographer cryptographer,
         ILogger<IProviderParameterManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(providerParameterRepository, nameof(providerParameterRepository))
             .ThrowIfNull(distributedCache, nameof(distributedCache))
+            .ThrowIfNull(cryptographer, nameof(cryptographer))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _providerParameterRepository = providerParameterRepository;
+        _cryptographer = cryptographer;
         _distributedCache = distributedCache;
         _logger = logger;
     }

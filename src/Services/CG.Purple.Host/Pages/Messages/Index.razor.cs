@@ -174,7 +174,6 @@ public partial class Index
         {
             return true;
         }
-
         if (element.To.Contains(searchString, StringComparison.OrdinalIgnoreCase))
         {
             return true;
@@ -200,7 +199,12 @@ public partial class Index
                 return true;
             }
         }
-        if ((Enum.GetName<MessageState>(element.MessageState) ?? "").Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if ((Enum.GetName<MessageState>(element.MessageState) ?? "")
+            .Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+        if (element.Body.Contains(searchString, StringComparison.OrdinalIgnoreCase))
         {
             return true;
         }
@@ -224,16 +228,98 @@ public partial class Index
         {
             return true;
         }
-
         if (element.To.Contains(searchString, StringComparison.OrdinalIgnoreCase))
         {
             return true;
         }
-        if ((Enum.GetName<MessageState>(element.MessageState) ?? "").Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if ((Enum.GetName<MessageState>(element.MessageState) ?? "")
+            .Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+        if (element.Body.Contains(searchString, StringComparison.OrdinalIgnoreCase))
         {
             return true;
         }
         return false;
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method manually refreshes the mail messages collection.
+    /// </summary>
+    protected async Task OnRefreshMailMessages()
+    {
+        try
+        {
+            // We're busy.
+            _isBusy = true;
+
+            // Give the UI time to show the busy indicator.
+            await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
+            await Task.Delay(250);
+
+            // Fetch the messages.
+            _mailMessages = await MailManager.FindAllAsync();
+
+            // Give the base class a chance.
+            await base.OnInitializedAsync();
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method manually refreshes the text messages collection.
+    /// </summary>
+    protected async Task OnRefreshTextMessages()
+    {
+        try
+        {
+            // We're busy.
+            _isBusy = true;
+
+            // Give the UI time to show the busy indicator.
+            await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
+            await Task.Delay(250);
+
+            // Fetch the messages.
+            _textMessages = await TextManager.FindAllAsync();
+
+            // Give the base class a chance.
+            await base.OnInitializedAsync();
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
+        }
     }
 
     #endregion

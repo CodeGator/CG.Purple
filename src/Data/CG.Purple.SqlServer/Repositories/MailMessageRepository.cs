@@ -351,7 +351,7 @@ internal class MailMessageRepository : IMailMessageRepository
             // Perform the mail message search.
             var mailMessages = await dbContext.MailMessages
                 .Include(x => x.Attachments)
-                .Include(x => x.MessageProperties)
+                .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                 .ToListAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -414,7 +414,7 @@ internal class MailMessageRepository : IMailMessageRepository
             var mailMessage = await dbContext.MailMessages.Where(x => 
                 x.Id == id
                 ).Include(x => x.Attachments)
-                 .Include(x => x.MessageProperties)
+                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                  .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -492,7 +492,7 @@ internal class MailMessageRepository : IMailMessageRepository
             var mailMessage = await dbContext.MailMessages.Where(x =>
                 x.MessageKey == messageKey.ToUpper()
                 ).Include(x => x.Attachments)
-                 .Include(x => x.MessageProperties)
+                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                  .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -567,8 +567,8 @@ internal class MailMessageRepository : IMailMessageRepository
                 x.IsDisabled == false && 
                 x.MessageState != MessageState.Failed &&
                 x.MessageState != MessageState.Sent
-                ).Include(x => x.Attachments)
-                 .Include(x => x.MessageProperties)
+                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType)
+                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                  .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);

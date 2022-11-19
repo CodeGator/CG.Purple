@@ -5,7 +5,7 @@
 <div class="container">
     <div class="jumbotron">
         <MudText Typo="Typo.h4">@typeof(Index).Assembly.ReadProduct()</MudText>
-        <MudText Class="px-5" Typo="Typo.body1">Version [ @typeof(Index).Assembly.ReadInformationalVersion() ]</MudText>
+        <MudText Style=@($"color: {@DefaultTheme.Instance().Palette.GrayDefault}") Class="px-5" Typo="Typo.body1">Version [ @typeof(Index).Assembly.ReadInformationalVersion() ]</MudText>
     </div>
 
     <MudText Class="py-8" Typo="Typo.h5">Because you've got better things to do than babysit emails, right?</MudText>
@@ -21,7 +21,7 @@
         <li style="margin: 10px">Easily integrates with 3rd party OIDC and JWT services.</li>
     </ul>
     <br />
-    <MudText Class="px-4" Typo="Typo.caption">* (additional open source licenses may apply)</MudText>
+    <MudText Style=@($"color: {@DefaultTheme.Instance().Palette.GrayDefault}") Class="px-4" Typo="Typo.caption">* (additional open source licenses may apply)</MudText>
 </div>
 
 

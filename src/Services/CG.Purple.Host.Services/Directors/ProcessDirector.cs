@@ -331,7 +331,7 @@ internal class ProcessDirector : IProcessDirector
                         "Looking for an available mail provider."
                         );
 
-                    // For now, this will be our provider selection strategy.
+                    // For now, this will be our provider selection.
                     var availableProvider = availableProviders
                         .OrderBy(x => x.Priority)
                         .FirstOrDefault();
@@ -382,7 +382,7 @@ internal class ProcessDirector : IProcessDirector
                     // Since 'message' is a foreach iterator variable, we can't 
                     //   just add the message property and have it be reflected
                     //   in the original collection. So, we have to add it to 
-                    //   another collection, instead. Isn't C# fun?
+                    //   another collection instead. Isn't C# fun?
                     assignedMessages.Add(message);
 
                     // Log what we are about to do.
@@ -455,9 +455,20 @@ internal class ProcessDirector : IProcessDirector
         }
         else
         {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "No unassigned text messages were found."
+                );
+
             // Return the results.
             return messages;
         }
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "{count} text messages were assigned.",
+            assignedMessages.Count
+            );
 
         // Return the results.
         return assignedMessages;
@@ -544,7 +555,7 @@ internal class ProcessDirector : IProcessDirector
                         "Looking for an available text provider."
                         );
 
-                    // For now, this will be our provider selection strategy.
+                    // For now, this will be our provider selection.
                     var availableProvider = availableProviders
                         .OrderBy(x => x.Priority)
                         .FirstOrDefault();
@@ -595,7 +606,7 @@ internal class ProcessDirector : IProcessDirector
                     // Since 'message' is a foreach iterator variable, we can't 
                     //   just add the message property and have it be reflected
                     //   in the original collection. So, we have to add it to 
-                    //   another collection, instead. Isn't C# fun?
+                    //   another collection instead. Isn't C# fun?
                     assignedMessages.Add(message);
 
                     // Log what we are about to do.
@@ -668,9 +679,20 @@ internal class ProcessDirector : IProcessDirector
         }
         else
         {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "No unassigned text messages were found."
+                );
+
             // Return the results.
             return messages;
         }
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "{count} text messages were assigned.",
+            assignedMessages.Count
+            );
 
         // Return the results.
         return assignedMessages;

@@ -1,4 +1,6 @@
 
+using CG.Purple.Host.SignalR;
+
 try
 {
     // Log what we are about to do.
@@ -43,6 +45,12 @@ try
     // Add misc stuff we'll need.
     builder.Services.AddHttpContextAccessor();
 
+    // Add SignalR
+    builder.Services.AddSignalR(options =>
+    {
+        options.EnableDetailedErrors = true;
+    });
+
     // Build the application.
     var app = builder.Build();
 
@@ -59,6 +67,7 @@ try
     app.UseRouting();
     app.MapControllers();
     app.MapBlazorHub();
+    app.MapHub<StatusHub>("/_status"); 
     app.MapFallbackToPage("/_Host");
 
     // Use the CodeGator stuff.

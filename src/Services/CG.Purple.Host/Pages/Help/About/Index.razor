@@ -10,7 +10,7 @@
     <div class="jumbotron">
         <MudText Typo="Typo.h5" Class="pb-3">@typeof(Index).Assembly.ReadProduct()</MudText>
         <MudText Class="px-4" Style="font-size:small" Typo="Typo.body1">@typeof(Index).Assembly.ReadDescription()</MudText>
-        <MudText Class="px-4" Style="font-size:small" Typo="Typo.body1">Version: @typeof(Index).Assembly.ReadInformationalVersion()</MudText>
+        <MudText Style=@($"color: {@DefaultTheme.Instance().Palette.GrayDefault}; font-size:small") Class="px-4" Typo="Typo.body1">Version: @typeof(Index).Assembly.ReadInformationalVersion()</MudText>
     </div>
 </div>
 

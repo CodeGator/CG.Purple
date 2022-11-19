@@ -1,4 +1,5 @@
-﻿global using CG.Purple.Managers;
+﻿global using CG.Cryptography;
+global using CG.Purple.Managers;
 global using CG.Purple.Models;
 global using CG.Purple.Options;
 global using CG.Purple.Repositories;

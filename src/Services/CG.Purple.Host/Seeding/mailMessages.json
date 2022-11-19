@@ -1,13 +1,6 @@
 {
   "MailMessages": [
     {
-      "To": "test1@codegator.com",
-      "Subject": "test email # 1",
-      "Body": "This is test email # 1"
-    }
-  ],
-  "MailMessages.1": [
-    {
       "MessageKey": "9D29C7EC-3BB2-4A5D-A3A4-DE3F19F15928",
       "To": "test1@codegator.com",
       "CC": "",
