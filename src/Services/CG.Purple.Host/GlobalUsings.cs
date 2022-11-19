@@ -7,6 +7,7 @@ global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Mvc.RazorPages;
 global using MudBlazor;
 global using MudBlazor.Services;
+global using CG.Purple.Host.SignalR;
 global using System.Diagnostics;
 global using System.Reflection;
 global using Microsoft.AspNetCore.SignalR;

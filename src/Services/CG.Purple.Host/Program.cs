@@ -1,6 +1,4 @@
 
-using CG.Purple.Host.SignalR;
-
 try
 {
     // Log what we are about to do.
@@ -15,6 +13,7 @@ try
     // Add the standard Blazor stuff.
     builder.Services.AddRazorPages();
     builder.Services.AddServerSideBlazor();
+    builder.Services.AddHttpContextAccessor();
 
     // Add MudBlazor stuff
     builder.Services.AddMudServices();
@@ -38,14 +37,20 @@ try
     builder.AddServicesLayer(
         bootstrapLogger: BootstrapLogger.Instance()
         );
+    builder.AddSmtpProvider(
+        bootstrapLogger: BootstrapLogger.Instance()
+        );
+    builder.AddTwillioProvider(
+        bootstrapLogger: BootstrapLogger.Instance()
+        );
+    builder.AddSendGridProvider(
+        bootstrapLogger: BootstrapLogger.Instance()
+        );
     builder.AddSeedingLayer(
         bootstrapLogger: BootstrapLogger.Instance()
         );
-
-    // Add misc stuff we'll need.
-    builder.Services.AddHttpContextAccessor();
-
-    // Add SignalR
+        
+    // Add SignalR stuff.
     builder.Services.AddSignalR(options =>
     {
         options.EnableDetailedErrors = true;
@@ -67,8 +72,10 @@ try
     app.UseRouting();
     app.MapControllers();
     app.MapBlazorHub();
-    app.MapHub<StatusHub>("/_status"); 
     app.MapFallbackToPage("/_Host");
+
+    // Use SignalR stuff.
+    app.MapHub<StatusHub>("/_status");
 
     // Use the CodeGator stuff.
     app.UseDalStartup()
