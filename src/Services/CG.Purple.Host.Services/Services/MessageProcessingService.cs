@@ -13,14 +13,19 @@ internal class MessageProcessingService : BackgroundService
     #region Fields
 
     /// <summary>
+    /// This field contains the message processing options for this service.
+    /// </summary>
+    internal protected readonly IOptions<HostedServiceOptions> _hostedServiceOptions = null!;
+
+    /// <summary>
     /// This field contains the service provider for this service.
     /// </summary>
-    internal protected readonly IServiceProvider _serviceProvider;
+    internal protected readonly IServiceProvider _serviceProvider = null!;
 
     /// <summary>
     /// This field contains the logger for this service.
     /// </summary>
-    internal protected readonly ILogger<MessageProcessingService> _logger;
+    internal protected readonly ILogger<MessageProcessingService> _logger = null!;
 
     #endregion
 
@@ -34,19 +39,24 @@ internal class MessageProcessingService : BackgroundService
     /// This constructor creates a new instance of the <see cref="MessageProcessingService"/>
     /// class.
     /// </summary>
+    /// <param name="hostedServiceOptions">The hosted service options to 
+    /// use with this service.</param>
     /// <param name="serviceProvider">The service provider to use with
     /// this service.</param>
     /// <param name="logger">The logger to use with this service.</param>
     public MessageProcessingService(
+        IOptions<HostedServiceOptions> hostedServiceOptions,
         IServiceProvider serviceProvider,
         ILogger<MessageProcessingService> logger
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(serviceProvider, nameof(serviceProvider))
+        Guard.Instance().ThrowIfNull(hostedServiceOptions, nameof(hostedServiceOptions))
+            .ThrowIfNull(serviceProvider, nameof(serviceProvider))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
+        _hostedServiceOptions = hostedServiceOptions;
         _serviceProvider = serviceProvider;
         _logger = logger; 
     }
@@ -85,18 +95,23 @@ internal class MessageProcessingService : BackgroundService
                     )
                 );
 
-            // Log what we are about to do.
-            _logger.LogTrace(
-                "Pausing the {svc} service for {time}.",
-                nameof(MessageProcessingService),
-                TimeSpan.FromSeconds(30)
+            // Were options provided?
+            if (_hostedServiceOptions.Value.MessageProcessing is not null &&
+                _hostedServiceOptions.Value.MessageProcessing.StartupDelay is not null)
+            {
+                // Log what we are about to do.
+                _logger.LogInformation(
+                    "Pausing the {svc} service startup for {time}.",
+                    nameof(MessageProcessingService),
+                    TimeSpan.FromSeconds(30)
                 );
 
-            // Let's not work tooo soon.
-            await Task.Delay(
-                TimeSpan.FromSeconds(30),
-                stoppingToken
-                );
+                // Let's not work tooo soon.
+                await Task.Delay(
+                    _hostedServiceOptions.Value.MessageProcessing.StartupDelay.Value,
+                    stoppingToken
+                    );
+            }           
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -137,18 +152,40 @@ internal class MessageProcessingService : BackgroundService
                     stoppingToken
                     ).ConfigureAwait(false);
 
-                // Log what we are about to do.
-                _logger.LogTrace(
-                    "Pausing the {svc} service for {time}.",
-                    nameof(MessageProcessingService),
-                    TimeSpan.FromSeconds(30)
+                // Were options provided?
+                if (_hostedServiceOptions.Value.MessageProcessing is not null &&
+                    _hostedServiceOptions.Value.MessageProcessing.ThrottleDuration is not null)
+                {
+                    // Log what we are about to do.
+                    _logger.LogInformation(
+                        "Pausing the {svc} service iteration for {time}.",
+                        nameof(MessageProcessingService),
+                        _hostedServiceOptions.Value.MessageProcessing.ThrottleDuration.Value
                     );
 
-                // Let's not work tooo hard.
-                await Task.Delay(
-                    TimeSpan.FromSeconds(30),
-                    stoppingToken
+                    // Let's not work tooo soon.
+                    await Task.Delay(
+                        _hostedServiceOptions.Value.MessageProcessing.ThrottleDuration.Value,
+                        stoppingToken
+                        );
+                }
+                else
+                {
+                    // If no throttle was specified, use this default.
+                    
+                    // Log what we are about to do.
+                    _logger.LogInformation(
+                        "Pausing the {svc} service iteration for {time}.",
+                        nameof(MessageProcessingService),
+                        TimeSpan.FromSeconds(10)
                     );
+
+                    // Let's not work tooo soon.
+                    await Task.Delay(
+                        TimeSpan.FromSeconds(10),
+                        stoppingToken
+                        );
+                }
             }
 
             // Log what we are about to do.
