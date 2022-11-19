@@ -105,7 +105,7 @@ internal class TextMessageRepository : ITextMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for text messages"
+                "Failed to search for text messages!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class TextMessageRepository : ITextMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count text messages"
+                "Failed to count text messages!"
                 );
 
             // Provider better context.
@@ -261,7 +261,7 @@ internal class TextMessageRepository : ITextMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a text message"
+                "Failed to create a text message!"
                 );
 
             // Provider better context.
@@ -312,7 +312,7 @@ internal class TextMessageRepository : ITextMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a text message"
+                "Failed to delete a text message!"
                 );
 
             // Provider better context.
@@ -367,12 +367,13 @@ internal class TextMessageRepository : ITextMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for text messages"
+                "Failed to search for text messages!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for a text messages",
+                message: $"The repository failed to search for a text " +
+                "messages!",
                 innerException: ex
                 );
         }
@@ -436,13 +437,13 @@ internal class TextMessageRepository : ITextMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for a text message by id"
+                "Failed to search for a text message by id!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to search for a text " +
-                "message by id",
+                "message by id!",
                 innerException: ex
                 );
         }
@@ -506,13 +507,73 @@ internal class TextMessageRepository : ITextMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for a text message by key"
+                "Failed to search for a text message by key!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to search for a text " +
-                "message by key",
+                "message by key!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<TextMessage>> FindPendingAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for pending text messages."
+                );
+
+            // Perform the mail message search.
+            var textMessages = await dbContext.TextMessages.Where(x =>
+                x.IsDisabled == false &&
+                x.MessageState != MessageState.Failed &&
+                x.MessageState != MessageState.Sent
+                ).Include(x => x.MessageProperties)
+                 .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entities to a models.
+            var result = textMessages.Select(x =>
+                _mapper.Map<TextMessage>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for pending text messages!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for pending text " +
+                "messages!",
                 innerException: ex
                 );
         }
@@ -559,12 +620,11 @@ internal class TextMessageRepository : ITextMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
-            dbContext.Entry(entity.MessageKey).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -617,7 +677,7 @@ internal class TextMessageRepository : ITextMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a text message"
+                "Failed to update a text message!"
                 );
 
             // Provider better context.

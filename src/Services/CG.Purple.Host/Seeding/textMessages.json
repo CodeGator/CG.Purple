@@ -12,14 +12,18 @@
       "Body": "This is test text # 2",
       "Properties": [
         {
-          "Name": "TestProperty1",
+          "PropertyTypeName": "TestProperty1",
           "Value": "value 1"
+        },
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "SendGrid"
         }
       ],
       "IsDisabled": false
     },
     {
-      "MessageKey": "0C53209D-5689-46ED-8A62-F45CBF61BA4B",
+      "MessageKey": "43803A8A-D420-4CBD-BD90-F2C74B64AFF2",
       "To": "9188675309",
       "Body": "This is test text # 3",
       "Properties": [
@@ -61,6 +65,10 @@
         {
           "PropertyTypeName": "TestProperty1",
           "Value": "value for 1 text # 6"
+        },
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "Twillio"
         }
       ],
       "IsDisabled": false
@@ -140,7 +148,12 @@
       "MessageKey": "",
       "To": "9188675309",
       "Body": "This is test text # 12",
-      "Properties": [],
+      "Properties": [
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "Twillio"
+        }
+      ],
       "IsDisabled": false
     },
     {
@@ -161,7 +174,12 @@
       "MessageKey": "",
       "To": "9188675309",
       "Body": "This is test text # 15",
-      "Properties": [],
+      "Properties": [
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "SendGrid"
+        }
+      ],
       "IsDisabled": true
     }
   ]

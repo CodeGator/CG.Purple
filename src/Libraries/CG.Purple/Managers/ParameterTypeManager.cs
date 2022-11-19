@@ -105,7 +105,7 @@ internal class ParameterTypeManager : IParameterTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for parameter types!"
@@ -141,7 +141,7 @@ internal class ParameterTypeManager : IParameterTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count parameter types!"
@@ -196,7 +196,7 @@ internal class ParameterTypeManager : IParameterTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new parameter type!"
@@ -249,7 +249,7 @@ internal class ParameterTypeManager : IParameterTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a parameter type!"
@@ -290,7 +290,7 @@ internal class ParameterTypeManager : IParameterTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for parameter types by name!"
@@ -344,7 +344,7 @@ internal class ParameterTypeManager : IParameterTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a parameter type!"

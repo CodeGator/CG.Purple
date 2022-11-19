@@ -1,4 +1,6 @@
 ﻿
+using System.Xml.Linq;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -99,13 +101,16 @@ internal class ProviderTypeManager : IProviderTypeManager
                 );
 
             // Perform the search.
-            return await _providerTypeRepository.AnyAsync(
+            var result = await _providerTypeRepository.AnyAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for provider types!"
@@ -135,13 +140,16 @@ internal class ProviderTypeManager : IProviderTypeManager
                 );
 
             // Perform the search.
-            return await _providerTypeRepository.CountAsync(
+            var result = await _providerTypeRepository.CountAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count provider types!"
@@ -189,14 +197,17 @@ internal class ProviderTypeManager : IProviderTypeManager
                 );
 
             // Perform the operation.
-            return await _providerTypeRepository.CreateAsync(
+            var result = await _providerTypeRepository.CreateAsync(
                 providerType,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new provider type!"
@@ -249,7 +260,7 @@ internal class ProviderTypeManager : IProviderTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a provider type!"
@@ -258,6 +269,126 @@ internal class ProviderTypeManager : IProviderTypeManager
             // Provider better context.
             throw new ManagerException(
                 message: $"The manager failed to delete a provider type!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProviderType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProviderTypeRepository.FindAllAsync)
+                );
+
+            // Perform the operation.
+            var result = await _providerTypeRepository.FindAllAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for provider types!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for provider " +
+                "types!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProviderType>> FindForEmailsAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProviderTypeRepository.FindForEmailsAsync)
+                );
+
+            // Perform the operation.
+            var result = await _providerTypeRepository.FindForEmailsAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for provider types for emails!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for provider " +
+                "types for emails!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProviderType>> FindForTextsAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProviderTypeRepository.FindForTextsAsync)
+                );
+
+            // Perform the operation.
+            var result = await _providerTypeRepository.FindForTextsAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for provider types for texts!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for provider " +
+                "types for texts!",
                 innerException: ex
                 );
         }
@@ -283,14 +414,17 @@ internal class ProviderTypeManager : IProviderTypeManager
                 );
 
             // Perform the operation.
-            return await _providerTypeRepository.FindByNameAsync(
+            var result = await _providerTypeRepository.FindByNameAsync(
                 name,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for provider types by name!"
@@ -337,14 +471,17 @@ internal class ProviderTypeManager : IProviderTypeManager
                 );
 
             // Perform the operation.
-            return await _providerTypeRepository.UpdateAsync(
+            var result = await _providerTypeRepository.UpdateAsync(
                 providerType,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a provider type!"

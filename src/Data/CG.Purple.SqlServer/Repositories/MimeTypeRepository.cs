@@ -105,7 +105,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for mime types"
+                "Failed to search for mime types!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count mime types"
+                "Failed to count mime types!"
                 );
 
             // Provider better context.
@@ -258,7 +258,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a mime type"
+                "Failed to create a mime type!"
                 );
 
             // Provider better context.
@@ -309,7 +309,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a mime type"
+                "Failed to delete a mime type!"
                 );
 
             // Provider better context.
@@ -420,7 +420,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for mime types by type and/or sub-type"
+                "Failed to search for mime types by type and/or sub-type!"
                 );
 
             // Provider better context.
@@ -504,13 +504,13 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for a mime type by extension"
+                "Failed to search for a mime type by extension!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to search for a mime " +
-                "type by extension",
+                "type by extension!",
                 innerException: ex
                 );
         }
@@ -557,10 +557,10 @@ internal class MimeTypeRepository : IMimeTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -613,7 +613,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a mime type"
+                "Failed to update a mime type!"
                 );
 
             // Provider better context.

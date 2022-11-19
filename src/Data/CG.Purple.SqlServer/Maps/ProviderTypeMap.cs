@@ -64,10 +64,31 @@ internal class ProviderTypeMap : EntityMapBase<Entities.ProviderType>
         builder.Property(e => e.Description)
             .HasMaxLength(128);
 
+        // Setup the column.
+        builder.Property(e => e.CanProcessEmails)
+            .IsRequired();
+
+        // Setup the column.
+        builder.Property(e => e.CanProcessTexts)
+            .IsRequired();
+
+        // Setup the column.
+        builder.Property(e => e.Priority)
+            .HasDefaultValue(0)
+            .IsRequired();
+
+        // Setup the column.
+        builder.Property(e => e.IsDisabled)
+            .IsRequired();
+
         // Setup the index.
         builder.HasIndex(e => new
         {
-            e.Name
+            e.Name,
+            e.CanProcessEmails,
+            e.CanProcessTexts,
+            e.Priority,
+            e.IsDisabled
         },
         "IX_ProviderTypes"
         );

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CG.Purple.SqlServer.Migrations
 {
     [DbContext(typeof(PurpleDbContext))]
-    [Migration("20221118181258_InitialCreate")]
+    [Migration("20221119175722_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -157,7 +157,10 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "MessageKey", "MessageType", "MessageState", "IsDisabled" }, "IX_Messages");
+                    b.HasIndex(new[] { "MessageType", "MessageState", "IsDisabled" }, "IX_Messages");
+
+                    b.HasIndex(new[] { "MessageKey" }, "IX_Messages_Keys")
+                        .IsUnique();
 
                     b.ToTable("Messages", "Purple");
 
@@ -413,6 +416,12 @@ namespace CG.Purple.SqlServer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("CanProcessEmails")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CanProcessTexts")
+                        .HasColumnType("bit");
+
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -423,6 +432,9 @@ namespace CG.Purple.SqlServer.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
+
+                    b.Property<bool>("IsDisabled")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -435,9 +447,14 @@ namespace CG.Purple.SqlServer.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
+                    b.Property<int>("Priority")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Name" }, "IX_ProviderTypes");
+                    b.HasIndex(new[] { "Name", "CanProcessEmails", "CanProcessTexts", "Priority", "IsDisabled" }, "IX_ProviderTypes");
 
                     b.ToTable("ProviderTypes", "Purple");
                 });

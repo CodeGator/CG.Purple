@@ -1,7 +1,4 @@
 
-// By default log information level events.
-BootstrapLogger.LogLevelToInformation();
-
 try
 {
     // Log what we are about to do.
@@ -33,15 +30,15 @@ try
     builder.AddDataAccessLayer(
         bootstrapLogger: BootstrapLogger.Instance()
         );
+    builder.AddControllerLayer(
+        bootstrapLogger: BootstrapLogger.Instance()
+        );
+    builder.AddServicesLayer(
+        bootstrapLogger: BootstrapLogger.Instance()
+        );
     builder.AddSeedingLayer(
         bootstrapLogger: BootstrapLogger.Instance()
         );
-
-    // Add the controllers.
-    builder.Services.AddControllers()
-        .AddApplicationPart(
-            Assembly.Load("CG.Purple.Host.Controllers")
-            );
 
     // Add misc stuff we'll need.
     builder.Services.AddHttpContextAccessor();

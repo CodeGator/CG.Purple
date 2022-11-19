@@ -105,7 +105,7 @@ internal class ProviderParameterManager : IProviderParameterManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for provider parameters!"
@@ -141,7 +141,7 @@ internal class ProviderParameterManager : IProviderParameterManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count provider parameters!"
@@ -196,7 +196,7 @@ internal class ProviderParameterManager : IProviderParameterManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new provider parameter!"
@@ -249,7 +249,7 @@ internal class ProviderParameterManager : IProviderParameterManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a provider parameter!"
@@ -302,7 +302,7 @@ internal class ProviderParameterManager : IProviderParameterManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a provider parameter!"

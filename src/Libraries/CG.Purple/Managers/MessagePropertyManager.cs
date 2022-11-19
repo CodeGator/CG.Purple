@@ -105,7 +105,7 @@ internal class MessagePropertyManager : IMessagePropertyManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for messagePropertys!"
@@ -141,7 +141,7 @@ internal class MessagePropertyManager : IMessagePropertyManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count messagePropertys!"
@@ -196,7 +196,7 @@ internal class MessagePropertyManager : IMessagePropertyManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new messageProperty!"
@@ -249,7 +249,7 @@ internal class MessagePropertyManager : IMessagePropertyManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a messageProperty!"
@@ -302,7 +302,7 @@ internal class MessagePropertyManager : IMessagePropertyManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a messageProperty!"

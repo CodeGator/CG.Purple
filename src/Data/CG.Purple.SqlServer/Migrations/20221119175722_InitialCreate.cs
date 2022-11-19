@@ -101,6 +101,10 @@ namespace CG.Purple.SqlServer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
+                    CanProcessEmails = table.Column<bool>(type: "bit", nullable: false),
+                    CanProcessTexts = table.Column<bool>(type: "bit", nullable: false),
+                    Priority = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    IsDisabled = table.Column<bool>(type: "bit", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -362,7 +366,14 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "IX_Messages",
                 schema: "Purple",
                 table: "Messages",
-                columns: new[] { "MessageKey", "MessageType", "MessageState", "IsDisabled" });
+                columns: new[] { "MessageType", "MessageState", "IsDisabled" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Messages_Keys",
+                schema: "Purple",
+                table: "Messages",
+                column: "MessageKey",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_MimeTypes",
@@ -411,7 +422,7 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "IX_ProviderTypes",
                 schema: "Purple",
                 table: "ProviderTypes",
-                column: "Name");
+                columns: new[] { "Name", "CanProcessEmails", "CanProcessTexts", "Priority", "IsDisabled" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_TextMessages",

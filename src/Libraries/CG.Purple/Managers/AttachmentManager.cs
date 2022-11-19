@@ -105,7 +105,7 @@ internal class AttachmentManager : IAttachmentManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for attachments!"
@@ -141,7 +141,7 @@ internal class AttachmentManager : IAttachmentManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count attachments!"
@@ -196,7 +196,7 @@ internal class AttachmentManager : IAttachmentManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new attachment!"
@@ -249,7 +249,7 @@ internal class AttachmentManager : IAttachmentManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a attachment!"
@@ -302,7 +302,7 @@ internal class AttachmentManager : IAttachmentManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a attachment!"

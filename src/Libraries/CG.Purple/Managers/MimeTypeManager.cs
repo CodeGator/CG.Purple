@@ -105,7 +105,7 @@ internal class MimeTypeManager : IMimeTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for mime types!"
@@ -141,7 +141,7 @@ internal class MimeTypeManager : IMimeTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count mime types!"
@@ -196,7 +196,7 @@ internal class MimeTypeManager : IMimeTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new mime type!"
@@ -249,7 +249,7 @@ internal class MimeTypeManager : IMimeTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a mime type!"
@@ -289,7 +289,7 @@ internal class MimeTypeManager : IMimeTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for mime types!"
@@ -330,7 +330,7 @@ internal class MimeTypeManager : IMimeTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for mime types!"
@@ -383,7 +383,7 @@ internal class MimeTypeManager : IMimeTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a mime type!"

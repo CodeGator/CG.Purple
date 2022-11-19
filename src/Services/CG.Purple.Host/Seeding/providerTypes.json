@@ -2,15 +2,27 @@
   "ProviderTypes": [
     {
       "Name": "Smtp",
-      "Description": "A generic SMTP provider"
+      "Description": "A generic SMTP provider",
+      "IsDisabled": false,
+      "CanProcessEmails": true,
+      "CanProcessTexts": false,
+      "Priority": 0
     },
     {
       "Name": "Twillio",
-      "Description": "Twillio provider"
+      "Description": "A Twillio provider",
+      "IsDisabled": true,
+      "CanProcessEmails": true,
+      "CanProcessTexts": true,
+      "Priority": 1
     },
     {
       "Name": "SendGrid",
-      "Description": "SendGrid provider"
+      "Description": "A SendGrid provider",
+      "IsDisabled": false,
+      "CanProcessEmails": true,
+      "CanProcessTexts": true,
+      "Priority": 2
     }
   ]
 }

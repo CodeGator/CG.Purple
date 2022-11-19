@@ -105,7 +105,7 @@ internal class MailMessageManager : IMailMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for mail messages!"
@@ -135,13 +135,16 @@ internal class MailMessageManager : IMailMessageManager
                 );
 
             // Perform the search.
-            return await _mailMessageRepository.CountAsync(
+            var result = await _mailMessageRepository.CountAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count mail messages!"
@@ -201,14 +204,17 @@ internal class MailMessageManager : IMailMessageManager
                 );
 
             // Perform the operation.
-            return await _mailMessageRepository.CreateAsync(
+            var result = await _mailMessageRepository.CreateAsync(
                 mailMessage,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new mail message!"
@@ -261,7 +267,7 @@ internal class MailMessageManager : IMailMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a mail message!"
@@ -291,13 +297,16 @@ internal class MailMessageManager : IMailMessageManager
                 );
 
             // Perform the operation.
-            return await _mailMessageRepository.FindAllAsync(
+            var result = await _mailMessageRepository.FindAllAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for mail messages!"
@@ -332,14 +341,17 @@ internal class MailMessageManager : IMailMessageManager
                 );
 
             // Perform the operation.
-            return await _mailMessageRepository.FindByIdAsync(
+            var result = await _mailMessageRepository.FindByIdAsync(
                 id,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for a mail message by id!"
@@ -374,14 +386,17 @@ internal class MailMessageManager : IMailMessageManager
                 );
 
             // Perform the operation.
-            return await _mailMessageRepository.FindByKeyAsync(
+            var result = await _mailMessageRepository.FindByKeyAsync(
                 messageKey,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for a mail message by key!"
@@ -391,6 +406,46 @@ internal class MailMessageManager : IMailMessageManager
             throw new ManagerException(
                 message: $"The manager failed to search for a mail " +
                 "message by key!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<MailMessage>> FindPendingAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IMailMessageRepository.FindPendingAsync)
+                );
+
+            // Perform the operation.
+            var result = await _mailMessageRepository.FindPendingAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for pending mail messages!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for pending mail " +
+                "messages!",
                 innerException: ex
                 );
         }
@@ -428,14 +483,17 @@ internal class MailMessageManager : IMailMessageManager
                 );
 
             // Perform the operation.
-            return await _mailMessageRepository.UpdateAsync(
+            var result = await _mailMessageRepository.UpdateAsync(
                 mailMessage,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a mail message!"

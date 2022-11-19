@@ -22,6 +22,14 @@ public enum MessageState
 
     /// <summary>
     /// This enumeration represents a message that has
+    /// been picked up for processing, has failed processing
+    /// at least once, and is now retrying.
+    /// </summary>
+    [Description("Message is retrying")]
+    Retrying,
+
+    /// <summary>
+    /// This enumeration represents a message that has
     /// been sent.
     /// </summary>
     [Description("Message was sent")]

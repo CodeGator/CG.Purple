@@ -105,7 +105,7 @@ internal class ProviderParameterRepository : IProviderParameterRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for provider parameters"
+                "Failed to search for provider parameters!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class ProviderParameterRepository : IProviderParameterRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count provider parameters"
+                "Failed to count provider parameters!"
                 );
 
             // Provider better context.
@@ -258,7 +258,7 @@ internal class ProviderParameterRepository : IProviderParameterRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a provider parameter"
+                "Failed to create a provider parameter!"
                 );
 
             // Provider better context.
@@ -314,7 +314,7 @@ internal class ProviderParameterRepository : IProviderParameterRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a provider parameter"
+                "Failed to delete a provider parameter!"
                 );
 
             // Provider better context.
@@ -366,11 +366,11 @@ internal class ProviderParameterRepository : IProviderParameterRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.ParameterTypeId).State = EntityState.Unchanged;
-            dbContext.Entry(entity.ProviderTypeId).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.ProviderTypeId).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.ParameterTypeId).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -423,7 +423,7 @@ internal class ProviderParameterRepository : IProviderParameterRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a provider parameter"
+                "Failed to update a provider parameter!"
                 );
 
             // Provider better context.

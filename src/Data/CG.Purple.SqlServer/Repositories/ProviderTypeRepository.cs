@@ -105,7 +105,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for provider types"
+                "Failed to search for provider types!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count provider types"
+                "Failed to count provider types!"
                 );
 
             // Provider better context.
@@ -258,7 +258,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a provider type"
+                "Failed to create a provider type!"
                 );
 
             // Provider better context.
@@ -309,12 +309,184 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a provider type"
+                "Failed to delete a provider type!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to delete a provider type!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProviderType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for provider types."
+                );
+
+            // Perform the provider type search.
+            var providerTypes = await dbContext.ProviderTypes
+                .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entities to models.
+            var result = providerTypes.Select(x => 
+                _mapper.Map<ProviderType>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for provider types!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for provider " +
+                "types!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProviderType>> FindForEmailsAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for provider types for emails."
+                );
+
+            // Perform the provider type search.
+            var providerTypes = await dbContext.ProviderTypes.Where(x =>
+                x.IsDisabled == false && x.CanProcessEmails
+                ).OrderByDescending(x => x.Priority)
+                 .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entities to models.
+            var result = providerTypes.Select(x =>
+                _mapper.Map<ProviderType>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for provider types for emails!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for provider " +
+                "types for emails!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProviderType>> FindForTextsAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for provider types for texts."
+                );
+
+            // Perform the provider type search.
+            var providerTypes = await dbContext.ProviderTypes.Where(x =>
+                x.IsDisabled == false && x.CanProcessTexts
+                ).OrderByDescending(x => x.Priority)
+                 .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entities to models.
+            var result = providerTypes.Select(x =>
+                _mapper.Map<ProviderType>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for provider types for texts!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for provider " +
+                "types for texts!",
                 innerException: ex
                 );
         }
@@ -357,25 +529,25 @@ internal class ProviderTypeRepository : IProviderTypeRepository
                     ).ConfigureAwait(false);
 
             // Convert the entity to a model.
-            var model = _mapper.Map<ProviderType>(
+            var result = _mapper.Map<ProviderType>(
                 providerType
                 );
 
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for a provider type by name"
+                "Failed to search for a provider type by name!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to search for a provider " +
-                "type by name",
+                "type by name!",
                 innerException: ex
                 );
         }
@@ -422,10 +594,10 @@ internal class ProviderTypeRepository : IProviderTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -478,7 +650,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a provider type"
+                "Failed to update a provider type!"
                 );
 
             // Provider better context.

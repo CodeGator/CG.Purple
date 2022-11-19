@@ -6,17 +6,21 @@
     <div class="jumbotron">
         <MudText Typo="Typo.h4">@typeof(Index).Assembly.ReadProduct()</MudText>
         <MudText Class="px-5" Typo="Typo.body1">Version [ @typeof(Index).Assembly.ReadInformationalVersion() ]</MudText>
-        <MudText Class="pt-5 pb-2" Typo="Typo.body1">@typeof(Index).Assembly.ReadDescription()</MudText>
+        <MudText Class="pt-5 pb-2" Typo="Typo.body2">@typeof(Index).Assembly.ReadDescription()</MudText>
     </div>
 
-    <MudText Class="pt-4" Typo="Typo.h6">A quick overview</MudText>
+    <MudText Class="py-5" Typo="Typo.h6">Because you've got better things to do than babysit email messages, right?</MudText>
+
+    <MudText Class="pt-3" Typo="Typo.h6">A quick overview of CG.Purple</MudText>
     <ul style="list-style-type:square;">
-        <li style="margin: 10px">Open-source, free to use (<a style=@($"color: {DefaultTheme.Instance().Palette.Info}") href="https://opensource.org/licenses/MIT">MIT</a> license), fast and reliable.</li>
+        <li style="margin: 10px">Open-source, 100% free to use (<a style=@($"color: {DefaultTheme.Instance().Palette.Info}") href="https://opensource.org/licenses/MIT">MIT</a> license *), fast and reliable.</li>
         <li style="margin: 10px">Written in <strong>C#</strong> and <strong>Blazor</strong>.</li>
-        <li style="margin: 10px">Leverages the <a style=@($"color: {DefaultTheme.Instance().Palette.Info}") href="https://mudblazor.com">MudBlazor</a> library, for a clean, reliable UI.</li>
+        <li style="margin: 10px">Leverages the <a style=@($"color: {DefaultTheme.Instance().Palette.Info}") href="https://mudblazor.com">MudBlazor</a> library for a clean, reliable UI.</li>
         <li style="margin: 10px">All sensitive data is encrypted, at rest.</li>
-        <li style="margin: 10px">Perfect for fire and forget notification handling.</li>
+        <li style="margin: 10px">Integrates with 3rd party message providers.</li>
     </ul>
+    <br />
+    <MudText Class="px-4" Typo="Typo.caption">* (additional open source licenses may apply)</MudText>
 </div>
 
 

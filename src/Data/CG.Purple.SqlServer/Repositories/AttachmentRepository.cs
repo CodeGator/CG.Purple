@@ -105,7 +105,7 @@ internal class AttachmentRepository : IAttachmentRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for attachments"
+                "Failed to search for attachments!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class AttachmentRepository : IAttachmentRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count attachments"
+                "Failed to count attachments!"
                 );
 
             // Provider better context.
@@ -262,12 +262,12 @@ internal class AttachmentRepository : IAttachmentRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a attachment"
+                "Failed to create an attachment!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to create a attachment!",
+                message: $"The repository failed to create an attachment!",
                 innerException: ex
                 );
         }
@@ -313,12 +313,12 @@ internal class AttachmentRepository : IAttachmentRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a attachment"
+                "Failed to delete an attachment!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to delete a attachment!",
+                message: $"The repository failed to delete an attachment!",
                 innerException: ex
                 );
         }
@@ -369,10 +369,10 @@ internal class AttachmentRepository : IAttachmentRepository
             dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
             dbContext.Entry(entity.Message).State = EntityState.Unchanged;
 
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -425,12 +425,12 @@ internal class AttachmentRepository : IAttachmentRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a attachment"
+                "Failed to update an attachment!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to update a attachment!",
+                message: $"The repository failed to update an attachment!",
                 innerException: ex
                 );
         }

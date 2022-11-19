@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Managers;
+
 namespace CG.Purple.Repositories;
 
 /// <summary>
@@ -116,6 +118,20 @@ public interface IMailMessageRepository
     /// repository fails to complete the operation.</exception>
     Task<MailMessage?> FindByKeyAsync(
         string messageKey,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a sequence of <see cref="MailMessage"/> objects
+    /// that are not disabled, or sent, or processed.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of matching
+    /// <see cref="MailMessage"/> objects.</returns>
+    /// <exception cref="RepositoryException">This exception is thrown whenever the
+    /// repository fails to complete the operation.</exception>
+    Task<IEnumerable<MailMessage>> FindPendingAsync(
         CancellationToken cancellationToken = default
         );
 

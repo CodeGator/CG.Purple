@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Repositories;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -105,7 +107,7 @@ internal class TextMessageManager : ITextMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for text messages!"
@@ -141,7 +143,7 @@ internal class TextMessageManager : ITextMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count text messages!"
@@ -208,7 +210,7 @@ internal class TextMessageManager : ITextMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new text message!"
@@ -261,7 +263,7 @@ internal class TextMessageManager : ITextMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a text message!"
@@ -297,7 +299,7 @@ internal class TextMessageManager : ITextMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for text messages!"
@@ -339,7 +341,7 @@ internal class TextMessageManager : ITextMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for a text message by id!"
@@ -381,7 +383,7 @@ internal class TextMessageManager : ITextMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for a text message by key!"
@@ -391,6 +393,46 @@ internal class TextMessageManager : ITextMessageManager
             throw new ManagerException(
                 message: $"The manager failed to search for a text " +
                 "message by key!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<TextMessage>> FindPendingAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(ITextMessageRepository.FindPendingAsync)
+                );
+
+            // Perform the operation.
+            var result = await _textMessageRepository.FindPendingAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for pending text messages!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for pending text " +
+                "messages!",
                 innerException: ex
                 );
         }
@@ -435,7 +477,7 @@ internal class TextMessageManager : ITextMessageManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a text message!"

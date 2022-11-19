@@ -105,7 +105,7 @@ internal class PropertyTypeManager : IPropertyTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for property types!"
@@ -141,7 +141,7 @@ internal class PropertyTypeManager : IPropertyTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count property types!"
@@ -196,7 +196,7 @@ internal class PropertyTypeManager : IPropertyTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new property type!"
@@ -249,7 +249,7 @@ internal class PropertyTypeManager : IPropertyTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a property type!"
@@ -290,7 +290,7 @@ internal class PropertyTypeManager : IPropertyTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for property types by name!"
@@ -344,7 +344,7 @@ internal class PropertyTypeManager : IPropertyTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a property type!"

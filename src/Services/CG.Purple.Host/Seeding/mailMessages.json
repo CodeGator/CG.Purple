@@ -1,6 +1,13 @@
 {
   "MailMessages": [
     {
+      "To": "test1@codegator.com",
+      "Subject": "test email # 1",
+      "Body": "This is test email # 1"
+    }
+  ],
+  "MailMessages.1": [
+    {
       "MessageKey": "9D29C7EC-3BB2-4A5D-A3A4-DE3F19F15928",
       "To": "test1@codegator.com",
       "CC": "",
@@ -9,7 +16,12 @@
       "Body": "This is test email # 1",
       "IsHtml": false,
       "Attachments": [],
-      "Properties": [],
+      "Properties": [
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "Smtp"
+        }
+      ],
       "IsDisabled": false
     },
     {
@@ -49,6 +61,10 @@
         {
           "PropertyTypeName": "TestProperty1",
           "Value": "value 1"
+        },
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "Twillio"
         }
       ],
       "IsDisabled": false
@@ -94,7 +110,12 @@
       "Body": "This is test email # 7",
       "IsHtml": false,
       "Attachments": [],
-      "Properties": [],
+      "Properties": [
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "SendGrid"
+        }
+      ],
       "IsDisabled": false
     },
     {
@@ -168,7 +189,12 @@
       "Body": "This is test email # 12",
       "IsHtml": false,
       "Attachments": [],
-      "Properties": [],
+      "Properties": [
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "Twillio"
+        }
+      ],
       "IsDisabled": false
     },
     {
@@ -180,7 +206,12 @@
       "Body": "This is test email # 13",
       "IsHtml": false,
       "Attachments": [ "Seeding/file3.txt" ],
-      "Properties": [],
+      "Properties": [
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "Smtp"
+        }
+      ],
       "IsDisabled": false
     },
     {
@@ -196,6 +227,10 @@
         {
           "PropertyTypeName": "TestProperty1",
           "Value": "value 1 for email # 14"
+        },
+        {
+          "PropertyTypeName": "Provider",
+          "Value": "SnedGrid"
         }
       ],
       "IsDisabled": false

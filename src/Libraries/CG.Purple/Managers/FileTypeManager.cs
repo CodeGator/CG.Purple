@@ -146,7 +146,7 @@ internal class FileTypeManager : IFileTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for file types!"
@@ -213,7 +213,7 @@ internal class FileTypeManager : IFileTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to count file types!"
@@ -277,7 +277,7 @@ internal class FileTypeManager : IFileTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to create a new file type!"
@@ -336,7 +336,7 @@ internal class FileTypeManager : IFileTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to delete a file type!"
@@ -410,7 +410,7 @@ internal class FileTypeManager : IFileTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to search for a file type by extension!"
@@ -473,7 +473,7 @@ internal class FileTypeManager : IFileTypeManager
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to update a file type!"

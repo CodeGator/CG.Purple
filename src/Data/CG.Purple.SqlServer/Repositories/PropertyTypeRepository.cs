@@ -105,7 +105,7 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for property types"
+                "Failed to search for property types!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count property types"
+                "Failed to count property types!"
                 );
 
             // Provider better context.
@@ -258,7 +258,7 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a property type"
+                "Failed to create a property type!"
                 );
 
             // Provider better context.
@@ -309,7 +309,7 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a property type"
+                "Failed to delete a property type!"
                 );
 
             // Provider better context.
@@ -369,13 +369,13 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for a property type by name"
+                "Failed to search for a property type by name!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to search for a property " +
-                "type by name",
+                "type by name!",
                 innerException: ex
                 );
         }
@@ -422,10 +422,10 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -478,7 +478,7 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a property type"
+                "Failed to update a property type!"
                 );
 
             // Provider better context.

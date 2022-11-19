@@ -105,7 +105,7 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for message properties"
+                "Failed to search for message properties!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count message properties"
+                "Failed to count message properties!"
                 );
 
             // Provider better context.
@@ -262,7 +262,7 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a message property"
+                "Failed to create a message property!"
                 );
 
             // Provider better context.
@@ -318,7 +318,7 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a message property"
+                "Failed to delete a message property!"
                 );
 
             // Provider better context.
@@ -374,11 +374,11 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
             dbContext.Entry(entity.Message).State = EntityState.Unchanged;
             dbContext.Entry(entity.PropertyType).State = EntityState.Unchanged;
 
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.MessageId).State = EntityState.Unchanged;
-            dbContext.Entry(entity.PropertyTypeId).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.PropertyTypeId).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.MessageId).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -431,7 +431,7 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a message property"
+                "Failed to update a message property!"
                 );
 
             // Provider better context.

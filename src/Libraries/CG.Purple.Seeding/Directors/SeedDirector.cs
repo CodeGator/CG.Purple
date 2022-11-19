@@ -1,7 +1,4 @@
 ﻿
-using CG.Purple.Models;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-
 namespace CG.Purple.Seeding.Directors;
 
 /// <summary>
@@ -200,7 +197,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed mail messages!"
@@ -253,7 +250,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex) 
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed mime types!"
@@ -306,7 +303,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed parameter types!"
@@ -359,7 +356,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed property types!"
@@ -412,7 +409,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed provider parameters!"
@@ -465,7 +462,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed provider types!"
@@ -518,7 +515,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed provider logs!"
@@ -571,7 +568,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed text messages!"
@@ -787,11 +784,23 @@ internal class SeedDirector : ISeedDirector
                             ).ConfigureAwait(false);
                     }
                 }
+
+                // Record what we did, in the log.
+                await _providerLogManager.CreateAsync(
+                    new ProviderLog()
+                    {
+                        Message = mailMessage,
+                        AfterState = MessageState.Pending,
+                        Event = ProcessEvent.Stored
+                    },
+                    "seed",
+                    cancellationToken
+                    ).ConfigureAwait(false);
             }
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed mail messages!"
@@ -925,7 +934,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed mime types!"
@@ -1013,7 +1022,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed parameter types!"
@@ -1101,7 +1110,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed property types!"
@@ -1222,7 +1231,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed provider parameters!"
@@ -1301,7 +1310,11 @@ internal class SeedDirector : ISeedDirector
                     new ProviderType()
                     {
                         Name = providerTypeOption.Name,
-                        Description = providerTypeOption.Description
+                        Description = providerTypeOption.Description,
+                        IsDisabled = providerTypeOption.IsDisabled,
+                        Priority = providerTypeOption.Priority,
+                        CanProcessEmails = providerTypeOption.CanProcessEmails,
+                        CanProcessTexts = providerTypeOption.CanProcessTexts
                     },
                     userName,
                     cancellationToken
@@ -1310,7 +1323,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed provider types!"
@@ -1515,7 +1528,7 @@ internal class SeedDirector : ISeedDirector
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed provider logs!"
@@ -1608,7 +1621,7 @@ internal class SeedDirector : ISeedDirector
                     );
 
                 // Create the text message.
-                _ = await _textMessageManager.CreateAsync(
+                var textMessage = await _textMessageManager.CreateAsync(
                     new TextMessage()
                     {
                         MessageKey = textMessageOption.MessageKey,
@@ -1619,11 +1632,64 @@ internal class SeedDirector : ISeedDirector
                     userName,
                     cancellationToken
                     ).ConfigureAwait(false);
+
+                // Are there any properties?
+                if (textMessageOption.Properties.Any())
+                {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                    "Seeding {count} properties.",
+                        textMessageOption.Properties.Count
+                        );
+
+                    // Loop through the options.
+                    foreach (var property in textMessageOption.Properties)
+                    {
+                        // Find the property type.
+                        var propertyType = await _propertyTypeManager.FindByNameAsync(
+                            property.PropertyTypeName,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+
+                        // Did we fail?
+                        if (propertyType is null)
+                        {
+                            // Panic!!
+                            throw new KeyNotFoundException(
+                                $"No property type was found for name: {property.PropertyTypeName}!"
+                                );
+                        }
+
+                        // Create the message property.
+                        _ = _messagePropertyManager.CreateAsync(
+                            new MessageProperty()
+                            {
+                                Message = textMessage,
+                                PropertyType = propertyType,
+                                Value = property.Value
+                            },
+                            userName,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+                    }
+                }
+
+                // Record what we did, in the log.
+                await _providerLogManager.CreateAsync(
+                    new ProviderLog()
+                    {
+                        Message = textMessage,
+                        AfterState = MessageState.Pending,
+                        Event = ProcessEvent.Stored
+                    },
+                    "seed",
+                    cancellationToken
+                    ).ConfigureAwait(false);
             }
         }
         catch (Exception ex)
         {
-            // Let the world know what happened.
+            // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to seed text messages!"

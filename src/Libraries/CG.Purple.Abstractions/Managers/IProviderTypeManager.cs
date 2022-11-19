@@ -77,6 +77,49 @@ public interface IProviderTypeManager
         );
 
     /// <summary>
+    /// This method searches for a sequence of <see cref="ProviderType"/> objects.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of 
+    /// <see cref="ProviderType"/> objects.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<ProviderType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a sequence of <see cref="ProviderType"/> objects
+    /// that are capable of processing emails.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of 
+    /// <see cref="ProviderType"/> objects.</returns>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<ProviderType>> FindForEmailsAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a sequence of <see cref="ProviderType"/> objects
+    /// that are capable of processing texts.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of 
+    /// <see cref="ProviderType"/> objects.</returns>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<ProviderType>> FindForTextsAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method searches for a single matching <see cref="ProviderType"/> object using
     /// the given name.
     /// </summary>

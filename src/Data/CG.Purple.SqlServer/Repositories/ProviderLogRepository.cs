@@ -105,7 +105,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for provider logs"
+                "Failed to search for provider logs!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count provider logs"
+                "Failed to count provider logs!"
                 );
 
             // Provider better context.
@@ -265,7 +265,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a provider log"
+                "Failed to create a provider log!"
                 );
 
             // Provider better context.
@@ -316,7 +316,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a provider log"
+                "Failed to delete a provider log!"
                 );
 
             // Provider better context.
@@ -368,10 +368,10 @@ internal class ProviderLogRepository : IProviderLogRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // We don't mess with associated entity types.
             dbContext.Entry(entity.Message).State = EntityState.Unchanged;
@@ -431,7 +431,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a provider log"
+                "Failed to update a provider log!"
                 );
 
             // Provider better context.

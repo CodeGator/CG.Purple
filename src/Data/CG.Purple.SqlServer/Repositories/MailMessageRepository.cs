@@ -105,7 +105,7 @@ internal class MailMessageRepository : IMailMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for mail messages"
+                "Failed to search for mail messages!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class MailMessageRepository : IMailMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count mail messages"
+                "Failed to count mail messages!"
                 );
 
             // Provider better context.
@@ -261,7 +261,7 @@ internal class MailMessageRepository : IMailMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a mail message"
+                "Failed to create a mail message!"
                 );
 
             // Provider better context.
@@ -312,7 +312,7 @@ internal class MailMessageRepository : IMailMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a mail message"
+                "Failed to delete a mail message!"
                 );
 
             // Provider better context.
@@ -350,6 +350,8 @@ internal class MailMessageRepository : IMailMessageRepository
 
             // Perform the mail message search.
             var mailMessages = await dbContext.MailMessages
+                .Include(x => x.Attachments)
+                .Include(x => x.MessageProperties)
                 .ToListAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -367,12 +369,13 @@ internal class MailMessageRepository : IMailMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for mail messages"
+                "Failed to search for mail messages!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for a mail messages",
+                message: $"The repository failed to search for a mail " +
+                "messages!",
                 innerException: ex
                 );
         }
@@ -410,7 +413,9 @@ internal class MailMessageRepository : IMailMessageRepository
             // Perform the mail message search.
             var mailMessage = await dbContext.MailMessages.Where(x => 
                 x.Id == id
-                ).FirstOrDefaultAsync(
+                ).Include(x => x.Attachments)
+                 .Include(x => x.MessageProperties)
+                 .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
 
@@ -442,13 +447,13 @@ internal class MailMessageRepository : IMailMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for a mail message by id"
+                "Failed to search for a mail message by id!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to search for a mail " +
-                "message by id",
+                "message by id!",
                 innerException: ex
                 );
         }
@@ -486,7 +491,9 @@ internal class MailMessageRepository : IMailMessageRepository
             // Perform the mail message search.
             var mailMessage = await dbContext.MailMessages.Where(x =>
                 x.MessageKey == messageKey.ToUpper()
-                ).FirstOrDefaultAsync(
+                ).Include(x => x.Attachments)
+                 .Include(x => x.MessageProperties)
+                 .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
 
@@ -518,13 +525,74 @@ internal class MailMessageRepository : IMailMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for a mail message by key"
+                "Failed to search for a mail message by key!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to search for a mail " +
-                "message by key",
+                "message by key!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<MailMessage>> FindPendingAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for pending mail messages."
+                );
+
+            // Perform the mail message search.
+            var mailMessages = await dbContext.MailMessages.Where(x =>
+                x.IsDisabled == false && 
+                x.MessageState != MessageState.Failed &&
+                x.MessageState != MessageState.Sent
+                ).Include(x => x.Attachments)
+                 .Include(x => x.MessageProperties)
+                 .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entities to a models.
+            var result = mailMessages.Select(x =>
+                _mapper.Map<MailMessage>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for pending mail messages!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for pending mail " +
+                "messages!",
                 innerException: ex
                 );
         }
@@ -571,12 +639,11 @@ internal class MailMessageRepository : IMailMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.MessageKey).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
-            dbContext.Entry(entity.MessageKey).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;            
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -629,7 +696,7 @@ internal class MailMessageRepository : IMailMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a mail message"
+                "Failed to update a mail message!"
                 );
 
             // Provider better context.

@@ -26,5 +26,25 @@ internal class ProviderType : EntityBase
     /// </summary>
     public string? Description { get; set; }
 
+    /// <summary>
+    /// This property indicates whether this provider can process emails.
+    /// </summary>
+    public bool CanProcessEmails { get; set; }
+
+    /// <summary>
+    /// This property indicates whether this provider can process texts.
+    /// </summary>
+    public bool CanProcessTexts { get; set; }
+
+    /// <summary>
+    /// This property contains the relative priority for this provider.
+    /// </summary>
+    public int Priority { get; set; }
+
+    /// <summary>
+    /// This property indicates the provider has been disabled.
+    /// </summary>
+    public bool IsDisabled { get; set; }
+
     #endregion
 }

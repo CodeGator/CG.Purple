@@ -105,7 +105,7 @@ internal class FileTypeRepository : IFileTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for file types"
+                "Failed to search for file types!"
                 );
 
             // Provider better context.
@@ -154,7 +154,7 @@ internal class FileTypeRepository : IFileTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count file types"
+                "Failed to count file types!"
                 );
 
             // Provider better context.
@@ -261,7 +261,7 @@ internal class FileTypeRepository : IFileTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a file type"
+                "Failed to create a file type!"
                 );
 
             // Provider better context.
@@ -312,7 +312,7 @@ internal class FileTypeRepository : IFileTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a file type"
+                "Failed to delete a file type!"
                 );
 
             // Provider better context.
@@ -367,12 +367,12 @@ internal class FileTypeRepository : IFileTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for file types"
+                "Failed to search for file types!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for a file types",
+                message: $"The repository failed to search for a file types!",
                 innerException: ex
                 );
         }
@@ -449,13 +449,13 @@ internal class FileTypeRepository : IFileTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for a file type by extension"
+                "Failed to search for a file type by extension!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to search for a file " +
-                "type by extension",
+                "type by extension!",
                 innerException: ex
                 );
         }
@@ -505,10 +505,10 @@ internal class FileTypeRepository : IFileTypeRepository
             // We don't mess with associated entity types.
             dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
 
-            // We don't change 'read only' properties.
-            dbContext.Entry(entity.CreatedBy).State = EntityState.Unchanged;
-            dbContext.Entry(entity.CreatedOnUtc).State = EntityState.Unchanged;
-            dbContext.Entry(entity.Id).State = EntityState.Unchanged;
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -561,7 +561,7 @@ internal class FileTypeRepository : IFileTypeRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a file type"
+                "Failed to update a file type!"
                 );
 
             // Provider better context.
