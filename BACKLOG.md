@@ -23,7 +23,13 @@ Things left to be done on the project as of 11/19/2022
 
 ### Providers
 
-* Need to design the providers.
+* Need to add the type to the ProviderType model, to allow us to dynamically create the provider(s).
+
+* Need to stand up a factory for creating providers from a ProviderType.
+
+* Need to write the providers.
+
+* Need to test the providers.
 
 ### Services 
 
