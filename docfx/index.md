@@ -2,7 +2,7 @@
 
 # Introduction
 
-CG.Orange is an experimental webservice architecture.
+CG.Purple is an idea for a self contained messaging microservice. 
 
 
 
