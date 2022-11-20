@@ -19,7 +19,7 @@ public interface IMessageProvider
     /// or more arguments are missing, or invalid.</exception>
     /// <exception cref="ProviderException">This exception is thrown whenever 
     /// the provider fails to complete the operation.</exception>
-    Task<ProviderResponse<TMessage>> ProcessAsync<TMessage>(
+    Task ProcessAsync<TMessage>(
         ProviderRequest<TMessage> request,
         CancellationToken cancellationToken = default
         ) where TMessage : Message;

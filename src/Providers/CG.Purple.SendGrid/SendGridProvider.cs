@@ -53,7 +53,7 @@ internal class SendGridProvider : IMessageProvider
     #region Public methods
 
     /// <inheritdoc/>
-    public virtual async Task<ProviderResponse<TMessage>> ProcessAsync<TMessage>(
+    public virtual async Task ProcessAsync<TMessage>(
         ProviderRequest<TMessage> request,
         CancellationToken cancellationToken = default
         ) where TMessage : Message
@@ -64,8 +64,6 @@ internal class SendGridProvider : IMessageProvider
         try
         {
             // TODO : write the code for this.
-
-            return new ProviderResponse<TMessage>();
         }
         catch (Exception ex)
         {
