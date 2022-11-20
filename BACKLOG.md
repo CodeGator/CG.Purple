@@ -67,9 +67,4 @@ Things to be done on the project, as of 11/20/2022
 
 * Yup, will need this at some point.
 
-### Build Pipeline
-
-* The existing YAML is from a .NET core project. It's failing and needs to be rewritten for .NET 7.x
-
-
 
