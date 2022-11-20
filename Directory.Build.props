@@ -23,5 +23,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>packageDefaultIcon-50x50.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <!-- Don't Freak Azure Pipelines Out -->
+        <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 	</PropertyGroup>
 </Project>
