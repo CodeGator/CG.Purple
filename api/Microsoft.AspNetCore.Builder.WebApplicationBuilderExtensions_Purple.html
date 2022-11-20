@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class WebApplicationBuilderExtensions
+    <title>Class WebApplicationBuilderExtensions_Purple
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class WebApplicationBuilderExtensions
+    <meta name="title" content="Class WebApplicationBuilderExtensions_Purple
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,10 +78,10 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions">
+            <article class="content wrap" id="_content" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple">
   
   
-  <h1 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions" class="text-break">Class WebApplicationBuilderExtensions
+  <h1 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple" class="text-break">Class WebApplicationBuilderExtensions_Purple
   </h1>
   <div class="markdown level0 summary"><p>This class contains extension methods related to the <span class="xref">Microsoft.AspNetCore.Builder.WebApplicationBuilder</span>
 type.</p>
@@ -90,7 +90,7 @@ type.</p>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">WebApplicationBuilderExtensions</span></div>
+    <div class="level1"><span class="xref">WebApplicationBuilderExtensions_Purple</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -117,23 +117,22 @@ type.</p>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.AspNetCore.Builder.html">Microsoft.AspNetCore.Builder</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Host.Controllers.dll</h6>
-  <h5 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_syntax">Syntax</h5>
+  <h6><strong>Assembly</strong>: CG.Purple.dll</h6>
+  <h5 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class WebApplicationBuilderExtensions</code></pre>
+    <pre><code class="lang-csharp hljs">public static class WebApplicationBuilderExtensions_Purple</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddControllerLayer_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddControllerLayer*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddControllerLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddControllerLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})">AddControllerLayer(WebApplicationBuilder, Nullable&lt;ILogger&gt;)</h4>
-  <div class="markdown level1 summary"><p>This method adds the REST controller layer (yeah I know it's not
-technically a 'layer'. Work with me here ...) for the <span class="xref">CG.Purple</span>
-project.</p>
+  <a id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_AddBusinessLayer_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.AddBusinessLayer*"></a>
+  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_AddBusinessLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.AddBusinessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})">AddBusinessLayer(WebApplicationBuilder, String, Nullable&lt;ILogger&gt;)</h4>
+  <div class="markdown level1 summary"><p>This method adds the business logic layer (managers and directors)
+for the <span class="xref">CG.Purple</span> project.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static WebApplicationBuilder AddControllerLayer(this WebApplicationBuilder webApplicationBuilder, ILogger? bootstrapLogger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static WebApplicationBuilder AddBusinessLayer(this WebApplicationBuilder webApplicationBuilder, string sectionName = &quot;BLL&quot;, ILogger? bootstrapLogger = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -150,6 +149,13 @@ project.</p>
         <td><span class="parametername">webApplicationBuilder</span></td>
         <td><p>The web application builder to
 use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sectionName</span></td>
+        <td><p>The configuration section to use for the
+operation. Defaults to <code>BLL</code>.</p>
 </td>
       </tr>
       <tr>

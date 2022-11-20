@@ -4612,38 +4612,211 @@ references:
   commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions
   nameWithType: WebApplicationBuilderExtensions
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddControllerLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name: AddControllerLayer(WebApplicationBuilder, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddControllerLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddControllerLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name.vb: AddControllerLayer(WebApplicationBuilder, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddControllerLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddControllerLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions.AddControllerLayer(WebApplicationBuilder, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions.AddControllerLayer(WebApplicationBuilder, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddControllerLayer*
+  name: AddControllerLayer
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddControllerLayer_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddControllerLayer
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddControllerLayer
+  nameWithType: WebApplicationBuilderExtensions.AddControllerLayer
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple
+  name: WebApplicationBuilderExtensions_Purple
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple
+  nameWithType: WebApplicationBuilderExtensions_Purple
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.AddBusinessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddBusinessLayer(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_AddBusinessLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.AddBusinessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddBusinessLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.AddBusinessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.AddBusinessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions_Purple.AddBusinessLayer(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions_Purple.AddBusinessLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.AddBusinessLayer*
+  name: AddBusinessLayer
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_AddBusinessLayer_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.AddBusinessLayer
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.AddBusinessLayer
+  nameWithType: WebApplicationBuilderExtensions_Purple.AddBusinessLayer
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services
+  name: WebApplicationBuilderExtensions_Purple_Host_Services
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services
+  nameWithType: WebApplicationBuilderExtensions_Purple_Host_Services
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddServicesLayer(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Host_Services_AddServicesLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddServicesLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer*
+  name: AddServicesLayer
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Host_Services_AddServicesLayer_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer
+  nameWithType: WebApplicationBuilderExtensions_Purple_Host_Services.AddServicesLayer
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding
+  name: WebApplicationBuilderExtensions_Purple_Seeding
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding
+  nameWithType: WebApplicationBuilderExtensions_Purple_Seeding
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddSeedingLayer(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Seeding_AddSeedingLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddSeedingLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer*
+  name: AddSeedingLayer
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Seeding_AddSeedingLayer_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer
+  nameWithType: WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid
+  name: WebApplicationBuilderExtensions_Purple_SendGrid
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid
+  nameWithType: WebApplicationBuilderExtensions_Purple_SendGrid
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name: AddSendGridProvider(WebApplicationBuilder, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_SendGrid_AddSendGridProvider_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name.vb: AddSendGridProvider(WebApplicationBuilder, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider(WebApplicationBuilder, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider(WebApplicationBuilder, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider*
+  name: AddSendGridProvider
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_SendGrid_AddSendGridProvider_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider
+  nameWithType: WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp
+  name: WebApplicationBuilderExtensions_Purple_Smtp
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp
+  nameWithType: WebApplicationBuilderExtensions_Purple_Smtp
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name: AddSmtpProvider(WebApplicationBuilder, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Smtp_AddSmtpProvider_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name.vb: AddSmtpProvider(WebApplicationBuilder, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider(WebApplicationBuilder, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider(WebApplicationBuilder, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider*
+  name: AddSmtpProvider
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Smtp_AddSmtpProvider_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider
+  nameWithType: WebApplicationBuilderExtensions_Purple_Smtp.AddSmtpProvider
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer
+  name: WebApplicationBuilderExtensions_Purple_SqlServer
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer
+  nameWithType: WebApplicationBuilderExtensions_Purple_SqlServer
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
   name: AddDataAccessLayer(WebApplicationBuilder, String, Nullable<ILogger>)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddDataAccessLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_SqlServer_AddDataAccessLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
   name.vb: AddDataAccessLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
-  nameWithType: WebApplicationBuilderExtensions.AddDataAccessLayer(WebApplicationBuilder, String, Nullable<ILogger>)
-  nameWithType.vb: WebApplicationBuilderExtensions.AddDataAccessLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddDataAccessLayer*
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer*
   name: AddDataAccessLayer
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddDataAccessLayer_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddDataAccessLayer
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_SqlServer_AddDataAccessLayer_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer
   isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddDataAccessLayer
-  nameWithType: WebApplicationBuilderExtensions.AddDataAccessLayer
-- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions
-  name: WebApplicationExtensions
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html
-  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationExtensions
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions
-  nameWithType: WebApplicationExtensions
-- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseDalStartup(Microsoft.AspNetCore.Builder.WebApplication)
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer
+  nameWithType: WebApplicationBuilderExtensions_Purple_SqlServer.AddDataAccessLayer
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio
+  name: WebApplicationBuilderExtensions_Purple_Twillio
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio
+  nameWithType: WebApplicationBuilderExtensions_Purple_Twillio
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name: AddTwillioProvider(WebApplicationBuilder, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Twillio_AddTwillioProvider_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name.vb: AddTwillioProvider(WebApplicationBuilder, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider(WebApplicationBuilder, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider(WebApplicationBuilder, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider*
+  name: AddTwillioProvider
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Twillio_AddTwillioProvider_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider
+  nameWithType: WebApplicationBuilderExtensions_Purple_Twillio.AddTwillioProvider
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding
+  name: WebApplicationExtensions_Purple_Seeding
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding
+  nameWithType: WebApplicationExtensions_Purple_Seeding
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.UseStartupSeeding(Microsoft.AspNetCore.Builder.WebApplication)
+  name: UseStartupSeeding(WebApplication)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_Purple_Seeding_UseStartupSeeding_Microsoft_AspNetCore_Builder_WebApplication_
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.UseStartupSeeding(Microsoft.AspNetCore.Builder.WebApplication)
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.UseStartupSeeding(Microsoft.AspNetCore.Builder.WebApplication)
+  nameWithType: WebApplicationExtensions_Purple_Seeding.UseStartupSeeding(WebApplication)
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.UseStartupSeeding*
+  name: UseStartupSeeding
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_Purple_Seeding_UseStartupSeeding_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.UseStartupSeeding
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.UseStartupSeeding
+  nameWithType: WebApplicationExtensions_Purple_Seeding.UseStartupSeeding
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer
+  name: WebApplicationExtensions_Purple_SqlServer
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer
+  nameWithType: WebApplicationExtensions_Purple_SqlServer
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.UseDalStartup(Microsoft.AspNetCore.Builder.WebApplication)
   name: UseDalStartup(WebApplication)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_UseDalStartup_Microsoft_AspNetCore_Builder_WebApplication_
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseDalStartup(Microsoft.AspNetCore.Builder.WebApplication)
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseDalStartup(Microsoft.AspNetCore.Builder.WebApplication)
-  nameWithType: WebApplicationExtensions.UseDalStartup(WebApplication)
-- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseDalStartup*
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_Purple_SqlServer_UseDalStartup_Microsoft_AspNetCore_Builder_WebApplication_
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.UseDalStartup(Microsoft.AspNetCore.Builder.WebApplication)
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.UseDalStartup(Microsoft.AspNetCore.Builder.WebApplication)
+  nameWithType: WebApplicationExtensions_Purple_SqlServer.UseDalStartup(WebApplication)
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.UseDalStartup*
   name: UseDalStartup
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_UseDalStartup_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseDalStartup
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_Purple_SqlServer_UseDalStartup_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.UseDalStartup
   isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseDalStartup
-  nameWithType: WebApplicationExtensions.UseDalStartup
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.UseDalStartup
+  nameWithType: WebApplicationExtensions_Purple_SqlServer.UseDalStartup

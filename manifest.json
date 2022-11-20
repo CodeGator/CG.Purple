@@ -930,7 +930,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html",
-          "hash": "qL0A07oC+NkPbSTAZlwchS+1klQ6KhaRWEwdmbyzxdY="
+          "hash": "qSF61UMbYVDBpdr1AbLFtWNWj9VCBIBp6ssGu0zAyVo="
         }
       },
       "is_incremental": false,
@@ -938,11 +938,107 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.yml",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html",
-          "hash": "cwLEf4ZCzYGcVY6HCnb5TaC1bZXqI4qEv/NvLXcyFOs="
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple.html",
+          "hash": "/XzmhHPfF4E/QG9j00lfEQcSAGJHHdrz2l599wlZ0No="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Host_Services.html",
+          "hash": "7rAqB8Z0EcHrR4CnlegNrFpBpQZWJWj4maHAfOf3864="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.html",
+          "hash": "EOXd103LzgjHFqw2ztQhud3BJXznHfO8EpLZuUKMA10="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.html",
+          "hash": "dqVuTR63UCopduaRcEi3SWX46EyUXBXYsz6spw4x/ek="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Smtp.html",
+          "hash": "LM9Go92w320npx9G8cm2cN2FtsdWJb+eo2WVntJzYC0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SqlServer.html",
+          "hash": "8uTQ13wycO2W/Kd+SiH1RxsbZmJYlttlZtx9tdLWe70="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Twillio.html",
+          "hash": "UjS0FX/DuVk67F35XMhp1nL6lK3rOdG7i5VPEGp9bAA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_Seeding.html",
+          "hash": "EBomqM4u+8b+7oq65liqFSWuZdhjBBkw9bb84OmPwwc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions_Purple_SqlServer.html",
+          "hash": "A1aVzFacu5WOveep+lLolIsofRKJ1d+V66gevUKit7c="
         }
       },
       "is_incremental": false,
@@ -954,7 +1050,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.html",
-          "hash": "p18zKxzibPEHlA2AJChAYp99D3KaSc7AUDixnb++5I8="
+          "hash": "K8nJayJFMhDSBEj6ldQXbTM2JYuZKItyNUtReZQ/AWs="
         }
       },
       "is_incremental": false,
@@ -966,7 +1062,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "Vff5l/lF5p9iHVZSphp7fl/DEVTPb+mbKZV4Adkd1Ys="
+          "hash": "ojdrksZ7h17VjaBQ14wdhtX1DZMJmEO1CjjQLLupxUs="
         }
       },
       "is_incremental": false,
@@ -1085,7 +1181,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 79,
+          "total_file_count": 87,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
