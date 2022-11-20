@@ -11,6 +11,9 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
+-script: choco install windows-sdk-10.1 --version=10.1.18362.1
+
 - task: NuGetToolInstaller@1
   inputs:
     versionSpec: 
