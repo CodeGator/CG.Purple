@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CG.Purple.SqlServer.Migrations
 {
     [DbContext(typeof(PurpleDbContext))]
-    [Migration("20221120195945_InitialCreate")]
+    [Migration("20221120203936_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
