@@ -18,6 +18,6 @@ internal class MailMessageOptions
     /// objects.
     /// </summary>
     public TimeSpan? DefaultCacheDuration { get; set; }
-
+      
     #endregion
 }

@@ -20,6 +20,13 @@ public class MailMessageOptions
     public string MessageKey { get; set; } = null!;
 
     /// <summary>
+    /// This property contains the origin of the message.
+    /// </summary>
+    [Required]
+    [MaxLength(1024)]
+    public string From { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the 'To' address for the message.
     /// </summary>
     [Required]

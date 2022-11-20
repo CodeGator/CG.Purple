@@ -318,6 +318,8 @@ internal class ProcessDirector : IProcessDirector
 
     #region Private methods
 
+    #region Mail Processing
+
     /// <summary>
     /// This method triages and processes pending mail messages.
     /// </summary>
@@ -610,6 +612,353 @@ internal class ProcessDirector : IProcessDirector
     // *******************************************************************
 
     /// <summary>
+    /// This method attempts to send the given pending mail messages.
+    /// </summary>
+    /// <param name="messages">The mail messages to use for the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    private async Task SendMailMessages(
+        IEnumerable<MailMessage> messages,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Attempting to send {count} messages.",
+            messages.Count()
+            );
+
+        // Loop through the mail messages (ignore disabled ones).
+        foreach (var message in messages.Where(x => x.IsDisabled == false))
+        {
+            // =======
+            // Step 1: find the 'assigned provider' property, on the message.
+            // =======
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for the 'Provider' property, on message: {id}",
+                message.Id
+                );
+
+            // Look for the 'Provider' property, on the message.
+            var providerProperty = message.MessageProperties.FirstOrDefault(x =>
+                x.PropertyType.Name == "Provider"
+                );
+
+            // Should never happen, but, pffft, check it anyway.
+            if (providerProperty is null)
+            {
+                // If we get here, the message somehow got to this point in 
+                //   the pipeline without an assigned provider, which is never
+                //   supposed to happen.
+
+                // Log what we didn't find.
+                _logger.LogError(
+                    "The mail message: {id} does not have an assigned provider!",
+                    message.Id
+                    );
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Logging a process error on mail message: {id}",
+                    message.Id
+                    );
+
+                // Write the error to the provider log.
+                _ = await _providerLogManager.CreateAsync(
+                    new ProviderLog()
+                    {
+                        Event = ProcessEvent.ProcessError,
+                        Message = message,
+                        BeforeState = message.MessageState,
+                        AfterState = message.MessageState,
+                        Error = "The mail message didn't have an assigned provider!"
+                    },
+                    "host",
+                    cancellationToken
+                    );
+
+                // We don't need to do anything here, really, since the message
+                //   will get picked up, and hopefully have another provider
+                //   assigned to it, next time around.
+
+                continue; // Nothing more to do!
+            }
+
+            // =======
+            // Step 2: convert the property to the actual 'ProviderType' model.
+            // =======
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for the mail provider type: {name}",
+                providerProperty.Value
+                );
+
+            // Get the provider type that was assigned to the message.
+            var assignedProvider = await _providerTypeManager.FindByNameAsync(
+                providerProperty.Value,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Should never happen, but, pffft, check it anyway.
+            if (assignedProvider is null)
+            {
+                // If we get here, the provider that was assigned to the message
+                //   is, somehow, invalid. Obviously, this should never happen.
+
+                // Log what we didn't find.
+                _logger.LogError(
+                    "The mail provider type: {name} wasn't found, for mail message: {id}!",
+                    providerProperty.Value,
+                    message.Id
+                    );
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Logging a process error on mail message: {id}",
+                    message.Id
+                    );
+
+                // Write the error to the provider log.
+                _ = await _providerLogManager.CreateAsync(
+                    new ProviderLog()
+                    {
+                        Event = ProcessEvent.ProcessError,
+                        Message = message,
+                        BeforeState = message.MessageState,
+                        AfterState = message.MessageState,
+                        Error = $"The mail provider type: {providerProperty.Value} wasn't found!"
+                    },
+                    "host",
+                    cancellationToken
+                    );
+
+                // Let's try to save the overall processing by de-assigning the
+                //   current provider, for the message, so the algorithm can
+                //   pick another one, next time around.
+
+                // Let's delete the 'Provider' property, on the message.
+                message.MessageProperties.Remove(providerProperty);
+
+                // Let' remove that property from the underlying storage.
+                await _messagePropertyManager.DeleteAsync(
+                    providerProperty,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                continue; // Nothing more to do!
+            }
+
+            // Ensure the provider isn't disabled.
+            if (assignedProvider.IsDisabled)
+            {
+                // Log what we are about to do.
+                _logger.LogWarning(
+                    "The provider {name} was disabled while processing message: {id}!",
+                    assignedProvider.Name,
+                    message.Id
+                    );
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Logging a process error on mail message: {id}",
+                    message.Id
+                    );
+
+                // Write the error to the provider log.
+                _ = await _providerLogManager.CreateAsync(
+                    new ProviderLog()
+                    {
+                        Event = ProcessEvent.ProcessError,
+                        Message = message,
+                        BeforeState = message.MessageState,
+                        AfterState = message.MessageState,
+                        Error = $"The provider {assignedProvider.Name} was " +
+                        "disabled while processing message!"
+                    },
+                    "host",
+                    cancellationToken
+                    );
+
+                continue; // Nothing more to do!
+            }
+
+            // =======
+            // Step 3: create the actual provider instance.
+            // =======
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating an instance of mail provider: {type}",
+                assignedProvider.FactoryType
+                );
+
+            // Stand up an instance of the provider.
+            var messageProvider = await _messageProviderFactory.CreateAsync(
+                assignedProvider,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Should never happen, but, pffft, check it anyway.
+            if (messageProvider is null)
+            {
+                // If we get here, the provider was found, for this message,
+                //   and we tried to create it, but that attempt failed, for
+                //   some reason.
+
+                // Log what we are about to do.
+                _logger.LogError(
+                    "Unable to create the provider: {name} for message: {id}",
+                    assignedProvider.Name,
+                    message.Id
+                    );
+
+                // Write the error to the provider log.
+                _ = await _providerLogManager.CreateAsync(
+                    new ProviderLog()
+                    {
+                        Event = ProcessEvent.ProcessError,
+                        Message = message,
+                        BeforeState = message.MessageState,
+                        AfterState = message.MessageState,
+                        Error = $"Unable to create provider factory type: {assignedProvider.FactoryType}!"
+                    },
+                    "host",
+                    cancellationToken
+                    );
+
+                // At this point, the provider itself is not usable, since
+                //   we can't create instances of it. So, the best thing to
+                //   do is disable the provider so the algorithm can pick
+                //   another one, next time around.
+
+                // Log what we are about to do.
+                _logger.LogWarning(
+                    "Disabling provider: {name} since we can't create instances of it",
+                    assignedProvider.Name
+                    );
+
+                // Update the model.
+                assignedProvider.IsDisabled = true;
+
+                // Update the underlying storage.
+                _ = await _providerTypeManager.UpdateAsync(
+                    assignedProvider,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                continue; // Nothing more to do!
+            }
+
+            try
+            {
+                // =======
+                // Step 4: pass the message to the provider, for processing.
+                // =======
+
+                // Defer to the provider.
+                await messageProvider.SendMailAsync(
+                    message,
+                    assignedProvider,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // =======
+                // Step 5: transition the message state.
+                // =======
+
+                // Log what we are about to do.
+                _logger.LogInformation(
+                    "Transitioning message: {id} to state: {state}",
+                    message.Id,
+                    MessageState.Processing
+                    );
+
+                // Remember the previous state.
+                var oldMessageState = message.MessageState;
+
+                // The message is now in a sent state.
+                message.MessageState = MessageState.Sent;
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Updating the message: {id}",
+                    message.Id
+                    );
+
+                // Update the message.
+                _ = await _mailMessageManager.UpdateAsync(
+                    message,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Creating a log entry for message: {id}",
+                    message.Id
+                    );
+
+                // Record what we did, in the log.
+                await _providerLogManager.CreateAsync(
+                    new ProviderLog()
+                    {
+                        Message = message,
+                        BeforeState = oldMessageState,
+                        AfterState = message.MessageState,
+                        Event = ProcessEvent.Sent,
+                        ProviderType = assignedProvider
+                    },
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                // If we get here there was a provider (or message) error.
+
+                // Log what happened.
+                _logger.LogError(
+                    ex,
+                    "The provider failed to process mail message: {id}!",
+                    message.Id
+                    );
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Logging a provider error on mail message: {id}",
+                    message.Id
+                    );
+
+                // Write the error to the provider log.
+                _ = await _providerLogManager.CreateAsync(
+                    new ProviderLog()
+                    {
+                        Event = ProcessEvent.ProviderError,
+                        Message = message,
+                        BeforeState = message.MessageState,
+                        AfterState = message.MessageState,
+                        Error = ex.GetBaseException().Message
+                    },
+                    "host",
+                    cancellationToken
+                    );
+
+                // TODO : figure out if we can recover from this.
+            }
+        }
+    }
+
+    #endregion
+
+    #region Text Processing
+    
+    /// <summary>
     /// This method triages and processes pending text messages.
     /// </summary>
     /// <param name="providerTypeProperty">The provider property type to
@@ -895,300 +1244,6 @@ internal class ProcessDirector : IProcessDirector
     // *******************************************************************
 
     /// <summary>
-    /// This method attempts to send the given pending mail messages.
-    /// </summary>
-    /// <param name="messages">The mail messages to use for the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation.</returns>
-    private async Task SendMailMessages(
-        IEnumerable<MailMessage> messages,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Attempting to send {count} messages.",
-            messages.Count()
-            );
-
-        // Loop through the mail messages (ignore disabled ones).
-        foreach (var message in messages.Where(x => x.IsDisabled == false))
-        {
-            // =======
-            // Step 1: find the 'assigned provider' property, on the message.
-            // =======
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Looking for the 'Provider' property, on message: {id}",
-                message.Id
-                );
-
-            // Look for the 'Provider' property, on the message.
-            var providerProperty = message.MessageProperties.FirstOrDefault(x => 
-                x.PropertyType.Name == "Provider"
-                );
-            
-            // Should never happen, but, pffft, check it anyway.
-            if (providerProperty is null)
-            {
-                // If we get here, the message somehow got to this point in 
-                //   the pipeline without an assigned provider, which is never
-                //   supposed to happen.
-
-                // Log what we didn't find.
-                _logger.LogError(
-                    "The mail message: {id} does not have an assigned provider!",
-                    message.Id
-                    );
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Logging a process error on mail message: {id}",
-                    message.Id
-                    );
-
-                // Write the error to the provider log.
-                _ = await _providerLogManager.CreateAsync(
-                    new ProviderLog()
-                    {
-                        Event = ProcessEvent.ProcessError,
-                        Message = message,
-                        BeforeState = message.MessageState,
-                        AfterState = message.MessageState,
-                        Error = "The mail message didn't have an assigned provider!"
-                    },
-                    "host",
-                    cancellationToken
-                    );
-
-                // We don't need to do anything here, really, since the message
-                //   will get picked up, and hopefully have another provider
-                //   assigned to it, next time around.
-
-                continue; // Nothing more to do!
-            }
-
-            // =======
-            // Step 2: convert the property to the actual 'ProviderType' model.
-            // =======
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Looking for the mail provider type: {name}",
-                providerProperty.Value
-                );
-
-            // Get the provider type that was assigned to the message.
-            var assignedProvider = await _providerTypeManager.FindByNameAsync(
-                providerProperty.Value,
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Should never happen, but, pffft, check it anyway.
-            if (assignedProvider is null)
-            {
-                // If we get here, the provider that was assigned to the message
-                //   is, somehow, invalid. Obviously, this should never happen.
-
-                // Log what we didn't find.
-                _logger.LogError(
-                    "The mail provider type: {name} wasn't found, for mail message: {id}!",
-                    providerProperty.Value,
-                    message.Id  
-                    );
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Logging a process error on mail message: {id}",
-                    message.Id
-                    );
-
-                // Write the error to the provider log.
-                _ = await _providerLogManager.CreateAsync(
-                    new ProviderLog()
-                    {
-                        Event = ProcessEvent.ProcessError,
-                        Message = message,
-                        BeforeState = message.MessageState,
-                        AfterState = message.MessageState,
-                        Error = $"The mail provider type: {providerProperty.Value} wasn't found!"
-                    },
-                    "host",
-                    cancellationToken
-                    );
-
-                // Let's try to save the overall processing by de-assigning the
-                //   current provider, for the message, so the algorithm can
-                //   pick another one, next time around.
-
-                // Let's delete the 'Provider' property, on the message.
-                message.MessageProperties.Remove(providerProperty);
-
-                // Let' remove that property from the underlying storage.
-                await _messagePropertyManager.DeleteAsync(
-                    providerProperty,
-                    "host",
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-                continue; // Nothing more to do!
-            }
-
-            // Ensure the provider isn't disabled.
-            if (assignedProvider.IsDisabled)
-            {
-                // Log what we are about to do.
-                _logger.LogWarning(
-                    "The provider {name} was disabled while processing message: {id}!",
-                    assignedProvider.Name,
-                    message.Id
-                    );
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Logging a process error on mail message: {id}",
-                    message.Id
-                    );
-
-                // Write the error to the provider log.
-                _ = await _providerLogManager.CreateAsync(
-                    new ProviderLog()
-                    {
-                        Event = ProcessEvent.ProcessError,
-                        Message = message,
-                        BeforeState = message.MessageState,
-                        AfterState = message.MessageState,
-                        Error = $"The provider {assignedProvider.Name} was " +
-                        "disabled while processing message!"
-                    },
-                    "host",
-                    cancellationToken
-                    );
-
-                continue; // Nothing more to do!
-            }
-
-            // =======
-            // Step 3: create the actual provider instance.
-            // =======
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating an instance of mail provider: {type}",
-                assignedProvider.FactoryType
-                );
-
-            // Stand up an instance of the provider.
-            var messageProvider = await _messageProviderFactory.CreateAsync(
-                assignedProvider,
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Should never happen, but, pffft, check it anyway.
-            if (messageProvider is null)
-            {
-                // If we get here, the provider was found, for this message,
-                //   and we tried to create it, but that attempt failed, for
-                //   some reason.
-
-                // Log what we are about to do.
-                _logger.LogError(
-                    "Unable to create the provider: {name} for message: {id}",
-                    assignedProvider.Name,
-                    message.Id
-                    );
-
-                // Write the error to the provider log.
-                _ = await _providerLogManager.CreateAsync(
-                    new ProviderLog()
-                    {
-                        Event = ProcessEvent.ProcessError,
-                        Message = message,
-                        BeforeState = message.MessageState,
-                        AfterState = message.MessageState,
-                        Error = $"Unable to create provider factory type: {assignedProvider.FactoryType}!"
-                    },
-                    "host",
-                    cancellationToken
-                    );
-
-                // At this point, the provider itself is not usable, since
-                //   we can't create instances of it. So, the best thing to
-                //   do is disable the provider so the algorithm can pick
-                //   another one, next time around.
-
-                // Log what we are about to do.
-                _logger.LogWarning(
-                    "Disabling provider: {name} since we can't create instances of it",
-                    assignedProvider.Name
-                    );
-
-                // Update the model.
-                assignedProvider.IsDisabled = true;
-
-                // Update the underlying storage.
-                _ = await _providerTypeManager.UpdateAsync(
-                    assignedProvider,
-                    "host",
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-                continue; // Nothing more to do!
-            }
-
-            try
-            {
-                // =======
-                // Step 4: pass the message to the provider, for processing.
-                // =======
-
-                // Defer to the provider.
-                await messageProvider.ProcessAsync(
-                    new ViewModels.ProviderRequest<MailMessage>()
-                    {
-                        Message = message,
-                        ProviderType = assignedProvider
-                    });
-            }
-            catch (Exception ex)
-            {
-                // Log what happened.
-                _logger.LogError(
-                    ex,
-                    "The provider failed to process message: {id}!",
-                    message.Id
-                    );
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Logging a provider error on mail message: {id}",
-                    message.Id
-                    );
-
-                // Write the error to the provider log.
-                _ = await _providerLogManager.CreateAsync(
-                    new ProviderLog()
-                    {
-                        Event = ProcessEvent.ProviderError,
-                        Message = message,
-                        BeforeState = message.MessageState,
-                        AfterState = message.MessageState,
-                        Error = ex.GetBaseException().Message
-                    },
-                    "host",
-                    cancellationToken
-                    );
-
-                // TODO : figure out if we can recover from this.
-            }
-        }
-    }
-
-    // *******************************************************************
-
-    /// <summary>
     /// This method attempts to send the given pending text messages.
     /// </summary>
     /// <param name="messages">The text messages to use for the operation.</param>
@@ -1439,19 +1494,70 @@ internal class ProcessDirector : IProcessDirector
                 // =======
 
                 // Defer to the provider.
-                await messageProvider.ProcessAsync(
-                    new ViewModels.ProviderRequest<TextMessage>()
+                await messageProvider.SendTextAsync(
+                    message,
+                    assignedProvider,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // =======
+                // Step 5: transition the message state.
+                // =======
+
+                // Log what we are about to do.
+                _logger.LogInformation(
+                    "Transitioning message: {id} to state: {state}",
+                    message.Id,
+                    MessageState.Processing
+                    );
+
+                // Remember the previous state.
+                var oldMessageState = message.MessageState;
+
+                // The message is now in a sent state.
+                message.MessageState = MessageState.Sent;
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Updating the message: {id}",
+                    message.Id
+                    );
+
+                // Update the message.
+                _ = await _textMessageManager.UpdateAsync(
+                    message,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Creating a log entry for message: {id}",
+                    message.Id
+                    );
+
+                // Record what we did, in the log.
+                await _providerLogManager.CreateAsync(
+                    new ProviderLog()
                     {
                         Message = message,
+                        BeforeState = oldMessageState,
+                        AfterState = message.MessageState,
+                        Event = ProcessEvent.Sent,
                         ProviderType = assignedProvider
-                    });
+                    },
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
+                // If we get here there was a provider (or message) error.
+
                 // Log what happened.
                 _logger.LogError(
                     ex,
-                    "The provider failed to process message: {id}!",
+                    "The provider failed to process text message: {id}!",
                     message.Id
                     );
 
@@ -1479,6 +1585,8 @@ internal class ProcessDirector : IProcessDirector
             }
         }
     }
+
+    #endregion
 
     #endregion
 }

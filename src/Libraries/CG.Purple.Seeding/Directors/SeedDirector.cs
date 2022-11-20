@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Seeding.Options;
+
 namespace CG.Purple.Seeding.Directors;
 
 /// <summary>
@@ -671,6 +673,7 @@ internal class SeedDirector : ISeedDirector
                     new MailMessage()
                     {
                         MessageKey = mailMessageOption.MessageKey,
+                        From = mailMessageOption.From,
                         To = mailMessageOption.To,
                         CC = mailMessageOption.CC,
                         BCC = mailMessageOption.BCC,
@@ -1626,6 +1629,7 @@ internal class SeedDirector : ISeedDirector
                     new TextMessage()
                     {
                         MessageKey = textMessageOption.MessageKey,
+                        From = textMessageOption.From,
                         To = textMessageOption.To,
                         Body = textMessageOption.Body,
                         IsDisabled = textMessageOption.IsDisabled,

@@ -11,14 +11,6 @@
     {
       "Name": "Password",
       "Description": "The password for the provider"
-    },
-    {
-      "Name": "RateLimitDuration",
-      "Description": "The duration for the rate limit"
-    },
-    {
-      "Name": "RateLimitMax",
-      "Description": "The max number of messages within the duration"
-    }
+    }    
   ]
 }

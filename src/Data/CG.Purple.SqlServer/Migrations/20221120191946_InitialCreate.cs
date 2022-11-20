@@ -22,6 +22,7 @@ namespace CG.Purple.SqlServer.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MessageKey = table.Column<string>(type: "varchar(36)", unicode: false, maxLength: 36, nullable: false),
+                    From = table.Column<string>(type: "varchar(1024)", unicode: false, maxLength: 1024, nullable: false),
                     MessageType = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
                     MessageState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
                     IsDisabled = table.Column<bool>(type: "bit", nullable: false),
@@ -367,7 +368,7 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "IX_Messages",
                 schema: "Purple",
                 table: "Messages",
-                columns: new[] { "MessageType", "MessageState", "IsDisabled" });
+                columns: new[] { "From", "MessageType", "MessageState", "IsDisabled" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Messages_Keys",

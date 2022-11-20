@@ -1,7 +1,7 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things left to be done on the project as of 11/19/2022
+Things left to be done on the project as of 11/20/2022
 
 ### Design
 
@@ -23,13 +23,19 @@ Things left to be done on the project as of 11/19/2022
 
 ### Providers
 
-* Need to add the type to the ProviderType model, to allow us to dynamically create the provider(s).
-
-* Need to stand up a factory for creating providers from a ProviderType.
-
 * Need to write the providers.
 
+* Need to devise a way for providers to store their state.
+
 * Need to test the providers.
+
+### Hosted Services
+
+* The process director needs loads of refactoring.
+
+* Need to finish the logic for the MessageProcessingService
+
+* Need to test everything related to this service.
 
 ### Services 
 

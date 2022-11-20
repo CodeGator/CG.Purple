@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CG.Purple.SqlServer.Migrations
 {
     [DbContext(typeof(PurpleDbContext))]
-    [Migration("20221120134133_InitialCreate")]
+    [Migration("20221120191946_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -128,6 +128,12 @@ namespace CG.Purple.SqlServer.Migrations
                     b.Property<DateTime>("CreatedOnUtc")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("From")
+                        .IsRequired()
+                        .HasMaxLength(1024)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(1024)");
+
                     b.Property<bool>("IsDisabled")
                         .HasColumnType("bit");
 
@@ -157,7 +163,7 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "MessageType", "MessageState", "IsDisabled" }, "IX_Messages");
+                    b.HasIndex(new[] { "From", "MessageType", "MessageState", "IsDisabled" }, "IX_Messages");
 
                     b.HasIndex(new[] { "MessageKey" }, "IX_Messages_Keys")
                         .IsUnique();

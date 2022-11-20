@@ -22,6 +22,11 @@ internal class Message : EntityBase
     public string MessageKey { get; set; } = null!;
 
     /// <summary>
+    /// This property contains the origin of the message.
+    /// </summary>
+    public string From { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the message type.
     /// </summary>
     public MessageType MessageType { get; set; }
