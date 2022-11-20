@@ -1,3 +1,0 @@
-
-### CG.Purple Solution - BACKLOG
-
