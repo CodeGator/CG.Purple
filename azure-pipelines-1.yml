@@ -12,10 +12,13 @@ variables:
 
 steps:
 
+- checkout: self
+  fetchDepth: 0
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
     version: '7.x'
+    includePreviewVersions: true
 - task: NuGetToolInstaller@1
   inputs:
     versionSpec: 
