@@ -64,12 +64,12 @@ internal class SmtpProvider : IMessageProvider
         try
         {
             // =======
-            // Step 1: Find the associated message properties.
+            // Step 1: Find the associated provider parameters.
             // =======
 
             // Get the server url property from the message properties.
-            var serverUrlProperty = mailMessage.MessageProperties.FirstOrDefault(
-                x => x.PropertyType.Name == "ServerUrl"
+            var serverUrlProperty = providerType.Parameters.FirstOrDefault(
+                x => x.ParameterType.Name == "ServerUrl"
                 );
 
             // Did we fail?
@@ -82,8 +82,8 @@ internal class SmtpProvider : IMessageProvider
             }
 
             // Get the user name property from the message properties.
-            var userNameProperty = mailMessage.MessageProperties.FirstOrDefault(
-                x => x.PropertyType.Name == "UserName"
+            var userNameProperty = providerType.Parameters.FirstOrDefault(
+                x => x.ParameterType.Name == "UserName"
                 );
 
             // Did we fail?
@@ -96,8 +96,8 @@ internal class SmtpProvider : IMessageProvider
             }
 
             // Get the password property from the message properties.
-            var passwordProperty = mailMessage.MessageProperties.FirstOrDefault(
-                x => x.PropertyType.Name == "Password"
+            var passwordProperty = providerType.Parameters.FirstOrDefault(
+                x => x.ParameterType.Name == "Password"
                 );
 
             // Did we fail?
@@ -179,6 +179,8 @@ internal class SmtpProvider : IMessageProvider
 
             // Send the message.
             client.Send(msg);
+
+
 
             // Return the task.
             return Task.CompletedTask;

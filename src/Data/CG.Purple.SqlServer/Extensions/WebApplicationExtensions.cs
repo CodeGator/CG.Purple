@@ -150,6 +150,14 @@ public static partial class WebApplicationExtensions
             cancellationToken
             ).ConfigureAwait(false);
 
+        // Log what we are about to do.
+        webApplication.Logger.LogDebug(
+            "Migrating the {ctx} on database '{db}', on server '{srv}'",
+            nameof(PurpleDbContext),
+            purpleDbContext.Database.GetDatabaseName(),
+            purpleDbContext.Database.GetServerName()
+            );
+
         // Migrate the database (and create if it doesn't exist).
         await webApplication.MigrateDatabaseAsync(
             cancellationToken
@@ -192,7 +200,7 @@ public static partial class WebApplicationExtensions
             );
 
         // Create a data-context.
-        var configurationDbContext = scope.ServiceProvider.GetRequiredService<
+        var purpleDbContext = scope.ServiceProvider.GetRequiredService<
             PurpleDbContext
             >();
 
@@ -200,12 +208,12 @@ public static partial class WebApplicationExtensions
         webApplication.Logger.LogDebug(
             "Migrating the {ctx} on database '{db}', on server '{srv}'",
             nameof(PurpleDbContext),
-            configurationDbContext.Database.GetDatabaseName(),
-            configurationDbContext.Database.GetServerName()
+            purpleDbContext.Database.GetDatabaseName(),
+            purpleDbContext.Database.GetServerName()
             );
 
         // Migrate the data-context.
-        await configurationDbContext.Database.MigrateAsync()
+        await purpleDbContext.Database.MigrateAsync()
             .ConfigureAwait(false);
     }
 

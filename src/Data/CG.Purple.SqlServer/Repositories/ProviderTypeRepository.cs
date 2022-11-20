@@ -347,6 +347,8 @@ internal class ProviderTypeRepository : IProviderTypeRepository
 
             // Perform the provider type search.
             var providerTypes = await dbContext.ProviderTypes
+                .Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
+                .OrderByDescending(x => x.Priority)
                 .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -404,7 +406,8 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             // Perform the provider type search.
             var providerTypes = await dbContext.ProviderTypes.Where(x =>
                 x.IsDisabled == false && x.CanProcessEmails
-                ).OrderByDescending(x => x.Priority)
+                ).Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
+                .OrderByDescending(x => x.Priority)
                  .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -462,7 +465,8 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             // Perform the provider type search.
             var providerTypes = await dbContext.ProviderTypes.Where(x =>
                 x.IsDisabled == false && x.CanProcessTexts
-                ).OrderByDescending(x => x.Priority)
+                ).Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
+                .OrderByDescending(x => x.Priority)
                  .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -524,7 +528,8 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             // Perform the provider type search.
             var providerType = await dbContext.ProviderTypes.Where(x => 
                 x.Name == name
-                ).FirstOrDefaultAsync(
+                ).Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
+                .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
 

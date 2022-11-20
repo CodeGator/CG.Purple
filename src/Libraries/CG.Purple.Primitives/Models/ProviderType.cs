@@ -52,5 +52,11 @@ public class ProviderType : ModelBase
     /// </summary>
     public string FactoryType { get; set; } = null!;
 
+    /// <summary>
+    /// This property contains the associated provider parameters.
+    /// </summary>
+    public virtual ICollection<ProviderParameter> Parameters { get; set; }
+        = new HashSet<ProviderParameter>();
+
     #endregion
 }

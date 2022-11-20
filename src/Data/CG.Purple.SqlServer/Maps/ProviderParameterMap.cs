@@ -53,7 +53,7 @@ internal class ProviderParameterMap : EntityMapBase<Entities.ProviderParameter>
         // Setup the relationship.
         _modelBuilder.Entity<Entities.ProviderParameter>()
             .HasOne(e => e.ProviderType)
-            .WithMany()
+            .WithMany(e => e.Parameters)
             .HasForeignKey(e => e.ProviderTypeId)
             .OnDelete(DeleteBehavior.Cascade);
 

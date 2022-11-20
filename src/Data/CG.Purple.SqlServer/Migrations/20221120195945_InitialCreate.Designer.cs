@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CG.Purple.SqlServer.Migrations
 {
     [DbContext(typeof(PurpleDbContext))]
-    [Migration("20221120191946_InitialCreate")]
+    [Migration("20221120195945_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -602,7 +602,7 @@ namespace CG.Purple.SqlServer.Migrations
                         .IsRequired();
 
                     b.HasOne("CG.Purple.SqlServer.Entities.ProviderType", "ProviderType")
-                        .WithMany()
+                        .WithMany("Parameters")
                         .HasForeignKey("ProviderTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -640,6 +640,11 @@ namespace CG.Purple.SqlServer.Migrations
             modelBuilder.Entity("CG.Purple.SqlServer.Entities.MimeType", b =>
                 {
                     b.Navigation("FileTypes");
+                });
+
+            modelBuilder.Entity("CG.Purple.SqlServer.Entities.ProviderType", b =>
+                {
+                    b.Navigation("Parameters");
                 });
 #pragma warning restore 612, 618
         }

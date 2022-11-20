@@ -1,13 +1,15 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things left to be done on the project as of 11/20/2022
+Things to be done on the project, as of 11/20/2022
 
 ### Design
 
 * ... All in my head, need to write it down.
 
 ### Database
+
+* ProviderLogs should be renamed to MessageLogs.
 
 * Need to test the DB design.
 
@@ -25,8 +27,6 @@ Things left to be done on the project as of 11/20/2022
 
 * Need to write the providers.
 
-* Need to devise a way for providers to store their state.
-
 * Need to test the providers.
 
 ### Hosted Services
@@ -38,6 +38,8 @@ Things left to be done on the project as of 11/20/2022
 * Need to test everything related to this service.
 
 ### Services 
+
+* SignalR needs to move to CG.Purple.Host.Services.
 
 * Need to design and build the REST controllers.
 

@@ -2,6 +2,7 @@
   "MailMessages": [
     {
       "MessageKey": "9D29C7EC-3BB2-4A5D-A3A4-DE3F19F15928",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com",
       "CC": "",
       "BCC": "",
@@ -19,6 +20,7 @@
     },
     {
       "MessageKey": "AE24BAF7-07A5-4445-970F-445323936674",
+      "From": "test0@codegator.com",
       "To": "test2@codegator.com",
       "CC": "test1@codegator.com",
       "BCC": "",
@@ -31,6 +33,7 @@
     },
     {
       "MessageKey": "70B6BD35-7E51-474E-A23C-0A60985F0976",
+      "From": "test0@codegator.com",
       "To": "test3@codegator.com",
       "CC": "test2@codegator.com",
       "BCC": "test1@codegator.com",
@@ -43,6 +46,7 @@
     },
     {
       "MessageKey": "C9D4EAF7-4C10-43CC-9DD8-C2587107E29E",
+      "From": "test0@codegator.com",
       "To": "test4@codegator.com",
       "CC": "",
       "BCC": "",
@@ -64,6 +68,7 @@
     },
     {
       "MessageKey": "E2B10639-6807-4CDF-ACDA-ED36B9530F9E",
+      "From": "test0@codegator.com",
       "To": "test5@codegator.com",
       "CC": "",
       "BCC": "",
@@ -85,6 +90,7 @@
     },
     {
       "MessageKey": "05468A3D-E3AE-40EC-853D-20116582F15A",
+      "From": "test0@codegator.com",
       "To": "test6@codegator.com",
       "CC": "",
       "BCC": "",
@@ -96,6 +102,7 @@
     },
     {
       "MessageKey": "10EB0BDF-601C-4541-9A4E-69993FE52E76",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com;test2@codegator.com;test3@codegator.com;test4@codegator.com;test5@codegator.com;test6@codegator.com;",
       "CC": "test1@codegator.com;test2@codegator.com;test3@codegator.com;test4@codegator.com;test5@codegator.com;test6@codegator.com;",
       "BCC": "test1@codegator.com;test2@codegator.com;test3@codegator.com;test4@codegator.com;test5@codegator.com;test6@codegator.com;",
@@ -113,6 +120,7 @@
     },
     {
       "MessageKey": "F3358732-BD3C-49C5-BE4D-0511495D5C97",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com",
       "CC": "",
       "BCC": "",
@@ -125,6 +133,7 @@
     },
     {
       "MessageKey": "",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com",
       "CC": "",
       "BCC": "test2@codegator.com",
@@ -146,6 +155,7 @@
     },
     {
       "MessageKey": "",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com",
       "CC": "",
       "BCC": "test2@codegator.com",
@@ -158,6 +168,7 @@
     },
     {
       "MessageKey": "",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com",
       "CC": "",
       "BCC": "test2@codegator.com",
@@ -175,6 +186,7 @@
     },
     {
       "MessageKey": "",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com",
       "CC": "test2@codegator.com",
       "BCC": "",
@@ -192,6 +204,7 @@
     },
     {
       "MessageKey": "",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com",
       "CC": "",
       "BCC": "test2@codegator.com",
@@ -209,6 +222,7 @@
     },
     {
       "MessageKey": "",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com",
       "CC": "",
       "BCC": "",
@@ -230,6 +244,7 @@
     },
     {
       "MessageKey": "",
+      "From": "test0@codegator.com",
       "To": "test1@codegator.com",
       "CC": "",
       "BCC": "test2@codegator.com",

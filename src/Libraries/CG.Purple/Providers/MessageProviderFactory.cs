@@ -92,13 +92,21 @@ internal class MessageProviderFactory : IMessageProviderFactory
 
         // Log what we are about to do.
         _logger.LogDebug(
+            "Creating a DI scope"
+            );
+
+        // Create a DI scope.
+        using var scope = _serviceProvider.CreateScope();
+
+        // Log what we are about to do.
+        _logger.LogDebug(
             "Creating a provider of type: {t}.",
             type.FullName
             );
 
-        // Create the provider.
+        // Create the provider (with scope).
         var provider = ActivatorUtilities.CreateInstance(
-            _serviceProvider,
+            scope.ServiceProvider,
             type
             ) as IMessageProvider;
 

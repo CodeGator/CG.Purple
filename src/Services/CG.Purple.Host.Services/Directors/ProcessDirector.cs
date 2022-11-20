@@ -1,6 +1,13 @@
 ﻿
 namespace CG.Purple.Host.Directors;
 
+// TODO : obviously, this entire class needs to be refactored. I'm looking
+//   at creating an IMessageManager type, and using that here to collapse
+//   the mail/text processing paths. Next, I'll eventually be moving code
+//   into private methods, to get rid of these crazy long methods that we
+//   have now. But, for now, I'm still trying to work out the overall flow,
+//   so, we'll have to deal with long methods for a bit longer.
+
 /// <summary>
 /// This class is a default implementation of the <see cref="IProcessDirector"/>
 /// </summary>
@@ -868,59 +875,14 @@ internal class ProcessDirector : IProcessDirector
                     cancellationToken
                     ).ConfigureAwait(false);
 
-                // =======
-                // Step 5: transition the message state.
-                // =======
-
-                // Log what we are about to do.
-                _logger.LogInformation(
-                    "Transitioning message: {id} to state: {state}",
-                    message.Id,
-                    MessageState.Processing
-                    );
-
-                // Remember the previous state.
-                var oldMessageState = message.MessageState;
-
-                // The message is now in a sent state.
-                message.MessageState = MessageState.Sent;
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Updating the message: {id}",
-                    message.Id
-                    );
-
-                // Update the message.
-                _ = await _mailMessageManager.UpdateAsync(
-                    message,
-                    "host",
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Creating a log entry for message: {id}",
-                    message.Id
-                    );
-
-                // Record what we did, in the log.
-                await _providerLogManager.CreateAsync(
-                    new ProviderLog()
-                    {
-                        Message = message,
-                        BeforeState = oldMessageState,
-                        AfterState = message.MessageState,
-                        Event = ProcessEvent.Sent,
-                        ProviderType = assignedProvider
-                    },
-                    "host",
-                    cancellationToken
-                    ).ConfigureAwait(false);
+                // If we get here then we can safely assume the message state
+                //   and the logs both reflect whatever the provider did, or
+                //   didn't do, with the message - unless it threw an exception,
+                //   in which case we deal with it below, in the catch block.
             }
             catch (Exception ex)
             {
-                // If we get here there was a provider (or message) error.
+                // If we get here there was a critical provider (or message) error.
 
                 // Log what happened.
                 _logger.LogError(
@@ -1500,59 +1462,14 @@ internal class ProcessDirector : IProcessDirector
                     cancellationToken
                     ).ConfigureAwait(false);
 
-                // =======
-                // Step 5: transition the message state.
-                // =======
-
-                // Log what we are about to do.
-                _logger.LogInformation(
-                    "Transitioning message: {id} to state: {state}",
-                    message.Id,
-                    MessageState.Processing
-                    );
-
-                // Remember the previous state.
-                var oldMessageState = message.MessageState;
-
-                // The message is now in a sent state.
-                message.MessageState = MessageState.Sent;
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Updating the message: {id}",
-                    message.Id
-                    );
-
-                // Update the message.
-                _ = await _textMessageManager.UpdateAsync(
-                    message,
-                    "host",
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Creating a log entry for message: {id}",
-                    message.Id
-                    );
-
-                // Record what we did, in the log.
-                await _providerLogManager.CreateAsync(
-                    new ProviderLog()
-                    {
-                        Message = message,
-                        BeforeState = oldMessageState,
-                        AfterState = message.MessageState,
-                        Event = ProcessEvent.Sent,
-                        ProviderType = assignedProvider
-                    },
-                    "host",
-                    cancellationToken
-                    ).ConfigureAwait(false);
+                // If we get here then we can safely assume the message state
+                //   and the logs both reflect whatever the provider did, or
+                //   didn't do, with the message - unless it threw an exception,
+                //   in which case we deal with it below, in the catch block.
             }
             catch (Exception ex)
             {
-                // If we get here there was a provider (or message) error.
+                // If we get here there was a critical provider (or message) error.
 
                 // Log what happened.
                 _logger.LogError(
