@@ -105,6 +105,7 @@ namespace CG.Purple.SqlServer.Migrations
                     CanProcessTexts = table.Column<bool>(type: "bit", nullable: false),
                     Priority = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     IsDisabled = table.Column<bool>(type: "bit", nullable: false),
+                    FactoryType = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),

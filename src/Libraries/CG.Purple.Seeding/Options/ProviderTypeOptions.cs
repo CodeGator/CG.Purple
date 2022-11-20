@@ -46,5 +46,11 @@ public class ProviderTypeOptions
     /// </summary>
     public bool IsDisabled { get; set; }
 
+    /// <summary>
+    /// This provider contains the .NET type for the associated provider.
+    /// </summary>
+    [Required]
+    public string FactoryType { get; set; } = null!;
+
     #endregion
 }

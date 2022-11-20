@@ -2,27 +2,30 @@
   "ProviderTypes": [
     {
       "Name": "Smtp",
-      "Description": "A generic SMTP provider",
+      "Description": "Purple SMTP provider",
       "IsDisabled": false,
       "CanProcessEmails": true,
       "CanProcessTexts": false,
-      "Priority": 0
+      "Priority": 0,
+      "FactoryType": "CG.Purple.Smtp.SmtpProvider, CG.Purple.Smtp"
     },
     {
       "Name": "Twillio",
-      "Description": "A Twillio provider",
+      "Description": "Purple Twillio provider",
       "IsDisabled": true,
       "CanProcessEmails": true,
       "CanProcessTexts": true,
-      "Priority": 1
+      "Priority": 1,
+      "FactoryType": "CG.Purple.Twillio.TwillioProvider, CG.Purple.Twillio"
     },
     {
       "Name": "SendGrid",
-      "Description": "A SendGrid provider",
+      "Description": "Purple SendGrid provider",
       "IsDisabled": false,
       "CanProcessEmails": true,
       "CanProcessTexts": true,
-      "Priority": 2
+      "Priority": 2,
+      "FactoryType": "CG.Purple.SendGrid.SendGridProvider, CG.Purple.SendGrid"
     }
   ]
 }

@@ -5,7 +5,7 @@ namespace CG.Purple.Smtp;
 /// This class is a SMTP implementation of the <see cref="IMessageProvider"/>
 /// interface.
 /// </summary>
-internal class SmtpMessageProvider : IMessageProvider
+internal class SmtpProvider : IMessageProvider
 {
     // *******************************************************************
     // Fields.
@@ -27,11 +27,11 @@ internal class SmtpMessageProvider : IMessageProvider
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="SmtpMessageProvider"/>
+    /// This constructor creates a new instance of the <see cref="SmtpProvider"/>
     /// class.
     /// </summary>
     /// <param name="logger">The logger to use with this provider.</param>
-    public SmtpMessageProvider(
+    public SmtpProvider(
         ILogger<IMessageProvider> logger
         )
     {

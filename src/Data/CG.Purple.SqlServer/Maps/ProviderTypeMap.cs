@@ -81,6 +81,11 @@ internal class ProviderTypeMap : EntityMapBase<Entities.ProviderType>
         builder.Property(e => e.IsDisabled)
             .IsRequired();
 
+        // Setup the column.
+        builder.Property(e => e.FactoryType)
+            .IsUnicode(false)
+            .IsRequired();
+
         // Setup the index.
         builder.HasIndex(e => new
         {

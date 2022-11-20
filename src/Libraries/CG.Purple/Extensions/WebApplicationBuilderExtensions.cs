@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Providers;
+
 namespace Microsoft.AspNetCore.Builder;
 
 /// <summary>
@@ -70,8 +72,16 @@ public static partial class WebApplicationBuilderExtensions
             "Wiring up the distributed cache for the managers"
             );
 
-        // Wire up the in-memory cache, for now.
+        // Wire up the in-memory cache.
         webApplicationBuilder.Services.AddDistributedMemoryCache();
+
+        // Tell the world what we are about to do.
+        bootstrapLogger?.LogDebug(
+            "Wiring up the provider factory"
+            );
+
+        // Wire up the provider factory.
+        webApplicationBuilder.Services.AddSingleton<IMessageProviderFactory, MessageProviderFactory>();
 
         // Return the application builder.
         return webApplicationBuilder;

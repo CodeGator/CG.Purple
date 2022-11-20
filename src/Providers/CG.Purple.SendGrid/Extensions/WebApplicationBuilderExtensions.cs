@@ -38,7 +38,7 @@ public static partial class WebApplicationBuilderExtensions
             );
 
         // Add the provider.
-        webApplicationBuilder.Services.AddScoped<SendGridMessageProvider>();
+        webApplicationBuilder.Services.AddScoped<SendGridProvider>();
 
         // Return the application builder.
         return webApplicationBuilder;

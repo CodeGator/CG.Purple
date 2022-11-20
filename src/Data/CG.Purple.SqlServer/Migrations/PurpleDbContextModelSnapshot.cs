@@ -430,6 +430,11 @@ namespace CG.Purple.SqlServer.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
+                    b.Property<string>("FactoryType")
+                        .IsRequired()
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(max)");
+
                     b.Property<bool>("IsDisabled")
                         .HasColumnType("bit");
 

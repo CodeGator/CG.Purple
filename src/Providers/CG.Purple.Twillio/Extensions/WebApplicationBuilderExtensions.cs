@@ -38,7 +38,7 @@ public static partial class WebApplicationBuilderExtensions
             );
 
         // Add the provider.
-        webApplicationBuilder.Services.AddScoped<TwillioMessageProvider>();
+        webApplicationBuilder.Services.AddScoped<TwillioProvider>();
 
         // Return the application builder.
         return webApplicationBuilder;

@@ -37,10 +37,22 @@ public enum ProcessEvent
     Sent,
 
     /// <summary>
-    /// This enumeration represents an error event.
+    /// This enumeration represents a processed related error event.
     /// </summary>
-    [Description("An error occurred")]
-    Error
+    [Description("A process related error occurred")]
+    ProcessError,
+
+    /// <summary>
+    /// This enumeration represents a provider related error event.
+    /// </summary>
+    [Description("A provider related error occurred")]
+    ProviderError,
+
+    /// <summary>
+    /// This enumeration represents a message related error event.
+    /// </summary>
+    [Description("A message related error occurred")]
+    MessageError
 }
 
 

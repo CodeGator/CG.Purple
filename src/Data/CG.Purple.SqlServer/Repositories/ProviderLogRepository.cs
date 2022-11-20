@@ -168,11 +168,182 @@ internal class ProviderLogRepository : IProviderLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<int> CountMessageErrorsAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for provider logs with message errors"
+                );
+
+            // Search for any entities in the data-store.
+            var data = await dbContext.ProviderLogs.CountAsync(x =>
+                x.MessageId == message.Id && 
+                x.Event == ProcessEvent.MessageError,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return data;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to count provider logs with message errors!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to count provider logs " +
+                "with message errors!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<int> CountProcessErrorsAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for provider logs with process errors"
+                );
+
+            // Search for any entities in the data-store.
+            var data = await dbContext.ProviderLogs.CountAsync(x =>
+                x.MessageId == message.Id &&
+                x.Event == ProcessEvent.ProcessError,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return data;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to count provider logs with process errors!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to count provider logs " +
+                "with process errors!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<int> CountProviderErrorsAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for provider logs with provider errors"
+                );
+
+            // Search for any entities in the data-store.
+            var data = await dbContext.ProviderLogs.CountAsync(x =>
+                x.MessageId == message.Id &&
+                x.Event == ProcessEvent.ProviderError,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return data;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to count provider logs with provider errors!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to count provider logs " +
+                "with provider errors!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<ProviderLog> CreateAsync(
         ProviderLog providerLog,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(providerLog, nameof(providerLog));
+
         try
         {
             // Log what we are about to do.
@@ -280,10 +451,13 @@ internal class ProviderLogRepository : IProviderLogRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ProviderLog model,
+        ProviderLog providerLog,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(providerLog, nameof(providerLog));
+
         try
         {
             // Log what we are about to do.
@@ -307,7 +481,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[ProviderLogs] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { providerLog.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -335,6 +509,9 @@ internal class ProviderLogRepository : IProviderLogRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(providerLog, nameof(providerLog));
+
         try
         {
             // Log what we are about to do.

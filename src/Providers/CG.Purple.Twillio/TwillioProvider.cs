@@ -5,7 +5,7 @@ namespace CG.Purple.Twillio;
 /// This class is a Twillio implementation of the <see cref="IMessageProvider"/>
 /// interface.
 /// </summary>
-internal class TwillioMessageProvider : IMessageProvider
+internal class TwillioProvider : IMessageProvider
 {
     // *******************************************************************
     // Fields.
@@ -27,11 +27,11 @@ internal class TwillioMessageProvider : IMessageProvider
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="TwillioMessageProvider"/>
+    /// This constructor creates a new instance of the <see cref="TwillioProvider"/>
     /// class.
     /// </summary>
     /// <param name="logger">The logger to use with this provider.</param>
-    public TwillioMessageProvider(
+    public TwillioProvider(
         ILogger<IMessageProvider> logger
         )
     {

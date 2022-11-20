@@ -1314,7 +1314,8 @@ internal class SeedDirector : ISeedDirector
                         IsDisabled = providerTypeOption.IsDisabled,
                         Priority = providerTypeOption.Priority,
                         CanProcessEmails = providerTypeOption.CanProcessEmails,
-                        CanProcessTexts = providerTypeOption.CanProcessTexts
+                        CanProcessTexts = providerTypeOption.CanProcessTexts,
+                        FactoryType = providerTypeOption.FactoryType
                     },
                     userName,
                     cancellationToken

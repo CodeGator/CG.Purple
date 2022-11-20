@@ -36,6 +36,60 @@ public interface IProviderLogManager
         );
 
     /// <summary>
+    /// This method counts the number of message related errors, for the given message,
+    /// that exist in the underlying storage.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a count of the 
+    /// number of message related errors, for the given message.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<int> CountMessageErrorsAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method counts the number of process related errors, for the given message,
+    /// that exist in the underlying storage.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a count of the 
+    /// number of process related errors, for the given message.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<int> CountProcessErrorsAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method counts the number of provider related errors, for the given message,
+    /// that exist in the underlying storage.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a count of the 
+    /// number of provider related errors, for the given message.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<int> CountProviderErrorsAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method creates a new <see cref="ProviderLog"/> object in the 
     /// underlying storage.
     /// </summary>

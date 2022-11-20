@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Models;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -150,6 +152,132 @@ internal class ProviderLogManager : IProviderLogManager
             // Provider better context.
             throw new ManagerException(
                 message: $"The manager failed to count provider logs!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<int> CountMessageErrorsAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProviderLogRepository.CountMessageErrorsAsync)
+                );
+
+            // Perform the search.
+            return await _providerLogRepository.CountMessageErrorsAsync(
+                message,
+                cancellationToken
+                ).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to count message errors in the provider logs!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to count message errors in the " +
+                $"provider logs!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<int> CountProcessErrorsAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProviderLogRepository.CountProcessErrorsAsync)
+                );
+
+            // Perform the search.
+            return await _providerLogRepository.CountProcessErrorsAsync(
+                message,
+                cancellationToken
+                ).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to count process errors in the provider logs!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to count process errors in the " +
+                $"provider logs!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<int> CountProviderErrorsAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProviderLogRepository.CountProviderErrorsAsync)
+                );
+
+            // Perform the search.
+            return await _providerLogRepository.CountProviderErrorsAsync(
+                message,
+                cancellationToken
+                ).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to count provider errors in the provider logs!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to count provider errors in the " +
+                $"provider logs!",
                 innerException: ex
                 );
         }

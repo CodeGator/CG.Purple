@@ -7,7 +7,7 @@ namespace CG.Purple.SendGrid;
 /// This class is a SendGrid implementation of the <see cref="IMessageProvider"/>
 /// interface.
 /// </summary>
-internal class SendGridMessageProvider : IMessageProvider
+internal class SendGridProvider : IMessageProvider
 {
     // *******************************************************************
     // Fields.
@@ -29,11 +29,11 @@ internal class SendGridMessageProvider : IMessageProvider
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="SendGridMessageProvider"/>
+    /// This constructor creates a new instance of the <see cref="SendGridProvider"/>
     /// class.
     /// </summary>
     /// <param name="logger">The logger to use with this provider.</param>
-    public SendGridMessageProvider(
+    public SendGridProvider(
         ILogger<IMessageProvider> logger
         )
     {

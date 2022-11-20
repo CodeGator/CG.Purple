@@ -38,7 +38,7 @@ public static partial class WebApplicationBuilderExtensions
             );
 
         // Add the provider.
-        webApplicationBuilder.Services.AddScoped<SmtpMessageProvider>();
+        webApplicationBuilder.Services.AddScoped<SmtpProvider>();
 
         // Return the application builder.
         return webApplicationBuilder;

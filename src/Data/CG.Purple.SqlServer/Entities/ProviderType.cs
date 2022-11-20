@@ -46,5 +46,10 @@ internal class ProviderType : EntityBase
     /// </summary>
     public bool IsDisabled { get; set; }
 
+    /// <summary>
+    /// This property contains the .NET type for the associated provider.
+    /// </summary>
+    public string FactoryType { get; set; } = null!;
+
     #endregion
 }
