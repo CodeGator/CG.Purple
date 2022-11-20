@@ -15,22 +15,25 @@ steps:
 - checkout: self
   fetchDepth: 0
 - task: UseDotNet@2
+  displayName: 'install .NET sdk'
   inputs:
     packageType: 'sdk'
     version: '7.x'
     includePreviewVersions: true
+    
 - task: NuGetToolInstaller@1
+  displayName: 'install nuget'
   inputs:
     versionSpec: 
-
 - task: NuGetCommand@2
+  displayName: 'dotnet restore'
   inputs:
     command: 'restore'
     restoreSolution: '$(solution)'
     feedsToUse: 'config'
     nugetConfigPath: 'nuget.config'
-
 - task: VSBuild@1
+  displayName: 'build code'
   inputs:
     solution: '$(solution)'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
@@ -38,6 +41,35 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
+  displayName: 'test code'
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- powershell: |
+    choco install docfx -y
+    if ($lastexitcode -ne 0) {
+      throw ("Error installing docfx")
+    }
+  displayName: "Install docfx"
+
+- powershell: |
+    docfx docfx/docfx.json
+    if ($lastexitcode -ne 0) {
+      throw ("Error generating document")
+    }
+  displayName: "Generate docs"
+  
+- powershell: | 
+    $env:GIT_REDIRECT_STDERR = '2>&1'
+    git config --global credential.helper store
+    Add-Content "$HOME\.git-credentials" "https://$(GIT_PAT):x-oauth-basic@github.com`n"
+    git config --global user.email $(OP_USER_EMAIL)
+    git config --global user.name $(OP_USER)
+    git clone https://github.com/CodeGator/CG.Purple.git -b gh-pages origin_site -q
+    Copy-Item origin_site/.git _site -recurse
+    CD _site
+    git add -A
+    git commit -m "CI Updates [skip ci]" -q
+    git push origin gh-pages -q
+  displayName: "Publish docs" 
