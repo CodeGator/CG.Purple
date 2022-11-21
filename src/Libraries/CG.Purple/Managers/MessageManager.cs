@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Repositories;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -29,7 +31,7 @@ internal class MessageManager : IMessageManager
     /// <summary>
     /// This field contains the repository for this manager.
     /// </summary>
-    internal protected readonly IMessageRepository _MessageRepository = null!;
+    internal protected readonly IMessageRepository _messageRepository = null!;
 
     /// <summary>
     /// This field contains the distributed cache for this manager.
@@ -72,7 +74,7 @@ internal class MessageManager : IMessageManager
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
-        _MessageRepository = MessageRepository;
+        _messageRepository = MessageRepository;
         _distributedCache = distributedCache;
         _logger = logger;
     }
@@ -99,7 +101,7 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the search.
-            return await _MessageRepository.AnyAsync(
+            return await _messageRepository.AnyAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -135,7 +137,7 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the search.
-            var result = await _MessageRepository.CountAsync(
+            var result = await _messageRepository.CountAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -174,7 +176,7 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the operation.
-            var result = await _MessageRepository.FindAllAsync(
+            var result = await _messageRepository.FindAllAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -218,7 +220,7 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the operation.
-            var result = await _MessageRepository.FindByIdAsync(
+            var result = await _messageRepository.FindByIdAsync(
                 id,
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -263,7 +265,7 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the operation.
-            var result = await _MessageRepository.FindByKeyAsync(
+            var result = await _messageRepository.FindByKeyAsync(
                 messageKey,
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -304,7 +306,7 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the operation.
-            var result = await _MessageRepository.FindPendingAsync(
+            var result = await _messageRepository.FindPendingAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -322,6 +324,62 @@ internal class MessageManager : IMessageManager
             // Provider better context.
             throw new ManagerException(
                 message: $"The manager failed to search for pending messages!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<Message> UpdateAsync(
+        Message message,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Updating the {name} model stats",
+                nameof(Message)
+                );
+
+            // Ensure the stats are correct.
+            message.LastUpdatedOnUtc = DateTime.UtcNow;
+            message.LastUpdatedBy = userName;
+
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IMessageRepository.UpdateAsync)
+                );
+
+            // Perform the operation.
+            var result = await _messageRepository.UpdateAsync(
+                message,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to update a message!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to update a message!",
                 innerException: ex
                 );
         }

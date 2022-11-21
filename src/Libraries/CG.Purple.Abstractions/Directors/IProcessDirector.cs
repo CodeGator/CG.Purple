@@ -7,7 +7,7 @@ namespace CG.Purple.Directors;
 public interface IProcessDirector
 {
     /// <summary>
-    /// This method processes pending messages.
+    /// This method attempts to process all pending messages.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>

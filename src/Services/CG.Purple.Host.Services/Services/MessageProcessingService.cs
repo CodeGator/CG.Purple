@@ -144,11 +144,11 @@ internal class MessageProcessingService : BackgroundService
                 // Log what we are about to do.
                 _logger.LogDebug(
                     "Deferring to {name}",
-                    nameof(IProcessDirector.ProcessAsync)
+                    nameof(IProcessDirector.ProcessMessagesAsync)
                     );
 
                 // Process pending messages.
-                await processDirector.ProcessAsync(
+                await processDirector.ProcessMessagesAsync(
                     stoppingToken
                     ).ConfigureAwait(false);
 

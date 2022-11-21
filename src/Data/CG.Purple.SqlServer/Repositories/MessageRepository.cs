@@ -440,5 +440,114 @@ internal class MessageRepository : IMessageRepository
         }
     }
 
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<Message> UpdateAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Converting a {entity} model to an entity",
+                nameof(Message)
+                );
+
+            // Convert the model to an entity.
+            var entity = _mapper.Map<Entities.Message>(
+                message
+                );
+
+            // Did we fail?
+            if (entity is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(Message)} model to an entity."
+                    );
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Updating a {entity} entity in the {ctx} data-context.",
+                nameof(Message),
+                nameof(PurpleDbContext)
+                );
+
+            // Update the data-store.
+            _ = dbContext.Messages.Update(
+                entity
+                );
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Saving changes to the {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Save the changes.
+            await dbContext.SaveChangesAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Converting a {entity} entity to a model",
+                nameof(Message)
+                );
+
+            // Convert the entity to a model.
+            var result = _mapper.Map<Message>(
+                entity
+                );
+
+            // Did we fail?
+            if (result is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(Message)} entity to a model."
+                    );
+            }
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to update a message!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to update a message!",
+                innerException: ex
+                );
+        }
+    }
+
     #endregion
 }
