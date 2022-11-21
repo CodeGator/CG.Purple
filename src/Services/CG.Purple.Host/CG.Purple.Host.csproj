@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>dc2318b5-eabf-41b4-900f-cde45ecc9b7b</UserSecretsId>
-        <Description>Blazor host for the Purple microservice.</Description>
+        <Description>Blazor host for the CG.Purple microservice.</Description>
     </PropertyGroup>
 
     <ItemGroup>
