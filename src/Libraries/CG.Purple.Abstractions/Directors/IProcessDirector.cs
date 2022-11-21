@@ -14,7 +14,7 @@ public interface IProcessDirector
     /// <returns>A task to perform the operation.</returns>
     /// <exception cref="DirectorException">This exception is thrown whenever the
     /// director fails to complete the operation.</exception>
-    Task ProcessAsync(
+    Task ProcessMessagesAsync(
         CancellationToken cancellationToken = default
         );
 }

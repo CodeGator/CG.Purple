@@ -1,0 +1,102 @@
+﻿
+namespace CG.Purple.Managers;
+
+/// <summary>
+/// This interface represents an object that manages operations related to
+/// <see cref="Message"/> objects.
+/// </summary>
+public interface IMessageManager
+{
+    /// <summary>
+    /// This method indicates whether there are any <see cref="Message"/> objects
+    /// in the underlying storage.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns <c>true</c> if there
+    /// are any <see cref="Message"/> objects; <c>false</c> otherwise.</returns>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<bool> AnyAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method counts the number of <see cref="Message"/> objects in the 
+    /// underlying storage.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a count of the 
+    /// number of <see cref="Message"/> objects in the underlying storage.</returns>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<long> CountAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a sequence of <see cref="Message"/> objects.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of <see cref="Message"/> 
+    /// objects.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<Message>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a single matching <see cref="Message"/> object using
+    /// the given identifier.
+    /// </summary>
+    /// <param name="id">The message identifier to use for the search.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a matching <see cref="Message"/> 
+    /// object, if one was found, or NULL otherwise.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<Message?> FindByIdAsync(
+        long id,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a single matching <see cref="Message"/> object using
+    /// the given message key.
+    /// </summary>
+    /// <param name="messageKey">The message key to use for the search.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a matching <see cref="Message"/> 
+    /// object, if one was found, or NULL otherwise.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<Message?> FindByKeyAsync(
+        string messageKey,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a sequence of <see cref="Message"/> objects
+    /// that are not disabled, or sent, or processed.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of matching
+    /// <see cref="Message"/> objects.</returns>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<Message>> FindPendingAsync(
+        CancellationToken cancellationToken = default
+        );
+}

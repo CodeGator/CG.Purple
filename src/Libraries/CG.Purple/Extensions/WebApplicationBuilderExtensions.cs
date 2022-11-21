@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Providers;
-
 namespace Microsoft.AspNetCore.Builder;
 
 /// <summary>
@@ -58,6 +56,7 @@ public static partial class WebApplicationBuilderExtensions_Purple
         webApplicationBuilder.Services.AddScoped<IAttachmentManager, AttachmentManager>();
         webApplicationBuilder.Services.AddScoped<IFileTypeManager, FileTypeManager>();
         webApplicationBuilder.Services.AddScoped<IMailMessageManager, MailMessageManager>();
+        webApplicationBuilder.Services.AddScoped<IMessageManager, MessageManager>();
         webApplicationBuilder.Services.AddScoped<IMimeTypeManager, MimeTypeManager>();
         webApplicationBuilder.Services.AddScoped<IMessagePropertyManager, MessagePropertyManager>();
         webApplicationBuilder.Services.AddScoped<IParameterTypeManager, ParameterTypeManager>();

@@ -126,6 +126,7 @@ public static partial class WebApplicationBuilderExtensions_Purple_SqlServer
         webApplicationBuilder.Services.AddScoped<IAttachmentRepository, AttachmentRepository>();
         webApplicationBuilder.Services.AddScoped<IFileTypeRepository, FileTypeRepository>();
         webApplicationBuilder.Services.AddScoped<IMailMessageRepository, MailMessageRepository>();
+        webApplicationBuilder.Services.AddScoped<IMessageRepository, MessageRepository>();
         webApplicationBuilder.Services.AddScoped<IMimeTypeRepository, MimeTypeRepository>();
         webApplicationBuilder.Services.AddScoped<IMessagePropertyRepository, MessagePropertyRepository>();
         webApplicationBuilder.Services.AddScoped<IParameterTypeRepository, ParameterTypeRepository>();
