@@ -1,4 +1,6 @@
 ﻿
+using CG.Collections.Generic;
+
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
@@ -192,7 +194,7 @@ internal class MessageRepository : IMessageRepository
 
             // Perform the message search.
             var Messages = await dbContext.Messages
-                .Include(x => x.Attachments)
+                .Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                 .ToListAsync(
                 cancellationToken
@@ -255,7 +257,7 @@ internal class MessageRepository : IMessageRepository
             // Perform the message search.
             var Message = await dbContext.Messages.Where(x => 
                 x.Id == id
-                ).Include(x => x.Attachments)
+                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                  .FirstOrDefaultAsync(
                     cancellationToken
@@ -333,7 +335,7 @@ internal class MessageRepository : IMessageRepository
             // Perform the message search.
             var Message = await dbContext.Messages.Where(x =>
                 x.MessageKey == messageKey.ToUpper()
-                ).Include(x => x.Attachments)
+                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                  .FirstOrDefaultAsync(
                     cancellationToken
@@ -382,7 +384,7 @@ internal class MessageRepository : IMessageRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<Message>> FindPendingAsync(
+    public virtual async Task<IEnumerable<Message>> FindReadyToProcessAsync(
         CancellationToken cancellationToken = default
         )
     {
@@ -404,19 +406,22 @@ internal class MessageRepository : IMessageRepository
                 "Searching for pending messages."
                 );
 
-            // Perform the message search.
-            var Messages = await dbContext.Messages.Where(x =>
+            // Perform the message search for:
+            //  * messages that aren't in a terminal state
+            //  * messages that aren't disabled.
+            var messages = await dbContext.Messages.Where(x =>
                 x.IsDisabled == false && 
                 x.MessageState != MessageState.Failed &&
                 x.MessageState != MessageState.Sent
-                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType)
+                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .OrderByDescending(x => x.CreatedBy).ThenBy(x => x.Priority)
                  .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
 
             // Convert the entities to a models.
-            var result = Messages.Select(x =>
+            var result = messages.Select(x =>
                 _mapper.Map<Message>(x)
                 );
 
@@ -428,13 +433,13 @@ internal class MessageRepository : IMessageRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for pending messages!"
+                "Failed to search for messages that are ready to process!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for pending  " +
-                "messages!",
+                message: $"The repository failed to search for messages " +
+                "that are ready to process!",
                 innerException: ex
                 );
         }
@@ -486,6 +491,18 @@ internal class MessageRepository : IMessageRepository
             dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
+
+            // We don't mess with associated attachments.
+            entity.Attachments.ForEach(x =>
+            {
+                dbContext.Entry(x).State = EntityState.Unchanged;
+            });
+
+            // We don't mess with associated message properties.
+            entity.MessageProperties.ForEach(x =>
+            {
+                dbContext.Entry(x).State = EntityState.Unchanged;
+            });
 
             // Log what we are about to do.
             _logger.LogDebug(

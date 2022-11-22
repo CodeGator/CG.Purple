@@ -51,67 +51,13 @@ internal class SendGridProvider : IMessageProvider
     #region Public methods
 
     /// <inheritdoc/>
-    public virtual async Task SendMailAsync(
-        MailMessage mailMessage,
-        ProviderType providerType,
+    public virtual async Task ProcessMessagesAsync(
+        IEnumerable<Message> messages,
+        IEnumerable<ProviderParameter> parameters,
         CancellationToken cancellationToken = default
         )
     {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(mailMessage, nameof(mailMessage))
-            .ThrowIfNull(providerType, nameof(providerType));
-
-        try
-        {
-
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to process an email!"
-                );
-
-            // Provider better context.
-            throw new ManagerException(
-                message: $"The provider failed to process an email!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task SendTextAsync(
-        TextMessage textMessage,
-        ProviderType providerType,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(textMessage, nameof(textMessage))
-            .ThrowIfNull(providerType, nameof(providerType));
-
-        try
-        {
-
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to process a text!"
-                );
-
-            // Provider better context.
-            throw new ManagerException(
-                message: $"The provider failed to process a text!",
-                innerException: ex
-                );
-        }
+        // TODO : write the code for this.
     }
 
     #endregion

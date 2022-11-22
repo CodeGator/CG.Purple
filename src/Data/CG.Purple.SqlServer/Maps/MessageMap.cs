@@ -83,6 +83,10 @@ internal class MessageMap : EntityMapBase<Entities.Message>
         builder.Property(e => e.IsDisabled)
             .IsRequired();
 
+        // Setup the column.
+        builder.Property(e => e.Priority)
+            .IsRequired();
+
         // Setup the conversion.
         _modelBuilder.Entity<Entities.Message>()
             .Property(e => e.MessageType)
@@ -102,6 +106,7 @@ internal class MessageMap : EntityMapBase<Entities.Message>
         // Setup the index.
         builder.HasIndex(e => new
         {
+            e.Priority,
             e.From,
             e.MessageType,
             e.MessageState,

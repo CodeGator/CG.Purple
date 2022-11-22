@@ -212,6 +212,13 @@ public static partial class WebApplicationExtensions_Purple_Seeding
                     seedStartupOptions.Force
                     ).Wait();
                 break;
+            case "ProcessLogs":
+                seedDirector.SeedProcessLogsAsync(
+                    configuration,
+                    userName,
+                    seedStartupOptions.Force
+                    ).Wait();
+                break;
             case "PropertyTypes":
                 seedDirector.SeedPropertyTypesAsync(
                     configuration,
@@ -228,13 +235,6 @@ public static partial class WebApplicationExtensions_Purple_Seeding
                 break;
             case "ProviderTypes":
                 seedDirector.SeedProviderTypesAsync(
-                    configuration,
-                    userName,
-                    seedStartupOptions.Force
-                    ).Wait();
-                break;
-            case "ProviderLogs":
-                seedDirector.SeedProviderLogsAsync(
                     configuration,
                     userName,
                     seedStartupOptions.Force

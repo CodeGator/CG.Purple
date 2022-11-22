@@ -237,7 +237,7 @@
         },
         {
           "PropertyTypeName": "Provider",
-          "Value": "SnedGrid"
+          "Value": "SendGrid"
         }
       ],
       "IsDisabled": false

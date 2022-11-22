@@ -42,6 +42,11 @@ internal class Message : EntityBase
     public bool IsDisabled { get; set; }
 
     /// <summary>
+    /// This property contains the relative priority of the message.
+    /// </summary>
+    public int Priority { get; set; }
+
+    /// <summary>
     /// This property contains the associated message properties.
     /// </summary>
     public virtual ICollection<MessageProperty> MessageProperties { get; set; }

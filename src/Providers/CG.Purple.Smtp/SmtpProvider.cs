@@ -14,6 +14,21 @@ internal class SmtpProvider : IMessageProvider
     #region Fields
 
     /// <summary>
+    /// This field contains the mail manager for this provider.
+    /// </summary>
+    internal protected readonly IMailMessageManager _mailMessageManager = null!;
+
+    /// <summary>
+    /// This field contains the message property manager for this director.
+    /// </summary>
+    internal protected readonly IMessagePropertyManager _messagePropertyManager = null!;
+
+    /// <summary>
+    /// This field contains the process log manager for this director.
+    /// </summary>
+    internal protected readonly IProcessLogManager _processLogManager = null!;
+
+    /// <summary>
     /// This field contains the logger for this provider.
     /// </summary>
     internal protected readonly ILogger<IMessageProvider> _logger = null!;
@@ -30,15 +45,30 @@ internal class SmtpProvider : IMessageProvider
     /// This constructor creates a new instance of the <see cref="SmtpProvider"/>
     /// class.
     /// </summary>
+    /// <param name="mailMessageManager">The mail message manager to use
+    /// with this provider.</param>
+    /// <param name="messagePropertyManager">The message property manager 
+    /// to use with this provider.</param>
+    /// <param name="processLogManager">The process log manager to use
+    /// with this provider.</param>
     /// <param name="logger">The logger to use with this provider.</param>
     public SmtpProvider(
+        IMailMessageManager mailMessageManager,
+        IProcessLogManager processLogManager,
+        IMessagePropertyManager messagePropertyManager,
         ILogger<IMessageProvider> logger
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(logger, nameof(logger));
+        Guard.Instance().ThrowIfNull(mailMessageManager, nameof(mailMessageManager))
+            .ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNull(messagePropertyManager, nameof(messagePropertyManager))
+            .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
+        _mailMessageManager = mailMessageManager;
+        _messagePropertyManager = messagePropertyManager;
+        _processLogManager = processLogManager;
         _logger = logger;
     }
 
@@ -51,24 +81,24 @@ internal class SmtpProvider : IMessageProvider
     #region Public methods
 
     /// <inheritdoc/>
-    public virtual Task SendMailAsync(
-        MailMessage mailMessage,
-        ProviderType providerType,
+    public virtual async Task ProcessMessagesAsync(
+        IEnumerable<Message> messages,
+        IEnumerable<ProviderParameter> parameters,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(mailMessage, nameof(mailMessage))
-            .ThrowIfNull(providerType, nameof(providerType));
+        Guard.Instance().ThrowIfNull(messages, nameof(messages))
+            .ThrowIfNull(parameters, nameof(parameters));
 
         try
         {
             // =======
-            // Step 1: Find the associated provider parameters.
+            // Step 1: Find the parameters we'll need.
             // =======
 
-            // Get the server url property from the message properties.
-            var serverUrlProperty = providerType.Parameters.FirstOrDefault(
+            // Get the server url.
+            var serverUrlProperty = parameters.FirstOrDefault(
                 x => x.ParameterType.Name == "ServerUrl"
                 );
 
@@ -77,12 +107,12 @@ internal class SmtpProvider : IMessageProvider
             {
                 // Panic!!
                 throw new KeyNotFoundException(
-                    $"The message; {mailMessage.Id} didn't have a 'ServerUrl' property!"
+                    $"The 'ServerUrl' parameter is missing, or invalid!"
                     );
             }
 
-            // Get the user name property from the message properties.
-            var userNameProperty = providerType.Parameters.FirstOrDefault(
+            // Get the user name.
+            var userNameProperty = parameters.FirstOrDefault(
                 x => x.ParameterType.Name == "UserName"
                 );
 
@@ -91,12 +121,12 @@ internal class SmtpProvider : IMessageProvider
             {
                 // Panic!!
                 throw new KeyNotFoundException(
-                    $"The message; {mailMessage.Id} didn't have a 'UserName' property!"
+                    $"The 'UserName' parameter is missing, or invalid!"
                     );
             }
 
-            // Get the password property from the message properties.
-            var passwordProperty = providerType.Parameters.FirstOrDefault(
+            // Get the password.
+            var passwordProperty = parameters.FirstOrDefault(
                 x => x.ParameterType.Name == "Password"
                 );
 
@@ -105,60 +135,12 @@ internal class SmtpProvider : IMessageProvider
             {
                 // Panic!!
                 throw new KeyNotFoundException(
-                    $"The message; {mailMessage.Id} didn't have a 'Password' property!"
+                    $"The 'Password' parameter is missing, or invalid!"
                     );
             }
 
             // =======
-            // Step 2: Create the .NET mail message.
-            // =======
-
-            // Create the .NET model.
-            using var msg = new System.Net.Mail.MailMessage()
-            {
-                From = new System.Net.Mail.MailAddress(mailMessage.From),
-                Subject = mailMessage.Subject,
-                Body = mailMessage.Body,
-                IsBodyHtml = mailMessage.IsHtml
-            };
-
-            // Set the target address(es).
-            foreach (var to in mailMessage.To.Split(';'))
-            {
-                if (!string.IsNullOrEmpty(to))
-                {
-                    msg.To.Add(to);
-                }
-            }
-
-            // Was a CC supplied?
-            if (!string.IsNullOrEmpty(mailMessage.CC))
-            {
-                // Set the CC address(es).
-                foreach (var cc in mailMessage.CC.Split(';'))
-                {
-                    if (!string.IsNullOrEmpty(cc))
-                    {
-                        msg.CC.Add(cc);
-                    }
-                }
-            }
-
-            // Was a BCC supplied?
-            if (!string.IsNullOrEmpty(mailMessage.BCC))
-            {
-                // Set the BCC address(es).
-                foreach (var bcc in mailMessage.BCC.Split(';'))
-                {
-                    if (!string.IsNullOrEmpty(bcc))
-                    {
-                        msg.Bcc.Add(bcc);
-                    }
-                }
-            }
-
-            // =======
-            // Step 3: Create the .NET mail client.
+            // Step 2: Create the .NET mail client.
             // =======
 
             // Create the SMTP client.
@@ -174,47 +156,245 @@ internal class SmtpProvider : IMessageProvider
                 );
 
             // =======
-            // Step 4: Send the message.
+            // Step 3: Process the individual messages.
             // =======
 
-            // Send the message.
-            client.Send(msg);
+            // Loop through the messages.
+            foreach (var message in messages)
+            {
+                // Should never happen, but, pffft, check it anyway.
+                if (message.MessageType != MessageType.Mail)
+                {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Creating a log entry for message: {id}",
+                        message.Id
+                        );
 
+                    // Record what we did, in the log.
+                    await _processLogManager.CreateAsync(
+                        new ProcessLog()
+                        {
+                            Message = message,
+                            Event = ProcessEvent.Error,
+                            Error = "Message isn't an email!"
+                        },
+                        "host",
+                        cancellationToken
+                        ).ConfigureAwait(false);
 
+                    // TODO : unassign the provider for the mesage.
 
-            // Return the task.
-            return Task.CompletedTask;
+                    continue; // Nothing left to do!
+                }
+
+                // Get the mail portion of the message.
+                var mailMessage = await _mailMessageManager.FindByIdAsync(
+                    message.Id,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Should never happen, but, pffft, check it anyway.
+                if (mailMessage is null)
+                {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Creating a log entry for message: {id}",
+                        message.Id
+                        );
+
+                    // Record what we did, in the log.
+                    await _processLogManager.CreateAsync(
+                        new ProcessLog()
+                        {
+                            Message = message,
+                            Event = ProcessEvent.Error,
+                            Error = "Unable to find the email for processing!"
+                        },
+                        "host",
+                        cancellationToken
+                        ).ConfigureAwait(false);
+
+                    // TODO : unassign the provider for the mesage.
+
+                    continue; // Nothing left to do!
+                }
+
+                // Create the .NET model.
+                using var msg = new System.Net.Mail.MailMessage()
+                {
+                    From = new System.Net.Mail.MailAddress(mailMessage.From),
+                    Subject = mailMessage.Subject,
+                    Body = mailMessage.Body,
+                    IsBodyHtml = mailMessage.IsHtml
+                };
+
+                // Set the target address(es).
+                foreach (var to in mailMessage.To.Split(';'))
+                {
+                    if (!string.IsNullOrEmpty(to))
+                    {
+                        msg.To.Add(to);
+                    }
+                }
+
+                // Was a CC supplied?
+                if (!string.IsNullOrEmpty(mailMessage.CC))
+                {
+                    // Set the CC address(es).
+                    foreach (var cc in mailMessage.CC.Split(';'))
+                    {
+                        if (!string.IsNullOrEmpty(cc))
+                        {
+                            msg.CC.Add(cc);
+                        }
+                    }
+                }
+
+                // Was a BCC supplied?
+                if (!string.IsNullOrEmpty(mailMessage.BCC))
+                {
+                    // Set the BCC address(es).
+                    foreach (var bcc in mailMessage.BCC.Split(';'))
+                    {
+                        if (!string.IsNullOrEmpty(bcc))
+                        {
+                            msg.Bcc.Add(bcc);
+                        }
+                    }
+                }
+
+                // Were there attachments?
+                foreach (var attachment in mailMessage.Attachments)
+                {
+                    // Get the data and mime type.
+                    using var contentStream = new MemoryStream(attachment.Data);
+                    var mimeType = $"{attachment.MimeType.Type}/{attachment.MimeType.SubType}";
+
+                    // Set the attachment.
+                    msg.Attachments.Add(
+                            new System.Net.Mail.Attachment(
+                                contentStream,
+                                mimeType
+                                )
+                            );
+                }
+
+                // =======
+                // Step 4: Send the email.
+                // =======
+
+                try
+                {
+                    // Log what we are about to do.
+                    _logger.LogTrace(
+                        "Deferring to {method} for message: {id}",
+                        nameof(System.Net.Mail.SmtpClient.Send),
+                        message.Id
+                        );
+
+                    // Send the message.
+                    client.Send(msg);
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Transitioning message: {id} to state: {state}",
+                        message.Id,
+                        MessageState.Sent
+                        );
+
+                    // Remember the previous state.
+                    var oldMessageState = mailMessage.MessageState;
+
+                    // The message is now in a sent state.
+                    mailMessage.MessageState = MessageState.Sent;
+
+                    // Update the message.
+                    _ = await _mailMessageManager.UpdateAsync(
+                        mailMessage,
+                        "host",
+                        cancellationToken
+                        ).ConfigureAwait(false);
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Creating a log entry for message: {id}",
+                        message.Id
+                        );
+
+                    // Record what we did, in the log.
+                    await _processLogManager.CreateAsync(
+                        new ProcessLog()
+                        {
+                            Message = message,
+                            BeforeState = oldMessageState,
+                            AfterState = message.MessageState,
+                            Event = ProcessEvent.Sent
+                        },
+                        "host",
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    // TODO : at some point, add some retry logic here.
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Transitioning message: {id} to state: {state}",
+                        message.Id,
+                        MessageState.Failed
+                        );
+
+                    // Remember the previous state.
+                    var oldMessageState = mailMessage.MessageState;
+
+                    // The message is now in a failed state.
+                    mailMessage.MessageState = MessageState.Failed;
+
+                    // Update the message.
+                    _ = await _mailMessageManager.UpdateAsync(
+                        mailMessage,
+                        "host",
+                        cancellationToken
+                        ).ConfigureAwait(false);
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Creating a log entry for message: {id}",
+                        message.Id
+                        );
+
+                    // Record what we did, in the log.
+                    await _processLogManager.CreateAsync(
+                        new ProcessLog()
+                        {
+                            Message = mailMessage,
+                            BeforeState = oldMessageState,
+                            AfterState = mailMessage.MessageState,
+                            Event = ProcessEvent.Error,
+                            Error = ex.GetBaseException().Message
+                        },
+                        "host",
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
         }
         catch (Exception ex)
         {
-            // If we get here is means the external SMTP client didn't send the message.
-
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to process an email!"
+                "Failed to process messages!"
                 );
 
             // Provider better context.
             throw new ProviderException(
-                message: $"The provider failed to process an email!",
+                message: $"The provider failed to process messages!",
                 innerException: ex
                 );
         }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual Task SendTextAsync(
-        TextMessage textMessage,
-        ProviderType providerType,
-        CancellationToken cancellationToken = default
-        )
-    {
-        throw new ProviderException(
-            message: $"SMTP doesn't support sending text messages!"
-            );
     }
 
     #endregion

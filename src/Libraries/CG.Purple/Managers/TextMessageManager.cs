@@ -184,6 +184,12 @@ internal class TextMessageManager : ITextMessageManager
             textMessage.LastUpdatedBy = null;
             textMessage.LastUpdatedOnUtc = null;
 
+            // Nothing else makes any sense for this type.
+            textMessage.MessageType = MessageType.Text;
+
+            // Always create messages in this state.
+            textMessage.MessageState = MessageState.Pending;
+
             // Should we generate a message key?
             if (string.IsNullOrEmpty(textMessage.MessageKey))
             {

@@ -2,10 +2,10 @@
 namespace CG.Purple.SqlServer.Maps;
 
 /// <summary>
-/// This class is an EFCore configuration map for the <see cref="Entities.ProviderLog"/>
+/// This class is an EFCore configuration map for the <see cref="Entities.ProcessLog"/>
 /// entity type.
 /// </summary>
-internal class ProviderLogMap : EntityMapBase<Entities.ProviderLog>
+internal class ProcessLogMap : EntityMapBase<Entities.ProcessLog>
 {
     // *******************************************************************
     // Constructors.
@@ -14,11 +14,11 @@ internal class ProviderLogMap : EntityMapBase<Entities.ProviderLog>
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="ProviderLogMap"/>
+    /// This constructor creates a new instance of the <see cref="ProcessLogMap"/>
     /// class.
     /// </summary>
     /// <param name="modelBuilder">The model builder to use with this map.</param>
-    public ProviderLogMap(
+    public ProcessLogMap(
         ModelBuilder modelBuilder
         ) : base(modelBuilder)
     {
@@ -34,16 +34,16 @@ internal class ProviderLogMap : EntityMapBase<Entities.ProviderLog>
     #region Public methods
 
     /// <summary>
-    /// This method configures the <see cref="Entities.ProviderLog"/> entity.
+    /// This method configures the <see cref="Entities.ProcessLog"/> entity.
     /// </summary>
     /// <param name="builder">The builder to use for the operation.</param>
     public override void Configure(
-        EntityTypeBuilder<Entities.ProviderLog> builder
+        EntityTypeBuilder<Entities.ProcessLog> builder
         )
     {
         // Setup the table.
         builder.ToTable(
-            "ProviderLogs",
+            "ProcessLogs",
             "Purple"
             );
 
@@ -80,7 +80,7 @@ internal class ProviderLogMap : EntityMapBase<Entities.ProviderLog>
             .IsUnicode(false);
 
         // Setup the conversion.
-        _modelBuilder.Entity<Entities.ProviderLog>()
+        _modelBuilder.Entity<Entities.ProcessLog>()
             .Property(e => e.Event)
             .HasConversion(
                 e => e.ToString(),
@@ -88,7 +88,7 @@ internal class ProviderLogMap : EntityMapBase<Entities.ProviderLog>
                 );
 
         // Setup the conversion.
-        _modelBuilder.Entity<Entities.ProviderLog>()
+        _modelBuilder.Entity<Entities.ProcessLog>()
             .Property(e => e.BeforeState)
             .HasConversion(
                 e => e.ToString(),
@@ -96,7 +96,7 @@ internal class ProviderLogMap : EntityMapBase<Entities.ProviderLog>
                 );
 
         // Setup the conversion.
-        _modelBuilder.Entity<Entities.ProviderLog>()
+        _modelBuilder.Entity<Entities.ProcessLog>()
             .Property(e => e.AfterState)
             .HasConversion(
                 e => e.ToString(),
@@ -104,14 +104,14 @@ internal class ProviderLogMap : EntityMapBase<Entities.ProviderLog>
                 );
 
         // Setup the relationship.
-        _modelBuilder.Entity<Entities.ProviderLog>()
+        _modelBuilder.Entity<Entities.ProcessLog>()
             .HasOne(e => e.Message)
             .WithMany()
             .HasForeignKey(e => e.MessageId)
             .OnDelete(DeleteBehavior.Cascade);
 
         // Setup the relationship.
-        _modelBuilder.Entity<Entities.ProviderLog>()
+        _modelBuilder.Entity<Entities.ProcessLog>()
             .HasOne(e => e.ProviderType)
             .WithMany()
             .HasForeignKey(e => e.ProviderTypeId)
@@ -123,7 +123,8 @@ internal class ProviderLogMap : EntityMapBase<Entities.ProviderLog>
             e.Event,
             e.BeforeState,
             e.AfterState,
-            e.ProviderTypeId
+            e.ProviderTypeId,
+            e.MessageId
         },
         "IX_ProcessLogs"
         );

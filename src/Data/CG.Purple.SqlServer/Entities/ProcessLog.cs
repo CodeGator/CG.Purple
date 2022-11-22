@@ -1,9 +1,9 @@
 ﻿namespace CG.Purple.SqlServer.Entities;
 
 /// <summary>
-/// This class represents a provider log entity.
+/// This class represents a process log entity.
 /// </summary>
-internal class ProviderLog : EntityBase
+internal class ProcessLog : EntityBase
 {
     // *******************************************************************
     // Properties.
@@ -20,12 +20,12 @@ internal class ProviderLog : EntityBase
     /// This property contains the unique identifier for the associated 
     /// message.
     /// </summary>
-    public long MessageId { get; set; }
+    public long? MessageId { get; set; }
 
     /// <summary>
     /// This property contains the associate message.
     /// </summary>
-    public virtual Message Message { get; set; } = null!;
+    public virtual Message? Message { get; set; }
 
     /// <summary>
     /// This property contains the associated provider type.

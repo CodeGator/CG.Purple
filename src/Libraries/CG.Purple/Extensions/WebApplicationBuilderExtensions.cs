@@ -61,7 +61,7 @@ public static partial class WebApplicationBuilderExtensions_Purple
         webApplicationBuilder.Services.AddScoped<IMessagePropertyManager, MessagePropertyManager>();
         webApplicationBuilder.Services.AddScoped<IParameterTypeManager, ParameterTypeManager>();
         webApplicationBuilder.Services.AddScoped<IPropertyTypeManager, PropertyTypeManager>();
-        webApplicationBuilder.Services.AddScoped<IProviderLogManager, ProviderLogManager>();
+        webApplicationBuilder.Services.AddScoped<IProcessLogManager, ProcessLogManager>();
         webApplicationBuilder.Services.AddScoped<IProviderTypeManager, ProviderTypeManager>();
         webApplicationBuilder.Services.AddScoped<IProviderParameterManager, ProviderParameterManager>();
         webApplicationBuilder.Services.AddScoped<ITextMessageManager, TextMessageManager>();

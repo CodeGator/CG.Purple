@@ -2,10 +2,10 @@
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
-/// This class is an EFCORE implementation of the <see cref="IProviderLogRepository"/>
+/// This class is an EFCORE implementation of the <see cref="IProcessLogRepository"/>
 /// interface.
 /// </summary>
-internal class ProviderLogRepository : IProviderLogRepository
+internal class ProcessLogRepository : IProcessLogRepository
 {
     // *******************************************************************
     // Fields.
@@ -26,7 +26,7 @@ internal class ProviderLogRepository : IProviderLogRepository
     /// <summary>
     /// This field contains the logger for this repository.
     /// </summary>
-    internal protected readonly ILogger<IProviderLogRepository> _logger;
+    internal protected readonly ILogger<IProcessLogRepository> _logger;
 
     #endregion
 
@@ -37,17 +37,17 @@ internal class ProviderLogRepository : IProviderLogRepository
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="ProviderLogRepository"/>
+    /// This constructor creates a new instance of the <see cref="ProcessLogRepository"/>
     /// class.
     /// </summary>
     /// <param name="dbContextFactory">The EFCORE data-context factory
     /// to use with this repository.</param>
     /// <param name="mapper">The auto-mapper to use with this repository.</param>
     /// <param name="logger">The logger to use with this repository.</param>
-    public ProviderLogRepository(
+    public ProcessLogRepository(
         IDbContextFactory<PurpleDbContext> dbContextFactory,
         IMapper mapper,
-        ILogger<IProviderLogRepository> logger
+        ILogger<IProcessLogRepository> logger
         )
     {
         // Validate the parameters before attempting to use them.
@@ -89,7 +89,7 @@ internal class ProviderLogRepository : IProviderLogRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for provider logs"
+                "Searching for process logs"
                 );
 
             // Search for any entities in the data-store.
@@ -105,12 +105,12 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for provider logs!"
+                "Failed to search for process logs!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for provider logs!",
+                message: $"The repository failed to search for process logs!",
                 innerException: ex
                 );
         }
@@ -138,7 +138,7 @@ internal class ProviderLogRepository : IProviderLogRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for provider logs"
+                "Searching for process logs"
                 );
 
             // Search for any entities in the data-store.
@@ -154,12 +154,12 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count provider logs!"
+                "Failed to count process logs!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to count provider logs!",
+                message: $"The repository failed to count process logs!",
                 innerException: ex
                 );
         }
@@ -168,193 +168,25 @@ internal class ProviderLogRepository : IProviderLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<int> CountMessageErrorsAsync(
-        Message message,
+    public virtual async Task<ProcessLog> CreateAsync(
+        ProcessLog processLog,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(message, nameof(message));
-
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a {ctx} data-context",
-                nameof(PurpleDbContext)
-                );
-
-            // Create a database context.
-            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Searching for provider logs with message errors"
-                );
-
-            // Search for any entities in the data-store.
-            var data = await dbContext.ProviderLogs.CountAsync(x =>
-                x.MessageId == message.Id && 
-                x.Event == ProcessEvent.MessageError,
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Return the results.
-            return data;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to count provider logs with message errors!"
-                );
-
-            // Provider better context.
-            throw new RepositoryException(
-                message: $"The repository failed to count provider logs " +
-                "with message errors!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<int> CountProcessErrorsAsync(
-        Message message,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(message, nameof(message));
-
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a {ctx} data-context",
-                nameof(PurpleDbContext)
-                );
-
-            // Create a database context.
-            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Searching for provider logs with process errors"
-                );
-
-            // Search for any entities in the data-store.
-            var data = await dbContext.ProviderLogs.CountAsync(x =>
-                x.MessageId == message.Id &&
-                x.Event == ProcessEvent.ProcessError,
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Return the results.
-            return data;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to count provider logs with process errors!"
-                );
-
-            // Provider better context.
-            throw new RepositoryException(
-                message: $"The repository failed to count provider logs " +
-                "with process errors!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<int> CountProviderErrorsAsync(
-        Message message,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(message, nameof(message));
-
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a {ctx} data-context",
-                nameof(PurpleDbContext)
-                );
-
-            // Create a database context.
-            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Searching for provider logs with provider errors"
-                );
-
-            // Search for any entities in the data-store.
-            var data = await dbContext.ProviderLogs.CountAsync(x =>
-                x.MessageId == message.Id &&
-                x.Event == ProcessEvent.ProviderError,
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Return the results.
-            return data;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to count provider logs with provider errors!"
-                );
-
-            // Provider better context.
-            throw new RepositoryException(
-                message: $"The repository failed to count provider logs " +
-                "with provider errors!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<ProviderLog> CreateAsync(
-        ProviderLog providerLog,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(providerLog, nameof(providerLog));
+        Guard.Instance().ThrowIfNull(processLog, nameof(processLog));
 
         try
         {
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(ProviderLog)
+                nameof(ProcessLog)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.ProviderLog>(
-                providerLog
+            var entity = _mapper.Map<Entities.ProcessLog>(
+                processLog
                 );
 
             // Did we fail?
@@ -362,7 +194,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ProviderLog)} model to an entity."
+                    $"Failed to map the {nameof(ProcessLog)} model to an entity."
                     );
             }
 
@@ -378,7 +210,10 @@ internal class ProviderLogRepository : IProviderLogRepository
                 ).ConfigureAwait(false);
 
             // We don't mess with associated entity types.
-            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
+            if (entity.Message is not null)
+            { 
+                dbContext.Entry(entity.Message).State = EntityState.Unchanged;
+            }
             if (entity.ProviderType is not null)
             {
                 dbContext.Entry(entity.ProviderType).State = EntityState.Unchanged;
@@ -387,7 +222,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
-                nameof(ProviderLog),
+                nameof(ProcessLog),
                 nameof(PurpleDbContext)
                 );
 
@@ -411,11 +246,11 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(ProviderLog)
+                nameof(ProcessLog)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<ProviderLog>(
+            var result = _mapper.Map<ProcessLog>(
                 entity
                 );
 
@@ -424,7 +259,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ProviderLog)} entity to a model."
+                    $"Failed to map the {nameof(ProcessLog)} entity to a model."
                     );
             }
 
@@ -436,12 +271,12 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a provider log!"
+                "Failed to create a process log!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to create a provider log!",
+                message: $"The repository failed to create a process log!",
                 innerException: ex
                 );
         }
@@ -451,12 +286,12 @@ internal class ProviderLogRepository : IProviderLogRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ProviderLog providerLog,
+        ProcessLog processLog,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(providerLog, nameof(providerLog));
+        Guard.Instance().ThrowIfNull(processLog, nameof(processLog));
 
         try
         {
@@ -474,14 +309,14 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
-                nameof(ProviderLog),
+                nameof(ProcessLog),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[ProviderLogs] WHERE [Id] = {0}",
-                parameters: new object[] { providerLog.Id },
+                parameters: new object[] { processLog.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -490,12 +325,12 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a provider log!"
+                "Failed to delete a process log!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to delete a provider log!",
+                message: $"The repository failed to delete a process log!",
                 innerException: ex
                 );
         }
@@ -504,25 +339,25 @@ internal class ProviderLogRepository : IProviderLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ProviderLog> UpdateAsync(
-        ProviderLog providerLog,
+    public virtual async Task<ProcessLog> UpdateAsync(
+        ProcessLog processLog,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(providerLog, nameof(providerLog));
+        Guard.Instance().ThrowIfNull(processLog, nameof(processLog));
 
         try
         {
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(ProviderLog)
+                nameof(ProcessLog)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.ProviderLog>(
-                providerLog
+            var entity = _mapper.Map<Entities.ProcessLog>(
+                processLog
                 );
 
             // Did we fail?
@@ -530,7 +365,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ProviderLog)} model to an entity."
+                    $"Failed to map the {nameof(ProcessLog)} model to an entity."
                     );
             }
 
@@ -551,7 +386,10 @@ internal class ProviderLogRepository : IProviderLogRepository
             dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // We don't mess with associated entity types.
-            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
+            if (entity.Message is not null)
+            {
+                dbContext.Entry(entity.Message).State = EntityState.Unchanged;
+            }
             if (entity.ProviderType is not null)
             {
                 dbContext.Entry(entity.ProviderType).State = EntityState.Unchanged;
@@ -560,7 +398,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
-                nameof(ProviderLog),
+                nameof(ProcessLog),
                 nameof(PurpleDbContext)
                 );
 
@@ -583,11 +421,11 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(ProviderLog)
+                nameof(ProcessLog)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<ProviderLog>(
+            var result = _mapper.Map<ProcessLog>(
                 entity
                 );
 
@@ -596,7 +434,7 @@ internal class ProviderLogRepository : IProviderLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ProviderLog)} entity to a model."
+                    $"Failed to map the {nameof(ProcessLog)} entity to a model."
                     );
             }
 
@@ -608,12 +446,12 @@ internal class ProviderLogRepository : IProviderLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a provider log!"
+                "Failed to update a process log!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to update a provider log!",
+                message: $"The repository failed to update a process log!",
                 innerException: ex
                 );
         }

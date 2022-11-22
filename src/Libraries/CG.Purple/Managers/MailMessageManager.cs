@@ -185,6 +185,12 @@ internal class MailMessageManager : IMailMessageManager
             mailMessage.LastUpdatedBy = null;
             mailMessage.LastUpdatedOnUtc = null;
 
+            // Nothing else makes any sense for this type.
+            mailMessage.MessageType = MessageType.Mail;
+
+            // Always create messages in this state.
+            mailMessage.MessageState = MessageState.Pending;
+
             // Should we generate a message key?
             if (string.IsNullOrEmpty(mailMessage.MessageKey))
             {

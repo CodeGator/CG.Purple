@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Seeding.Options;
-
 namespace CG.Purple.Seeding.Directors;
 
 /// <summary>
@@ -58,7 +56,7 @@ internal class SeedDirector : ISeedDirector
     /// <summary>
     /// This field contains the provider log manager for this director.
     /// </summary>
-    internal protected readonly IProviderLogManager _providerLogManager = null!;
+    internal protected readonly IProcessLogManager _providerLogManager = null!;
 
     /// <summary>
     /// This field contains the provider type manager for this director.
@@ -120,7 +118,7 @@ internal class SeedDirector : ISeedDirector
         IPropertyTypeManager propertyTypeManager,
         IProviderParameterManager providerParameterManager,
         IProviderTypeManager providerTypeManager,
-        IProviderLogManager providerLogManager,
+        IProcessLogManager providerLogManager,
         ITextMessageManager textMessageManager,
         ILogger<ISeedDirector> logger
         )
@@ -481,7 +479,7 @@ internal class SeedDirector : ISeedDirector
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task SeedProviderLogsAsync(
+    public virtual async Task SeedProcessLogsAsync(
         IConfiguration configuration,
         string userName,
         bool force = false,
@@ -495,20 +493,20 @@ internal class SeedDirector : ISeedDirector
         {
             // Log what we are about to do.
             _logger.LogDebug(
-                "Binding provider log options."
+                "Binding process log options."
                 );
 
             // Bind the options.
-            var providerLogOptions = new List<ProviderLogOptions>();
-            configuration.GetSection("ProviderLogs").Bind(providerLogOptions);
+            var providerLogOptions = new List<ProcessLogOptions>();
+            configuration.GetSection("ProcessLogs").Bind(providerLogOptions);
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Seeding provider logs from the configuration."
+                "Seeding process logs from the configuration."
                 );
 
             // Seed the provider logs from the options.
-            await SeedProviderLogsAsync(
+            await SeedProcessLogsAsync(
                 providerLogOptions,
                 userName,
                 force,
@@ -520,12 +518,12 @@ internal class SeedDirector : ISeedDirector
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to seed provider logs!"
+                "Failed to seed process logs!"
                 );
 
             // Provider better context.
             throw new DirectorException(
-                message: $"The director failed to seed provider logs!",
+                message: $"The director failed to seed process logs!",
                 innerException: ex
                 );
         }
@@ -680,7 +678,8 @@ internal class SeedDirector : ISeedDirector
                         Subject = mailMessageOption.Subject,
                         Body = mailMessageOption.Body,
                         IsHtml = mailMessageOption.IsHtml,
-                        IsDisabled = mailMessageOption.IsDisabled,  
+                        IsDisabled = mailMessageOption.IsDisabled,
+                        MessageType = MessageType.Mail
                     },
                     userName,
                     cancellationToken
@@ -790,7 +789,7 @@ internal class SeedDirector : ISeedDirector
 
                 // Record what we did, in the log.
                 await _providerLogManager.CreateAsync(
-                    new ProviderLog()
+                    new ProcessLog()
                     {
                         Message = mailMessage,
                         AfterState = MessageState.Pending,
@@ -1345,7 +1344,7 @@ internal class SeedDirector : ISeedDirector
 
     /// <summary>
     /// This method performs a seeding operation for the given list of
-    /// <see cref="ProviderLogOptions"/> objects.
+    /// <see cref="ProcessLogOptions"/> objects.
     /// </summary>
     /// <param name="providerLogOptions">The options to use for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
@@ -1355,8 +1354,8 @@ internal class SeedDirector : ISeedDirector
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
     /// <exception cref="DirectorException"></exception>
-    private async Task SeedProviderLogsAsync(
-        List<ProviderLogOptions> providerLogOptions,
+    private async Task SeedProcessLogsAsync(
+        List<ProcessLogOptions> providerLogOptions,
         string userName,
         bool force = false,
         CancellationToken cancellationToken = default
@@ -1377,8 +1376,8 @@ internal class SeedDirector : ISeedDirector
                 {
                     // Log what we didn't do.
                     _logger.LogWarning(
-                        "Skipping seeding provider logs because the 'force' flag " +
-                        "was not specified and there are existing provider logs " +
+                        "Skipping seeding process logs because the 'force' flag " +
+                        "was not specified and there are existing process logs " +
                         "in the database.",
                         providerLogOptions.Count
                         );
@@ -1388,7 +1387,7 @@ internal class SeedDirector : ISeedDirector
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Seeding {count} provider logs.",
+                "Seeding {count} process logs.",
                 providerLogOptions.Count
                 );
 
@@ -1468,12 +1467,12 @@ internal class SeedDirector : ISeedDirector
                     // Log what we are about to do.
                     _logger.LogTrace(
                         "Deferring to {name}",
-                        nameof(IProviderLogManager.CreateAsync)
+                        nameof(IProcessLogManager.CreateAsync)
                         );
 
                     // Create the provider log.
                     _ = await _providerLogManager.CreateAsync(
-                        new ProviderLog()
+                        new ProcessLog()
                         {
                             Message = mailMessage,
                             ProviderType = providerType,
@@ -1509,12 +1508,12 @@ internal class SeedDirector : ISeedDirector
                     // Log what we are about to do.
                     _logger.LogTrace(
                         "Deferring to {name}",
-                        nameof(IProviderLogManager.CreateAsync)
+                        nameof(IProcessLogManager.CreateAsync)
                         );
 
                     // Create the provider log.
                     _ = await _providerLogManager.CreateAsync(
-                        new ProviderLog()
+                        new ProcessLog()
                         {
                             Message = textMessage,
                             ProviderType = providerType,
@@ -1535,12 +1534,12 @@ internal class SeedDirector : ISeedDirector
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to seed provider logs!"
+                "Failed to seed process logs!"
                 );
 
             // Provider better context.
             throw new DirectorException(
-                message: $"The director failed to seed provider logs!",
+                message: $"The director failed to seed process logs!",
                 innerException: ex
                 );
         }
@@ -1633,6 +1632,7 @@ internal class SeedDirector : ISeedDirector
                         To = textMessageOption.To,
                         Body = textMessageOption.Body,
                         IsDisabled = textMessageOption.IsDisabled,
+                        MessageType = MessageType.Text
                     },
                     userName,
                     cancellationToken
@@ -1681,7 +1681,7 @@ internal class SeedDirector : ISeedDirector
 
                 // Record what we did, in the log.
                 await _providerLogManager.CreateAsync(
-                    new ProviderLog()
+                    new ProcessLog()
                     {
                         Message = textMessage,
                         AfterState = MessageState.Pending,

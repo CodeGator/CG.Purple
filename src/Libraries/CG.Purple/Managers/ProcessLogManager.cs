@@ -2,10 +2,10 @@
 namespace CG.Purple.Managers;
 
 /// <summary>
-/// This class is a default implementation of the <see cref="IMessageManager"/>
+/// This class is a default implementation of the <see cref="IProcessLogManager"/>
 /// interface.
 /// </summary>
-internal class MessageManager : IMessageManager
+internal class ProcessLogManager : IProcessLogManager
 {
     // *******************************************************************
     // Constants.
@@ -16,7 +16,7 @@ internal class MessageManager : IMessageManager
     /// <summary>
     /// This constants contains the cache key for this manager.
     /// </summary>
-    internal protected const string CACHE_KEY = "MessageManager";
+    internal protected const string CACHE_KEY = "ProcessLogManager";
 
     #endregion
 
@@ -29,7 +29,7 @@ internal class MessageManager : IMessageManager
     /// <summary>
     /// This field contains the repository for this manager.
     /// </summary>
-    internal protected readonly IMessageRepository _messageRepository = null!;
+    internal protected readonly IProcessLogRepository _processLogRepository = null!;
 
     /// <summary>
     /// This field contains the distributed cache for this manager.
@@ -39,7 +39,7 @@ internal class MessageManager : IMessageManager
     /// <summary>
     /// This field contains the logger for this manager.
     /// </summary>
-    internal protected readonly ILogger<IMessageManager> _logger = null!;
+    internal protected readonly ILogger<IProcessLogManager> _logger = null!;
 
     #endregion
 
@@ -50,29 +50,29 @@ internal class MessageManager : IMessageManager
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="MessageManager"/>
+    /// This constructor creates a new instance of the <see cref="ProcessLogManager"/>
     /// class.
     /// </summary>
-    /// <param name="MessageRepository">The message repository to use
+    /// <param name="processLogRepository">The process log repository to use
     /// with this manager.</param>
     /// <param name="distributedCache">The distributed cache to use for 
     /// this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public MessageManager(
-        IMessageRepository MessageRepository,
+    public ProcessLogManager(
+        IProcessLogRepository processLogRepository,
         IDistributedCache distributedCache,
-        ILogger<IMessageManager> logger
+        ILogger<IProcessLogManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(MessageRepository, nameof(MessageRepository))
+        Guard.Instance().ThrowIfNull(processLogRepository, nameof(processLogRepository))
             .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
-        _messageRepository = MessageRepository;
+        _processLogRepository = processLogRepository;
         _distributedCache = distributedCache;
         _logger = logger;
     }
@@ -95,11 +95,11 @@ internal class MessageManager : IMessageManager
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IMessageRepository.AnyAsync)
+                nameof(IProcessLogRepository.AnyAsync)
                 );
 
             // Perform the search.
-            return await _messageRepository.AnyAsync(
+            return await _processLogRepository.AnyAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -108,12 +108,12 @@ internal class MessageManager : IMessageManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for messages!"
+                "Failed to search for process logs!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to search for messages!",
+                message: $"The manager failed to search for process logs!",
                 innerException: ex
                 );
         }
@@ -131,28 +131,25 @@ internal class MessageManager : IMessageManager
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IMessageRepository.CountAsync)
+                nameof(IProcessLogRepository.CountAsync)
                 );
 
             // Perform the search.
-            var result = await _messageRepository.CountAsync(
+            return await _processLogRepository.CountAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
-
-            // Return the results.
-            return result;
         }
         catch (Exception ex)
         {
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count messages!"
+                "Failed to count process logs!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to count messages!",
+                message: $"The manager failed to count process logs!",
                 innerException: ex
                 );
         }
@@ -161,184 +158,14 @@ internal class MessageManager : IMessageManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<Message>> FindAllAsync(
-        CancellationToken cancellationToken = default
-        )
-    {
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogTrace(
-                "Deferring to {name}",
-                nameof(IMessageRepository.FindAllAsync)
-                );
-
-            // Perform the operation.
-            var result = await _messageRepository.FindAllAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Return the results.
-            return result;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to search for messages!"
-                );
-
-            // Provider better context.
-            throw new ManagerException(
-                message: $"The manager failed to search for  " +
-                "messages!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<Message?> FindByIdAsync(
-        long id,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfZero(id, nameof(id));
-
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogTrace(
-                "Deferring to {name}",
-                nameof(IMessageRepository.FindByIdAsync)
-                );
-
-            // Perform the operation.
-            var result = await _messageRepository.FindByIdAsync(
-                id,
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Return the results.
-            return result;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to search for a message by id!"
-                );
-
-            // Provider better context.
-            throw new ManagerException(
-                message: $"The manager failed to search for a  " +
-                "message by id!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<Message?> FindByKeyAsync(
-        string messageKey,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNullOrEmpty(messageKey, nameof(messageKey));
-
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogTrace(
-                "Deferring to {name}",
-                nameof(IMessageRepository.FindByKeyAsync)
-                );
-
-            // Perform the operation.
-            var result = await _messageRepository.FindByKeyAsync(
-                messageKey,
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Return the results.
-            return result;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to search for a message by key!"
-                );
-
-            // Provider better context.
-            throw new ManagerException(
-                message: $"The manager failed to search for a  " +
-                "message by key!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<IEnumerable<Message>> FindReadyToProcessAsync(
-        CancellationToken cancellationToken = default
-        )
-    {
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogTrace(
-                "Deferring to {name}",
-                nameof(IMessageRepository.FindReadyToProcessAsync)
-                );
-
-            // Perform the operation.
-            var result = await _messageRepository.FindReadyToProcessAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Return the results.
-            return result;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to search for messages that are ready to process!"
-                );
-
-            // Provider better context.
-            throw new ManagerException(
-                message: $"The manager failed to search for messages " +
-                "that are aready to process!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task<Message> UpdateAsync(
-        Message message,
+    public virtual async Task<ProcessLog> CreateAsync(
+        ProcessLog processLog,
         string userName,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(message, nameof(message))
+        Guard.Instance().ThrowIfNull(processLog, nameof(processLog))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         try
@@ -346,39 +173,144 @@ internal class MessageManager : IMessageManager
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating the {name} model stats",
-                nameof(Message)
+                nameof(ProcessLog)
                 );
 
             // Ensure the stats are correct.
-            message.LastUpdatedOnUtc = DateTime.UtcNow;
-            message.LastUpdatedBy = userName;
+            processLog.CreatedOnUtc = DateTime.UtcNow;
+            processLog.CreatedBy = userName;
+            processLog.LastUpdatedBy = null;
+            processLog.LastUpdatedOnUtc = null;
 
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IMessageRepository.UpdateAsync)
+                nameof(IProcessLogRepository.CreateAsync)
                 );
 
             // Perform the operation.
-            var result = await _messageRepository.UpdateAsync(
-                message,
+            return await _processLogRepository.CreateAsync(
+                processLog,
                 cancellationToken
                 ).ConfigureAwait(false);
-
-            // Return the results.
-            return result;
         }
         catch (Exception ex)
         {
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a message!"
+                "Failed to create a new process log!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to update a message!",
+                message: $"The manager failed to create a new process log!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task DeleteAsync(
+        ProcessLog processLog,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLog, nameof(processLog))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Updating the {name} model stats",
+                nameof(ProcessLog)
+                );
+
+            // Ensure the stats are correct.
+            processLog.LastUpdatedOnUtc = DateTime.UtcNow;
+            processLog.LastUpdatedBy = userName;
+
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProcessLogRepository.DeleteAsync)
+                );
+
+            // Perform the operation.
+            await _processLogRepository.DeleteAsync(
+                processLog,
+                cancellationToken
+                ).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to delete a process log!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to delete a process log!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<ProcessLog> UpdateAsync(
+        ProcessLog processLog,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLog, nameof(processLog))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Updating the {name} model stats",
+                nameof(ProcessLog)
+                );
+
+            // Ensure the stats are correct.
+            processLog.LastUpdatedOnUtc = DateTime.UtcNow;
+            processLog.LastUpdatedBy = userName;
+
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProcessLogRepository.UpdateAsync)
+                );
+
+            // Perform the operation.
+            return await _processLogRepository.UpdateAsync(
+                processLog,
+                cancellationToken
+                ).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to update a process log!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to update a process log!",
                 innerException: ex
                 );
         }

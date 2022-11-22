@@ -1,4 +1,6 @@
 ﻿
+using CG.Collections.Generic;
+
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
@@ -350,6 +352,7 @@ internal class TextMessageRepository : ITextMessageRepository
 
             // Perform the text message search.
             var textMessages = await dbContext.TextMessages
+                .Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                 .ToListAsync(
                 cancellationToken
@@ -412,7 +415,8 @@ internal class TextMessageRepository : ITextMessageRepository
             // Perform the text message search.
             var textMessage = await dbContext.TextMessages.Where(x => 
                 x.Id == id
-                ).Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
+                .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                 .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -483,7 +487,8 @@ internal class TextMessageRepository : ITextMessageRepository
             // Perform the text message search.
             var textMessage = await dbContext.TextMessages.Where(x =>
                 x.MessageKey == messageKey.ToUpper()
-                ).Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
+                .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                 .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -552,7 +557,8 @@ internal class TextMessageRepository : ITextMessageRepository
                 x.IsDisabled == false &&
                 x.MessageState != MessageState.Failed &&
                 x.MessageState != MessageState.Sent
-                ).Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
+                .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                  .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -628,6 +634,18 @@ internal class TextMessageRepository : ITextMessageRepository
             dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
+
+            // We don't mess with associated attachments.
+            entity.Attachments.ForEach(x =>
+            {
+                dbContext.Entry(x).State = EntityState.Unchanged;
+            });
+
+            // We don't mess with associated message properties.
+            entity.MessageProperties.ForEach(x =>
+            {
+                dbContext.Entry(x).State = EntityState.Unchanged;
+            });
 
             // Log what we are about to do.
             _logger.LogDebug(
