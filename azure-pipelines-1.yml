@@ -52,6 +52,7 @@ steps:
     testAssemblyVer2: |
       **\*Tests*.dll
       !**\*TestAdapter.dll
+      !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
 
 - powershell: |
