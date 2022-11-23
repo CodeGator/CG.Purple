@@ -1,0 +1,752 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ProcessDirector
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ProcessDirector
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Directors.ProcessDirector">
+  
+  
+  <h1 id="CG_Purple_Host_Directors_ProcessDirector" data-uid="CG.Purple.Host.Directors.ProcessDirector" class="text-break">Class ProcessDirector
+  </h1>
+  <div class="markdown level0 summary"><p>This class is a default implementation of the <see cref="!:IProcessDirector"></see></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ProcessDirector</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Directors.html">CG.Purple.Host.Directors</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Host.Services.dll</h6>
+  <h5 id="CG_Purple_Host_Directors_ProcessDirector_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class ProcessDirector : IProcessDirector</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="CG_Purple_Host_Directors_ProcessDirector__ctor_" data-uid="CG.Purple.Host.Directors.ProcessDirector.#ctor*"></a>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector__ctor_IMessageManager_IMessageProviderFactory_IMessagePropertyManager_IProcessLogManager_IProviderTypeManager_IPropertyTypeManager_ILogger_IProcessDirector__" data-uid="CG.Purple.Host.Directors.ProcessDirector.#ctor(IMessageManager,IMessageProviderFactory,IMessagePropertyManager,IProcessLogManager,IProviderTypeManager,IPropertyTypeManager,ILogger{IProcessDirector})">ProcessDirector(IMessageManager, IMessageProviderFactory, IMessagePropertyManager, IProcessLogManager, IProviderTypeManager, IPropertyTypeManager, ILogger&lt;IProcessDirector&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Host.Directors.ProcessDirector.html">ProcessDirector</a>
+class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProcessDirector(IMessageManager messageManager, IMessageProviderFactory messageProviderFactory, IMessagePropertyManager messagePropertyManager, IProcessLogManager processLogManager, IProviderTypeManager providerTypeManager, IPropertyTypeManager propertyTypeManager, ILogger&lt;IProcessDirector&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessageManager</span></td>
+        <td><span class="parametername">messageManager</span></td>
+        <td><p>The message manager to use with this
+director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IMessageProviderFactory</span></td>
+        <td><span class="parametername">messageProviderFactory</span></td>
+        <td><p>The message provider factory to
+use with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IMessagePropertyManager</span></td>
+        <td><span class="parametername">messagePropertyManager</span></td>
+        <td><p>The message property manager
+to use with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IProcessLogManager</span></td>
+        <td><span class="parametername">processLogManager</span></td>
+        <td><p>The process log manager to use
+with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IProviderTypeManager</span></td>
+        <td><span class="parametername">providerTypeManager</span></td>
+        <td><p>The provider type manager to use
+with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IPropertyTypeManager</span></td>
+        <td><span class="parametername">propertyTypeManager</span></td>
+        <td><p>The property type manager to use
+with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IProcessDirector</span>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger to use with this director.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector__logger" data-uid="CG.Purple.Host.Directors.ProcessDirector._logger">_logger</h4>
+  <div class="markdown level1 summary"><p>This field contains the logger for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger&lt;IProcessDirector&gt; _logger</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IProcessDirector</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector__messageManager" data-uid="CG.Purple.Host.Directors.ProcessDirector._messageManager">_messageManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the message manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMessageManager _messageManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessageManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector__messagePropertyManager" data-uid="CG.Purple.Host.Directors.ProcessDirector._messagePropertyManager">_messagePropertyManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the message property manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMessagePropertyManager _messagePropertyManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessagePropertyManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector__messageProviderFactory" data-uid="CG.Purple.Host.Directors.ProcessDirector._messageProviderFactory">_messageProviderFactory</h4>
+  <div class="markdown level1 summary"><p>This field contains the message provider factory for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMessageProviderFactory _messageProviderFactory</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessageProviderFactory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector__processLogManager" data-uid="CG.Purple.Host.Directors.ProcessDirector._processLogManager">_processLogManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the process log manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IProcessLogManager _processLogManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IProcessLogManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector__propertyTypeManager" data-uid="CG.Purple.Host.Directors.ProcessDirector._propertyTypeManager">_propertyTypeManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the property type manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IPropertyTypeManager _propertyTypeManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IPropertyTypeManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector__providerTypeManager" data-uid="CG.Purple.Host.Directors.ProcessDirector._providerTypeManager">_providerTypeManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the provider type manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IProviderTypeManager _providerTypeManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IProviderTypeManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Purple_Host_Directors_ProcessDirector_AssignProviderTypeAsync_" data-uid="CG.Purple.Host.Directors.ProcessDirector.AssignProviderTypeAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector_AssignProviderTypeAsync_IEnumerable_Message__IEnumerable_ProviderType__PropertyType_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.AssignProviderTypeAsync(IEnumerable{Message},IEnumerable{ProviderType},PropertyType,CancellationToken)">AssignProviderTypeAsync(IEnumerable&lt;Message&gt;, IEnumerable&lt;ProviderType&gt;, PropertyType, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method assigns one of the given available provider types
+to each of the pending messages, then returns the modified list
+of messages to the caller.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task&lt;IEnumerable&lt;Message&gt;&gt; AssignProviderTypeAsync(IEnumerable&lt;Message&gt; messages, IEnumerable&lt;ProviderType&gt; availableProviderTypes, PropertyType providerPropertyType, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;</td>
+        <td><span class="parametername">messages</span></td>
+        <td><p>The list of messages to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">ProviderType</span>&gt;</td>
+        <td><span class="parametername">availableProviderTypes</span></td>
+        <td><p>The list of available provider
+types to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">PropertyType</span></td>
+        <td><span class="parametername">providerPropertyType</span></td>
+        <td><p>The 'Provider' property type
+to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a sequence
+of <see cref="!:Message"></see> objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_ProcessDirector_ClearProviderOnGroup_" data-uid="CG.Purple.Host.Directors.ProcessDirector.ClearProviderOnGroup*"></a>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector_ClearProviderOnGroup_IGrouping_System_String_Message__PropertyType_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.ClearProviderOnGroup(IGrouping{System.String,Message},PropertyType,CancellationToken)">ClearProviderOnGroup(IGrouping&lt;String, Message&gt;, PropertyType, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method clears the assigned provider property type on all the
+messages in the given group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task ClearProviderOnGroup(IGrouping&lt;string, Message&gt; groupedMessages, PropertyType providerPropertyType, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IGrouping</span>&lt;<span class="xref">System.String</span>, <span class="xref">Message</span>&gt;</td>
+        <td><span class="parametername">groupedMessages</span></td>
+        <td><p>The group to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">PropertyType</span></td>
+        <td><span class="parametername">providerPropertyType</span></td>
+        <td><p>The 'Provider' property type
+to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_ProcessDirector_FindAvailableProviderTypesAsync_" data-uid="CG.Purple.Host.Directors.ProcessDirector.FindAvailableProviderTypesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector_FindAvailableProviderTypesAsync_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.FindAvailableProviderTypesAsync(CancellationToken)">FindAvailableProviderTypesAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method returns a sequence of all the available message provider
+types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task&lt;IEnumerable&lt;ProviderType&gt;&gt; FindAvailableProviderTypesAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">ProviderType</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a sequence of
+<see cref="!:ProviderType"></see> objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_ProcessDirector_FindProviderPropertyTypeAsync_" data-uid="CG.Purple.Host.Directors.ProcessDirector.FindProviderPropertyTypeAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector_FindProviderPropertyTypeAsync_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.FindProviderPropertyTypeAsync(CancellationToken)">FindProviderPropertyTypeAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method locates the <see cref="!:PropertyType"></see> designated for
+assigning a provider to a message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task&lt;PropertyType&gt; FindProviderPropertyTypeAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">PropertyType</span>&gt;</td>
+        <td><p>A task to perform the operation that returns a <see cref="!:PropertyType"></see>
+object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_ProcessDirector_FromPendingToProcessingAsync_" data-uid="CG.Purple.Host.Directors.ProcessDirector.FromPendingToProcessingAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector_FromPendingToProcessingAsync_IEnumerable_Message__IEnumerable_ProviderType__PropertyType_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.FromPendingToProcessingAsync(IEnumerable{Message},IEnumerable{ProviderType},PropertyType,CancellationToken)">FromPendingToProcessingAsync(IEnumerable&lt;Message&gt;, IEnumerable&lt;ProviderType&gt;, PropertyType, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method transitions the given messages from the 'Pending' state
+to the 'Processing' state, then returns the modified list of messages
+to the caller.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task&lt;IEnumerable&lt;Message&gt;&gt; FromPendingToProcessingAsync(IEnumerable&lt;Message&gt; messages, IEnumerable&lt;ProviderType&gt; availableProviderTypes, PropertyType providerPropertyType, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;</td>
+        <td><span class="parametername">messages</span></td>
+        <td><p>The list of messages to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">ProviderType</span>&gt;</td>
+        <td><span class="parametername">availableProviderTypes</span></td>
+        <td><p>The list of available provider
+types to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">PropertyType</span></td>
+        <td><span class="parametername">providerPropertyType</span></td>
+        <td><p>The 'Provider' property type
+to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a sequence
+of <see cref="!:Message"></see> objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_ProcessDirector_ProcessMessagesAsync_" data-uid="CG.Purple.Host.Directors.ProcessDirector.ProcessMessagesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector_ProcessMessagesAsync_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.ProcessMessagesAsync(CancellationToken)">ProcessMessagesAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task ProcessMessagesAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_ProcessDirector_SendPendingMessagesToProvidersAsync_" data-uid="CG.Purple.Host.Directors.ProcessDirector.SendPendingMessagesToProvidersAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector_SendPendingMessagesToProvidersAsync_IEnumerable_Message__PropertyType_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.SendPendingMessagesToProvidersAsync(IEnumerable{Message},PropertyType,CancellationToken)">SendPendingMessagesToProvidersAsync(IEnumerable&lt;Message&gt;, PropertyType, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sends the each message in the given collection to the
+associated provider, for processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task SendPendingMessagesToProvidersAsync(IEnumerable&lt;Message&gt; pendingMessages, PropertyType providerPropertyType, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;</td>
+        <td><span class="parametername">pendingMessages</span></td>
+        <td><p>The list of pending messages to
+use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">PropertyType</span></td>
+        <td><span class="parametername">providerPropertyType</span></td>
+        <td><p>The 'Provider' property type
+to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

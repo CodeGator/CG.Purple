@@ -124,6 +124,109 @@ type.</p>
   </div>
   <h3 id="methods">Methods
   </h3>
+  <a id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002_DropAndRecreateDatabaseAsync_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002.DropAndRecreateDatabaseAsync*"></a>
+  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002_DropAndRecreateDatabaseAsync_Microsoft_AspNetCore_Builder_WebApplication_CancellationToken_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002.DropAndRecreateDatabaseAsync(Microsoft.AspNetCore.Builder.WebApplication,CancellationToken)">DropAndRecreateDatabaseAsync(WebApplication, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method drops and recreates the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static async Task DropAndRecreateDatabaseAsync(this WebApplication webApplication, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplication</span></td>
+        <td><span class="parametername">webApplication</span></td>
+        <td><p>The web application to use for the
+operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002_MigrateDatabaseAsync_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002.MigrateDatabaseAsync*"></a>
+  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002_MigrateDatabaseAsync_Microsoft_AspNetCore_Builder_WebApplication_CancellationToken_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002.MigrateDatabaseAsync(Microsoft.AspNetCore.Builder.WebApplication,CancellationToken)">MigrateDatabaseAsync(WebApplication, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method migrates the database.
+project.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static async Task MigrateDatabaseAsync(this WebApplication webApplication, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplication</span></td>
+        <td><span class="parametername">webApplication</span></td>
+        <td><p>The web application to use for the
+operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the life of the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002_UseDalStartup_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002.UseDalStartup*"></a>
   <h4 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002_UseDalStartup_Microsoft_AspNetCore_Builder_WebApplication_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002.UseDalStartup(Microsoft.AspNetCore.Builder.WebApplication)">UseDalStartup(WebApplication)</h4>
   <div class="markdown level1 summary"><p>This method runs the DAL startup logic for the <span class="xref">CG.Purple</span>

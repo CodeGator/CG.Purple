@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PropertyTypeRepository
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PropertyTypeRepository
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository">
+  
+  
+  <h1 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository" class="text-break">Class PropertyTypeRepository
+  </h1>
+  <div class="markdown level0 summary"><p>This class is an EFCORE implementation of the <see cref="!:IPropertyTypeRepository"></see>
+interface.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">PropertyTypeRepository</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.SqlServer.Repositories.html">CG.Purple.SqlServer.Repositories</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.SqlServer.dll</h6>
+  <h5 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class PropertyTypeRepository : IPropertyTypeRepository</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository__ctor_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.#ctor*"></a>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository__ctor_IDbContextFactory_CG_Purple_SqlServer_PurpleDbContext__IMapper_ILogger_IPropertyTypeRepository__" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.#ctor(IDbContextFactory{CG.Purple.SqlServer.PurpleDbContext},IMapper,ILogger{IPropertyTypeRepository})">PropertyTypeRepository(IDbContextFactory&lt;PurpleDbContext&gt;, IMapper, ILogger&lt;IPropertyTypeRepository&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.html">PropertyTypeRepository</a>
+class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PropertyTypeRepository(IDbContextFactory&lt;PurpleDbContext&gt; dbContextFactory, IMapper mapper, ILogger&lt;IPropertyTypeRepository&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDbContextFactory</span>&lt;<a class="xref" href="CG.Purple.SqlServer.PurpleDbContext.html">PurpleDbContext</a>&gt;</td>
+        <td><span class="parametername">dbContextFactory</span></td>
+        <td><p>The EFCORE data-context factory
+to use with this repository.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IMapper</span></td>
+        <td><span class="parametername">mapper</span></td>
+        <td><p>The auto-mapper to use with this repository.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IPropertyTypeRepository</span>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger to use with this repository.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository__dbContextFactory" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository._dbContextFactory">_dbContextFactory</h4>
+  <div class="markdown level1 summary"><p>This field contains the EFCORE data-context factory for this repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IDbContextFactory&lt;PurpleDbContext&gt; _dbContextFactory</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDbContextFactory</span>&lt;<a class="xref" href="CG.Purple.SqlServer.PurpleDbContext.html">PurpleDbContext</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository__logger" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository._logger">_logger</h4>
+  <div class="markdown level1 summary"><p>This field contains the logger for this repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger&lt;IPropertyTypeRepository&gt; _logger</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IPropertyTypeRepository</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository__mapper" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository._mapper">_mapper</h4>
+  <div class="markdown level1 summary"><p>This field contains the auto-mapper for this repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMapper _mapper</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMapper</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_AnyAsync_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.AnyAsync*"></a>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_AnyAsync_CancellationToken_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.AnyAsync(CancellationToken)">AnyAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;bool&gt; AnyAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_CountAsync_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.CountAsync*"></a>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_CountAsync_CancellationToken_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.CountAsync(CancellationToken)">CountAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;long&gt; CountAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_CreateAsync_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.CreateAsync*"></a>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_CreateAsync_PropertyType_CancellationToken_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.CreateAsync(PropertyType,CancellationToken)">CreateAsync(PropertyType, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;PropertyType&gt; CreateAsync(PropertyType propertyType, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">PropertyType</span></td>
+        <td><span class="parametername">propertyType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">PropertyType</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_DeleteAsync_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.DeleteAsync*"></a>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_DeleteAsync_PropertyType_CancellationToken_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.DeleteAsync(PropertyType,CancellationToken)">DeleteAsync(PropertyType, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task DeleteAsync(PropertyType model, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">PropertyType</span></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_FindByNameAsync_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindByNameAsync*"></a>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_FindByNameAsync_System_String_CancellationToken_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindByNameAsync(System.String,CancellationToken)">FindByNameAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;PropertyType?&gt; FindByNameAsync(string name, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">PropertyType</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_UpdateAsync_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.UpdateAsync*"></a>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_UpdateAsync_PropertyType_CancellationToken_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.UpdateAsync(PropertyType,CancellationToken)">UpdateAsync(PropertyType, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;PropertyType&gt; UpdateAsync(PropertyType propertyType, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">PropertyType</span></td>
+        <td><span class="parametername">propertyType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">PropertyType</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
