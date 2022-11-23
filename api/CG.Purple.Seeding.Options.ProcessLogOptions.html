@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ProviderLog
+    <title>Class ProcessLogOptions
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ProviderLog
+    <meta name="title" content="Class ProcessLogOptions
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,34 +78,21 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Models.ProviderLog">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions">
   
   
-  <h1 id="CG_Purple_Models_ProviderLog" data-uid="CG.Purple.Models.ProviderLog" class="text-break">Class ProviderLog
+  <h1 id="CG_Purple_Seeding_Options_ProcessLogOptions" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions" class="text-break">Class ProcessLogOptions
   </h1>
-  <div class="markdown level0 summary"><p>This class represents a provider log model.</p>
+  <div class="markdown level0 summary"><p>This class contains configuration options related to process log seeding.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="CG.Purple.Models.ModelBase.html">ModelBase</a></div>
-    <div class="level2"><span class="xref">ProviderLog</span></div>
+    <div class="level1"><span class="xref">ProcessLogOptions</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="CG.Purple.Models.ModelBase.html#CG_Purple_Models_ModelBase_CreatedBy">ModelBase.CreatedBy</a>
-    </div>
-    <div>
-      <a class="xref" href="CG.Purple.Models.ModelBase.html#CG_Purple_Models_ModelBase_CreatedOnUtc">ModelBase.CreatedOnUtc</a>
-    </div>
-    <div>
-      <a class="xref" href="CG.Purple.Models.ModelBase.html#CG_Purple_Models_ModelBase_LastUpdatedBy">ModelBase.LastUpdatedBy</a>
-    </div>
-    <div>
-      <a class="xref" href="CG.Purple.Models.ModelBase.html#CG_Purple_Models_ModelBase_LastUpdatedOnUtc">ModelBase.LastUpdatedOnUtc</a>
-    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -128,23 +115,23 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Models.html">CG.Purple.Models</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Primitives.dll</h6>
-  <h5 id="CG_Purple_Models_ProviderLog_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Seeding.Options.html">CG.Purple.Seeding.Options</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Seeding.dll</h6>
+  <h5 id="CG_Purple_Seeding_Options_ProcessLogOptions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ProviderLog : ModelBase</code></pre>
+    <pre><code class="lang-csharp hljs">public class ProcessLogOptions</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
-  <a id="CG_Purple_Models_ProviderLog_AfterState_" data-uid="CG.Purple.Models.ProviderLog.AfterState*"></a>
-  <h4 id="CG_Purple_Models_ProviderLog_AfterState" data-uid="CG.Purple.Models.ProviderLog.AfterState">AfterState</h4>
+  <a id="CG_Purple_Seeding_Options_ProcessLogOptions_AfterState_" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.AfterState*"></a>
+  <h4 id="CG_Purple_Seeding_Options_ProcessLogOptions_AfterState" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.AfterState">AfterState</h4>
   <div class="markdown level1 summary"><p>This property contains the state of the message after the
 event took place.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MessageState? AfterState { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string AfterState { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,20 +143,20 @@ event took place.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="CG.Purple.Models.MessageState.html">MessageState</a>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Models_ProviderLog_BeforeState_" data-uid="CG.Purple.Models.ProviderLog.BeforeState*"></a>
-  <h4 id="CG_Purple_Models_ProviderLog_BeforeState" data-uid="CG.Purple.Models.ProviderLog.BeforeState">BeforeState</h4>
+  <a id="CG_Purple_Seeding_Options_ProcessLogOptions_BeforeState_" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.BeforeState*"></a>
+  <h4 id="CG_Purple_Seeding_Options_ProcessLogOptions_BeforeState" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.BeforeState">BeforeState</h4>
   <div class="markdown level1 summary"><p>This property contains the state of the message before the
 event took place.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MessageState? BeforeState { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string BeforeState { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -181,13 +168,13 @@ event took place.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="CG.Purple.Models.MessageState.html">MessageState</a>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Models_ProviderLog_Data_" data-uid="CG.Purple.Models.ProviderLog.Data*"></a>
-  <h4 id="CG_Purple_Models_ProviderLog_Data" data-uid="CG.Purple.Models.ProviderLog.Data">Data</h4>
+  <a id="CG_Purple_Seeding_Options_ProcessLogOptions_Data_" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.Data*"></a>
+  <h4 id="CG_Purple_Seeding_Options_ProcessLogOptions_Data" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.Data">Data</h4>
   <div class="markdown level1 summary"><p>This property contains extra data associated with the event.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -210,8 +197,8 @@ event took place.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Models_ProviderLog_Error_" data-uid="CG.Purple.Models.ProviderLog.Error*"></a>
-  <h4 id="CG_Purple_Models_ProviderLog_Error" data-uid="CG.Purple.Models.ProviderLog.Error">Error</h4>
+  <a id="CG_Purple_Seeding_Options_ProcessLogOptions_Error_" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.Error*"></a>
+  <h4 id="CG_Purple_Seeding_Options_ProcessLogOptions_Error" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.Error">Error</h4>
   <div class="markdown level1 summary"><p>This property contains error data associated with the event.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -234,14 +221,14 @@ event took place.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Models_ProviderLog_Event_" data-uid="CG.Purple.Models.ProviderLog.Event*"></a>
-  <h4 id="CG_Purple_Models_ProviderLog_Event" data-uid="CG.Purple.Models.ProviderLog.Event">Event</h4>
-  <div class="markdown level1 summary"><p>This property contains the associate processing event.</p>
+  <a id="CG_Purple_Seeding_Options_ProcessLogOptions_Event_" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.Event*"></a>
+  <h4 id="CG_Purple_Seeding_Options_ProcessLogOptions_Event" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.Event">Event</h4>
+  <div class="markdown level1 summary"><p>This property contains the associated processing event.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ProcessEvent Event { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Event { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -253,19 +240,19 @@ event took place.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="CG.Purple.Models.ProcessEvent.html">ProcessEvent</a></td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Models_ProviderLog_Id_" data-uid="CG.Purple.Models.ProviderLog.Id*"></a>
-  <h4 id="CG_Purple_Models_ProviderLog_Id" data-uid="CG.Purple.Models.ProviderLog.Id">Id</h4>
-  <div class="markdown level1 summary"><p>This property contains the unique identifier for the entry.</p>
+  <a id="CG_Purple_Seeding_Options_ProcessLogOptions_MessageKey_" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.MessageKey*"></a>
+  <h4 id="CG_Purple_Seeding_Options_ProcessLogOptions_MessageKey" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.MessageKey">MessageKey</h4>
+  <div class="markdown level1 summary"><p>This property contains the key for the associated message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string MessageKey { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -277,19 +264,19 @@ event took place.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int64</span></td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Models_ProviderLog_Message_" data-uid="CG.Purple.Models.ProviderLog.Message*"></a>
-  <h4 id="CG_Purple_Models_ProviderLog_Message" data-uid="CG.Purple.Models.ProviderLog.Message">Message</h4>
-  <div class="markdown level1 summary"><p>This property contains the associate message.</p>
+  <a id="CG_Purple_Seeding_Options_ProcessLogOptions_MessageType_" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.MessageType*"></a>
+  <h4 id="CG_Purple_Seeding_Options_ProcessLogOptions_MessageType" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.MessageType">MessageType</h4>
+  <div class="markdown level1 summary"><p>This property contains the type of the associated message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Message Message { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string MessageType { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -301,19 +288,19 @@ event took place.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="CG.Purple.Models.Message.html">Message</a></td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Models_ProviderLog_ProviderType_" data-uid="CG.Purple.Models.ProviderLog.ProviderType*"></a>
-  <h4 id="CG_Purple_Models_ProviderLog_ProviderType" data-uid="CG.Purple.Models.ProviderLog.ProviderType">ProviderType</h4>
-  <div class="markdown level1 summary"><p>This property contains the associated provider type.</p>
+  <a id="CG_Purple_Seeding_Options_ProcessLogOptions_ProviderTypeName_" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.ProviderTypeName*"></a>
+  <h4 id="CG_Purple_Seeding_Options_ProcessLogOptions_ProviderTypeName" data-uid="CG.Purple.Seeding.Options.ProcessLogOptions.ProviderTypeName">ProviderTypeName</h4>
+  <div class="markdown level1 summary"><p>This property contains the name of the associated provider type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual ProviderType ProviderType { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string ProviderTypeName { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -325,7 +312,7 @@ event took place.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="CG.Purple.Models.ProviderType.html">ProviderType</a></td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>

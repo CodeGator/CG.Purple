@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IProviderLogRepository
+    <title>Interface IMessageRepository
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IProviderLogRepository
+    <meta name="title" content="Interface IMessageRepository
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,26 +78,26 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Repositories.IProviderLogRepository">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Repositories.IMessageRepository">
   
   
-  <h1 id="CG_Purple_Repositories_IProviderLogRepository" data-uid="CG.Purple.Repositories.IProviderLogRepository" class="text-break">Interface IProviderLogRepository
+  <h1 id="CG_Purple_Repositories_IMessageRepository" data-uid="CG.Purple.Repositories.IMessageRepository" class="text-break">Interface IMessageRepository
   </h1>
   <div class="markdown level0 summary"><p>This interface represents an object that manages the storage and retrieval
-of <see cref="!:ProviderLog"></see> objects.</p>
+of <see cref="!:Message"></see> objects.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Repositories.html">CG.Purple.Repositories</a></h6>
   <h6><strong>Assembly</strong>: CG.Purple.Abstractions.dll</h6>
-  <h5 id="CG_Purple_Repositories_IProviderLogRepository_syntax">Syntax</h5>
+  <h5 id="CG_Purple_Repositories_IMessageRepository_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IProviderLogRepository</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IMessageRepository</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Repositories_IProviderLogRepository_AnyAsync_" data-uid="CG.Purple.Repositories.IProviderLogRepository.AnyAsync*"></a>
-  <h4 id="CG_Purple_Repositories_IProviderLogRepository_AnyAsync_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderLogRepository.AnyAsync(CancellationToken)">AnyAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method indicates whether there are any <see cref="!:ProviderLog"></see> objects
+  <a id="CG_Purple_Repositories_IMessageRepository_AnyAsync_" data-uid="CG.Purple.Repositories.IMessageRepository.AnyAsync*"></a>
+  <h4 id="CG_Purple_Repositories_IMessageRepository_AnyAsync_CancellationToken_" data-uid="CG.Purple.Repositories.IMessageRepository.AnyAsync(CancellationToken)">AnyAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method indicates whether there are any <see cref="!:Message"></see> objects
 in the underlying storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -136,7 +136,7 @@ for the lifetime of the method.</p>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td><p>A task to perform the operation that returns <code>true</code> if there
-are any <see cref="!:ProviderLog"></see> objects; <code>false</code> otherwise.</p>
+are any <see cref="!:Message"></see> objects; <code>false</code> otherwise.</p>
 </td>
       </tr>
     </tbody>
@@ -158,9 +158,9 @@ repository fails to complete the operation.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Repositories_IProviderLogRepository_CountAsync_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CountAsync*"></a>
-  <h4 id="CG_Purple_Repositories_IProviderLogRepository_CountAsync_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CountAsync(CancellationToken)">CountAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method counts the number of <see cref="!:ProviderLog"></see> objects in the
+  <a id="CG_Purple_Repositories_IMessageRepository_CountAsync_" data-uid="CG.Purple.Repositories.IMessageRepository.CountAsync*"></a>
+  <h4 id="CG_Purple_Repositories_IMessageRepository_CountAsync_CancellationToken_" data-uid="CG.Purple.Repositories.IMessageRepository.CountAsync(CancellationToken)">CountAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method counts the number of <see cref="!:Message"></see> objects in the
 underlying storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -199,7 +199,7 @@ for the lifetime of the method.</p>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>A task to perform the operation that returns a count of the
-number of <see cref="!:ProviderLog"></see> objects in the underlying storage.</p>
+number of <see cref="!:Message"></see> objects in the underlying storage.</p>
 </td>
       </tr>
     </tbody>
@@ -221,15 +221,278 @@ repository fails to complete the operation.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Repositories_IProviderLogRepository_CountMessageErrorsAsync_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CountMessageErrorsAsync*"></a>
-  <h4 id="CG_Purple_Repositories_IProviderLogRepository_CountMessageErrorsAsync_Message_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CountMessageErrorsAsync(Message,CancellationToken)">CountMessageErrorsAsync(Message, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method counts the number of message related errors, for the given message,
-that exist in the underlying storage.</p>
+  <a id="CG_Purple_Repositories_IMessageRepository_FindAllAsync_" data-uid="CG.Purple.Repositories.IMessageRepository.FindAllAsync*"></a>
+  <h4 id="CG_Purple_Repositories_IMessageRepository_FindAllAsync_CancellationToken_" data-uid="CG.Purple.Repositories.IMessageRepository.FindAllAsync(CancellationToken)">FindAllAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method searches for all the <ee cref="!:Message"></ee> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountMessageErrorsAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;Message&gt;&gt; FindAllAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a sequence of
+<see cref="!:Message"></see> objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
+        <td><p>This exception is thrown whenever the
+repository fails to complete the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Repositories_IMessageRepository_FindByIdAsync_" data-uid="CG.Purple.Repositories.IMessageRepository.FindByIdAsync*"></a>
+  <h4 id="CG_Purple_Repositories_IMessageRepository_FindByIdAsync_System_Int64_CancellationToken_" data-uid="CG.Purple.Repositories.IMessageRepository.FindByIdAsync(System.Int64,CancellationToken)">FindByIdAsync(Int64, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method searches for a single matching <see cref="!:Message"></see> object
+using the given identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Message?&gt; FindByIdAsync(long id, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The message identifier to use for the search.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a matching <see cref="!:Message"></see>
+object, if one was found, or NULL otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
+        <td><p>This exception is thrown whenever the
+repository fails to complete the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Repositories_IMessageRepository_FindByKeyAsync_" data-uid="CG.Purple.Repositories.IMessageRepository.FindByKeyAsync*"></a>
+  <h4 id="CG_Purple_Repositories_IMessageRepository_FindByKeyAsync_System_String_CancellationToken_" data-uid="CG.Purple.Repositories.IMessageRepository.FindByKeyAsync(System.String,CancellationToken)">FindByKeyAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method searches for a single matching <see cref="!:Message"></see> object
+using the given message key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Message?&gt; FindByKeyAsync(string messageKey, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">messageKey</span></td>
+        <td><p>The message key to use for the search.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a matching <see cref="!:Message"></see>
+object, if one was found, or NULL otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
+        <td><p>This exception is thrown whenever the
+repository fails to complete the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Repositories_IMessageRepository_FindReadyToProcessAsync_" data-uid="CG.Purple.Repositories.IMessageRepository.FindReadyToProcessAsync*"></a>
+  <h4 id="CG_Purple_Repositories_IMessageRepository_FindReadyToProcessAsync_CancellationToken_" data-uid="CG.Purple.Repositories.IMessageRepository.FindReadyToProcessAsync(CancellationToken)">FindReadyToProcessAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method searches for a sequence of <see cref="!:Message"></see> objects
+that are not disabled, or sent, or processed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;Message&gt;&gt; FindReadyToProcessAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a sequence of matching
+<see cref="!:Message"></see> objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
+        <td><p>This exception is thrown whenever the
+repository fails to complete the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Repositories_IMessageRepository_UpdateAsync_" data-uid="CG.Purple.Repositories.IMessageRepository.UpdateAsync*"></a>
+  <h4 id="CG_Purple_Repositories_IMessageRepository_UpdateAsync_Message_CancellationToken_" data-uid="CG.Purple.Repositories.IMessageRepository.UpdateAsync(Message,CancellationToken)">UpdateAsync(Message, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method updates an existing <see cref="!:Message"></see> object in the
+underlying storage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Message&gt; UpdateAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -244,350 +507,6 @@ that exist in the underlying storage.</p>
       <tr>
         <td><span class="xref">Message</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td><p>A task to perform the operation that returns a count of the
-number of message related errors, for the given message.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
-        <td><p>This exception is thrown whenever the
-repository fails to complete the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Repositories_IProviderLogRepository_CountProcessErrorsAsync_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CountProcessErrorsAsync*"></a>
-  <h4 id="CG_Purple_Repositories_IProviderLogRepository_CountProcessErrorsAsync_Message_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CountProcessErrorsAsync(Message,CancellationToken)">CountProcessErrorsAsync(Message, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method counts the number of process related errors, for the given message,
-that exist in the underlying storage.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountProcessErrorsAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td><p>A task to perform the operation that returns a count of the
-number of process related errors, for the given message.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
-        <td><p>This exception is thrown whenever the
-repository fails to complete the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Repositories_IProviderLogRepository_CountProviderErrorsAsync_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CountProviderErrorsAsync*"></a>
-  <h4 id="CG_Purple_Repositories_IProviderLogRepository_CountProviderErrorsAsync_Message_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CountProviderErrorsAsync(Message,CancellationToken)">CountProviderErrorsAsync(Message, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method counts the number of provider related errors, for the given message,
-that exist in the underlying storage.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountProviderErrorsAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td><p>A task to perform the operation that returns a count of the
-number of provider related errors, for the given message.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
-        <td><p>This exception is thrown whenever the
-repository fails to complete the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Repositories_IProviderLogRepository_CreateAsync_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CreateAsync*"></a>
-  <h4 id="CG_Purple_Repositories_IProviderLogRepository_CreateAsync_ProviderLog_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderLogRepository.CreateAsync(ProviderLog,CancellationToken)">CreateAsync(ProviderLog, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method creates a new <see cref="!:ProviderLog"></see> object in the
-underlying storage.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ProviderLog&gt; CreateAsync(ProviderLog providerLog, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ProviderLog</span></td>
-        <td><span class="parametername">providerLog</span></td>
-        <td><p>The model to create in the underlying storage.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">ProviderLog</span>&gt;</td>
-        <td><p>A task to perform the operation that returns the newly created
-<see cref="!:ProviderLog"></see> object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
-        <td><p>This exception is thrown whenever the
-repository fails to complete the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Repositories_IProviderLogRepository_DeleteAsync_" data-uid="CG.Purple.Repositories.IProviderLogRepository.DeleteAsync*"></a>
-  <h4 id="CG_Purple_Repositories_IProviderLogRepository_DeleteAsync_ProviderLog_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderLogRepository.DeleteAsync(ProviderLog,CancellationToken)">DeleteAsync(ProviderLog, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method deletes an existing <see cref="!:ProviderLog"></see> object from the
-underlying storage.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task DeleteAsync(ProviderLog providerLog, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ProviderLog</span></td>
-        <td><span class="parametername">providerLog</span></td>
-        <td><p>The model to delete from the underlying storage.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
-        <td><p>This exception is thrown whenever the
-repository fails to complete the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Repositories_IProviderLogRepository_UpdateAsync_" data-uid="CG.Purple.Repositories.IProviderLogRepository.UpdateAsync*"></a>
-  <h4 id="CG_Purple_Repositories_IProviderLogRepository_UpdateAsync_ProviderLog_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderLogRepository.UpdateAsync(ProviderLog,CancellationToken)">UpdateAsync(ProviderLog, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method updates an existing <see cref="!:ProviderLog"></see> object in the
-underlying storage.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ProviderLog&gt; UpdateAsync(ProviderLog providerLog, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ProviderLog</span></td>
-        <td><span class="parametername">providerLog</span></td>
         <td><p>The model to update in the underlying storage.</p>
 </td>
       </tr>
@@ -610,9 +529,9 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">ProviderLog</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">Message</span>&gt;</td>
         <td><p>A task to perform the operation that returns the newly updated
-<see cref="!:ProviderLog"></see> object.</p>
+<see cref="!:Message"></see> object.</p>
 </td>
       </tr>
     </tbody>

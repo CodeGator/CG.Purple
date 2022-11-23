@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class WebApplicationBuilderExtensions_Purple_SendGrid
+    <title>Class MessageEqualityComparer
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class WebApplicationBuilderExtensions_Purple_SendGrid
+    <meta name="title" content="Class MessageEqualityComparer
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,60 +78,35 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Models.MessageEqualityComparer">
   
   
-  <h1 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_SendGrid" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid" class="text-break">Class WebApplicationBuilderExtensions_Purple_SendGrid
+  <h1 id="CG_Purple_Models_MessageEqualityComparer" data-uid="CG.Purple.Models.MessageEqualityComparer" class="text-break">Class MessageEqualityComparer
   </h1>
-  <div class="markdown level0 summary"><p>This class contains extension methods related to the <span class="xref">Microsoft.AspNetCore.Builder.WebApplicationBuilder</span>
+  <div class="markdown level0 summary"><p>This class is a custom equality comparer for the <a class="xref" href="CG.Purple.Models.Message.html">Message</a>
 type.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">WebApplicationBuilderExtensions_Purple_SendGrid</span></div>
+    <div class="level1"><span class="xref">MessageEqualityComparer</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.AspNetCore.Builder.html">Microsoft.AspNetCore.Builder</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.SendGrid.dll</h6>
-  <h5 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_SendGrid_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Models.html">CG.Purple.Models</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Primitives.dll</h6>
+  <h5 id="CG_Purple_Models_MessageEqualityComparer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class WebApplicationBuilderExtensions_Purple_SendGrid</code></pre>
+    <pre><code class="lang-csharp hljs">public class MessageEqualityComparer : IEqualityComparer&lt;Message&gt;</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_SendGrid_AddSendGridProvider_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_SendGrid_AddSendGridProvider_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_SendGrid.AddSendGridProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})">AddSendGridProvider(WebApplicationBuilder, Nullable&lt;ILogger&gt;)</h4>
-  <div class="markdown level1 summary"><p>This method adds the SendGrid provider for the <span class="xref">CG.Purple</span> project.</p>
-</div>
+  <a id="CG_Purple_Models_MessageEqualityComparer_Equals_" data-uid="CG.Purple.Models.MessageEqualityComparer.Equals*"></a>
+  <h4 id="CG_Purple_Models_MessageEqualityComparer_Equals_CG_Purple_Models_Message_CG_Purple_Models_Message_" data-uid="CG.Purple.Models.MessageEqualityComparer.Equals(CG.Purple.Models.Message,CG.Purple.Models.Message)">Equals(Message, Message)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static WebApplicationBuilder AddSendGridProvider(this WebApplicationBuilder webApplicationBuilder, ILogger? bootstrapLogger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(Message x, Message y)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,18 +119,14 @@ type.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplicationBuilder</span></td>
-        <td><span class="parametername">webApplicationBuilder</span></td>
-        <td><p>The web application builder to
-use for the operation.</p>
-</td>
+        <td><a class="xref" href="CG.Purple.Models.Message.html">Message</a></td>
+        <td><span class="parametername">x</span></td>
+        <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">ILogger</span>&gt;</td>
-        <td><span class="parametername">bootstrapLogger</span></td>
-        <td><p>The bootstrap logger to use for the
-operation.</p>
-</td>
+        <td><a class="xref" href="CG.Purple.Models.Message.html">Message</a></td>
+        <td><span class="parametername">y</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -169,9 +140,73 @@ operation.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplicationBuilder</span></td>
-        <td><p>The value of the <code data-dev-comment-type="paramref" class="paramref">webApplicationBuilder</code>
-parameter, for chaining calls together, Fluent style.</p>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Models_MessageEqualityComparer_GetHashCode_" data-uid="CG.Purple.Models.MessageEqualityComparer.GetHashCode*"></a>
+  <h4 id="CG_Purple_Models_MessageEqualityComparer_GetHashCode_CG_Purple_Models_Message_" data-uid="CG.Purple.Models.MessageEqualityComparer.GetHashCode(CG.Purple.Models.Message)">GetHashCode(Message)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetHashCode(Message obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Models.Message.html">Message</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Models_MessageEqualityComparer_Instance_" data-uid="CG.Purple.Models.MessageEqualityComparer.Instance*"></a>
+  <h4 id="CG_Purple_Models_MessageEqualityComparer_Instance" data-uid="CG.Purple.Models.MessageEqualityComparer.Instance">Instance()</h4>
+  <div class="markdown level1 summary"><p>This method returns the singleton <a class="xref" href="CG.Purple.Models.MessageEqualityComparer.html">MessageEqualityComparer</a>
+instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageEqualityComparer Instance()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Models.MessageEqualityComparer.html">MessageEqualityComparer</a></td>
+        <td><p>An <a class="xref" href="CG.Purple.Models.MessageEqualityComparer.html">MessageEqualityComparer</a> instance.</p>
 </td>
       </tr>
     </tbody>

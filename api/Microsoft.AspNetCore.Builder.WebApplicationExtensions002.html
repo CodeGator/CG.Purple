@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class WebApplicationBuilderExtensions_Purple_Seeding
+    <title>Class WebApplicationExtensions002
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class WebApplicationBuilderExtensions_Purple_Seeding
+    <meta name="title" content="Class WebApplicationExtensions002
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,19 +78,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding">
+            <article class="content wrap" id="_content" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002">
   
   
-  <h1 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Seeding" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding" class="text-break">Class WebApplicationBuilderExtensions_Purple_Seeding
+  <h1 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002" class="text-break">Class WebApplicationExtensions002
   </h1>
-  <div class="markdown level0 summary"><p>This class contains extension methods related to the <span class="xref">Microsoft.AspNetCore.Builder.WebApplicationBuilder</span>
+  <div class="markdown level0 summary"><p>This class contains extension methods related to the <span class="xref">Microsoft.AspNetCore.Builder.WebApplication</span>
 type.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">WebApplicationBuilderExtensions_Purple_Seeding</span></div>
+    <div class="level1"><span class="xref">WebApplicationExtensions002</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -117,22 +117,22 @@ type.</p>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.AspNetCore.Builder.html">Microsoft.AspNetCore.Builder</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Seeding.dll</h6>
-  <h5 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Seeding_syntax">Syntax</h5>
+  <h6><strong>Assembly</strong>: CG.Purple.SqlServer.dll</h6>
+  <h5 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class WebApplicationBuilderExtensions_Purple_Seeding</code></pre>
+    <pre><code class="lang-csharp hljs">public static class WebApplicationExtensions002</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Seeding_AddSeedingLayer_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_Purple_Seeding_AddSeedingLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions_Purple_Seeding.AddSeedingLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})">AddSeedingLayer(WebApplicationBuilder, String, Nullable&lt;ILogger&gt;)</h4>
-  <div class="markdown level1 summary"><p>This method adds the data seeding layer for the <span class="xref">CG.Purple</span>
+  <a id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002_UseDalStartup_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002.UseDalStartup*"></a>
+  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions002_UseDalStartup_Microsoft_AspNetCore_Builder_WebApplication_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions002.UseDalStartup(Microsoft.AspNetCore.Builder.WebApplication)">UseDalStartup(WebApplication)</h4>
+  <div class="markdown level1 summary"><p>This method runs the DAL startup logic for the <span class="xref">CG.Purple</span>
 project.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static WebApplicationBuilder AddSeedingLayer(this WebApplicationBuilder webApplicationBuilder, string sectionName = &quot;Seeding&quot;, ILogger? bootstrapLogger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static WebApplication UseDalStartup(this WebApplication webApplication)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -145,23 +145,9 @@ project.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplicationBuilder</span></td>
-        <td><span class="parametername">webApplicationBuilder</span></td>
-        <td><p>The web application builder to
-use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">sectionName</span></td>
-        <td><p>The configuration section to use for the
-operation. Defaults to: <code>Seeding</code></p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">ILogger</span>&gt;</td>
-        <td><span class="parametername">bootstrapLogger</span></td>
-        <td><p>The bootstrap logger to use for the
+        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplication</span></td>
+        <td><span class="parametername">webApplication</span></td>
+        <td><p>The web application to use for the
 operation.</p>
 </td>
       </tr>
@@ -177,8 +163,8 @@ operation.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplicationBuilder</span></td>
-        <td><p>The value of the <code data-dev-comment-type="paramref" class="paramref">webApplicationBuilder</code>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplication</span></td>
+        <td><p>The value of the <code data-dev-comment-type="paramref" class="paramref">webApplication</code>
 parameter, for chaining calls together, Fluent style.</p>
 </td>
       </tr>

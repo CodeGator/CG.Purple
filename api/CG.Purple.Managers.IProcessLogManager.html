@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IProviderLogManager
+    <title>Interface IProcessLogManager
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IProviderLogManager
+    <meta name="title" content="Interface IProcessLogManager
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,26 +78,26 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Managers.IProviderLogManager">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Managers.IProcessLogManager">
   
   
-  <h1 id="CG_Purple_Managers_IProviderLogManager" data-uid="CG.Purple.Managers.IProviderLogManager" class="text-break">Interface IProviderLogManager
+  <h1 id="CG_Purple_Managers_IProcessLogManager" data-uid="CG.Purple.Managers.IProcessLogManager" class="text-break">Interface IProcessLogManager
   </h1>
   <div class="markdown level0 summary"><p>This interface represents an object that manages operations related to
-<see cref="!:ProviderLog"></see> objects.</p>
+<see cref="!:ProcessLog"></see> objects.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Managers.html">CG.Purple.Managers</a></h6>
   <h6><strong>Assembly</strong>: CG.Purple.Abstractions.dll</h6>
-  <h5 id="CG_Purple_Managers_IProviderLogManager_syntax">Syntax</h5>
+  <h5 id="CG_Purple_Managers_IProcessLogManager_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IProviderLogManager</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IProcessLogManager</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Managers_IProviderLogManager_AnyAsync_" data-uid="CG.Purple.Managers.IProviderLogManager.AnyAsync*"></a>
-  <h4 id="CG_Purple_Managers_IProviderLogManager_AnyAsync_CancellationToken_" data-uid="CG.Purple.Managers.IProviderLogManager.AnyAsync(CancellationToken)">AnyAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method indicates whether there are any <see cref="!:ProviderLog"></see> objects
+  <a id="CG_Purple_Managers_IProcessLogManager_AnyAsync_" data-uid="CG.Purple.Managers.IProcessLogManager.AnyAsync*"></a>
+  <h4 id="CG_Purple_Managers_IProcessLogManager_AnyAsync_CancellationToken_" data-uid="CG.Purple.Managers.IProcessLogManager.AnyAsync(CancellationToken)">AnyAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method indicates whether there are any <see cref="!:ProcessLog"></see> objects
 in the underlying storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -136,7 +136,7 @@ for the lifetime of the method.</p>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td><p>A task to perform the operation that returns <code>true</code> if there
-are any <see cref="!:ProviderLog"></see> objects; <code>false</code> otherwise.</p>
+are any <see cref="!:ProcessLog"></see> objects; <code>false</code> otherwise.</p>
 </td>
       </tr>
     </tbody>
@@ -158,9 +158,9 @@ manager fails to complete the operation.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Managers_IProviderLogManager_CountAsync_" data-uid="CG.Purple.Managers.IProviderLogManager.CountAsync*"></a>
-  <h4 id="CG_Purple_Managers_IProviderLogManager_CountAsync_CancellationToken_" data-uid="CG.Purple.Managers.IProviderLogManager.CountAsync(CancellationToken)">CountAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method counts the number of <see cref="!:ProviderLog"></see> objects in the
+  <a id="CG_Purple_Managers_IProcessLogManager_CountAsync_" data-uid="CG.Purple.Managers.IProcessLogManager.CountAsync*"></a>
+  <h4 id="CG_Purple_Managers_IProcessLogManager_CountAsync_CancellationToken_" data-uid="CG.Purple.Managers.IProcessLogManager.CountAsync(CancellationToken)">CountAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method counts the number of <see cref="!:ProcessLog"></see> objects in the
 underlying storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -199,7 +199,7 @@ for the lifetime of the method.</p>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>A task to perform the operation that returns a count of the
-number of <see cref="!:ProviderLog"></see> objects in the underlying storage.</p>
+number of <see cref="!:ProcessLog"></see> objects in the underlying storage.</p>
 </td>
       </tr>
     </tbody>
@@ -221,222 +221,15 @@ manager fails to complete the operation.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Managers_IProviderLogManager_CountMessageErrorsAsync_" data-uid="CG.Purple.Managers.IProviderLogManager.CountMessageErrorsAsync*"></a>
-  <h4 id="CG_Purple_Managers_IProviderLogManager_CountMessageErrorsAsync_Message_CancellationToken_" data-uid="CG.Purple.Managers.IProviderLogManager.CountMessageErrorsAsync(Message,CancellationToken)">CountMessageErrorsAsync(Message, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method counts the number of message related errors, for the given message,
-that exist in the underlying storage.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountMessageErrorsAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td><p>A task to perform the operation that returns a count of the
-number of message related errors, for the given message.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Managers.ManagerException.html">ManagerException</a></td>
-        <td><p>This exception is thrown whenever the
-manager fails to complete the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Managers_IProviderLogManager_CountProcessErrorsAsync_" data-uid="CG.Purple.Managers.IProviderLogManager.CountProcessErrorsAsync*"></a>
-  <h4 id="CG_Purple_Managers_IProviderLogManager_CountProcessErrorsAsync_Message_CancellationToken_" data-uid="CG.Purple.Managers.IProviderLogManager.CountProcessErrorsAsync(Message,CancellationToken)">CountProcessErrorsAsync(Message, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method counts the number of process related errors, for the given message,
-that exist in the underlying storage.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountProcessErrorsAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td><p>A task to perform the operation that returns a count of the
-number of process related errors, for the given message.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Managers.ManagerException.html">ManagerException</a></td>
-        <td><p>This exception is thrown whenever the
-manager fails to complete the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Managers_IProviderLogManager_CountProviderErrorsAsync_" data-uid="CG.Purple.Managers.IProviderLogManager.CountProviderErrorsAsync*"></a>
-  <h4 id="CG_Purple_Managers_IProviderLogManager_CountProviderErrorsAsync_Message_CancellationToken_" data-uid="CG.Purple.Managers.IProviderLogManager.CountProviderErrorsAsync(Message,CancellationToken)">CountProviderErrorsAsync(Message, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method counts the number of provider related errors, for the given message,
-that exist in the underlying storage.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountProviderErrorsAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td><p>A task to perform the operation that returns a count of the
-number of provider related errors, for the given message.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Managers.ManagerException.html">ManagerException</a></td>
-        <td><p>This exception is thrown whenever the
-manager fails to complete the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Managers_IProviderLogManager_CreateAsync_" data-uid="CG.Purple.Managers.IProviderLogManager.CreateAsync*"></a>
-  <h4 id="CG_Purple_Managers_IProviderLogManager_CreateAsync_ProviderLog_System_String_CancellationToken_" data-uid="CG.Purple.Managers.IProviderLogManager.CreateAsync(ProviderLog,System.String,CancellationToken)">CreateAsync(ProviderLog, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method creates a new <see cref="!:ProviderLog"></see> object in the
+  <a id="CG_Purple_Managers_IProcessLogManager_CreateAsync_" data-uid="CG.Purple.Managers.IProcessLogManager.CreateAsync*"></a>
+  <h4 id="CG_Purple_Managers_IProcessLogManager_CreateAsync_ProcessLog_System_String_CancellationToken_" data-uid="CG.Purple.Managers.IProcessLogManager.CreateAsync(ProcessLog,System.String,CancellationToken)">CreateAsync(ProcessLog, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method creates a new <see cref="!:ProcessLog"></see> object in the
 underlying storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ProviderLog&gt; CreateAsync(ProviderLog providerLog, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ProcessLog&gt; CreateAsync(ProcessLog providerLog, string userName, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -449,7 +242,7 @@ underlying storage.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ProviderLog</span></td>
+        <td><span class="xref">ProcessLog</span></td>
         <td><span class="parametername">providerLog</span></td>
         <td><p>The model to create in the underlying storage.</p>
 </td>
@@ -480,9 +273,9 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">ProviderLog</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ProcessLog</span>&gt;</td>
         <td><p>A task to perform the operation that returns the newly created
-<see cref="!:ProviderLog"></see> object.</p>
+<see cref="!:ProcessLog"></see> object.</p>
 </td>
       </tr>
     </tbody>
@@ -504,15 +297,15 @@ manager fails to complete the operation.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Managers_IProviderLogManager_DeleteAsync_" data-uid="CG.Purple.Managers.IProviderLogManager.DeleteAsync*"></a>
-  <h4 id="CG_Purple_Managers_IProviderLogManager_DeleteAsync_ProviderLog_System_String_CancellationToken_" data-uid="CG.Purple.Managers.IProviderLogManager.DeleteAsync(ProviderLog,System.String,CancellationToken)">DeleteAsync(ProviderLog, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method deletes an existing <see cref="!:ProviderLog"></see> object from the
+  <a id="CG_Purple_Managers_IProcessLogManager_DeleteAsync_" data-uid="CG.Purple.Managers.IProcessLogManager.DeleteAsync*"></a>
+  <h4 id="CG_Purple_Managers_IProcessLogManager_DeleteAsync_ProcessLog_System_String_CancellationToken_" data-uid="CG.Purple.Managers.IProcessLogManager.DeleteAsync(ProcessLog,System.String,CancellationToken)">DeleteAsync(ProcessLog, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method deletes an existing <see cref="!:ProcessLog"></see> object from the
 underlying storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task DeleteAsync(ProviderLog providerLog, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task DeleteAsync(ProcessLog providerLog, string userName, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -525,7 +318,7 @@ underlying storage.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ProviderLog</span></td>
+        <td><span class="xref">ProcessLog</span></td>
         <td><span class="parametername">providerLog</span></td>
         <td><p>The model to delete from the underlying storage.</p>
 </td>
@@ -579,15 +372,15 @@ manager fails to complete the operation.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Managers_IProviderLogManager_UpdateAsync_" data-uid="CG.Purple.Managers.IProviderLogManager.UpdateAsync*"></a>
-  <h4 id="CG_Purple_Managers_IProviderLogManager_UpdateAsync_ProviderLog_System_String_CancellationToken_" data-uid="CG.Purple.Managers.IProviderLogManager.UpdateAsync(ProviderLog,System.String,CancellationToken)">UpdateAsync(ProviderLog, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method updates an existing <see cref="!:ProviderLog"></see> object in the
+  <a id="CG_Purple_Managers_IProcessLogManager_UpdateAsync_" data-uid="CG.Purple.Managers.IProcessLogManager.UpdateAsync*"></a>
+  <h4 id="CG_Purple_Managers_IProcessLogManager_UpdateAsync_ProcessLog_System_String_CancellationToken_" data-uid="CG.Purple.Managers.IProcessLogManager.UpdateAsync(ProcessLog,System.String,CancellationToken)">UpdateAsync(ProcessLog, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method updates an existing <see cref="!:ProcessLog"></see> object in the
 underlying storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ProviderLog&gt; UpdateAsync(ProviderLog providerLog, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;ProcessLog&gt; UpdateAsync(ProcessLog providerLog, string userName, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -600,7 +393,7 @@ underlying storage.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ProviderLog</span></td>
+        <td><span class="xref">ProcessLog</span></td>
         <td><span class="parametername">providerLog</span></td>
         <td><p>The model to update in the underlying storage.</p>
 </td>
@@ -631,9 +424,9 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">ProviderLog</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">ProcessLog</span>&gt;</td>
         <td><p>A task to perform the operation that returns the newly updated
-<see cref="!:ProviderLog"></see> object.</p>
+<see cref="!:ProcessLog"></see> object.</p>
 </td>
       </tr>
     </tbody>
@@ -655,6 +448,43 @@ manager fails to complete the operation.</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_Exception_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Exception, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_Message_Exception_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Message, Exception, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_Exception_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Message, MessageState, Exception, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_System_String_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, String, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Message, MessageState, String, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_Message_System_String_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Message, String, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogStoredEventAsync_CG_Purple_Managers_IProcessLogManager_Message_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogStoredEventAsync(IProcessLogManager, Message, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogAssignedEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_ProviderType_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogAssignedEventAsync(IProcessLogManager, Message, MessageState, ProviderType, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogResetEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogResetEventAsync(IProcessLogManager, Message, MessageState, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogDisabledEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogDisabledEventAsync(IProcessLogManager, Message, MessageState, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogEnabledEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogEnabledEventAsync(IProcessLogManager, Message, MessageState, String, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogSentEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_CancellationToken_">ProcessLogManagerExtensions001.LogSentEventAsync(IProcessLogManager, Message, MessageState, String, CancellationToken)</a>
+  </div>
 </article>
           </div>
           
