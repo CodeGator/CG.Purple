@@ -53,8 +53,9 @@ steps:
       **\*Tests*.dll
       !**\*TestAdapter.dll
       !**\obj\**
+      !**\bin\**\ref\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
-
+    
 - powershell: |
     choco install docfx -y
     if ($lastexitcode -ne 0) {
