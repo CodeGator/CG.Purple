@@ -52,9 +52,13 @@ steps:
     testAssemblyVer2: |
       **\*Tests*.dll
       !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'  
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/cobertura/coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/cobertura'    
 
+-   
 - powershell: |
     choco install docfx -y
     if ($lastexitcode -ne 0) {
