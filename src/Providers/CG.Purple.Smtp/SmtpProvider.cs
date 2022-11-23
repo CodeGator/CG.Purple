@@ -1,4 +1,6 @@
 ﻿
+using System.Threading;
+
 namespace CG.Purple.Smtp;
 
 /// <summary>
@@ -183,7 +185,7 @@ internal class SmtpProvider : IMessageProvider
                         cancellationToken
                         ).ConfigureAwait(false);
 
-                    // TODO : unassign the provider for the mesage.
+                    // TODO : remove the provider for the message.
 
                     continue; // Nothing left to do!
                 }
@@ -215,70 +217,15 @@ internal class SmtpProvider : IMessageProvider
                         cancellationToken
                         ).ConfigureAwait(false);
 
-                    // TODO : unassign the provider for the mesage.
+                    // TODO : remove the provider for the message.
 
                     continue; // Nothing left to do!
                 }
 
                 // Create the .NET model.
-                using var msg = new System.Net.Mail.MailMessage()
-                {
-                    From = new System.Net.Mail.MailAddress(mailMessage.From),
-                    Subject = mailMessage.Subject,
-                    Body = mailMessage.Body,
-                    IsBodyHtml = mailMessage.IsHtml
-                };
-
-                // Set the target address(es).
-                foreach (var to in mailMessage.To.Split(';'))
-                {
-                    if (!string.IsNullOrEmpty(to))
-                    {
-                        msg.To.Add(to);
-                    }
-                }
-
-                // Was a CC supplied?
-                if (!string.IsNullOrEmpty(mailMessage.CC))
-                {
-                    // Set the CC address(es).
-                    foreach (var cc in mailMessage.CC.Split(';'))
-                    {
-                        if (!string.IsNullOrEmpty(cc))
-                        {
-                            msg.CC.Add(cc);
-                        }
-                    }
-                }
-
-                // Was a BCC supplied?
-                if (!string.IsNullOrEmpty(mailMessage.BCC))
-                {
-                    // Set the BCC address(es).
-                    foreach (var bcc in mailMessage.BCC.Split(';'))
-                    {
-                        if (!string.IsNullOrEmpty(bcc))
-                        {
-                            msg.Bcc.Add(bcc);
-                        }
-                    }
-                }
-
-                // Were there attachments?
-                foreach (var attachment in mailMessage.Attachments)
-                {
-                    // Get the data and mime type.
-                    using var contentStream = new MemoryStream(attachment.Data);
-                    var mimeType = $"{attachment.MimeType.Type}/{attachment.MimeType.SubType}";
-
-                    // Set the attachment.
-                    msg.Attachments.Add(
-                            new System.Net.Mail.Attachment(
-                                contentStream,
-                                mimeType
-                                )
-                            );
-                }
+                var msg = CreateDotNetMessage(
+                    mailMessage
+                    );
 
                 // =======
                 // Step 4: Send the email.
@@ -290,48 +237,15 @@ internal class SmtpProvider : IMessageProvider
                     _logger.LogTrace(
                         "Deferring to {method} for message: {id}",
                         nameof(System.Net.Mail.SmtpClient.Send),
-                        message.Id
+                        mailMessage.Id
                         );
 
                     // Send the message.
                     client.Send(msg);
 
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Transitioning message: {id} to state: {state}",
-                        message.Id,
-                        MessageState.Sent
-                        );
-
-                    // Remember the previous state.
-                    var oldMessageState = mailMessage.MessageState;
-
-                    // The message is now in a sent state.
-                    mailMessage.MessageState = MessageState.Sent;
-
-                    // Update the message.
-                    _ = await _mailMessageManager.UpdateAsync(
+                    // Transition to the 'Sent' state.
+                    await ToSentStateAsync(
                         mailMessage,
-                        "host",
-                        cancellationToken
-                        ).ConfigureAwait(false);
-
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Creating a log entry for message: {id}",
-                        message.Id
-                        );
-
-                    // Record what we did, in the log.
-                    await _processLogManager.CreateAsync(
-                        new ProcessLog()
-                        {
-                            Message = message,
-                            BeforeState = oldMessageState,
-                            AfterState = message.MessageState,
-                            Event = ProcessEvent.Sent
-                        },
-                        "host",
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
@@ -339,43 +253,10 @@ internal class SmtpProvider : IMessageProvider
                 {
                     // TODO : at some point, add some retry logic here.
 
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Transitioning message: {id} to state: {state}",
-                        message.Id,
-                        MessageState.Failed
-                        );
-
-                    // Remember the previous state.
-                    var oldMessageState = mailMessage.MessageState;
-
-                    // The message is now in a failed state.
-                    mailMessage.MessageState = MessageState.Failed;
-
-                    // Update the message.
-                    _ = await _mailMessageManager.UpdateAsync(
+                    // Transition to the 'Failed' state.
+                    await ToFailedStateAsync(
                         mailMessage,
-                        "host",
-                        cancellationToken
-                        ).ConfigureAwait(false);
-
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Creating a log entry for message: {id}",
-                        message.Id
-                        );
-
-                    // Record what we did, in the log.
-                    await _processLogManager.CreateAsync(
-                        new ProcessLog()
-                        {
-                            Message = mailMessage,
-                            BeforeState = oldMessageState,
-                            AfterState = mailMessage.MessageState,
-                            Event = ProcessEvent.Error,
-                            Error = ex.GetBaseException().Message
-                        },
-                        "host",
+                        ex,
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
@@ -395,6 +276,177 @@ internal class SmtpProvider : IMessageProvider
                 innerException: ex
                 );
         }
+    }
+
+    #endregion
+
+    // *******************************************************************
+    // Private methods.
+    // *******************************************************************
+
+    #region Private methods
+
+    private System.Net.Mail.MailMessage CreateDotNetMessage(
+        MailMessage mailMessage
+        )
+    {
+        var dotNetMessage = new System.Net.Mail.MailMessage()
+        {
+            From = new System.Net.Mail.MailAddress(mailMessage.From),
+            Subject = mailMessage.Subject,
+            Body = mailMessage.Body,
+            IsBodyHtml = mailMessage.IsHtml
+        };
+
+        // Set the target address(es).
+        foreach (var to in mailMessage.To.Split(';'))
+        {
+            if (!string.IsNullOrEmpty(to))
+            {
+                dotNetMessage.To.Add(to);
+            }
+        }
+
+        // Was a CC supplied?
+        if (!string.IsNullOrEmpty(mailMessage.CC))
+        {
+            // Set the CC address(es).
+            foreach (var cc in mailMessage.CC.Split(';'))
+            {
+                if (!string.IsNullOrEmpty(cc))
+                {
+                    dotNetMessage.CC.Add(cc);
+                }
+            }
+        }
+
+        // Was a BCC supplied?
+        if (!string.IsNullOrEmpty(mailMessage.BCC))
+        {
+            // Set the BCC address(es).
+            foreach (var bcc in mailMessage.BCC.Split(';'))
+            {
+                if (!string.IsNullOrEmpty(bcc))
+                {
+                    dotNetMessage.Bcc.Add(bcc);
+                }
+            }
+        }
+
+        // Were there attachments?
+        foreach (var attachment in mailMessage.Attachments)
+        {
+            // Get the data and mime type.
+            using var contentStream = new MemoryStream(attachment.Data);
+            var mimeType = $"{attachment.MimeType.Type}/{attachment.MimeType.SubType}";
+
+            // Set the attachment.
+            dotNetMessage.Attachments.Add(
+                    new System.Net.Mail.Attachment(
+                        contentStream,
+                        mimeType
+                        )
+                    );
+        }
+
+        // Return the results.
+        return dotNetMessage;
+    }
+
+    // *******************************************************************
+
+    private async Task ToSentStateAsync(
+        MailMessage mailMessage,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Transitioning message: {id} to state: {state}",
+            mailMessage.Id,
+            MessageState.Sent
+            );
+
+        // Remember the previous state.
+        var oldMessageState = mailMessage.MessageState;
+
+        // The message is now in a sent state.
+        mailMessage.MessageState = MessageState.Sent;
+
+        // Update the message.
+        _ = await _mailMessageManager.UpdateAsync(
+            mailMessage,
+            "host",
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Creating a log entry for message: {id}",
+            mailMessage.Id
+            );
+
+        // Record what we did, in the log.
+        await _processLogManager.CreateAsync(
+            new ProcessLog()
+            {
+                Message = mailMessage,
+                BeforeState = oldMessageState,
+                AfterState = mailMessage.MessageState,
+                Event = ProcessEvent.Sent
+            },
+            "host",
+            cancellationToken
+            ).ConfigureAwait(false);
+    }
+
+    // *******************************************************************
+
+    private async Task ToFailedStateAsync(
+        MailMessage mailMessage,
+        Exception ex,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Transitioning message: {id} to state: {state}",
+            mailMessage.Id,
+            MessageState.Failed
+            );
+
+        // Remember the previous state.
+        var oldMessageState = mailMessage.MessageState;
+
+        // The message is now in a failed state.
+        mailMessage.MessageState = MessageState.Failed;
+
+        // Update the message.
+        _ = await _mailMessageManager.UpdateAsync(
+            mailMessage,
+            "host",
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Creating a log entry for message: {id}",
+            mailMessage.Id
+            );
+
+        // Record what we did, in the log.
+        await _processLogManager.CreateAsync(
+            new ProcessLog()
+            {
+                Message = mailMessage,
+                BeforeState = oldMessageState,
+                AfterState = mailMessage.MessageState,
+                Event = ProcessEvent.Error,
+                Error = ex.GetBaseException().Message
+            },
+            "host",
+            cancellationToken
+            ).ConfigureAwait(false);
     }
 
     #endregion
