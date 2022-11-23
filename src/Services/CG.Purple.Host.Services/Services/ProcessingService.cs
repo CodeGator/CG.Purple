@@ -4,7 +4,7 @@ namespace CG.Purple.Host.Services;
 /// <summary>
 /// This class is a message processing service.
 /// </summary>
-internal class MessageProcessingService : BackgroundService
+internal class ProcessingService : BackgroundService
 {
     // *******************************************************************
     // Fields.
@@ -25,7 +25,7 @@ internal class MessageProcessingService : BackgroundService
     /// <summary>
     /// This field contains the logger for this service.
     /// </summary>
-    internal protected readonly ILogger<MessageProcessingService> _logger = null!;
+    internal protected readonly ILogger<ProcessingService> _logger = null!;
 
     #endregion
 
@@ -36,7 +36,7 @@ internal class MessageProcessingService : BackgroundService
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="MessageProcessingService"/>
+    /// This constructor creates a new instance of the <see cref="ProcessingService"/>
     /// class.
     /// </summary>
     /// <param name="hostedServiceOptions">The hosted service options to 
@@ -44,10 +44,10 @@ internal class MessageProcessingService : BackgroundService
     /// <param name="serviceProvider">The service provider to use with
     /// this service.</param>
     /// <param name="logger">The logger to use with this service.</param>
-    public MessageProcessingService(
+    public ProcessingService(
         IOptions<HostedServiceOptions> hostedServiceOptions,
         IServiceProvider serviceProvider,
-        ILogger<MessageProcessingService> logger
+        ILogger<ProcessingService> logger
         )
     {
         // Validate the parameters before attempting to use them.
@@ -84,14 +84,14 @@ internal class MessageProcessingService : BackgroundService
             // Log what we are  about to do.
             _logger.LogDebug(
                 "The {svc} service is running.",
-                nameof(MessageProcessingService)
+                nameof(ProcessingService)
                 );
 
             // Register for the stop signal.
             stoppingToken.Register(() =>
                 _logger.LogDebug(
                     "{svc} task is stopping.",
-                    nameof(MessageProcessingService)
+                    nameof(ProcessingService)
                     )
                 );
 
@@ -102,7 +102,7 @@ internal class MessageProcessingService : BackgroundService
                 // Log what we are about to do.
                 _logger.LogInformation(
                     "Pausing the {svc} service startup for {time}.",
-                    nameof(MessageProcessingService),
+                    nameof(ProcessingService),
                     TimeSpan.FromSeconds(30)
                 );
 
@@ -135,7 +135,7 @@ internal class MessageProcessingService : BackgroundService
             // Log what we are about to do.
             _logger.LogDebug(
                 "Entering main {svc} service loop",
-                nameof(MessageProcessingService)
+                nameof(ProcessingService)
                 );
 
             // While the service is running ...
@@ -159,7 +159,7 @@ internal class MessageProcessingService : BackgroundService
                     // Log what we are about to do.
                     _logger.LogInformation(
                         "Pausing the {svc} service iteration for {time}.",
-                        nameof(MessageProcessingService),
+                        nameof(ProcessingService),
                         _hostedServiceOptions.Value.MessageProcessing.ThrottleDuration.Value
                     );
 
@@ -176,7 +176,7 @@ internal class MessageProcessingService : BackgroundService
                     // Log what we are about to do.
                     _logger.LogInformation(
                         "Pausing the {svc} service iteration for {time}.",
-                        nameof(MessageProcessingService),
+                        nameof(ProcessingService),
                         TimeSpan.FromSeconds(10)
                     );
 
@@ -191,7 +191,7 @@ internal class MessageProcessingService : BackgroundService
             // Log what we are about to do.
             _logger.LogDebug(
                 "Leaving main {svc} service loop",
-                nameof(MessageProcessingService)
+                nameof(ProcessingService)
                 );
         }
         catch (Exception ex)
@@ -200,7 +200,7 @@ internal class MessageProcessingService : BackgroundService
             _logger.LogCritical(
                 ex,
                 "The {svc} service failed while running!",
-                nameof(MessageProcessingService)
+                nameof(ProcessingService)
                 );
         }
         finally
@@ -208,7 +208,7 @@ internal class MessageProcessingService : BackgroundService
             // Log what happened.
             _logger.LogDebug(
                 "{svc} task is stopped.",
-                nameof(MessageProcessingService)
+                nameof(ProcessingService)
                 );
         }
     }

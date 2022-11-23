@@ -54,7 +54,7 @@ public static class WebApplicationBuilderExtensions006
             );
 
         // Add the services.
-        webApplicationBuilder.Services.AddHostedService<MessageProcessingService>();
+        webApplicationBuilder.Services.AddHostedService<ProcessingService>();
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
