@@ -54,6 +54,7 @@ internal class SendGridProvider : IMessageProvider
     public virtual async Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
         IEnumerable<ProviderParameter> parameters,
+        PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         )
     {

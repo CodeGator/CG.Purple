@@ -1,6 +1,4 @@
 ﻿
-using System.Threading;
-
 namespace CG.Purple.Smtp;
 
 /// <summary>
@@ -19,6 +17,11 @@ internal class SmtpProvider : IMessageProvider
     /// This field contains the mail manager for this provider.
     /// </summary>
     internal protected readonly IMailMessageManager _mailMessageManager = null!;
+
+    /// <summary>
+    /// This field contains the message manager for this provider.
+    /// </summary>
+    internal protected readonly IMessageManager _messageManager = null!;
 
     /// <summary>
     /// This field contains the message property manager for this director.
@@ -49,6 +52,8 @@ internal class SmtpProvider : IMessageProvider
     /// </summary>
     /// <param name="mailMessageManager">The mail message manager to use
     /// with this provider.</param>
+    /// <param name="messageManager">The message manager to use with this 
+    /// provider.</param>
     /// <param name="messagePropertyManager">The message property manager 
     /// to use with this provider.</param>
     /// <param name="processLogManager">The process log manager to use
@@ -56,6 +61,7 @@ internal class SmtpProvider : IMessageProvider
     /// <param name="logger">The logger to use with this provider.</param>
     public SmtpProvider(
         IMailMessageManager mailMessageManager,
+        IMessageManager messageManager,
         IProcessLogManager processLogManager,
         IMessagePropertyManager messagePropertyManager,
         ILogger<IMessageProvider> logger
@@ -63,12 +69,14 @@ internal class SmtpProvider : IMessageProvider
     {
         // Validate the parameters before attempting to use them.
         Guard.Instance().ThrowIfNull(mailMessageManager, nameof(mailMessageManager))
+            .ThrowIfNull(messageManager, nameof(messageManager))
             .ThrowIfNull(processLogManager, nameof(processLogManager))
             .ThrowIfNull(messagePropertyManager, nameof(messagePropertyManager))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
         _mailMessageManager = mailMessageManager;
+        _messageManager = messageManager;
         _messagePropertyManager = messagePropertyManager;
         _processLogManager = processLogManager;
         _logger = logger;
@@ -86,11 +94,13 @@ internal class SmtpProvider : IMessageProvider
     public virtual async Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
         IEnumerable<ProviderParameter> parameters,
+        PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
         Guard.Instance().ThrowIfNull(messages, nameof(messages))
+            .ThrowIfNull(providerPropertyType, nameof(providerPropertyType))
             .ThrowIfNull(parameters, nameof(parameters));
 
         try
@@ -185,7 +195,14 @@ internal class SmtpProvider : IMessageProvider
                         cancellationToken
                         ).ConfigureAwait(false);
 
-                    // TODO : remove the provider for the message.
+                    // Since this provider can't process this message, we'll
+                    //   reset the message to give the pipeline another chance
+                    //   to process it.
+                    await ResetMessageAsync(
+                        message,
+                        providerPropertyType,
+                        cancellationToken
+                        ).ConfigureAwait(false);
 
                     continue; // Nothing left to do!
                 }
@@ -217,7 +234,14 @@ internal class SmtpProvider : IMessageProvider
                         cancellationToken
                         ).ConfigureAwait(false);
 
-                    // TODO : remove the provider for the message.
+                    // Since this provider can't process this message, we'll
+                    //   reset the message to give the pipeline another chance
+                    //   to process it.
+                    await ResetMessageAsync(
+                        message,
+                        providerPropertyType,
+                        cancellationToken
+                        ).ConfigureAwait(false);
 
                     continue; // Nothing left to do!
                 }
@@ -243,20 +267,42 @@ internal class SmtpProvider : IMessageProvider
                     // Send the message.
                     client.Send(msg);
 
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Transitioning message: {id} to the {state} state.",
+                        mailMessage.Id,
+                        MessageState.Sent
+                        );
+
                     // Transition to the 'Sent' state.
-                    await ToSentStateAsync(
-                        mailMessage,
+                    await mailMessage.ToSentStateAsync(
+                        _messageManager,
+                        _processLogManager,
+                        "host",
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {
-                    // TODO : at some point, add some retry logic here.
+                    // Log what happened.
+                    _logger.LogError(
+                        ex,
+                        "Failed to send an email!"
+                        );
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Transitioning message: {id} to the {state} state.",
+                        mailMessage.Id,
+                        MessageState.Failed
+                        );
 
                     // Transition to the 'Failed' state.
-                    await ToFailedStateAsync(
-                        mailMessage,
+                    await mailMessage.ToFailedStateAsync(
                         ex,
+                        _messageManager,
+                        _processLogManager,
+                        "host",
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
@@ -355,95 +401,84 @@ internal class SmtpProvider : IMessageProvider
 
     // *******************************************************************
 
-    private async Task ToSentStateAsync(
-        MailMessage mailMessage,
+    /// <summary>
+    /// This method resets the given message to a 'Pending' state. 
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="providerPropertyType">The provider property type to
+    /// use for the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    private async Task ResetMessageAsync(
+        Message message,
+        PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         )
     {
         // Log what we are about to do.
         _logger.LogDebug(
-            "Transitioning message: {id} to state: {state}",
-            mailMessage.Id,
-            MessageState.Sent
+            "Looking for provider property on message: {id}",
+            message.Id 
             );
 
-        // Remember the previous state.
-        var oldMessageState = mailMessage.MessageState;
+        // Find the corresponding provider property, for the message.
+        var assignedProviderProperty = message.MessageProperties.FirstOrDefault(
+            x => x.PropertyType.Id == providerPropertyType.Id
+            );
 
-        // The message is now in a sent state.
-        mailMessage.MessageState = MessageState.Sent;
+        // Should never happen, but, pffft, check it anyway.
+        if (assignedProviderProperty is null) 
+        {
+            // Log what we are about to do.
+            _logger.LogError(
+                "Failed to find the assigned provider property on message: {id}!",
+                message.Id    
+                );
 
-        // Update the message.
-        _ = await _mailMessageManager.UpdateAsync(
-            mailMessage,
-            "host",
-            cancellationToken
-            ).ConfigureAwait(false);
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a log entry for message: {id}",
+                message.Id
+                );
+
+            // Record what we did, in the log.
+            await _processLogManager.CreateAsync(
+                new ProcessLog()
+                {
+                    Message = message,
+                    Event = ProcessEvent.Error,
+                    Error = "Failed to find the assigned provider property!"
+                },
+                "host",
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            return; // Nothing to do!
+        }
 
         // Log what we are about to do.
         _logger.LogDebug(
             "Creating a log entry for message: {id}",
-            mailMessage.Id
+            message.Id
             );
 
-        // Record what we did, in the log.
-        await _processLogManager.CreateAsync(
-            new ProcessLog()
-            {
-                Message = mailMessage,
-                BeforeState = oldMessageState,
-                AfterState = mailMessage.MessageState,
-                Event = ProcessEvent.Sent
-            },
-            "host",
-            cancellationToken
-            ).ConfigureAwait(false);
-    }
-
-    // *******************************************************************
-
-    private async Task ToFailedStateAsync(
-        MailMessage mailMessage,
-        Exception ex,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Transitioning message: {id} to state: {state}",
-            mailMessage.Id,
-            MessageState.Failed
+        // Update the local model.
+        message.MessageProperties.Remove(
+            assignedProviderProperty
             );
 
-        // Remember the previous state.
-        var oldMessageState = mailMessage.MessageState;
-
-        // The message is now in a failed state.
-        mailMessage.MessageState = MessageState.Failed;
-
-        // Update the message.
-        _ = await _mailMessageManager.UpdateAsync(
-            mailMessage,
+        // Update the database.
+        await _messagePropertyManager.DeleteAsync(
+            assignedProviderProperty,
             "host",
             cancellationToken
             ).ConfigureAwait(false);
 
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Creating a log entry for message: {id}",
-            mailMessage.Id
-            );
-
-        // Record what we did, in the log.
-        await _processLogManager.CreateAsync(
-            new ProcessLog()
-            {
-                Message = mailMessage,
-                BeforeState = oldMessageState,
-                AfterState = mailMessage.MessageState,
-                Event = ProcessEvent.Error,
-                Error = ex.GetBaseException().Message
-            },
+        // Transition back to the 'Pending' state.
+        await message.ToPendingStateAsync(
+            _messageManager,
+            _processLogManager,
             "host",
             cancellationToken
             ).ConfigureAwait(false);

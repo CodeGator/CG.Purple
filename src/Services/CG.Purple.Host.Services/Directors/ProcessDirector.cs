@@ -312,10 +312,11 @@ internal class ProcessDirector : IProcessDirector
                 providerTypePropertyName
                 );
 
-            // Pass the messages to the provider.
+            // Pass the message(s) to the provider.
             await messageProvider.ProcessMessagesAsync(
                 groupedMessages.AsEnumerable(),
                 providerType.Parameters,
+                providerPropertyType,
                 cancellationToken
                 ).ConfigureAwait(false);
         }

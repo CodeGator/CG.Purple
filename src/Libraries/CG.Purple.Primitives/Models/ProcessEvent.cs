@@ -19,6 +19,12 @@ public enum ProcessEvent
     Assigned,
 
     /// <summary>
+    /// This enumeration represents a reset message event.
+    /// </summary>
+    [Description("The message was reset to the 'Pending' state")]
+    Reset,
+
+    /// <summary>
     /// This enumeration represents a message disable event.
     /// </summary>
     [Description("The message was disabled")]
