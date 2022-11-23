@@ -5,7 +5,7 @@ namespace Microsoft.AspNetCore.Builder;
 /// This class contains extension methods related to the <see cref="WebApplication"/>
 /// type.
 /// </summary>
-public static partial class WebApplicationExtensions_Purple_Seeding
+public static class WebApplicationExtensions001
 {
     // *******************************************************************
     // Public methods.

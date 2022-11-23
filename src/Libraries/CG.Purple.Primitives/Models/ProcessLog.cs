@@ -20,7 +20,7 @@ public class ProcessLog : ModelBase
     /// <summary>
     /// This property contains the associate message.
     /// </summary>
-    public virtual Message Message { get; set; } = null!;
+    public virtual Message? Message { get; set; } = null!;
 
     /// <summary>
     /// This property contains the associated provider type.

@@ -134,6 +134,10 @@ internal class ProcessDirector : IProcessDirector
             // Are we done?
             if (!messages.Any())
             {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "No work to do, returning."
+                    );
                 return; // Done!
             }
 
@@ -158,10 +162,10 @@ internal class ProcessDirector : IProcessDirector
                 ).ConfigureAwait(false);
 
             // =======
-            // Step 4: Assign a provider to any messages that need one.
+            // Step 4: Assign a provider to messages.
             // =======
 
-            // Assign a provider type to any message that lacks one.
+            // Assign a provider type to any messages that lack one.
             messages = await AssignProviderTypeAsync(
                 messages,
                 availableProviderTypes,
@@ -170,11 +174,11 @@ internal class ProcessDirector : IProcessDirector
                 ).ConfigureAwait(false);
 
             // =======
-            // Step 5: Ensure any 'Pending' messages now have a 'Processing state.
+            // Step 5: Ensure messages are in a 'Processing state.
             // =======
 
             // Make sure all messages reflect the proper state.
-            messages = await TransitionFromPendingToProcessingAsync(
+            messages = await FromPendingToProcessingAsync(
                 messages,
                 availableProviderTypes,
                 providerPropertyType,
@@ -182,7 +186,7 @@ internal class ProcessDirector : IProcessDirector
                 ).ConfigureAwait(false);
 
             // =======
-            // Step 6: Send messages to the appropriate provider.
+            // Step 6: Send messages to the provider.
             // =======
 
             // Attempt to send messages to their respective provider.
@@ -234,8 +238,13 @@ internal class ProcessDirector : IProcessDirector
         )
     {
         // =======
-        // Step 1: Group the messages so we can batch the processing.
+        // Step 1: Group the messages so we can process in batches.
         // =======
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Grouping messages by provider type."
+            );
 
         // Group messages by the provider property.
         var messagesGroupedByProvider = from msg in pendingMessages
@@ -243,16 +252,22 @@ internal class ProcessDirector : IProcessDirector
                 where prop.PropertyType.Id == providerPropertyType.Id
                 group msg by prop.Value;
 
-        // TODO : should order by provider priority.
+        // TODO : should order by provider type priority (how to do this??).
 
-        // Loop through the grouped messages.
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Looping through {count} message groups.",
+            messagesGroupedByProvider.Count()
+            );
+
+        // Loop through the messages (grouped by provider type).
         foreach (var groupedMessages in messagesGroupedByProvider) 
         {
             // =======
-            // Step 2: Get the provider type for this batch.
+            // Step 2: Get the provider type for this group.
             // =======
 
-            // Get the assigned provider type's name.
+            // Get the provider type's name.
             var providerTypePropertyName = groupedMessages.Key;
 
             // Log what we are about to do.
@@ -261,19 +276,30 @@ internal class ProcessDirector : IProcessDirector
                 providerTypePropertyName
                 );
 
-            // Get the associated provider type.
-            var providerType = await _providerTypeManager.FindByNameAsync(
+            // Get the associated provider type model.
+            var assignedProviderType = await _providerTypeManager.FindByNameAsync(
                 providerTypePropertyName,
                 cancellationToken
                 ).ConfigureAwait(false);
 
             // Should never happen, but, pffft, check it anyway.
-            if (providerType is null)
+            if (assignedProviderType is null)
             {
-                // Panic!!
-                throw new InvalidDataException(
-                    $"Provider type {providerTypePropertyName} is missing, or invalid!"
-                    );
+                // If we get here then the provider type property, on the group,
+                //   contains a missing, or invalid value. Should never happen,
+                //   but if it does, we can recover by (A) clearing the provider
+                //   type on the messages in that group - thereby giving the
+                //   pipeline another chance to get the assignment right, the
+                //   next time through - and (B) logging the problem.
+
+                // Clear the provider for the group.
+                await ClearProviderOnGroup(
+                    groupedMessages,
+                    providerPropertyType,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                continue; // Nothing else to do!
             }
 
             // =======
@@ -288,17 +314,28 @@ internal class ProcessDirector : IProcessDirector
 
             // Stand up an instance of the provider.
             var messageProvider = await _messageProviderFactory.CreateAsync(
-                providerType,
+                assignedProviderType,
                 cancellationToken
                 ).ConfigureAwait(false);
 
             // Should never happen, but, pffft, check it anyway.
             if (messageProvider is null)
             {
-                // Panic!!
-                throw new InvalidDataException(
-                    $"Failed to create an instance of provider: {providerTypePropertyName}!"
-                    );
+                // If we get here then the provider type property, on the group,
+                //   wasn't found in the database. Should never happen, but if
+                //   it does, we can recover by (A) clearing the provider on the
+                //   messages in that group - thereby giving the pipeline another
+                //   chance to get the assignment right, the next time through,
+                //   and (B) logging the problem.
+
+                // Clear the provider for the group.
+                await ClearProviderOnGroup(
+                    groupedMessages,
+                    providerPropertyType,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                continue; // Nothing else to do!
             }
 
             // =======
@@ -315,8 +352,92 @@ internal class ProcessDirector : IProcessDirector
             // Pass the message(s) to the provider.
             await messageProvider.ProcessMessagesAsync(
                 groupedMessages.AsEnumerable(),
-                providerType.Parameters,
+                assignedProviderType.Parameters,
                 providerPropertyType,
+                cancellationToken
+                ).ConfigureAwait(false);
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method clears the assigned provider property type on all the
+    /// messages in the given group.
+    /// </summary>
+    /// <param name="groupedMessages">The group to use for the operation.</param>
+    /// <param name="providerPropertyType">The 'Provider' property type
+    /// to use for the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    private async Task ClearProviderOnGroup(
+        IGrouping<string, Message> groupedMessages,
+        PropertyType providerPropertyType,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Clearing the provider type property for {count} messages.",
+            groupedMessages.Count()
+            );
+
+        // Loop through the messages in the group.
+        foreach (var message in groupedMessages)
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for the {name} provider type property",
+                providerPropertyType.Name
+                );
+
+            // Look for the provider property type, on the message.
+            var providerMessageProperty = message.MessageProperties.FirstOrDefault(
+                x => x.PropertyType.Id == providerPropertyType.Id
+                );
+
+            // Should never happen, but, pffft, check it anyway.
+            if (providerMessageProperty is null)
+            {
+                // Log what we are about to do.
+                _logger.LogError(
+                    "Failed to find the assigned provider property on message: {id}!",
+                    message.Id
+                    );
+
+                // Record what happened, in the log.
+                await _processLogManager.LogErrorEventAsync(
+                    "Failed to find the assigned provider property!",
+                    "host",
+                    cancellationToken
+                    );
+
+                continue; // Nothing more to do!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Removing the {name} provider type property from message: {id}",
+                providerPropertyType.Name,
+                message.Id
+                );
+
+            // Update the local message.
+            message.MessageProperties.Remove(
+                providerMessageProperty
+                );
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Deleting the {name} provider type on the message property manager",
+                providerPropertyType.Name
+                );
+
+            // Update the database.
+            await _messagePropertyManager.DeleteAsync(
+                providerMessageProperty,
+                "host",
                 cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -338,7 +459,7 @@ internal class ProcessDirector : IProcessDirector
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns a sequence 
     /// of <see cref="Message"/> objects.</returns>
-    private async Task<IEnumerable<Message>> TransitionFromPendingToProcessingAsync(
+    private async Task<IEnumerable<Message>> FromPendingToProcessingAsync(
         IEnumerable<Message> messages,
         IEnumerable<ProviderType> availableProviderTypes,
         PropertyType providerPropertyType,
@@ -362,6 +483,10 @@ internal class ProcessDirector : IProcessDirector
         // Did we fail?
         if (!pendingMessages.Any())
         {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "None found, returning"
+                );
             return messages; // Done!
         }
 
@@ -369,17 +494,28 @@ internal class ProcessDirector : IProcessDirector
         // Step 2: Assign the 'Processing state to each message.
         // =======
 
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Looking for messages that don't need to transition"
+            );
+
         // Look for any messages that don't need to transition.
         var processingMessages = messages.Except(
             pendingMessages,
             MessageEqualityComparer.Instance()
             ).ToList();
 
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Looping through {count} pending messages",
+            pendingMessages.Count()
+            );
+
         // Loop and transition messages.
         foreach (var message in pendingMessages)
         {
             // =======
-            // Step 3: Find the associated provider.
+            // Step 2B: Find the associated provider.
             // =======
 
             // Log what we are about to do.
@@ -396,63 +532,59 @@ internal class ProcessDirector : IProcessDirector
             // Should never happen, but, pffft, check it anyway.
             if (messageProviderProperty is null)
             {
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Creating a log entry for message: {id}",
-                    message.Id
-                    );
+                // If we get here then the message didn't contain a provider
+                //   type property. Should never happen, but if it does, we
+                //   can recover by (A) leaving the message in the 'Pending'
+                //   state and (B) logging the problem.
 
-                // Record what we did, in the log.
-                await _processLogManager.CreateAsync(
-                    new ProcessLog()
-                    {
-                        Message = message,
-                        Event = ProcessEvent.Error,
-                        Error = "The provider property type is missing, or invalid for the message!"
-                    },
+                // Record what happened, in the log.
+                await _processLogManager.LogErrorEventAsync(
+                    "The provider property type is missing, or invalid for the message!",
                     "host",
                     cancellationToken
-                    ).ConfigureAwait(false);
+                    );
 
                 continue; // Nothing more to do!
             }
 
             // =======
-            // Step 4: Find the provider type.
+            // Step 2C: Find the provider type.
             // =======
 
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for the {name] provider type",
+                messageProviderProperty.Value
+                );
+
             // Get the provider type, based on the property from the message.
-            var messageProvider  = await _providerTypeManager.FindByNameAsync(
+            var assignedProviderType  = await _providerTypeManager.FindByNameAsync(
                 messageProviderProperty.Value,
                 cancellationToken
                 ).ConfigureAwait(false);
 
             // Did we fail?
-            if (messageProvider is null)
+            if (assignedProviderType is null)
             {
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Creating a log entry for message: {id}",
-                    message.Id
-                    );
+                // If we get here then the assigned provider type, on the message,
+                //   has a missing, or invalid value. Should never happen, but if 
+                //   it does, we can recover by: (A) removing the assigned provider
+                //   property, from the message, (B) leaving the message in the
+                //   'Pending' state and (C) logging the problem.
 
-                // Record what we did, in the log.
-                await _processLogManager.CreateAsync(
-                    new ProcessLog()
-                    {
-                        Message = message,
-                        Event = ProcessEvent.Error,
-                        Error = $"The provider type {messageProviderProperty.Value} is invalid!"
-                    },
+                // Record what happened, in the log.
+                await _processLogManager.LogErrorEventAsync(
+                    $"The provider type {messageProviderProperty.Value} " +
+                        $"is missing, or invalid!",
                     "host",
                     cancellationToken
-                    ).ConfigureAwait(false);
+                    );
 
                 continue; // Nothing more to do!
             }
 
             // =======
-            // Step 5: Transition the message.
+            // Step 2D: Transition the message state.
             // =======
 
             // Log what we are about to do.
@@ -462,39 +594,11 @@ internal class ProcessDirector : IProcessDirector
                 MessageState.Processing
                 );
 
-            // Remember the previous state.
-            var oldMessageState = message.MessageState;
-
-            // The message is now in a processing state.
-            message.MessageState = MessageState.Processing;
-
-            // Update the message.
-            _ = await _messageManager.UpdateAsync(
-                message,
-                "host",
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // =======
-            // Step 6: Log the changes.
-            // =======
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a log entry for message: {id}",
-                message.Id
-                );
-
-            // Record what we did, in the log.
-            await _processLogManager.CreateAsync(
-                new ProcessLog()
-                {
-                    Message = message,
-                    BeforeState = oldMessageState,
-                    AfterState = message.MessageState,
-                    Event = ProcessEvent.Assigned,
-                    ProviderType = messageProvider
-                },
+            // Transition to the 'Processing' state.
+            await message.ToProcessingStateAsync(
+                _messageManager,
+                _processLogManager,
+                assignedProviderType,
                 "host",
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -502,6 +606,10 @@ internal class ProcessDirector : IProcessDirector
             // The message is now in a 'Processing' state.
             processingMessages.Add(message);
         }
+
+        // =======
+        // Step 3: return the results.
+        // =======
 
         // Return the results.
         return processingMessages;
@@ -549,13 +657,23 @@ internal class ProcessDirector : IProcessDirector
 
         // Did we fail?
         if (!unassignedMessages.Any() ) 
-        { 
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "None found, returning"
+                );
             return messages; // Done!
         }
 
         // =======
         // Step 2: Assign an appropriate provider to each message.
         // =======
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Looking for messages that don't need to have a provider " +
+            "type assigned to them"
+            );
 
         // Look for any messages that don't need to have a provider type
         // assigned to them.
@@ -564,16 +682,27 @@ internal class ProcessDirector : IProcessDirector
             MessageEqualityComparer.Instance()
             ).ToList();
 
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Looping through {count} unassigned messages",
+            unassignedMessages.Count()
+            );
+
         // Loop and process the unassigned messages.
         foreach (var message in unassignedMessages)
         {
             // =======
-            // Step 3: Select the appropriate provider type.
+            // Step 2B: Select the appropriate provider type.
             // =======
 
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Executing the provider selection algorithm"
+                );
+
             // For now, this will be our 'algorithm' for assigning a provider
-            //   to a message, based on the priority and capability of the provider,
-            //   along with the message type (email or text).
+            //   type to a message, based on the priority and capability of
+            //   the provider, along with the message type.
             ProviderType? assignedProviderType = null;
             if (message.MessageType == MessageType.Mail)
             {
@@ -597,17 +726,18 @@ internal class ProcessDirector : IProcessDirector
                 //   capabilities match the message type. This might happen if (A)
                 //   someone has deleted something from the database, or (B) the
                 //   pipeline itself has disabled one or more provider types, and
-                //   now there are none left to do the work.
+                //   now there are none left to do the work. We throw an exception
+                //   because there isn't a way to recover from this doomsday scenario.
 
                 // Panic!!
                 throw new InvalidDataException(
                     $"A provider type capable of processing {message.MessageType} " +
-                    "messages was not found!"
+                    $"messages could not be assigned for message: {message.Id}!"
                     );
             }
 
             // =======
-            // Step 4: Save the changes.
+            // Step 2C: Save the changes.
             // =======
 
             // Add the 'provider' property type, to the message, which effectively
@@ -629,14 +759,13 @@ internal class ProcessDirector : IProcessDirector
                 message.Id
                 );
 
-            // Update our local copy so we don't have to do a round trip back
-            //   to the database.
+            // Update our local copy.
             message.MessageProperties.Add(
                 messageProperty
                 );
 
             // =======
-            // Step 5: Transition the message state.
+            // Step 2D: Transition the message state.
             // =======
 
             // Log what we are about to do.
@@ -646,49 +775,21 @@ internal class ProcessDirector : IProcessDirector
                 MessageState.Processing
                 );
 
-            // Remember the previous state.
-            var oldMessageState = message.MessageState;
-
-            // The message is now in a processing state.
-            message.MessageState = MessageState.Processing;
-
-            // Update the message.
-            _ = await _messageManager.UpdateAsync(
-                message,
+            // The message is now in a 'Processing' state.
+            await message.ToProcessingStateAsync(
+                _messageManager,
+                _processLogManager,
+                assignedProviderType,
                 "host",
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // =======
-            // Step 6: Log the changes.
-            // =======
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a log entry for message: {id}",
-                message.Id
-                );
-
-            // Record what we did, in the log.
-            await _processLogManager.CreateAsync(
-                new ProcessLog()
-                {
-                    Message = message,
-                    BeforeState = oldMessageState,
-                    AfterState = message.MessageState,
-                    Event = ProcessEvent.Assigned,
-                    ProviderType = assignedProviderType
-                },
-                "host",
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // The message is now assigned an in a 'Processing' state.
+            // Add the message to the collection.
             assignedMessages.Add(message);
         }
 
         // =======
-        // Step 7: Return the results.
+        // Step 3: Return the results.
         // =======
 
         // Return the results.
@@ -729,6 +830,10 @@ internal class ProcessDirector : IProcessDirector
         // Should never happen, but, pffft, check it anyway.
         if (!providerTypes.Any())
         {
+            // If we get here then there are no provider types, at all,
+            //   in the database. We throw an exception because there
+            //   isn't a way to recover from this doomsday scenario.
+
             // Panic!!
             throw new InvalidDataException(
                 "No provider types were found!"
@@ -752,6 +857,11 @@ internal class ProcessDirector : IProcessDirector
         // Should never happen, but, pffft, check it anyway.
         if (!availableProviders.Any())
         {
+            // If we get here then there are no available (not disabled)
+            //   provider types, at all, in the database. We throw an
+            //   exception because there isn't a way to recover from
+            //   this doomsday scenario.
+
             // Panic!!
             throw new InvalidDataException(
                 "No available provider types were found!"
@@ -800,6 +910,10 @@ internal class ProcessDirector : IProcessDirector
         // Should never happen, but, pffft, check it anyway.
         if (providerPropertyType is null)
         {
+            // If we get here then there isn't a 'Provider' property type,
+            //   at all, in the database. We throw an exception because 
+            //   there isn't a way to recover from this doomsday scenario.
+
             // Panic!!
             throw new InvalidDataException(
                 "The 'Provider' property type was not found!"

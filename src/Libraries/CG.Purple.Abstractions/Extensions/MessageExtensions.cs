@@ -1,11 +1,10 @@
-﻿
-namespace CG.Purple.Providers;
+﻿namespace CG.Purple.Providers;
 
 /// <summary>
 /// This class contains extension methods related to the <see cref="Message"/>
 /// type.
 /// </summary>
-public static partial class MessageExtensions
+public static class MessageExtensions001
 {
     // *******************************************************************
     // Public methods.
@@ -57,14 +56,9 @@ public static partial class MessageExtensions
             ).ConfigureAwait(false);
 
         // Record what we did, in the log.
-        await processLogManager.CreateAsync(
-            new ProcessLog()
-            {
-                Message = message,
-                BeforeState = oldMessageState,
-                AfterState = message.MessageState,
-                Event = ProcessEvent.Sent,
-            },
+        _ = await processLogManager.LogSentEventAsync(
+            message,
+            oldMessageState,
             userName,
             cancellationToken
             ).ConfigureAwait(false);
@@ -116,14 +110,9 @@ public static partial class MessageExtensions
             ).ConfigureAwait(false);
 
         // Record what we did, in the log.
-        await processLogManager.CreateAsync(
-            new ProcessLog()
-            {
-                Message = message,
-                BeforeState = oldMessageState,
-                AfterState = message.MessageState,
-                Event = ProcessEvent.Reset,
-            },
+        _ = await processLogManager.LogResetEventAsync(
+            message,
+            oldMessageState,
             userName,
             cancellationToken
             ).ConfigureAwait(false);
@@ -157,9 +146,47 @@ public static partial class MessageExtensions
         CancellationToken cancellationToken = default
         )
     {
+        // Call the overload.
+        await message.ToFailedStateAsync(
+            ex.GetBaseException().Message,
+            messageManager,
+            processLogManager,
+            userName,
+            cancellationToken
+            ).ConfigureAwait(false);
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method transitions the given <see cref="Message"/> to a 
+    /// <see cref="MessageState.Failed"/> state, and records the event
+    /// in the processing log.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="errorMessage">The error message to use for the operation.</param>
+    /// <param name="messageManager">The message manager to use for the
+    /// operation.</param>
+    /// <param name="processLogManager">The process log manager to use 
+    /// for the operation.</param>
+    /// <param name="userName">The name of the user performing the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    public static async Task ToFailedStateAsync(
+        this Message message,
+        string errorMessage,
+        IMessageManager messageManager,
+        IProcessLogManager processLogManager,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(message, nameof(message))
-            .ThrowIfNull(ex, nameof(ex))
+            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
             .ThrowIfNull(messageManager, nameof(messageManager))
             .ThrowIfNull(processLogManager, nameof(processLogManager))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
@@ -178,15 +205,10 @@ public static partial class MessageExtensions
             ).ConfigureAwait(false);
 
         // Record what we did, in the log.
-        await processLogManager.CreateAsync(
-            new ProcessLog()
-            {
-                Message = message,
-                BeforeState = oldMessageState,
-                AfterState = message.MessageState,
-                Event = ProcessEvent.Reset,
-                Error = ex.GetBaseException().Message
-            },
+        _ = await processLogManager.LogErrorEventAsync(
+            message,
+            oldMessageState,
+            errorMessage,
             userName,
             cancellationToken
             ).ConfigureAwait(false);
@@ -204,6 +226,8 @@ public static partial class MessageExtensions
     /// operation.</param>
     /// <param name="processLogManager">The process log manager to use 
     /// for the operation.</param>
+    /// <param name="assignedProviderType">The assigned provider type to use
+    /// for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
@@ -214,6 +238,7 @@ public static partial class MessageExtensions
         this Message message,
         IMessageManager messageManager,
         IProcessLogManager processLogManager,
+        ProviderType assignedProviderType,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -222,6 +247,7 @@ public static partial class MessageExtensions
         Guard.Instance().ThrowIfNull(message, nameof(message))
             .ThrowIfNull(messageManager, nameof(messageManager))
             .ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNull(assignedProviderType, nameof(assignedProviderType))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Remember the previous state.
@@ -238,14 +264,10 @@ public static partial class MessageExtensions
             ).ConfigureAwait(false);
 
         // Record what we did, in the log.
-        await processLogManager.CreateAsync(
-            new ProcessLog()
-            {
-                Message = message,
-                BeforeState = oldMessageState,
-                AfterState = message.MessageState,
-                Event = ProcessEvent.Assigned,
-            },
+        _ = await processLogManager.LogAssignedEventAsync(
+            message,
+            oldMessageState,
+            assignedProviderType, 
             userName,
             cancellationToken
             ).ConfigureAwait(false);
