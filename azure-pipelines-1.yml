@@ -46,6 +46,12 @@ steps:
 - task: VSTest@2
   displayName: 'test code'
   inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*Tests*.dll
+      !**\*TestAdapter.dll
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: false
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
