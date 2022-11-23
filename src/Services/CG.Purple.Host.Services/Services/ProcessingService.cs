@@ -101,9 +101,9 @@ internal class ProcessingService : BackgroundService
             {
                 // Log what we are about to do.
                 _logger.LogInformation(
-                    "Pausing the {svc} service startup for {time}.",
+                    "Pausing the {svc} service startup for {ts}.",
                     nameof(ProcessingService),
-                    TimeSpan.FromSeconds(30)
+                    _hostedServiceOptions.Value.MessageProcessing.StartupDelay.Value
                 );
 
                 // Let's not work tooo soon.
@@ -111,7 +111,22 @@ internal class ProcessingService : BackgroundService
                     _hostedServiceOptions.Value.MessageProcessing.StartupDelay.Value,
                     stoppingToken
                     );
-            }           
+            }
+            else
+            {
+                // Log what we are about to do.
+                _logger.LogInformation(
+                    "Pausing the {svc} service startup for {ts}.",
+                    nameof(ProcessingService),
+                    TimeSpan.FromMinutes(1)
+                );
+
+                // Let's not work tooo soon.
+                await Task.Delay(
+                    TimeSpan.FromMinutes(1),
+                    stoppingToken
+                    );
+            }
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -137,6 +152,12 @@ internal class ProcessingService : BackgroundService
                 "Entering main {svc} service loop",
                 nameof(ProcessingService)
                 );
+
+            // The mail loop doesn't contain a try/catch, which means we
+            //   want anything that throws an exception, in that loop to
+            //   stop processing for the website. That's because the only
+            //   exception that will bubble out to this point are critical
+            //   errors that have no recovery option(s).
 
             // While the service is running ...
             while (!stoppingToken.IsCancellationRequested)
@@ -171,18 +192,16 @@ internal class ProcessingService : BackgroundService
                 }
                 else
                 {
-                    // If no throttle was specified, use this default.
-                    
                     // Log what we are about to do.
                     _logger.LogInformation(
                         "Pausing the {svc} service iteration for {time}.",
                         nameof(ProcessingService),
-                        TimeSpan.FromSeconds(10)
+                        TimeSpan.FromSeconds(5)
                     );
 
                     // Let's not work tooo soon.
                     await Task.Delay(
-                        TimeSpan.FromSeconds(10),
+                        TimeSpan.FromSeconds(5),
                         stoppingToken
                         );
                 }
@@ -202,6 +221,9 @@ internal class ProcessingService : BackgroundService
                 "The {svc} service failed while running!",
                 nameof(ProcessingService)
                 );
+
+            // TODO : at some point, we need to figure out what to do
+            //   for critical errors, like this one.
         }
         finally
         {
