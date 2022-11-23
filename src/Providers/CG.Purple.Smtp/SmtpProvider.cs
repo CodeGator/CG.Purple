@@ -109,6 +109,11 @@ internal class SmtpProvider : IMessageProvider
             // Step 1: Find the parameters we'll need.
             // =======
 
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for the ServerUrl parameter"
+                );
+
             // Get the server url.
             var serverUrlProperty = parameters.FirstOrDefault(
                 x => x.ParameterType.Name == "ServerUrl"
@@ -123,6 +128,11 @@ internal class SmtpProvider : IMessageProvider
                     );
             }
 
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for the UserName parameter"
+                );
+
             // Get the user name.
             var userNameProperty = parameters.FirstOrDefault(
                 x => x.ParameterType.Name == "UserName"
@@ -136,6 +146,11 @@ internal class SmtpProvider : IMessageProvider
                     $"The 'UserName' parameter is missing, or invalid!"
                     );
             }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for the Password parameter"
+                );
 
             // Get the password.
             var passwordProperty = parameters.FirstOrDefault(
@@ -155,6 +170,11 @@ internal class SmtpProvider : IMessageProvider
             // Step 2: Create the .NET mail client.
             // =======
 
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a .NET SMTP client"
+                );
+
             // Create the SMTP client.
             using System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient(
                 serverUrlProperty.Value
@@ -171,26 +191,26 @@ internal class SmtpProvider : IMessageProvider
             // Step 3: Process the individual messages.
             // =======
 
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looping through {count} messages",
+                messages.Count()
+                );
+
             // Loop through the messages.
             foreach (var message in messages)
             {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Ensuring the message type is correct"
+                    );
+
                 // Should never happen, but, pffft, check it anyway.
                 if (message.MessageType != MessageType.Mail)
                 {
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Creating a log entry for message: {id}",
-                        message.Id
-                        );
-
-                    // Record what we did, in the log.
-                    await _processLogManager.CreateAsync(
-                        new ProcessLog()
-                        {
-                            Message = message,
-                            Event = ProcessEvent.Error,
-                            Error = "Message isn't an email!"
-                        },
+                    // Record what happened, in the log.
+                    _ = await _processLogManager.LogErrorEventAsync(
+                        "Message isn't an email!",
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);
@@ -206,6 +226,11 @@ internal class SmtpProvider : IMessageProvider
 
                     continue; // Nothing left to do!
                 }
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Fetching the rest of the email message"
+                    );
 
                 // Get the mail portion of the message.
                 var mailMessage = await _mailMessageManager.FindByIdAsync(
@@ -216,20 +241,9 @@ internal class SmtpProvider : IMessageProvider
                 // Should never happen, but, pffft, check it anyway.
                 if (mailMessage is null)
                 {
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Creating a log entry for message: {id}",
-                        message.Id
-                        );
-
-                    // Record what we did, in the log.
-                    await _processLogManager.CreateAsync(
-                        new ProcessLog()
-                        {
-                            Message = message,
-                            Event = ProcessEvent.Error,
-                            Error = "Unable to find the email for processing!"
-                        },
+                    // Record what happened, in the log.
+                    _ = await _processLogManager.LogErrorEventAsync(
+                        "Unable to find the email for processing!",
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);
@@ -245,6 +259,12 @@ internal class SmtpProvider : IMessageProvider
 
                     continue; // Nothing left to do!
                 }
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Creating a .NET wrapper for message: {id}",
+                    message.Id
+                    );
 
                 // Create the .NET model.
                 var msg = CreateDotNetMessage(
@@ -332,10 +352,20 @@ internal class SmtpProvider : IMessageProvider
 
     #region Private methods
 
+    /// <summary>
+    /// This method creates a new .NET wrapper for an email.
+    /// </summary>
+    /// <param name="mailMessage">The mail message to use for the operation.</param>
+    /// <returns>An <see cref="System.Net.Mail.MailMessage"/> object.</returns>
     private System.Net.Mail.MailMessage CreateDotNetMessage(
         MailMessage mailMessage
         )
     {
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Creating a System.Net.Mail.MailMessage object"
+            );
+
         var dotNetMessage = new System.Net.Mail.MailMessage()
         {
             From = new System.Net.Mail.MailAddress(mailMessage.From),
@@ -343,6 +373,11 @@ internal class SmtpProvider : IMessageProvider
             Body = mailMessage.Body,
             IsBodyHtml = mailMessage.IsHtml
         };
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Setting To address(es) on the mail object"
+            );
 
         // Set the target address(es).
         foreach (var to in mailMessage.To.Split(';'))
@@ -352,10 +387,15 @@ internal class SmtpProvider : IMessageProvider
                 dotNetMessage.To.Add(to);
             }
         }
-
+        
         // Was a CC supplied?
         if (!string.IsNullOrEmpty(mailMessage.CC))
         {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Setting CC address(es) on the mail object"
+                );
+
             // Set the CC address(es).
             foreach (var cc in mailMessage.CC.Split(';'))
             {
@@ -369,6 +409,11 @@ internal class SmtpProvider : IMessageProvider
         // Was a BCC supplied?
         if (!string.IsNullOrEmpty(mailMessage.BCC))
         {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Setting BCC address(es) on the mail object"
+                );
+
             // Set the BCC address(es).
             foreach (var bcc in mailMessage.BCC.Split(';'))
             {
@@ -378,6 +423,11 @@ internal class SmtpProvider : IMessageProvider
                 }
             }
         }
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Setting any attachment(s) on the mail object"
+            );
 
         // Were there attachments?
         foreach (var attachment in mailMessage.Attachments)
@@ -394,6 +444,11 @@ internal class SmtpProvider : IMessageProvider
                         )
                     );
         }
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Returning a populated mail object"
+            );
 
         // Return the results.
         return dotNetMessage;
@@ -436,20 +491,10 @@ internal class SmtpProvider : IMessageProvider
                 message.Id    
                 );
 
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a log entry for message: {id}",
-                message.Id
-                );
-
-            // Record what we did, in the log.
-            await _processLogManager.CreateAsync(
-                new ProcessLog()
-                {
-                    Message = message,
-                    Event = ProcessEvent.Error,
-                    Error = "Failed to find the assigned provider property!"
-                },
+            // Record what happened, in the log.
+            _ = await _processLogManager.LogErrorEventAsync(
+                message,
+                "Failed to find the assigned provider property!",
                 "host",
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -459,7 +504,7 @@ internal class SmtpProvider : IMessageProvider
 
         // Log what we are about to do.
         _logger.LogDebug(
-            "Creating a log entry for message: {id}",
+            "Deleting the assigned provider property for message: {id}",
             message.Id
             );
 
@@ -474,6 +519,13 @@ internal class SmtpProvider : IMessageProvider
             "host",
             cancellationToken
             ).ConfigureAwait(false);
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Transitioning message: {id} to the {state} state.",
+            message.Id,
+            MessageState.Pending
+            );
 
         // Transition back to the 'Pending' state.
         await message.ToPendingStateAsync(
