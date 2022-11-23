@@ -51,14 +51,9 @@ steps:
       **\*Tests*.dll
       !**\*TestAdapter.dll
     searchFolder: '$(System.DefaultWorkingDirectory)'
-    codeCoverageEnabled: true
+    codeCoverageEnabled: false
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/cobertura/coverage.xml'
-    reportDirectory: '$(System.DefaultWorkingDirectory)/**/cobertura'    
 
 - powershell: |
     choco install docfx -y
