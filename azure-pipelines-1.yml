@@ -46,12 +46,14 @@ steps:
 - task: VSTest@2
   displayName: 'test code'
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
       **\*Tests*.dll
       !**\*TestAdapter.dll
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'Cobertura'
