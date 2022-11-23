@@ -14,6 +14,7 @@ steps:
 
 - checkout: self
   fetchDepth: 0
+  
 - task: UseDotNet@2
   displayName: 'install .NET sdk'
   inputs:
@@ -25,6 +26,7 @@ steps:
   displayName: 'install nuget'
   inputs:
     versionSpec: 
+    
 - task: NuGetCommand@2
   displayName: 'dotnet restore'
   inputs:
@@ -32,6 +34,7 @@ steps:
     restoreSolution: '$(solution)'
     feedsToUse: 'config'
     nugetConfigPath: 'nuget.config'
+    
 - task: VSBuild@1
   displayName: 'build code'
   inputs:
