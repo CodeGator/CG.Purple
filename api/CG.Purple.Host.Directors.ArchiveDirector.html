@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MessageProcessingOptions
+    <title>Class ArchiveDirector
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MessageProcessingOptions
+    <meta name="title" content="Class ArchiveDirector
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,62 +78,80 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Options.MessageProcessingOptions">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Directors.ArchiveDirector">
   
   
-  <h1 id="CG_Purple_Host_Options_MessageProcessingOptions" data-uid="CG.Purple.Host.Options.MessageProcessingOptions" class="text-break">Class MessageProcessingOptions
+  <h1 id="CG_Purple_Host_Directors_ArchiveDirector" data-uid="CG.Purple.Host.Directors.ArchiveDirector" class="text-break">Class ArchiveDirector
   </h1>
-  <div class="markdown level0 summary"><p>This class contains configuration settings for message processing.</p>
+  <div class="markdown level0 summary"><p>This class is a default implementation of the <see cref="!:IArchiveDirector"></see></p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">MessageProcessingOptions</span></div>
+    <div class="level1"><span class="xref">ArchiveDirector</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Options.html">CG.Purple.Host.Options</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Directors.html">CG.Purple.Host.Directors</a></h6>
   <h6><strong>Assembly</strong>: CG.Purple.Host.Services.dll</h6>
-  <h5 id="CG_Purple_Host_Options_MessageProcessingOptions_syntax">Syntax</h5>
+  <h5 id="CG_Purple_Host_Directors_ArchiveDirector_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">class MessageProcessingOptions</code></pre>
+    <pre><code class="lang-csharp hljs">class ArchiveDirector : IArchiveDirector</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="constructors">Constructors
   </h3>
-  <a id="CG_Purple_Host_Options_MessageProcessingOptions_MaxDaysToLive_" data-uid="CG.Purple.Host.Options.MessageProcessingOptions.MaxDaysToLive*"></a>
-  <h4 id="CG_Purple_Host_Options_MessageProcessingOptions_MaxDaysToLive" data-uid="CG.Purple.Host.Options.MessageProcessingOptions.MaxDaysToLive">MaxDaysToLive</h4>
-  <div class="markdown level1 summary"><p>This property indicates the maximum number of days to keep terminal
-messages before archiving them.</p>
+  <a id="CG_Purple_Host_Directors_ArchiveDirector__ctor_" data-uid="CG.Purple.Host.Directors.ArchiveDirector.#ctor*"></a>
+  <h4 id="CG_Purple_Host_Directors_ArchiveDirector__ctor_IMessageManager_IProcessLogManager_ILogger_IArchiveDirector__" data-uid="CG.Purple.Host.Directors.ArchiveDirector.#ctor(IMessageManager,IProcessLogManager,ILogger{IArchiveDirector})">ArchiveDirector(IMessageManager, IProcessLogManager, ILogger&lt;IArchiveDirector&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Host.Directors.ArchiveDirector.html">ArchiveDirector</a>
+class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? MaxDaysToLive { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ArchiveDirector(IMessageManager messageManager, IProcessLogManager processLogManager, ILogger&lt;IArchiveDirector&gt; logger)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessageManager</span></td>
+        <td><span class="parametername">messageManager</span></td>
+        <td><p>The message manager to use with this
+director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IProcessLogManager</span></td>
+        <td><span class="parametername">processLogManager</span></td>
+        <td><p>The process log manager to use
+with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IArchiveDirector</span>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger to use with this director.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Purple_Host_Directors_ArchiveDirector__logger" data-uid="CG.Purple.Host.Directors.ArchiveDirector._logger">_logger</h4>
+  <div class="markdown level1 summary"><p>This field contains the logger for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger&lt;IArchiveDirector&gt; _logger</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -143,22 +161,20 @@ messages before archiving them.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IArchiveDirector</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Options_MessageProcessingOptions_MaxErrorCount_" data-uid="CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount*"></a>
-  <h4 id="CG_Purple_Host_Options_MessageProcessingOptions_MaxErrorCount" data-uid="CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount">MaxErrorCount</h4>
-  <div class="markdown level1 summary"><p>This property indicates the maximum number of errors a message
-can accrue before we give up and stop trying to process it.</p>
+  <h4 id="CG_Purple_Host_Directors_ArchiveDirector__messageManager" data-uid="CG.Purple.Host.Directors.ArchiveDirector._messageManager">_messageManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the message manager for this director.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? MaxErrorCount { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IMessageManager _messageManager</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -168,22 +184,20 @@ can accrue before we give up and stop trying to process it.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="xref">IMessageManager</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Options_MessageProcessingOptions_StartupDelay_" data-uid="CG.Purple.Host.Options.MessageProcessingOptions.StartupDelay*"></a>
-  <h4 id="CG_Purple_Host_Options_MessageProcessingOptions_StartupDelay" data-uid="CG.Purple.Host.Options.MessageProcessingOptions.StartupDelay">StartupDelay</h4>
-  <div class="markdown level1 summary"><p>This property indicates how long to pause the service before
-processing is allowed to begin.</p>
+  <h4 id="CG_Purple_Host_Directors_ArchiveDirector__processLogManager" data-uid="CG.Purple.Host.Directors.ArchiveDirector._processLogManager">_processLogManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the process log manager for this director.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TimeSpan? StartupDelay { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IProcessLogManager _processLogManager</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -193,22 +207,44 @@ processing is allowed to begin.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">TimeSpan</span>&gt;</td>
+        <td><span class="xref">IProcessLogManager</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Options_MessageProcessingOptions_ThrottleDuration_" data-uid="CG.Purple.Host.Options.MessageProcessingOptions.ThrottleDuration*"></a>
-  <h4 id="CG_Purple_Host_Options_MessageProcessingOptions_ThrottleDuration" data-uid="CG.Purple.Host.Options.MessageProcessingOptions.ThrottleDuration">ThrottleDuration</h4>
-  <div class="markdown level1 summary"><p>This property indicates how long to throttle the service between
-processing iterations.</p>
-</div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Purple_Host_Directors_ArchiveDirector_ArchiveMessagesAsync_" data-uid="CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_ArchiveDirector_ArchiveMessagesAsync_System_Int32_CancellationToken_" data-uid="CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync(System.Int32,CancellationToken)">ArchiveMessagesAsync(Int32, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TimeSpan? ThrottleDuration { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task ArchiveMessagesAsync(int maxDaysToLive, CancellationToken cancellationToken = null)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxDaysToLive</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -218,7 +254,7 @@ processing iterations.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">TimeSpan</span>&gt;</td>
+        <td><span class="xref">Task</span></td>
         <td></td>
       </tr>
     </tbody>
