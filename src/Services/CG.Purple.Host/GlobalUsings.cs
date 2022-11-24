@@ -1,4 +1,5 @@
-﻿global using CG.Purple.Host.SignalR;
+﻿global using Serilog;
+global using CG.Purple.Host.SignalR;
 global using CG.Purple.Managers;
 global using CG.Purple.Models;
 global using CG.Validations;

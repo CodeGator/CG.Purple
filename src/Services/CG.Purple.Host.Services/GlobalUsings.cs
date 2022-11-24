@@ -10,3 +10,4 @@ global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 global using CG.Purple.Host.Options;
 global using Microsoft.Extensions.Options;
+global using System.Diagnostics;

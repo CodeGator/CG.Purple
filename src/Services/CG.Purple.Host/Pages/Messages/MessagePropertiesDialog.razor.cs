@@ -1,6 +1,4 @@
 ﻿
-using Microsoft.AspNetCore.Components.Forms;
-
 namespace CG.Purple.Host.Pages.Messages;
 
 /// <summary>
@@ -33,6 +31,30 @@ public partial class MessagePropertiesDialog
     /// </summary>
     [Parameter]
     public Message Model { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the dialog service for this page.
+    /// </summary>
+    [Inject]
+    protected IDialogService DialogService { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the snackbar service for this page.
+    /// </summary>
+    [Inject]
+    protected ISnackbar SnackbarService { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the HTTP context accessor.
+    /// </summary>
+    [Inject]
+    protected IHttpContextAccessor HttpContextAccessor { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the name of the current user, or the word
+    /// 'anonymous' if nobody is currently authenticated.
+    /// </summary>
+    protected string UserName => HttpContextAccessor.HttpContext?.User?.Identity?.Name ?? "anonymous";
 
     #endregion
 
@@ -95,7 +117,57 @@ public partial class MessagePropertiesDialog
     /// <returns>A task to perform the operation.</returns>
     protected async Task OnCreateMessagePropertyAsync()
     {
+        try
+        {
+            // Create a new model.
+            var tempMessageProperty = new MessageProperty()
+            {
+                Message = Model
+            };
 
+            // Show the dialog.
+            var dialog = await DialogService.ShowEx<MessagePropertyDialog>(
+                "Properties",
+                new DialogParameters()
+                {
+                     { "Model", tempMessageProperty }
+                },
+                new DialogOptionsEx()
+                {
+                    MaximizeButton = true,
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.Medium,
+                    FullWidth = true,
+                    DragMode = MudDialogDragMode.Simple,
+                    Animations = new[] { AnimationType.SlideIn },
+                    Position = DialogPosition.CenterRight,
+                    DisableSizeMarginY = true,
+                    DisablePositionMargin = true
+                }).ConfigureAwait(false);
+
+            // Show the dialog.
+            var result = await dialog.Result;
+
+            // Did the user save?
+            if (!result.Cancelled)
+            {
+                // Add the message property to the message.
+                Model.MessageProperties.Add(
+                    tempMessageProperty
+                    );
+            }
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
     }
 
     #endregion

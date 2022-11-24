@@ -30,5 +30,11 @@ internal class MessageProcessingOptions
     /// </summary>
     public int? MaxErrorCount { get; set; }
 
+    /// <summary>
+    /// This property indicates the maximum number of days to keep terminal
+    /// messages before archiving them.
+    /// </summary>
+    public int? MaxDaysToLive { get; set; }
+
     #endregion
 }

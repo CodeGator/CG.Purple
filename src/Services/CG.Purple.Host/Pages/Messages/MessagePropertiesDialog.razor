@@ -16,9 +16,7 @@
                         </HeaderContent>
                         <RowTemplate Context="context2">
                             <MudTd DataLabel="Type">@context2.PropertyType.Name</MudTd>
-                            <MudTd DataLabel="Value">
-                                <MudTextField T="string" InputType="InputType.Password" DisableUnderLine ReadOnly Text="@context2.Value" />
-                            </MudTd>
+                            <MudTd DataLabel="Value">@context2.Value</MudTd>
                             <MudTd>
                                 <MudTooltip Text="Delete">
                                     <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteMessagePropertyAsync(context2)" />

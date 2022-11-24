@@ -78,6 +78,9 @@ public static class WebApplicationBuilderExtensions003
                         maxRetryDelay: TimeSpan.FromSeconds(5),
                         errorNumbersToAdd: null
                         );
+                    sqlOptions.UseQuerySplittingBehavior(
+                        QuerySplittingBehavior.SplitQuery
+                        );
                 });
 
             // Are we running in a development environment?
@@ -89,7 +92,8 @@ public static class WebApplicationBuilderExtensions003
                     );
 
                 // Enable sensitive logging.
-                options.EnableDetailedErrors().EnableSensitiveDataLogging();
+                options.EnableDetailedErrors()
+                    .EnableSensitiveDataLogging();
             }
         });
 
