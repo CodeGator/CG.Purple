@@ -329,6 +329,12 @@ internal class SmtpProvider : IMessageProvider
                     // Send the message.
                     client.Send(msg);
 
+                    // Log what we did.
+                    _logger.LogInformation(
+                        "Message: {id} was sent.",
+                        message.Id
+                        );
+
                     // Log what we are about to do.
                     _logger.LogDebug(
                         "Transitioning message: {id} to the {state} state.",
@@ -349,9 +355,9 @@ internal class SmtpProvider : IMessageProvider
                 catch (Exception ex)
                 {
                     // Log what happened.
-                    _logger.LogError(
+                    _logger.LogWarning(
                         ex,
-                        "Failed to send email: {id}!",
+                        "Message: {id} failed to send!",
                         message.Id
                         );
 
@@ -362,7 +368,7 @@ internal class SmtpProvider : IMessageProvider
                         );
 
                     // Bump the error count on the message.
-                    await message.BumpErrorCountAsync(
+                    await mailMessage.BumpErrorCountAsync(
                         _messageManager,
                         "host",
                         cancellationToken

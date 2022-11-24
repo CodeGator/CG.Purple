@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Managers;
-
 namespace CG.Purple.Host.Directors;
 
 /// <summary>
@@ -227,7 +225,63 @@ internal class ProcessDirector : IProcessDirector
 
         try
         {
+            // =======
+            // Step 1: Find messages ready to retry (if any).
+            // =======
 
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for messages that are ready to retry."
+                );
+
+            // Get any messages that are ready to retry.
+            var messages = await _messageManager.FindReadyToRetryAsync(
+                maxErrorCount,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Are we done?
+            if (!messages.Any())
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "No messages were ready to retry."
+                    );
+                return; // Done!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Retrying {count} failed messages.",
+                messages.Count()
+                );
+
+            // Note: as part of this 'retry' logic, we aren't 
+            //   resetting the error count of any messages. That 
+            //   way, there is a point at which we throw up our
+            //   hands and say "we can't send this message!".
+
+            // Loop and retry these messages.
+            foreach (var message in messages)
+            {
+                // Note: we are setting the state to 'pending' 
+                //   here, in case the pipeline needs to assign
+                //   a provider type to the message, for processing.
+
+                // Log what we are about to do.
+                _logger.LogInformation(
+                    "Retrying message: {id}",
+                    message.Id
+                    );
+
+                // Reset the state of this message.
+                await message.ToPendingStateAsync(
+                    _messageManager,
+                    _processLogManager,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+            }
         }
         catch (Exception ex)
         {

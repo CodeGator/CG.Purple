@@ -448,6 +448,72 @@ internal class MessageRepository : IMessageRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<Message>> FindReadyToRetryAsync(
+        int maxErrorCount,
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for failed messages."
+                );
+
+            // Perform the message search for:
+            //  * messages that are in a failed state
+            //  * messages that aren't disabled.
+            //  * messages whose error count is < maxErrorCount
+            var messages = await dbContext.Messages.Where(x =>
+                x.IsDisabled == false &&
+                x.MessageState == MessageState.Failed &&
+                x.ErrorCount < maxErrorCount
+                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
+                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .OrderByDescending(x => x.CreatedBy).ThenBy(x => x.Priority)
+                 .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entities to a models.
+            var result = messages.Select(x =>
+                _mapper.Map<Message>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for messages that are ready to retry!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for messages " +
+                "that are ready to retry!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<Message> UpdateAsync(
         Message message,
         CancellationToken cancellationToken = default

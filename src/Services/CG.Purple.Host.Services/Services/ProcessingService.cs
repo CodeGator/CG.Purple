@@ -103,9 +103,9 @@ internal class ProcessingService : BackgroundService
                 var delayDuration = _hostedServiceOptions.Value.MessageProcessing.StartupDelay.Value;
 
                 // Sanity check the duration.
-                if (delayDuration < TimeSpan.FromMinutes(1))
+                if (delayDuration < TimeSpan.FromSeconds(1))
                 {
-                    delayDuration = TimeSpan.FromMinutes(1);
+                    delayDuration = TimeSpan.FromSeconds(1);
                 }
 
                 // Log what we are about to do.
@@ -127,12 +127,12 @@ internal class ProcessingService : BackgroundService
                 _logger.LogInformation(
                     "Pausing the {svc} service startup for {ts}.",
                     nameof(ProcessingService),
-                    TimeSpan.FromMinutes(1)
+                    TimeSpan.FromSeconds(1)
                 );
 
                 // Let's not work tooo soon.
                 await Task.Delay(
-                    TimeSpan.FromMinutes(1),
+                    TimeSpan.FromSeconds(1),
                     stoppingToken
                     );
             }
@@ -236,7 +236,7 @@ internal class ProcessingService : BackgroundService
                     ).ConfigureAwait(false);
 
                 // =======
-                // Step 3: pause for a bit, so we don't kill the CPU.
+                // Step 3: pause for a bit, so we don't hammer the CPU.
                 // =======
 
                 // Were options provided?

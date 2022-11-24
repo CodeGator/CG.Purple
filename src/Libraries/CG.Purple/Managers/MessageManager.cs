@@ -322,7 +322,52 @@ internal class MessageManager : IMessageManager
             // Provider better context.
             throw new ManagerException(
                 message: $"The manager failed to search for messages " +
-                "that are aready to process!",
+                "that are ready to process!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<Message>> FindReadyToRetryAsync(
+        int maxErrorCount,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfLessThanOrEqualZero(maxErrorCount, nameof(maxErrorCount));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IMessageRepository.FindReadyToRetryAsync)
+                );
+
+            // Perform the operation.
+            var result = await _messageRepository.FindReadyToRetryAsync(
+                maxErrorCount,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for messages that are ready to retry!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for messages " +
+                "that are ready to retry!",
                 innerException: ex
                 );
         }

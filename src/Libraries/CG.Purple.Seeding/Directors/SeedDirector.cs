@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Seeding.Options;
+
 namespace CG.Purple.Seeding.Directors;
 
 /// <summary>
@@ -182,11 +184,14 @@ internal class SeedDirector : ISeedDirector
             var mailMessageOptions = new List<MailMessageOptions>();
             configuration.GetSection("MailMessages").Bind(mailMessageOptions);
 
+            // Verify the options.
+            Guard.Instance().ThrowIfInvalidObject(mailMessageOptions, nameof(mailMessageOptions));
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding mail messages from the configuration."
                 );
-
+                        
             // Seed the mail messages from the options.
             await SeedMailMessagesAsync(
                 mailMessageOptions,
@@ -235,11 +240,14 @@ internal class SeedDirector : ISeedDirector
             var mimeTypeOptions = new List<MimeTypeOptions>();
             configuration.GetSection("MimeTypes").Bind(mimeTypeOptions);
 
+            // Verify the options.
+            Guard.Instance().ThrowIfInvalidObject(mimeTypeOptions, nameof(mimeTypeOptions));
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding mime types from the configuration."
                 );
-
+            
             // Seed the mime types from the options.
             await SeedMimeTypesAsync(
                 mimeTypeOptions,
@@ -287,6 +295,9 @@ internal class SeedDirector : ISeedDirector
             // Bind the options.
             var parameterTypeOptions = new List<ParameterTypeOptions>();
             configuration.GetSection("ParameterTypes").Bind(parameterTypeOptions);
+
+            // Verify the options.
+            Guard.Instance().ThrowIfInvalidObject(parameterTypeOptions, nameof(parameterTypeOptions));
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -341,6 +352,9 @@ internal class SeedDirector : ISeedDirector
             var propertyTypeOptions = new List<PropertyTypeOptions>();
             configuration.GetSection("PropertyTypes").Bind(propertyTypeOptions);
 
+            // Verify the options.
+            Guard.Instance().ThrowIfInvalidObject(propertyTypeOptions, nameof(propertyTypeOptions));
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding property types from the configuration."
@@ -393,6 +407,9 @@ internal class SeedDirector : ISeedDirector
             // Bind the options.
             var providerParameterOptions = new List<ProviderParameterOptions>();
             configuration.GetSection("ProviderParameters").Bind(providerParameterOptions);
+
+            // Verify the options.
+            Guard.Instance().ThrowIfInvalidObject(providerParameterOptions, nameof(providerParameterOptions));
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -447,6 +464,9 @@ internal class SeedDirector : ISeedDirector
             var providerTypeOptions = new List<ProviderTypeOptions>();
             configuration.GetSection("ProviderTypes").Bind(providerTypeOptions);
 
+            // Verify the options.
+            Guard.Instance().ThrowIfInvalidObject(providerTypeOptions, nameof(providerTypeOptions));
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding provider types from the configuration."
@@ -500,6 +520,9 @@ internal class SeedDirector : ISeedDirector
             var providerLogOptions = new List<ProcessLogOptions>();
             configuration.GetSection("ProcessLogs").Bind(providerLogOptions);
 
+            // Verify the options.
+            Guard.Instance().ThrowIfInvalidObject(providerLogOptions, nameof(providerLogOptions));
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding process logs from the configuration."
@@ -552,6 +575,9 @@ internal class SeedDirector : ISeedDirector
             // Bind the options.
             var textMessageOptions = new List<TextMessageOptions>();
             configuration.GetSection("TextMessages").Bind(textMessageOptions);
+
+            // Verify the options.
+            Guard.Instance().ThrowIfInvalidObject(textMessageOptions, nameof(textMessageOptions));
 
             // Log what we are about to do.
             _logger.LogDebug(

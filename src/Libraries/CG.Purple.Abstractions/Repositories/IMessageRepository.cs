@@ -101,6 +101,24 @@ public interface IMessageRepository
         );
 
     /// <summary>
+    /// This method searches for a sequence of <see cref="Message"/> objects
+    /// that are in a failed state with an error count that is less than the
+    /// given maximum.
+    /// </summary>
+    /// <param name="maxErrorCount">The maximum number of errors a message can
+    /// have before we stop trying to process it.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of matching
+    /// <see cref="Message"/> objects.</returns>
+    /// <exception cref="RepositoryException">This exception is thrown whenever the
+    /// repository fails to complete the operation.</exception>
+    Task<IEnumerable<Message>> FindReadyToRetryAsync(
+        int maxErrorCount,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method updates an existing <see cref="Message"/> object in the 
     /// underlying storage.
     /// </summary>
