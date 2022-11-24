@@ -1,4 +1,6 @@
 ﻿
+using System.Diagnostics;
+
 namespace CG.Purple.Host.Services;
 
 /// <summary>
@@ -136,26 +138,7 @@ internal class ProcessingService : BackgroundService
                     stoppingToken
                     );
             }
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a DI scope"
-                );
-
-            // Create a DI scope.
-            using var scope = _serviceProvider.CreateScope();
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating an {name} instance",
-                nameof(IProcessDirector)
-                );
-
-            // Get a scoped process director.
-            var processDirector = scope.ServiceProvider.GetRequiredService<
-                IProcessDirector
-                >();
-
+            
             // Log what we are about to do.
             _logger.LogDebug(
                 "Entering main {svc} service loop",
@@ -172,7 +155,30 @@ internal class ProcessingService : BackgroundService
             while (!stoppingToken.IsCancellationRequested)
             {
                 // =======
-                // Step 1: process any messages that are waiting.
+                // Step 1: stand up the process director.
+                // =======
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Creating a DI scope"
+                    );
+
+                // Create a DI scope.
+                using var scope = _serviceProvider.CreateScope();
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Creating an {name} instance",
+                    nameof(IProcessDirector)
+                    );
+
+                // Get a scoped process director.
+                var processDirector = scope.ServiceProvider.GetRequiredService<
+                    IProcessDirector
+                    >();
+
+                // =======
+                // Step 2: process any messages that are waiting.
                 // =======
 
                 // Log what we are about to do.
@@ -181,13 +187,31 @@ internal class ProcessingService : BackgroundService
                     nameof(IProcessDirector.ProcessMessagesAsync)
                     );
 
-                // Process pending messages.
-                await processDirector.ProcessMessagesAsync(
-                    stoppingToken
-                    ).ConfigureAwait(false);
+                // Start the stopwatch.
+                var sw = new Stopwatch();
+                sw.Start();
+                try
+                {
+                    // Process pending messages.
+                    await processDirector.ProcessMessagesAsync(
+                        stoppingToken
+                        ).ConfigureAwait(false);
+                }
+                finally
+                {
+                    // Stop the stopwatch.
+                    sw.Stop();
+                    
+                    // Log what we did.
+                    _logger.LogTrace(
+                        "{name} finished in {elapsed}",
+                        nameof(IProcessDirector.ProcessMessagesAsync),
+                        sw.Elapsed
+                        );
+                }
 
                 // =======
-                // Step 2: retry any messages that are eligible.
+                // Step 3: retry any messages that are eligible.
                 // =======
 
                 // Were options provided?
@@ -229,14 +253,31 @@ internal class ProcessingService : BackgroundService
                     nameof(IProcessDirector.RetryMessagesAsync)
                     );
 
-                // Retry failed messages.
-                await processDirector.RetryMessagesAsync(
-                    maxErrorCount,
-                    stoppingToken
-                    ).ConfigureAwait(false);
+                // Restart the stopwatch.
+                sw.Restart();
+                try
+                {
+                    // Retry failed messages.
+                    await processDirector.RetryMessagesAsync(
+                        maxErrorCount,
+                        stoppingToken
+                        ).ConfigureAwait(false);
+                }
+                finally
+                {
+                    // Stop the stopwatch.
+                    sw.Stop();
+
+                    // Log what we did.
+                    _logger.LogTrace(
+                        "{name} finished in {elapsed}",
+                        nameof(IProcessDirector.RetryMessagesAsync),
+                        sw.Elapsed
+                        );
+                }
 
                 // =======
-                // Step 3: pause for a bit, so we don't hammer the CPU.
+                // Step 4: pause for a bit, so we don't hammer the CPU.
                 // =======
 
                 // Were options provided?

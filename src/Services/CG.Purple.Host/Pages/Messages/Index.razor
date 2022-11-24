@@ -19,6 +19,7 @@
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageState)">State</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.Attachments.Count())">Attachments</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageProperties.Count())">Properties</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.ErrorCount)">Errors</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.Subject)">Subject</MudTableSortLabel></MudTh>
                 <MudTh>&nbsp;</MudTh>
             </HeaderContent>
@@ -29,6 +30,7 @@
                 <MudTd DataLabel="State">@context.MessageState</MudTd>
                 <MudTd DataLabel="Attachments">@context.Attachments.Count()</MudTd>
                 <MudTd DataLabel="Properties">@context.MessageProperties.Count()</MudTd>
+                <MudTd DataLabel="Errors">@context.ErrorCount</MudTd>
                 <MudTd DataLabel="Subject">@context.Subject</MudTd>
                 <MudTh>&nbsp;</MudTh>
             </RowTemplate>
@@ -56,6 +58,7 @@
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.CreatedBy)">By</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageState)">State</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageProperties.Count())">Properties</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.ErrorCount)">Errors</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.To)">To</MudTableSortLabel></MudTh>                
                 <MudTh>&nbsp;</MudTh>
             </HeaderContent>
@@ -65,6 +68,7 @@
                 <MudTd DataLabel="By">@context.CreatedBy</MudTd>
                 <MudTd DataLabel="State">@context.MessageState</MudTd>
                 <MudTd DataLabel="Properties">@context.MessageProperties.Count()</MudTd>
+                <MudTd DataLabel="Errors">@context.ErrorCount</MudTd>
                 <MudTd DataLabel="To">@context.To</MudTd>                
                 <MudTd>
 
