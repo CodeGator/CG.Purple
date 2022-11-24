@@ -99,16 +99,25 @@ internal class ProcessingService : BackgroundService
             if (_hostedServiceOptions.Value.MessageProcessing is not null &&
                 _hostedServiceOptions.Value.MessageProcessing.StartupDelay is not null)
             {
+                // Get the duration.
+                var delayDuration = _hostedServiceOptions.Value.MessageProcessing.StartupDelay.Value;
+
+                // Sanity check the duration.
+                if (delayDuration < TimeSpan.FromMinutes(1))
+                {
+                    delayDuration = TimeSpan.FromMinutes(1);
+                }
+
                 // Log what we are about to do.
                 _logger.LogInformation(
                     "Pausing the {svc} service startup for {ts}.",
                     nameof(ProcessingService),
-                    _hostedServiceOptions.Value.MessageProcessing.StartupDelay.Value
+                    delayDuration
                 );
 
                 // Let's not work tooo soon.
                 await Task.Delay(
-                    _hostedServiceOptions.Value.MessageProcessing.StartupDelay.Value,
+                    delayDuration,
                     stoppingToken
                     );
             }
@@ -154,14 +163,18 @@ internal class ProcessingService : BackgroundService
                 );
 
             // The mail loop doesn't contain a try/catch, which means we
-            //   want anything that throws an exception, in that loop to
-            //   stop processing for the website. That's because the only
-            //   exception that will bubble out to this point are critical
+            //   want anything that throws an exception here to stop
+            //   processing for the website. That's because the only
+            //   exceptions that will get to this point are critical
             //   errors that have no recovery option(s).
 
             // While the service is running ...
             while (!stoppingToken.IsCancellationRequested)
             {
+                // =======
+                // Step 1: process any messages that are waiting.
+                // =======
+
                 // Log what we are about to do.
                 _logger.LogDebug(
                     "Deferring to {name}",
@@ -173,20 +186,82 @@ internal class ProcessingService : BackgroundService
                     stoppingToken
                     ).ConfigureAwait(false);
 
+                // =======
+                // Step 2: retry any messages that are eligible.
+                // =======
+
+                // Were options provided?
+                var maxErrorCount = 0;
+                if (_hostedServiceOptions.Value.MessageProcessing is not null &&
+                    _hostedServiceOptions.Value.MessageProcessing.MaxErrorCount.HasValue)
+                {
+                    // Set the max error count.
+                    maxErrorCount = _hostedServiceOptions.Value.MessageProcessing.MaxErrorCount.Value;
+
+                    // Sanity check the value.
+                    if (maxErrorCount < 3)
+                    {
+                        maxErrorCount = 3;
+                    }
+
+                    // Log what we did.
+                    _logger.LogInformation(
+                        "Setting the max error count to: {count}.",
+                        maxErrorCount
+                    );
+                }
+                else
+                {
+                    // Set the max error count.
+                    maxErrorCount = 3;
+
+                    // Log what we did.
+                    _logger.LogInformation(
+                        "Setting the max error count to: {count} since the 'MaxErrorCount' " +
+                        "setting was missing.",
+                        maxErrorCount
+                    );                    
+                }
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Deferring to {name}",
+                    nameof(IProcessDirector.RetryMessagesAsync)
+                    );
+
+                // Retry failed messages.
+                await processDirector.RetryMessagesAsync(
+                    maxErrorCount,
+                    stoppingToken
+                    ).ConfigureAwait(false);
+
+                // =======
+                // Step 3: pause for a bit, so we don't kill the CPU.
+                // =======
+
                 // Were options provided?
                 if (_hostedServiceOptions.Value.MessageProcessing is not null &&
                     _hostedServiceOptions.Value.MessageProcessing.ThrottleDuration is not null)
                 {
+                    // Get the pause duration.
+                    var durationValue = _hostedServiceOptions.Value.MessageProcessing.ThrottleDuration.Value;
+
+                    // Sanity check the value.
+                    if (durationValue < TimeSpan.FromSeconds(5))
+                    {
+                        durationValue = TimeSpan.FromSeconds(5);
+                    }
+
                     // Log what we are about to do.
                     _logger.LogInformation(
-                        "Pausing the {svc} service iteration for {time}.",
+                        "Pausing the {svc} service for {time}.",
                         nameof(ProcessingService),
-                        _hostedServiceOptions.Value.MessageProcessing.ThrottleDuration.Value
+                        durationValue
                     );
 
                     // Let's not work tooo soon.
                     await Task.Delay(
-                        _hostedServiceOptions.Value.MessageProcessing.ThrottleDuration.Value,
+                        durationValue,
                         stoppingToken
                         );
                 }
@@ -194,7 +269,8 @@ internal class ProcessingService : BackgroundService
                 {
                     // Log what we are about to do.
                     _logger.LogInformation(
-                        "Pausing the {svc} service iteration for {time}.",
+                        "Pausing the {svc} service for {time}, since the " +
+                        "'ThrottleDuration' setting was missing.",
                         nameof(ProcessingService),
                         TimeSpan.FromSeconds(5)
                     );
@@ -223,7 +299,8 @@ internal class ProcessingService : BackgroundService
                 );
 
             // TODO : at some point, we need to figure out what to do
-            //   for critical errors, like this one.
+            //   for critical errors, like this one - such as sending
+            //   an email, or text, or alert.
         }
         finally
         {

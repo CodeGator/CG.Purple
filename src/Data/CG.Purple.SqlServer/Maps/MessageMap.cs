@@ -87,6 +87,11 @@ internal class MessageMap : EntityMapBase<Entities.Message>
         builder.Property(e => e.Priority)
             .IsRequired();
 
+        // Setup the column.
+        builder.Property(e => e.ErrorCount)
+            .HasDefaultValue(0)
+            .IsRequired();
+
         // Setup the conversion.
         _modelBuilder.Entity<Entities.Message>()
             .Property(e => e.MessageType)

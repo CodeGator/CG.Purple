@@ -679,7 +679,8 @@ internal class SeedDirector : ISeedDirector
                         Body = mailMessageOption.Body,
                         IsHtml = mailMessageOption.IsHtml,
                         IsDisabled = mailMessageOption.IsDisabled,
-                        MessageType = MessageType.Mail
+                        MessageType = MessageType.Mail,
+                        ErrorCount = 0
                     },
                     userName,
                     cancellationToken

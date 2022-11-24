@@ -27,6 +27,7 @@ namespace CG.Purple.SqlServer.Migrations
                     MessageState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
                     IsDisabled = table.Column<bool>(type: "bit", nullable: false),
                     Priority = table.Column<int>(type: "int", nullable: false),
+                    ErrorCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),

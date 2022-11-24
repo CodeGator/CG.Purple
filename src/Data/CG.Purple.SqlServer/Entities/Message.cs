@@ -47,6 +47,12 @@ internal class Message : EntityBase
     public int Priority { get; set; }
 
     /// <summary>
+    /// This property indicates how many errors have occurred during
+    /// the processing of this message.
+    /// </summary>
+    public int ErrorCount { get; set; }
+
+    /// <summary>
     /// This property contains the associated message properties.
     /// </summary>
     public virtual ICollection<MessageProperty> MessageProperties { get; set; }

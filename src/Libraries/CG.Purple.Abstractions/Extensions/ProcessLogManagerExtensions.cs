@@ -167,6 +167,150 @@ public static class ProcessLogManagerExtensions001
 
     /// <summary>
     /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// the processing log.
+    /// </summary>
+    /// <param name="processLogManager">The process log manager to use
+    /// for the operation.</param>
+    /// <param name="errorMessage">The error message to use for the operation.</param>
+    /// <param name="data">Extra data associated with the event.</param>
+    /// <param name="userName">The user name of the perform performing
+    /// the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the newly 
+    /// created <see cref="ProcessLog"/> object.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    public static async Task<ProcessLog> LogErrorEventAsync(
+        this IProcessLogManager processLogManager,
+        string errorMessage,
+        string? data,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        // Record what we did, in the log.
+        var result = await processLogManager.CreateAsync(
+            new ProcessLog()
+            {
+                Event = ProcessEvent.Error,
+                Error = errorMessage,
+                Data = data
+            },
+            userName,
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Return the results.
+        return result;
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// the processing log.
+    /// </summary>
+    /// <param name="processLogManager">The process log manager to use
+    /// for the operation.</param>
+    /// <param name="errorMessage">The error message to use for the operation.</param>
+    /// <param name="providerType">The provider type to use for the operation.</param>
+    /// <param name="userName">The user name of the perform performing
+    /// the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the newly 
+    /// created <see cref="ProcessLog"/> object.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    public static async Task<ProcessLog> LogErrorEventAsync(
+        this IProcessLogManager processLogManager,
+        string errorMessage,
+        ProviderType providerType,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        // Record what we did, in the log.
+        var result = await processLogManager.CreateAsync(
+            new ProcessLog()
+            {
+                Event = ProcessEvent.Error,
+                Error = errorMessage,
+                ProviderType = providerType
+            },
+            userName,
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Return the results.
+        return result;
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// the processing log.
+    /// </summary>
+    /// <param name="processLogManager">The process log manager to use
+    /// for the operation.</param>
+    /// <param name="errorMessage">The error message to use for the operation.</param>
+    /// <param name="providerType">The provider type to use for the operation.</param>
+    /// <param name="data">Extra data related to the event.</param>
+    /// <param name="userName">The user name of the perform performing
+    /// the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the newly 
+    /// created <see cref="ProcessLog"/> object.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    public static async Task<ProcessLog> LogErrorEventAsync(
+        this IProcessLogManager processLogManager,
+        string errorMessage,
+        ProviderType providerType,
+        string? data,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        // Record what we did, in the log.
+        var result = await processLogManager.CreateAsync(
+            new ProcessLog()
+            {
+                Event = ProcessEvent.Error,
+                Error = errorMessage,
+                ProviderType = providerType,
+                Data = data
+            },
+            userName,
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Return the results.
+        return result;
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method writes an <see cref="ProcessEvent.Error"/> event to
     /// the processing log, for an even that caused a state transition in 
     /// the associated message.
     /// </summary>
@@ -207,6 +351,122 @@ public static class ProcessLogManagerExtensions001
                 Error = errorMessage,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState
+            },
+            userName,
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Return the results.
+        return result;
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// the processing log, for an even that caused a state transition in 
+    /// the associated message.
+    /// </summary>
+    /// <param name="processLogManager">The process log manager to use
+    /// for the operation.</param>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="previousMessageState">The message state before the 
+    /// event took place.</param>
+    /// <param name="errorMessage">The error message to use for the operation.</param>
+    /// <param name="data">Extra data related to the event.</param>
+    /// <param name="userName">The user name of the perform performing
+    /// the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the newly 
+    /// created <see cref="ProcessLog"/> object.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    public static async Task<ProcessLog> LogErrorEventAsync(
+        this IProcessLogManager processLogManager,
+        Message message,
+        MessageState previousMessageState,
+        string errorMessage,
+        string? data,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        // Record what we did, in the log.
+        var result = await processLogManager.CreateAsync(
+            new ProcessLog()
+            {
+                Message = message,
+                Event = ProcessEvent.Error,
+                Error = errorMessage,
+                BeforeState = previousMessageState,
+                AfterState = message.MessageState,
+                Data = data
+            },
+            userName,
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Return the results.
+        return result;
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// the processing log, for an even that caused a state transition in 
+    /// the associated message.
+    /// </summary>
+    /// <param name="processLogManager">The process log manager to use
+    /// for the operation.</param>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="previousMessageState">The message state before the 
+    /// event took place.</param>
+    /// <param name="errorMessage">The error message to use for the operation.</param>
+    /// <param name="providerType">The provider type to use for the operation.</param>
+    /// <param name="data">Extra data related to the event.</param>
+    /// <param name="userName">The user name of the perform performing
+    /// the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the newly 
+    /// created <see cref="ProcessLog"/> object.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    public static async Task<ProcessLog> LogErrorEventAsync(
+        this IProcessLogManager processLogManager,
+        Message message,
+        MessageState previousMessageState,
+        string errorMessage,
+        ProviderType providerType,
+        string? data,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
+            .ThrowIfNull(providerType, nameof(providerType))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        // Record what we did, in the log.
+        var result = await processLogManager.CreateAsync(
+            new ProcessLog()
+            {
+                Message = message,
+                Event = ProcessEvent.Error,
+                Error = errorMessage,
+                BeforeState = previousMessageState,
+                AfterState = message.MessageState,
+                Data = data,
+                ProviderType = providerType
             },
             userName,
             cancellationToken
@@ -552,6 +812,114 @@ public static class ProcessLogManagerExtensions001
                 Event = ProcessEvent.Sent,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState
+            },
+            userName,
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Return the results.
+        return result;
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method writes an <see cref="ProcessEvent.Sent"/> event to
+    /// the processing log.
+    /// </summary>
+    /// <param name="processLogManager">The process log manager to use
+    /// for the operation.</param>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="previousMessageState">The message state before the 
+    /// event took place.</param>
+    /// <param name="data">Extra data associated with the event.</param>
+    /// <param name="userName">The user name of the perform performing
+    /// the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the newly 
+    /// created <see cref="ProcessLog"/> object.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    public static async Task<ProcessLog> LogSentEventAsync(
+        this IProcessLogManager processLogManager,
+        Message message,
+        MessageState previousMessageState,
+        string? data,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNull(message, nameof(message))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        // Record what we did, in the log.
+        var result = await processLogManager.CreateAsync(
+            new ProcessLog()
+            {
+                Message = message,
+                Event = ProcessEvent.Sent,
+                BeforeState = previousMessageState,
+                AfterState = message.MessageState,
+                Data = data
+            },
+            userName,
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Return the results.
+        return result;
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method writes an <see cref="ProcessEvent.Sent"/> event to
+    /// the processing log.
+    /// </summary>
+    /// <param name="processLogManager">The process log manager to use
+    /// for the operation.</param>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="previousMessageState">The message state before the 
+    /// event took place.</param>
+    /// <param name="providerType">The provider type to use for the operation.</param>
+    /// <param name="data">Extra data associated with the event.</param>
+    /// <param name="userName">The user name of the perform performing
+    /// the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the newly 
+    /// created <see cref="ProcessLog"/> object.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    public static async Task<ProcessLog> LogSentEventAsync(
+        this IProcessLogManager processLogManager,
+        Message message,
+        MessageState previousMessageState,
+        ProviderType providerType,
+        string? data,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNull(message, nameof(message))
+            .ThrowIfNull(providerType, nameof(providerType))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        // Record what we did, in the log.
+        var result = await processLogManager.CreateAsync(
+            new ProcessLog()
+            {
+                Message = message,
+                Event = ProcessEvent.Sent,
+                BeforeState = previousMessageState,
+                AfterState = message.MessageState,
+                ProviderType = providerType,
+                Data = data
             },
             userName,
             cancellationToken

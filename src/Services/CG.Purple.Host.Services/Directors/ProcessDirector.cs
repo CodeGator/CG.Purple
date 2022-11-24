@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Managers;
+
 namespace CG.Purple.Host.Directors;
 
 /// <summary>
@@ -136,7 +138,7 @@ internal class ProcessDirector : IProcessDirector
             {
                 // Log what we are about to do.
                 _logger.LogDebug(
-                    "No work to do, returning."
+                    "No messages were ready to process."
                     );
                 return; // Done!
             }
@@ -174,7 +176,7 @@ internal class ProcessDirector : IProcessDirector
                 ).ConfigureAwait(false);
 
             // =======
-            // Step 5: Ensure messages are in a 'Processing state.
+            // Step 5: Ensure messages are in a 'Processing' state.
             // =======
 
             // Make sure all messages reflect the proper state.
@@ -207,6 +209,37 @@ internal class ProcessDirector : IProcessDirector
             // Provider better context.
             throw new DirectorException(
                 message: $"The director failed to process one or more messages!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task RetryMessagesAsync(
+        int maxErrorCount,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfLessThanOrEqualZero(maxErrorCount, nameof(maxErrorCount));
+
+        try
+        {
+
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to retry one or more messages!"
+                );
+
+            // Provider better context.
+            throw new DirectorException(
+                message: $"The director failed to retry one or more messages!",
                 innerException: ex
                 );
         }
@@ -352,7 +385,7 @@ internal class ProcessDirector : IProcessDirector
             // Pass the message(s) to the provider.
             await messageProvider.ProcessMessagesAsync(
                 groupedMessages.AsEnumerable(),
-                assignedProviderType.Parameters,
+                assignedProviderType,
                 providerPropertyType,
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -413,6 +446,19 @@ internal class ProcessDirector : IProcessDirector
                     cancellationToken
                     );
 
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Bumping the error count, for message: {id}",
+                    message.Id
+                    );
+
+                // Bump the error count on the message.
+                await message.BumpErrorCountAsync(
+                    _messageManager,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
                 continue; // Nothing more to do!
             }
 
@@ -430,13 +476,27 @@ internal class ProcessDirector : IProcessDirector
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Deleting the {name} provider type on the message property manager",
-                providerPropertyType.Name
+                "Deleting the {name} provider type, for message: {id}",
+                providerPropertyType.Name,
+                message.Id
                 );
 
             // Update the database.
             await _messagePropertyManager.DeleteAsync(
                 providerMessageProperty,
+                "host",
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Bumping the error count, for message: {id}",
+                message.Id
+                );
+
+            // Bump the error count on the message.
+            await message.BumpErrorCountAsync(
+                _messageManager,
                 "host",
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -472,7 +532,8 @@ internal class ProcessDirector : IProcessDirector
 
         // Log what we are about to do.
         _logger.LogDebug(
-            "Looking for messages in a 'Pending' state."
+            "Looking for messages in a '{state}' state.",
+            MessageState.Pending
             );
 
         // Look for messages in a pending state.
@@ -485,7 +546,8 @@ internal class ProcessDirector : IProcessDirector
         {
             // Log what we are about to do.
             _logger.LogDebug(
-                "None found, returning"
+                "No messages in a '{state}' state were found",
+                MessageState.Pending
                 );
             return messages; // Done!
         }
@@ -520,7 +582,7 @@ internal class ProcessDirector : IProcessDirector
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Looking for the provider type for message: {id}",
+                "Looking for the provider type, for message: {id}",
                 message.Id
                 );
 
@@ -544,6 +606,19 @@ internal class ProcessDirector : IProcessDirector
                     cancellationToken
                     );
 
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Bumping the error count, for message: {id}",
+                    message.Id
+                    );
+
+                // Bump the error count on the message.
+                await message.BumpErrorCountAsync(
+                    _messageManager,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
                 continue; // Nothing more to do!
             }
 
@@ -553,8 +628,9 @@ internal class ProcessDirector : IProcessDirector
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Looking for the {name] provider type",
-                messageProviderProperty.Value
+                "Looking for the {name] provider type, for message: {id}",
+                messageProviderProperty.Value,
+                message.Id
                 );
 
             // Get the provider type, based on the property from the message.
@@ -579,6 +655,19 @@ internal class ProcessDirector : IProcessDirector
                     "host",
                     cancellationToken
                     );
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Bumping the error count, for message: {id}",
+                    message.Id
+                    );
+
+                // Bump the error count on the message.
+                await message.BumpErrorCountAsync(
+                    _messageManager,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
 
                 continue; // Nothing more to do!
             }
@@ -660,7 +749,7 @@ internal class ProcessDirector : IProcessDirector
         {
             // Log what we are about to do.
             _logger.LogDebug(
-                "None found, returning"
+                "No messages without an assigned provider were found"
                 );
             return messages; // Done!
         }
@@ -697,7 +786,8 @@ internal class ProcessDirector : IProcessDirector
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Executing the provider selection algorithm"
+                "Executing the provider selection algorithm, on message: {id}",
+                message.Id
                 );
 
             // For now, this will be our 'algorithm' for assigning a provider

@@ -11,7 +11,7 @@ public interface IMessageProvider
     /// This method sends messages to an external provider.
     /// </summary>
     /// <param name="messages">The messages to use for the operation.</param>
-    /// <param name="parameters">The parameters to use for the operation.</param>
+    /// <param name="providerType">The provider type to use for the operation.</param>
     /// <param name="providerPropertyType">The provider property type to use
     /// for the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -23,7 +23,7 @@ public interface IMessageProvider
     /// the provider fails to complete the operation.</exception>
     Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
-        IEnumerable<ProviderParameter> parameters,
+        ProviderType providerType,
         PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         );

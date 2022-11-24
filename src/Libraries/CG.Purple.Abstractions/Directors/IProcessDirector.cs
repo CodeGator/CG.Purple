@@ -7,7 +7,8 @@ namespace CG.Purple.Directors;
 public interface IProcessDirector
 {
     /// <summary>
-    /// This method attempts to process all pending messages.
+    /// This method attempts to process all messages with a 'Pending' or 'Processing'
+    /// state.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
@@ -15,6 +16,24 @@ public interface IProcessDirector
     /// <exception cref="DirectorException">This exception is thrown whenever the
     /// director fails to complete the operation.</exception>
     Task ProcessMessagesAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method attempts to retry processing for any messages in a 'Failed' 
+    /// state, whose error count is below the given threshold.
+    /// </summary>
+    /// <param name="maxErrorCount">The maximum number of errors a message can
+    /// have before we stop trying to process it.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="DirectorException">This exception is thrown whenever the
+    /// director fails to complete the operation.</exception>
+    Task RetryMessagesAsync(
+        int maxErrorCount,
         CancellationToken cancellationToken = default
         );
 }

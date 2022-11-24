@@ -24,5 +24,11 @@ internal class MessageProcessingOptions
     /// </summary>
     public TimeSpan? StartupDelay { get; set; }
 
+    /// <summary>
+    /// This property indicates the maximum number of errors a message
+    /// can accrue before we give up and stop trying to process it.
+    /// </summary>
+    public int? MaxErrorCount { get; set; }
+
     #endregion
 }

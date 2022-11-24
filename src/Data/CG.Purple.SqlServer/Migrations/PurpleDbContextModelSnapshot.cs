@@ -125,6 +125,11 @@ namespace CG.Purple.SqlServer.Migrations
                     b.Property<DateTime>("CreatedOnUtc")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("ErrorCount")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
                     b.Property<string>("From")
                         .IsRequired()
                         .HasMaxLength(1024)

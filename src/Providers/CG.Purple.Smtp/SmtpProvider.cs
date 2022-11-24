@@ -93,15 +93,15 @@ internal class SmtpProvider : IMessageProvider
     /// <inheritdoc/>
     public virtual async Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
-        IEnumerable<ProviderParameter> parameters,
+        ProviderType providerType,
         PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
         Guard.Instance().ThrowIfNull(messages, nameof(messages))
-            .ThrowIfNull(providerPropertyType, nameof(providerPropertyType))
-            .ThrowIfNull(parameters, nameof(parameters));
+            .ThrowIfNull(providerType, nameof(providerType))
+            .ThrowIfNull(providerPropertyType, nameof(providerPropertyType));
 
         try
         {
@@ -115,7 +115,7 @@ internal class SmtpProvider : IMessageProvider
                 );
 
             // Get the server url.
-            var serverUrlProperty = parameters.FirstOrDefault(
+            var serverUrlProperty = providerType.Parameters.FirstOrDefault(
                 x => x.ParameterType.Name == "ServerUrl"
                 );
 
@@ -134,7 +134,7 @@ internal class SmtpProvider : IMessageProvider
                 );
 
             // Get the user name.
-            var userNameProperty = parameters.FirstOrDefault(
+            var userNameProperty = providerType.Parameters.FirstOrDefault(
                 x => x.ParameterType.Name == "UserName"
                 );
 
@@ -153,7 +153,7 @@ internal class SmtpProvider : IMessageProvider
                 );
 
             // Get the password.
-            var passwordProperty = parameters.FirstOrDefault(
+            var passwordProperty = providerType.Parameters.FirstOrDefault(
                 x => x.ParameterType.Name == "Password"
                 );
 
@@ -211,13 +211,34 @@ internal class SmtpProvider : IMessageProvider
                     // Record what happened, in the log.
                     _ = await _processLogManager.LogErrorEventAsync(
                         "Message isn't an email!",
+                        providerType,
+                        GetType().AssemblyQualifiedName,
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);
 
-                    // Since this provider can't process this message, we'll
-                    //   reset the message to give the pipeline another chance
-                    //   to process it.
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Bumping the error count, for message: {id}",
+                        message.Id
+                        );
+
+                    // Bump the error count for the message.
+                    await message.BumpErrorCountAsync(
+                        _messageManager,
+                        "host",
+                        cancellationToken
+                        ).ConfigureAwait(false);
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Resetting the provider, for message: {id}",
+                        message.Id
+                        );
+
+                    // Since this provider can't process this message, we'll reset
+                    //   it, so the pipeline can (hopefully) assign it to a provider
+                    //   that can process it.
                     await ResetMessageAsync(
                         message,
                         providerPropertyType,
@@ -244,13 +265,34 @@ internal class SmtpProvider : IMessageProvider
                     // Record what happened, in the log.
                     _ = await _processLogManager.LogErrorEventAsync(
                         "Unable to find the email for processing!",
+                        providerType,
+                        GetType().AssemblyQualifiedName,
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);
 
-                    // Since this provider can't process this message, we'll
-                    //   reset the message to give the pipeline another chance
-                    //   to process it.
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Bumping the error count, for message: {id}",
+                        message.Id
+                        );
+
+                    // Bump the error count for the message.
+                    await message.BumpErrorCountAsync(
+                        _messageManager,
+                        "host",
+                        cancellationToken
+                        ).ConfigureAwait(false);
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Resetting the provider, for message: {id}",
+                        message.Id
+                        );
+
+                    // Since this provider can't process this message, we'll reset
+                    //   it, so the pipeline can (hopefully) assign it to a provider
+                    //   that can process it.
                     await ResetMessageAsync(
                         message,
                         providerPropertyType,
@@ -298,6 +340,8 @@ internal class SmtpProvider : IMessageProvider
                     await mailMessage.ToSentStateAsync(
                         _messageManager,
                         _processLogManager,
+                        providerType,
+                        GetType().AssemblyQualifiedName,
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);
@@ -307,8 +351,22 @@ internal class SmtpProvider : IMessageProvider
                     // Log what happened.
                     _logger.LogError(
                         ex,
-                        "Failed to send an email!"
+                        "Failed to send email: {id}!",
+                        message.Id
                         );
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Bumping the error count, for message: {id}",
+                        message.Id
+                        );
+
+                    // Bump the error count on the message.
+                    await message.BumpErrorCountAsync(
+                        _messageManager,
+                        "host",
+                        cancellationToken
+                        ).ConfigureAwait(false);
 
                     // Log what we are about to do.
                     _logger.LogDebug(
@@ -322,6 +380,8 @@ internal class SmtpProvider : IMessageProvider
                         ex,
                         _messageManager,
                         _processLogManager,
+                        providerType,
+                        GetType().AssemblyQualifiedName,
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);
@@ -333,12 +393,12 @@ internal class SmtpProvider : IMessageProvider
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to process messages!"
+                "Failed to process one or more messages!"
                 );
 
             // Provider better context.
             throw new ProviderException(
-                message: $"The provider failed to process messages!",
+                message: $"The provider failed to process one or more messages!",
                 innerException: ex
                 );
         }
@@ -457,7 +517,8 @@ internal class SmtpProvider : IMessageProvider
     // *******************************************************************
 
     /// <summary>
-    /// This method resets the given message to a 'Pending' state. 
+    /// This method resets the given message to a 'Pending' state and clears
+    /// the error count on the message. 
     /// </summary>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="providerPropertyType">The provider property type to
@@ -488,7 +549,7 @@ internal class SmtpProvider : IMessageProvider
             // Log what we are about to do.
             _logger.LogError(
                 "Failed to find the assigned provider property on message: {id}!",
-                message.Id    
+                message.Id
                 );
 
             // Record what happened, in the log.
@@ -499,18 +560,38 @@ internal class SmtpProvider : IMessageProvider
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Bumping the error count, for message: {id}",
+                message.Id
+                );
+
+            // Bump the error count on the message.
+            await message.BumpErrorCountAsync(
+                _messageManager,
+                "host",
+                cancellationToken
+                ).ConfigureAwait(false);
+
             return; // Nothing to do!
         }
 
         // Log what we are about to do.
         _logger.LogDebug(
-            "Deleting the assigned provider property for message: {id}",
+            "Updating the local message: {id}",
             message.Id
             );
 
         // Update the local model.
         message.MessageProperties.Remove(
             assignedProviderProperty
+            );
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Deleting the message property type: {id1} from message: {id2}",
+            assignedProviderProperty.PropertyType.Id,
+            assignedProviderProperty.Message.Id
             );
 
         // Update the database.
@@ -535,6 +616,6 @@ internal class SmtpProvider : IMessageProvider
             cancellationToken
             ).ConfigureAwait(false);
     }
-
+        
     #endregion
 }

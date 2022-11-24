@@ -53,7 +53,7 @@ internal class TwillioProvider : IMessageProvider
     /// <inheritdoc/>
     public virtual async Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
-        IEnumerable<ProviderParameter> parameters,
+        ProviderType providerType,
         PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         )
