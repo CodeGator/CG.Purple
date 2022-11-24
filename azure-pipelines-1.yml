@@ -46,15 +46,16 @@ steps:
 - task: VSTest@2
   displayName: 'test code'
   inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
       **\*Tests*.dll
       !**\*TestAdapter.dll
+      !**\obj\**
+      !**\bin\**\ref\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
-    codeCoverageEnabled: false
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
+    
 - powershell: |
     choco install docfx -y
     if ($lastexitcode -ne 0) {
