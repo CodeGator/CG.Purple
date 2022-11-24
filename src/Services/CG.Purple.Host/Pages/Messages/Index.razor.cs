@@ -46,6 +46,11 @@ public partial class Index
     /// </summary>
     private string textGridSearchString = "";
 
+    /// <summary>
+    /// This field contains the timer for the page refresh operations.
+    /// </summary>
+    private Timer _timer;
+
     #endregion
 
     // *******************************************************************
@@ -116,6 +121,14 @@ public partial class Index
             // Fetch the messages.
             _mailMessages = await MailManager.FindAllAsync();
             _textMessages = await TextManager.FindAllAsync();
+
+            // Start the refresh timer.
+            _timer = new Timer(
+                _TimerCallback,
+                this,
+                15000,
+                15000
+                );
 
             // Give the base class a chance.
             await base.OnInitializedAsync();
@@ -319,6 +332,29 @@ public partial class Index
         {
             // We're no longer busy.
             _isBusy = false;
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method refreshes the data on the page.
+    /// </summary>
+    /// <param name="state">The optional state for the operation.</param>
+    private async void _TimerCallback(
+        object? state
+        )
+    {
+        try
+        {
+            // Refresh the page.
+            await OnRefreshMailMessages().ConfigureAwait(false);
+            await OnRefreshTextMessages().ConfigureAwait(false);
+        }
+        finally
+        {
+            // Ensure the busy indicator is hidden.
+            await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
         }
     }
 

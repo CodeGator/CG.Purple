@@ -487,8 +487,8 @@ internal class ProcessDirector : IProcessDirector
             // Should never happen, but, pffft, check it anyway.
             if (providerMessageProperty is null)
             {
-                // Log what we are about to do.
-                _logger.LogError(
+                // Log what happened.
+                _logger.LogWarning(
                     "Failed to find the assigned provider property on message: {id}!",
                     message.Id
                     );
@@ -648,6 +648,12 @@ internal class ProcessDirector : IProcessDirector
             // Should never happen, but, pffft, check it anyway.
             if (messageProviderProperty is null)
             {
+                // Log what happened.
+                _logger.LogWarning(
+                    "Message: {id} didn't contain a provider property!",
+                    message.Id
+                    );
+
                 // If we get here then the message didn't contain a provider
                 //   type property. Should never happen, but if it does, we
                 //   can recover by (A) leaving the message in the 'Pending'
@@ -682,7 +688,7 @@ internal class ProcessDirector : IProcessDirector
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Looking for the {name] provider type, for message: {id}",
+                "Looking for the {name} provider type, for message: {id}",
                 messageProviderProperty.Value,
                 message.Id
                 );
@@ -696,6 +702,13 @@ internal class ProcessDirector : IProcessDirector
             // Did we fail?
             if (assignedProviderType is null)
             {
+                // Log what happened.
+                _logger.LogWarning(
+                    "The provider type {pt} is missing, or invalid, for message: {id}!",
+                    messageProviderProperty.Value,
+                    message.Id
+                    );
+
                 // If we get here then the assigned provider type, on the message,
                 //   has a missing, or invalid value. Should never happen, but if 
                 //   it does, we can recover by: (A) removing the assigned provider
