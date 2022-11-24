@@ -658,6 +658,51 @@ of <see cref="!:Message"></see> objects.</p>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Host_Directors_ProcessDirector_RetryMessagesAsync_" data-uid="CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_ProcessDirector_RetryMessagesAsync_System_Int32_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)">RetryMessagesAsync(Int32, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task RetryMessagesAsync(int maxErrorCount, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxErrorCount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Host_Directors_ProcessDirector_SendPendingMessagesToProvidersAsync_" data-uid="CG.Purple.Host.Directors.ProcessDirector.SendPendingMessagesToProvidersAsync*"></a>
   <h4 id="CG_Purple_Host_Directors_ProcessDirector_SendPendingMessagesToProvidersAsync_IEnumerable_Message__PropertyType_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.SendPendingMessagesToProvidersAsync(IEnumerable{Message},PropertyType,CancellationToken)">SendPendingMessagesToProvidersAsync(IEnumerable&lt;Message&gt;, PropertyType, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method sends the each message in the given collection to the

@@ -215,6 +215,29 @@
       </tr>
     </tbody>
   </table>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index__timer" data-uid="CG.Purple.Host.Pages.Messages.Index._timer">_timer</h4>
+  <div class="markdown level1 summary"><p>This field contains the timer for the page refresh operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Timer _timer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Timer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h4 id="CG_Purple_Host_Pages_Messages_Index_mailGridSearchString" data-uid="CG.Purple.Host.Pages.Messages.Index.mailGridSearchString">mailGridSearchString</h4>
   <div class="markdown level1 summary"><p>This field contains the current mail search string.</p>
 </div>
@@ -410,6 +433,33 @@
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="CG_Purple_Host_Pages_Messages_Index__TimerCallback_" data-uid="CG.Purple.Host.Pages.Messages.Index._TimerCallback*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index__TimerCallback_System_Object_" data-uid="CG.Purple.Host.Pages.Messages.Index._TimerCallback(System.Object)">_TimerCallback(Object)</h4>
+  <div class="markdown level1 summary"><p>This method is called by the timer, to periodically refresh the page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected async void _TimerCallback(object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>The optional state for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Host_Pages_Messages_Index_MailFilterFunc_" data-uid="CG.Purple.Host.Pages.Messages.Index.MailFilterFunc*"></a>
   <h4 id="CG_Purple_Host_Pages_Messages_Index_MailFilterFunc_MailMessage_System_String_" data-uid="CG.Purple.Host.Pages.Messages.Index.MailFilterFunc(MailMessage,System.String)">MailFilterFunc(MailMessage, String)</h4>
   <div class="markdown level1 summary"><p>This method performs a search of the mail messages.</p>
@@ -512,6 +562,49 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override async Task OnInitializedAsync()</code></pre>
   </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Pages_Messages_Index_OnPropertiesAsync_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index_OnPropertiesAsync_Message_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync(Message)">OnPropertiesAsync(Message)</h4>
+  <div class="markdown level1 summary"><p>This method displays a dialog for the message properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected async Task OnPropertiesAsync(Message message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to use for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>

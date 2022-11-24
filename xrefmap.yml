@@ -107,6 +107,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Directors.IProcessDirector.ProcessMessagesAsync
   nameWithType: IProcessDirector.ProcessMessagesAsync
+- uid: CG.Purple.Directors.IProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)
+  name: RetryMessagesAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Directors.IProcessDirector.html#CG_Purple_Directors_IProcessDirector_RetryMessagesAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Directors.IProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Directors.IProcessDirector.RetryMessagesAsync(System.Int32, CancellationToken)
+  nameWithType: IProcessDirector.RetryMessagesAsync(Int32, CancellationToken)
+- uid: CG.Purple.Directors.IProcessDirector.RetryMessagesAsync*
+  name: RetryMessagesAsync
+  href: api/CG.Purple.Directors.IProcessDirector.html#CG_Purple_Directors_IProcessDirector_RetryMessagesAsync_
+  commentId: Overload:CG.Purple.Directors.IProcessDirector.RetryMessagesAsync
+  isSpec: "True"
+  fullName: CG.Purple.Directors.IProcessDirector.RetryMessagesAsync
+  nameWithType: IProcessDirector.RetryMessagesAsync
 - uid: CG.Purple.Directors.ISeedDirector
   name: ISeedDirector
   href: api/CG.Purple.Directors.ISeedDirector.html
@@ -374,6 +387,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Directors.ProcessDirector.ProcessMessagesAsync
   nameWithType: ProcessDirector.ProcessMessagesAsync
+- uid: CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)
+  name: RetryMessagesAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Host.Directors.ProcessDirector.html#CG_Purple_Host_Directors_ProcessDirector_RetryMessagesAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync(System.Int32, CancellationToken)
+  nameWithType: ProcessDirector.RetryMessagesAsync(Int32, CancellationToken)
+- uid: CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync*
+  name: RetryMessagesAsync
+  href: api/CG.Purple.Host.Directors.ProcessDirector.html#CG_Purple_Host_Directors_ProcessDirector_RetryMessagesAsync_
+  commentId: Overload:CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync
+  nameWithType: ProcessDirector.RetryMessagesAsync
 - uid: CG.Purple.Host.Directors.ProcessDirector.SendPendingMessagesToProvidersAsync(IEnumerable{Message},PropertyType,CancellationToken)
   name: SendPendingMessagesToProvidersAsync(IEnumerable<Message>, PropertyType, CancellationToken)
   href: api/CG.Purple.Host.Directors.ProcessDirector.html#CG_Purple_Host_Directors_ProcessDirector_SendPendingMessagesToProvidersAsync_IEnumerable_Message__PropertyType_CancellationToken_
@@ -421,6 +447,19 @@ references:
   commentId: T:CG.Purple.Host.Options.MessageProcessingOptions
   fullName: CG.Purple.Host.Options.MessageProcessingOptions
   nameWithType: MessageProcessingOptions
+- uid: CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
+  name: MaxErrorCount
+  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_MaxErrorCount
+  commentId: P:CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
+  fullName: CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
+  nameWithType: MessageProcessingOptions.MaxErrorCount
+- uid: CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount*
+  name: MaxErrorCount
+  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_MaxErrorCount_
+  commentId: Overload:CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
+  isSpec: "True"
+  fullName: CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
+  nameWithType: MessageProcessingOptions.MaxErrorCount
 - uid: CG.Purple.Host.Options.MessageProcessingOptions.StartupDelay
   name: StartupDelay
   href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_StartupDelay
@@ -638,6 +677,25 @@ references:
   commentId: F:CG.Purple.Host.Pages.Messages.Index._textMessages
   fullName: CG.Purple.Host.Pages.Messages.Index._textMessages
   nameWithType: Index._textMessages
+- uid: CG.Purple.Host.Pages.Messages.Index._timer
+  name: _timer
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index__timer
+  commentId: F:CG.Purple.Host.Pages.Messages.Index._timer
+  fullName: CG.Purple.Host.Pages.Messages.Index._timer
+  nameWithType: Index._timer
+- uid: CG.Purple.Host.Pages.Messages.Index._TimerCallback(System.Object)
+  name: _TimerCallback(Object)
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index__TimerCallback_System_Object_
+  commentId: M:CG.Purple.Host.Pages.Messages.Index._TimerCallback(System.Object)
+  fullName: CG.Purple.Host.Pages.Messages.Index._TimerCallback(System.Object)
+  nameWithType: Index._TimerCallback(Object)
+- uid: CG.Purple.Host.Pages.Messages.Index._TimerCallback*
+  name: _TimerCallback
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index__TimerCallback_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index._TimerCallback
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index._TimerCallback
+  nameWithType: Index._TimerCallback
 - uid: CG.Purple.Host.Pages.Messages.Index.DialogService
   name: DialogService
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_DialogService
@@ -722,6 +780,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.OnInitializedAsync
   nameWithType: Index.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync(Message)
+  name: OnPropertiesAsync(Message)
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPropertiesAsync_Message_
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync(Message)
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync(Message)
+  nameWithType: Index.OnPropertiesAsync(Message)
+- uid: CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync*
+  name: OnPropertiesAsync
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPropertiesAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync
+  nameWithType: Index.OnPropertiesAsync
 - uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessages
   name: OnRefreshMailMessages()
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshMailMessages
@@ -819,6 +890,64 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.UserName
   nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.Messages.PropertiesDialog
+  name: PropertiesDialog
+  href: api/CG.Purple.Host.Pages.Messages.PropertiesDialog.html
+  commentId: T:CG.Purple.Host.Pages.Messages.PropertiesDialog
+  fullName: CG.Purple.Host.Pages.Messages.PropertiesDialog
+  nameWithType: PropertiesDialog
+- uid: CG.Purple.Host.Pages.Messages.PropertiesDialog.Cancel
+  name: Cancel()
+  href: api/CG.Purple.Host.Pages.Messages.PropertiesDialog.html#CG_Purple_Host_Pages_Messages_PropertiesDialog_Cancel
+  commentId: M:CG.Purple.Host.Pages.Messages.PropertiesDialog.Cancel
+  fullName: CG.Purple.Host.Pages.Messages.PropertiesDialog.Cancel()
+  nameWithType: PropertiesDialog.Cancel()
+- uid: CG.Purple.Host.Pages.Messages.PropertiesDialog.Cancel*
+  name: Cancel
+  href: api/CG.Purple.Host.Pages.Messages.PropertiesDialog.html#CG_Purple_Host_Pages_Messages_PropertiesDialog_Cancel_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.PropertiesDialog.Cancel
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.PropertiesDialog.Cancel
+  nameWithType: PropertiesDialog.Cancel
+- uid: CG.Purple.Host.Pages.Messages.PropertiesDialog.Model
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.PropertiesDialog.html#CG_Purple_Host_Pages_Messages_PropertiesDialog_Model
+  commentId: P:CG.Purple.Host.Pages.Messages.PropertiesDialog.Model
+  fullName: CG.Purple.Host.Pages.Messages.PropertiesDialog.Model
+  nameWithType: PropertiesDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.PropertiesDialog.Model*
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.PropertiesDialog.html#CG_Purple_Host_Pages_Messages_PropertiesDialog_Model_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.PropertiesDialog.Model
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.PropertiesDialog.Model
+  nameWithType: PropertiesDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.PropertiesDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.PropertiesDialog.html#CG_Purple_Host_Pages_Messages_PropertiesDialog_MudDialog
+  commentId: P:CG.Purple.Host.Pages.Messages.PropertiesDialog.MudDialog
+  fullName: CG.Purple.Host.Pages.Messages.PropertiesDialog.MudDialog
+  nameWithType: PropertiesDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.PropertiesDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.PropertiesDialog.html#CG_Purple_Host_Pages_Messages_PropertiesDialog_MudDialog_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.PropertiesDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.PropertiesDialog.MudDialog
+  nameWithType: PropertiesDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.PropertiesDialog.OnValidSubmit
+  name: OnValidSubmit()
+  href: api/CG.Purple.Host.Pages.Messages.PropertiesDialog.html#CG_Purple_Host_Pages_Messages_PropertiesDialog_OnValidSubmit
+  commentId: M:CG.Purple.Host.Pages.Messages.PropertiesDialog.OnValidSubmit
+  fullName: CG.Purple.Host.Pages.Messages.PropertiesDialog.OnValidSubmit()
+  nameWithType: PropertiesDialog.OnValidSubmit()
+- uid: CG.Purple.Host.Pages.Messages.PropertiesDialog.OnValidSubmit*
+  name: OnValidSubmit
+  href: api/CG.Purple.Host.Pages.Messages.PropertiesDialog.html#CG_Purple_Host_Pages_Messages_PropertiesDialog_OnValidSubmit_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.PropertiesDialog.OnValidSubmit
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.PropertiesDialog.OnValidSubmit
+  nameWithType: PropertiesDialog.OnValidSubmit
 - uid: CG.Purple.Host.Services
   name: CG.Purple.Host.Services
   href: api/CG.Purple.Host.Services.html
@@ -895,59 +1024,97 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Services.BackgroundService.StopAsync
   nameWithType: BackgroundService.StopAsync
-- uid: CG.Purple.Host.Services.MessageProcessingService
-  name: MessageProcessingService
-  href: api/CG.Purple.Host.Services.MessageProcessingService.html
-  commentId: T:CG.Purple.Host.Services.MessageProcessingService
-  fullName: CG.Purple.Host.Services.MessageProcessingService
-  nameWithType: MessageProcessingService
-- uid: CG.Purple.Host.Services.MessageProcessingService.#ctor(IOptions{HostedServiceOptions},IServiceProvider,ILogger{CG.Purple.Host.Services.MessageProcessingService})
-  name: MessageProcessingService(IOptions<HostedServiceOptions>, IServiceProvider, ILogger<MessageProcessingService>)
-  href: api/CG.Purple.Host.Services.MessageProcessingService.html#CG_Purple_Host_Services_MessageProcessingService__ctor_IOptions_HostedServiceOptions__IServiceProvider_ILogger_CG_Purple_Host_Services_MessageProcessingService__
-  commentId: M:CG.Purple.Host.Services.MessageProcessingService.#ctor(IOptions{HostedServiceOptions},IServiceProvider,ILogger{CG.Purple.Host.Services.MessageProcessingService})
-  name.vb: MessageProcessingService(IOptions(Of HostedServiceOptions), IServiceProvider, ILogger(Of MessageProcessingService))
-  fullName: CG.Purple.Host.Services.MessageProcessingService.MessageProcessingService(IOptions<HostedServiceOptions>, IServiceProvider, ILogger<CG.Purple.Host.Services.MessageProcessingService>)
-  fullName.vb: CG.Purple.Host.Services.MessageProcessingService.MessageProcessingService(IOptions(Of HostedServiceOptions), IServiceProvider, ILogger(Of CG.Purple.Host.Services.MessageProcessingService))
-  nameWithType: MessageProcessingService.MessageProcessingService(IOptions<HostedServiceOptions>, IServiceProvider, ILogger<MessageProcessingService>)
-  nameWithType.vb: MessageProcessingService.MessageProcessingService(IOptions(Of HostedServiceOptions), IServiceProvider, ILogger(Of MessageProcessingService))
-- uid: CG.Purple.Host.Services.MessageProcessingService.#ctor*
-  name: MessageProcessingService
-  href: api/CG.Purple.Host.Services.MessageProcessingService.html#CG_Purple_Host_Services_MessageProcessingService__ctor_
-  commentId: Overload:CG.Purple.Host.Services.MessageProcessingService.#ctor
+- uid: CG.Purple.Host.Services.ProcessingService
+  name: ProcessingService
+  href: api/CG.Purple.Host.Services.ProcessingService.html
+  commentId: T:CG.Purple.Host.Services.ProcessingService
+  fullName: CG.Purple.Host.Services.ProcessingService
+  nameWithType: ProcessingService
+- uid: CG.Purple.Host.Services.ProcessingService.#ctor(IOptions{HostedServiceOptions},IServiceProvider,ILogger{CG.Purple.Host.Services.ProcessingService})
+  name: ProcessingService(IOptions<HostedServiceOptions>, IServiceProvider, ILogger<ProcessingService>)
+  href: api/CG.Purple.Host.Services.ProcessingService.html#CG_Purple_Host_Services_ProcessingService__ctor_IOptions_HostedServiceOptions__IServiceProvider_ILogger_CG_Purple_Host_Services_ProcessingService__
+  commentId: M:CG.Purple.Host.Services.ProcessingService.#ctor(IOptions{HostedServiceOptions},IServiceProvider,ILogger{CG.Purple.Host.Services.ProcessingService})
+  name.vb: ProcessingService(IOptions(Of HostedServiceOptions), IServiceProvider, ILogger(Of ProcessingService))
+  fullName: CG.Purple.Host.Services.ProcessingService.ProcessingService(IOptions<HostedServiceOptions>, IServiceProvider, ILogger<CG.Purple.Host.Services.ProcessingService>)
+  fullName.vb: CG.Purple.Host.Services.ProcessingService.ProcessingService(IOptions(Of HostedServiceOptions), IServiceProvider, ILogger(Of CG.Purple.Host.Services.ProcessingService))
+  nameWithType: ProcessingService.ProcessingService(IOptions<HostedServiceOptions>, IServiceProvider, ILogger<ProcessingService>)
+  nameWithType.vb: ProcessingService.ProcessingService(IOptions(Of HostedServiceOptions), IServiceProvider, ILogger(Of ProcessingService))
+- uid: CG.Purple.Host.Services.ProcessingService.#ctor*
+  name: ProcessingService
+  href: api/CG.Purple.Host.Services.ProcessingService.html#CG_Purple_Host_Services_ProcessingService__ctor_
+  commentId: Overload:CG.Purple.Host.Services.ProcessingService.#ctor
   isSpec: "True"
-  fullName: CG.Purple.Host.Services.MessageProcessingService.MessageProcessingService
-  nameWithType: MessageProcessingService.MessageProcessingService
-- uid: CG.Purple.Host.Services.MessageProcessingService._hostedServiceOptions
+  fullName: CG.Purple.Host.Services.ProcessingService.ProcessingService
+  nameWithType: ProcessingService.ProcessingService
+- uid: CG.Purple.Host.Services.ProcessingService._hostedServiceOptions
   name: _hostedServiceOptions
-  href: api/CG.Purple.Host.Services.MessageProcessingService.html#CG_Purple_Host_Services_MessageProcessingService__hostedServiceOptions
-  commentId: F:CG.Purple.Host.Services.MessageProcessingService._hostedServiceOptions
-  fullName: CG.Purple.Host.Services.MessageProcessingService._hostedServiceOptions
-  nameWithType: MessageProcessingService._hostedServiceOptions
-- uid: CG.Purple.Host.Services.MessageProcessingService._logger
+  href: api/CG.Purple.Host.Services.ProcessingService.html#CG_Purple_Host_Services_ProcessingService__hostedServiceOptions
+  commentId: F:CG.Purple.Host.Services.ProcessingService._hostedServiceOptions
+  fullName: CG.Purple.Host.Services.ProcessingService._hostedServiceOptions
+  nameWithType: ProcessingService._hostedServiceOptions
+- uid: CG.Purple.Host.Services.ProcessingService._logger
   name: _logger
-  href: api/CG.Purple.Host.Services.MessageProcessingService.html#CG_Purple_Host_Services_MessageProcessingService__logger
-  commentId: F:CG.Purple.Host.Services.MessageProcessingService._logger
-  fullName: CG.Purple.Host.Services.MessageProcessingService._logger
-  nameWithType: MessageProcessingService._logger
-- uid: CG.Purple.Host.Services.MessageProcessingService._serviceProvider
+  href: api/CG.Purple.Host.Services.ProcessingService.html#CG_Purple_Host_Services_ProcessingService__logger
+  commentId: F:CG.Purple.Host.Services.ProcessingService._logger
+  fullName: CG.Purple.Host.Services.ProcessingService._logger
+  nameWithType: ProcessingService._logger
+- uid: CG.Purple.Host.Services.ProcessingService._serviceProvider
   name: _serviceProvider
-  href: api/CG.Purple.Host.Services.MessageProcessingService.html#CG_Purple_Host_Services_MessageProcessingService__serviceProvider
-  commentId: F:CG.Purple.Host.Services.MessageProcessingService._serviceProvider
-  fullName: CG.Purple.Host.Services.MessageProcessingService._serviceProvider
-  nameWithType: MessageProcessingService._serviceProvider
-- uid: CG.Purple.Host.Services.MessageProcessingService.ExecuteAsync(CancellationToken)
+  href: api/CG.Purple.Host.Services.ProcessingService.html#CG_Purple_Host_Services_ProcessingService__serviceProvider
+  commentId: F:CG.Purple.Host.Services.ProcessingService._serviceProvider
+  fullName: CG.Purple.Host.Services.ProcessingService._serviceProvider
+  nameWithType: ProcessingService._serviceProvider
+- uid: CG.Purple.Host.Services.ProcessingService.ExecuteAsync(CancellationToken)
   name: ExecuteAsync(CancellationToken)
-  href: api/CG.Purple.Host.Services.MessageProcessingService.html#CG_Purple_Host_Services_MessageProcessingService_ExecuteAsync_CancellationToken_
-  commentId: M:CG.Purple.Host.Services.MessageProcessingService.ExecuteAsync(CancellationToken)
-  fullName: CG.Purple.Host.Services.MessageProcessingService.ExecuteAsync(CancellationToken)
-  nameWithType: MessageProcessingService.ExecuteAsync(CancellationToken)
-- uid: CG.Purple.Host.Services.MessageProcessingService.ExecuteAsync*
+  href: api/CG.Purple.Host.Services.ProcessingService.html#CG_Purple_Host_Services_ProcessingService_ExecuteAsync_CancellationToken_
+  commentId: M:CG.Purple.Host.Services.ProcessingService.ExecuteAsync(CancellationToken)
+  fullName: CG.Purple.Host.Services.ProcessingService.ExecuteAsync(CancellationToken)
+  nameWithType: ProcessingService.ExecuteAsync(CancellationToken)
+- uid: CG.Purple.Host.Services.ProcessingService.ExecuteAsync*
   name: ExecuteAsync
-  href: api/CG.Purple.Host.Services.MessageProcessingService.html#CG_Purple_Host_Services_MessageProcessingService_ExecuteAsync_
-  commentId: Overload:CG.Purple.Host.Services.MessageProcessingService.ExecuteAsync
+  href: api/CG.Purple.Host.Services.ProcessingService.html#CG_Purple_Host_Services_ProcessingService_ExecuteAsync_
+  commentId: Overload:CG.Purple.Host.Services.ProcessingService.ExecuteAsync
   isSpec: "True"
-  fullName: CG.Purple.Host.Services.MessageProcessingService.ExecuteAsync
-  nameWithType: MessageProcessingService.ExecuteAsync
+  fullName: CG.Purple.Host.Services.ProcessingService.ExecuteAsync
+  nameWithType: ProcessingService.ExecuteAsync
+- uid: CG.Purple.Host.Shared
+  name: CG.Purple.Host.Shared
+  href: api/CG.Purple.Host.Shared.html
+  commentId: N:CG.Purple.Host.Shared
+  fullName: CG.Purple.Host.Shared
+  nameWithType: CG.Purple.Host.Shared
+- uid: CG.Purple.Host.Shared.MainLayout
+  name: MainLayout
+  href: api/CG.Purple.Host.Shared.MainLayout.html
+  commentId: T:CG.Purple.Host.Shared.MainLayout
+  fullName: CG.Purple.Host.Shared.MainLayout
+  nameWithType: MainLayout
+- uid: CG.Purple.Host.Shared.MainLayout.JsRuntime
+  name: JsRuntime
+  href: api/CG.Purple.Host.Shared.MainLayout.html#CG_Purple_Host_Shared_MainLayout_JsRuntime
+  commentId: P:CG.Purple.Host.Shared.MainLayout.JsRuntime
+  fullName: CG.Purple.Host.Shared.MainLayout.JsRuntime
+  nameWithType: MainLayout.JsRuntime
+- uid: CG.Purple.Host.Shared.MainLayout.JsRuntime*
+  name: JsRuntime
+  href: api/CG.Purple.Host.Shared.MainLayout.html#CG_Purple_Host_Shared_MainLayout_JsRuntime_
+  commentId: Overload:CG.Purple.Host.Shared.MainLayout.JsRuntime
+  isSpec: "True"
+  fullName: CG.Purple.Host.Shared.MainLayout.JsRuntime
+  nameWithType: MainLayout.JsRuntime
+- uid: CG.Purple.Host.Shared.MainLayout.OnAfterRenderAsync(System.Boolean)
+  name: OnAfterRenderAsync(Boolean)
+  href: api/CG.Purple.Host.Shared.MainLayout.html#CG_Purple_Host_Shared_MainLayout_OnAfterRenderAsync_System_Boolean_
+  commentId: M:CG.Purple.Host.Shared.MainLayout.OnAfterRenderAsync(System.Boolean)
+  fullName: CG.Purple.Host.Shared.MainLayout.OnAfterRenderAsync(System.Boolean)
+  nameWithType: MainLayout.OnAfterRenderAsync(Boolean)
+- uid: CG.Purple.Host.Shared.MainLayout.OnAfterRenderAsync*
+  name: OnAfterRenderAsync
+  href: api/CG.Purple.Host.Shared.MainLayout.html#CG_Purple_Host_Shared_MainLayout_OnAfterRenderAsync_
+  commentId: Overload:CG.Purple.Host.Shared.MainLayout.OnAfterRenderAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Shared.MainLayout.OnAfterRenderAsync
+  nameWithType: MainLayout.OnAfterRenderAsync
 - uid: CG.Purple.Host.SignalR
   name: CG.Purple.Host.SignalR
   href: api/CG.Purple.Host.SignalR.html
@@ -1608,6 +1775,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IMessageManager.FindReadyToProcessAsync
   nameWithType: IMessageManager.FindReadyToProcessAsync
+- uid: CG.Purple.Managers.IMessageManager.FindReadyToRetryAsync(System.Int32,CancellationToken)
+  name: FindReadyToRetryAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Managers.IMessageManager.html#CG_Purple_Managers_IMessageManager_FindReadyToRetryAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Managers.IMessageManager.FindReadyToRetryAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Managers.IMessageManager.FindReadyToRetryAsync(System.Int32, CancellationToken)
+  nameWithType: IMessageManager.FindReadyToRetryAsync(Int32, CancellationToken)
+- uid: CG.Purple.Managers.IMessageManager.FindReadyToRetryAsync*
+  name: FindReadyToRetryAsync
+  href: api/CG.Purple.Managers.IMessageManager.html#CG_Purple_Managers_IMessageManager_FindReadyToRetryAsync_
+  commentId: Overload:CG.Purple.Managers.IMessageManager.FindReadyToRetryAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IMessageManager.FindReadyToRetryAsync
+  nameWithType: IMessageManager.FindReadyToRetryAsync
 - uid: CG.Purple.Managers.IMessageManager.UpdateAsync(Message,System.String,CancellationToken)
   name: UpdateAsync(Message, String, CancellationToken)
   href: api/CG.Purple.Managers.IMessageManager.html#CG_Purple_Managers_IMessageManager_UpdateAsync_Message_System_String_CancellationToken_
@@ -2669,6 +2849,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MessageManager.FindReadyToProcessAsync
   nameWithType: MessageManager.FindReadyToProcessAsync
+- uid: CG.Purple.Managers.MessageManager.FindReadyToRetryAsync(System.Int32,CancellationToken)
+  name: FindReadyToRetryAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_FindReadyToRetryAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Managers.MessageManager.FindReadyToRetryAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Managers.MessageManager.FindReadyToRetryAsync(System.Int32, CancellationToken)
+  nameWithType: MessageManager.FindReadyToRetryAsync(Int32, CancellationToken)
+- uid: CG.Purple.Managers.MessageManager.FindReadyToRetryAsync*
+  name: FindReadyToRetryAsync
+  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_FindReadyToRetryAsync_
+  commentId: Overload:CG.Purple.Managers.MessageManager.FindReadyToRetryAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.MessageManager.FindReadyToRetryAsync
+  nameWithType: MessageManager.FindReadyToRetryAsync
 - uid: CG.Purple.Managers.MessageManager.UpdateAsync(Message,System.String,CancellationToken)
   name: UpdateAsync(Message, String, CancellationToken)
   href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_UpdateAsync_Message_System_String_CancellationToken_
@@ -3228,24 +3421,54 @@ references:
   commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,Exception,System.String,CancellationToken)
   fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager, Message, MessageState, Exception, System.String, CancellationToken)
   nameWithType: ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Message, MessageState, Exception, String, CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,ProviderType,System.String,System.String,CancellationToken)
+  name: LogErrorEventAsync(IProcessLogManager, Message, MessageState, String, ProviderType, String, String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_ProviderType_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,ProviderType,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager, Message, MessageState, System.String, ProviderType, System.String, System.String, CancellationToken)
+  nameWithType: ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Message, MessageState, String, ProviderType, String, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,System.String,CancellationToken)
   name: LogErrorEventAsync(IProcessLogManager, Message, MessageState, String, String, CancellationToken)
   href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_System_String_CancellationToken_
   commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,System.String,CancellationToken)
   fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager, Message, MessageState, System.String, System.String, CancellationToken)
   nameWithType: ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Message, MessageState, String, String, CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,System.String,System.String,CancellationToken)
+  name: LogErrorEventAsync(IProcessLogManager, Message, MessageState, String, String, String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager, Message, MessageState, System.String, System.String, System.String, CancellationToken)
+  nameWithType: ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Message, MessageState, String, String, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,Message,System.String,System.String,CancellationToken)
   name: LogErrorEventAsync(IProcessLogManager, Message, String, String, CancellationToken)
   href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_Message_System_String_System_String_CancellationToken_
   commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,Message,System.String,System.String,CancellationToken)
   fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager, Message, System.String, System.String, CancellationToken)
   nameWithType: ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, Message, String, String, CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,System.String,ProviderType,System.String,CancellationToken)
+  name: LogErrorEventAsync(IProcessLogManager, String, ProviderType, String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_System_String_ProviderType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,System.String,ProviderType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager, System.String, ProviderType, System.String, CancellationToken)
+  nameWithType: ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, String, ProviderType, String, CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,System.String,ProviderType,System.String,System.String,CancellationToken)
+  name: LogErrorEventAsync(IProcessLogManager, String, ProviderType, String, String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_System_String_ProviderType_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,System.String,ProviderType,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager, System.String, ProviderType, System.String, System.String, CancellationToken)
+  nameWithType: ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, String, ProviderType, String, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,System.String,System.String,CancellationToken)
   name: LogErrorEventAsync(IProcessLogManager, String, String, CancellationToken)
   href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_System_String_System_String_CancellationToken_
   commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,System.String,System.String,CancellationToken)
   fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager, System.String, System.String, CancellationToken)
   nameWithType: ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, String, String, CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,System.String,System.String,System.String,CancellationToken)
+  name: LogErrorEventAsync(IProcessLogManager, String, String, String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IProcessLogManager_System_String_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager,System.String,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IProcessLogManager, System.String, System.String, System.String, CancellationToken)
+  nameWithType: ProcessLogManagerExtensions001.LogErrorEventAsync(IProcessLogManager, String, String, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogErrorEventAsync*
   name: LogErrorEventAsync
   href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogErrorEventAsync_
@@ -3266,12 +3489,24 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogResetEventAsync
   nameWithType: ProcessLogManagerExtensions001.LogResetEventAsync
+- uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,ProviderType,System.String,System.String,CancellationToken)
+  name: LogSentEventAsync(IProcessLogManager, Message, MessageState, ProviderType, String, String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogSentEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_ProviderType_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,ProviderType,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IProcessLogManager, Message, MessageState, ProviderType, System.String, System.String, CancellationToken)
+  nameWithType: ProcessLogManagerExtensions001.LogSentEventAsync(IProcessLogManager, Message, MessageState, ProviderType, String, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,CancellationToken)
   name: LogSentEventAsync(IProcessLogManager, Message, MessageState, String, CancellationToken)
   href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogSentEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_CancellationToken_
   commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,CancellationToken)
   fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IProcessLogManager, Message, MessageState, System.String, CancellationToken)
   nameWithType: ProcessLogManagerExtensions001.LogSentEventAsync(IProcessLogManager, Message, MessageState, String, CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,System.String,CancellationToken)
+  name: LogSentEventAsync(IProcessLogManager, Message, MessageState, String, String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogSentEventAsync_CG_Purple_Managers_IProcessLogManager_Message_MessageState_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IProcessLogManager,Message,MessageState,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IProcessLogManager, Message, MessageState, System.String, System.String, CancellationToken)
+  nameWithType: ProcessLogManagerExtensions001.LogSentEventAsync(IProcessLogManager, Message, MessageState, String, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManagerExtensions001.LogSentEventAsync*
   name: LogSentEventAsync
   href: api/CG.Purple.Managers.ProcessLogManagerExtensions001.html#CG_Purple_Managers_ProcessLogManagerExtensions001_LogSentEventAsync_
@@ -4097,6 +4332,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.Message.Attachments
   nameWithType: Message.Attachments
+- uid: CG.Purple.Models.Message.ErrorCount
+  name: ErrorCount
+  href: api/CG.Purple.Models.Message.html#CG_Purple_Models_Message_ErrorCount
+  commentId: P:CG.Purple.Models.Message.ErrorCount
+  fullName: CG.Purple.Models.Message.ErrorCount
+  nameWithType: Message.ErrorCount
+- uid: CG.Purple.Models.Message.ErrorCount*
+  name: ErrorCount
+  href: api/CG.Purple.Models.Message.html#CG_Purple_Models_Message_ErrorCount_
+  commentId: Overload:CG.Purple.Models.Message.ErrorCount
+  isSpec: "True"
+  fullName: CG.Purple.Models.Message.ErrorCount
+  nameWithType: Message.ErrorCount
 - uid: CG.Purple.Models.Message.From
   name: From
   href: api/CG.Purple.Models.Message.html#CG_Purple_Models_Message_From
@@ -5068,15 +5316,15 @@ references:
   commentId: T:CG.Purple.Providers.IMessageProvider
   fullName: CG.Purple.Providers.IMessageProvider
   nameWithType: IMessageProvider
-- uid: CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable{Message},IEnumerable{ProviderParameter},PropertyType,CancellationToken)
-  name: ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  href: api/CG.Purple.Providers.IMessageProvider.html#CG_Purple_Providers_IMessageProvider_ProcessMessagesAsync_IEnumerable_Message__IEnumerable_ProviderParameter__PropertyType_CancellationToken_
-  commentId: M:CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable{Message},IEnumerable{ProviderParameter},PropertyType,CancellationToken)
-  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
-  fullName: CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  fullName.vb: CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
-  nameWithType: IMessageProvider.ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  nameWithType.vb: IMessageProvider.ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
+- uid: CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  href: api/CG.Purple.Providers.IMessageProvider.html#CG_Purple_Providers_IMessageProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_PropertyType_CancellationToken_
+  commentId: M:CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  fullName: CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  fullName.vb: CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  nameWithType: IMessageProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  nameWithType.vb: IMessageProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
 - uid: CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync*
   name: ProcessMessagesAsync
   href: api/CG.Purple.Providers.IMessageProvider.html#CG_Purple_Providers_IMessageProvider_ProcessMessagesAsync_
@@ -5109,18 +5357,68 @@ references:
   commentId: T:CG.Purple.Providers.MessageExtensions001
   fullName: CG.Purple.Providers.MessageExtensions001
   nameWithType: MessageExtensions001
+- uid: CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync(Message,IMessageManager,System.String,CancellationToken)
+  name: BumpErrorCountAsync(Message, IMessageManager, String, CancellationToken)
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_BumpErrorCountAsync_Message_IMessageManager_System_String_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync(Message,IMessageManager,System.String,CancellationToken)
+  fullName: CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync(Message, IMessageManager, System.String, CancellationToken)
+  nameWithType: MessageExtensions001.BumpErrorCountAsync(Message, IMessageManager, String, CancellationToken)
+- uid: CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync*
+  name: BumpErrorCountAsync
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_BumpErrorCountAsync_
+  commentId: Overload:CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync
+  nameWithType: MessageExtensions001.BumpErrorCountAsync
+- uid: CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync(Message,IMessageManager,System.String,CancellationToken)
+  name: ClearErrorCountAsync(Message, IMessageManager, String, CancellationToken)
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ClearErrorCountAsync_Message_IMessageManager_System_String_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync(Message,IMessageManager,System.String,CancellationToken)
+  fullName: CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync(Message, IMessageManager, System.String, CancellationToken)
+  nameWithType: MessageExtensions001.ClearErrorCountAsync(Message, IMessageManager, String, CancellationToken)
+- uid: CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync*
+  name: ClearErrorCountAsync
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ClearErrorCountAsync_
+  commentId: Overload:CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync
+  nameWithType: MessageExtensions001.ClearErrorCountAsync
+- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IProcessLogManager,ProviderType,System.String,System.String,CancellationToken)
+  name: ToFailedStateAsync(Message, Exception, IMessageManager, IProcessLogManager, ProviderType, String, String, CancellationToken)
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_Exception_IMessageManager_IProcessLogManager_ProviderType_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IProcessLogManager,ProviderType,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IProcessLogManager, ProviderType, System.String, System.String, CancellationToken)
+  nameWithType: MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IProcessLogManager, ProviderType, String, String, CancellationToken)
 - uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IProcessLogManager,System.String,CancellationToken)
   name: ToFailedStateAsync(Message, Exception, IMessageManager, IProcessLogManager, String, CancellationToken)
   href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_Exception_IMessageManager_IProcessLogManager_System_String_CancellationToken_
   commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IProcessLogManager,System.String,CancellationToken)
   fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IProcessLogManager, System.String, CancellationToken)
   nameWithType: MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IProcessLogManager, String, CancellationToken)
+- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IProcessLogManager,System.String,System.String,CancellationToken)
+  name: ToFailedStateAsync(Message, Exception, IMessageManager, IProcessLogManager, String, String, CancellationToken)
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_Exception_IMessageManager_IProcessLogManager_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IProcessLogManager,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IProcessLogManager, System.String, System.String, CancellationToken)
+  nameWithType: MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IProcessLogManager, String, String, CancellationToken)
+- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IProcessLogManager,ProviderType,System.String,System.String,CancellationToken)
+  name: ToFailedStateAsync(Message, String, IMessageManager, IProcessLogManager, ProviderType, String, String, CancellationToken)
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_System_String_IMessageManager_IProcessLogManager_ProviderType_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IProcessLogManager,ProviderType,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, System.String, IMessageManager, IProcessLogManager, ProviderType, System.String, System.String, CancellationToken)
+  nameWithType: MessageExtensions001.ToFailedStateAsync(Message, String, IMessageManager, IProcessLogManager, ProviderType, String, String, CancellationToken)
 - uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IProcessLogManager,System.String,CancellationToken)
   name: ToFailedStateAsync(Message, String, IMessageManager, IProcessLogManager, String, CancellationToken)
   href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_System_String_IMessageManager_IProcessLogManager_System_String_CancellationToken_
   commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IProcessLogManager,System.String,CancellationToken)
   fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, System.String, IMessageManager, IProcessLogManager, System.String, CancellationToken)
   nameWithType: MessageExtensions001.ToFailedStateAsync(Message, String, IMessageManager, IProcessLogManager, String, CancellationToken)
+- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IProcessLogManager,System.String,System.String,CancellationToken)
+  name: ToFailedStateAsync(Message, String, IMessageManager, IProcessLogManager, String, String, CancellationToken)
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_System_String_IMessageManager_IProcessLogManager_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IProcessLogManager,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, System.String, IMessageManager, IProcessLogManager, System.String, System.String, CancellationToken)
+  nameWithType: MessageExtensions001.ToFailedStateAsync(Message, String, IMessageManager, IProcessLogManager, String, String, CancellationToken)
 - uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync*
   name: ToFailedStateAsync
   href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_
@@ -5154,12 +5452,24 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Providers.MessageExtensions001.ToProcessingStateAsync
   nameWithType: MessageExtensions001.ToProcessingStateAsync
+- uid: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IProcessLogManager,ProviderType,System.String,System.String,CancellationToken)
+  name: ToSentStateAsync(Message, IMessageManager, IProcessLogManager, ProviderType, String, String, CancellationToken)
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_Message_IMessageManager_IProcessLogManager_ProviderType_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IProcessLogManager,ProviderType,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message, IMessageManager, IProcessLogManager, ProviderType, System.String, System.String, CancellationToken)
+  nameWithType: MessageExtensions001.ToSentStateAsync(Message, IMessageManager, IProcessLogManager, ProviderType, String, String, CancellationToken)
 - uid: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IProcessLogManager,System.String,CancellationToken)
   name: ToSentStateAsync(Message, IMessageManager, IProcessLogManager, String, CancellationToken)
   href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_Message_IMessageManager_IProcessLogManager_System_String_CancellationToken_
   commentId: M:CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IProcessLogManager,System.String,CancellationToken)
   fullName: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message, IMessageManager, IProcessLogManager, System.String, CancellationToken)
   nameWithType: MessageExtensions001.ToSentStateAsync(Message, IMessageManager, IProcessLogManager, String, CancellationToken)
+- uid: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IProcessLogManager,System.String,System.String,CancellationToken)
+  name: ToSentStateAsync(Message, IMessageManager, IProcessLogManager, String, String, CancellationToken)
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_Message_IMessageManager_IProcessLogManager_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IProcessLogManager,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message, IMessageManager, IProcessLogManager, System.String, System.String, CancellationToken)
+  nameWithType: MessageExtensions001.ToSentStateAsync(Message, IMessageManager, IProcessLogManager, String, String, CancellationToken)
 - uid: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync*
   name: ToSentStateAsync
   href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_
@@ -5703,6 +6013,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IMessageRepository.FindReadyToProcessAsync
   nameWithType: IMessageRepository.FindReadyToProcessAsync
+- uid: CG.Purple.Repositories.IMessageRepository.FindReadyToRetryAsync(System.Int32,CancellationToken)
+  name: FindReadyToRetryAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Repositories.IMessageRepository.html#CG_Purple_Repositories_IMessageRepository_FindReadyToRetryAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IMessageRepository.FindReadyToRetryAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Repositories.IMessageRepository.FindReadyToRetryAsync(System.Int32, CancellationToken)
+  nameWithType: IMessageRepository.FindReadyToRetryAsync(Int32, CancellationToken)
+- uid: CG.Purple.Repositories.IMessageRepository.FindReadyToRetryAsync*
+  name: FindReadyToRetryAsync
+  href: api/CG.Purple.Repositories.IMessageRepository.html#CG_Purple_Repositories_IMessageRepository_FindReadyToRetryAsync_
+  commentId: Overload:CG.Purple.Repositories.IMessageRepository.FindReadyToRetryAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IMessageRepository.FindReadyToRetryAsync
+  nameWithType: IMessageRepository.FindReadyToRetryAsync
 - uid: CG.Purple.Repositories.IMessageRepository.UpdateAsync(Message,CancellationToken)
   name: UpdateAsync(Message, CancellationToken)
   href: api/CG.Purple.Repositories.IMessageRepository.html#CG_Purple_Repositories_IMessageRepository_UpdateAsync_Message_CancellationToken_
@@ -6512,13 +6835,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedMailMessagesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{MailMessageOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{CG.Purple.Seeding.Options.MailMessageOptions},System.String,System.Boolean,CancellationToken)
   name: SeedMailMessagesAsync(List<MailMessageOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedMailMessagesAsync_List_MailMessageOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{MailMessageOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedMailMessagesAsync_List_CG_Purple_Seeding_Options_MailMessageOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{CG.Purple.Seeding.Options.MailMessageOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedMailMessagesAsync(List(Of MailMessageOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List<MailMessageOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List(Of MailMessageOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List<CG.Purple.Seeding.Options.MailMessageOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List(Of CG.Purple.Seeding.Options.MailMessageOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedMailMessagesAsync(List<MailMessageOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedMailMessagesAsync(List(Of MailMessageOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync*
@@ -6534,13 +6857,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedMimeTypesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{MimeTypeOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{CG.Purple.Seeding.Options.MimeTypeOptions},System.String,System.Boolean,CancellationToken)
   name: SeedMimeTypesAsync(List<MimeTypeOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedMimeTypesAsync_List_MimeTypeOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{MimeTypeOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedMimeTypesAsync_List_CG_Purple_Seeding_Options_MimeTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{CG.Purple.Seeding.Options.MimeTypeOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedMimeTypesAsync(List(Of MimeTypeOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List<MimeTypeOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List(Of MimeTypeOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List<CG.Purple.Seeding.Options.MimeTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List(Of CG.Purple.Seeding.Options.MimeTypeOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedMimeTypesAsync(List<MimeTypeOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedMimeTypesAsync(List(Of MimeTypeOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync*
@@ -6556,13 +6879,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedParameterTypesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{ParameterTypeOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{CG.Purple.Seeding.Options.ParameterTypeOptions},System.String,System.Boolean,CancellationToken)
   name: SeedParameterTypesAsync(List<ParameterTypeOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedParameterTypesAsync_List_ParameterTypeOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{ParameterTypeOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedParameterTypesAsync_List_CG_Purple_Seeding_Options_ParameterTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{CG.Purple.Seeding.Options.ParameterTypeOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedParameterTypesAsync(List(Of ParameterTypeOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List<ParameterTypeOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List(Of ParameterTypeOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List<CG.Purple.Seeding.Options.ParameterTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List(Of CG.Purple.Seeding.Options.ParameterTypeOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedParameterTypesAsync(List<ParameterTypeOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedParameterTypesAsync(List(Of ParameterTypeOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync*
@@ -6578,13 +6901,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProcessLogsAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{ProcessLogOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{CG.Purple.Seeding.Options.ProcessLogOptions},System.String,System.Boolean,CancellationToken)
   name: SeedProcessLogsAsync(List<ProcessLogOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProcessLogsAsync_List_ProcessLogOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{ProcessLogOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProcessLogsAsync_List_CG_Purple_Seeding_Options_ProcessLogOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{CG.Purple.Seeding.Options.ProcessLogOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedProcessLogsAsync(List(Of ProcessLogOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List<ProcessLogOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List(Of ProcessLogOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List<CG.Purple.Seeding.Options.ProcessLogOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List(Of CG.Purple.Seeding.Options.ProcessLogOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProcessLogsAsync(List<ProcessLogOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedProcessLogsAsync(List(Of ProcessLogOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync*
@@ -6600,13 +6923,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedPropertyTypesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{PropertyTypeOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{CG.Purple.Seeding.Options.PropertyTypeOptions},System.String,System.Boolean,CancellationToken)
   name: SeedPropertyTypesAsync(List<PropertyTypeOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedPropertyTypesAsync_List_PropertyTypeOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{PropertyTypeOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedPropertyTypesAsync_List_CG_Purple_Seeding_Options_PropertyTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{CG.Purple.Seeding.Options.PropertyTypeOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedPropertyTypesAsync(List(Of PropertyTypeOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List<PropertyTypeOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List(Of PropertyTypeOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List<CG.Purple.Seeding.Options.PropertyTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List(Of CG.Purple.Seeding.Options.PropertyTypeOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedPropertyTypesAsync(List<PropertyTypeOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedPropertyTypesAsync(List(Of PropertyTypeOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync*
@@ -6622,13 +6945,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProviderParametersAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{ProviderParameterOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{CG.Purple.Seeding.Options.ProviderParameterOptions},System.String,System.Boolean,CancellationToken)
   name: SeedProviderParametersAsync(List<ProviderParameterOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProviderParametersAsync_List_ProviderParameterOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{ProviderParameterOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProviderParametersAsync_List_CG_Purple_Seeding_Options_ProviderParameterOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{CG.Purple.Seeding.Options.ProviderParameterOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedProviderParametersAsync(List(Of ProviderParameterOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List<ProviderParameterOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List(Of ProviderParameterOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List<CG.Purple.Seeding.Options.ProviderParameterOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List(Of CG.Purple.Seeding.Options.ProviderParameterOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProviderParametersAsync(List<ProviderParameterOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedProviderParametersAsync(List(Of ProviderParameterOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync*
@@ -6644,13 +6967,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProviderTypesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{ProviderTypeOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{CG.Purple.Seeding.Options.ProviderTypeOptions},System.String,System.Boolean,CancellationToken)
   name: SeedProviderTypesAsync(List<ProviderTypeOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProviderTypesAsync_List_ProviderTypeOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{ProviderTypeOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProviderTypesAsync_List_CG_Purple_Seeding_Options_ProviderTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{CG.Purple.Seeding.Options.ProviderTypeOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedProviderTypesAsync(List(Of ProviderTypeOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List<ProviderTypeOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List(Of ProviderTypeOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List<CG.Purple.Seeding.Options.ProviderTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List(Of CG.Purple.Seeding.Options.ProviderTypeOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProviderTypesAsync(List<ProviderTypeOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedProviderTypesAsync(List(Of ProviderTypeOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync*
@@ -6666,13 +6989,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedTextMessagesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{TextMessageOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{CG.Purple.Seeding.Options.TextMessageOptions},System.String,System.Boolean,CancellationToken)
   name: SeedTextMessagesAsync(List<TextMessageOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedTextMessagesAsync_List_TextMessageOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{TextMessageOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedTextMessagesAsync_List_CG_Purple_Seeding_Options_TextMessageOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{CG.Purple.Seeding.Options.TextMessageOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedTextMessagesAsync(List(Of TextMessageOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List<TextMessageOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List(Of TextMessageOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List<CG.Purple.Seeding.Options.TextMessageOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List(Of CG.Purple.Seeding.Options.TextMessageOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedTextMessagesAsync(List<TextMessageOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedTextMessagesAsync(List(Of TextMessageOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync*
@@ -7393,15 +7716,15 @@ references:
   commentId: F:CG.Purple.SendGrid.SendGridProvider._logger
   fullName: CG.Purple.SendGrid.SendGridProvider._logger
   nameWithType: SendGridProvider._logger
-- uid: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable{Message},IEnumerable{ProviderParameter},PropertyType,CancellationToken)
-  name: ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  href: api/CG.Purple.SendGrid.SendGridProvider.html#CG_Purple_SendGrid_SendGridProvider_ProcessMessagesAsync_IEnumerable_Message__IEnumerable_ProviderParameter__PropertyType_CancellationToken_
-  commentId: M:CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable{Message},IEnumerable{ProviderParameter},PropertyType,CancellationToken)
-  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
-  fullName: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  fullName.vb: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
-  nameWithType: SendGridProvider.ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  nameWithType.vb: SendGridProvider.ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
+- uid: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  href: api/CG.Purple.SendGrid.SendGridProvider.html#CG_Purple_SendGrid_SendGridProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_PropertyType_CancellationToken_
+  commentId: M:CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  fullName: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  fullName.vb: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  nameWithType: SendGridProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  nameWithType.vb: SendGridProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
 - uid: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync*
   name: ProcessMessagesAsync
   href: api/CG.Purple.SendGrid.SendGridProvider.html#CG_Purple_SendGrid_SendGridProvider_ProcessMessagesAsync_
@@ -7480,15 +7803,15 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Smtp.SmtpProvider.CreateDotNetMessage
   nameWithType: SmtpProvider.CreateDotNetMessage
-- uid: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},IEnumerable{ProviderParameter},PropertyType,CancellationToken)
-  name: ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_IEnumerable_Message__IEnumerable_ProviderParameter__PropertyType_CancellationToken_
-  commentId: M:CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},IEnumerable{ProviderParameter},PropertyType,CancellationToken)
-  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
-  fullName: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  fullName.vb: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
-  nameWithType: SmtpProvider.ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  nameWithType.vb: SmtpProvider.ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
+- uid: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_PropertyType_CancellationToken_
+  commentId: M:CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  fullName: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  fullName.vb: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  nameWithType: SmtpProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  nameWithType.vb: SmtpProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
 - uid: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync*
   name: ProcessMessagesAsync
   href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_
@@ -7850,6 +8173,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Entities.Message.Attachments
   nameWithType: Message.Attachments
+- uid: CG.Purple.SqlServer.Entities.Message.ErrorCount
+  name: ErrorCount
+  href: api/CG.Purple.SqlServer.Entities.Message.html#CG_Purple_SqlServer_Entities_Message_ErrorCount
+  commentId: P:CG.Purple.SqlServer.Entities.Message.ErrorCount
+  fullName: CG.Purple.SqlServer.Entities.Message.ErrorCount
+  nameWithType: Message.ErrorCount
+- uid: CG.Purple.SqlServer.Entities.Message.ErrorCount*
+  name: ErrorCount
+  href: api/CG.Purple.SqlServer.Entities.Message.html#CG_Purple_SqlServer_Entities_Message_ErrorCount_
+  commentId: Overload:CG.Purple.SqlServer.Entities.Message.ErrorCount
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Entities.Message.ErrorCount
+  nameWithType: Message.ErrorCount
 - uid: CG.Purple.SqlServer.Entities.Message.From
   name: From
   href: api/CG.Purple.SqlServer.Entities.Message.html#CG_Purple_SqlServer_Entities_Message_From
@@ -9988,6 +10324,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToProcessAsync
   nameWithType: MessageRepository.FindReadyToProcessAsync
+- uid: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToRetryAsync(System.Int32,CancellationToken)
+  name: FindReadyToRetryAsync(Int32, CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MessageRepository.html#CG_Purple_SqlServer_Repositories_MessageRepository_FindReadyToRetryAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToRetryAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToRetryAsync(System.Int32, CancellationToken)
+  nameWithType: MessageRepository.FindReadyToRetryAsync(Int32, CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToRetryAsync*
+  name: FindReadyToRetryAsync
+  href: api/CG.Purple.SqlServer.Repositories.MessageRepository.html#CG_Purple_SqlServer_Repositories_MessageRepository_FindReadyToRetryAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToRetryAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToRetryAsync
+  nameWithType: MessageRepository.FindReadyToRetryAsync
 - uid: CG.Purple.SqlServer.Repositories.MessageRepository.UpdateAsync(Message,CancellationToken)
   name: UpdateAsync(Message, CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.MessageRepository.html#CG_Purple_SqlServer_Repositories_MessageRepository_UpdateAsync_Message_CancellationToken_
@@ -10926,15 +11275,15 @@ references:
   commentId: F:CG.Purple.Twillio.TwillioProvider._logger
   fullName: CG.Purple.Twillio.TwillioProvider._logger
   nameWithType: TwillioProvider._logger
-- uid: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable{Message},IEnumerable{ProviderParameter},PropertyType,CancellationToken)
-  name: ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  href: api/CG.Purple.Twillio.TwillioProvider.html#CG_Purple_Twillio_TwillioProvider_ProcessMessagesAsync_IEnumerable_Message__IEnumerable_ProviderParameter__PropertyType_CancellationToken_
-  commentId: M:CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable{Message},IEnumerable{ProviderParameter},PropertyType,CancellationToken)
-  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
-  fullName: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  fullName.vb: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
-  nameWithType: TwillioProvider.ProcessMessagesAsync(IEnumerable<Message>, IEnumerable<ProviderParameter>, PropertyType, CancellationToken)
-  nameWithType.vb: TwillioProvider.ProcessMessagesAsync(IEnumerable(Of Message), IEnumerable(Of ProviderParameter), PropertyType, CancellationToken)
+- uid: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  href: api/CG.Purple.Twillio.TwillioProvider.html#CG_Purple_Twillio_TwillioProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_PropertyType_CancellationToken_
+  commentId: M:CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  fullName: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  fullName.vb: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  nameWithType: TwillioProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  nameWithType.vb: TwillioProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
 - uid: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync*
   name: ProcessMessagesAsync
   href: api/CG.Purple.Twillio.TwillioProvider.html#CG_Purple_Twillio_TwillioProvider_ProcessMessagesAsync_
