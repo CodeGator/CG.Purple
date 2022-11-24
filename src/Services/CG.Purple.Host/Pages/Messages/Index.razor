@@ -8,7 +8,7 @@
     <MudTabPanel Text="Emails" Icon="@Icons.Material.Filled.Email">
         <MudTable Items="@_mailMessages" Dense Striped Filter="new Func<MailMessage,bool>(MailFilterFunc1)" Loading="@_isBusy">
             <ToolBarContent>
-                <MudButton Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshMailMessages">Refresh</MudButton>
+                <MudButton Color="Color.Secondary" Size="Size.Small" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshMailMessages">Refresh</MudButton>
                 <MudText Class="px-4" Typo="Typo.caption">(page refreshes every 15 seconds)</MudText>
                 <MudSpacer />
                 <MudTextField @bind-Value="mailGridSearchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
@@ -33,7 +33,11 @@
                 <MudTd DataLabel="Properties">@context.MessageProperties.Count()</MudTd>
                 <MudTd DataLabel="Errors">@context.ErrorCount</MudTd>
                 <MudTd DataLabel="Subject">@context.Subject</MudTd>
-                <MudTh>&nbsp;</MudTh>
+                <MudTh>
+                    <MudTooltip Text="Properties">
+                        <MudIconButton Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" />
+                    </MudTooltip>
+                </MudTh>
             </RowTemplate>
             <PagerContent>
                 <MudTablePager />
@@ -49,7 +53,7 @@
     <MudTabPanel Text="Texts" Icon="@Icons.Material.Filled.Message">
         <MudTable Items="@_textMessages" Dense Striped Filter="new Func<TextMessage,bool>(TextFilterFunc1)" Loading="@_isBusy">
             <ToolBarContent>
-                <MudButton Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshTextMessages">Refresh</MudButton>
+                <MudButton Color="Color.Secondary" Size="Size.Small" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshTextMessages">Refresh</MudButton>
                 <MudText Class="px-4" Typo="Typo.caption">(page refreshes every 15 seconds)</MudText>
                 <MudSpacer />
                 <MudTextField @bind-Value="textGridSearchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
@@ -72,9 +76,11 @@
                 <MudTd DataLabel="Properties">@context.MessageProperties.Count()</MudTd>
                 <MudTd DataLabel="Errors">@context.ErrorCount</MudTd>
                 <MudTd DataLabel="To">@context.To</MudTd>                
-                <MudTd>
-
-                </MudTd>
+                <MudTh>
+                    <MudTooltip Text="Properties">
+                        <MudIconButton Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" />
+                    </MudTooltip>
+                </MudTh>
             </RowTemplate>
             <PagerContent>
                 <MudTablePager />

@@ -49,7 +49,7 @@ public partial class Index
     /// <summary>
     /// This field contains the timer for the page refresh operations.
     /// </summary>
-    private Timer _timer;
+    private Timer _timer = null!;
 
     #endregion
 
@@ -158,7 +158,8 @@ public partial class Index
     /// </summary>
     /// <param name="element">The element to use for the operation.</param>
     /// <returns><c>true</c> if a match was found; <c>false</c> otherwise.</returns>
-    protected bool MailFilterFunc1(MailMessage element) => MailFilterFunc(element, mailGridSearchString);
+    protected bool MailFilterFunc1(MailMessage element) => 
+        MailFilterFunc(element, mailGridSearchString);
 
     // *******************************************************************
 
@@ -168,7 +169,8 @@ public partial class Index
     /// </summary>
     /// <param name="element">The element to use for the operation.</param>
     /// <returns><c>true</c> if a match was found; <c>false</c> otherwise.</returns>
-    protected bool TextFilterFunc1(TextMessage element) => TextFilterFunc(element, textGridSearchString);
+    protected bool TextFilterFunc1(TextMessage element) => 
+        TextFilterFunc(element, textGridSearchString);
 
     // *******************************************************************
 
@@ -187,27 +189,39 @@ public partial class Index
         {
             return true;
         }
-        if (element.To.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (element.To.Contains(
+            searchString, 
+            StringComparison.OrdinalIgnoreCase)
+            )
         {
             return true;
         }
         if (!string.IsNullOrEmpty(element.CC))
         {
-            if (element.CC.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            if (element.CC.Contains(
+                searchString, 
+                StringComparison.OrdinalIgnoreCase)
+                )
             {
                 return true;
             }
         }
         if (!string.IsNullOrEmpty(element.BCC))
         {
-            if (element.BCC.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            if (element.BCC.Contains(
+                searchString, 
+                StringComparison.OrdinalIgnoreCase)
+                )
             {
                 return true;
             }
         }
         if (!string.IsNullOrEmpty(element.Subject))
         {
-            if (element.Subject.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            if (element.Subject.Contains(
+                searchString, 
+                StringComparison.OrdinalIgnoreCase)
+                )
             {
                 return true;
             }
@@ -217,7 +231,10 @@ public partial class Index
         {
             return true;
         }
-        if (element.Body.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (element.Body.Contains(
+            searchString, 
+            StringComparison.OrdinalIgnoreCase)
+            )
         {
             return true;
         }
@@ -241,7 +258,10 @@ public partial class Index
         {
             return true;
         }
-        if (element.To.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (element.To.Contains(
+            searchString, 
+            StringComparison.OrdinalIgnoreCase)
+            )
         {
             return true;
         }
@@ -250,7 +270,10 @@ public partial class Index
         {
             return true;
         }
-        if (element.Body.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (element.Body.Contains(
+            searchString, 
+            StringComparison.OrdinalIgnoreCase)
+            )
         {
             return true;
         }
@@ -338,10 +361,64 @@ public partial class Index
     // *******************************************************************
 
     /// <summary>
-    /// This method refreshes the data on the page.
+    /// This method displays a dialog for the message properties.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnPropertiesAsync(
+        Message message
+        )
+    {
+        try
+        {
+            // We clone the message because anything we do to it, in
+            //   the dialog, is difficult to undo without a round trip
+            //   to the database, which seems silly. This way, if the
+            //   user manipulates the object, via the UI, then cancels
+            //   the operation, no harm done.
+            var tempMessage = message.QuickClone();
+
+            // Show the dialog.
+            await DialogService.ShowEx<PropertiesDialog>(
+                "Properties",
+                new DialogParameters()
+                {
+                     { "Model", tempMessage }
+                },
+                new DialogOptionsEx() 
+                {
+                    MaximizeButton = true,
+                    CloseButton = true,
+                    FullHeight = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.Medium,
+                    FullWidth = true,
+                    DragMode = MudDialogDragMode.Simple,
+                    Animations = new[] { AnimationType.SlideIn },
+                    Position = DialogPosition.CenterRight,
+                    DisableSizeMarginY = true,
+                    DisablePositionMargin = true
+                }).ConfigureAwait(false);
+        }
+        catch ( Exception ex )
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method is called by the timer, to periodically refresh the page.
     /// </summary>
     /// <param name="state">The optional state for the operation.</param>
-    private async void _TimerCallback(
+    protected async void _TimerCallback(
         object? state
         )
     {

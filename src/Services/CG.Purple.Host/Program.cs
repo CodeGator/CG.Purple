@@ -1,4 +1,6 @@
 
+using MudBlazor.Extensions;
+
 try
 {
     // Log what we are about to do.
@@ -17,6 +19,7 @@ try
 
     // Add MudBlazor stuff
     builder.Services.AddMudServices();
+    builder.Services.AddMudExtensions();
 
     // Add CodeGator stuff.
     builder.AddCryptographyWithSharedKeys(
