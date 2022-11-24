@@ -71,7 +71,6 @@ internal class ProcessDirector : IProcessDirector
     /// with this director.</param>
     /// <param name="propertyTypeManager">The property type manager to use
     /// with this director.</param>
-
     /// <param name="logger">The logger to use with this director.</param>
     public ProcessDirector(
         IMessageManager messageManager,

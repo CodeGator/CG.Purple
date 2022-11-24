@@ -1,6 +1,4 @@
 
-using MudBlazor.Extensions;
-
 try
 {
     // Log what we are about to do.
@@ -12,7 +10,13 @@ try
     // Create an application builder.
     var builder = WebApplication.CreateBuilder(args);
 
-    // Add the standard Blazor stuff.
+    // Add Serilog stuff.
+    builder.Host.UseSerilog((ctx, lc) =>
+    {
+        lc.ReadFrom.Configuration(ctx.Configuration);
+    });
+
+    // Add Blazor stuff.
     builder.Services.AddRazorPages();
     builder.Services.AddServerSideBlazor();
     builder.Services.AddHttpContextAccessor();
@@ -69,7 +73,7 @@ try
         app.UseHsts();
     }
 
-    // Use the standard Blazor stuff.
+    // Use Blazor stuff.
     app.UseHttpsRedirection();
     app.UseStaticFiles();
     app.UseRouting();
@@ -80,7 +84,7 @@ try
     // Use SignalR stuff.
     app.MapHub<StatusHub>("/_status");
 
-    // Use the CodeGator stuff.
+    // Use CodeGator stuff.
     app.UseDalStartup()
         .UseStartupSeeding();
 

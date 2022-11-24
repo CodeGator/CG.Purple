@@ -1,0 +1,44 @@
+﻿<MudDialog Class="mud-ex-dialog-initial">
+    <DialogContent>
+        <EditForm Model="@Model.MessageProperties" OnValidSubmit="OnValidSubmit">
+            <MudCard Outlined>
+                <MudCardContent Class="pt-0">
+                    <DataAnnotationsValidator />
+                    <MudTable Items="@Model.MessageProperties" Dense Striped>
+                        <ToolBarContent>
+                            <MudButton StartIcon="@Icons.Material.Filled.Create" Variant="Variant.Filled" OnClick="OnCreateMessagePropertyAsync">Create</MudButton>
+                            <MudSpacer />
+                        </ToolBarContent>
+                        <HeaderContent>
+                            <MudTh><MudTableSortLabel SortBy="new Func<MessageProperty, object>(x=>x.PropertyType.Name)">Type</MudTableSortLabel></MudTh>
+                            <MudTh><MudTableSortLabel SortBy="new Func<MessageProperty, object>(x=>x.Value)">Value</MudTableSortLabel></MudTh>
+                            <MudTh></MudTh>
+                        </HeaderContent>
+                        <RowTemplate Context="context2">
+                            <MudTd DataLabel="Type">@context2.PropertyType.Name</MudTd>
+                            <MudTd DataLabel="Value">@context2.Value</MudTd>
+                            <MudTd>
+                                <MudTooltip Text="Delete">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteMessagePropertyAsync(context2)" />
+                                </MudTooltip>
+                                <MudTooltip Text="Edit">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditMessagePropertyAsync(context2)" />
+                                </MudTooltip>
+                            </MudTd>
+                        </RowTemplate>
+                        <PagerContent>
+                            <MudTablePager />
+                        </PagerContent>
+                        <NoRecordsContent>
+                            No properties were found.
+                        </NoRecordsContent>
+                    </MudTable>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton OnClick="Cancel">Cancel</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit" Class="ml-auto" Color="Color.Primary">Save</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
+    </DialogContent>
+</MudDialog>

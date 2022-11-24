@@ -379,17 +379,17 @@ public partial class Index
             var tempMessage = message.QuickClone();
 
             // Show the dialog.
-            await DialogService.ShowEx<PropertiesDialog>(
+            var dialog = await DialogService.ShowEx<MessagePropertiesDialog>(
                 "Properties",
                 new DialogParameters()
                 {
                      { "Model", tempMessage }
                 },
-                new DialogOptionsEx() 
+                new DialogOptionsEx()
                 {
                     MaximizeButton = true,
                     CloseButton = true,
-                    FullHeight = true,
+                    //FullHeight = true,
                     CloseOnEscapeKey = true,
                     MaxWidth = MaxWidth.Medium,
                     FullWidth = true,
@@ -399,6 +399,30 @@ public partial class Index
                     DisableSizeMarginY = true,
                     DisablePositionMargin = true
                 }).ConfigureAwait(false);
+
+            // Show the dialog.
+            var result = await dialog.Result;
+
+            // Did the user save?
+            if (!result.Cancelled)
+            {
+                // We're busy.
+                _isBusy = true;
+
+                // Give the UI time to show the busy indicator.
+                await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
+                await Task.Delay(250);
+
+                // TODO : save the changes.
+
+                // Tell the world what happened.
+                SnackbarService.Add(
+                    $"Changes were saved",
+                    Severity.Success,
+                    options => options.CloseAfterNavigation = true
+                    );
+            }
+
         }
         catch ( Exception ex )
         {
@@ -409,6 +433,11 @@ public partial class Index
                 Severity.Error,
                 options => options.CloseAfterNavigation = true
                 );
+        }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
         }
     }
 

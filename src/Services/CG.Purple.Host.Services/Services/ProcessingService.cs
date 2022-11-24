@@ -1,6 +1,4 @@
 ﻿
-using System.Diagnostics;
-
 namespace CG.Purple.Host.Services;
 
 /// <summary>
@@ -111,13 +109,13 @@ internal class ProcessingService : BackgroundService
                 }
 
                 // Log what we are about to do.
-                _logger.LogInformation(
+                _logger.LogDebug(
                     "Pausing the {svc} service startup for {ts}.",
                     nameof(ProcessingService),
                     delayDuration
                 );
 
-                // Let's not work tooo soon.
+                // Let's not work too soon.
                 await Task.Delay(
                     delayDuration,
                     stoppingToken
@@ -126,13 +124,13 @@ internal class ProcessingService : BackgroundService
             else
             {
                 // Log what we are about to do.
-                _logger.LogInformation(
+                _logger.LogDebug(
                     "Pausing the {svc} service startup for {ts}.",
                     nameof(ProcessingService),
                     TimeSpan.FromSeconds(1)
                 );
 
-                // Let's not work tooo soon.
+                // Let's not work too soon.
                 await Task.Delay(
                     TimeSpan.FromSeconds(1),
                     stoppingToken
@@ -229,7 +227,7 @@ internal class ProcessingService : BackgroundService
                     }
 
                     // Log what we did.
-                    _logger.LogInformation(
+                    _logger.LogDebug(
                         "Setting the max error count to: {count}.",
                         maxErrorCount
                     );
@@ -240,7 +238,7 @@ internal class ProcessingService : BackgroundService
                     maxErrorCount = 3;
 
                     // Log what we did.
-                    _logger.LogInformation(
+                    _logger.LogDebug(
                         "Setting the max error count to: {count} since the 'MaxErrorCount' " +
                         "setting was missing.",
                         maxErrorCount
@@ -276,8 +274,79 @@ internal class ProcessingService : BackgroundService
                         );
                 }
 
+                // Get a scoped archive director.
+                var archiveDirector = scope.ServiceProvider.GetRequiredService<
+                    IArchiveDirector
+                    >();
+
                 // =======
-                // Step 4: pause for a bit, so we don't hammer the CPU.
+                // Step 4: archive any messages that are eligible.
+                // =======
+
+                // Were options provided?
+                var maxDaysToLive = 0;
+                if (_hostedServiceOptions.Value.MessageProcessing is not null &&
+                    _hostedServiceOptions.Value.MessageProcessing.MaxDaysToLive.HasValue)
+                {
+                    // Set the max days to live value.
+                    maxDaysToLive = _hostedServiceOptions.Value.MessageProcessing.MaxDaysToLive.Value;
+
+                    // Sanity check the value.
+                    if (maxDaysToLive < 7)
+                    {
+                        maxDaysToLive = 7;
+                    }
+
+                    // Log what we did.
+                    _logger.LogDebug(
+                        "Setting the max days to live value to: {value}.",
+                        maxDaysToLive
+                    );
+                }
+                else
+                {
+                    // Set the max error count.
+                    maxDaysToLive = 7;
+
+                    // Log what we did.
+                    _logger.LogDebug(
+                        "Setting the max days to live value to: {value} since the " +
+                        "'MaxDaysToLive' setting was missing.",
+                        maxDaysToLive
+                    );
+                }
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Deferring to {name}",
+                    nameof(IArchiveDirector.ArchiveMessagesAsync)
+                    );
+
+                // Restart the stopwatch.
+                sw.Restart();
+                try
+                {
+                    // Archive terminal messages.
+                    await archiveDirector.ArchiveMessagesAsync(
+                        maxDaysToLive,
+                        stoppingToken
+                        ).ConfigureAwait(false);
+                }
+                finally
+                {
+                    // Stop the stopwatch.
+                    sw.Stop();
+
+                    // Log what we did.
+                    _logger.LogTrace(
+                        "{name} finished in {elapsed}",
+                        nameof(IArchiveDirector.ArchiveMessagesAsync),
+                        sw.Elapsed
+                        );
+                }
+
+                // =======
+                // Step 5: pause for a bit, so we don't hammer the CPU.
                 // =======
 
                 // Were options provided?
@@ -294,13 +363,13 @@ internal class ProcessingService : BackgroundService
                     }
 
                     // Log what we are about to do.
-                    _logger.LogInformation(
+                    _logger.LogDebug(
                         "Pausing the {svc} service for {time}.",
                         nameof(ProcessingService),
                         durationValue
                     );
 
-                    // Let's not work tooo soon.
+                    // Let's not work too hard.
                     await Task.Delay(
                         durationValue,
                         stoppingToken
@@ -309,14 +378,14 @@ internal class ProcessingService : BackgroundService
                 else
                 {
                     // Log what we are about to do.
-                    _logger.LogInformation(
+                    _logger.LogDebug(
                         "Pausing the {svc} service for {time}, since the " +
                         "'ThrottleDuration' setting was missing.",
                         nameof(ProcessingService),
                         TimeSpan.FromSeconds(5)
                     );
 
-                    // Let's not work tooo soon.
+                    // Let's not work too hard.
                     await Task.Delay(
                         TimeSpan.FromSeconds(5),
                         stoppingToken
@@ -333,7 +402,7 @@ internal class ProcessingService : BackgroundService
         catch (Exception ex)
         {
             // Log what happened.
-            _logger.LogCritical(
+            _logger.LogError(
                 ex,
                 "The {svc} service failed while running!",
                 nameof(ProcessingService)
