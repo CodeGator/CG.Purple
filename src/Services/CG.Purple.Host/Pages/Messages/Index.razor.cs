@@ -538,11 +538,26 @@ public partial class Index
     {
         try
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Looking for provider types."
+                );
+
             // Get the valid provider types.
             var providerTypes = await ProviderTypeManager.FindAllAsync();
 
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Looking for property types."
+                );
+
             // Get the valid property types.
             var propertyTypes = await PropertyTypeManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Removing used property types."
+                );
 
             // We remove property types that are already used, on the message,
             //   because we want to avoid duplicate properties.
@@ -553,12 +568,22 @@ public partial class Index
                 PropertyTypeEqualityComparer.Instance()
                 ).ToList();
 
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Cloning the message."
+                );
+
             // We clone the message because anything we do to it, in
             //   the dialog, is difficult to undo without a round trip
             //   to the database, which seems silly. This way, if the
             //   user manipulates the object, via the UI, then cancels
             //   the operation, no harm done.
             var tempMessage = message.QuickClone();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating the message properties dialog."
+                );
 
             // Show the dialog.
             var dialog = await DialogService.ShowEx<MessagePropertiesDialog>(
@@ -582,18 +607,38 @@ public partial class Index
                     DisablePositionMargin = true 
                 });
 
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the message properties dialog."
+                );
+
             // Show the dialog.
             var result = await dialog.Result;
 
             // Did the user save?
             if (!result.Cancelled)
             {
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Setting the page to busy."
+                    );
+
                 // We're busy.
                 _isBusy = true;
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Setting the page state to dirty."
+                    );
 
                 // Give the UI time to show the busy indicator.
                 await InvokeAsync(() => StateHasChanged());
                 await Task.Delay(250);
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Recovering the edited message."
+                    );
 
                 // Recover the edited message.
                 var changedMessage = (Message)result.Data;
@@ -602,20 +647,43 @@ public partial class Index
                 // Step 1: Find any message properties that were deleted.
                 // =======
 
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Looking for deleted message properties."
+                    );
+
                 // Find any properties that were deleted.
                 var deletedProperties = message.MessageProperties.Except(
                     changedMessage.MessageProperties,
                     MessagePropertyEqualityComparer.Instance()
                     );
 
-                // Loop through the message properties.
-                foreach (var property in deletedProperties)
+                // Were there any?
+                if (deletedProperties.Any())
                 {
-                    // Delete the message property.
-                    await MessagePropertyManager.DeleteAsync(
-                        property,
-                        UserName
+                    // Log what we are about to do.
+                    Logger.LogDebug(
+                        "Deleting {count} message properties on message: {id}.",
+                        deletedProperties.Count(),
+                        message.Id
                         );
+
+                    // Loop through the message properties.
+                    foreach (var property in deletedProperties)
+                    {
+                        // Log what we are about to do.
+                        Logger.LogDebug(
+                            "Deleting property type: {id1} for message: {id2}.",
+                            property.PropertyType.Id,
+                            property.Message.Id
+                            );
+
+                        // Delete the message property.
+                        await MessagePropertyManager.DeleteAsync(
+                            property,
+                            UserName
+                            );
+                    }
                 }
 
                 // =======
@@ -625,6 +693,13 @@ public partial class Index
                 // Loop through the message properties.
                 foreach (var property in changedMessage.MessageProperties)
                 {
+                    // Log what we are about to do.
+                    Logger.LogDebug(
+                        "Updating message property: {id1} for message: {id2}.",
+                        property.PropertyType.Id,
+                        property.Message.Id
+                        );
+
                     // Update the message property.
                     await MessagePropertyManager.UpdateAsync(
                         property,
@@ -642,34 +717,70 @@ public partial class Index
                     MessagePropertyEqualityComparer.Instance()
                     );
 
-                // Loop through the message properties.
-                foreach (var property in addedProperties)
+                // Were there any?
+                if (addedProperties.Any())
                 {
-                    try
+                    // Log what we are about to do.
+                    Logger.LogDebug(
+                        "Adding {count} message properties to message: {id}.",
+                        addedProperties.Count(),
+                        message.Id
+                        );
+
+                    // Loop through the message properties.
+                    foreach (var property in addedProperties)
                     {
-                        // Create the new message property.
-                        var newMessageProperty = await MessagePropertyManager.CreateAsync(
-                            property,
-                            UserName
-                            );
-                    }
-                    catch (Exception ex)
-                    {
-                        // Ignore duplicates - since that probably means the
-                        //   hosted service added a conflicting message property,
-                        //   in the background.
-                        if (!ex.GetBaseException().Message.Contains("duplicate"))
+                        try
                         {
-                            throw;
+                            // Log what we are about to do.
+                            Logger.LogDebug(
+                                "Adding property type: {id1} for message: {id2}.",
+                                property.PropertyType.Id,
+                                property.Message.Id
+                                );
+
+                            // Create the new message property.
+                            var newMessageProperty = await MessagePropertyManager.CreateAsync(
+                                property,
+                                UserName
+                                );
+                        }
+                        catch (Exception ex)
+                        {
+                            // Log what we are about to do.
+                            Logger.LogDebug(
+                                "Failed to update message property: {id1} for message: {id2}! Error: {err}",
+                                property.PropertyType.Id,
+                                property.Message.Id,
+                                ex.GetBaseException().Message
+                                );
+
+                            // Ignore duplicates - since that probably means the
+                            //   hosted service added a conflicting message property,
+                            //   in the background.
+                            if (!ex.GetBaseException().Message.Contains("duplicate"))
+                            {
+                                throw;
+                            }
                         }
                     }
                 }
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Showing the snackbar message."
+                    );
 
                 // Tell the world what happened.
                 SnackbarService.Add(
                     $"Changes were saved",
                     Severity.Success,
                     options => options.CloseAfterNavigation = true
+                    );
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Refreshing the page."
                     );
 
                 // Refresh the page.
