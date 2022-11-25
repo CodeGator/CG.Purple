@@ -209,6 +209,10 @@ internal class ProviderParameterRepository : IProviderParameterRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // We don't mess with associated entity types.
+            dbContext.Entry(entity.ParameterType).State = EntityState.Unchanged;
+            dbContext.Entry(entity.ProviderType).State = EntityState.Unchanged;
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",

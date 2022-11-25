@@ -4,9 +4,12 @@
             <MudCard Outlined>
                 <MudCardContent Class="pt-0">
                     <DataAnnotationsValidator />
-                    <MudTable Items="@Model.MessageProperties" Dense Striped>
+                    <MudTable Items="@Model.MessageProperties" Dense Striped Loading="@_isBusy">
                         <ToolBarContent>
-                            <MudButton StartIcon="@Icons.Material.Filled.Create" Variant="Variant.Filled" OnClick="OnCreateMessagePropertyAsync">Create</MudButton>
+                            <MudButton StartIcon="@Icons.Material.Filled.Create" 
+                                       Variant="Variant.Filled" 
+                                       Disabled="@(!CanAddMessageProperty())"
+                                       OnClick="OnCreateMessagePropertyAsync">Create</MudButton>
                             <MudSpacer />
                         </ToolBarContent>
                         <HeaderContent>
