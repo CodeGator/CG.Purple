@@ -173,6 +173,9 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(propertyType, nameof(propertyType));
+
         try
         {
             // Log what we are about to do.
@@ -273,10 +276,13 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        PropertyType model,
+        PropertyType propertyType,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(propertyType, nameof(propertyType));
+
         try
         {
             // Log what we are about to do.
@@ -300,7 +306,7 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[PropertyTypes] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { propertyType.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -389,6 +395,9 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(propertyType, nameof(propertyType));
+
         try
         {
             // Log what we are about to do.

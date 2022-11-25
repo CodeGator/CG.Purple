@@ -173,6 +173,9 @@ internal class FileTypeRepository : IFileTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(fileType, nameof(fileType));
+
         try
         {
             // Log what we are about to do.
@@ -276,10 +279,13 @@ internal class FileTypeRepository : IFileTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        FileType model,
+        FileType fileType,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(fileType, nameof(fileType));
+
         try
         {
             // Log what we are about to do.
@@ -303,7 +309,7 @@ internal class FileTypeRepository : IFileTypeRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[FileTypes] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { fileType.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -469,6 +475,9 @@ internal class FileTypeRepository : IFileTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(fileType, nameof(fileType));
+
         try
         {
             // Log what we are about to do.

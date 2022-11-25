@@ -173,6 +173,9 @@ internal class ParameterTypeRepository : IParameterTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(parameterType, nameof(parameterType));
+
         try
         {
             // Log what we are about to do.
@@ -273,10 +276,13 @@ internal class ParameterTypeRepository : IParameterTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ParameterType model,
+        ParameterType parameterType,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(parameterType, nameof(parameterType));
+
         try
         {
             // Log what we are about to do.
@@ -300,7 +306,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[ParameterTypes] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { parameterType.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -389,6 +395,9 @@ internal class ParameterTypeRepository : IParameterTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(parameterType, nameof(parameterType));
+
         try
         {
             // Log what we are about to do.

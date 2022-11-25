@@ -173,6 +173,9 @@ internal class ProviderParameterRepository : IProviderParameterRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(providerParameter, nameof(providerParameter));
+
         try
         {
             // Log what we are about to do.
@@ -273,10 +276,13 @@ internal class ProviderParameterRepository : IProviderParameterRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ProviderParameter model,
+        ProviderParameter providerParameter,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(providerParameter, nameof(providerParameter));
+
         try
         {
             // Log what we are about to do.
@@ -303,8 +309,8 @@ internal class ProviderParameterRepository : IProviderParameterRepository
                 "[ProviderTypeId] = {0} AND [ParameterTypeId] = {1}",
                 parameters: new object[] 
                 { 
-                    model.ProviderTypeId,
-                    model.ParameterTypeId
+                    providerParameter.ProviderTypeId,
+                    providerParameter.ParameterTypeId
                 },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
@@ -333,6 +339,9 @@ internal class ProviderParameterRepository : IProviderParameterRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(providerParameter, nameof(providerParameter));
+
         try
         {
             // Log what we are about to do.

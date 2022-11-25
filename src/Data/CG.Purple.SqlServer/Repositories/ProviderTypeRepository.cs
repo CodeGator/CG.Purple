@@ -173,6 +173,9 @@ internal class ProviderTypeRepository : IProviderTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(providerType, nameof(providerType));
+
         try
         {
             // Log what we are about to do.
@@ -273,10 +276,13 @@ internal class ProviderTypeRepository : IProviderTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ProviderType model,
+        ProviderType providerType,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(providerType, nameof(providerType));
+
         try
         {
             // Log what we are about to do.
@@ -300,7 +306,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[ProviderTypes] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { providerType.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -566,6 +572,9 @@ internal class ProviderTypeRepository : IProviderTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(providerType, nameof(providerType));
+
         try
         {
             // Log what we are about to do.

@@ -1,6 +1,4 @@
 ﻿
-using CG.Collections.Generic;
-
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
@@ -175,6 +173,9 @@ internal class MailMessageRepository : IMailMessageRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(mailMessage, nameof(mailMessage));
+
         try
         {
             // Log what we are about to do.
@@ -491,72 +492,14 @@ internal class MailMessageRepository : IMailMessageRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<MailMessage>> FindPendingAsync(
-        CancellationToken cancellationToken = default
-        )
-    {
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a {ctx} data-context",
-                nameof(PurpleDbContext)
-                );
-
-            // Create a database context.
-            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Searching for pending mail messages."
-                );
-
-            // Perform the mail message search.
-            var mailMessages = await dbContext.MailMessages.Where(x =>
-                x.IsDisabled == false && 
-                x.MessageState != MessageState.Failed &&
-                x.MessageState != MessageState.Sent
-                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
-                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
-                 .ToListAsync(
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-            // Convert the entities to a models.
-            var result = mailMessages.Select(x =>
-                _mapper.Map<MailMessage>(x)
-                );
-
-            // Return the results.
-            return result;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to search for pending mail messages!"
-                );
-
-            // Provider better context.
-            throw new RepositoryException(
-                message: $"The repository failed to search for pending mail " +
-                "messages!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
     public virtual async Task<MailMessage> UpdateAsync(
         MailMessage mailMessage,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(mailMessage, nameof(mailMessage));
+
         try
         {
             // Log what we are about to do.

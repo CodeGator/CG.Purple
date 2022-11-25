@@ -354,46 +354,6 @@ internal class TextMessageManager : ITextMessageManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<TextMessage>> FindPendingAsync(
-        CancellationToken cancellationToken = default
-        )
-    {
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogTrace(
-                "Deferring to {name}",
-                nameof(ITextMessageRepository.FindPendingAsync)
-                );
-
-            // Perform the operation.
-            var result = await _textMessageRepository.FindPendingAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Return the results.
-            return result;
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to search for pending text messages!"
-                );
-
-            // Provider better context.
-            throw new ManagerException(
-                message: $"The manager failed to search for pending text " +
-                "messages!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
     public virtual async Task<TextMessage> UpdateAsync(
         TextMessage textMessage,
         string userName,

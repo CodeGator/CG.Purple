@@ -108,20 +108,6 @@ public interface ITextMessageManager
         );
 
     /// <summary>
-    /// This method searches for a sequence of <see cref="TextMessage"/> objects
-    /// that are not disabled, or sent, or processed.
-    /// </summary>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation that returns a sequence of matching
-    /// <see cref="TextMessage"/> objects.</returns>
-    /// <exception cref="ManagerException">This exception is thrown whenever the
-    /// manager fails to complete the operation.</exception>
-    Task<IEnumerable<TextMessage>> FindPendingAsync(
-        CancellationToken cancellationToken = default
-        );
-
-    /// <summary>
     /// This method updates an existing <see cref="TextMessage"/> object in the 
     /// underlying storage.
     /// </summary>

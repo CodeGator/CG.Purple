@@ -1,7 +1,4 @@
 ﻿
-using CG.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Internal;
-
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
@@ -172,10 +169,13 @@ internal class MessageRepository : IMessageRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        Message model,
+        Message message,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
         try
         {
             // Log what we are about to do.
@@ -199,7 +199,7 @@ internal class MessageRepository : IMessageRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[Messages] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { message.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -642,6 +642,9 @@ internal class MessageRepository : IMessageRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
         try
         {
             // Log what we are about to do.
