@@ -108,8 +108,7 @@ public interface IMessageManager
 
     /// <summary>
     /// This method searches for a sequence of <see cref="Message"/> objects
-    /// that are in a terminal state and are older than the given number of
-    /// days.
+    /// that are older than the given number of days.
     /// </summary>
     /// <param name="maxDaysToLive">The maximum number of days a message can
     /// live in a terminal state before we archive it.</param>

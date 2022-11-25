@@ -280,7 +280,7 @@ internal class ProcessingService : BackgroundService
                     >();
 
                 // =======
-                // Step 4: archive any messages that are eligible.
+                // Step 4: archive any messages that are due.
                 // =======
 
                 // Were options provided?
@@ -408,10 +408,6 @@ internal class ProcessingService : BackgroundService
                 "The {svc} service failed while running!",
                 nameof(ProcessingService)
                 );
-
-            // TODO : at some point, we need to figure out what to do
-            //   for critical errors, like this one - such as sending
-            //   an email, or text, or alert.
         }
         finally
         {

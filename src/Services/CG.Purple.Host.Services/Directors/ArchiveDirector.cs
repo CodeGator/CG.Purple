@@ -93,14 +93,24 @@ internal class ArchiveDirector : IArchiveDirector
                 cancellationToken
                 );
 
+            // Are we done?
+            if (!messages.Any())
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "No messages were ready to archive."
+                    );
+                return; // Done!
+            }
+
             // Log what we are about to do.
-            _logger.LogDebug(
-                "Looping through {count} messages.",
+            _logger.LogInformation(
+                "Archiving {count} messages.",
                 messages.Count()
                 );
 
             // Loop through the messages.
-            foreach (var message in messages )
+            foreach (var message in messages)
             {
                 // Log what we are about to do.
                 _logger.LogDebug(

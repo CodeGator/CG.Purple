@@ -463,12 +463,9 @@ internal class MessageRepository : IMessageRepository
                 );
 
             // Perform the message search for:
-            //  * messages that are in a terminal state
             //  * messages older than maxDaysToLive.
             var messages = await dbContext.Messages.Where(x =>
-                x.CreatedOnUtc > DateTime.UtcNow.AddDays(-(maxDaysToLive)) &&
-                (x.MessageState == MessageState.Sent ||
-                x.MessageState == MessageState.Failed)
+                x.CreatedOnUtc < DateTime.UtcNow.AddDays(-(maxDaysToLive))
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                  .OrderByDescending(x => x.CreatedBy).ThenBy(x => x.Priority)
