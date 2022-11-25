@@ -121,6 +121,31 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class MessagePropertiesDialog</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog__isBusy" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog._isBusy">_isBusy</h4>
+  <div class="markdown level1 summary"><p>This field indicates the page is busy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool _isBusy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   <a id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_DialogService_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.DialogService*"></a>
@@ -171,6 +196,30 @@
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Logger_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Logger*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Logger" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>This property contains the logger for this page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ILogger&lt;MessagePropertiesDialog&gt; Logger { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html">MessagePropertiesDialog</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Model_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Model*"></a>
   <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Model" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Model">Model</h4>
   <div class="markdown level1 summary"><p>This property contains the model for the dialog.</p>
@@ -190,7 +239,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Message</span></td>
+        <td><a class="xref" href="CG.Purple.Models.Message.html">Message</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -238,7 +287,31 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">PropertyType</span>&gt;</td>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="CG.Purple.Models.PropertyType.html">PropertyType</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_ProviderTypes_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.ProviderTypes*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_ProviderTypes" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.ProviderTypes">ProviderTypes</h4>
+  <div class="markdown level1 summary"><p>This property contains the valid provider types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;ProviderType&gt; ProviderTypes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="CG.Purple.Models.ProviderType.html">ProviderType</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -294,6 +367,33 @@
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_CanAddMessageProperty_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.CanAddMessageProperty*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_CanAddMessageProperty" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.CanAddMessageProperty">CanAddMessageProperty()</h4>
+  <div class="markdown level1 summary"><p>This method indicates whether the model can have any additional
+message properties added to it, or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool CanAddMessageProperty()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the model can have additional message
+properties added to it; <code>false</code> otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Cancel_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Cancel*"></a>
   <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Cancel" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Cancel">Cancel()</h4>
   <div class="markdown level1 summary"><p>This method cancels the dialog.</p>
@@ -329,7 +429,7 @@
     </tbody>
   </table>
   <a id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnDeleteMessagePropertyAsync_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnDeleteMessagePropertyAsync_MessageProperty_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(MessageProperty)">OnDeleteMessagePropertyAsync(MessageProperty)</h4>
+  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnDeleteMessagePropertyAsync_CG_Purple_Models_MessageProperty_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(CG.Purple.Models.MessageProperty)">OnDeleteMessagePropertyAsync(MessageProperty)</h4>
   <div class="markdown level1 summary"><p>This method deletes the currently selected message property.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -348,7 +448,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">MessageProperty</span></td>
+        <td><a class="xref" href="CG.Purple.Models.MessageProperty.html">MessageProperty</a></td>
         <td><span class="parametername">messageProperty</span></td>
         <td><p>The message property to use for the
 operation.</p>
@@ -373,7 +473,7 @@ operation.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnEditMessagePropertyAsync_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnEditMessagePropertyAsync_MessageProperty_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(MessageProperty)">OnEditMessagePropertyAsync(MessageProperty)</h4>
+  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnEditMessagePropertyAsync_CG_Purple_Models_MessageProperty_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(CG.Purple.Models.MessageProperty)">OnEditMessagePropertyAsync(MessageProperty)</h4>
   <div class="markdown level1 summary"><p>This method edits the currently selected message property.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -392,7 +492,7 @@ operation.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">MessageProperty</span></td>
+        <td><a class="xref" href="CG.Purple.Models.MessageProperty.html">MessageProperty</a></td>
         <td><span class="parametername">messageProperty</span></td>
         <td><p>The message property to use for the
 operation.</p>

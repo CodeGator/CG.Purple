@@ -781,6 +781,12 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index._TimerCallback
   nameWithType: Index._TimerCallback
+- uid: CG.Purple.Host.Pages.Messages.Index._timeTillNextUpdate
+  name: _timeTillNextUpdate
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index__timeTillNextUpdate
+  commentId: F:CG.Purple.Host.Pages.Messages.Index._timeTillNextUpdate
+  fullName: CG.Purple.Host.Pages.Messages.Index._timeTillNextUpdate
+  nameWithType: Index._timeTillNextUpdate
 - uid: CG.Purple.Host.Pages.Messages.Index.DialogService
   name: DialogService
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_DialogService
@@ -807,6 +813,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.HttpContextAccessor
   nameWithType: Index.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.Messages.Index.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_Logger
+  commentId: P:CG.Purple.Host.Pages.Messages.Index.Logger
+  fullName: CG.Purple.Host.Pages.Messages.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Purple.Host.Pages.Messages.Index.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.Logger
+  nameWithType: Index.Logger
 - uid: CG.Purple.Host.Pages.Messages.Index.MailFilterFunc(MailMessage,System.String)
   name: MailFilterFunc(MailMessage, String)
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_MailFilterFunc_MailMessage_System_String_
@@ -852,6 +871,32 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.MailManager
   nameWithType: Index.MailManager
+- uid: CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager
+  name: MessagePropertyManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_MessagePropertyManager
+  commentId: P:CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager
+  fullName: CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager
+  nameWithType: Index.MessagePropertyManager
+- uid: CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager*
+  name: MessagePropertyManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_MessagePropertyManager_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager
+  nameWithType: Index.MessagePropertyManager
+- uid: CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync(Message)
+  name: OnAttachmentsAsync(Message)
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnAttachmentsAsync_Message_
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync(Message)
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync(Message)
+  nameWithType: Index.OnAttachmentsAsync(Message)
+- uid: CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync*
+  name: OnAttachmentsAsync
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnAttachmentsAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync
+  nameWithType: Index.OnAttachmentsAsync
 - uid: CG.Purple.Host.Pages.Messages.Index.OnInitializedAsync
   name: OnInitializedAsync()
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnInitializedAsync
@@ -917,6 +962,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.PropertyTypeManager
   nameWithType: Index.PropertyTypeManager
+- uid: CG.Purple.Host.Pages.Messages.Index.ProviderTypeManager
+  name: ProviderTypeManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_ProviderTypeManager
+  commentId: P:CG.Purple.Host.Pages.Messages.Index.ProviderTypeManager
+  fullName: CG.Purple.Host.Pages.Messages.Index.ProviderTypeManager
+  nameWithType: Index.ProviderTypeManager
+- uid: CG.Purple.Host.Pages.Messages.Index.ProviderTypeManager*
+  name: ProviderTypeManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_ProviderTypeManager_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.ProviderTypeManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.ProviderTypeManager
+  nameWithType: Index.ProviderTypeManager
 - uid: CG.Purple.Host.Pages.Messages.Index.SnackbarService
   name: SnackbarService
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_SnackbarService
@@ -994,6 +1052,25 @@ references:
   commentId: T:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog
   nameWithType: MessagePropertiesDialog
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog._isBusy
+  name: _isBusy
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog__isBusy
+  commentId: F:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog._isBusy
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog._isBusy
+  nameWithType: MessagePropertiesDialog._isBusy
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.CanAddMessageProperty
+  name: CanAddMessageProperty()
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_CanAddMessageProperty
+  commentId: M:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.CanAddMessageProperty
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.CanAddMessageProperty()
+  nameWithType: MessagePropertiesDialog.CanAddMessageProperty()
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.CanAddMessageProperty*
+  name: CanAddMessageProperty
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_CanAddMessageProperty_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.CanAddMessageProperty
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.CanAddMessageProperty
+  nameWithType: MessagePropertiesDialog.CanAddMessageProperty
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Cancel
   name: Cancel()
   href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Cancel
@@ -1033,6 +1110,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.HttpContextAccessor
   nameWithType: MessagePropertiesDialog.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Logger
+  commentId: P:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Logger
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Logger
+  nameWithType: MessagePropertiesDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Logger
+  nameWithType: MessagePropertiesDialog.Logger
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.Model
   name: Model
   href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_Model
@@ -1072,11 +1162,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnCreateMessagePropertyAsync
   nameWithType: MessagePropertiesDialog.OnCreateMessagePropertyAsync
-- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(MessageProperty)
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(CG.Purple.Models.MessageProperty)
   name: OnDeleteMessagePropertyAsync(MessageProperty)
-  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnDeleteMessagePropertyAsync_MessageProperty_
-  commentId: M:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(MessageProperty)
-  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(MessageProperty)
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnDeleteMessagePropertyAsync_CG_Purple_Models_MessageProperty_
+  commentId: M:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(CG.Purple.Models.MessageProperty)
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(CG.Purple.Models.MessageProperty)
   nameWithType: MessagePropertiesDialog.OnDeleteMessagePropertyAsync(MessageProperty)
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync*
   name: OnDeleteMessagePropertyAsync
@@ -1085,11 +1175,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync
   nameWithType: MessagePropertiesDialog.OnDeleteMessagePropertyAsync
-- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(MessageProperty)
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(CG.Purple.Models.MessageProperty)
   name: OnEditMessagePropertyAsync(MessageProperty)
-  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnEditMessagePropertyAsync_MessageProperty_
-  commentId: M:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(MessageProperty)
-  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(MessageProperty)
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnEditMessagePropertyAsync_CG_Purple_Models_MessageProperty_
+  commentId: M:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(CG.Purple.Models.MessageProperty)
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(CG.Purple.Models.MessageProperty)
   nameWithType: MessagePropertiesDialog.OnEditMessagePropertyAsync(MessageProperty)
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync*
   name: OnEditMessagePropertyAsync
@@ -1124,6 +1214,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.PropertyTypes
   nameWithType: MessagePropertiesDialog.PropertyTypes
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.ProviderTypes
+  name: ProviderTypes
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_ProviderTypes
+  commentId: P:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.ProviderTypes
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.ProviderTypes
+  nameWithType: MessagePropertiesDialog.ProviderTypes
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.ProviderTypes*
+  name: ProviderTypes
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_ProviderTypes_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.ProviderTypes
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.ProviderTypes
+  nameWithType: MessagePropertiesDialog.ProviderTypes
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.SnackbarService
   name: SnackbarService
   href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_SnackbarService
@@ -1169,6 +1272,25 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Cancel
   nameWithType: MessagePropertyDialog.Cancel
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Converter
+  name: Converter
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Converter
+  commentId: F:CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Converter
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Converter
+  nameWithType: MessagePropertyDialog.Converter
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Logger
+  commentId: P:CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Logger
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Logger
+  nameWithType: MessagePropertyDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Logger
+  nameWithType: MessagePropertyDialog.Logger
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Model
   name: Model
   href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Model
@@ -1221,6 +1343,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes
   nameWithType: MessagePropertyDialog.PropertyTypes
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
+  name: ProviderTypes
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_ProviderTypes
+  commentId: P:CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
+  nameWithType: MessagePropertyDialog.ProviderTypes
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes*
+  name: ProviderTypes
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_ProviderTypes_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
+  nameWithType: MessagePropertyDialog.ProviderTypes
 - uid: CG.Purple.Host.Services
   name: CG.Purple.Host.Services
   href: api/CG.Purple.Host.Services.html

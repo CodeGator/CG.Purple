@@ -238,6 +238,29 @@
       </tr>
     </tbody>
   </table>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index__timeTillNextUpdate" data-uid="CG.Purple.Host.Pages.Messages.Index._timeTillNextUpdate">_timeTillNextUpdate</h4>
+  <div class="markdown level1 summary"><p>This field contains the time until the next page update.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TimeSpan _timeTillNextUpdate</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h4 id="CG_Purple_Host_Pages_Messages_Index_mailGridSearchString" data-uid="CG.Purple.Host.Pages.Messages.Index.mailGridSearchString">mailGridSearchString</h4>
   <div class="markdown level1 summary"><p>This field contains the current mail search string.</p>
 </div>
@@ -334,6 +357,30 @@
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Host_Pages_Messages_Index_Logger_" data-uid="CG.Purple.Host.Pages.Messages.Index.Logger*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index_Logger" data-uid="CG.Purple.Host.Pages.Messages.Index.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>This property contains the logger for this page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ILogger&lt;Index&gt; Logger { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Host.Pages.Messages.Index.html">Index</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Host_Pages_Messages_Index_MailManager_" data-uid="CG.Purple.Host.Pages.Messages.Index.MailManager*"></a>
   <h4 id="CG_Purple_Host_Pages_Messages_Index_MailManager" data-uid="CG.Purple.Host.Pages.Messages.Index.MailManager">MailManager</h4>
   <div class="markdown level1 summary"><p>This property contains the mail message manager for this page.</p>
@@ -353,7 +400,31 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IMailMessageManager</span></td>
+        <td><a class="xref" href="CG.Purple.Managers.IMailMessageManager.html">IMailMessageManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Pages_Messages_Index_MessagePropertyManager_" data-uid="CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index_MessagePropertyManager" data-uid="CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager">MessagePropertyManager</h4>
+  <div class="markdown level1 summary"><p>This property contains the message property manager for this page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IMessagePropertyManager MessagePropertyManager { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Managers.IMessagePropertyManager.html">IMessagePropertyManager</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -377,7 +448,31 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IPropertyTypeManager</span></td>
+        <td><a class="xref" href="CG.Purple.Managers.IPropertyTypeManager.html">IPropertyTypeManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Pages_Messages_Index_ProviderTypeManager_" data-uid="CG.Purple.Host.Pages.Messages.Index.ProviderTypeManager*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index_ProviderTypeManager" data-uid="CG.Purple.Host.Pages.Messages.Index.ProviderTypeManager">ProviderTypeManager</h4>
+  <div class="markdown level1 summary"><p>This property contains the provider type manager for this page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IProviderTypeManager ProviderTypeManager { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Managers.IProviderTypeManager.html">IProviderTypeManager</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -425,7 +520,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ITextMessageManager</span></td>
+        <td><a class="xref" href="CG.Purple.Managers.ITextMessageManager.html">ITextMessageManager</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -573,6 +668,49 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><p><code>true</code> if a match was found; <code>false</code> otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Pages_Messages_Index_OnAttachmentsAsync_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index_OnAttachmentsAsync_Message_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync(Message)">OnAttachmentsAsync(Message)</h4>
+  <div class="markdown level1 summary"><p>This method displays a dialog for the message attachments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected async Task OnAttachmentsAsync(Message message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to use for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
 </td>
       </tr>
     </tbody>
