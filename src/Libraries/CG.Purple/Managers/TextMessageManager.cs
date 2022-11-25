@@ -233,59 +233,6 @@ internal class TextMessageManager : ITextMessageManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task DeleteAsync(
-        TextMessage textMessage,
-        string userName,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(textMessage, nameof(textMessage))
-            .ThrowIfNullOrEmpty(userName, nameof(userName));
-
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Updating the {name} model stats",
-                nameof(TextMessage)
-                );
-
-            // Ensure the stats are correct.
-            textMessage.LastUpdatedOnUtc = DateTime.UtcNow;
-            textMessage.LastUpdatedBy = userName;
-
-            // Log what we are about to do.
-            _logger.LogTrace(
-                "Deferring to {name}",
-                nameof(ITextMessageRepository.DeleteAsync)
-                );
-
-            // Perform the operation.
-            await _textMessageRepository.DeleteAsync(
-                textMessage,
-                cancellationToken
-                ).ConfigureAwait(false);
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to delete a text message!"
-                );
-
-            // Provider better context.
-            throw new ManagerException(
-                message: $"The manager failed to delete a text message!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
     public virtual async Task<IEnumerable<TextMessage>> FindAllAsync(
         CancellationToken cancellationToken = default
         )

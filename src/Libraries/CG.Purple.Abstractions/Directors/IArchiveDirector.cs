@@ -12,6 +12,8 @@ public interface IArchiveDirector
     /// </summary>
     /// <param name="maxDaysToLive">The maximum number of days to keep terminal 
     /// messages before archiving them.</param>
+    /// <param name="userName">The user name of the person performing the
+    /// operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
@@ -21,6 +23,7 @@ public interface IArchiveDirector
     /// director fails to complete the operation.</exception>
     Task ArchiveMessagesAsync(
         int maxDaysToLive,
+        string userName,
         CancellationToken cancellationToken = default
         );
 }

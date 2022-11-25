@@ -1,5 +1,6 @@
 ﻿
 using CG.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace CG.Purple.SqlServer.Repositories;
 
@@ -162,6 +163,57 @@ internal class MessageRepository : IMessageRepository
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to count messages!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task DeleteAsync(
+        Message model,
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "deleting an {entity} instance from the {ctx} data-context",
+                nameof(Message),
+                nameof(PurpleDbContext)
+                );
+
+            // Delete from the data-store.
+            await dbContext.Database.ExecuteSqlRawAsync(
+                "DELETE FROM [Purple].[Messages] WHERE [Id] = {0}",
+                parameters: new object[] { model.Id },
+                cancellationToken: cancellationToken
+                ).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to delete a message!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to delete a message!",
                 innerException: ex
                 );
         }
@@ -384,6 +436,74 @@ internal class MessageRepository : IMessageRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<Message>> FindReadyToArchiveAsync(
+        int maxDaysToLive,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfLessThanOrEqualZero(maxDaysToLive, nameof(maxDaysToLive));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for messages to archive."
+                );
+
+            // Perform the message search for:
+            //  * messages that are in a terminal state
+            //  * messages older than maxDaysToLive.
+            var messages = await dbContext.Messages.Where(x =>
+                x.CreatedOnUtc > DateTime.UtcNow.AddDays(-(maxDaysToLive)) &&
+                (x.MessageState == MessageState.Sent ||
+                x.MessageState == MessageState.Failed)
+                ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
+                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .OrderByDescending(x => x.CreatedBy).ThenBy(x => x.Priority)
+                 .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entities to a models.
+            var result = messages.Select(x =>
+                _mapper.Map<Message>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for messages that are ready to archive!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for messages " +
+                "that are ready to archive!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<IEnumerable<Message>> FindReadyToProcessAsync(
         CancellationToken cancellationToken = default
         )
@@ -403,7 +523,7 @@ internal class MessageRepository : IMessageRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for pending messages."
+                "Searching for messages to process."
                 );
 
             // Perform the message search for:
@@ -453,6 +573,9 @@ internal class MessageRepository : IMessageRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfLessThanOrEqualZero(maxErrorCount, nameof(maxErrorCount));
+
         try
         {
             // Log what we are about to do.
@@ -468,7 +591,7 @@ internal class MessageRepository : IMessageRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for failed messages."
+                "Searching for messages to retry."
                 );
 
             // Perform the message search for:

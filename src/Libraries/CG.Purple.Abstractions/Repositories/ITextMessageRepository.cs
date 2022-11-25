@@ -54,23 +54,6 @@ public interface ITextMessageRepository
         );
 
     /// <summary>
-    /// This method deletes an existing <see cref="TextMessage"/> object from the 
-    /// underlying storage.
-    /// </summary>
-    /// <param name="textMessage">The model to delete from the underlying storage.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    /// <exception cref="RepositoryException">This exception is thrown whenever the
-    /// repository fails to complete the operation.</exception>
-    Task DeleteAsync(
-        TextMessage textMessage,
-        CancellationToken cancellationToken = default
-        );
-
-    /// <summary>
     /// This method searches for all the <ee cref="TextMessage"/> objects.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored

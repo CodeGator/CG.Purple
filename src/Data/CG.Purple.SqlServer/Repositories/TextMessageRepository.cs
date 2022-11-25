@@ -1,6 +1,4 @@
 ﻿
-using CG.Collections.Generic;
-
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
@@ -269,57 +267,6 @@ internal class TextMessageRepository : ITextMessageRepository
             // Provider better context.
             throw new RepositoryException(
                 message: $"The repository failed to create a text message!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task DeleteAsync(
-        TextMessage model,
-        CancellationToken cancellationToken = default
-        )
-    {
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a {ctx} data-context",
-                nameof(PurpleDbContext)
-                );
-
-            // Create a database context.
-            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "deleting an {entity} instance from the {ctx} data-context",
-                nameof(TextMessage),
-                nameof(PurpleDbContext)
-                );
-
-            // Delete from the data-store.
-            await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[TextMessages] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
-                cancellationToken: cancellationToken
-                ).ConfigureAwait(false);
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to delete a text message!"
-                );
-
-            // Provider better context.
-            throw new RepositoryException(
-                message: $"The repository failed to delete a text message!",
                 innerException: ex
                 );
         }

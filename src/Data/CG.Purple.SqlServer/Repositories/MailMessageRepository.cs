@@ -277,57 +277,6 @@ internal class MailMessageRepository : IMailMessageRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task DeleteAsync(
-        MailMessage model,
-        CancellationToken cancellationToken = default
-        )
-    {
-        try
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a {ctx} data-context",
-                nameof(PurpleDbContext)
-                );
-
-            // Create a database context.
-            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "deleting an {entity} instance from the {ctx} data-context",
-                nameof(MailMessage),
-                nameof(PurpleDbContext)
-                );
-
-            // Delete from the data-store.
-            await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[MailMessages] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
-                cancellationToken: cancellationToken
-                ).ConfigureAwait(false);
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to delete a mail message!"
-                );
-
-            // Provider better context.
-            throw new RepositoryException(
-                message: $"The repository failed to delete a mail message!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
     public virtual async Task<IEnumerable<MailMessage>> FindAllAsync(
         CancellationToken cancellationToken = default
         )

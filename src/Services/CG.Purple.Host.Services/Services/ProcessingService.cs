@@ -329,6 +329,7 @@ internal class ProcessingService : BackgroundService
                     // Archive terminal messages.
                     await archiveDirector.ArchiveMessagesAsync(
                         maxDaysToLive,
+                        "host",
                         stoppingToken
                         ).ConfigureAwait(false);
                 }

@@ -52,24 +52,7 @@ public interface IMailMessageRepository
         MailMessage fileType,
         CancellationToken cancellationToken = default
         );
-
-    /// <summary>
-    /// This method deletes an existing <see cref="MailMessage"/> object from the 
-    /// underlying storage.
-    /// </summary>
-    /// <param name="fileType">The model to delete from the underlying storage.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    /// <exception cref="RepositoryException">This exception is thrown whenever the
-    /// repository fails to complete the operation.</exception>
-    Task DeleteAsync(
-        MailMessage fileType,
-        CancellationToken cancellationToken = default
-        );
-
+    
     /// <summary>
     /// This method searches for all the <ee cref="MailMessage"/> objects.
     /// </summary>
@@ -137,7 +120,7 @@ public interface IMailMessageRepository
     /// This method updates an existing <see cref="MailMessage"/> object in the 
     /// underlying storage.
     /// </summary>
-    /// <param name="fileType">The model to update in the underlying storage.</param>
+    /// <param name="mailMessage">The model to update in the underlying storage.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly updated
@@ -147,7 +130,7 @@ public interface IMailMessageRepository
     /// <exception cref="RepositoryException">This exception is thrown whenever the
     /// repository fails to complete the operation.</exception>
     Task<MailMessage> UpdateAsync(
-        MailMessage fileType,
+        MailMessage mailMessage,
         CancellationToken cancellationToken = default
         );
 }
