@@ -345,7 +345,7 @@ to use with this repository.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task DeleteAsync(PropertyType model, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task DeleteAsync(PropertyType propertyType, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -359,7 +359,7 @@ to use with this repository.</p>
     <tbody>
       <tr>
         <td><span class="xref">PropertyType</span></td>
-        <td><span class="parametername">model</span></td>
+        <td><span class="parametername">propertyType</span></td>
         <td></td>
       </tr>
       <tr>
@@ -380,6 +380,46 @@ to use with this repository.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_FindAllAsync_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindAllAsync*"></a>
+  <h4 id="CG_Purple_SqlServer_Repositories_PropertyTypeRepository_FindAllAsync_CancellationToken_" data-uid="CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindAllAsync(CancellationToken)">FindAllAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IEnumerable&lt;PropertyType&gt;&gt; FindAllAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">PropertyType</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>

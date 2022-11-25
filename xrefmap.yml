@@ -94,12 +94,12 @@ references:
   commentId: T:CG.Purple.Directors.IArchiveDirector
   fullName: CG.Purple.Directors.IArchiveDirector
   nameWithType: IArchiveDirector
-- uid: CG.Purple.Directors.IArchiveDirector.ArchiveMessagesAsync(System.Int32,CancellationToken)
-  name: ArchiveMessagesAsync(Int32, CancellationToken)
-  href: api/CG.Purple.Directors.IArchiveDirector.html#CG_Purple_Directors_IArchiveDirector_ArchiveMessagesAsync_System_Int32_CancellationToken_
-  commentId: M:CG.Purple.Directors.IArchiveDirector.ArchiveMessagesAsync(System.Int32,CancellationToken)
-  fullName: CG.Purple.Directors.IArchiveDirector.ArchiveMessagesAsync(System.Int32, CancellationToken)
-  nameWithType: IArchiveDirector.ArchiveMessagesAsync(Int32, CancellationToken)
+- uid: CG.Purple.Directors.IArchiveDirector.ArchiveMessagesAsync(System.Int32,System.String,CancellationToken)
+  name: ArchiveMessagesAsync(Int32, String, CancellationToken)
+  href: api/CG.Purple.Directors.IArchiveDirector.html#CG_Purple_Directors_IArchiveDirector_ArchiveMessagesAsync_System_Int32_System_String_CancellationToken_
+  commentId: M:CG.Purple.Directors.IArchiveDirector.ArchiveMessagesAsync(System.Int32,System.String,CancellationToken)
+  fullName: CG.Purple.Directors.IArchiveDirector.ArchiveMessagesAsync(System.Int32, System.String, CancellationToken)
+  nameWithType: IArchiveDirector.ArchiveMessagesAsync(Int32, String, CancellationToken)
 - uid: CG.Purple.Directors.IArchiveDirector.ArchiveMessagesAsync*
   name: ArchiveMessagesAsync
   href: api/CG.Purple.Directors.IArchiveDirector.html#CG_Purple_Directors_IArchiveDirector_ArchiveMessagesAsync_
@@ -295,12 +295,12 @@ references:
   commentId: F:CG.Purple.Host.Directors.ArchiveDirector._processLogManager
   fullName: CG.Purple.Host.Directors.ArchiveDirector._processLogManager
   nameWithType: ArchiveDirector._processLogManager
-- uid: CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync(System.Int32,CancellationToken)
-  name: ArchiveMessagesAsync(Int32, CancellationToken)
-  href: api/CG.Purple.Host.Directors.ArchiveDirector.html#CG_Purple_Host_Directors_ArchiveDirector_ArchiveMessagesAsync_System_Int32_CancellationToken_
-  commentId: M:CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync(System.Int32,CancellationToken)
-  fullName: CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync(System.Int32, CancellationToken)
-  nameWithType: ArchiveDirector.ArchiveMessagesAsync(Int32, CancellationToken)
+- uid: CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync(System.Int32,System.String,CancellationToken)
+  name: ArchiveMessagesAsync(Int32, String, CancellationToken)
+  href: api/CG.Purple.Host.Directors.ArchiveDirector.html#CG_Purple_Host_Directors_ArchiveDirector_ArchiveMessagesAsync_System_Int32_System_String_CancellationToken_
+  commentId: M:CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync(System.Int32,System.String,CancellationToken)
+  fullName: CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync(System.Int32, System.String, CancellationToken)
+  nameWithType: ArchiveDirector.ArchiveMessagesAsync(Int32, String, CancellationToken)
 - uid: CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync*
   name: ArchiveMessagesAsync
   href: api/CG.Purple.Host.Directors.ArchiveDirector.html#CG_Purple_Host_Directors_ArchiveDirector_ArchiveMessagesAsync_
@@ -904,6 +904,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessages
   nameWithType: Index.OnRefreshTextMessages
+- uid: CG.Purple.Host.Pages.Messages.Index.PropertyTypeManager
+  name: PropertyTypeManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_PropertyTypeManager
+  commentId: P:CG.Purple.Host.Pages.Messages.Index.PropertyTypeManager
+  fullName: CG.Purple.Host.Pages.Messages.Index.PropertyTypeManager
+  nameWithType: Index.PropertyTypeManager
+- uid: CG.Purple.Host.Pages.Messages.Index.PropertyTypeManager*
+  name: PropertyTypeManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_PropertyTypeManager_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.PropertyTypeManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.PropertyTypeManager
+  nameWithType: Index.PropertyTypeManager
 - uid: CG.Purple.Host.Pages.Messages.Index.SnackbarService
   name: SnackbarService
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_SnackbarService
@@ -1098,6 +1111,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnValidSubmit
   nameWithType: MessagePropertiesDialog.OnValidSubmit
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.PropertyTypes
+  name: PropertyTypes
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_PropertyTypes
+  commentId: P:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.PropertyTypes
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.PropertyTypes
+  nameWithType: MessagePropertiesDialog.PropertyTypes
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.PropertyTypes*
+  name: PropertyTypes
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_PropertyTypes_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.PropertyTypes
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.PropertyTypes
+  nameWithType: MessagePropertiesDialog.PropertyTypes
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.SnackbarService
   name: SnackbarService
   href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_SnackbarService
@@ -1182,6 +1208,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.OnValidSubmit
   nameWithType: MessagePropertyDialog.OnValidSubmit
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes
+  name: PropertyTypes
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_PropertyTypes
+  commentId: P:CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes
+  nameWithType: MessagePropertyDialog.PropertyTypes
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes*
+  name: PropertyTypes
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_PropertyTypes_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes
+  nameWithType: MessagePropertyDialog.PropertyTypes
 - uid: CG.Purple.Host.Services
   name: CG.Purple.Host.Services
   href: api/CG.Purple.Host.Services.html
@@ -1847,19 +1886,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IMailMessageManager.CreateAsync
   nameWithType: IMailMessageManager.CreateAsync
-- uid: CG.Purple.Managers.IMailMessageManager.DeleteAsync(MailMessage,System.String,CancellationToken)
-  name: DeleteAsync(MailMessage, String, CancellationToken)
-  href: api/CG.Purple.Managers.IMailMessageManager.html#CG_Purple_Managers_IMailMessageManager_DeleteAsync_MailMessage_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.IMailMessageManager.DeleteAsync(MailMessage,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.IMailMessageManager.DeleteAsync(MailMessage, System.String, CancellationToken)
-  nameWithType: IMailMessageManager.DeleteAsync(MailMessage, String, CancellationToken)
-- uid: CG.Purple.Managers.IMailMessageManager.DeleteAsync*
-  name: DeleteAsync
-  href: api/CG.Purple.Managers.IMailMessageManager.html#CG_Purple_Managers_IMailMessageManager_DeleteAsync_
-  commentId: Overload:CG.Purple.Managers.IMailMessageManager.DeleteAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.IMailMessageManager.DeleteAsync
-  nameWithType: IMailMessageManager.DeleteAsync
 - uid: CG.Purple.Managers.IMailMessageManager.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.Managers.IMailMessageManager.html#CG_Purple_Managers_IMailMessageManager_FindAllAsync_CancellationToken_
@@ -1899,19 +1925,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IMailMessageManager.FindByKeyAsync
   nameWithType: IMailMessageManager.FindByKeyAsync
-- uid: CG.Purple.Managers.IMailMessageManager.FindPendingAsync(CancellationToken)
-  name: FindPendingAsync(CancellationToken)
-  href: api/CG.Purple.Managers.IMailMessageManager.html#CG_Purple_Managers_IMailMessageManager_FindPendingAsync_CancellationToken_
-  commentId: M:CG.Purple.Managers.IMailMessageManager.FindPendingAsync(CancellationToken)
-  fullName: CG.Purple.Managers.IMailMessageManager.FindPendingAsync(CancellationToken)
-  nameWithType: IMailMessageManager.FindPendingAsync(CancellationToken)
-- uid: CG.Purple.Managers.IMailMessageManager.FindPendingAsync*
-  name: FindPendingAsync
-  href: api/CG.Purple.Managers.IMailMessageManager.html#CG_Purple_Managers_IMailMessageManager_FindPendingAsync_
-  commentId: Overload:CG.Purple.Managers.IMailMessageManager.FindPendingAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.IMailMessageManager.FindPendingAsync
-  nameWithType: IMailMessageManager.FindPendingAsync
 - uid: CG.Purple.Managers.IMailMessageManager.UpdateAsync(MailMessage,System.String,CancellationToken)
   name: UpdateAsync(MailMessage, String, CancellationToken)
   href: api/CG.Purple.Managers.IMailMessageManager.html#CG_Purple_Managers_IMailMessageManager_UpdateAsync_MailMessage_System_String_CancellationToken_
@@ -1957,6 +1970,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IMessageManager.CountAsync
   nameWithType: IMessageManager.CountAsync
+- uid: CG.Purple.Managers.IMessageManager.DeleteAsync(Message,System.String,CancellationToken)
+  name: DeleteAsync(Message, String, CancellationToken)
+  href: api/CG.Purple.Managers.IMessageManager.html#CG_Purple_Managers_IMessageManager_DeleteAsync_Message_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.IMessageManager.DeleteAsync(Message,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.IMessageManager.DeleteAsync(Message, System.String, CancellationToken)
+  nameWithType: IMessageManager.DeleteAsync(Message, String, CancellationToken)
+- uid: CG.Purple.Managers.IMessageManager.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Purple.Managers.IMessageManager.html#CG_Purple_Managers_IMessageManager_DeleteAsync_
+  commentId: Overload:CG.Purple.Managers.IMessageManager.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IMessageManager.DeleteAsync
+  nameWithType: IMessageManager.DeleteAsync
 - uid: CG.Purple.Managers.IMessageManager.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.Managers.IMessageManager.html#CG_Purple_Managers_IMessageManager_FindAllAsync_CancellationToken_
@@ -1996,6 +2022,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IMessageManager.FindByKeyAsync
   nameWithType: IMessageManager.FindByKeyAsync
+- uid: CG.Purple.Managers.IMessageManager.FindReadyToArchiveAsync(System.Int32,CancellationToken)
+  name: FindReadyToArchiveAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Managers.IMessageManager.html#CG_Purple_Managers_IMessageManager_FindReadyToArchiveAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Managers.IMessageManager.FindReadyToArchiveAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Managers.IMessageManager.FindReadyToArchiveAsync(System.Int32, CancellationToken)
+  nameWithType: IMessageManager.FindReadyToArchiveAsync(Int32, CancellationToken)
+- uid: CG.Purple.Managers.IMessageManager.FindReadyToArchiveAsync*
+  name: FindReadyToArchiveAsync
+  href: api/CG.Purple.Managers.IMessageManager.html#CG_Purple_Managers_IMessageManager_FindReadyToArchiveAsync_
+  commentId: Overload:CG.Purple.Managers.IMessageManager.FindReadyToArchiveAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IMessageManager.FindReadyToArchiveAsync
+  nameWithType: IMessageManager.FindReadyToArchiveAsync
 - uid: CG.Purple.Managers.IMessageManager.FindReadyToProcessAsync(CancellationToken)
   name: FindReadyToProcessAsync(CancellationToken)
   href: api/CG.Purple.Managers.IMessageManager.html#CG_Purple_Managers_IMessageManager_FindReadyToProcessAsync_CancellationToken_
@@ -2416,6 +2455,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IPropertyTypeManager.DeleteAsync
   nameWithType: IPropertyTypeManager.DeleteAsync
+- uid: CG.Purple.Managers.IPropertyTypeManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.IPropertyTypeManager.html#CG_Purple_Managers_IPropertyTypeManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.IPropertyTypeManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.IPropertyTypeManager.FindAllAsync(CancellationToken)
+  nameWithType: IPropertyTypeManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.IPropertyTypeManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.IPropertyTypeManager.html#CG_Purple_Managers_IPropertyTypeManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.IPropertyTypeManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IPropertyTypeManager.FindAllAsync
+  nameWithType: IPropertyTypeManager.FindAllAsync
 - uid: CG.Purple.Managers.IPropertyTypeManager.FindByNameAsync(System.String,CancellationToken)
   name: FindByNameAsync(String, CancellationToken)
   href: api/CG.Purple.Managers.IPropertyTypeManager.html#CG_Purple_Managers_IPropertyTypeManager_FindByNameAsync_System_String_CancellationToken_
@@ -2681,19 +2733,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ITextMessageManager.CreateAsync
   nameWithType: ITextMessageManager.CreateAsync
-- uid: CG.Purple.Managers.ITextMessageManager.DeleteAsync(TextMessage,System.String,CancellationToken)
-  name: DeleteAsync(TextMessage, String, CancellationToken)
-  href: api/CG.Purple.Managers.ITextMessageManager.html#CG_Purple_Managers_ITextMessageManager_DeleteAsync_TextMessage_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ITextMessageManager.DeleteAsync(TextMessage,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ITextMessageManager.DeleteAsync(TextMessage, System.String, CancellationToken)
-  nameWithType: ITextMessageManager.DeleteAsync(TextMessage, String, CancellationToken)
-- uid: CG.Purple.Managers.ITextMessageManager.DeleteAsync*
-  name: DeleteAsync
-  href: api/CG.Purple.Managers.ITextMessageManager.html#CG_Purple_Managers_ITextMessageManager_DeleteAsync_
-  commentId: Overload:CG.Purple.Managers.ITextMessageManager.DeleteAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.ITextMessageManager.DeleteAsync
-  nameWithType: ITextMessageManager.DeleteAsync
 - uid: CG.Purple.Managers.ITextMessageManager.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.Managers.ITextMessageManager.html#CG_Purple_Managers_ITextMessageManager_FindAllAsync_CancellationToken_
@@ -2733,19 +2772,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ITextMessageManager.FindByKeyAsync
   nameWithType: ITextMessageManager.FindByKeyAsync
-- uid: CG.Purple.Managers.ITextMessageManager.FindPendingAsync(CancellationToken)
-  name: FindPendingAsync(CancellationToken)
-  href: api/CG.Purple.Managers.ITextMessageManager.html#CG_Purple_Managers_ITextMessageManager_FindPendingAsync_CancellationToken_
-  commentId: M:CG.Purple.Managers.ITextMessageManager.FindPendingAsync(CancellationToken)
-  fullName: CG.Purple.Managers.ITextMessageManager.FindPendingAsync(CancellationToken)
-  nameWithType: ITextMessageManager.FindPendingAsync(CancellationToken)
-- uid: CG.Purple.Managers.ITextMessageManager.FindPendingAsync*
-  name: FindPendingAsync
-  href: api/CG.Purple.Managers.ITextMessageManager.html#CG_Purple_Managers_ITextMessageManager_FindPendingAsync_
-  commentId: Overload:CG.Purple.Managers.ITextMessageManager.FindPendingAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.ITextMessageManager.FindPendingAsync
-  nameWithType: ITextMessageManager.FindPendingAsync
 - uid: CG.Purple.Managers.ITextMessageManager.UpdateAsync(TextMessage,System.String,CancellationToken)
   name: UpdateAsync(TextMessage, String, CancellationToken)
   href: api/CG.Purple.Managers.ITextMessageManager.html#CG_Purple_Managers_ITextMessageManager_UpdateAsync_TextMessage_System_String_CancellationToken_
@@ -2844,19 +2870,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MailMessageManager.CreateAsync
   nameWithType: MailMessageManager.CreateAsync
-- uid: CG.Purple.Managers.MailMessageManager.DeleteAsync(MailMessage,System.String,CancellationToken)
-  name: DeleteAsync(MailMessage, String, CancellationToken)
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_DeleteAsync_MailMessage_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.MailMessageManager.DeleteAsync(MailMessage,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.MailMessageManager.DeleteAsync(MailMessage, System.String, CancellationToken)
-  nameWithType: MailMessageManager.DeleteAsync(MailMessage, String, CancellationToken)
-- uid: CG.Purple.Managers.MailMessageManager.DeleteAsync*
-  name: DeleteAsync
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_DeleteAsync_
-  commentId: Overload:CG.Purple.Managers.MailMessageManager.DeleteAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.MailMessageManager.DeleteAsync
-  nameWithType: MailMessageManager.DeleteAsync
 - uid: CG.Purple.Managers.MailMessageManager.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_FindAllAsync_CancellationToken_
@@ -2896,19 +2909,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MailMessageManager.FindByKeyAsync
   nameWithType: MailMessageManager.FindByKeyAsync
-- uid: CG.Purple.Managers.MailMessageManager.FindPendingAsync(CancellationToken)
-  name: FindPendingAsync(CancellationToken)
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_FindPendingAsync_CancellationToken_
-  commentId: M:CG.Purple.Managers.MailMessageManager.FindPendingAsync(CancellationToken)
-  fullName: CG.Purple.Managers.MailMessageManager.FindPendingAsync(CancellationToken)
-  nameWithType: MailMessageManager.FindPendingAsync(CancellationToken)
-- uid: CG.Purple.Managers.MailMessageManager.FindPendingAsync*
-  name: FindPendingAsync
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_FindPendingAsync_
-  commentId: Overload:CG.Purple.Managers.MailMessageManager.FindPendingAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.MailMessageManager.FindPendingAsync
-  nameWithType: MailMessageManager.FindPendingAsync
 - uid: CG.Purple.Managers.MailMessageManager.UpdateAsync(MailMessage,System.String,CancellationToken)
   name: UpdateAsync(MailMessage, String, CancellationToken)
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_UpdateAsync_MailMessage_System_String_CancellationToken_
@@ -2965,13 +2965,13 @@ references:
   commentId: T:CG.Purple.Managers.MessageManager
   fullName: CG.Purple.Managers.MessageManager
   nameWithType: MessageManager
-- uid: CG.Purple.Managers.MessageManager.#ctor(IMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessageManager})
+- uid: CG.Purple.Managers.MessageManager.#ctor(CG.Purple.Repositories.IMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessageManager})
   name: MessageManager(IMessageRepository, IDistributedCache, ILogger<IMessageManager>)
-  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager__ctor_IMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMessageManager__
-  commentId: M:CG.Purple.Managers.MessageManager.#ctor(IMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessageManager})
+  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager__ctor_CG_Purple_Repositories_IMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMessageManager__
+  commentId: M:CG.Purple.Managers.MessageManager.#ctor(CG.Purple.Repositories.IMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessageManager})
   name.vb: MessageManager(IMessageRepository, IDistributedCache, ILogger(Of IMessageManager))
-  fullName: CG.Purple.Managers.MessageManager.MessageManager(IMessageRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMessageManager>)
-  fullName.vb: CG.Purple.Managers.MessageManager.MessageManager(IMessageRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMessageManager))
+  fullName: CG.Purple.Managers.MessageManager.MessageManager(CG.Purple.Repositories.IMessageRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMessageManager>)
+  fullName.vb: CG.Purple.Managers.MessageManager.MessageManager(CG.Purple.Repositories.IMessageRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMessageManager))
   nameWithType: MessageManager.MessageManager(IMessageRepository, IDistributedCache, ILogger<IMessageManager>)
   nameWithType.vb: MessageManager.MessageManager(IMessageRepository, IDistributedCache, ILogger(Of IMessageManager))
 - uid: CG.Purple.Managers.MessageManager.#ctor*
@@ -3031,6 +3031,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MessageManager.CountAsync
   nameWithType: MessageManager.CountAsync
+- uid: CG.Purple.Managers.MessageManager.DeleteAsync(Message,System.String,CancellationToken)
+  name: DeleteAsync(Message, String, CancellationToken)
+  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_DeleteAsync_Message_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.MessageManager.DeleteAsync(Message,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.MessageManager.DeleteAsync(Message, System.String, CancellationToken)
+  nameWithType: MessageManager.DeleteAsync(Message, String, CancellationToken)
+- uid: CG.Purple.Managers.MessageManager.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_DeleteAsync_
+  commentId: Overload:CG.Purple.Managers.MessageManager.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.MessageManager.DeleteAsync
+  nameWithType: MessageManager.DeleteAsync
 - uid: CG.Purple.Managers.MessageManager.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_FindAllAsync_CancellationToken_
@@ -3070,6 +3083,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MessageManager.FindByKeyAsync
   nameWithType: MessageManager.FindByKeyAsync
+- uid: CG.Purple.Managers.MessageManager.FindReadyToArchiveAsync(System.Int32,CancellationToken)
+  name: FindReadyToArchiveAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_FindReadyToArchiveAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Managers.MessageManager.FindReadyToArchiveAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Managers.MessageManager.FindReadyToArchiveAsync(System.Int32, CancellationToken)
+  nameWithType: MessageManager.FindReadyToArchiveAsync(Int32, CancellationToken)
+- uid: CG.Purple.Managers.MessageManager.FindReadyToArchiveAsync*
+  name: FindReadyToArchiveAsync
+  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_FindReadyToArchiveAsync_
+  commentId: Overload:CG.Purple.Managers.MessageManager.FindReadyToArchiveAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.MessageManager.FindReadyToArchiveAsync
+  nameWithType: MessageManager.FindReadyToArchiveAsync
 - uid: CG.Purple.Managers.MessageManager.FindReadyToProcessAsync(CancellationToken)
   name: FindReadyToProcessAsync(CancellationToken)
   href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_FindReadyToProcessAsync_CancellationToken_
@@ -3859,6 +3885,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.PropertyTypeManager.DeleteAsync
   nameWithType: PropertyTypeManager.DeleteAsync
+- uid: CG.Purple.Managers.PropertyTypeManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.PropertyTypeManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.PropertyTypeManager.FindAllAsync(CancellationToken)
+  nameWithType: PropertyTypeManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.PropertyTypeManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.PropertyTypeManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.PropertyTypeManager.FindAllAsync
+  nameWithType: PropertyTypeManager.FindAllAsync
 - uid: CG.Purple.Managers.PropertyTypeManager.FindByNameAsync(System.String,CancellationToken)
   name: FindByNameAsync(String, CancellationToken)
   href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager_FindByNameAsync_System_String_CancellationToken_
@@ -4250,19 +4289,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.TextMessageManager.CreateAsync
   nameWithType: TextMessageManager.CreateAsync
-- uid: CG.Purple.Managers.TextMessageManager.DeleteAsync(TextMessage,System.String,CancellationToken)
-  name: DeleteAsync(TextMessage, String, CancellationToken)
-  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager_DeleteAsync_TextMessage_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.TextMessageManager.DeleteAsync(TextMessage,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.TextMessageManager.DeleteAsync(TextMessage, System.String, CancellationToken)
-  nameWithType: TextMessageManager.DeleteAsync(TextMessage, String, CancellationToken)
-- uid: CG.Purple.Managers.TextMessageManager.DeleteAsync*
-  name: DeleteAsync
-  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager_DeleteAsync_
-  commentId: Overload:CG.Purple.Managers.TextMessageManager.DeleteAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.TextMessageManager.DeleteAsync
-  nameWithType: TextMessageManager.DeleteAsync
 - uid: CG.Purple.Managers.TextMessageManager.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager_FindAllAsync_CancellationToken_
@@ -4302,19 +4328,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.TextMessageManager.FindByKeyAsync
   nameWithType: TextMessageManager.FindByKeyAsync
-- uid: CG.Purple.Managers.TextMessageManager.FindPendingAsync(CancellationToken)
-  name: FindPendingAsync(CancellationToken)
-  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager_FindPendingAsync_CancellationToken_
-  commentId: M:CG.Purple.Managers.TextMessageManager.FindPendingAsync(CancellationToken)
-  fullName: CG.Purple.Managers.TextMessageManager.FindPendingAsync(CancellationToken)
-  nameWithType: TextMessageManager.FindPendingAsync(CancellationToken)
-- uid: CG.Purple.Managers.TextMessageManager.FindPendingAsync*
-  name: FindPendingAsync
-  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager_FindPendingAsync_
-  commentId: Overload:CG.Purple.Managers.TextMessageManager.FindPendingAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.TextMessageManager.FindPendingAsync
-  nameWithType: TextMessageManager.FindPendingAsync
 - uid: CG.Purple.Managers.TextMessageManager.UpdateAsync(TextMessage,System.String,CancellationToken)
   name: UpdateAsync(TextMessage, String, CancellationToken)
   href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager_UpdateAsync_TextMessage_System_String_CancellationToken_
@@ -4792,6 +4805,70 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.MessageProperty.Value
   nameWithType: MessageProperty.Value
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer
+  name: MessagePropertyEqualityComparer
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html
+  commentId: T:CG.Purple.Models.MessagePropertyEqualityComparer
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer
+  nameWithType: MessagePropertyEqualityComparer
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer.#ctor
+  name: MessagePropertyEqualityComparer()
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html#CG_Purple_Models_MessagePropertyEqualityComparer__ctor
+  commentId: M:CG.Purple.Models.MessagePropertyEqualityComparer.#ctor
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer.MessagePropertyEqualityComparer()
+  nameWithType: MessagePropertyEqualityComparer.MessagePropertyEqualityComparer()
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer.#ctor*
+  name: MessagePropertyEqualityComparer
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html#CG_Purple_Models_MessagePropertyEqualityComparer__ctor_
+  commentId: Overload:CG.Purple.Models.MessagePropertyEqualityComparer.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer.MessagePropertyEqualityComparer
+  nameWithType: MessagePropertyEqualityComparer.MessagePropertyEqualityComparer
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer._instance
+  name: _instance
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html#CG_Purple_Models_MessagePropertyEqualityComparer__instance
+  commentId: F:CG.Purple.Models.MessagePropertyEqualityComparer._instance
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer._instance
+  nameWithType: MessagePropertyEqualityComparer._instance
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer.Equals(CG.Purple.Models.MessageProperty,CG.Purple.Models.MessageProperty)
+  name: Equals(MessageProperty, MessageProperty)
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html#CG_Purple_Models_MessagePropertyEqualityComparer_Equals_CG_Purple_Models_MessageProperty_CG_Purple_Models_MessageProperty_
+  commentId: M:CG.Purple.Models.MessagePropertyEqualityComparer.Equals(CG.Purple.Models.MessageProperty,CG.Purple.Models.MessageProperty)
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer.Equals(CG.Purple.Models.MessageProperty, CG.Purple.Models.MessageProperty)
+  nameWithType: MessagePropertyEqualityComparer.Equals(MessageProperty, MessageProperty)
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer.Equals*
+  name: Equals
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html#CG_Purple_Models_MessagePropertyEqualityComparer_Equals_
+  commentId: Overload:CG.Purple.Models.MessagePropertyEqualityComparer.Equals
+  isSpec: "True"
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer.Equals
+  nameWithType: MessagePropertyEqualityComparer.Equals
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer.GetHashCode(CG.Purple.Models.MessageProperty)
+  name: GetHashCode(MessageProperty)
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html#CG_Purple_Models_MessagePropertyEqualityComparer_GetHashCode_CG_Purple_Models_MessageProperty_
+  commentId: M:CG.Purple.Models.MessagePropertyEqualityComparer.GetHashCode(CG.Purple.Models.MessageProperty)
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer.GetHashCode(CG.Purple.Models.MessageProperty)
+  nameWithType: MessagePropertyEqualityComparer.GetHashCode(MessageProperty)
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer.GetHashCode*
+  name: GetHashCode
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html#CG_Purple_Models_MessagePropertyEqualityComparer_GetHashCode_
+  commentId: Overload:CG.Purple.Models.MessagePropertyEqualityComparer.GetHashCode
+  isSpec: "True"
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer.GetHashCode
+  nameWithType: MessagePropertyEqualityComparer.GetHashCode
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer.Instance
+  name: Instance()
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html#CG_Purple_Models_MessagePropertyEqualityComparer_Instance
+  commentId: M:CG.Purple.Models.MessagePropertyEqualityComparer.Instance
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer.Instance()
+  nameWithType: MessagePropertyEqualityComparer.Instance()
+- uid: CG.Purple.Models.MessagePropertyEqualityComparer.Instance*
+  name: Instance
+  href: api/CG.Purple.Models.MessagePropertyEqualityComparer.html#CG_Purple_Models_MessagePropertyEqualityComparer_Instance_
+  commentId: Overload:CG.Purple.Models.MessagePropertyEqualityComparer.Instance
+  isSpec: "True"
+  fullName: CG.Purple.Models.MessagePropertyEqualityComparer.Instance
+  nameWithType: MessagePropertyEqualityComparer.Instance
 - uid: CG.Purple.Models.MessageState
   name: MessageState
   href: api/CG.Purple.Models.MessageState.html
@@ -5204,6 +5281,70 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.PropertyType.Name
   nameWithType: PropertyType.Name
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer
+  name: PropertyTypeEqualityComparer
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html
+  commentId: T:CG.Purple.Models.PropertyTypeEqualityComparer
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer
+  nameWithType: PropertyTypeEqualityComparer
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer.#ctor
+  name: PropertyTypeEqualityComparer()
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html#CG_Purple_Models_PropertyTypeEqualityComparer__ctor
+  commentId: M:CG.Purple.Models.PropertyTypeEqualityComparer.#ctor
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer.PropertyTypeEqualityComparer()
+  nameWithType: PropertyTypeEqualityComparer.PropertyTypeEqualityComparer()
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer.#ctor*
+  name: PropertyTypeEqualityComparer
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html#CG_Purple_Models_PropertyTypeEqualityComparer__ctor_
+  commentId: Overload:CG.Purple.Models.PropertyTypeEqualityComparer.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer.PropertyTypeEqualityComparer
+  nameWithType: PropertyTypeEqualityComparer.PropertyTypeEqualityComparer
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer._instance
+  name: _instance
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html#CG_Purple_Models_PropertyTypeEqualityComparer__instance
+  commentId: F:CG.Purple.Models.PropertyTypeEqualityComparer._instance
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer._instance
+  nameWithType: PropertyTypeEqualityComparer._instance
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer.Equals(CG.Purple.Models.PropertyType,CG.Purple.Models.PropertyType)
+  name: Equals(PropertyType, PropertyType)
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html#CG_Purple_Models_PropertyTypeEqualityComparer_Equals_CG_Purple_Models_PropertyType_CG_Purple_Models_PropertyType_
+  commentId: M:CG.Purple.Models.PropertyTypeEqualityComparer.Equals(CG.Purple.Models.PropertyType,CG.Purple.Models.PropertyType)
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer.Equals(CG.Purple.Models.PropertyType, CG.Purple.Models.PropertyType)
+  nameWithType: PropertyTypeEqualityComparer.Equals(PropertyType, PropertyType)
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer.Equals*
+  name: Equals
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html#CG_Purple_Models_PropertyTypeEqualityComparer_Equals_
+  commentId: Overload:CG.Purple.Models.PropertyTypeEqualityComparer.Equals
+  isSpec: "True"
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer.Equals
+  nameWithType: PropertyTypeEqualityComparer.Equals
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer.GetHashCode(CG.Purple.Models.PropertyType)
+  name: GetHashCode(PropertyType)
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html#CG_Purple_Models_PropertyTypeEqualityComparer_GetHashCode_CG_Purple_Models_PropertyType_
+  commentId: M:CG.Purple.Models.PropertyTypeEqualityComparer.GetHashCode(CG.Purple.Models.PropertyType)
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer.GetHashCode(CG.Purple.Models.PropertyType)
+  nameWithType: PropertyTypeEqualityComparer.GetHashCode(PropertyType)
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer.GetHashCode*
+  name: GetHashCode
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html#CG_Purple_Models_PropertyTypeEqualityComparer_GetHashCode_
+  commentId: Overload:CG.Purple.Models.PropertyTypeEqualityComparer.GetHashCode
+  isSpec: "True"
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer.GetHashCode
+  nameWithType: PropertyTypeEqualityComparer.GetHashCode
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer.Instance
+  name: Instance()
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html#CG_Purple_Models_PropertyTypeEqualityComparer_Instance
+  commentId: M:CG.Purple.Models.PropertyTypeEqualityComparer.Instance
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer.Instance()
+  nameWithType: PropertyTypeEqualityComparer.Instance()
+- uid: CG.Purple.Models.PropertyTypeEqualityComparer.Instance*
+  name: Instance
+  href: api/CG.Purple.Models.PropertyTypeEqualityComparer.html#CG_Purple_Models_PropertyTypeEqualityComparer_Instance_
+  commentId: Overload:CG.Purple.Models.PropertyTypeEqualityComparer.Instance
+  isSpec: "True"
+  fullName: CG.Purple.Models.PropertyTypeEqualityComparer.Instance
+  nameWithType: PropertyTypeEqualityComparer.Instance
 - uid: CG.Purple.Models.ProviderParameter
   name: ProviderParameter
   href: api/CG.Purple.Models.ProviderParameter.html
@@ -5223,19 +5364,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.ProviderParameter.ParameterType
   nameWithType: ProviderParameter.ParameterType
-- uid: CG.Purple.Models.ProviderParameter.ParameterTypeId
-  name: ParameterTypeId
-  href: api/CG.Purple.Models.ProviderParameter.html#CG_Purple_Models_ProviderParameter_ParameterTypeId
-  commentId: P:CG.Purple.Models.ProviderParameter.ParameterTypeId
-  fullName: CG.Purple.Models.ProviderParameter.ParameterTypeId
-  nameWithType: ProviderParameter.ParameterTypeId
-- uid: CG.Purple.Models.ProviderParameter.ParameterTypeId*
-  name: ParameterTypeId
-  href: api/CG.Purple.Models.ProviderParameter.html#CG_Purple_Models_ProviderParameter_ParameterTypeId_
-  commentId: Overload:CG.Purple.Models.ProviderParameter.ParameterTypeId
-  isSpec: "True"
-  fullName: CG.Purple.Models.ProviderParameter.ParameterTypeId
-  nameWithType: ProviderParameter.ParameterTypeId
 - uid: CG.Purple.Models.ProviderParameter.ProviderType
   name: ProviderType
   href: api/CG.Purple.Models.ProviderParameter.html#CG_Purple_Models_ProviderParameter_ProviderType
@@ -5249,19 +5377,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.ProviderParameter.ProviderType
   nameWithType: ProviderParameter.ProviderType
-- uid: CG.Purple.Models.ProviderParameter.ProviderTypeId
-  name: ProviderTypeId
-  href: api/CG.Purple.Models.ProviderParameter.html#CG_Purple_Models_ProviderParameter_ProviderTypeId
-  commentId: P:CG.Purple.Models.ProviderParameter.ProviderTypeId
-  fullName: CG.Purple.Models.ProviderParameter.ProviderTypeId
-  nameWithType: ProviderParameter.ProviderTypeId
-- uid: CG.Purple.Models.ProviderParameter.ProviderTypeId*
-  name: ProviderTypeId
-  href: api/CG.Purple.Models.ProviderParameter.html#CG_Purple_Models_ProviderParameter_ProviderTypeId_
-  commentId: Overload:CG.Purple.Models.ProviderParameter.ProviderTypeId
-  isSpec: "True"
-  fullName: CG.Purple.Models.ProviderParameter.ProviderTypeId
-  nameWithType: ProviderParameter.ProviderTypeId
 - uid: CG.Purple.Models.ProviderParameter.Value
   name: Value
   href: api/CG.Purple.Models.ProviderParameter.html#CG_Purple_Models_ProviderParameter_Value
@@ -6014,19 +6129,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IMailMessageRepository.CreateAsync
   nameWithType: IMailMessageRepository.CreateAsync
-- uid: CG.Purple.Repositories.IMailMessageRepository.DeleteAsync(MailMessage,CancellationToken)
-  name: DeleteAsync(MailMessage, CancellationToken)
-  href: api/CG.Purple.Repositories.IMailMessageRepository.html#CG_Purple_Repositories_IMailMessageRepository_DeleteAsync_MailMessage_CancellationToken_
-  commentId: M:CG.Purple.Repositories.IMailMessageRepository.DeleteAsync(MailMessage,CancellationToken)
-  fullName: CG.Purple.Repositories.IMailMessageRepository.DeleteAsync(MailMessage, CancellationToken)
-  nameWithType: IMailMessageRepository.DeleteAsync(MailMessage, CancellationToken)
-- uid: CG.Purple.Repositories.IMailMessageRepository.DeleteAsync*
-  name: DeleteAsync
-  href: api/CG.Purple.Repositories.IMailMessageRepository.html#CG_Purple_Repositories_IMailMessageRepository_DeleteAsync_
-  commentId: Overload:CG.Purple.Repositories.IMailMessageRepository.DeleteAsync
-  isSpec: "True"
-  fullName: CG.Purple.Repositories.IMailMessageRepository.DeleteAsync
-  nameWithType: IMailMessageRepository.DeleteAsync
 - uid: CG.Purple.Repositories.IMailMessageRepository.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.Repositories.IMailMessageRepository.html#CG_Purple_Repositories_IMailMessageRepository_FindAllAsync_CancellationToken_
@@ -6066,19 +6168,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IMailMessageRepository.FindByKeyAsync
   nameWithType: IMailMessageRepository.FindByKeyAsync
-- uid: CG.Purple.Repositories.IMailMessageRepository.FindPendingAsync(CancellationToken)
-  name: FindPendingAsync(CancellationToken)
-  href: api/CG.Purple.Repositories.IMailMessageRepository.html#CG_Purple_Repositories_IMailMessageRepository_FindPendingAsync_CancellationToken_
-  commentId: M:CG.Purple.Repositories.IMailMessageRepository.FindPendingAsync(CancellationToken)
-  fullName: CG.Purple.Repositories.IMailMessageRepository.FindPendingAsync(CancellationToken)
-  nameWithType: IMailMessageRepository.FindPendingAsync(CancellationToken)
-- uid: CG.Purple.Repositories.IMailMessageRepository.FindPendingAsync*
-  name: FindPendingAsync
-  href: api/CG.Purple.Repositories.IMailMessageRepository.html#CG_Purple_Repositories_IMailMessageRepository_FindPendingAsync_
-  commentId: Overload:CG.Purple.Repositories.IMailMessageRepository.FindPendingAsync
-  isSpec: "True"
-  fullName: CG.Purple.Repositories.IMailMessageRepository.FindPendingAsync
-  nameWithType: IMailMessageRepository.FindPendingAsync
 - uid: CG.Purple.Repositories.IMailMessageRepository.UpdateAsync(MailMessage,CancellationToken)
   name: UpdateAsync(MailMessage, CancellationToken)
   href: api/CG.Purple.Repositories.IMailMessageRepository.html#CG_Purple_Repositories_IMailMessageRepository_UpdateAsync_MailMessage_CancellationToken_
@@ -6195,6 +6284,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IMessageRepository.CountAsync
   nameWithType: IMessageRepository.CountAsync
+- uid: CG.Purple.Repositories.IMessageRepository.DeleteAsync(Message,CancellationToken)
+  name: DeleteAsync(Message, CancellationToken)
+  href: api/CG.Purple.Repositories.IMessageRepository.html#CG_Purple_Repositories_IMessageRepository_DeleteAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IMessageRepository.DeleteAsync(Message,CancellationToken)
+  fullName: CG.Purple.Repositories.IMessageRepository.DeleteAsync(Message, CancellationToken)
+  nameWithType: IMessageRepository.DeleteAsync(Message, CancellationToken)
+- uid: CG.Purple.Repositories.IMessageRepository.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Purple.Repositories.IMessageRepository.html#CG_Purple_Repositories_IMessageRepository_DeleteAsync_
+  commentId: Overload:CG.Purple.Repositories.IMessageRepository.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IMessageRepository.DeleteAsync
+  nameWithType: IMessageRepository.DeleteAsync
 - uid: CG.Purple.Repositories.IMessageRepository.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.Repositories.IMessageRepository.html#CG_Purple_Repositories_IMessageRepository_FindAllAsync_CancellationToken_
@@ -6234,6 +6336,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IMessageRepository.FindByKeyAsync
   nameWithType: IMessageRepository.FindByKeyAsync
+- uid: CG.Purple.Repositories.IMessageRepository.FindReadyToArchiveAsync(System.Int32,CancellationToken)
+  name: FindReadyToArchiveAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Repositories.IMessageRepository.html#CG_Purple_Repositories_IMessageRepository_FindReadyToArchiveAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IMessageRepository.FindReadyToArchiveAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Repositories.IMessageRepository.FindReadyToArchiveAsync(System.Int32, CancellationToken)
+  nameWithType: IMessageRepository.FindReadyToArchiveAsync(Int32, CancellationToken)
+- uid: CG.Purple.Repositories.IMessageRepository.FindReadyToArchiveAsync*
+  name: FindReadyToArchiveAsync
+  href: api/CG.Purple.Repositories.IMessageRepository.html#CG_Purple_Repositories_IMessageRepository_FindReadyToArchiveAsync_
+  commentId: Overload:CG.Purple.Repositories.IMessageRepository.FindReadyToArchiveAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IMessageRepository.FindReadyToArchiveAsync
+  nameWithType: IMessageRepository.FindReadyToArchiveAsync
 - uid: CG.Purple.Repositories.IMessageRepository.FindReadyToProcessAsync(CancellationToken)
   name: FindReadyToProcessAsync(CancellationToken)
   href: api/CG.Purple.Repositories.IMessageRepository.html#CG_Purple_Repositories_IMessageRepository_FindReadyToProcessAsync_CancellationToken_
@@ -6583,6 +6698,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IPropertyTypeRepository.DeleteAsync
   nameWithType: IPropertyTypeRepository.DeleteAsync
+- uid: CG.Purple.Repositories.IPropertyTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Repositories.IPropertyTypeRepository.html#CG_Purple_Repositories_IPropertyTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IPropertyTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Repositories.IPropertyTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: IPropertyTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Repositories.IPropertyTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Repositories.IPropertyTypeRepository.html#CG_Purple_Repositories_IPropertyTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.Repositories.IPropertyTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IPropertyTypeRepository.FindAllAsync
+  nameWithType: IPropertyTypeRepository.FindAllAsync
 - uid: CG.Purple.Repositories.IPropertyTypeRepository.FindByNameAsync(System.String,CancellationToken)
   name: FindByNameAsync(String, CancellationToken)
   href: api/CG.Purple.Repositories.IPropertyTypeRepository.html#CG_Purple_Repositories_IPropertyTypeRepository_FindByNameAsync_System_String_CancellationToken_
@@ -6848,19 +6976,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.ITextMessageRepository.CreateAsync
   nameWithType: ITextMessageRepository.CreateAsync
-- uid: CG.Purple.Repositories.ITextMessageRepository.DeleteAsync(TextMessage,CancellationToken)
-  name: DeleteAsync(TextMessage, CancellationToken)
-  href: api/CG.Purple.Repositories.ITextMessageRepository.html#CG_Purple_Repositories_ITextMessageRepository_DeleteAsync_TextMessage_CancellationToken_
-  commentId: M:CG.Purple.Repositories.ITextMessageRepository.DeleteAsync(TextMessage,CancellationToken)
-  fullName: CG.Purple.Repositories.ITextMessageRepository.DeleteAsync(TextMessage, CancellationToken)
-  nameWithType: ITextMessageRepository.DeleteAsync(TextMessage, CancellationToken)
-- uid: CG.Purple.Repositories.ITextMessageRepository.DeleteAsync*
-  name: DeleteAsync
-  href: api/CG.Purple.Repositories.ITextMessageRepository.html#CG_Purple_Repositories_ITextMessageRepository_DeleteAsync_
-  commentId: Overload:CG.Purple.Repositories.ITextMessageRepository.DeleteAsync
-  isSpec: "True"
-  fullName: CG.Purple.Repositories.ITextMessageRepository.DeleteAsync
-  nameWithType: ITextMessageRepository.DeleteAsync
 - uid: CG.Purple.Repositories.ITextMessageRepository.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.Repositories.ITextMessageRepository.html#CG_Purple_Repositories_ITextMessageRepository_FindAllAsync_CancellationToken_
@@ -6900,19 +7015,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.ITextMessageRepository.FindByKeyAsync
   nameWithType: ITextMessageRepository.FindByKeyAsync
-- uid: CG.Purple.Repositories.ITextMessageRepository.FindPendingAsync(CancellationToken)
-  name: FindPendingAsync(CancellationToken)
-  href: api/CG.Purple.Repositories.ITextMessageRepository.html#CG_Purple_Repositories_ITextMessageRepository_FindPendingAsync_CancellationToken_
-  commentId: M:CG.Purple.Repositories.ITextMessageRepository.FindPendingAsync(CancellationToken)
-  fullName: CG.Purple.Repositories.ITextMessageRepository.FindPendingAsync(CancellationToken)
-  nameWithType: ITextMessageRepository.FindPendingAsync(CancellationToken)
-- uid: CG.Purple.Repositories.ITextMessageRepository.FindPendingAsync*
-  name: FindPendingAsync
-  href: api/CG.Purple.Repositories.ITextMessageRepository.html#CG_Purple_Repositories_ITextMessageRepository_FindPendingAsync_
-  commentId: Overload:CG.Purple.Repositories.ITextMessageRepository.FindPendingAsync
-  isSpec: "True"
-  fullName: CG.Purple.Repositories.ITextMessageRepository.FindPendingAsync
-  nameWithType: ITextMessageRepository.FindPendingAsync
 - uid: CG.Purple.Repositories.ITextMessageRepository.UpdateAsync(TextMessage,CancellationToken)
   name: UpdateAsync(TextMessage, CancellationToken)
   href: api/CG.Purple.Repositories.ITextMessageRepository.html#CG_Purple_Repositories_ITextMessageRepository_UpdateAsync_TextMessage_CancellationToken_
@@ -10257,19 +10359,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.MailMessageRepository.CreateAsync
   nameWithType: MailMessageRepository.CreateAsync
-- uid: CG.Purple.SqlServer.Repositories.MailMessageRepository.DeleteAsync(MailMessage,CancellationToken)
-  name: DeleteAsync(MailMessage, CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.MailMessageRepository.html#CG_Purple_SqlServer_Repositories_MailMessageRepository_DeleteAsync_MailMessage_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.MailMessageRepository.DeleteAsync(MailMessage,CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.MailMessageRepository.DeleteAsync(MailMessage, CancellationToken)
-  nameWithType: MailMessageRepository.DeleteAsync(MailMessage, CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.MailMessageRepository.DeleteAsync*
-  name: DeleteAsync
-  href: api/CG.Purple.SqlServer.Repositories.MailMessageRepository.html#CG_Purple_SqlServer_Repositories_MailMessageRepository_DeleteAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.MailMessageRepository.DeleteAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.MailMessageRepository.DeleteAsync
-  nameWithType: MailMessageRepository.DeleteAsync
 - uid: CG.Purple.SqlServer.Repositories.MailMessageRepository.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.MailMessageRepository.html#CG_Purple_SqlServer_Repositories_MailMessageRepository_FindAllAsync_CancellationToken_
@@ -10309,19 +10398,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.MailMessageRepository.FindByKeyAsync
   nameWithType: MailMessageRepository.FindByKeyAsync
-- uid: CG.Purple.SqlServer.Repositories.MailMessageRepository.FindPendingAsync(CancellationToken)
-  name: FindPendingAsync(CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.MailMessageRepository.html#CG_Purple_SqlServer_Repositories_MailMessageRepository_FindPendingAsync_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.MailMessageRepository.FindPendingAsync(CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.MailMessageRepository.FindPendingAsync(CancellationToken)
-  nameWithType: MailMessageRepository.FindPendingAsync(CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.MailMessageRepository.FindPendingAsync*
-  name: FindPendingAsync
-  href: api/CG.Purple.SqlServer.Repositories.MailMessageRepository.html#CG_Purple_SqlServer_Repositories_MailMessageRepository_FindPendingAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.MailMessageRepository.FindPendingAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.MailMessageRepository.FindPendingAsync
-  nameWithType: MailMessageRepository.FindPendingAsync
 - uid: CG.Purple.SqlServer.Repositories.MailMessageRepository.UpdateAsync(MailMessage,CancellationToken)
   name: UpdateAsync(MailMessage, CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.MailMessageRepository.html#CG_Purple_SqlServer_Repositories_MailMessageRepository_UpdateAsync_MailMessage_CancellationToken_
@@ -10506,6 +10582,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.MessageRepository.CountAsync
   nameWithType: MessageRepository.CountAsync
+- uid: CG.Purple.SqlServer.Repositories.MessageRepository.DeleteAsync(Message,CancellationToken)
+  name: DeleteAsync(Message, CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MessageRepository.html#CG_Purple_SqlServer_Repositories_MessageRepository_DeleteAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageRepository.DeleteAsync(Message,CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MessageRepository.DeleteAsync(Message, CancellationToken)
+  nameWithType: MessageRepository.DeleteAsync(Message, CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MessageRepository.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Purple.SqlServer.Repositories.MessageRepository.html#CG_Purple_SqlServer_Repositories_MessageRepository_DeleteAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageRepository.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageRepository.DeleteAsync
+  nameWithType: MessageRepository.DeleteAsync
 - uid: CG.Purple.SqlServer.Repositories.MessageRepository.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.MessageRepository.html#CG_Purple_SqlServer_Repositories_MessageRepository_FindAllAsync_CancellationToken_
@@ -10545,6 +10634,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.MessageRepository.FindByKeyAsync
   nameWithType: MessageRepository.FindByKeyAsync
+- uid: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToArchiveAsync(System.Int32,CancellationToken)
+  name: FindReadyToArchiveAsync(Int32, CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MessageRepository.html#CG_Purple_SqlServer_Repositories_MessageRepository_FindReadyToArchiveAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToArchiveAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToArchiveAsync(System.Int32, CancellationToken)
+  nameWithType: MessageRepository.FindReadyToArchiveAsync(Int32, CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToArchiveAsync*
+  name: FindReadyToArchiveAsync
+  href: api/CG.Purple.SqlServer.Repositories.MessageRepository.html#CG_Purple_SqlServer_Repositories_MessageRepository_FindReadyToArchiveAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToArchiveAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToArchiveAsync
+  nameWithType: MessageRepository.FindReadyToArchiveAsync
 - uid: CG.Purple.SqlServer.Repositories.MessageRepository.FindReadyToProcessAsync(CancellationToken)
   name: FindReadyToProcessAsync(CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.MessageRepository.html#CG_Purple_SqlServer_Repositories_MessageRepository_FindReadyToProcessAsync_CancellationToken_
@@ -11030,6 +11132,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.PropertyTypeRepository.DeleteAsync
   nameWithType: PropertyTypeRepository.DeleteAsync
+- uid: CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.PropertyTypeRepository.html#CG_Purple_SqlServer_Repositories_PropertyTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: PropertyTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.SqlServer.Repositories.PropertyTypeRepository.html#CG_Purple_SqlServer_Repositories_PropertyTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindAllAsync
+  nameWithType: PropertyTypeRepository.FindAllAsync
 - uid: CG.Purple.SqlServer.Repositories.PropertyTypeRepository.FindByNameAsync(System.String,CancellationToken)
   name: FindByNameAsync(String, CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.PropertyTypeRepository.html#CG_Purple_SqlServer_Repositories_PropertyTypeRepository_FindByNameAsync_System_String_CancellationToken_
@@ -11397,19 +11512,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.TextMessageRepository.CreateAsync
   nameWithType: TextMessageRepository.CreateAsync
-- uid: CG.Purple.SqlServer.Repositories.TextMessageRepository.DeleteAsync(TextMessage,CancellationToken)
-  name: DeleteAsync(TextMessage, CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.TextMessageRepository.html#CG_Purple_SqlServer_Repositories_TextMessageRepository_DeleteAsync_TextMessage_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.TextMessageRepository.DeleteAsync(TextMessage,CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.TextMessageRepository.DeleteAsync(TextMessage, CancellationToken)
-  nameWithType: TextMessageRepository.DeleteAsync(TextMessage, CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.TextMessageRepository.DeleteAsync*
-  name: DeleteAsync
-  href: api/CG.Purple.SqlServer.Repositories.TextMessageRepository.html#CG_Purple_SqlServer_Repositories_TextMessageRepository_DeleteAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.TextMessageRepository.DeleteAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.TextMessageRepository.DeleteAsync
-  nameWithType: TextMessageRepository.DeleteAsync
 - uid: CG.Purple.SqlServer.Repositories.TextMessageRepository.FindAllAsync(CancellationToken)
   name: FindAllAsync(CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.TextMessageRepository.html#CG_Purple_SqlServer_Repositories_TextMessageRepository_FindAllAsync_CancellationToken_
@@ -11449,19 +11551,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.TextMessageRepository.FindByKeyAsync
   nameWithType: TextMessageRepository.FindByKeyAsync
-- uid: CG.Purple.SqlServer.Repositories.TextMessageRepository.FindPendingAsync(CancellationToken)
-  name: FindPendingAsync(CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.TextMessageRepository.html#CG_Purple_SqlServer_Repositories_TextMessageRepository_FindPendingAsync_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.TextMessageRepository.FindPendingAsync(CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.TextMessageRepository.FindPendingAsync(CancellationToken)
-  nameWithType: TextMessageRepository.FindPendingAsync(CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.TextMessageRepository.FindPendingAsync*
-  name: FindPendingAsync
-  href: api/CG.Purple.SqlServer.Repositories.TextMessageRepository.html#CG_Purple_SqlServer_Repositories_TextMessageRepository_FindPendingAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.TextMessageRepository.FindPendingAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.TextMessageRepository.FindPendingAsync
-  nameWithType: TextMessageRepository.FindPendingAsync
 - uid: CG.Purple.SqlServer.Repositories.TextMessageRepository.UpdateAsync(TextMessage,CancellationToken)
   name: UpdateAsync(TextMessage, CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.TextMessageRepository.html#CG_Purple_SqlServer_Repositories_TextMessageRepository_UpdateAsync_TextMessage_CancellationToken_

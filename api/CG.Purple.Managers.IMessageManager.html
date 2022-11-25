@@ -221,6 +221,81 @@ manager fails to complete the operation.</p>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Managers_IMessageManager_DeleteAsync_" data-uid="CG.Purple.Managers.IMessageManager.DeleteAsync*"></a>
+  <h4 id="CG_Purple_Managers_IMessageManager_DeleteAsync_Message_System_String_CancellationToken_" data-uid="CG.Purple.Managers.IMessageManager.DeleteAsync(Message,System.String,CancellationToken)">DeleteAsync(Message, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method deletes an existing <see cref="!:Message"></see> object from the
+underlying storage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task DeleteAsync(Message message, string userName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The model to delete from the underlying storage.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td><p>The user name of the person performing the
+operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Managers.ManagerException.html">ManagerException</a></td>
+        <td><p>This exception is thrown whenever the
+manager fails to complete the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Managers_IMessageManager_FindAllAsync_" data-uid="CG.Purple.Managers.IMessageManager.FindAllAsync*"></a>
   <h4 id="CG_Purple_Managers_IMessageManager_FindAllAsync_CancellationToken_" data-uid="CG.Purple.Managers.IMessageManager.FindAllAsync(CancellationToken)">FindAllAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method searches for a sequence of <see cref="!:Message"></see> objects.</p>
@@ -400,6 +475,76 @@ for the lifetime of the method.</p>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
         <td><p>A task to perform the operation that returns a matching <see cref="!:Message"></see>
 object, if one was found, or NULL otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Managers.ManagerException.html">ManagerException</a></td>
+        <td><p>This exception is thrown whenever the
+manager fails to complete the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Managers_IMessageManager_FindReadyToArchiveAsync_" data-uid="CG.Purple.Managers.IMessageManager.FindReadyToArchiveAsync*"></a>
+  <h4 id="CG_Purple_Managers_IMessageManager_FindReadyToArchiveAsync_System_Int32_CancellationToken_" data-uid="CG.Purple.Managers.IMessageManager.FindReadyToArchiveAsync(System.Int32,CancellationToken)">FindReadyToArchiveAsync(Int32, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method searches for a sequence of <see cref="!:Message"></see> objects
+that are older than the given number of days.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;Message&gt;&gt; FindReadyToArchiveAsync(int maxDaysToLive, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxDaysToLive</span></td>
+        <td><p>The maximum number of days a message can
+live in a terminal state before we archive it.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a sequence of matching
+<see cref="!:Message"></see> objects.</p>
 </td>
       </tr>
     </tbody>

@@ -129,7 +129,7 @@ interface.</p>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Managers_MessageManager__ctor_" data-uid="CG.Purple.Managers.MessageManager.#ctor*"></a>
-  <h4 id="CG_Purple_Managers_MessageManager__ctor_IMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMessageManager__" data-uid="CG.Purple.Managers.MessageManager.#ctor(IMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessageManager})">MessageManager(IMessageRepository, IDistributedCache, ILogger&lt;IMessageManager&gt;)</h4>
+  <h4 id="CG_Purple_Managers_MessageManager__ctor_CG_Purple_Repositories_IMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMessageManager__" data-uid="CG.Purple.Managers.MessageManager.#ctor(CG.Purple.Repositories.IMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessageManager})">MessageManager(IMessageRepository, IDistributedCache, ILogger&lt;IMessageManager&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Managers.MessageManager.html">MessageManager</a>
 class.</p>
 </div>
@@ -149,7 +149,7 @@ class.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IMessageRepository</span></td>
+        <td><a class="xref" href="CG.Purple.Repositories.IMessageRepository.html">IMessageRepository</a></td>
         <td><span class="parametername">MessageRepository</span></td>
         <td><p>The message repository to use
 with this manager.</p>
@@ -236,7 +236,7 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IMessageRepository</span></td>
+        <td><a class="xref" href="CG.Purple.Repositories.IMessageRepository.html">IMessageRepository</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -342,6 +342,56 @@ this manager.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Managers_MessageManager_DeleteAsync_" data-uid="CG.Purple.Managers.MessageManager.DeleteAsync*"></a>
+  <h4 id="CG_Purple_Managers_MessageManager_DeleteAsync_Message_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MessageManager.DeleteAsync(Message,System.String,CancellationToken)">DeleteAsync(Message, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task DeleteAsync(Message message, string userName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -472,6 +522,51 @@ this manager.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Managers_MessageManager_FindReadyToArchiveAsync_" data-uid="CG.Purple.Managers.MessageManager.FindReadyToArchiveAsync*"></a>
+  <h4 id="CG_Purple_Managers_MessageManager_FindReadyToArchiveAsync_System_Int32_CancellationToken_" data-uid="CG.Purple.Managers.MessageManager.FindReadyToArchiveAsync(System.Int32,CancellationToken)">FindReadyToArchiveAsync(Int32, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IEnumerable&lt;Message&gt;&gt; FindReadyToArchiveAsync(int maxDaysToLive, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxDaysToLive</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
