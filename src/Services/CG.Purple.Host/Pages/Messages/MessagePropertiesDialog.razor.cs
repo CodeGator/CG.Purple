@@ -33,6 +33,12 @@ public partial class MessagePropertiesDialog
     public Message Model { get; set; } = null!;
 
     /// <summary>
+    /// This property contains the valid property types.
+    /// </summary>
+    [Parameter]
+    public IEnumerable<PropertyType> PropertyTypes { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the dialog service for this page.
     /// </summary>
     [Inject]
@@ -119,10 +125,18 @@ public partial class MessagePropertiesDialog
     {
         try
         {
+            // Remove any property types already used by the message.
+            var filteredPropertyTypes = PropertyTypes.Except(
+                Model.MessageProperties.Select(x => x.PropertyType),
+                PropertyTypeEqualityComparer.Instance()
+                ).ToList();
+
             // Create a new model.
             var tempMessageProperty = new MessageProperty()
             {
-                Message = Model
+                Message = Model,
+                CreatedBy = UserName,
+                CreatedOnUtc = DateTime.UtcNow 
             };
 
             // Show the dialog.
@@ -130,21 +144,22 @@ public partial class MessagePropertiesDialog
                 "Properties",
                 new DialogParameters()
                 {
-                     { "Model", tempMessageProperty }
+                     { "Model", tempMessageProperty },
+                     { "PropertyTypes", filteredPropertyTypes }
                 },
                 new DialogOptionsEx()
                 {
                     MaximizeButton = true,
                     CloseButton = true,
                     CloseOnEscapeKey = true,
-                    MaxWidth = MaxWidth.Medium,
+                    MaxWidth = MaxWidth.Small,
                     FullWidth = true,
                     DragMode = MudDialogDragMode.Simple,
                     Animations = new[] { AnimationType.SlideIn },
-                    Position = DialogPosition.CenterRight,
+                    Position = DialogPosition.Center,
                     DisableSizeMarginY = true,
                     DisablePositionMargin = true
-                }).ConfigureAwait(false);
+                });
 
             // Show the dialog.
             var result = await dialog.Result;

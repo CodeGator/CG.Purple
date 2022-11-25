@@ -42,7 +42,7 @@ namespace CG.Purple.Host.SignalR
                 await Clients.All.SendAsync(
                     "StatusChange",
                     cancellationToken
-                    ).ConfigureAwait(false);
+                    );
             }
         }
 

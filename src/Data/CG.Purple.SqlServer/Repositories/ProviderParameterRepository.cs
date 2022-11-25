@@ -309,8 +309,8 @@ internal class ProviderParameterRepository : IProviderParameterRepository
                 "[ProviderTypeId] = {0} AND [ParameterTypeId] = {1}",
                 parameters: new object[] 
                 { 
-                    providerParameter.ProviderTypeId,
-                    providerParameter.ParameterTypeId
+                    providerParameter.ProviderType.Id,
+                    providerParameter.ParameterType.Id
                 },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);

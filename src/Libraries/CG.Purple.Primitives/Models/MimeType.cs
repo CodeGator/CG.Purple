@@ -20,11 +20,15 @@ public class MimeType : ModelBase
     /// <summary>
     /// This property contains the MIME type.
     /// </summary>
+    [Required]
+    [MaxLength(127)]
     public string Type { get; set; } = null!;
 
     /// <summary>
     /// This property contains the MIME sub-type.
     /// </summary>
+    [Required]
+    [MaxLength(127)]
     public string SubType { get; set; } = null!;
 
     /// <summary>
