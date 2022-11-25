@@ -1,4 +1,7 @@
 ﻿
+using CG.Purple.Managers;
+using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
+
 namespace CG.Purple.Host.Pages.Messages;
 
 /// <summary>
@@ -47,6 +50,11 @@ public partial class Index
     private string textGridSearchString = "";
 
     /// <summary>
+    /// This field contains the time until the next page update.
+    /// </summary>
+    private TimeSpan _timeTillNextUpdate = TimeSpan.FromSeconds(30);
+
+    /// <summary>
     /// This field contains the timer for the page refresh operations.
     /// </summary>
     private Timer _timer = null!;
@@ -78,6 +86,18 @@ public partial class Index
     protected IPropertyTypeManager PropertyTypeManager { get; set; } = null!;
 
     /// <summary>
+    /// This property contains the provider type manager for this page.
+    /// </summary>
+    [Inject]
+    protected IProviderTypeManager ProviderTypeManager { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the message property manager for this page.
+    /// </summary>
+    [Inject]
+    protected IMessagePropertyManager MessagePropertyManager { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the dialog service for this page.
     /// </summary>
     [Inject]
@@ -94,6 +114,12 @@ public partial class Index
     /// </summary>
     [Inject]
     protected IHttpContextAccessor HttpContextAccessor { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the logger for this page.
+    /// </summary>
+    [Inject]
+    protected ILogger<Index> Logger { get; set; } = null!;
 
     /// <summary>
     /// This property contains the name of the current user, or the word
@@ -117,23 +143,43 @@ public partial class Index
     {
         try
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to busy."
+                );
+
             // We're busy.
             _isBusy = true;
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page state to dirty."
+                );
 
             // Give the UI time to show the busy indicator.
             await InvokeAsync(() => StateHasChanged());
             await Task.Delay(250);
 
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Fetching messages for the page."
+                );
+
             // Fetch the messages.
             _mailMessages = await MailManager.FindAllAsync();
             _textMessages = await TextManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Starting the auto-refresh timer."
+                );
 
             // Start the refresh timer.
             _timer = new Timer(
                 _TimerCallback,
                 this,
-                15000,
-                15000
+                1000,
+                1000
                 );
 
             // Give the base class a chance.
@@ -151,6 +197,11 @@ public partial class Index
         }
         finally
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to not busy."
+                );
+
             // We're no longer busy.
             _isBusy = false;
         }
@@ -295,15 +346,38 @@ public partial class Index
     {
         try
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to busy."
+                );
+
             // We're busy.
             _isBusy = true;
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page state to dirty."
+                );
 
             // Give the UI time to show the busy indicator.
             await InvokeAsync(() => StateHasChanged());
             await Task.Delay(250);
 
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Fetching emails for the page."
+                );
+
             // Fetch the messages.
             _mailMessages = await MailManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Updating the time until the next refresh."
+                );
+
+            // Reset the value.
+            _timeTillNextUpdate = TimeSpan.FromSeconds(30);
 
             // Give the base class a chance.
             await base.OnInitializedAsync();
@@ -320,6 +394,11 @@ public partial class Index
         }
         finally
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to not busy."
+                );
+
             // We're no longer busy.
             _isBusy = false;
         }
@@ -334,15 +413,38 @@ public partial class Index
     {
         try
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to busy."
+                );
+
             // We're busy.
             _isBusy = true;
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page state to dirty."
+                );
 
             // Give the UI time to show the busy indicator.
             await InvokeAsync(() => StateHasChanged());
             await Task.Delay(250);
 
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Fetching texts for the page."
+                );
+
             // Fetch the messages.
             _textMessages = await TextManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Updating the time until the next refresh."
+                );
+
+            // Reset the value.
+            _timeTillNextUpdate = TimeSpan.FromSeconds(30);
 
             // Give the base class a chance.
             await base.OnInitializedAsync();
@@ -359,6 +461,65 @@ public partial class Index
         }
         finally
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to not busy."
+                );
+
+            // We're no longer busy.
+            _isBusy = false;
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method displays a dialog for the message attachments.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnAttachmentsAsync(
+        Message message
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to busy."
+                );
+
+            // We're now officially busy.
+            _isBusy = true;
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page state to dirty."
+                );
+
+            // Give the UI time to show the busy indicator.
+            await InvokeAsync(() => StateHasChanged());
+            await Task.Delay(250);
+
+            // TODO : write the code for this.
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+        finally
+        {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to not busy."
+                );
+
             // We're no longer busy.
             _isBusy = false;
         }
@@ -377,14 +538,40 @@ public partial class Index
     {
         try
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Looking for provider types."
+                );
+
+            // Get the valid provider types.
+            var providerTypes = await ProviderTypeManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Looking for property types."
+                );
+
             // Get the valid property types.
             var propertyTypes = await PropertyTypeManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Removing used property types."
+                );
+
+            // We remove property types that are already used, on the message,
+            //   because we want to avoid duplicate properties.
 
             // Remove any property types already used by the message.
             var filteredPropertyTypes = propertyTypes.Except(
                 message.MessageProperties.Select(x => x.PropertyType),
                 PropertyTypeEqualityComparer.Instance()
                 ).ToList();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Cloning the message."
+                );
 
             // We clone the message because anything we do to it, in
             //   the dialog, is difficult to undo without a round trip
@@ -393,12 +580,18 @@ public partial class Index
             //   the operation, no harm done.
             var tempMessage = message.QuickClone();
 
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating the message properties dialog."
+                );
+
             // Show the dialog.
             var dialog = await DialogService.ShowEx<MessagePropertiesDialog>(
-                "Properties", new DialogParameters() 
+                "Message Properties", new DialogParameters() 
                 { 
                     { "Model", tempMessage }, 
-                    { "PropertyTypes", filteredPropertyTypes } 
+                    { "PropertyTypes", filteredPropertyTypes } ,
+                    { "ProviderTypes", providerTypes }
                 }, 
                 new DialogOptionsEx() 
                 { 
@@ -414,24 +607,169 @@ public partial class Index
                     DisablePositionMargin = true 
                 });
 
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the message properties dialog."
+                );
+
             // Show the dialog.
             var result = await dialog.Result;
 
             // Did the user save?
             if (!result.Cancelled)
             {
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Setting the page to busy."
+                    );
+
                 // We're busy.
                 _isBusy = true;
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Setting the page state to dirty."
+                    );
 
                 // Give the UI time to show the busy indicator.
                 await InvokeAsync(() => StateHasChanged());
                 await Task.Delay(250);
 
-                // TODO : look for unexpected duplicates, since the hosted
-                //   services can updated message properties in the background.
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Recovering the edited message."
+                    );
 
-                // TODO : figure out what changed, on the message properties,
-                // and save those changes to the database.
+                // Recover the edited message.
+                var changedMessage = (Message)result.Data;
+
+                // =======
+                // Step 1: Find any message properties that were deleted.
+                // =======
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Looking for deleted message properties."
+                    );
+
+                // Find any properties that were deleted.
+                var deletedProperties = message.MessageProperties.Except(
+                    changedMessage.MessageProperties,
+                    MessagePropertyEqualityComparer.Instance()
+                    );
+
+                // Were there any?
+                if (deletedProperties.Any())
+                {
+                    // Log what we are about to do.
+                    Logger.LogDebug(
+                        "Deleting {count} message properties on message: {id}.",
+                        deletedProperties.Count(),
+                        message.Id
+                        );
+
+                    // Loop through the message properties.
+                    foreach (var property in deletedProperties)
+                    {
+                        // Log what we are about to do.
+                        Logger.LogDebug(
+                            "Deleting property type: {id1} for message: {id2}.",
+                            property.PropertyType.Id,
+                            property.Message.Id
+                            );
+
+                        // Delete the message property.
+                        await MessagePropertyManager.DeleteAsync(
+                            property,
+                            UserName
+                            );
+                    }
+                }
+
+                // =======
+                // Step 2: Assume all message properties were changed.
+                // =======
+
+                // Loop through the message properties.
+                foreach (var property in changedMessage.MessageProperties)
+                {
+                    // Log what we are about to do.
+                    Logger.LogDebug(
+                        "Updating message property: {id1} for message: {id2}.",
+                        property.PropertyType.Id,
+                        property.Message.Id
+                        );
+
+                    // Update the message property.
+                    await MessagePropertyManager.UpdateAsync(
+                        property,
+                        UserName
+                        );
+                }
+
+                // =======
+                // Step 3: Find any message properties that were added.
+                // =======
+
+                // Find any properties that were added.
+                var addedProperties = changedMessage.MessageProperties.Except(
+                    message.MessageProperties,
+                    MessagePropertyEqualityComparer.Instance()
+                    );
+
+                // Were there any?
+                if (addedProperties.Any())
+                {
+                    // Log what we are about to do.
+                    Logger.LogDebug(
+                        "Adding {count} message properties to message: {id}.",
+                        addedProperties.Count(),
+                        message.Id
+                        );
+
+                    // Loop through the message properties.
+                    foreach (var property in addedProperties)
+                    {
+                        try
+                        {
+                            // Log what we are about to do.
+                            Logger.LogDebug(
+                                "Adding property type: {id1} for message: {id2}.",
+                                property.PropertyType.Id,
+                                property.Message.Id
+                                );
+
+                            // Create the new message property.
+                            var newMessageProperty = await MessagePropertyManager.CreateAsync(
+                                property,
+                                UserName
+                                );
+                        }
+                        catch (Exception ex)
+                        {
+                            // Log what we are about to do.
+                            Logger.LogDebug(
+                                "Failed to update message property: {id1} for message: {id2}! Error: {err}",
+                                property.PropertyType.Id,
+                                property.Message.Id,
+                                ex.GetBaseException().Message
+                                );
+
+                            // Ignore duplicates - since that probably means the
+                            //   hosted service added a conflicting message property,
+                            //   in the background.
+                            if (!ex.GetBaseException().Message.Contains("duplicate"))
+                            {
+                                throw;
+                            }
+                        }
+                    }
+                }
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Showing the snackbar message."
+                    );
 
                 // Tell the world what happened.
                 SnackbarService.Add(
@@ -439,8 +777,16 @@ public partial class Index
                     Severity.Success,
                     options => options.CloseAfterNavigation = true
                     );
-            }
 
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Refreshing the page."
+                    );
+
+                // Refresh the page.
+                await OnRefreshMailMessages();
+                await OnRefreshTextMessages();
+            }
         }
         catch ( Exception ex )
         {
@@ -471,13 +817,24 @@ public partial class Index
     {
         try
         {
-            // Refresh the page.
-            await OnRefreshMailMessages();
-            await OnRefreshTextMessages();
+            // Is it time to refresh the page?
+            if (_timeTillNextUpdate <= TimeSpan.Zero)
+            {
+                // Refresh the page.
+                await OnRefreshMailMessages();
+                await OnRefreshTextMessages();
+            }
+            else
+            {
+                // Decrement the value.
+                _timeTillNextUpdate = _timeTillNextUpdate.Subtract(
+                    TimeSpan.FromSeconds(1)
+                    );
+            }
         }
         finally
         {
-            // Ensure the busy indicator is hidden.
+            // Ensure the countdown part of the page refreshes.
             await InvokeAsync(() => StateHasChanged());
         }
     }

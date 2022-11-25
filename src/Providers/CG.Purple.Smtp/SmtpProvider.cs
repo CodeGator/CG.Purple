@@ -355,10 +355,10 @@ internal class SmtpProvider : IMessageProvider
                 catch (Exception ex)
                 {
                     // Log what happened.
-                    _logger.LogWarning(
-                        ex,
-                        "Message: {id} failed to send!",
-                        message.Id
+                    _logger.LogInformation(
+                        "Message: {id} failed to send: {err}!",
+                        message.Id,
+                        ex.GetBaseException().Message
                         );
 
                     // Log what we are about to do.

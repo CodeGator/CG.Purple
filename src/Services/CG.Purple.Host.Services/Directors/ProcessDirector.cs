@@ -255,11 +255,6 @@ internal class ProcessDirector : IProcessDirector
                 messages.Count()
                 );
 
-            // Note: as part of this 'retry' logic, we aren't 
-            //   resetting the error count of any messages. That 
-            //   way, there is a point at which we throw up our
-            //   hands and say "we can't send this message!".
-
             // Loop and retry these messages.
             foreach (var message in messages)
             {
@@ -487,7 +482,7 @@ internal class ProcessDirector : IProcessDirector
             if (providerMessageProperty is null)
             {
                 // Log what happened.
-                _logger.LogWarning(
+                _logger.LogInformation(
                     "Failed to find the assigned provider property on message: {id}!",
                     message.Id
                     );
@@ -648,7 +643,7 @@ internal class ProcessDirector : IProcessDirector
             if (messageProviderProperty is null)
             {
                 // Log what happened.
-                _logger.LogWarning(
+                _logger.LogInformation(
                     "Message: {id} didn't contain a provider property!",
                     message.Id
                     );
@@ -702,7 +697,7 @@ internal class ProcessDirector : IProcessDirector
             if (assignedProviderType is null)
             {
                 // Log what happened.
-                _logger.LogWarning(
+                _logger.LogInformation(
                     "The provider type {pt} is missing, or invalid, for message: {id}!",
                     messageProviderProperty.Value,
                     message.Id

@@ -7,11 +7,15 @@ namespace CG.Purple.Host.Pages.Messages;
 public partial class MessagePropertyDialog
 {
     // *******************************************************************
-    // Fields.
+    // Delegates.
     // *******************************************************************
 
-    #region Fields
+    #region Delegates
 
+    /// <summary>
+    /// This delegate formats a property type for display in a dropdown.
+    /// </summary>
+    Func<PropertyType, string> Converter = p => p?.Name ?? "";
 
     #endregion
 
@@ -38,6 +42,18 @@ public partial class MessagePropertyDialog
     /// </summary>
     [Parameter]
     public IEnumerable<PropertyType> PropertyTypes { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the valid provider types.
+    /// </summary>
+    [Parameter]
+    public IEnumerable<ProviderType> ProviderTypes { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the logger for this page.
+    /// </summary>
+    [Inject]
+    protected ILogger<MessagePropertyDialog> Logger { get; set; } = null!;
 
     #endregion
 

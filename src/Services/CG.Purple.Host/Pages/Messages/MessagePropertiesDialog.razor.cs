@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Models;
+
 namespace CG.Purple.Host.Pages.Messages;
 
 /// <summary>
@@ -11,6 +13,11 @@ public partial class MessagePropertiesDialog
     // *******************************************************************
 
     #region Fields
+
+    /// <summary>
+    /// This field indicates the page is busy.
+    /// </summary>
+    private bool _isBusy;
 
     #endregion
 
@@ -39,6 +46,12 @@ public partial class MessagePropertiesDialog
     public IEnumerable<PropertyType> PropertyTypes { get; set; } = null!;
 
     /// <summary>
+    /// This property contains the valid provider types.
+    /// </summary>
+    [Parameter]
+    public IEnumerable<ProviderType> ProviderTypes { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the dialog service for this page.
     /// </summary>
     [Inject]
@@ -55,6 +68,12 @@ public partial class MessagePropertiesDialog
     /// </summary>
     [Inject]
     protected IHttpContextAccessor HttpContextAccessor { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the logger for this page.
+    /// </summary>
+    [Inject]
+    protected ILogger<MessagePropertiesDialog> Logger { get; set; } = null!;
 
     /// <summary>
     /// This property contains the name of the current user, or the word
@@ -97,7 +116,107 @@ public partial class MessagePropertiesDialog
         MessageProperty messageProperty
         )
     {
+        try
+        {
+            // Are we editing the provider for this message?
+            if (messageProperty.PropertyType.Name == "Provider")
+            {
+                // Are we editing a message that's in the pipeline?
+                if (messageProperty.Message.MessageState == MessageState.Pending ||
+                    messageProperty.Message.MessageState == MessageState.Processing)
+                {
+                    // Prompt the user.
+                    var result = await DialogService.ShowMessageBox(
+                        title: "Purple",
+                        markupMessage: new MarkupString("<h3 style='color:red'>WAIT" +
+                        $"</h3><br /><br />The 'Provider' message property is typically " +
+                        "not modified once a message is in the processing pipeline. The " +
+                        "consequences of doing so might be error(s) in processing. " +
+                        "<br /> <br /> Are you <u><i>sure</i></u> you want to do that?"),
+                        noText: "Cancel",
+                        options: new DialogOptions()
+                        {
+                            FullScreen = true
+                        });
 
+                    // Did the user cancel?
+                    if (result.HasValue && !result.Value)
+                    {
+                        return; // Nothing more to do.
+                    }
+                }
+            }
+
+            // Filter out any provider types that don't match the message type.
+            var filteredProviderTypes = (messageProperty.Message.MessageType == MessageType.Mail 
+                ? ProviderTypes.Where(x => x.CanProcessEmails) 
+                : ProviderTypes.Where(x => x.CanProcessTexts)
+                ).ToList();
+
+            // We clone the message property because anything we do to it,
+            //   in the dialog, is difficult to undo without a round trip
+            //   to the database, which seems silly. This way, if the
+            //   user manipulates the object, via the UI, then cancels
+            //   the operation, no harm done.
+            var tempMessageProperty = messageProperty.QuickClone();
+
+            // Show the dialog.
+            var dialog = await DialogService.ShowEx<MessagePropertyDialog>(
+                "Edit Message Property",
+                new DialogParameters()
+                {
+                    { "Model", tempMessageProperty },
+                    { "PropertyTypes", PropertyTypes },
+                    { "ProviderTypes", filteredProviderTypes }
+                },
+                new DialogOptionsEx()
+                {
+                    MaximizeButton = true,
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.Small,
+                    FullWidth = true,
+                    DragMode = MudDialogDragMode.Simple,
+                    Animations = new[] { AnimationType.SlideIn },
+                    Position = DialogPosition.Center,
+                    DisableSizeMarginY = true,
+                    DisablePositionMargin = true
+                });
+
+            // Show the dialog.
+            var dialogResult = await dialog.Result;
+
+            // Did the user save?
+            if (!dialogResult.Cancelled)
+            {
+                // We're busy.
+                _isBusy = true;
+
+                // Give the UI time to show the busy indicator.
+                await InvokeAsync(() => StateHasChanged());
+                await Task.Delay(250);
+
+                // Keep the changes.
+                messageProperty.Value = tempMessageProperty.Value;
+                messageProperty.LastUpdatedBy = UserName;
+                messageProperty.LastUpdatedOnUtc = DateTime.UtcNow;
+            }
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
+        }
     }
 
     // *******************************************************************
@@ -112,7 +231,75 @@ public partial class MessagePropertiesDialog
         MessageProperty messageProperty
         )
     {
+        try
+        {
+            // Prompt the user.
+            var result = await DialogService.ShowMessageBox(
+                title: "Purple",
+                markupMessage: new MarkupString("This will delete the message " +
+                $"property <b>{messageProperty.PropertyType.Name}</b> from " +
+                "the message.<br /> <br /> Are you <i>sure</i> you want " +
+                "to do that?"),
+                noText: "Cancel"
+                );
 
+            // Did the user cancel?
+            if (result.HasValue && !result.Value)
+            {
+                return; // Nothing more to do.
+            }
+
+            // Are we deleting the provider for this message?
+            if (messageProperty.PropertyType.Name == "Provider")
+            {
+                // Prompt the user, again.
+                result = await DialogService.ShowMessageBox(
+                    title: "Purple",
+                    markupMessage: new MarkupString("<h3 style='color:red'>WAIT" +
+                    $"</h3><br /><br />The 'Provider' message property is typically " +
+                    "not modified once a message is in the processing pipeline. The " +
+                    "consequences of doing so might be error(s) in processing. " +
+                    "<br /> <br /> Are you <u><i>sure</i></u> you want to do that?"),
+                    noText: "Cancel",
+                    options: new DialogOptions()
+                    {
+                        FullScreen = true
+                    });
+
+                // Did the user cancel?
+                if (result.HasValue && !result.Value)
+                {
+                    return; // Nothing more to do.
+                }
+            }
+
+            // We're busy.
+            _isBusy = true;
+
+            // Give the UI time to show the busy indicator.
+            await InvokeAsync(() => StateHasChanged());
+            await Task.Delay(250);
+
+            // Keep the changes.
+            Model.MessageProperties.Remove(
+                messageProperty
+                );
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Failed to delete the message property!</b> " +
+                $"<ul><li>{ex.Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
+        }
     }
 
     // *******************************************************************
@@ -131,6 +318,9 @@ public partial class MessagePropertiesDialog
                 PropertyTypeEqualityComparer.Instance()
                 ).ToList();
 
+            // We remove property types that are already used, on the message,
+            //   because we want to avoid duplicate properties.
+
             // Create a new model.
             var tempMessageProperty = new MessageProperty()
             {
@@ -141,11 +331,12 @@ public partial class MessagePropertiesDialog
 
             // Show the dialog.
             var dialog = await DialogService.ShowEx<MessagePropertyDialog>(
-                "Properties",
+                "Create Message Property",
                 new DialogParameters()
                 {
                      { "Model", tempMessageProperty },
-                     { "PropertyTypes", filteredPropertyTypes }
+                     { "PropertyTypes", filteredPropertyTypes },
+                     { "ProviderTypes", ProviderTypes }
                 },
                 new DialogOptionsEx()
                 {
@@ -167,7 +358,14 @@ public partial class MessagePropertiesDialog
             // Did the user save?
             if (!result.Cancelled)
             {
-                // Add the message property to the message.
+                // We're busy.
+                _isBusy = true;
+
+                // Give the UI time to show the busy indicator.
+                await InvokeAsync(() => StateHasChanged());
+                await Task.Delay(250);
+
+                // Keep the changes.
                 Model.MessageProperties.Add(
                     tempMessageProperty
                     );
@@ -183,6 +381,30 @@ public partial class MessagePropertiesDialog
                 options => options.CloseAfterNavigation = true
                 );
         }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method indicates whether the model can have any additional 
+    /// message properties added to it, or not.
+    /// </summary>
+    /// <returns><c>true</c> if the model can have additional message 
+    /// properties added to it; <c>false</c> otherwise.</returns>
+    protected bool CanAddMessageProperty()
+    {
+        // Return true if there are any property types not currently
+        //   in use by the message; return false otherwise.
+
+        return PropertyTypes.Except(
+            Model.MessageProperties.Select(x => x.PropertyType),
+            PropertyTypeEqualityComparer.Instance()
+            ).Any();
     }
 
     #endregion
