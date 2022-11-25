@@ -329,6 +329,62 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<PropertyType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for property types."
+                );
+
+            // Perform the property type search.
+            var propertyTypes = await dbContext.PropertyTypes
+                .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entity to a model.
+            var result = propertyTypes.Select(x => 
+                _mapper.Map<PropertyType>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for a property types!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for property " +
+                "types!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<PropertyType?> FindByNameAsync(
         string name,
         CancellationToken cancellationToken = default
@@ -362,13 +418,28 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
                     cancellationToken
                     ).ConfigureAwait(false);
 
+            // Did we fail?
+            if (propertyType is null)
+            {
+                return null; // Nothing found!
+            }
+
             // Convert the entity to a model.
-            var model = _mapper.Map<PropertyType>(
+            var result = _mapper.Map<PropertyType>(
                 propertyType
                 );
 
+            // Did we fail?
+            if (result is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(PropertyType)} entity to a model."
+                    );
+            }
+
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {

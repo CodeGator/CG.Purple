@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Managers;
+
 namespace CG.Purple.Host.Pages.Messages;
 
 /// <summary>
@@ -70,6 +72,12 @@ public partial class Index
     /// </summary>
     [Inject]
     protected ITextMessageManager TextManager { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the property type manager for this page.
+    /// </summary>
+    [Inject]
+    protected IPropertyTypeManager PropertyTypeManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the dialog service for this page.
@@ -371,6 +379,10 @@ public partial class Index
     {
         try
         {
+            // Get the valid property types.
+            var propertyTypes = await PropertyTypeManager.FindAllAsync()
+                .ConfigureAwait(false);
+
             // We clone the message because anything we do to it, in
             //   the dialog, is difficult to undo without a round trip
             //   to the database, which seems silly. This way, if the

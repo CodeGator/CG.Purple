@@ -362,13 +362,28 @@ internal class ParameterTypeRepository : IParameterTypeRepository
                     cancellationToken
                     ).ConfigureAwait(false);
 
+            // Did we fail?
+            if (parameterType is null)
+            {
+                return null; // Nothing found!
+            }
+
             // Convert the entity to a model.
-            var model = _mapper.Map<ParameterType>(
+            var result = _mapper.Map<ParameterType>(
                 parameterType
                 );
 
+            // Did we fail?
+            if (result is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(result)} entity to a model."
+                    );
+            }
+
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {

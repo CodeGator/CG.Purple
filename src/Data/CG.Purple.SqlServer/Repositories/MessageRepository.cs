@@ -307,7 +307,7 @@ internal class MessageRepository : IMessageRepository
                 );
 
             // Perform the message search.
-            var Message = await dbContext.Messages.Where(x => 
+            var message = await dbContext.Messages.Where(x => 
                 x.Id == id
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
@@ -316,14 +316,14 @@ internal class MessageRepository : IMessageRepository
                     ).ConfigureAwait(false);
 
             // Did we fail?
-            if (Message is null)
+            if (message is null)
             {
                 return null; // Nothing found!
             }
 
             // Convert the entity to a model.
             var result = _mapper.Map<Message>(
-                Message
+                message
                 );
 
             // Did we fail?
@@ -385,7 +385,7 @@ internal class MessageRepository : IMessageRepository
                 );
 
             // Perform the message search.
-            var Message = await dbContext.Messages.Where(x =>
+            var message = await dbContext.Messages.Where(x =>
                 x.MessageKey == messageKey.ToUpper()
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
@@ -394,14 +394,14 @@ internal class MessageRepository : IMessageRepository
                     ).ConfigureAwait(false);
 
             // Did we fail?
-            if (Message is null) 
+            if (message is null) 
             {
                 return null; // Nothing found!
             }
 
             // Convert the entity to a model.
             var result = _mapper.Map<Message>(
-                Message
+                message
                 );
 
             // Did we fail?

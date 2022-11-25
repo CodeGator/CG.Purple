@@ -1,4 +1,6 @@
 ﻿
+using System.Xml.Linq;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -261,6 +263,44 @@ internal class PropertyTypeManager : IPropertyTypeManager
                 innerException: ex
                 );
         }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<PropertyType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IPropertyTypeRepository.FindAllAsync)
+                );
+
+            // Perform the operation.
+            return await _propertyTypeRepository.FindAllAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for property types!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for property " +
+                "types!",
+                innerException: ex
+                );
+        }
+
     }
 
     // *******************************************************************

@@ -539,10 +539,25 @@ internal class ProviderTypeRepository : IProviderTypeRepository
                     cancellationToken
                     ).ConfigureAwait(false);
 
+            // Did we fail?
+            if (providerType is null)
+            {
+                return null; // Nothing found!
+            }
+
             // Convert the entity to a model.
             var result = _mapper.Map<ProviderType>(
                 providerType
                 );
+
+            // Did we fail?
+            if (result is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(ProviderType)} entity to a model."
+                    );
+            }
 
             // Return the results.
             return result;

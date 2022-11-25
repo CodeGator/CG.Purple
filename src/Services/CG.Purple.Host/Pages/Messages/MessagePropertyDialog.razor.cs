@@ -7,6 +7,15 @@ namespace CG.Purple.Host.Pages.Messages;
 public partial class MessagePropertyDialog
 {
     // *******************************************************************
+    // Fields.
+    // *******************************************************************
+
+    #region Fields
+
+
+    #endregion
+
+    // *******************************************************************
     // Properties.
     // *******************************************************************
 
@@ -23,6 +32,12 @@ public partial class MessagePropertyDialog
     /// </summary>
     [Parameter]
     public MessageProperty Model { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the valid property types.
+    /// </summary>
+    [Parameter]
+    public IEnumerable<PropertyType> PropertyTypes { get; set; } = null!;
 
     #endregion
 

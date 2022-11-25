@@ -4,18 +4,12 @@
             <MudCard Outlined>
                 <MudCardContent Class="pt-0">
                     <DataAnnotationsValidator />
-                    <MudTextField AutoFocus="true"
-                                  Class="ml-auto"
-                                  Variant="Variant.Outlined"
-                                  Label="Name"
-                                  For="@(() => Model.PropertyType.Name)"
-                                  @bind-Value="@Model.PropertyType.Name" />
-                    <MudTextField AutoFocus="true"
-                                  Class="ml-auto"
-                                  Variant="Variant.Outlined"
-                                  Label="Value"
-                                  For="@(() => Model.Value)"
-                                  @bind-Value="@Model.Value" />
+                    <MudSelect T="PropertyType">
+                        @foreach (var propertyType in PropertyTypes)
+                        {
+                            <MudSelectItem Value="@propertyType">@propertyType.Name</MudSelectItem>
+                        }
+                    </MudSelect>
                 </MudCardContent>
                 <MudCardActions>
                     <MudButton Color="Color.Inherit"

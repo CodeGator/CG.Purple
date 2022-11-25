@@ -77,6 +77,19 @@ public interface IPropertyTypeManager
         );
 
     /// <summary>
+    /// This method searches for a sequence of <see cref="PropertyType"/> objects.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of 
+    /// <see cref="PropertyType"/> objects.</returns>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<PropertyType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method searches for a single matching <see cref="PropertyType"/> object using
     /// the given name.
     /// </summary>
