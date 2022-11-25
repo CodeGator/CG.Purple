@@ -173,6 +173,9 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(messageProperty, nameof(messageProperty));
+
         try
         {
             // Log what we are about to do.
@@ -277,10 +280,13 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        MessageProperty model,
+        MessageProperty messageProperty,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(messageProperty, nameof(messageProperty));
+
         try
         {
             // Log what we are about to do.
@@ -307,8 +313,8 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
                 "[MessageId] = {0} AND PropertyTypeId = {1}",
                 parameters: new object[]
                 { 
-                    model.Message.Id, 
-                    model.PropertyType.Id 
+                    messageProperty.Message.Id, 
+                    messageProperty.PropertyType.Id 
                 },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
@@ -337,6 +343,9 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(messageProperty, nameof(messageProperty));
+
         try
         {
             // Log what we are about to do.

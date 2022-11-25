@@ -57,26 +57,6 @@ public interface ITextMessageManager
         );
 
     /// <summary>
-    /// This method deletes an existing <see cref="TextMessage"/> object from the 
-    /// underlying storage.
-    /// </summary>
-    /// <param name="textMessage">The model to delete from the underlying storage.</param>
-    /// <param name="userName">The user name of the person performing the 
-    /// operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    /// <exception cref="ManagerException">This exception is thrown whenever the
-    /// manager fails to complete the operation.</exception>
-    Task DeleteAsync(
-        TextMessage textMessage,
-        string userName,
-        CancellationToken cancellationToken = default
-        );
-
-    /// <summary>
     /// This method searches for a sequence of <see cref="TextMessage"/> objects.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -124,20 +104,6 @@ public interface ITextMessageManager
     /// manager fails to complete the operation.</exception>
     Task<TextMessage?> FindByKeyAsync(
         string messageKey,
-        CancellationToken cancellationToken = default
-        );
-
-    /// <summary>
-    /// This method searches for a sequence of <see cref="TextMessage"/> objects
-    /// that are not disabled, or sent, or processed.
-    /// </summary>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation that returns a sequence of matching
-    /// <see cref="TextMessage"/> objects.</returns>
-    /// <exception cref="ManagerException">This exception is thrown whenever the
-    /// manager fails to complete the operation.</exception>
-    Task<IEnumerable<TextMessage>> FindPendingAsync(
         CancellationToken cancellationToken = default
         );
 

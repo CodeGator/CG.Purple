@@ -1,5 +1,33 @@
 ﻿<MudDialog Class="mud-ex-dialog-initial">
     <DialogContent>
-        
+        <EditForm Model="@Model" OnValidSubmit="OnValidSubmit">
+            <MudCard Outlined>
+                <MudCardContent Class="pt-0">
+                    <DataAnnotationsValidator />
+                    <MudSelect T="PropertyType" 
+                               AutoFocus="true"
+                               Placeholder="Select Property Type"
+                               @bind-Value="@Model.PropertyType"
+                               For="@(() => Model.PropertyType)">
+                        @foreach (var propertyType in PropertyTypes)
+                        {
+                            <MudSelectItem Value="@propertyType">@propertyType.Name</MudSelectItem>
+                        }
+                    </MudSelect>
+                    <MudTextField Class="ml-auto"
+                                  Variant="Variant.Outlined"
+                                  Label="Value"
+                                  For="@(() => Model.Value)"
+                                  @bind-Value="@Model.Value" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Color="Color.Inherit"
+                               OnClick="Cancel">Cancel</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit"
+                               Class="ml-auto"
+                               Color="Color.Primary">Save</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
     </DialogContent>
 </MudDialog>

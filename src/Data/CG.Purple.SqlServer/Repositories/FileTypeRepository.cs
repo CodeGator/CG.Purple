@@ -173,6 +173,9 @@ internal class FileTypeRepository : IFileTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(fileType, nameof(fileType));
+
         try
         {
             // Log what we are about to do.
@@ -276,10 +279,13 @@ internal class FileTypeRepository : IFileTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        FileType model,
+        FileType fileType,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(fileType, nameof(fileType));
+
         try
         {
             // Log what we are about to do.
@@ -303,7 +309,7 @@ internal class FileTypeRepository : IFileTypeRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[FileTypes] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { fileType.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -420,20 +426,13 @@ internal class FileTypeRepository : IFileTypeRepository
                 return null; // Not found!
             }
 
-            // Perform the file type search.
-            var entity = await dbContext.FileTypes.Where(x =>
-                x.Extension == fileType.Extension
-                ).FirstOrDefaultAsync(
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
             // Convert the entity to a model.
-            var model = _mapper.Map<FileType>(
-                entity
+            var result = _mapper.Map<FileType>(
+                fileType
                 );
 
             // Did we fail?
-            if (entity is null)
+            if (result is null)
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
@@ -442,7 +441,7 @@ internal class FileTypeRepository : IFileTypeRepository
             }
 
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {
@@ -469,6 +468,9 @@ internal class FileTypeRepository : IFileTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(fileType, nameof(fileType));
+
         try
         {
             // Log what we are about to do.

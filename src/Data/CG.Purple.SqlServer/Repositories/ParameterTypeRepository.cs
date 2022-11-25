@@ -173,6 +173,9 @@ internal class ParameterTypeRepository : IParameterTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(parameterType, nameof(parameterType));
+
         try
         {
             // Log what we are about to do.
@@ -273,10 +276,13 @@ internal class ParameterTypeRepository : IParameterTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ParameterType model,
+        ParameterType parameterType,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(parameterType, nameof(parameterType));
+
         try
         {
             // Log what we are about to do.
@@ -300,7 +306,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[ParameterTypes] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { parameterType.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -356,13 +362,28 @@ internal class ParameterTypeRepository : IParameterTypeRepository
                     cancellationToken
                     ).ConfigureAwait(false);
 
+            // Did we fail?
+            if (parameterType is null)
+            {
+                return null; // Nothing found!
+            }
+
             // Convert the entity to a model.
-            var model = _mapper.Map<ParameterType>(
+            var result = _mapper.Map<ParameterType>(
                 parameterType
                 );
 
+            // Did we fail?
+            if (result is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(result)} entity to a model."
+                    );
+            }
+
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {
@@ -389,6 +410,9 @@ internal class ParameterTypeRepository : IParameterTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(parameterType, nameof(parameterType));
+
         try
         {
             // Log what we are about to do.

@@ -173,6 +173,9 @@ internal class MimeTypeRepository : IMimeTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(mimeType, nameof(mimeType));
+
         try
         {
             // Log what we are about to do.
@@ -273,10 +276,13 @@ internal class MimeTypeRepository : IMimeTypeRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        MimeType model,
+        MimeType mimeType,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(mimeType, nameof(mimeType));
+
         try
         {
             // Log what we are about to do.
@@ -300,7 +306,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[MimeTypes] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { mimeType.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -524,6 +530,9 @@ internal class MimeTypeRepository : IMimeTypeRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(mimeType, nameof(mimeType));
+
         try
         {
             // Log what we are about to do.

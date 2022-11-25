@@ -72,15 +72,59 @@ internal class ArchiveDirector : IArchiveDirector
     /// <inheritdoc/>
     public virtual async Task ArchiveMessagesAsync(
         int maxDaysToLive,
+        string userName,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfLessThanOrEqualZero(maxDaysToLive, nameof(maxDaysToLive));
+        Guard.Instance().ThrowIfLessThanOrEqualZero(maxDaysToLive, nameof(maxDaysToLive))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         try
         {
-            // TODO : write the code for this.
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for messages that are ready to archive."
+                );
+
+            // Look for messages ready to archive.
+            var messages = await _messageManager.FindReadyToArchiveAsync(
+                maxDaysToLive,
+                cancellationToken
+                );
+
+            // Are we done?
+            if (!messages.Any())
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "No messages were ready to archive."
+                    );
+                return; // Done!
+            }
+
+            // Log what we are about to do.
+            _logger.LogInformation(
+                "Archiving {count} messages.",
+                messages.Count()
+                );
+
+            // Loop through the messages.
+            foreach (var message in messages)
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Removing message: {id}.",
+                    message.Id
+                    );
+
+                // Remove the message (along with associated rows).
+                await _messageManager.DeleteAsync(
+                    message,
+                    userName,
+                    cancellationToken
+                    );
+            }
         }
         catch (Exception ex)
         {

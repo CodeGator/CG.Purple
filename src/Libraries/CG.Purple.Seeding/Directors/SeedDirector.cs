@@ -1249,8 +1249,8 @@ internal class SeedDirector : ISeedDirector
                 _ = await _providerParameterManager.CreateAsync(
                     new ProviderParameter()
                     {
-                        ProviderTypeId = providerType.Id,
-                        ParameterTypeId = parameterType.Id,
+                        ProviderType = providerType,
+                        ParameterType = parameterType,
                         Value = providerParameterOption.Value
                     },
                     userName,

@@ -20,11 +20,14 @@ public class ProviderType : ModelBase
     /// <summary>
     /// This property contains the name of the provider type.
     /// </summary>
+    [Required]
+    [MaxLength(64)]
     public string Name { get; set; } = null!;
 
     /// <summary>
     /// This property contains the description of the provider type.
     /// </summary>
+    [MaxLength(64)]
     public string? Description { get; set; }
 
     /// <summary>
@@ -50,6 +53,7 @@ public class ProviderType : ModelBase
     /// <summary>
     /// This property contains the .NET type for the associated provider.
     /// </summary>
+    [Required]
     public string FactoryType { get; set; } = null!;
 
     /// <summary>

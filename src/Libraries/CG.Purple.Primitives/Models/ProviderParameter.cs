@@ -13,25 +13,15 @@ public class ProviderParameter : ModelBase
     #region Properties
 
     /// <summary>
-    /// This property contains the unique identifier for the associated 
-    /// provider type.
-    /// </summary>
-    public int ProviderTypeId { get; set; }
-
-    /// <summary>
     /// This property contains the associate provider type.
     /// </summary>
+    [Required]
     public virtual ProviderType ProviderType { get; set; } = null!;
-
-    /// <summary>
-    /// This property contains the unique identifier for the associated 
-    /// parameter type.
-    /// </summary>
-    public int ParameterTypeId { get; set; }
 
     /// <summary>
     /// This property contains the associate parameter type.
     /// </summary>
+    [Required]
     public virtual ParameterType ParameterType { get; set; } = null!;
 
     /// <summary>

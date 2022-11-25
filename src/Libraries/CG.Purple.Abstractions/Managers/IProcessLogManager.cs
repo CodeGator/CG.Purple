@@ -39,7 +39,7 @@ public interface IProcessLogManager
     /// This method creates a new <see cref="ProcessLog"/> object in the 
     /// underlying storage.
     /// </summary>
-    /// <param name="providerLog">The model to create in the underlying storage.</param>
+    /// <param name="processLog">The model to create in the underlying storage.</param>
     /// <param name="userName">The user name of the person performing the 
     /// operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -51,7 +51,7 @@ public interface IProcessLogManager
     /// <exception cref="ManagerException">This exception is thrown whenever the
     /// manager fails to complete the operation.</exception>
     Task<ProcessLog> CreateAsync(
-        ProcessLog providerLog,
+        ProcessLog processLog,
         string userName,
         CancellationToken cancellationToken = default
         );
@@ -60,7 +60,7 @@ public interface IProcessLogManager
     /// This method deletes an existing <see cref="ProcessLog"/> object from the 
     /// underlying storage.
     /// </summary>
-    /// <param name="providerLog">The model to delete from the underlying storage.</param>
+    /// <param name="processLog">The model to delete from the underlying storage.</param>
     /// <param name="userName">The user name of the person performing the 
     /// operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -71,7 +71,7 @@ public interface IProcessLogManager
     /// <exception cref="ManagerException">This exception is thrown whenever the
     /// manager fails to complete the operation.</exception>
     Task DeleteAsync(
-        ProcessLog providerLog,
+        ProcessLog processLog,
         string userName,
         CancellationToken cancellationToken = default
         );
@@ -80,7 +80,7 @@ public interface IProcessLogManager
     /// This method updates an existing <see cref="ProcessLog"/> object in the 
     /// underlying storage.
     /// </summary>
-    /// <param name="providerLog">The model to update in the underlying storage.</param>
+    /// <param name="processLog">The model to update in the underlying storage.</param>
     /// <param name="userName">The user name of the person performing the 
     /// operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -92,7 +92,7 @@ public interface IProcessLogManager
     /// <exception cref="ManagerException">This exception is thrown whenever the
     /// manager fails to complete the operation.</exception>
     Task<ProcessLog> UpdateAsync(
-        ProcessLog providerLog,
+        ProcessLog processLog,
         string userName,
         CancellationToken cancellationToken = default
         );

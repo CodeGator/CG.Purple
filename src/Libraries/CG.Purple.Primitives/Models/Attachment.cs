@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace CG.Purple.Models;
 
 /// <summary>
@@ -20,16 +22,19 @@ public class Attachment : ModelBase
     /// <summary>
     /// This property contains the original file name for the attachment.
     /// </summary>
+    [MaxLength(260)]
     public string? OriginalFileName { get; set; }
 
     /// <summary>
     /// This property contains the associated message.
     /// </summary>
+    [Required]
     public virtual Message Message { get; set; } = null!;
 
     /// <summary>
     /// This property contains the associated MIME type.
     /// </summary>
+    [Required]
     public virtual MimeType MimeType { get; set; } = null!;
 
     /// <summary>

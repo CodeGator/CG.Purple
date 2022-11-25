@@ -20,11 +20,14 @@ public class ParameterType : ModelBase
     /// <summary>
     /// This property contains the name of the parameter type.
     /// </summary>
+    [Required]
+    [MaxLength(64)]
     public string Name { get; set; } = null!;
 
     /// <summary>
     /// This property contains the description of the parameter type.
     /// </summary>
+    [MaxLength(128)]
     public string? Description { get; set; }
 
     #endregion

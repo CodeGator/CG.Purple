@@ -72,6 +72,12 @@ public partial class Index
     protected ITextMessageManager TextManager { get; set; } = null!;
 
     /// <summary>
+    /// This property contains the property type manager for this page.
+    /// </summary>
+    [Inject]
+    protected IPropertyTypeManager PropertyTypeManager { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the dialog service for this page.
     /// </summary>
     [Inject]
@@ -115,7 +121,7 @@ public partial class Index
             _isBusy = true;
 
             // Give the UI time to show the busy indicator.
-            await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
+            await InvokeAsync(() => StateHasChanged());
             await Task.Delay(250);
 
             // Fetch the messages.
@@ -293,7 +299,7 @@ public partial class Index
             _isBusy = true;
 
             // Give the UI time to show the busy indicator.
-            await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
+            await InvokeAsync(() => StateHasChanged());
             await Task.Delay(250);
 
             // Fetch the messages.
@@ -332,7 +338,7 @@ public partial class Index
             _isBusy = true;
 
             // Give the UI time to show the busy indicator.
-            await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
+            await InvokeAsync(() => StateHasChanged());
             await Task.Delay(250);
 
             // Fetch the messages.
@@ -371,6 +377,15 @@ public partial class Index
     {
         try
         {
+            // Get the valid property types.
+            var propertyTypes = await PropertyTypeManager.FindAllAsync();
+
+            // Remove any property types already used by the message.
+            var filteredPropertyTypes = propertyTypes.Except(
+                message.MessageProperties.Select(x => x.PropertyType),
+                PropertyTypeEqualityComparer.Instance()
+                ).ToList();
+
             // We clone the message because anything we do to it, in
             //   the dialog, is difficult to undo without a round trip
             //   to the database, which seems silly. This way, if the
@@ -380,25 +395,24 @@ public partial class Index
 
             // Show the dialog.
             var dialog = await DialogService.ShowEx<MessagePropertiesDialog>(
-                "Properties",
-                new DialogParameters()
-                {
-                     { "Model", tempMessage }
-                },
-                new DialogOptionsEx()
-                {
-                    MaximizeButton = true,
-                    CloseButton = true,
-                    //FullHeight = true,
-                    CloseOnEscapeKey = true,
-                    MaxWidth = MaxWidth.Medium,
-                    FullWidth = true,
-                    DragMode = MudDialogDragMode.Simple,
-                    Animations = new[] { AnimationType.SlideIn },
-                    Position = DialogPosition.CenterRight,
-                    DisableSizeMarginY = true,
-                    DisablePositionMargin = true
-                }).ConfigureAwait(false);
+                "Properties", new DialogParameters() 
+                { 
+                    { "Model", tempMessage }, 
+                    { "PropertyTypes", filteredPropertyTypes } 
+                }, 
+                new DialogOptionsEx() 
+                { 
+                    MaximizeButton = true, 
+                    CloseButton = true, 
+                    CloseOnEscapeKey = true, 
+                    MaxWidth = MaxWidth.Medium, 
+                    FullWidth = true, 
+                    DragMode = MudDialogDragMode.Simple, 
+                    Animations = new[] { AnimationType.SlideIn }, 
+                    Position = DialogPosition.CenterRight, 
+                    DisableSizeMarginY = true, 
+                    DisablePositionMargin = true 
+                });
 
             // Show the dialog.
             var result = await dialog.Result;
@@ -410,10 +424,14 @@ public partial class Index
                 _isBusy = true;
 
                 // Give the UI time to show the busy indicator.
-                await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
+                await InvokeAsync(() => StateHasChanged());
                 await Task.Delay(250);
 
-                // TODO : save the changes.
+                // TODO : look for unexpected duplicates, since the hosted
+                //   services can updated message properties in the background.
+
+                // TODO : figure out what changed, on the message properties,
+                // and save those changes to the database.
 
                 // Tell the world what happened.
                 SnackbarService.Add(
@@ -454,13 +472,13 @@ public partial class Index
         try
         {
             // Refresh the page.
-            await OnRefreshMailMessages().ConfigureAwait(false);
-            await OnRefreshTextMessages().ConfigureAwait(false);
+            await OnRefreshMailMessages();
+            await OnRefreshTextMessages();
         }
         finally
         {
             // Ensure the busy indicator is hidden.
-            await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
+            await InvokeAsync(() => StateHasChanged());
         }
     }
 

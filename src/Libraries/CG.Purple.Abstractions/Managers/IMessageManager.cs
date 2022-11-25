@@ -36,6 +36,26 @@ public interface IMessageManager
         );
 
     /// <summary>
+    /// This method deletes an existing <see cref="Message"/> object from the 
+    /// underlying storage.
+    /// </summary>
+    /// <param name="message">The model to delete from the underlying storage.</param>
+    /// <param name="userName">The user name of the person performing the 
+    /// operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task DeleteAsync(
+        Message message,
+        string userName,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method searches for a sequence of <see cref="Message"/> objects.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -88,6 +108,25 @@ public interface IMessageManager
 
     /// <summary>
     /// This method searches for a sequence of <see cref="Message"/> objects
+    /// that are older than the given number of days.
+    /// </summary>
+    /// <param name="maxDaysToLive">The maximum number of days a message can
+    /// live in a terminal state before we archive it.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of matching
+    /// <see cref="Message"/> objects.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<Message>> FindReadyToArchiveAsync(
+        int maxDaysToLive,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a sequence of <see cref="Message"/> objects
     /// that are not disabled, or sent, or processed.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -111,6 +150,8 @@ public interface IMessageManager
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns a sequence of matching
     /// <see cref="Message"/> objects.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
     /// <exception cref="ManagerException">This exception is thrown whenever the
     /// manager fails to complete the operation.</exception>
     Task<IEnumerable<Message>> FindReadyToRetryAsync(

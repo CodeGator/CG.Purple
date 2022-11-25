@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.EntityFrameworkCore.Internal;
+
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
@@ -173,6 +175,9 @@ internal class AttachmentRepository : IAttachmentRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(attachment, nameof(attachment));
+
         try
         {
             // Log what we are about to do.
@@ -277,10 +282,13 @@ internal class AttachmentRepository : IAttachmentRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        Attachment model,
+        Attachment attachment,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(attachment, nameof(attachment));
+
         try
         {
             // Log what we are about to do.
@@ -304,7 +312,7 @@ internal class AttachmentRepository : IAttachmentRepository
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[Attachments] WHERE [Id] = {0}",
-                parameters: new object[] { model.Id },
+                parameters: new object[] { attachment.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -332,6 +340,9 @@ internal class AttachmentRepository : IAttachmentRepository
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(attachment, nameof(attachment));
+
         try
         {
             // Log what we are about to do.
