@@ -31,6 +31,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Bromix.MudBlazor.MaterialDesignIcons" Version="7.0.96.47" />
         <PackageReference Include="CG.Cryptography.Shared" Version="2023.1.2" />
         <PackageReference Include="CG.DataProtection" Version="2023.1.3" />
         <PackageReference Include="CG.Logging" Version="2023.1.2" />
@@ -81,14 +82,6 @@
 
     <ItemGroup>
       <None Include="Pages\Help\About\Index.razor" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Pages\MimeTypes\" />
-      <Folder Include="Pages\Providers\" />
-      <Folder Include="Pages\ParameterTypes\" />
-      <Folder Include="Pages\ProviderTypes\" />
-      <Folder Include="Pages\PropertyTypes\" />
     </ItemGroup>
 
 </Project>
