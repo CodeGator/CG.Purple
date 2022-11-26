@@ -42,9 +42,12 @@
                     <MudTooltip Text="Properties">
                         <MudIconButton Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" />
                     </MudTooltip>
-                    <MudTooltip Text="Attachments">
-                        <MudIconButton Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
-                    </MudTooltip>
+                    @if (context.Attachments.Any())
+                    {
+                        <MudTooltip Text="Attachments">
+                            <MudIconButton Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
+                        </MudTooltip>
+                    }
                 </MudTh>
             </RowTemplate>
             <PagerContent>
@@ -90,9 +93,12 @@
                     <MudTooltip Text="Properties">
                         <MudIconButton Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" Disabled="_isBusy" />
                     </MudTooltip>
-                    <MudTooltip Text="Attachments">
-                        <MudIconButton Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
-                    </MudTooltip>
+                    @if (context.Attachments.Any())
+                    {
+                        <MudTooltip Text="Attachments">
+                            <MudIconButton Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
+                        </MudTooltip>
+                    }
                 </MudTh>
             </RowTemplate>
             <PagerContent>

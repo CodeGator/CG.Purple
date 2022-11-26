@@ -486,22 +486,36 @@ public partial class Index
         {
             // Log what we are about to do.
             Logger.LogDebug(
-                "Setting the page to busy."
+                "Creating the attachments dialog."
                 );
 
-            // We're now officially busy.
-            _isBusy = true;
+            // Show the dialog.
+            var dialog = await DialogService.ShowEx<AttachmentsDialog>(
+                "Attachment", new DialogParameters() 
+                { 
+                    { "Model", message }, 
+                }, 
+                new DialogOptionsEx() 
+                { 
+                    MaximizeButton = true, 
+                    CloseButton = true, 
+                    CloseOnEscapeKey = true, 
+                    MaxWidth = MaxWidth.Small, 
+                    FullWidth = true, 
+                    DragMode = MudDialogDragMode.Simple, 
+                    Animations = new[] { AnimationType.SlideIn }, 
+                    Position = DialogPosition.CenterRight, 
+                    DisableSizeMarginY = true, 
+                    DisablePositionMargin = true 
+                });
 
             // Log what we are about to do.
             Logger.LogDebug(
-                "Setting the page state to dirty."
+                "Showing the attachments dialog."
                 );
 
-            // Give the UI time to show the busy indicator.
-            await InvokeAsync(() => StateHasChanged());
-            await Task.Delay(250);
-
-            // TODO : write the code for this.
+            // Show the dialog.
+            await dialog.Result;
         }
         catch (Exception ex)
         {
@@ -512,16 +526,6 @@ public partial class Index
                 Severity.Error,
                 options => options.CloseAfterNavigation = true
                 );
-        }
-        finally
-        {
-            // Log what we are about to do.
-            Logger.LogDebug(
-                "Setting the page to not busy."
-                );
-
-            // We're no longer busy.
-            _isBusy = false;
         }
     }
 

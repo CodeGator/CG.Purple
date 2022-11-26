@@ -44,6 +44,21 @@
       "Type": "image",
       "SubType": "gif",
       "Extensions": [ ".gif" ]
+    },
+    {
+      "Type": "application",
+      "SubType": "zip",
+      "Extensions": [ ".zip" ]
+    },
+    {
+      "Type": "application",
+      "SubType": "x-tar",
+      "Extensions": [ ".tar", ".tar.gz", ".tar.Z", "tar.xz" ]
+    },
+    {
+      "Type": "application",
+      "SubType": "gzip",
+      "Extensions": [ ".gz" ]
     }
   ]
 }

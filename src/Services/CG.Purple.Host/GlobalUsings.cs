@@ -16,3 +16,5 @@ global using MudBlazor.Extensions.Options;
 global using MudBlazor.Services;
 global using System.Diagnostics;
 global using System.Reflection;
+global using Microsoft.AspNetCore.Components.Forms;
+global using CG.Purple.Host.ViewModels;
