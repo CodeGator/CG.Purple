@@ -1,7 +1,4 @@
 ﻿
-using CG.Purple.Managers;
-using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
-
 namespace CG.Purple.Host.Pages.Messages;
 
 /// <summary>
@@ -78,6 +75,12 @@ public partial class Index
     /// </summary>
     [Inject]
     protected ITextMessageManager TextManager { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the message manager for this page.
+    /// </summary>
+    [Inject]
+    protected IMessageManager MessageManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the property type manager for this page.
@@ -340,9 +343,20 @@ public partial class Index
     // *******************************************************************
 
     /// <summary>
+    /// This method refreshes all the data sources for the page.
+    /// </summary>
+    protected async Task OnRefreshPageAsync()
+    {
+        await OnRefreshMailMessagesAsync();
+        await OnRefreshTextMessagesAsync();
+    }
+
+    // *******************************************************************
+
+    /// <summary>
     /// This method manually refreshes the mail messages collection.
     /// </summary>
-    protected async Task OnRefreshMailMessages()
+    protected async Task OnRefreshMailMessagesAsync()
     {
         try
         {
@@ -409,7 +423,7 @@ public partial class Index
     /// <summary>
     /// This method manually refreshes the text messages collection.
     /// </summary>
-    protected async Task OnRefreshTextMessages()
+    protected async Task OnRefreshTextMessagesAsync()
     {
         try
         {
@@ -526,6 +540,54 @@ public partial class Index
                 Severity.Error,
                 options => options.CloseAfterNavigation = true
                 );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method toggles the enabled/disabled state for the given message.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnToggleDisableAsync(
+        Message message
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Toggling the disabled state for message: {id}.",
+                message.Id
+                );
+
+            // Toggle the disabled state.
+            if (message.IsDisabled)
+            {
+                message.IsDisabled = false;
+            }
+            else
+            {
+                message.IsDisabled = true;
+            }
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Saving changes to message: {id}.",
+                message.Id
+                );
+
+            // Update the storage.
+            await MessageManager.UpdateAsync(
+                message,
+                UserName
+                );
+        }
+        finally
+        {
+            // Update the page.
+            await OnRefreshPageAsync();
         }
     }
 
@@ -691,28 +753,7 @@ public partial class Index
                 }
 
                 // =======
-                // Step 2: Assume all message properties were changed.
-                // =======
-
-                // Loop through the message properties.
-                foreach (var property in changedMessage.MessageProperties)
-                {
-                    // Log what we are about to do.
-                    Logger.LogDebug(
-                        "Updating message property: {id1} for message: {id2}.",
-                        property.PropertyType.Id,
-                        property.Message.Id
-                        );
-
-                    // Update the message property.
-                    await MessagePropertyManager.UpdateAsync(
-                        property,
-                        UserName
-                        );
-                }
-
-                // =======
-                // Step 3: Find any message properties that were added.
+                // Step 2: Find any message properties that were added.
                 // =======
 
                 // Find any properties that were added.
@@ -770,6 +811,47 @@ public partial class Index
                     }
                 }
 
+                // =======
+                // Step 3: Assume all message properties were changed.
+                // =======
+
+                // If a property wasn't added, or deleted, assume it was edited.
+                var editedProperties = changedMessage.MessageProperties.Except(
+                    addedProperties,
+                    MessagePropertyEqualityComparer.Instance()
+                    ).Except(
+                        deletedProperties,
+                        MessagePropertyEqualityComparer.Instance()
+                        ).ToList();
+
+                // Were there any?
+                if (editedProperties.Any())
+                {
+                    // Log what we are about to do.
+                    Logger.LogDebug(
+                        "Editing {count} message properties for message: {id}.",
+                        editedProperties.Count(),
+                        message.Id
+                        );
+
+                    // Loop through the message properties.
+                    foreach (var property in changedMessage.MessageProperties)
+                    {
+                        // Log what we are about to do.
+                        Logger.LogDebug(
+                            "Updating message property: {id1} for message: {id2}.",
+                            property.PropertyType.Id,
+                            property.Message.Id
+                            );
+
+                        // Update the message property.
+                        await MessagePropertyManager.UpdateAsync(
+                            property,
+                            UserName
+                            );
+                    }
+                }
+
                 // Log what we are about to do.
                 Logger.LogDebug(
                     "Showing the snackbar message."
@@ -788,8 +870,8 @@ public partial class Index
                     );
 
                 // Refresh the page.
-                await OnRefreshMailMessages();
-                await OnRefreshTextMessages();
+                await OnRefreshMailMessagesAsync();
+                await OnRefreshTextMessagesAsync();
             }
         }
         catch ( Exception ex )
@@ -825,8 +907,8 @@ public partial class Index
             if (_timeTillNextUpdate <= TimeSpan.Zero)
             {
                 // Refresh the page.
-                await OnRefreshMailMessages();
-                await OnRefreshTextMessages();
+                await OnRefreshMailMessagesAsync();
+                await OnRefreshTextMessagesAsync();
             }
             else
             {

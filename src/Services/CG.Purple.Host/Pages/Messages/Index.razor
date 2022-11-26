@@ -13,7 +13,7 @@
                   Loading="@_isBusy"
                   Filter="new Func<MailMessage,bool>(MailFilterFunc1)" >
             <ToolBarContent>
-                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshMailMessages">Refresh</MudButton>
+                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshMailMessagesAsync">Refresh</MudButton>
                 <MudText Class="px-4" Typo="Typo.caption">(page refreshes in @_timeTillNextUpdate)</MudText>
                 <MudSpacer />
                 <MudTextField @bind-Value="mailGridSearchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
@@ -30,7 +30,12 @@
                 <MudTh>&nbsp;</MudTh>
             </HeaderContent>
             <RowTemplate>
-                <MudTd DataLabel="Disabled"><MudCheckBox Checked="@context.IsDisabled" ReadOnly /></MudTd>
+                <MudTd DataLabel="Disabled">
+                    @if (context.IsDisabled)
+                    {
+                        <MudIcon Color="Color.Secondary" Icon="@Icons.Material.Filled.Block" />
+                    }
+                </MudTd>
                 <MudTd DataLabel="Created">@context.CreatedOnUtc.ToLocalTime()</MudTd>
                 <MudTd DataLabel="By">@context.CreatedBy</MudTd>
                 <MudTd DataLabel="State">@context.MessageState</MudTd>
@@ -39,15 +44,18 @@
                 <MudTd DataLabel="Errors">@context.ErrorCount</MudTd>
                 <MudTd DataLabel="Subject">@context.Subject</MudTd>
                 <MudTh>
+                    <MudTooltip Text="Enable/Disable">
+                        <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.FormatOverline" OnClick="() => OnToggleDisableAsync(context)" />
+                    </MudTooltip>
                     <MudTooltip Text="Properties">
-                        <MudIconButton Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" />
+                        <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" />
                     </MudTooltip>
                     @if (context.Attachments.Any())
                     {
                         <MudTooltip Text="Attachments">
-                            <MudIconButton Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
+                            <MudIconButton Size="Size.Small"  Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
                         </MudTooltip>
-                    }
+                    }                    
                 </MudTh>
             </RowTemplate>
             <PagerContent>
@@ -64,7 +72,7 @@
     <MudTabPanel Text="Texts" Icon="@Icons.Material.Filled.Message">
         <MudTable Items="@_textMessages" Dense Striped Filter="new Func<TextMessage,bool>(TextFilterFunc1)" Loading="@_isBusy">
             <ToolBarContent>
-                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshTextMessages">Refresh</MudButton>
+                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshTextMessagesAsync">Refresh</MudButton>
                 <MudText Class="px-4" Typo="Typo.caption">(page refreshes in @_timeTillNextUpdate)</MudText>
                 <MudSpacer />
                 <MudTextField @bind-Value="textGridSearchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
@@ -81,7 +89,12 @@
                 <MudTh>&nbsp;</MudTh>
             </HeaderContent>
             <RowTemplate>
-                <MudTd DataLabel="Disabled"><MudCheckBox Checked="@context.IsDisabled" ReadOnly /></MudTd>
+                <MudTd DataLabel="Disabled">
+                    @if (context.IsDisabled)
+                    {
+                        <MudIcon Color="Color.Secondary" Icon="@Icons.Material.Filled.Block" />
+                    }
+                </MudTd>
                 <MudTd DataLabel="Created">@context.CreatedOnUtc.ToLocalTime()</MudTd>
                 <MudTd DataLabel="By">@context.CreatedBy</MudTd>
                 <MudTd DataLabel="State">@context.MessageState</MudTd>
@@ -90,13 +103,16 @@
                 <MudTd DataLabel="Errors">@context.ErrorCount</MudTd>
                 <MudTd DataLabel="To">@context.To</MudTd>                
                 <MudTh>
+                    <MudTooltip Text="Enable/Disable">
+                        <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.FormatOverline" OnClick="() => OnToggleDisableAsync(context)" />
+                    </MudTooltip>
                     <MudTooltip Text="Properties">
-                        <MudIconButton Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" Disabled="_isBusy" />
+                        <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" Disabled="_isBusy" />
                     </MudTooltip>
                     @if (context.Attachments.Any())
                     {
                         <MudTooltip Text="Attachments">
-                            <MudIconButton Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
+                            <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
                         </MudTooltip>
                     }
                 </MudTh>
