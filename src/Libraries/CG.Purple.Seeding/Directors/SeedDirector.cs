@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Seeding.Options;
-
 namespace CG.Purple.Seeding.Directors;
 
 /// <summary>
@@ -183,10 +181,7 @@ internal class SeedDirector : ISeedDirector
             // Bind the options.
             var mailMessageOptions = new List<MailMessageOptions>();
             configuration.GetSection("MailMessages").Bind(mailMessageOptions);
-
-            // Verify the options.
-            Guard.Instance().ThrowIfInvalidObject(mailMessageOptions, nameof(mailMessageOptions));
-
+                        
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding mail messages from the configuration."
@@ -239,10 +234,7 @@ internal class SeedDirector : ISeedDirector
             // Bind the options.
             var mimeTypeOptions = new List<MimeTypeOptions>();
             configuration.GetSection("MimeTypes").Bind(mimeTypeOptions);
-
-            // Verify the options.
-            Guard.Instance().ThrowIfInvalidObject(mimeTypeOptions, nameof(mimeTypeOptions));
-
+            
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding mime types from the configuration."
@@ -295,10 +287,7 @@ internal class SeedDirector : ISeedDirector
             // Bind the options.
             var parameterTypeOptions = new List<ParameterTypeOptions>();
             configuration.GetSection("ParameterTypes").Bind(parameterTypeOptions);
-
-            // Verify the options.
-            Guard.Instance().ThrowIfInvalidObject(parameterTypeOptions, nameof(parameterTypeOptions));
-
+                        
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding parameter types from the configuration."
@@ -352,9 +341,6 @@ internal class SeedDirector : ISeedDirector
             var propertyTypeOptions = new List<PropertyTypeOptions>();
             configuration.GetSection("PropertyTypes").Bind(propertyTypeOptions);
 
-            // Verify the options.
-            Guard.Instance().ThrowIfInvalidObject(propertyTypeOptions, nameof(propertyTypeOptions));
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding property types from the configuration."
@@ -407,10 +393,7 @@ internal class SeedDirector : ISeedDirector
             // Bind the options.
             var providerParameterOptions = new List<ProviderParameterOptions>();
             configuration.GetSection("ProviderParameters").Bind(providerParameterOptions);
-
-            // Verify the options.
-            Guard.Instance().ThrowIfInvalidObject(providerParameterOptions, nameof(providerParameterOptions));
-
+            
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding provider parameters from the configuration."
@@ -463,10 +446,7 @@ internal class SeedDirector : ISeedDirector
             // Bind the options.
             var providerTypeOptions = new List<ProviderTypeOptions>();
             configuration.GetSection("ProviderTypes").Bind(providerTypeOptions);
-
-            // Verify the options.
-            Guard.Instance().ThrowIfInvalidObject(providerTypeOptions, nameof(providerTypeOptions));
-
+                       
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding provider types from the configuration."
@@ -519,10 +499,7 @@ internal class SeedDirector : ISeedDirector
             // Bind the options.
             var providerLogOptions = new List<ProcessLogOptions>();
             configuration.GetSection("ProcessLogs").Bind(providerLogOptions);
-
-            // Verify the options.
-            Guard.Instance().ThrowIfInvalidObject(providerLogOptions, nameof(providerLogOptions));
-
+                        
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding process logs from the configuration."
@@ -576,9 +553,6 @@ internal class SeedDirector : ISeedDirector
             var textMessageOptions = new List<TextMessageOptions>();
             configuration.GetSection("TextMessages").Bind(textMessageOptions);
 
-            // Verify the options.
-            Guard.Instance().ThrowIfInvalidObject(textMessageOptions, nameof(textMessageOptions));
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Seeding text messages from the configuration."
@@ -627,7 +601,10 @@ internal class SeedDirector : ISeedDirector
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="DirectorException"></exception>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="DirectorException">This exception is thrown whenever
+    /// the director fails to complete the operation.</exception>
     private async Task SeedMailMessagesAsync(
         List<MailMessageOptions> mailMessageOptions,
         string userName,
@@ -635,6 +612,9 @@ internal class SeedDirector : ISeedDirector
         CancellationToken cancellationToken = default
         )
     {
+        // Verify the options.
+        Guard.Instance().ThrowIfInvalidObject(mailMessageOptions, nameof(mailMessageOptions));
+
         try
         {
             // Should we check for existing data?
@@ -856,7 +836,10 @@ internal class SeedDirector : ISeedDirector
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="DirectorException"></exception>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="DirectorException">This exception is thrown whenever
+    /// the director fails to complete the operation.</exception>
     private async Task SeedMimeTypesAsync(
         List<MimeTypeOptions> mimeTypeOptions,
         string userName,
@@ -864,6 +847,9 @@ internal class SeedDirector : ISeedDirector
         CancellationToken cancellationToken = default
         )
     {
+        // Verify the options.
+        Guard.Instance().ThrowIfInvalidObject(mimeTypeOptions, nameof(mimeTypeOptions));
+
         try
         {
             // Should we check for existing data?
@@ -990,7 +976,10 @@ internal class SeedDirector : ISeedDirector
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="DirectorException"></exception>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="DirectorException">This exception is thrown whenever
+    /// the director fails to complete the operation.</exception>
     private async Task SeedParameterTypesAsync(
         List<ParameterTypeOptions> parameterTypeOptions,
         string userName,
@@ -998,6 +987,9 @@ internal class SeedDirector : ISeedDirector
         CancellationToken cancellationToken = default
         )
     {
+        // Verify the options.
+        Guard.Instance().ThrowIfInvalidObject(parameterTypeOptions, nameof(parameterTypeOptions));
+
         try
         {
             // Should we check for existing data?
@@ -1078,7 +1070,10 @@ internal class SeedDirector : ISeedDirector
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="DirectorException"></exception>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="DirectorException">This exception is thrown whenever
+    /// the director fails to complete the operation.</exception>
     private async Task SeedPropertyTypesAsync(
         List<PropertyTypeOptions> propertyTypeOptions,
         string userName,
@@ -1086,6 +1081,9 @@ internal class SeedDirector : ISeedDirector
         CancellationToken cancellationToken = default
         )
     {
+        // Verify the options.
+        Guard.Instance().ThrowIfInvalidObject(propertyTypeOptions, nameof(propertyTypeOptions));
+
         try
         {
             // Should we check for existing data?
@@ -1130,7 +1128,8 @@ internal class SeedDirector : ISeedDirector
                     new PropertyType()
                     {
                         Name = propertyTypeOption.Name,
-                        Description = propertyTypeOption.Description
+                        Description = propertyTypeOption.Description,
+                        IsSystem = propertyTypeOption.IsSystem
                     },
                     userName,
                     cancellationToken
@@ -1166,7 +1165,10 @@ internal class SeedDirector : ISeedDirector
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="DirectorException"></exception>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="DirectorException">This exception is thrown whenever
+    /// the director fails to complete the operation.</exception>
     private async Task SeedProviderParametersAsync(
         List<ProviderParameterOptions> providerParameterOptions,
         string userName,
@@ -1174,6 +1176,9 @@ internal class SeedDirector : ISeedDirector
         CancellationToken cancellationToken = default
         )
     {
+        // Verify the options.
+        Guard.Instance().ThrowIfInvalidObject(providerParameterOptions, nameof(providerParameterOptions));
+
         try
         {
             // Should we check for existing data?
@@ -1287,7 +1292,10 @@ internal class SeedDirector : ISeedDirector
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="DirectorException"></exception>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="DirectorException">This exception is thrown whenever
+    /// the director fails to complete the operation.</exception>
     private async Task SeedProviderTypesAsync(
         List<ProviderTypeOptions> providerTypeOptions,
         string userName,
@@ -1295,6 +1303,9 @@ internal class SeedDirector : ISeedDirector
         CancellationToken cancellationToken = default
         )
     {
+        // Verify the options.
+        Guard.Instance().ThrowIfInvalidObject(providerTypeOptions, nameof(providerTypeOptions));
+
         try
         {
             // Should we check for existing data?
@@ -1380,7 +1391,10 @@ internal class SeedDirector : ISeedDirector
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="DirectorException"></exception>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="DirectorException">This exception is thrown whenever
+    /// the director fails to complete the operation.</exception>
     private async Task SeedProcessLogsAsync(
         List<ProcessLogOptions> providerLogOptions,
         string userName,
@@ -1388,6 +1402,9 @@ internal class SeedDirector : ISeedDirector
         CancellationToken cancellationToken = default
         )
     {
+        // Verify the options.
+        Guard.Instance().ThrowIfInvalidObject(providerLogOptions, nameof(providerLogOptions));
+
         try
         {
             // Should we check for existing data?
@@ -1585,7 +1602,10 @@ internal class SeedDirector : ISeedDirector
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="DirectorException"></exception>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="DirectorException">This exception is thrown whenever
+    /// the director fails to complete the operation.</exception>
     private async Task SeedTextMessagesAsync(
         List<TextMessageOptions> textMessageOptions,
         string userName,
@@ -1593,6 +1613,9 @@ internal class SeedDirector : ISeedDirector
         CancellationToken cancellationToken = default
         )
     {
+        // Verify the options.
+        Guard.Instance().ThrowIfInvalidObject(textMessageOptions, nameof(textMessageOptions));
+
         try
         {
             // Should we check for existing data?

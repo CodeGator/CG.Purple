@@ -26,5 +26,10 @@ public class PropertyTypeOptions
     [MaxLength(128)]
     public string? Description { get; set; }
 
+    /// <summary>
+    /// This property indicates the property type is for system use.
+    /// </summary>
+    public bool IsSystem { get; set; }
+
     #endregion
 }

@@ -21,12 +21,15 @@
                             <MudTd DataLabel="Type">@context2.PropertyType.Name</MudTd>
                             <MudTd DataLabel="Value">@context2.Value</MudTd>
                             <MudTd>
-                                <MudTooltip Text="Delete">
-                                    <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteMessagePropertyAsync(context2)" />
-                                </MudTooltip>
-                                <MudTooltip Text="Edit">
-                                    <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditMessagePropertyAsync(context2)" />
-                                </MudTooltip>
+                                @if (!@context2.PropertyType.IsSystem)
+                                {
+                                    <MudTooltip Text="Delete">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteMessagePropertyAsync(context2)" />
+                                    </MudTooltip>
+                                    <MudTooltip Text="Edit">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditMessagePropertyAsync(context2)" />
+                                    </MudTooltip>
+                                }                                
                             </MudTd>
                         </RowTemplate>
                         <PagerContent>
