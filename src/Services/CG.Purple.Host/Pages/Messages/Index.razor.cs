@@ -1,5 +1,6 @@
 ﻿
 using CG.Purple.Managers;
+using Microsoft.Extensions.Options;
 
 namespace CG.Purple.Host.Pages.Messages;
 
@@ -65,6 +66,12 @@ public partial class Index
     // *******************************************************************
 
     #region Properties
+
+    /// <summary>
+    /// This property contains the hosted service options.
+    /// </summary>
+    [Inject]
+    IOptions<HostedServiceOptions> HostedServiceOptions { get; set; } = null!;
 
     /// <summary>
     /// This property contains the mail message manager for this page.
