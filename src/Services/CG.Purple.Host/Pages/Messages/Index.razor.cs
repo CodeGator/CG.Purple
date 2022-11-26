@@ -176,9 +176,8 @@ public partial class Index
                 "Fetching messages for the page."
                 );
 
-            // Fetch the messages.
-            _mailMessages = await MailManager.FindAllAsync();
-            _textMessages = await TextManager.FindAllAsync();
+            // Refresh the data.
+            await OnRefreshPageAsync();
 
             // Log what we are about to do.
             Logger.LogDebug(

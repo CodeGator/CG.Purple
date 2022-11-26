@@ -92,14 +92,14 @@
                               Class="mt-0"></MudTextField>
             </ToolBarContent>
             <HeaderContent>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.IsDisabled)">Disabled</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.CreatedOnUtc)">Created</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.CreatedBy)">By</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageState)">State</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.Attachments.Count())">Attachments</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageProperties.Count())">Properties</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.ErrorCount)">Errors</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.To)">To</MudTableSortLabel></MudTh>                
+                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.IsDisabled)">Disabled</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.CreatedOnUtc)">Created</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.CreatedBy)">By</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.MessageState)">State</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.Attachments.Count())">Attachments</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.MessageProperties.Count())">Properties</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.ErrorCount)">Errors</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.To)">To</MudTableSortLabel></MudTh>
                 <MudTh>&nbsp;</MudTh>
             </HeaderContent>
             <RowTemplate>

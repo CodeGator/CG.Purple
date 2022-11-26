@@ -44,12 +44,6 @@ public partial class MessagePropertyDialog
     public IEnumerable<PropertyType> PropertyTypes { get; set; } = null!;
 
     /// <summary>
-    /// This property contains the valid provider types.
-    /// </summary>
-    [Parameter]
-    public IEnumerable<ProviderType> ProviderTypes { get; set; } = null!;
-
-    /// <summary>
     /// This property contains the logger for this page.
     /// </summary>
     [Inject]
