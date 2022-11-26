@@ -1,6 +1,6 @@
 ﻿@page "/messages"
 
-<PageTitle>Message</PageTitle>
+<PageTitle>Messages</PageTitle>
 
 <MudBreadcrumbs Items="_crumbs"></MudBreadcrumbs>
 
@@ -8,7 +8,7 @@
 
 <MudText Typo="Typo.body2" Class="px-5">Messages are retained for up to <b>@(HostedServiceOptions?.Value?.MessageProcessing?.MaxDaysToLive ?? 7)</b> days before they are automatically archived.</MudText>
 
-<MudText Typo="Typo.body2" Class="pb-4 px-5">Messages are automatically retried up to <b>@(HostedServiceOptions?.Value?.MessageProcessing.MaxErrorCount ?? 3)</b> times before they are left in an error state.</MudText>
+<MudText Typo="Typo.body2" Class="pb-4 px-5">Messages are automatically retried up to <b>@(HostedServiceOptions?.Value?.MessageProcessing?.MaxErrorCount ?? 3)</b> times before they are left in an error state.</MudText>
 
 <MudTabs>
     <MudTabPanel Text="Emails" Icon="@Icons.Material.Filled.Email">
@@ -34,8 +34,6 @@
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.CreatedOnUtc)">Created</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.To.Truncate(12))">To</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageState)">State</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.Attachments.Count())">Attachments</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.MessageProperties.Count())">Properties</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.ErrorCount)">Errors</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<MailMessage, object>(x=>x.SafeSubject())">Subject</MudTableSortLabel></MudTh>
                 <MudTh>&nbsp;</MudTh>
@@ -44,14 +42,12 @@
                 <MudTd DataLabel="">
                     @if (context.IsDisabled)
                     {
-                        <MudIcon Color="Color.Secondary" Icon="@Icons.Material.Filled.Block" />
+                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Block" />
                     }
                 </MudTd>
                 <MudTd DataLabel="Created">@context.CreatedOnUtc.ToLocalTime()</MudTd>
                 <MudTd DataLabel="To">@context.To.Truncate(12)</MudTd>
                 <MudTd DataLabel="State">@context.MessageState</MudTd>
-                <MudTd DataLabel="Attachments">@context.Attachments.Count()</MudTd>
-                <MudTd DataLabel="Properties">@context.MessageProperties.Count()</MudTd>
                 <MudTd DataLabel="Errors">@context.ErrorCount</MudTd>
                 <MudTd DataLabel="Subject">@context.SafeSubject()</MudTd>
                 <MudTh>
@@ -64,12 +60,15 @@
                     <MudTooltip Text="Logs">
                         <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.History" OnClick="() => OnLogsAsync(context)" />
                     </MudTooltip>
+                    <MudTooltip Text="View">
+                        <MudIconButton Size="Size.Small" Icon="@MaterialDesignIcons.Normal.Eye" OnClick="() => OnPreview(context)" />
+                    </MudTooltip>
                     @if (context.Attachments.Any())
                     {
                         <MudTooltip Text="Attachments">
                             <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
                         </MudTooltip>
-                    }
+                    }                    
                 </MudTh>
             </RowTemplate>
             <PagerContent>
@@ -102,8 +101,6 @@
                 <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.CreatedOnUtc)">Created</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.To.Truncate(12))">To</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.MessageState)">State</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.Attachments.Count())">Attachments</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.MessageProperties.Count())">Properties</MudTableSortLabel></MudTh>
                 <MudTh><MudTableSortLabel SortBy="new Func<TextMessage, object>(x=>x.ErrorCount)">Errors</MudTableSortLabel></MudTh>
                 <MudTh>&nbsp;</MudTh>
             </HeaderContent>
@@ -111,14 +108,12 @@
                 <MudTd DataLabel="">
                     @if (context.IsDisabled)
                     {
-                        <MudIcon Color="Color.Secondary" Icon="@Icons.Material.Filled.Block" />
+                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Block" />
                     }
                 </MudTd>
                 <MudTd DataLabel="Created">@context.CreatedOnUtc.ToLocalTime()</MudTd>
                 <MudTd DataLabel="To">@context.To.Truncate(12)</MudTd>
                 <MudTd DataLabel="State">@context.MessageState</MudTd>
-                <MudTd DataLabel="Attachments">@context.Attachments.Count()</MudTd>
-                <MudTd DataLabel="Properties">@context.MessageProperties.Count()</MudTd>
                 <MudTd DataLabel="Errors">@context.ErrorCount</MudTd>
                 <MudTh>
                     <MudTooltip Text="Enable/Disable">
@@ -130,12 +125,15 @@
                     <MudTooltip Text="Logs">
                         <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.History" OnClick="() => OnLogsAsync(context)" />
                     </MudTooltip>
+                    <MudTooltip Text="View">
+                        <MudIconButton Size="Size.Small" Icon="@MaterialDesignIcons.Normal.Eye" OnClick="() => OnPreview(context)" />
+                    </MudTooltip>
                     @if (context.Attachments.Any())
                     {
                         <MudTooltip Text="Attachments">
                             <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.AttachFile" OnClick="() => OnAttachmentsAsync(context)" />
                         </MudTooltip>
-                    }
+                    }                   
                 </MudTh>
             </RowTemplate>
             <PagerContent>

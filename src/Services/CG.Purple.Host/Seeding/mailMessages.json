@@ -7,8 +7,8 @@
       "CC": "",
       "BCC": "",
       "Subject": "test email # 1",
-      "Body": "This is test email # 1",
-      "IsHtml": false,
+      "Body": "<p>This <font color=\"red\">is</font> test email # <b>1</b></p>",
+      "IsHtml": true,
       "Attachments": [],
       "Properties": [
         {

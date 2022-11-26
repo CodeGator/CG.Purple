@@ -8,7 +8,7 @@
                                AutoFocus="true"
                                Placeholder="Select Property Type"
                                ToStringFunc="Converter"
-                    @bind-Value="@Model.PropertyType"
+                               @bind-Value="@Model.PropertyType"
                                For="@(() => Model.PropertyType)">
                         @foreach (var propertyType in PropertyTypes)
                         {
@@ -19,7 +19,7 @@
                                   Variant="Variant.Outlined"
                                   Label="Value"
                                   For="@(() => Model.Value)"
-                    @bind-Value="@Model.Value" />
+                                  @bind-Value="@Model.Value" />
                 </MudCardContent>
                 <MudCardActions>
                     <MudButton Color="Color.Inherit"

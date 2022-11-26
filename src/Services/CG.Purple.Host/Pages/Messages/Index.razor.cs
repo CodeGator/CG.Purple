@@ -1,5 +1,4 @@
 ﻿
-using CG.Purple.Managers;
 using Microsoft.Extensions.Options;
 
 namespace CG.Purple.Host.Pages.Messages;
@@ -21,7 +20,7 @@ public partial class Index
     protected readonly List<BreadcrumbItem> _crumbs = new()
     {
         new BreadcrumbItem("Home", href: "/"),
-        new BreadcrumbItem("Message", href: "/message")
+        new BreadcrumbItem("Messages", href: "/messages")
     };
 
     /// <summary>
@@ -114,6 +113,12 @@ public partial class Index
     /// </summary>
     [Inject]
     protected IProcessLogManager ProcessLogManager { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the navigation manager for this page.
+    /// </summary>
+    [Inject]
+    NavigationManager NavigationManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the dialog service for this page.
@@ -624,6 +629,40 @@ public partial class Index
                 options => options.CloseAfterNavigation = true
                 );
         }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method navigates to the preview page.
+    /// </summary>
+    /// <param name="message">The mail message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected void OnPreview(
+        MailMessage message
+        )
+    {
+        // Go the preview page.
+        NavigationManager.NavigateTo(
+            $"/messages/mail/{message.Id}"
+            );
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method navigates to the preview page.
+    /// </summary>
+    /// <param name="message">The text message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected void OnPreview(
+        TextMessage message
+        )
+    {
+        // Go the preview page.
+        NavigationManager.NavigateTo(
+            $"/messages/text/{message.Id}"
+            );
     }
 
     // *******************************************************************

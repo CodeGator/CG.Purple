@@ -6,8 +6,8 @@
                     <DataAnnotationsValidator />
                     <MudTable Items="@Model.MessageProperties" Dense Striped Loading="@_isBusy">
                         <ToolBarContent>
-                            <MudButton StartIcon="@Icons.Material.Filled.Create" 
-                                       Variant="Variant.Filled" 
+                            <MudButton StartIcon="@Icons.Material.Filled.Create"
+                                       Variant="Variant.Filled"
                                        Disabled="@(!CanAddMessageProperty())"
                                        OnClick="OnCreateMessagePropertyAsync">Create</MudButton>
                             <MudSpacer />
@@ -29,7 +29,7 @@
                                     <MudTooltip Text="Edit">
                                         <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditMessagePropertyAsync(context2)" />
                                     </MudTooltip>
-                                }                                
+                                }
                             </MudTd>
                         </RowTemplate>
                         <PagerContent>

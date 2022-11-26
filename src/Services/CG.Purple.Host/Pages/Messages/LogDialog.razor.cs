@@ -24,18 +24,6 @@ public partial class LogDialog
     public IEnumerable<ProcessLog> Model { get; set; } = null!;
 
     /// <summary>
-    /// This property contains the dialog service for this page.
-    /// </summary>
-    [Inject]
-    protected IDialogService DialogService { get; set; } = null!;
-
-    /// <summary>
-    /// This property contains the snackbar service for this page.
-    /// </summary>
-    [Inject]
-    protected ISnackbar SnackbarService { get; set; } = null!;
-
-    /// <summary>
     /// This property contains the logger for this page.
     /// </summary>
     [Inject]
