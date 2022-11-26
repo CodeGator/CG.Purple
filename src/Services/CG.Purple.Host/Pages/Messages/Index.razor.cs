@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Managers;
+
 namespace CG.Purple.Host.Pages.Messages;
 
 /// <summary>
@@ -99,6 +101,12 @@ public partial class Index
     /// </summary>
     [Inject]
     protected IMessagePropertyManager MessagePropertyManager { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the process log manager for this page.
+    /// </summary>
+    [Inject]
+    protected IProcessLogManager ProcessLogManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the dialog service for this page.
@@ -482,6 +490,75 @@ public partial class Index
 
             // We're no longer busy.
             _isBusy = false;
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method displays a dialog for the message log.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnLogsAsync(
+        Message message
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Looking for logs associated with message: {id}",
+                message.Id
+                );
+
+            // Find any associated logs.
+            var logs = await ProcessLogManager.FindByMessageAsync(
+                message
+                );
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating the log dialog."
+                );
+
+            // Show the dialog.
+            var dialog = await DialogService.ShowEx<LogDialog>(
+                "Log", new DialogParameters()
+                {
+                    { "Model", logs },
+                },
+                new DialogOptionsEx()
+                {
+                    MaximizeButton = true,
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.ExtraLarge,
+                    FullWidth = true,
+                    DragMode = MudDialogDragMode.Simple,
+                    Animations = new[] { AnimationType.SlideIn },
+                    Position = DialogPosition.CenterRight,
+                    DisableSizeMarginY = true,
+                    DisablePositionMargin = true
+                });
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the log dialog."
+                );
+
+            // Show the dialog.
+            await dialog.Result;
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
         }
     }
 

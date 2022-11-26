@@ -77,6 +77,37 @@ public interface IProcessLogManager
         );
 
     /// <summary>
+    /// This method searches for a sequence of <see cref="ProcessLog"/> objects.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of <see cref="Message"/> 
+    /// objects.</returns>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<ProcessLog>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a sequence of <see cref="ProcessLog"/> objects
+    /// that are associated with the given <see cref="Message"/> object.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of <see cref="Message"/> 
+    /// objects.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<ProcessLog>> FindByMessageAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method updates an existing <see cref="ProcessLog"/> object in the 
     /// underlying storage.
     /// </summary>

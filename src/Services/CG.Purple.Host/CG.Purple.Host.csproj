@@ -9,6 +9,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Content Remove="C:\Users\marti\.nuget\packages\mudblazor.extensions\1.7.10\contentFiles\any\net7.0\version.json" />
+    </ItemGroup>
+
+    <ItemGroup>
         <None Remove="Seeding\file1.txt" />
         <None Remove="Seeding\file2.txt" />
         <None Remove="Seeding\file3.txt" />
@@ -77,6 +81,14 @@
 
     <ItemGroup>
       <None Include="Pages\Help\About\Index.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Pages\MimeTypes\" />
+      <Folder Include="Pages\Providers\" />
+      <Folder Include="Pages\ParameterTypes\" />
+      <Folder Include="Pages\ProviderTypes\" />
+      <Folder Include="Pages\PropertyTypes\" />
     </ItemGroup>
 
 </Project>

@@ -285,6 +285,126 @@ internal class ProcessLogRepository : IProcessLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProcessLog>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching process logs."
+                );
+
+            // Perform the log search.
+            var processLogs = await dbContext.ProcessLogs
+                .Include(x => x.Message)
+                .Include(x => x.ProviderType)
+                .ToListAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Convert the entities to a models.
+            var result = processLogs.Select(x =>
+                _mapper.Map<ProcessLog>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for process logs!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for process logs!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProcessLog>> FindByMessageAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching process logs."
+                );
+
+            // Perform the log search.
+            var processLogs = await dbContext.ProcessLogs.Where(x =>
+                x.MessageId == message.Id
+                ).Include(x => x.Message)
+                .Include(x => x.ProviderType)
+                .ToListAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Convert the entities to a models.
+            var result = processLogs.Select(x =>
+                _mapper.Map<ProcessLog>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for process logs by message!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for process " +
+                "logs by message!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task DeleteAsync(
         ProcessLog processLog,
         CancellationToken cancellationToken = default

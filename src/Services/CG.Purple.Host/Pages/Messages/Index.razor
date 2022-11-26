@@ -50,6 +50,9 @@
                     <MudTooltip Text="Properties">
                         <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" />
                     </MudTooltip>
+                    <MudTooltip Text="Logs">
+                        <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.History" OnClick="() => OnLogsAsync(context)" />
+                    </MudTooltip>
                     @if (context.Attachments.Any())
                     {
                         <MudTooltip Text="Attachments">
@@ -108,6 +111,9 @@
                     </MudTooltip>
                     <MudTooltip Text="Properties">
                         <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" Disabled="_isBusy" />
+                    </MudTooltip>
+                    <MudTooltip Text="Logs">
+                        <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.History" OnClick="() => OnLogsAsync(context)" />
                     </MudTooltip>
                     @if (context.Attachments.Any())
                     {

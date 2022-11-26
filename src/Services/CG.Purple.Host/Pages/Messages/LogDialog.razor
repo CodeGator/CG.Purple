@@ -1,0 +1,40 @@
+﻿<MudDialog Class="mud-ex-dialog-initial">
+    <DialogContent>
+        <MudCard Outlined>
+            <MudCardContent Class="pt-0">
+                <MudTable Items="@Model" Dense Striped>
+                    <ToolBarContent>
+                        <MudSpacer />
+                    </ToolBarContent>
+                    <HeaderContent>
+                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.CreatedOnUtc.ToLocalTime())">DateTime</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.Event)">Event</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeBeforeState())">Before</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeAfterState())">After</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeProviderType())">Provider</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeError())">Error</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeData())">Data</MudTableSortLabel></MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="DateTime">@context.CreatedOnUtc.ToLocalTime()</MudTd>
+                        <MudTd DataLabel="Event">@context.Event</MudTd>
+                        <MudTd DataLabel="Event">@context.SafeBeforeState()</MudTd>
+                        <MudTd DataLabel="Event">@context.SafeAfterState()</MudTd>
+                        <MudTd DataLabel="Event">@context.SafeProviderType()</MudTd>
+                        <MudTd DataLabel="Event">@context.SafeError()</MudTd>
+                        <MudTd DataLabel="Event">@context.SafeData()</MudTd>
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                    <NoRecordsContent>
+                        No logs were found.
+                    </NoRecordsContent>
+                </MudTable>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton OnClick="Ok" Color="Color.Primary">Ok</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </DialogContent>
+</MudDialog>

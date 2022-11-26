@@ -61,13 +61,6 @@ public partial class AttachmentsDialog
     // *******************************************************************
 
     /// <summary>
-    /// This method cancels the dialog.
-    /// </summary>
-    protected void Cancel() => MudDialog.Cancel();
-
-    // *******************************************************************
-
-    /// <summary>
     /// This method displays a preview of the attachment.
     /// </summary>
     /// <param name="attachment">The attachment to use for the operation.</param>

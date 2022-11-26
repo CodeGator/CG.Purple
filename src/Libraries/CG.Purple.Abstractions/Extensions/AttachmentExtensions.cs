@@ -19,7 +19,8 @@ public static class AttachmentExtensions001
     /// object.
     /// </summary>
     /// <param name="attachment">The attachment to use for the operation.</param>
-    /// <returns>The original file name, or 'N/A' if no name is available.</returns>
+    /// <returns>A rendering of the property that is safe to use in a
+    /// Blazor page.</returns>
     public static string SafeOriginalFileName(
         this Attachment attachment
         )

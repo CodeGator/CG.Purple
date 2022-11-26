@@ -62,8 +62,6 @@ public interface IMessageManager
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns a sequence of <see cref="Message"/> 
     /// objects.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
     /// <exception cref="ManagerException">This exception is thrown whenever the
     /// manager fails to complete the operation.</exception>
     Task<IEnumerable<Message>> FindAllAsync(

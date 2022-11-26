@@ -662,7 +662,7 @@ public static class ProcessLogManagerExtensions001
             new ProcessLog()
             {
                 Message = message,
-                Event = ProcessEvent.Assigned,
+                Event = ProcessEvent.Reset,
                 BeforeState = previousMessageState, 
                 AfterState = message.MessageState
             },
