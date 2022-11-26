@@ -1,6 +1,5 @@
 ﻿
-using CG.Purple.Managers;
-using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
+using Microsoft.Extensions.Options;
 
 namespace CG.Purple.Host.Pages.Messages;
 
@@ -18,46 +17,46 @@ public partial class Index
     /// <summary>
     /// This field contains a reference to breadcrumbs for the view.
     /// </summary>
-    private readonly List<BreadcrumbItem> _crumbs = new()
+    protected readonly List<BreadcrumbItem> _crumbs = new()
     {
         new BreadcrumbItem("Home", href: "/"),
-        new BreadcrumbItem("Message", href: "/message")
+        new BreadcrumbItem("Messages", href: "/messages")
     };
 
     /// <summary>
     /// This field indicates the page is busy.
     /// </summary>
-    private bool _isBusy;
+    protected bool _isBusy;
 
     /// <summary>
     /// This field contains the collection of mail messages.
     /// </summary>
-    private IEnumerable<MailMessage>? _mailMessages = Array.Empty<MailMessage>();
+    protected IEnumerable<MailMessage>? _mailMessages = Array.Empty<MailMessage>();
 
     /// <summary>
     /// This field contains the collection of text messages.
     /// </summary>
-    private IEnumerable<TextMessage>? _textMessages = Array.Empty<TextMessage>();
+    protected IEnumerable<TextMessage>? _textMessages = Array.Empty<TextMessage>();
 
     /// <summary>
     /// This field contains the current mail search string.
     /// </summary>
-    private string mailGridSearchString = "";
+    protected string mailGridSearchString = "";
 
     /// <summary>
     /// This field contains the current text search string.
     /// </summary>
-    private string textGridSearchString = "";
+    protected string textGridSearchString = "";
 
     /// <summary>
     /// This field contains the time until the next page update.
     /// </summary>
-    private TimeSpan _timeTillNextUpdate = TimeSpan.FromSeconds(30);
+    protected TimeSpan _timeTillNextUpdate = TimeSpan.FromSeconds(30);
 
     /// <summary>
     /// This field contains the timer for the page refresh operations.
     /// </summary>
-    private Timer _timer = null!;
+    protected Timer _timer = null!;
 
     #endregion
 
@@ -66,6 +65,12 @@ public partial class Index
     // *******************************************************************
 
     #region Properties
+
+    /// <summary>
+    /// This property contains the hosted service options.
+    /// </summary>
+    [Inject]
+    IOptions<HostedServiceOptions> HostedServiceOptions { get; set; } = null!;
 
     /// <summary>
     /// This property contains the mail message manager for this page.
@@ -78,6 +83,12 @@ public partial class Index
     /// </summary>
     [Inject]
     protected ITextMessageManager TextManager { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the message manager for this page.
+    /// </summary>
+    [Inject]
+    protected IMessageManager MessageManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the property type manager for this page.
@@ -96,6 +107,18 @@ public partial class Index
     /// </summary>
     [Inject]
     protected IMessagePropertyManager MessagePropertyManager { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the process log manager for this page.
+    /// </summary>
+    [Inject]
+    protected IProcessLogManager ProcessLogManager { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the navigation manager for this page.
+    /// </summary>
+    [Inject]
+    NavigationManager NavigationManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the dialog service for this page.
@@ -165,9 +188,8 @@ public partial class Index
                 "Fetching messages for the page."
                 );
 
-            // Fetch the messages.
-            _mailMessages = await MailManager.FindAllAsync();
-            _textMessages = await TextManager.FindAllAsync();
+            // Refresh the data.
+            await OnRefreshPageAsync();
 
             // Log what we are about to do.
             Logger.LogDebug(
@@ -242,12 +264,41 @@ public partial class Index
         string searchString
         )
     {
+        // How should we filter?
+        if (searchString.Contains(':'))
+        {
+            // If we get here then we might need to filter by property types.
+
+            // Should be: property type:value
+            var parts = searchString.Split(':');
+            if (parts.Length == 2)
+            {
+                // If we get here then we need to filter by property types.
+
+                // Look for a matching property.
+                var match = element.MessageProperties.FirstOrDefault(x => 
+                    x.PropertyType.Name == parts[0]
+                    );
+
+                // Did we find one?
+                if (match is not null)
+                {
+                    return match.Value.Contains(
+                        parts[1],
+                        StringComparison.OrdinalIgnoreCase
+                        );
+                }
+            }
+        }
+
+        // If we get here then we should filter on all properties.
+
         if (string.IsNullOrWhiteSpace(searchString))
         {
             return true;
         }
         if (element.To.Contains(
-            searchString, 
+            searchString,
             StringComparison.OrdinalIgnoreCase)
             )
         {
@@ -256,7 +307,7 @@ public partial class Index
         if (!string.IsNullOrEmpty(element.CC))
         {
             if (element.CC.Contains(
-                searchString, 
+                searchString,
                 StringComparison.OrdinalIgnoreCase)
                 )
             {
@@ -266,7 +317,7 @@ public partial class Index
         if (!string.IsNullOrEmpty(element.BCC))
         {
             if (element.BCC.Contains(
-                searchString, 
+                searchString,
                 StringComparison.OrdinalIgnoreCase)
                 )
             {
@@ -276,7 +327,7 @@ public partial class Index
         if (!string.IsNullOrEmpty(element.Subject))
         {
             if (element.Subject.Contains(
-                searchString, 
+                searchString,
                 StringComparison.OrdinalIgnoreCase)
                 )
             {
@@ -289,7 +340,7 @@ public partial class Index
             return true;
         }
         if (element.Body.Contains(
-            searchString, 
+            searchString,
             StringComparison.OrdinalIgnoreCase)
             )
         {
@@ -311,6 +362,35 @@ public partial class Index
         string searchString
         )
     {
+        // How should we filter?
+        if (searchString.Contains(':'))
+        {
+            // If we get here then we might need to filter by property types.
+
+            // Should be: property type:value
+            var parts = searchString.Split(':');
+            if (parts.Length == 2)
+            {
+                // If we get here then we need to filter by property types.
+
+                // Look for a matching property.
+                var match = element.MessageProperties.FirstOrDefault(x =>
+                    x.PropertyType.Name == parts[0]
+                    );
+
+                // Did we find one?
+                if (match is not null)
+                {
+                    return match.Value.Contains(
+                        parts[1],
+                        StringComparison.OrdinalIgnoreCase
+                        );
+                }
+            }
+        }
+
+        // If we get here then we should filter on all properties.
+
         if (string.IsNullOrWhiteSpace(searchString))
         {
             return true;
@@ -340,9 +420,20 @@ public partial class Index
     // *******************************************************************
 
     /// <summary>
+    /// This method refreshes all the data sources for the page.
+    /// </summary>
+    protected async Task OnRefreshPageAsync()
+    {
+        await OnRefreshMailMessagesAsync();
+        await OnRefreshTextMessagesAsync();
+    }
+
+    // *******************************************************************
+
+    /// <summary>
     /// This method manually refreshes the mail messages collection.
     /// </summary>
-    protected async Task OnRefreshMailMessages()
+    protected async Task OnRefreshMailMessagesAsync()
     {
         try
         {
@@ -409,7 +500,7 @@ public partial class Index
     /// <summary>
     /// This method manually refreshes the text messages collection.
     /// </summary>
-    protected async Task OnRefreshTextMessages()
+    protected async Task OnRefreshTextMessagesAsync()
     {
         try
         {
@@ -474,6 +565,109 @@ public partial class Index
     // *******************************************************************
 
     /// <summary>
+    /// This method displays a dialog for the message log.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnLogsAsync(
+        Message message
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Looking for logs associated with message: {id}",
+                message.Id
+                );
+
+            // Find any associated logs.
+            var logs = await ProcessLogManager.FindByMessageAsync(
+                message
+                );
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating the log dialog."
+                );
+
+            // Show the dialog.
+            var dialog = await DialogService.ShowEx<LogDialog>(
+                "Log", new DialogParameters()
+                {
+                    { "Model", logs },
+                },
+                new DialogOptionsEx()
+                {
+                    MaximizeButton = true,
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.ExtraLarge,
+                    FullWidth = true,
+                    DragMode = MudDialogDragMode.Simple,
+                    Animations = new[] { AnimationType.SlideIn },
+                    Position = DialogPosition.CenterRight,
+                    DisableSizeMarginY = true,
+                    DisablePositionMargin = true
+                });
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the log dialog."
+                );
+
+            // Show the dialog.
+            await dialog.Result;
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method navigates to the preview page.
+    /// </summary>
+    /// <param name="message">The mail message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected void OnPreview(
+        MailMessage message
+        )
+    {
+        // Go the preview page.
+        NavigationManager.NavigateTo(
+            $"/messages/mail/{message.Id}"
+            );
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method navigates to the preview page.
+    /// </summary>
+    /// <param name="message">The text message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected void OnPreview(
+        TextMessage message
+        )
+    {
+        // Go the preview page.
+        NavigationManager.NavigateTo(
+            $"/messages/text/{message.Id}"
+            );
+    }
+
+    // *******************************************************************
+
+    /// <summary>
     /// This method displays a dialog for the message attachments.
     /// </summary>
     /// <param name="message">The message to use for the operation.</param>
@@ -486,22 +680,36 @@ public partial class Index
         {
             // Log what we are about to do.
             Logger.LogDebug(
-                "Setting the page to busy."
+                "Creating the attachments dialog."
                 );
 
-            // We're now officially busy.
-            _isBusy = true;
+            // Show the dialog.
+            var dialog = await DialogService.ShowEx<AttachmentsDialog>(
+                "Attachment", new DialogParameters() 
+                { 
+                    { "Model", message }, 
+                }, 
+                new DialogOptionsEx() 
+                { 
+                    MaximizeButton = true, 
+                    CloseButton = true, 
+                    CloseOnEscapeKey = true, 
+                    MaxWidth = MaxWidth.Small, 
+                    FullWidth = true, 
+                    DragMode = MudDialogDragMode.Simple, 
+                    Animations = new[] { AnimationType.SlideIn }, 
+                    Position = DialogPosition.CenterRight, 
+                    DisableSizeMarginY = true, 
+                    DisablePositionMargin = true 
+                });
 
             // Log what we are about to do.
             Logger.LogDebug(
-                "Setting the page state to dirty."
+                "Showing the attachments dialog."
                 );
 
-            // Give the UI time to show the busy indicator.
-            await InvokeAsync(() => StateHasChanged());
-            await Task.Delay(250);
-
-            // TODO : write the code for this.
+            // Show the dialog.
+            await dialog.Result;
         }
         catch (Exception ex)
         {
@@ -513,15 +721,53 @@ public partial class Index
                 options => options.CloseAfterNavigation = true
                 );
         }
-        finally
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method toggles the enabled/disabled state for the given message.
+    /// </summary>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnToggleDisableAsync(
+        Message message
+        )
+    {
+        try
         {
             // Log what we are about to do.
             Logger.LogDebug(
-                "Setting the page to not busy."
+                "Toggling the disabled state for message: {id}.",
+                message.Id
                 );
 
-            // We're no longer busy.
-            _isBusy = false;
+            // Toggle the disabled state.
+            if (message.IsDisabled)
+            {
+                message.IsDisabled = false;
+            }
+            else
+            {
+                message.IsDisabled = true;
+            }
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Saving changes to message: {id}.",
+                message.Id
+                );
+
+            // Update the storage.
+            await MessageManager.UpdateAsync(
+                message,
+                UserName
+                );
+        }
+        finally
+        {
+            // Update the page.
+            await OnRefreshPageAsync();
         }
     }
 
@@ -687,28 +933,7 @@ public partial class Index
                 }
 
                 // =======
-                // Step 2: Assume all message properties were changed.
-                // =======
-
-                // Loop through the message properties.
-                foreach (var property in changedMessage.MessageProperties)
-                {
-                    // Log what we are about to do.
-                    Logger.LogDebug(
-                        "Updating message property: {id1} for message: {id2}.",
-                        property.PropertyType.Id,
-                        property.Message.Id
-                        );
-
-                    // Update the message property.
-                    await MessagePropertyManager.UpdateAsync(
-                        property,
-                        UserName
-                        );
-                }
-
-                // =======
-                // Step 3: Find any message properties that were added.
+                // Step 2: Find any message properties that were added.
                 // =======
 
                 // Find any properties that were added.
@@ -766,6 +991,47 @@ public partial class Index
                     }
                 }
 
+                // =======
+                // Step 3: Assume all message properties were changed.
+                // =======
+
+                // If a property wasn't added, or deleted, assume it was edited.
+                var editedProperties = changedMessage.MessageProperties.Except(
+                    addedProperties,
+                    MessagePropertyEqualityComparer.Instance()
+                    ).Except(
+                        deletedProperties,
+                        MessagePropertyEqualityComparer.Instance()
+                        ).ToList();
+
+                // Were there any?
+                if (editedProperties.Any())
+                {
+                    // Log what we are about to do.
+                    Logger.LogDebug(
+                        "Editing {count} message properties for message: {id}.",
+                        editedProperties.Count(),
+                        message.Id
+                        );
+
+                    // Loop through the message properties.
+                    foreach (var property in changedMessage.MessageProperties)
+                    {
+                        // Log what we are about to do.
+                        Logger.LogDebug(
+                            "Updating message property: {id1} for message: {id2}.",
+                            property.PropertyType.Id,
+                            property.Message.Id
+                            );
+
+                        // Update the message property.
+                        await MessagePropertyManager.UpdateAsync(
+                            property,
+                            UserName
+                            );
+                    }
+                }
+
                 // Log what we are about to do.
                 Logger.LogDebug(
                     "Showing the snackbar message."
@@ -784,8 +1050,8 @@ public partial class Index
                     );
 
                 // Refresh the page.
-                await OnRefreshMailMessages();
-                await OnRefreshTextMessages();
+                await OnRefreshMailMessagesAsync();
+                await OnRefreshTextMessagesAsync();
             }
         }
         catch ( Exception ex )
@@ -821,8 +1087,8 @@ public partial class Index
             if (_timeTillNextUpdate <= TimeSpan.Zero)
             {
                 // Refresh the page.
-                await OnRefreshMailMessages();
-                await OnRefreshTextMessages();
+                await OnRefreshMailMessagesAsync();
+                await OnRefreshTextMessagesAsync();
             }
             else
             {

@@ -1,10 +1,10 @@
 ﻿
-namespace CG.Purple.Host.Options;
+namespace CG.Purple.Options;
 
 /// <summary>
 /// This class contains configuration settings for message processing.
 /// </summary>
-internal class MessageProcessingOptions
+public class MessageProcessingOptions
 {
     // *******************************************************************
     // Properties.

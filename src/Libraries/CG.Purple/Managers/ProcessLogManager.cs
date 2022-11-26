@@ -1,4 +1,7 @@
 ﻿
+using CG.Purple.Models;
+using CG.Purple.Repositories;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -205,6 +208,91 @@ internal class ProcessLogManager : IProcessLogManager
             // Provider better context.
             throw new ManagerException(
                 message: $"The manager failed to create a new process log!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProcessLog>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProcessLogRepository.FindAllAsync)
+                );
+
+            // Perform the operation.
+            var result = await _processLogRepository.FindAllAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for process logs!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for  " +
+                "process logs!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ProcessLog>> FindByMessageAsync(
+        Message message,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfNull(message, nameof(message));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProcessLogRepository.FindByMessageAsync)
+                );
+
+            // Perform the operation.
+            var result = await _processLogRepository.FindByMessageAsync(
+                message,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for process logs for a message!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for  " +
+                "process logs for a message!",
                 innerException: ex
                 );
         }

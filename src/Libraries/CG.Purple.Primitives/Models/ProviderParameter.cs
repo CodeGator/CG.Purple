@@ -29,5 +29,10 @@ public class ProviderParameter : ModelBase
     /// </summary>
     public string Value { get; set; } = null!;
 
+    /// <summary>
+    /// This property indicates the provider parameter is not editable.
+    /// </summary>
+    public bool IsReadOnly { get; set; }
+
     #endregion
 }

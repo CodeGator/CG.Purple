@@ -627,7 +627,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Reset"/> event to
+    /// This method writes a <see cref="ProcessEvent.Reset"/> event to
     /// the processing log, for an even that caused a state transition in
     /// the associated message.
     /// </summary>
@@ -662,7 +662,7 @@ public static class ProcessLogManagerExtensions001
             new ProcessLog()
             {
                 Message = message,
-                Event = ProcessEvent.Assigned,
+                Event = ProcessEvent.Reset,
                 BeforeState = previousMessageState, 
                 AfterState = message.MessageState
             },

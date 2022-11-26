@@ -6,8 +6,8 @@
                     <DataAnnotationsValidator />
                     <MudTable Items="@Model.MessageProperties" Dense Striped Loading="@_isBusy">
                         <ToolBarContent>
-                            <MudButton StartIcon="@Icons.Material.Filled.Create" 
-                                       Variant="Variant.Filled" 
+                            <MudButton StartIcon="@Icons.Material.Filled.Create"
+                                       Variant="Variant.Filled"
                                        Disabled="@(!CanAddMessageProperty())"
                                        OnClick="OnCreateMessagePropertyAsync">Create</MudButton>
                             <MudSpacer />
@@ -21,12 +21,15 @@
                             <MudTd DataLabel="Type">@context2.PropertyType.Name</MudTd>
                             <MudTd DataLabel="Value">@context2.Value</MudTd>
                             <MudTd>
-                                <MudTooltip Text="Delete">
-                                    <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteMessagePropertyAsync(context2)" />
-                                </MudTooltip>
-                                <MudTooltip Text="Edit">
-                                    <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditMessagePropertyAsync(context2)" />
-                                </MudTooltip>
+                                @if (!@context2.PropertyType.IsSystem)
+                                {
+                                    <MudTooltip Text="Delete">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteMessagePropertyAsync(context2)" />
+                                    </MudTooltip>
+                                    <MudTooltip Text="Edit">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditMessagePropertyAsync(context2)" />
+                                    </MudTooltip>
+                                }
                             </MudTd>
                         </RowTemplate>
                         <PagerContent>

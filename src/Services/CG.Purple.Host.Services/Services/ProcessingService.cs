@@ -153,7 +153,7 @@ internal class ProcessingService : BackgroundService
             while (!stoppingToken.IsCancellationRequested)
             {
                 // =======
-                // Step 1: stand up the process director.
+                // Step 1: stand up the DI scope.
                 // =======
 
                 // Log what we are about to do.
@@ -163,6 +163,10 @@ internal class ProcessingService : BackgroundService
 
                 // Create a DI scope.
                 using var scope = _serviceProvider.CreateScope();
+
+                // =======
+                // Step 2: process any messages that are waiting.
+                // =======
 
                 // Log what we are about to do.
                 _logger.LogDebug(
@@ -174,10 +178,6 @@ internal class ProcessingService : BackgroundService
                 var processDirector = scope.ServiceProvider.GetRequiredService<
                     IProcessDirector
                     >();
-
-                // =======
-                // Step 2: process any messages that are waiting.
-                // =======
 
                 // Log what we are about to do.
                 _logger.LogDebug(
@@ -211,6 +211,17 @@ internal class ProcessingService : BackgroundService
                 // =======
                 // Step 3: retry any messages that are eligible.
                 // =======
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Creating an {name} instance",
+                    nameof(IRetryDirector)
+                    );
+
+                // Get a scoped process director.
+                var retryDirector = scope.ServiceProvider.GetRequiredService<
+                    IRetryDirector
+                    >();
 
                 // Were options provided?
                 var maxErrorCount = 0;
@@ -248,7 +259,7 @@ internal class ProcessingService : BackgroundService
                 // Log what we are about to do.
                 _logger.LogDebug(
                     "Deferring to {name}",
-                    nameof(IProcessDirector.RetryMessagesAsync)
+                    nameof(IRetryDirector.RetryMessagesAsync)
                     );
 
                 // Restart the stopwatch.
@@ -256,7 +267,7 @@ internal class ProcessingService : BackgroundService
                 try
                 {
                     // Retry failed messages.
-                    await processDirector.RetryMessagesAsync(
+                    await retryDirector.RetryMessagesAsync(
                         maxErrorCount,
                         stoppingToken
                         ).ConfigureAwait(false);
@@ -269,19 +280,25 @@ internal class ProcessingService : BackgroundService
                     // Log what we did.
                     _logger.LogTrace(
                         "{name} finished in {elapsed}",
-                        nameof(IProcessDirector.RetryMessagesAsync),
+                        nameof(IRetryDirector.RetryMessagesAsync),
                         sw.Elapsed
                         );
                 }
+
+                // =======
+                // Step 4: archive any messages that are due.
+                // =======
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Creating an {name} instance",
+                    nameof(IArchiveDirector)
+                    );
 
                 // Get a scoped archive director.
                 var archiveDirector = scope.ServiceProvider.GetRequiredService<
                     IArchiveDirector
                     >();
-
-                // =======
-                // Step 4: archive any messages that are due.
-                // =======
 
                 // Were options provided?
                 var maxDaysToLive = 0;

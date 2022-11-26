@@ -2,8 +2,8 @@
 global using CG.Purple.Host.SignalR;
 global using CG.Purple.Managers;
 global using CG.Purple.Models;
+global using CG.Purple.Options;
 global using CG.Validations;
-global using Microsoft.AspNetCore.Builder;
 global using Microsoft.AspNetCore.Components;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -16,3 +16,5 @@ global using MudBlazor.Extensions.Options;
 global using MudBlazor.Services;
 global using System.Diagnostics;
 global using System.Reflection;
+global using Microsoft.AspNetCore.Components.Forms;
+global using CG.Purple.Host.ViewModels;

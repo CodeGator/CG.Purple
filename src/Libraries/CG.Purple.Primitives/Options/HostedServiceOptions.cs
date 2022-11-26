@@ -1,10 +1,10 @@
 ﻿
-namespace CG.Purple.Host.Options;
+namespace CG.Purple.Options;
 
 /// <summary>
 /// This class contains configuration settings for hosted services.
 /// </summary>
-internal class HostedServiceOptions
+public class HostedServiceOptions
 {
     // *******************************************************************
     // Properties.

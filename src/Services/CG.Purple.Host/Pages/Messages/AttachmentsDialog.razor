@@ -1,0 +1,38 @@
+﻿<MudDialog Class="mud-ex-dialog-initial">
+    <DialogContent>
+        <MudCard Outlined>
+            <MudCardContent Class="pt-0">
+                <MudTable Items="@Model.Attachments" Dense Striped >
+                    <ToolBarContent>
+                        <MudSpacer />
+                    </ToolBarContent>
+                    <HeaderContent>
+                        <MudTh><MudTableSortLabel SortBy="new Func<Attachment, object>(x=>x.SafeOriginalFileName())">Name</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<Attachment, object>(x=>x.MimeType.FullType())">Mime Type</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<Attachment, object>(x=>x.Length)">Length</MudTableSortLabel></MudTh>
+                        <MudTh></MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="Type">@context.SafeOriginalFileName()</MudTd>
+                        <MudTd DataLabel="Type">@context.MimeType.FullType()</MudTd>
+                        <MudTd DataLabel="Type">@context.Length</MudTd>
+                        <MudTd>
+                            <MudTooltip Text="View">
+                                <MudIconButton Icon="@Icons.Material.Filled.Preview" OnClick="() => OnPreviewAsync(context)" />
+                            </MudTooltip>
+                        </MudTd>
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                    <NoRecordsContent>
+                        No attachments were found.
+                    </NoRecordsContent>
+                </MudTable>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton OnClick="Ok" Color="Color.Primary">Ok</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </DialogContent>
+</MudDialog>

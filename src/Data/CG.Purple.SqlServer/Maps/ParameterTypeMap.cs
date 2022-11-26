@@ -70,7 +70,7 @@ internal class ParameterTypeMap : EntityMapBase<Entities.ParameterType>
             e.Name
         },
         "IX_ParameterTypes"
-        );
+        ).IsUnique();
     }
 
     #endregion

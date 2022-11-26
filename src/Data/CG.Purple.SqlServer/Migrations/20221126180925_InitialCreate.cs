@@ -85,6 +85,7 @@ namespace CG.Purple.SqlServer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
+                    IsSystem = table.Column<bool>(type: "bit", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -390,7 +391,8 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "IX_ParameterTypes",
                 schema: "Purple",
                 table: "ParameterTypes",
-                column: "Name");
+                column: "Name",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProcessLogs",
@@ -414,7 +416,14 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "IX_PropertyTypes",
                 schema: "Purple",
                 table: "PropertyTypes",
-                column: "Name");
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PropertyTypes2",
+                schema: "Purple",
+                table: "PropertyTypes",
+                column: "IsSystem");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProviderParameters_ParameterTypeId",
@@ -426,7 +435,14 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "IX_ProviderTypes",
                 schema: "Purple",
                 table: "ProviderTypes",
-                columns: new[] { "Name", "CanProcessEmails", "CanProcessTexts", "Priority", "IsDisabled" });
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProviderTypes2",
+                schema: "Purple",
+                table: "ProviderTypes",
+                columns: new[] { "CanProcessEmails", "CanProcessTexts", "Priority", "IsDisabled" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_TextMessages",

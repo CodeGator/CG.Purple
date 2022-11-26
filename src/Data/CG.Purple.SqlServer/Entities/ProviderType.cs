@@ -27,12 +27,14 @@ internal class ProviderType : EntityBase
     public string? Description { get; set; }
 
     /// <summary>
-    /// This property indicates whether this provider can process emails.
+    /// This property indicates whether this provider type can process
+    /// emails.
     /// </summary>
     public bool CanProcessEmails { get; set; }
 
     /// <summary>
-    /// This property indicates whether this provider can process texts.
+    /// This property indicates whether this provider type can process 
+    /// texts.
     /// </summary>
     public bool CanProcessTexts { get; set; }
 
@@ -42,17 +44,18 @@ internal class ProviderType : EntityBase
     public int Priority { get; set; }
 
     /// <summary>
-    /// This property indicates the provider has been disabled.
+    /// This property indicates the provider type has been disabled.
     /// </summary>
     public bool IsDisabled { get; set; }
 
     /// <summary>
-    /// This property contains the .NET type for the associated provider.
+    /// This property contains the .NET type for the associated provider
+    /// type.
     /// </summary>
     public string FactoryType { get; set; } = null!;
 
     /// <summary>
-    /// This property contains the associated provider parameters.
+    /// This property contains the associated parameters.
     /// </summary>
     public virtual ICollection<ProviderParameter> Parameters { get; set; }
         = new HashSet<ProviderParameter>();

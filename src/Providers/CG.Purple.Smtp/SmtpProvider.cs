@@ -212,7 +212,7 @@ internal class SmtpProvider : IMessageProvider
                     _ = await _processLogManager.LogErrorEventAsync(
                         "Message isn't an email!",
                         providerType,
-                        GetType().AssemblyQualifiedName,
+                        nameof(SmtpProvider),
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);
@@ -266,7 +266,7 @@ internal class SmtpProvider : IMessageProvider
                     _ = await _processLogManager.LogErrorEventAsync(
                         "Unable to find the email for processing!",
                         providerType,
-                        GetType().AssemblyQualifiedName,
+                        nameof(SmtpProvider),
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);
@@ -347,7 +347,7 @@ internal class SmtpProvider : IMessageProvider
                         _messageManager,
                         _processLogManager,
                         providerType,
-                        GetType().AssemblyQualifiedName,
+                        nameof(SmtpProvider),
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);
@@ -387,7 +387,7 @@ internal class SmtpProvider : IMessageProvider
                         _messageManager,
                         _processLogManager,
                         providerType,
-                        GetType().AssemblyQualifiedName,
+                        nameof(SmtpProvider),
                         "host",
                         cancellationToken
                         ).ConfigureAwait(false);

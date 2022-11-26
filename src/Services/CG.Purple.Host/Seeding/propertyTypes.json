@@ -10,7 +10,8 @@
     },
     {
       "Name": "Provider",
-      "Description": "The provider that will process this message"
+      "Description": "The provider that will process this message",
+      "IsSystem":  true
     }
   ]
 }

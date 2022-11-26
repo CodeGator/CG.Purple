@@ -89,13 +89,20 @@ internal class ProviderTypeMap : EntityMapBase<Entities.ProviderType>
         // Setup the index.
         builder.HasIndex(e => new
         {
-            e.Name,
+            e.Name
+        },
+        "IX_ProviderTypes"
+        ).IsUnique();
+
+        // Setup the index.
+        builder.HasIndex(e => new
+        {
             e.CanProcessEmails,
             e.CanProcessTexts,
             e.Priority,
             e.IsDisabled
         },
-        "IX_ProviderTypes"
+        "IX_ProviderTypes2"
         );
     }
 
