@@ -6,7 +6,7 @@ namespace CG.Purple.Models;
 /// This class contains extension methods related to the <see cref="ProcessLog"/>
 /// type.
 /// </summary>
-public static class ProcessLogExtensions001
+internal static class ProcessLogExtensions001
 {
     // *******************************************************************
     // Public methods.

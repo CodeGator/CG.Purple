@@ -15,7 +15,7 @@ public partial class Index
     /// <summary>
     /// This field contains a reference to breadcrumbs for the view.
     /// </summary>
-    private readonly List<BreadcrumbItem> _crumbs = new()
+    protected readonly List<BreadcrumbItem> _crumbs = new()
     {
         new BreadcrumbItem("Home", href: "/"),
         new BreadcrumbItem("Help", href: "/help", disabled: true),
@@ -25,7 +25,7 @@ public partial class Index
     /// <summary>
     ///  This field contains the list of assemblies.
     /// </summary>
-    private IEnumerable<AssemblyModel>? _assemblies;
+    protected IEnumerable<AssemblyModel>? _assemblies;
 
     #endregion
 

@@ -5,7 +5,7 @@ namespace CG.Purple.Models;
 /// This class contains extension methods related to the <see cref="MailMessage"/>
 /// type.
 /// </summary>
-public static class MailMessageExtensions001
+internal static class MailMessageExtensions001
 {
     // *******************************************************************
     // Public methods.

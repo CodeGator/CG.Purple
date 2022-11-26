@@ -1,12 +1,11 @@
 ﻿
 namespace CG.Purple.Models;
 
-
 /// <summary>
-/// This class contains extension methods related to the <see cref="Attachment"/>
+/// This class contains extension methods related to the <see cref="MimeType"/>
 /// type.
 /// </summary>
-public static class AttachmentExtensions001
+internal static class MimeTypeExtensions001
 {
     // *******************************************************************
     // Public methods.
@@ -15,21 +14,21 @@ public static class AttachmentExtensions001
     #region Public methods
 
     /// <summary>
-    /// This method returns a non-null file name for the given <see cref="Attachment"/>
-    /// object.
+    /// This method returns the full type for the given <see cref="MimeType"/>
+    /// object, in the format: type/subtype.
     /// </summary>
-    /// <param name="attachment">The attachment to use for the operation.</param>
+    /// <param name="mimeType">The mime type to use for the operation.</param>
     /// <returns>A rendering of the property that is safe to use in a
     /// Blazor page.</returns>
-    public static string SafeOriginalFileName(
-        this Attachment attachment
+    public static string FullType(
+        this MimeType mimeType
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(attachment, nameof(attachment));
+        Guard.Instance().ThrowIfNull(mimeType, nameof(mimeType));
 
         // Return the full type.
-        return attachment.OriginalFileName ?? "N/A";
+        return $"{mimeType.Type}/{mimeType.SubType}";
     }
 
     #endregion

@@ -17,7 +17,7 @@ public partial class MessagePropertiesDialog
     /// <summary>
     /// This field indicates the page is busy.
     /// </summary>
-    private bool _isBusy;
+    protected bool _isBusy;
 
     #endregion
 

@@ -17,7 +17,7 @@ public partial class Index
     /// <summary>
     /// This field contains a reference to breadcrumbs for the view.
     /// </summary>
-    private readonly List<BreadcrumbItem> _crumbs = new()
+    protected readonly List<BreadcrumbItem> _crumbs = new()
     {
         new BreadcrumbItem("Home", href: "/"),
         new BreadcrumbItem("Message", href: "/message")
@@ -26,37 +26,37 @@ public partial class Index
     /// <summary>
     /// This field indicates the page is busy.
     /// </summary>
-    private bool _isBusy;
+    protected bool _isBusy;
 
     /// <summary>
     /// This field contains the collection of mail messages.
     /// </summary>
-    private IEnumerable<MailMessage>? _mailMessages = Array.Empty<MailMessage>();
+    protected IEnumerable<MailMessage>? _mailMessages = Array.Empty<MailMessage>();
 
     /// <summary>
     /// This field contains the collection of text messages.
     /// </summary>
-    private IEnumerable<TextMessage>? _textMessages = Array.Empty<TextMessage>();
+    protected IEnumerable<TextMessage>? _textMessages = Array.Empty<TextMessage>();
 
     /// <summary>
     /// This field contains the current mail search string.
     /// </summary>
-    private string mailGridSearchString = "";
+    protected string mailGridSearchString = "";
 
     /// <summary>
     /// This field contains the current text search string.
     /// </summary>
-    private string textGridSearchString = "";
+    protected string textGridSearchString = "";
 
     /// <summary>
     /// This field contains the time until the next page update.
     /// </summary>
-    private TimeSpan _timeTillNextUpdate = TimeSpan.FromSeconds(30);
+    protected TimeSpan _timeTillNextUpdate = TimeSpan.FromSeconds(30);
 
     /// <summary>
     /// This field contains the timer for the page refresh operations.
     /// </summary>
-    private Timer _timer = null!;
+    protected Timer _timer = null!;
 
     #endregion
 

@@ -31,22 +31,25 @@ public class ProviderType : ModelBase
     public string? Description { get; set; }
 
     /// <summary>
-    /// This property indicates whether this provider can process emails.
+    /// This property indicates whether this provider type can process 
+    /// emails.
     /// </summary>
     public bool CanProcessEmails { get; set; }
 
     /// <summary>
-    /// This property indicates whether this provider can process texts.
+    /// This property indicates whether this provider type can process 
+    /// texts.
     /// </summary>
     public bool CanProcessTexts { get; set; }
 
     /// <summary>
-    /// This property contains the relative priority for this provider.
+    /// This property contains the relative priority for this provider
+    /// type.
     /// </summary>
     public int Priority { get; set; }
 
     /// <summary>
-    /// This property indicates the provider has been disabled.
+    /// This property indicates the provider type has been disabled.
     /// </summary>
     public bool IsDisabled { get; set; }
 

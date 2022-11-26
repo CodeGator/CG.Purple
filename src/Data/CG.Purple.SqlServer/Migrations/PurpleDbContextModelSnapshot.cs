@@ -283,7 +283,8 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Name" }, "IX_ParameterTypes");
+                    b.HasIndex(new[] { "Name" }, "IX_ParameterTypes")
+                        .IsUnique();
 
                     b.ToTable("ParameterTypes", "Purple");
                 });
@@ -369,6 +370,9 @@ namespace CG.Purple.SqlServer.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
+                    b.Property<bool>("IsSystem")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -382,7 +386,10 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Name" }, "IX_PropertyTypes");
+                    b.HasIndex(new[] { "Name" }, "IX_PropertyTypes")
+                        .IsUnique();
+
+                    b.HasIndex(new[] { "IsSystem" }, "IX_PropertyTypes2");
 
                     b.ToTable("PropertyTypes", "Purple");
                 });
@@ -470,7 +477,10 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Name", "CanProcessEmails", "CanProcessTexts", "Priority", "IsDisabled" }, "IX_ProviderTypes");
+                    b.HasIndex(new[] { "Name" }, "IX_ProviderTypes")
+                        .IsUnique();
+
+                    b.HasIndex(new[] { "CanProcessEmails", "CanProcessTexts", "Priority", "IsDisabled" }, "IX_ProviderTypes2");
 
                     b.ToTable("ProviderTypes", "Purple");
                 });
