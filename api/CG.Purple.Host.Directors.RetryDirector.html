@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MessagePropertyDialog
+    <title>Class RetryDirector
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MessagePropertyDialog
+    <meta name="title" content="Class RetryDirector
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,58 +78,78 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Directors.RetryDirector">
   
   
-  <h1 id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog" class="text-break">Class MessagePropertyDialog
+  <h1 id="CG_Purple_Host_Directors_RetryDirector" data-uid="CG.Purple.Host.Directors.RetryDirector" class="text-break">Class RetryDirector
   </h1>
-  <div class="markdown level0 summary"><p>This class is the code-behind for the <a class="xref" href="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html">MessagePropertyDialog</a> page.</p>
+  <div class="markdown level0 summary"><p>This class is a default implementation of the <see cref="!:IRetryDirector"></see></p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">MessagePropertyDialog</span></div>
+    <div class="level1"><span class="xref">RetryDirector</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Pages.Messages.html">CG.Purple.Host.Pages.Messages</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Host.dll</h6>
-  <h5 id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Directors.html">CG.Purple.Host.Directors</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Host.Services.dll</h6>
+  <h5 id="CG_Purple_Host_Directors_RetryDirector_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MessagePropertyDialog</code></pre>
+    <pre><code class="lang-csharp hljs">class RetryDirector : IRetryDirector</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h3 id="constructors">Constructors
   </h3>
-  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Converter" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Converter">Converter</h4>
-  <div class="markdown level1 summary"><p>This delegate formats a property type for display in a dropdown.</p>
+  <a id="CG_Purple_Host_Directors_RetryDirector__ctor_" data-uid="CG.Purple.Host.Directors.RetryDirector.#ctor*"></a>
+  <h4 id="CG_Purple_Host_Directors_RetryDirector__ctor_IMessageManager_IProcessLogManager_ILogger_IRetryDirector__" data-uid="CG.Purple.Host.Directors.RetryDirector.#ctor(IMessageManager,IProcessLogManager,ILogger{IRetryDirector})">RetryDirector(IMessageManager, IProcessLogManager, ILogger&lt;IRetryDirector&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Host.Directors.RetryDirector.html">RetryDirector</a>
+class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Func&lt;PropertyType, string&gt; Converter</code></pre>
+    <pre><code class="lang-csharp hljs">public RetryDirector(IMessageManager messageManager, IProcessLogManager processLogManager, ILogger&lt;IRetryDirector&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessageManager</span></td>
+        <td><span class="parametername">messageManager</span></td>
+        <td><p>The message manager to use with this
+director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IProcessLogManager</span></td>
+        <td><span class="parametername">processLogManager</span></td>
+        <td><p>The process log manager to use
+with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IRetryDirector</span>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger to use with this director.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Purple_Host_Directors_RetryDirector__logger" data-uid="CG.Purple.Host.Directors.RetryDirector._logger">_logger</h4>
+  <div class="markdown level1 summary"><p>This field contains the logger for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger&lt;IRetryDirector&gt; _logger</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -141,23 +161,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Func</span>&lt;<span class="xref">PropertyType</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IRetryDirector</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="properties">Properties
-  </h3>
-  <a id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Logger_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Logger*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Logger" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Logger">Logger</h4>
-  <div class="markdown level1 summary"><p>This property contains the logger for this page.</p>
+  <h4 id="CG_Purple_Host_Directors_RetryDirector__messageManager" data-uid="CG.Purple.Host.Directors.RetryDirector._messageManager">_messageManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the message manager for this director.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected ILogger&lt;MessagePropertyDialog&gt; Logger { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IMessageManager _messageManager</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -167,21 +184,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html">MessagePropertyDialog</a>&gt;</td>
+        <td><span class="xref">IMessageManager</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Model_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Model*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Model" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Model">Model</h4>
-  <div class="markdown level1 summary"><p>This property contains the model for the dialog.</p>
+  <h4 id="CG_Purple_Host_Directors_RetryDirector__processLogManager" data-uid="CG.Purple.Host.Directors.RetryDirector._processLogManager">_processLogManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the process log manager for this director.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MessageProperty Model { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IProcessLogManager _processLogManager</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -191,79 +207,58 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">MessageProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_MudDialog_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.MudDialog*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_MudDialog" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.MudDialog">MudDialog</h4>
-  <div class="markdown level1 summary"><p>This property contains the MudDialog instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">MudDialogInstance MudDialog { }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">MudDialogInstance</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_PropertyTypes_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_PropertyTypes" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes">PropertyTypes</h4>
-  <div class="markdown level1 summary"><p>This property contains the valid property types.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;PropertyType&gt; PropertyTypes { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">PropertyType</span>&gt;</td>
+        <td><span class="xref">IProcessLogManager</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Cancel_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Cancel*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_Cancel" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.Cancel">Cancel()</h4>
-  <div class="markdown level1 summary"><p>This method cancels the dialog.</p>
-</div>
+  <a id="CG_Purple_Host_Directors_RetryDirector_RetryMessagesAsync_" data-uid="CG.Purple.Host.Directors.RetryDirector.RetryMessagesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_RetryDirector_RetryMessagesAsync_System_Int32_CancellationToken_" data-uid="CG.Purple.Host.Directors.RetryDirector.RetryMessagesAsync(System.Int32,CancellationToken)">RetryMessagesAsync(Int32, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void Cancel()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task RetryMessagesAsync(int maxErrorCount, CancellationToken cancellationToken = null)</code></pre>
   </div>
-  <a id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_OnValidSubmit_" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.OnValidSubmit*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_MessagePropertyDialog_OnValidSubmit" data-uid="CG.Purple.Host.Pages.Messages.MessagePropertyDialog.OnValidSubmit">OnValidSubmit()</h4>
-  <div class="markdown level1 summary"><p>This method is called when the form submits with valid data.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnValidSubmit()</code></pre>
-  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxErrorCount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

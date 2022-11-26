@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IProcessDirector
+    <title>Class LogDialog
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IProcessDirector
+    <meta name="title" content="Class LogDialog
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,52 +78,61 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Directors.IProcessDirector">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Pages.Messages.LogDialog">
   
   
-  <h1 id="CG_Purple_Directors_IProcessDirector" data-uid="CG.Purple.Directors.IProcessDirector" class="text-break">Interface IProcessDirector
+  <h1 id="CG_Purple_Host_Pages_Messages_LogDialog" data-uid="CG.Purple.Host.Pages.Messages.LogDialog" class="text-break">Class LogDialog
   </h1>
-  <div class="markdown level0 summary"><p>This interface represents an object that performs message processing operations.</p>
+  <div class="markdown level0 summary"><p>This class is the code-behind for the <a class="xref" href="CG.Purple.Host.Pages.Messages.LogDialog.html">LogDialog</a> page.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Directors.html">CG.Purple.Directors</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Abstractions.dll</h6>
-  <h5 id="CG_Purple_Directors_IProcessDirector_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IProcessDirector</code></pre>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">LogDialog</span></div>
   </div>
-  <h3 id="methods">Methods
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Pages.Messages.html">CG.Purple.Host.Pages.Messages</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Host.dll</h6>
+  <h5 id="CG_Purple_Host_Pages_Messages_LogDialog_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class LogDialog</code></pre>
+  </div>
+  <h3 id="properties">Properties
   </h3>
-  <a id="CG_Purple_Directors_IProcessDirector_ProcessMessagesAsync_" data-uid="CG.Purple.Directors.IProcessDirector.ProcessMessagesAsync*"></a>
-  <h4 id="CG_Purple_Directors_IProcessDirector_ProcessMessagesAsync_CancellationToken_" data-uid="CG.Purple.Directors.IProcessDirector.ProcessMessagesAsync(CancellationToken)">ProcessMessagesAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method attempts to process all messages with a 'Pending' or 'Processing'
-state.</p>
+  <a id="CG_Purple_Host_Pages_Messages_LogDialog_Logger_" data-uid="CG.Purple.Host.Pages.Messages.LogDialog.Logger*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_LogDialog_Logger" data-uid="CG.Purple.Host.Pages.Messages.LogDialog.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>This property contains the logger for this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task ProcessMessagesAsync(CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">protected ILogger&lt;LogDialog&gt; Logger { get; set; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -133,29 +142,70 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
-</td>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Host.Pages.Messages.LogDialog.html">LogDialog</a>&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
+  <a id="CG_Purple_Host_Pages_Messages_LogDialog_Model_" data-uid="CG.Purple.Host.Pages.Messages.LogDialog.Model*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_LogDialog_Model" data-uid="CG.Purple.Host.Pages.Messages.LogDialog.Model">Model</h4>
+  <div class="markdown level1 summary"><p>This property contains the model for the dialog.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;ProcessLog&gt; Model { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Condition</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="CG.Purple.Directors.DirectorException.html">DirectorException</a></td>
-        <td><p>This exception is thrown whenever the
-director fails to complete the operation.</p>
-</td>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">ProcessLog</span>&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Host_Pages_Messages_LogDialog_MudDialog_" data-uid="CG.Purple.Host.Pages.Messages.LogDialog.MudDialog*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_LogDialog_MudDialog" data-uid="CG.Purple.Host.Pages.Messages.LogDialog.MudDialog">MudDialog</h4>
+  <div class="markdown level1 summary"><p>This property contains the MudDialog instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">MudDialogInstance MudDialog { }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">MudDialogInstance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Purple_Host_Pages_Messages_LogDialog_Ok_" data-uid="CG.Purple.Host.Pages.Messages.LogDialog.Ok*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_LogDialog_Ok" data-uid="CG.Purple.Host.Pages.Messages.LogDialog.Ok">Ok()</h4>
+  <div class="markdown level1 summary"><p>This method closes the dialog.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Ok()</code></pre>
+  </div>
 </article>
           </div>
           

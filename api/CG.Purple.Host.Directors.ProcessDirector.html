@@ -101,7 +101,7 @@
   </h3>
   <a id="CG_Purple_Host_Directors_ProcessDirector__ctor_" data-uid="CG.Purple.Host.Directors.ProcessDirector.#ctor*"></a>
   <h4 id="CG_Purple_Host_Directors_ProcessDirector__ctor_IMessageManager_IMessageProviderFactory_IMessagePropertyManager_IProcessLogManager_IProviderTypeManager_IPropertyTypeManager_ILogger_IProcessDirector__" data-uid="CG.Purple.Host.Directors.ProcessDirector.#ctor(IMessageManager,IMessageProviderFactory,IMessagePropertyManager,IProcessLogManager,IProviderTypeManager,IPropertyTypeManager,ILogger{IProcessDirector})">ProcessDirector(IMessageManager, IMessageProviderFactory, IMessagePropertyManager, IProcessLogManager, IProviderTypeManager, IPropertyTypeManager, ILogger&lt;IProcessDirector&gt;)</h4>
-  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Host.Directors.ProcessDirector.html">ProcessDirector</a>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Host.Directors.RetryDirector.html">RetryDirector</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -636,51 +636,6 @@ of <see cref="!:Message"></see> objects.</p>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Host_Directors_ProcessDirector_RetryMessagesAsync_" data-uid="CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync*"></a>
-  <h4 id="CG_Purple_Host_Directors_ProcessDirector_RetryMessagesAsync_System_Int32_CancellationToken_" data-uid="CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)">RetryMessagesAsync(Int32, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task RetryMessagesAsync(int maxErrorCount, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">maxErrorCount</span></td>
-        <td></td>
-      </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>

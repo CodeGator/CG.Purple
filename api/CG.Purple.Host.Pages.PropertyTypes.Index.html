@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IProcessDirector
+    <title>Class Index
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IProcessDirector
+    <meta name="title" content="Class Index
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,52 +78,60 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Directors.IProcessDirector">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Pages.PropertyTypes.Index">
   
   
-  <h1 id="CG_Purple_Directors_IProcessDirector" data-uid="CG.Purple.Directors.IProcessDirector" class="text-break">Interface IProcessDirector
+  <h1 id="CG_Purple_Host_Pages_PropertyTypes_Index" data-uid="CG.Purple.Host.Pages.PropertyTypes.Index" class="text-break">Class Index
   </h1>
-  <div class="markdown level0 summary"><p>This interface represents an object that performs message processing operations.</p>
+  <div class="markdown level0 summary"><p>This class is the code-behind for the <a class="xref" href="CG.Purple.Host.Pages.PropertyTypes.Index.html">Index</a> page.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Directors.html">CG.Purple.Directors</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Abstractions.dll</h6>
-  <h5 id="CG_Purple_Directors_IProcessDirector_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IProcessDirector</code></pre>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Index</span></div>
   </div>
-  <h3 id="methods">Methods
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Pages.PropertyTypes.html">CG.Purple.Host.Pages.PropertyTypes</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Host.dll</h6>
+  <h5 id="CG_Purple_Host_Pages_PropertyTypes_Index_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Index</code></pre>
+  </div>
+  <h3 id="fields">Fields
   </h3>
-  <a id="CG_Purple_Directors_IProcessDirector_ProcessMessagesAsync_" data-uid="CG.Purple.Directors.IProcessDirector.ProcessMessagesAsync*"></a>
-  <h4 id="CG_Purple_Directors_IProcessDirector_ProcessMessagesAsync_CancellationToken_" data-uid="CG.Purple.Directors.IProcessDirector.ProcessMessagesAsync(CancellationToken)">ProcessMessagesAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method attempts to process all messages with a 'Pending' or 'Processing'
-state.</p>
+  <h4 id="CG_Purple_Host_Pages_PropertyTypes_Index__crumbs" data-uid="CG.Purple.Host.Pages.PropertyTypes.Index._crumbs">_crumbs</h4>
+  <div class="markdown level1 summary"><p>This field contains a reference to breadcrumbs for the view.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task ProcessMessagesAsync(CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly List&lt;BreadcrumbItem&gt; _crumbs</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -133,26 +141,8 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Directors.DirectorException.html">DirectorException</a></td>
-        <td><p>This exception is thrown whenever the
-director fails to complete the operation.</p>
-</td>
+        <td><span class="xref">List</span>&lt;<span class="xref">BreadcrumbItem</span>&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

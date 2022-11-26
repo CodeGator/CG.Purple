@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IProcessDirector
+    <title>Class MailMessageExtensions001
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IProcessDirector
+    <meta name="title" content="Class MailMessageExtensions001
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,31 +78,61 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Directors.IProcessDirector">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Models.MailMessageExtensions001">
   
   
-  <h1 id="CG_Purple_Directors_IProcessDirector" data-uid="CG.Purple.Directors.IProcessDirector" class="text-break">Interface IProcessDirector
+  <h1 id="CG_Purple_Models_MailMessageExtensions001" data-uid="CG.Purple.Models.MailMessageExtensions001" class="text-break">Class MailMessageExtensions001
   </h1>
-  <div class="markdown level0 summary"><p>This interface represents an object that performs message processing operations.</p>
+  <div class="markdown level0 summary"><p>This class contains extension methods related to the <a class="xref" href="CG.Purple.Models.MailMessage.html">MailMessage</a>
+type.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Directors.html">CG.Purple.Directors</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Abstractions.dll</h6>
-  <h5 id="CG_Purple_Directors_IProcessDirector_syntax">Syntax</h5>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">MailMessageExtensions001</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Models.html">CG.Purple.Models</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Host.dll</h6>
+  <h5 id="CG_Purple_Models_MailMessageExtensions001_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IProcessDirector</code></pre>
+    <pre><code class="lang-csharp hljs">static class MailMessageExtensions001</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Directors_IProcessDirector_ProcessMessagesAsync_" data-uid="CG.Purple.Directors.IProcessDirector.ProcessMessagesAsync*"></a>
-  <h4 id="CG_Purple_Directors_IProcessDirector_ProcessMessagesAsync_CancellationToken_" data-uid="CG.Purple.Directors.IProcessDirector.ProcessMessagesAsync(CancellationToken)">ProcessMessagesAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method attempts to process all messages with a 'Pending' or 'Processing'
-state.</p>
+  <a id="CG_Purple_Models_MailMessageExtensions001_SafeSubject_" data-uid="CG.Purple.Models.MailMessageExtensions001.SafeSubject*"></a>
+  <h4 id="CG_Purple_Models_MailMessageExtensions001_SafeSubject_CG_Purple_Models_MailMessage_" data-uid="CG.Purple.Models.MailMessageExtensions001.SafeSubject(CG.Purple.Models.MailMessage)">SafeSubject(MailMessage)</h4>
+  <div class="markdown level1 summary"><p>This method returns a safe subject for the given <a class="xref" href="CG.Purple.Models.MailMessage.html">MailMessage</a>
+object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task ProcessMessagesAsync(CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string SafeSubject(this MailMessage mailMessage)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -115,10 +145,9 @@ state.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
+        <td><a class="xref" href="CG.Purple.Models.MailMessage.html">MailMessage</a></td>
+        <td><span class="parametername">mailMessage</span></td>
+        <td><p>The mail message to use for the operation.</p>
 </td>
       </tr>
     </tbody>
@@ -133,25 +162,9 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Directors.DirectorException.html">DirectorException</a></td>
-        <td><p>This exception is thrown whenever the
-director fails to complete the operation.</p>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A rendering of the property that is safe to use in a
+Blazor page.</p>
 </td>
       </tr>
     </tbody>

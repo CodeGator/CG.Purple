@@ -126,19 +126,25 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Directors.IProcessDirector.ProcessMessagesAsync
   nameWithType: IProcessDirector.ProcessMessagesAsync
-- uid: CG.Purple.Directors.IProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)
+- uid: CG.Purple.Directors.IRetryDirector
+  name: IRetryDirector
+  href: api/CG.Purple.Directors.IRetryDirector.html
+  commentId: T:CG.Purple.Directors.IRetryDirector
+  fullName: CG.Purple.Directors.IRetryDirector
+  nameWithType: IRetryDirector
+- uid: CG.Purple.Directors.IRetryDirector.RetryMessagesAsync(System.Int32,CancellationToken)
   name: RetryMessagesAsync(Int32, CancellationToken)
-  href: api/CG.Purple.Directors.IProcessDirector.html#CG_Purple_Directors_IProcessDirector_RetryMessagesAsync_System_Int32_CancellationToken_
-  commentId: M:CG.Purple.Directors.IProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)
-  fullName: CG.Purple.Directors.IProcessDirector.RetryMessagesAsync(System.Int32, CancellationToken)
-  nameWithType: IProcessDirector.RetryMessagesAsync(Int32, CancellationToken)
-- uid: CG.Purple.Directors.IProcessDirector.RetryMessagesAsync*
+  href: api/CG.Purple.Directors.IRetryDirector.html#CG_Purple_Directors_IRetryDirector_RetryMessagesAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Directors.IRetryDirector.RetryMessagesAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Directors.IRetryDirector.RetryMessagesAsync(System.Int32, CancellationToken)
+  nameWithType: IRetryDirector.RetryMessagesAsync(Int32, CancellationToken)
+- uid: CG.Purple.Directors.IRetryDirector.RetryMessagesAsync*
   name: RetryMessagesAsync
-  href: api/CG.Purple.Directors.IProcessDirector.html#CG_Purple_Directors_IProcessDirector_RetryMessagesAsync_
-  commentId: Overload:CG.Purple.Directors.IProcessDirector.RetryMessagesAsync
+  href: api/CG.Purple.Directors.IRetryDirector.html#CG_Purple_Directors_IRetryDirector_RetryMessagesAsync_
+  commentId: Overload:CG.Purple.Directors.IRetryDirector.RetryMessagesAsync
   isSpec: "True"
-  fullName: CG.Purple.Directors.IProcessDirector.RetryMessagesAsync
-  nameWithType: IProcessDirector.RetryMessagesAsync
+  fullName: CG.Purple.Directors.IRetryDirector.RetryMessagesAsync
+  nameWithType: IRetryDirector.RetryMessagesAsync
 - uid: CG.Purple.Directors.ISeedDirector
   name: ISeedDirector
   href: api/CG.Purple.Directors.ISeedDirector.html
@@ -459,19 +465,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Directors.ProcessDirector.ProcessMessagesAsync
   nameWithType: ProcessDirector.ProcessMessagesAsync
-- uid: CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)
-  name: RetryMessagesAsync(Int32, CancellationToken)
-  href: api/CG.Purple.Host.Directors.ProcessDirector.html#CG_Purple_Host_Directors_ProcessDirector_RetryMessagesAsync_System_Int32_CancellationToken_
-  commentId: M:CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync(System.Int32,CancellationToken)
-  fullName: CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync(System.Int32, CancellationToken)
-  nameWithType: ProcessDirector.RetryMessagesAsync(Int32, CancellationToken)
-- uid: CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync*
-  name: RetryMessagesAsync
-  href: api/CG.Purple.Host.Directors.ProcessDirector.html#CG_Purple_Host_Directors_ProcessDirector_RetryMessagesAsync_
-  commentId: Overload:CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync
-  isSpec: "True"
-  fullName: CG.Purple.Host.Directors.ProcessDirector.RetryMessagesAsync
-  nameWithType: ProcessDirector.RetryMessagesAsync
 - uid: CG.Purple.Host.Directors.ProcessDirector.SendPendingMessagesToProvidersAsync(IEnumerable{Message},PropertyType,CancellationToken)
   name: SendPendingMessagesToProvidersAsync(IEnumerable<Message>, PropertyType, CancellationToken)
   href: api/CG.Purple.Host.Directors.ProcessDirector.html#CG_Purple_Host_Directors_ProcessDirector_SendPendingMessagesToProvidersAsync_IEnumerable_Message__PropertyType_CancellationToken_
@@ -488,89 +481,59 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Directors.ProcessDirector.SendPendingMessagesToProvidersAsync
   nameWithType: ProcessDirector.SendPendingMessagesToProvidersAsync
-- uid: CG.Purple.Host.Options
-  name: CG.Purple.Host.Options
-  href: api/CG.Purple.Host.Options.html
-  commentId: N:CG.Purple.Host.Options
-  fullName: CG.Purple.Host.Options
-  nameWithType: CG.Purple.Host.Options
-- uid: CG.Purple.Host.Options.HostedServiceOptions
-  name: HostedServiceOptions
-  href: api/CG.Purple.Host.Options.HostedServiceOptions.html
-  commentId: T:CG.Purple.Host.Options.HostedServiceOptions
-  fullName: CG.Purple.Host.Options.HostedServiceOptions
-  nameWithType: HostedServiceOptions
-- uid: CG.Purple.Host.Options.HostedServiceOptions.MessageProcessing
-  name: MessageProcessing
-  href: api/CG.Purple.Host.Options.HostedServiceOptions.html#CG_Purple_Host_Options_HostedServiceOptions_MessageProcessing
-  commentId: P:CG.Purple.Host.Options.HostedServiceOptions.MessageProcessing
-  fullName: CG.Purple.Host.Options.HostedServiceOptions.MessageProcessing
-  nameWithType: HostedServiceOptions.MessageProcessing
-- uid: CG.Purple.Host.Options.HostedServiceOptions.MessageProcessing*
-  name: MessageProcessing
-  href: api/CG.Purple.Host.Options.HostedServiceOptions.html#CG_Purple_Host_Options_HostedServiceOptions_MessageProcessing_
-  commentId: Overload:CG.Purple.Host.Options.HostedServiceOptions.MessageProcessing
+- uid: CG.Purple.Host.Directors.RetryDirector
+  name: RetryDirector
+  href: api/CG.Purple.Host.Directors.RetryDirector.html
+  commentId: T:CG.Purple.Host.Directors.RetryDirector
+  fullName: CG.Purple.Host.Directors.RetryDirector
+  nameWithType: RetryDirector
+- uid: CG.Purple.Host.Directors.RetryDirector.#ctor(IMessageManager,IProcessLogManager,ILogger{IRetryDirector})
+  name: RetryDirector(IMessageManager, IProcessLogManager, ILogger<IRetryDirector>)
+  href: api/CG.Purple.Host.Directors.RetryDirector.html#CG_Purple_Host_Directors_RetryDirector__ctor_IMessageManager_IProcessLogManager_ILogger_IRetryDirector__
+  commentId: M:CG.Purple.Host.Directors.RetryDirector.#ctor(IMessageManager,IProcessLogManager,ILogger{IRetryDirector})
+  name.vb: RetryDirector(IMessageManager, IProcessLogManager, ILogger(Of IRetryDirector))
+  fullName: CG.Purple.Host.Directors.RetryDirector.RetryDirector(IMessageManager, IProcessLogManager, ILogger<IRetryDirector>)
+  fullName.vb: CG.Purple.Host.Directors.RetryDirector.RetryDirector(IMessageManager, IProcessLogManager, ILogger(Of IRetryDirector))
+  nameWithType: RetryDirector.RetryDirector(IMessageManager, IProcessLogManager, ILogger<IRetryDirector>)
+  nameWithType.vb: RetryDirector.RetryDirector(IMessageManager, IProcessLogManager, ILogger(Of IRetryDirector))
+- uid: CG.Purple.Host.Directors.RetryDirector.#ctor*
+  name: RetryDirector
+  href: api/CG.Purple.Host.Directors.RetryDirector.html#CG_Purple_Host_Directors_RetryDirector__ctor_
+  commentId: Overload:CG.Purple.Host.Directors.RetryDirector.#ctor
   isSpec: "True"
-  fullName: CG.Purple.Host.Options.HostedServiceOptions.MessageProcessing
-  nameWithType: HostedServiceOptions.MessageProcessing
-- uid: CG.Purple.Host.Options.MessageProcessingOptions
-  name: MessageProcessingOptions
-  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html
-  commentId: T:CG.Purple.Host.Options.MessageProcessingOptions
-  fullName: CG.Purple.Host.Options.MessageProcessingOptions
-  nameWithType: MessageProcessingOptions
-- uid: CG.Purple.Host.Options.MessageProcessingOptions.MaxDaysToLive
-  name: MaxDaysToLive
-  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_MaxDaysToLive
-  commentId: P:CG.Purple.Host.Options.MessageProcessingOptions.MaxDaysToLive
-  fullName: CG.Purple.Host.Options.MessageProcessingOptions.MaxDaysToLive
-  nameWithType: MessageProcessingOptions.MaxDaysToLive
-- uid: CG.Purple.Host.Options.MessageProcessingOptions.MaxDaysToLive*
-  name: MaxDaysToLive
-  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_MaxDaysToLive_
-  commentId: Overload:CG.Purple.Host.Options.MessageProcessingOptions.MaxDaysToLive
+  fullName: CG.Purple.Host.Directors.RetryDirector.RetryDirector
+  nameWithType: RetryDirector.RetryDirector
+- uid: CG.Purple.Host.Directors.RetryDirector._logger
+  name: _logger
+  href: api/CG.Purple.Host.Directors.RetryDirector.html#CG_Purple_Host_Directors_RetryDirector__logger
+  commentId: F:CG.Purple.Host.Directors.RetryDirector._logger
+  fullName: CG.Purple.Host.Directors.RetryDirector._logger
+  nameWithType: RetryDirector._logger
+- uid: CG.Purple.Host.Directors.RetryDirector._messageManager
+  name: _messageManager
+  href: api/CG.Purple.Host.Directors.RetryDirector.html#CG_Purple_Host_Directors_RetryDirector__messageManager
+  commentId: F:CG.Purple.Host.Directors.RetryDirector._messageManager
+  fullName: CG.Purple.Host.Directors.RetryDirector._messageManager
+  nameWithType: RetryDirector._messageManager
+- uid: CG.Purple.Host.Directors.RetryDirector._processLogManager
+  name: _processLogManager
+  href: api/CG.Purple.Host.Directors.RetryDirector.html#CG_Purple_Host_Directors_RetryDirector__processLogManager
+  commentId: F:CG.Purple.Host.Directors.RetryDirector._processLogManager
+  fullName: CG.Purple.Host.Directors.RetryDirector._processLogManager
+  nameWithType: RetryDirector._processLogManager
+- uid: CG.Purple.Host.Directors.RetryDirector.RetryMessagesAsync(System.Int32,CancellationToken)
+  name: RetryMessagesAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Host.Directors.RetryDirector.html#CG_Purple_Host_Directors_RetryDirector_RetryMessagesAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Host.Directors.RetryDirector.RetryMessagesAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Host.Directors.RetryDirector.RetryMessagesAsync(System.Int32, CancellationToken)
+  nameWithType: RetryDirector.RetryMessagesAsync(Int32, CancellationToken)
+- uid: CG.Purple.Host.Directors.RetryDirector.RetryMessagesAsync*
+  name: RetryMessagesAsync
+  href: api/CG.Purple.Host.Directors.RetryDirector.html#CG_Purple_Host_Directors_RetryDirector_RetryMessagesAsync_
+  commentId: Overload:CG.Purple.Host.Directors.RetryDirector.RetryMessagesAsync
   isSpec: "True"
-  fullName: CG.Purple.Host.Options.MessageProcessingOptions.MaxDaysToLive
-  nameWithType: MessageProcessingOptions.MaxDaysToLive
-- uid: CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
-  name: MaxErrorCount
-  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_MaxErrorCount
-  commentId: P:CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
-  fullName: CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
-  nameWithType: MessageProcessingOptions.MaxErrorCount
-- uid: CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount*
-  name: MaxErrorCount
-  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_MaxErrorCount_
-  commentId: Overload:CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
-  isSpec: "True"
-  fullName: CG.Purple.Host.Options.MessageProcessingOptions.MaxErrorCount
-  nameWithType: MessageProcessingOptions.MaxErrorCount
-- uid: CG.Purple.Host.Options.MessageProcessingOptions.StartupDelay
-  name: StartupDelay
-  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_StartupDelay
-  commentId: P:CG.Purple.Host.Options.MessageProcessingOptions.StartupDelay
-  fullName: CG.Purple.Host.Options.MessageProcessingOptions.StartupDelay
-  nameWithType: MessageProcessingOptions.StartupDelay
-- uid: CG.Purple.Host.Options.MessageProcessingOptions.StartupDelay*
-  name: StartupDelay
-  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_StartupDelay_
-  commentId: Overload:CG.Purple.Host.Options.MessageProcessingOptions.StartupDelay
-  isSpec: "True"
-  fullName: CG.Purple.Host.Options.MessageProcessingOptions.StartupDelay
-  nameWithType: MessageProcessingOptions.StartupDelay
-- uid: CG.Purple.Host.Options.MessageProcessingOptions.ThrottleDuration
-  name: ThrottleDuration
-  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_ThrottleDuration
-  commentId: P:CG.Purple.Host.Options.MessageProcessingOptions.ThrottleDuration
-  fullName: CG.Purple.Host.Options.MessageProcessingOptions.ThrottleDuration
-  nameWithType: MessageProcessingOptions.ThrottleDuration
-- uid: CG.Purple.Host.Options.MessageProcessingOptions.ThrottleDuration*
-  name: ThrottleDuration
-  href: api/CG.Purple.Host.Options.MessageProcessingOptions.html#CG_Purple_Host_Options_MessageProcessingOptions_ThrottleDuration_
-  commentId: Overload:CG.Purple.Host.Options.MessageProcessingOptions.ThrottleDuration
-  isSpec: "True"
-  fullName: CG.Purple.Host.Options.MessageProcessingOptions.ThrottleDuration
-  nameWithType: MessageProcessingOptions.ThrottleDuration
+  fullName: CG.Purple.Host.Directors.RetryDirector.RetryMessagesAsync
+  nameWithType: RetryDirector.RetryMessagesAsync
 - uid: CG.Purple.Host.Pages
   name: CG.Purple.Host.Pages
   href: api/CG.Purple.Host.Pages.html
@@ -732,6 +695,103 @@ references:
   commentId: N:CG.Purple.Host.Pages.Messages
   fullName: CG.Purple.Host.Pages.Messages
   nameWithType: CG.Purple.Host.Pages.Messages
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog
+  name: AttachmentsDialog
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html
+  commentId: T:CG.Purple.Host.Pages.Messages.AttachmentsDialog
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog
+  nameWithType: AttachmentsDialog
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.DialogService
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_DialogService
+  commentId: P:CG.Purple.Host.Pages.Messages.AttachmentsDialog.DialogService
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.DialogService
+  nameWithType: AttachmentsDialog.DialogService
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.DialogService*
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_DialogService_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.AttachmentsDialog.DialogService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.DialogService
+  nameWithType: AttachmentsDialog.DialogService
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_Logger
+  commentId: P:CG.Purple.Host.Pages.Messages.AttachmentsDialog.Logger
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Logger
+  nameWithType: AttachmentsDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.AttachmentsDialog.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Logger
+  nameWithType: AttachmentsDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Model
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_Model
+  commentId: P:CG.Purple.Host.Pages.Messages.AttachmentsDialog.Model
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Model
+  nameWithType: AttachmentsDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Model*
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_Model_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.AttachmentsDialog.Model
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Model
+  nameWithType: AttachmentsDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_MudDialog
+  commentId: P:CG.Purple.Host.Pages.Messages.AttachmentsDialog.MudDialog
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.MudDialog
+  nameWithType: AttachmentsDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_MudDialog_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.AttachmentsDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.MudDialog
+  nameWithType: AttachmentsDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Ok
+  name: Ok()
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_Ok
+  commentId: M:CG.Purple.Host.Pages.Messages.AttachmentsDialog.Ok
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Ok()
+  nameWithType: AttachmentsDialog.Ok()
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Ok*
+  name: Ok
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_Ok_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.AttachmentsDialog.Ok
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.Ok
+  nameWithType: AttachmentsDialog.Ok
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.OnPreviewAsync(Attachment)
+  name: OnPreviewAsync(Attachment)
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_OnPreviewAsync_Attachment_
+  commentId: M:CG.Purple.Host.Pages.Messages.AttachmentsDialog.OnPreviewAsync(Attachment)
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.OnPreviewAsync(Attachment)
+  nameWithType: AttachmentsDialog.OnPreviewAsync(Attachment)
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.OnPreviewAsync*
+  name: OnPreviewAsync
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_OnPreviewAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.AttachmentsDialog.OnPreviewAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.OnPreviewAsync
+  nameWithType: AttachmentsDialog.OnPreviewAsync
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.SnackbarService
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_SnackbarService
+  commentId: P:CG.Purple.Host.Pages.Messages.AttachmentsDialog.SnackbarService
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.SnackbarService
+  nameWithType: AttachmentsDialog.SnackbarService
+- uid: CG.Purple.Host.Pages.Messages.AttachmentsDialog.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.Messages.AttachmentsDialog.html#CG_Purple_Host_Pages_Messages_AttachmentsDialog_SnackbarService_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.AttachmentsDialog.SnackbarService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.AttachmentsDialog.SnackbarService
+  nameWithType: AttachmentsDialog.SnackbarService
 - uid: CG.Purple.Host.Pages.Messages.Index
   name: Index
   href: api/CG.Purple.Host.Pages.Messages.Index.html
@@ -800,6 +860,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.DialogService
   nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.Messages.Index.HostedServiceOptions
+  name: HostedServiceOptions
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_HostedServiceOptions
+  commentId: P:CG.Purple.Host.Pages.Messages.Index.HostedServiceOptions
+  fullName: CG.Purple.Host.Pages.Messages.Index.HostedServiceOptions
+  nameWithType: Index.HostedServiceOptions
+- uid: CG.Purple.Host.Pages.Messages.Index.HostedServiceOptions*
+  name: HostedServiceOptions
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_HostedServiceOptions_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.HostedServiceOptions
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.HostedServiceOptions
+  nameWithType: Index.HostedServiceOptions
 - uid: CG.Purple.Host.Pages.Messages.Index.HttpContextAccessor
   name: HttpContextAccessor
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_HttpContextAccessor
@@ -871,6 +944,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.MailManager
   nameWithType: Index.MailManager
+- uid: CG.Purple.Host.Pages.Messages.Index.MessageManager
+  name: MessageManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_MessageManager
+  commentId: P:CG.Purple.Host.Pages.Messages.Index.MessageManager
+  fullName: CG.Purple.Host.Pages.Messages.Index.MessageManager
+  nameWithType: Index.MessageManager
+- uid: CG.Purple.Host.Pages.Messages.Index.MessageManager*
+  name: MessageManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_MessageManager_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.MessageManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.MessageManager
+  nameWithType: Index.MessageManager
 - uid: CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager
   name: MessagePropertyManager
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_MessagePropertyManager
@@ -884,6 +970,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager
   nameWithType: Index.MessagePropertyManager
+- uid: CG.Purple.Host.Pages.Messages.Index.NavigationManager
+  name: NavigationManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_NavigationManager
+  commentId: P:CG.Purple.Host.Pages.Messages.Index.NavigationManager
+  fullName: CG.Purple.Host.Pages.Messages.Index.NavigationManager
+  nameWithType: Index.NavigationManager
+- uid: CG.Purple.Host.Pages.Messages.Index.NavigationManager*
+  name: NavigationManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_NavigationManager_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.NavigationManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.NavigationManager
+  nameWithType: Index.NavigationManager
 - uid: CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync(Message)
   name: OnAttachmentsAsync(Message)
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnAttachmentsAsync_Message_
@@ -910,6 +1009,38 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.OnInitializedAsync
   nameWithType: Index.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.Messages.Index.OnLogsAsync(Message)
+  name: OnLogsAsync(Message)
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnLogsAsync_Message_
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnLogsAsync(Message)
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnLogsAsync(Message)
+  nameWithType: Index.OnLogsAsync(Message)
+- uid: CG.Purple.Host.Pages.Messages.Index.OnLogsAsync*
+  name: OnLogsAsync
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnLogsAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnLogsAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnLogsAsync
+  nameWithType: Index.OnLogsAsync
+- uid: CG.Purple.Host.Pages.Messages.Index.OnPreview(MailMessage)
+  name: OnPreview(MailMessage)
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPreview_MailMessage_
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnPreview(MailMessage)
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnPreview(MailMessage)
+  nameWithType: Index.OnPreview(MailMessage)
+- uid: CG.Purple.Host.Pages.Messages.Index.OnPreview(TextMessage)
+  name: OnPreview(TextMessage)
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPreview_TextMessage_
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnPreview(TextMessage)
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnPreview(TextMessage)
+  nameWithType: Index.OnPreview(TextMessage)
+- uid: CG.Purple.Host.Pages.Messages.Index.OnPreview*
+  name: OnPreview
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPreview_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnPreview
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnPreview
+  nameWithType: Index.OnPreview
 - uid: CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync(Message)
   name: OnPropertiesAsync(Message)
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPropertiesAsync_Message_
@@ -923,32 +1054,71 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync
   nameWithType: Index.OnPropertiesAsync
-- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessages
-  name: OnRefreshMailMessages()
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshMailMessages
-  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessages
-  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessages()
-  nameWithType: Index.OnRefreshMailMessages()
-- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessages*
-  name: OnRefreshMailMessages
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshMailMessages_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessages
+- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessagesAsync
+  name: OnRefreshMailMessagesAsync()
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshMailMessagesAsync
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessagesAsync
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessagesAsync()
+  nameWithType: Index.OnRefreshMailMessagesAsync()
+- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessagesAsync*
+  name: OnRefreshMailMessagesAsync
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshMailMessagesAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessagesAsync
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessages
-  nameWithType: Index.OnRefreshMailMessages
-- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessages
-  name: OnRefreshTextMessages()
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshTextMessages
-  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessages
-  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessages()
-  nameWithType: Index.OnRefreshTextMessages()
-- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessages*
-  name: OnRefreshTextMessages
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshTextMessages_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessages
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshMailMessagesAsync
+  nameWithType: Index.OnRefreshMailMessagesAsync
+- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshPageAsync
+  name: OnRefreshPageAsync()
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshPageAsync
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnRefreshPageAsync
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshPageAsync()
+  nameWithType: Index.OnRefreshPageAsync()
+- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshPageAsync*
+  name: OnRefreshPageAsync
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshPageAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnRefreshPageAsync
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessages
-  nameWithType: Index.OnRefreshTextMessages
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshPageAsync
+  nameWithType: Index.OnRefreshPageAsync
+- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessagesAsync
+  name: OnRefreshTextMessagesAsync()
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshTextMessagesAsync
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessagesAsync
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessagesAsync()
+  nameWithType: Index.OnRefreshTextMessagesAsync()
+- uid: CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessagesAsync*
+  name: OnRefreshTextMessagesAsync
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnRefreshTextMessagesAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessagesAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnRefreshTextMessagesAsync
+  nameWithType: Index.OnRefreshTextMessagesAsync
+- uid: CG.Purple.Host.Pages.Messages.Index.OnToggleDisableAsync(Message)
+  name: OnToggleDisableAsync(Message)
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnToggleDisableAsync_Message_
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnToggleDisableAsync(Message)
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnToggleDisableAsync(Message)
+  nameWithType: Index.OnToggleDisableAsync(Message)
+- uid: CG.Purple.Host.Pages.Messages.Index.OnToggleDisableAsync*
+  name: OnToggleDisableAsync
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnToggleDisableAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnToggleDisableAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnToggleDisableAsync
+  nameWithType: Index.OnToggleDisableAsync
+- uid: CG.Purple.Host.Pages.Messages.Index.ProcessLogManager
+  name: ProcessLogManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_ProcessLogManager
+  commentId: P:CG.Purple.Host.Pages.Messages.Index.ProcessLogManager
+  fullName: CG.Purple.Host.Pages.Messages.Index.ProcessLogManager
+  nameWithType: Index.ProcessLogManager
+- uid: CG.Purple.Host.Pages.Messages.Index.ProcessLogManager*
+  name: ProcessLogManager
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_ProcessLogManager_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.ProcessLogManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.Index.ProcessLogManager
+  nameWithType: Index.ProcessLogManager
 - uid: CG.Purple.Host.Pages.Messages.Index.PropertyTypeManager
   name: PropertyTypeManager
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_PropertyTypeManager
@@ -1046,6 +1216,172 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.UserName
   nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.Messages.LogDialog
+  name: LogDialog
+  href: api/CG.Purple.Host.Pages.Messages.LogDialog.html
+  commentId: T:CG.Purple.Host.Pages.Messages.LogDialog
+  fullName: CG.Purple.Host.Pages.Messages.LogDialog
+  nameWithType: LogDialog
+- uid: CG.Purple.Host.Pages.Messages.LogDialog.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.LogDialog.html#CG_Purple_Host_Pages_Messages_LogDialog_Logger
+  commentId: P:CG.Purple.Host.Pages.Messages.LogDialog.Logger
+  fullName: CG.Purple.Host.Pages.Messages.LogDialog.Logger
+  nameWithType: LogDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.LogDialog.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.LogDialog.html#CG_Purple_Host_Pages_Messages_LogDialog_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.LogDialog.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.LogDialog.Logger
+  nameWithType: LogDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.LogDialog.Model
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.LogDialog.html#CG_Purple_Host_Pages_Messages_LogDialog_Model
+  commentId: P:CG.Purple.Host.Pages.Messages.LogDialog.Model
+  fullName: CG.Purple.Host.Pages.Messages.LogDialog.Model
+  nameWithType: LogDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.LogDialog.Model*
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.LogDialog.html#CG_Purple_Host_Pages_Messages_LogDialog_Model_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.LogDialog.Model
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.LogDialog.Model
+  nameWithType: LogDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.LogDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.LogDialog.html#CG_Purple_Host_Pages_Messages_LogDialog_MudDialog
+  commentId: P:CG.Purple.Host.Pages.Messages.LogDialog.MudDialog
+  fullName: CG.Purple.Host.Pages.Messages.LogDialog.MudDialog
+  nameWithType: LogDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.LogDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.LogDialog.html#CG_Purple_Host_Pages_Messages_LogDialog_MudDialog_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.LogDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.LogDialog.MudDialog
+  nameWithType: LogDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.LogDialog.Ok
+  name: Ok()
+  href: api/CG.Purple.Host.Pages.Messages.LogDialog.html#CG_Purple_Host_Pages_Messages_LogDialog_Ok
+  commentId: M:CG.Purple.Host.Pages.Messages.LogDialog.Ok
+  fullName: CG.Purple.Host.Pages.Messages.LogDialog.Ok()
+  nameWithType: LogDialog.Ok()
+- uid: CG.Purple.Host.Pages.Messages.LogDialog.Ok*
+  name: Ok
+  href: api/CG.Purple.Host.Pages.Messages.LogDialog.html#CG_Purple_Host_Pages_Messages_LogDialog_Ok_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.LogDialog.Ok
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.LogDialog.Ok
+  nameWithType: LogDialog.Ok
+- uid: CG.Purple.Host.Pages.Messages.MailPreview
+  name: MailPreview
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html
+  commentId: T:CG.Purple.Host.Pages.Messages.MailPreview
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview
+  nameWithType: MailPreview
+- uid: CG.Purple.Host.Pages.Messages.MailPreview._crumbs
+  name: _crumbs
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview__crumbs
+  commentId: F:CG.Purple.Host.Pages.Messages.MailPreview._crumbs
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview._crumbs
+  nameWithType: MailPreview._crumbs
+- uid: CG.Purple.Host.Pages.Messages.MailPreview._html
+  name: _html
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview__html
+  commentId: F:CG.Purple.Host.Pages.Messages.MailPreview._html
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview._html
+  nameWithType: MailPreview._html
+- uid: CG.Purple.Host.Pages.Messages.MailPreview._isBusy
+  name: _isBusy
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview__isBusy
+  commentId: F:CG.Purple.Host.Pages.Messages.MailPreview._isBusy
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview._isBusy
+  nameWithType: MailPreview._isBusy
+- uid: CG.Purple.Host.Pages.Messages.MailPreview._message
+  name: _message
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview__message
+  commentId: F:CG.Purple.Host.Pages.Messages.MailPreview._message
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview._message
+  nameWithType: MailPreview._message
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError(MudBlazor.Extensions.Components.IFileDisplayInfos)
+  name: HandleContentError(IFileDisplayInfos)
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_HandleContentError_MudBlazor_Extensions_Components_IFileDisplayInfos_
+  commentId: M:CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError(MudBlazor.Extensions.Components.IFileDisplayInfos)
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError(MudBlazor.Extensions.Components.IFileDisplayInfos)
+  nameWithType: MailPreview.HandleContentError(IFileDisplayInfos)
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError*
+  name: HandleContentError
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_HandleContentError_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError
+  nameWithType: MailPreview.HandleContentError
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_Logger
+  commentId: P:CG.Purple.Host.Pages.Messages.MailPreview.Logger
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.Logger
+  nameWithType: MailPreview.Logger
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.Logger
+  nameWithType: MailPreview.Logger
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.MailManager
+  name: MailManager
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_MailManager
+  commentId: P:CG.Purple.Host.Pages.Messages.MailPreview.MailManager
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.MailManager
+  nameWithType: MailPreview.MailManager
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.MailManager*
+  name: MailManager
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_MailManager_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.MailManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.MailManager
+  nameWithType: MailPreview.MailManager
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.MessageId
+  name: MessageId
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_MessageId
+  commentId: P:CG.Purple.Host.Pages.Messages.MailPreview.MessageId
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.MessageId
+  nameWithType: MailPreview.MessageId
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.MessageId*
+  name: MessageId
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_MessageId_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.MessageId
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.MessageId
+  nameWithType: MailPreview.MessageId
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync
+  name: OnInitializedAsync()
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_OnInitializedAsync
+  commentId: M:CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync()
+  nameWithType: MailPreview.OnInitializedAsync()
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync*
+  name: OnInitializedAsync
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_OnInitializedAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync
+  nameWithType: MailPreview.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_SnackbarService
+  commentId: P:CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
+  nameWithType: MailPreview.SnackbarService
+- uid: CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_SnackbarService_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
+  nameWithType: MailPreview.SnackbarService
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog
   name: MessagePropertiesDialog
   href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html
@@ -1162,11 +1498,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnCreateMessagePropertyAsync
   nameWithType: MessagePropertiesDialog.OnCreateMessagePropertyAsync
-- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(CG.Purple.Models.MessageProperty)
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(MessageProperty)
   name: OnDeleteMessagePropertyAsync(MessageProperty)
-  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnDeleteMessagePropertyAsync_CG_Purple_Models_MessageProperty_
-  commentId: M:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(CG.Purple.Models.MessageProperty)
-  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(CG.Purple.Models.MessageProperty)
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnDeleteMessagePropertyAsync_MessageProperty_
+  commentId: M:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(MessageProperty)
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync(MessageProperty)
   nameWithType: MessagePropertiesDialog.OnDeleteMessagePropertyAsync(MessageProperty)
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync*
   name: OnDeleteMessagePropertyAsync
@@ -1175,11 +1511,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnDeleteMessagePropertyAsync
   nameWithType: MessagePropertiesDialog.OnDeleteMessagePropertyAsync
-- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(CG.Purple.Models.MessageProperty)
+- uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(MessageProperty)
   name: OnEditMessagePropertyAsync(MessageProperty)
-  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnEditMessagePropertyAsync_CG_Purple_Models_MessageProperty_
-  commentId: M:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(CG.Purple.Models.MessageProperty)
-  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(CG.Purple.Models.MessageProperty)
+  href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertiesDialog_OnEditMessagePropertyAsync_MessageProperty_
+  commentId: M:CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(MessageProperty)
+  fullName: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync(MessageProperty)
   nameWithType: MessagePropertiesDialog.OnEditMessagePropertyAsync(MessageProperty)
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.OnEditMessagePropertyAsync*
   name: OnEditMessagePropertyAsync
@@ -1343,19 +1679,142 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes
   nameWithType: MessagePropertyDialog.PropertyTypes
-- uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
-  name: ProviderTypes
-  href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_ProviderTypes
-  commentId: P:CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
-  fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
-  nameWithType: MessagePropertyDialog.ProviderTypes
-- uid: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes*
-  name: ProviderTypes
-  href: api/CG.Purple.Host.Pages.Messages.MessagePropertyDialog.html#CG_Purple_Host_Pages_Messages_MessagePropertyDialog_ProviderTypes_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
+- uid: CG.Purple.Host.Pages.Messages.TextPreview
+  name: TextPreview
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html
+  commentId: T:CG.Purple.Host.Pages.Messages.TextPreview
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview
+  nameWithType: TextPreview
+- uid: CG.Purple.Host.Pages.Messages.TextPreview._crumbs
+  name: _crumbs
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview__crumbs
+  commentId: F:CG.Purple.Host.Pages.Messages.TextPreview._crumbs
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview._crumbs
+  nameWithType: TextPreview._crumbs
+- uid: CG.Purple.Host.Pages.Messages.TextPreview.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_Logger
+  commentId: P:CG.Purple.Host.Pages.Messages.TextPreview.Logger
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview.Logger
+  nameWithType: TextPreview.Logger
+- uid: CG.Purple.Host.Pages.Messages.TextPreview.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreview.Logger
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.ProviderTypes
-  nameWithType: MessagePropertyDialog.ProviderTypes
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview.Logger
+  nameWithType: TextPreview.Logger
+- uid: CG.Purple.Host.Pages.Messages.TextPreview.MessageId
+  name: MessageId
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_MessageId
+  commentId: P:CG.Purple.Host.Pages.Messages.TextPreview.MessageId
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview.MessageId
+  nameWithType: TextPreview.MessageId
+- uid: CG.Purple.Host.Pages.Messages.TextPreview.MessageId*
+  name: MessageId
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_MessageId_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreview.MessageId
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview.MessageId
+  nameWithType: TextPreview.MessageId
+- uid: CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync
+  name: OnInitializedAsync()
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_OnInitializedAsync
+  commentId: M:CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync()
+  nameWithType: TextPreview.OnInitializedAsync()
+- uid: CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync*
+  name: OnInitializedAsync
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_OnInitializedAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync
+  nameWithType: TextPreview.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_SnackbarService
+  commentId: P:CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
+  nameWithType: TextPreview.SnackbarService
+- uid: CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_SnackbarService_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
+  nameWithType: TextPreview.SnackbarService
+- uid: CG.Purple.Host.Pages.MimeTypes
+  name: CG.Purple.Host.Pages.MimeTypes
+  href: api/CG.Purple.Host.Pages.MimeTypes.html
+  commentId: N:CG.Purple.Host.Pages.MimeTypes
+  fullName: CG.Purple.Host.Pages.MimeTypes
+  nameWithType: CG.Purple.Host.Pages.MimeTypes
+- uid: CG.Purple.Host.Pages.MimeTypes.Index
+  name: Index
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html
+  commentId: T:CG.Purple.Host.Pages.MimeTypes.Index
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index
+  nameWithType: Index
+- uid: CG.Purple.Host.Pages.MimeTypes.Index._crumbs
+  name: _crumbs
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index__crumbs
+  commentId: F:CG.Purple.Host.Pages.MimeTypes.Index._crumbs
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index._crumbs
+  nameWithType: Index._crumbs
+- uid: CG.Purple.Host.Pages.ParameterTypes
+  name: CG.Purple.Host.Pages.ParameterTypes
+  href: api/CG.Purple.Host.Pages.ParameterTypes.html
+  commentId: N:CG.Purple.Host.Pages.ParameterTypes
+  fullName: CG.Purple.Host.Pages.ParameterTypes
+  nameWithType: CG.Purple.Host.Pages.ParameterTypes
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index
+  name: Index
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html
+  commentId: T:CG.Purple.Host.Pages.ParameterTypes.Index
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index
+  nameWithType: Index
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index._crumbs
+  name: _crumbs
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index__crumbs
+  commentId: F:CG.Purple.Host.Pages.ParameterTypes.Index._crumbs
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index._crumbs
+  nameWithType: Index._crumbs
+- uid: CG.Purple.Host.Pages.PropertyTypes
+  name: CG.Purple.Host.Pages.PropertyTypes
+  href: api/CG.Purple.Host.Pages.PropertyTypes.html
+  commentId: N:CG.Purple.Host.Pages.PropertyTypes
+  fullName: CG.Purple.Host.Pages.PropertyTypes
+  nameWithType: CG.Purple.Host.Pages.PropertyTypes
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index
+  name: Index
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html
+  commentId: T:CG.Purple.Host.Pages.PropertyTypes.Index
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index
+  nameWithType: Index
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index._crumbs
+  name: _crumbs
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index__crumbs
+  commentId: F:CG.Purple.Host.Pages.PropertyTypes.Index._crumbs
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index._crumbs
+  nameWithType: Index._crumbs
+- uid: CG.Purple.Host.Pages.ProviderTypes
+  name: CG.Purple.Host.Pages.ProviderTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.html
+  commentId: N:CG.Purple.Host.Pages.ProviderTypes
+  fullName: CG.Purple.Host.Pages.ProviderTypes
+  nameWithType: CG.Purple.Host.Pages.ProviderTypes
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index
+  name: Index
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html
+  commentId: T:CG.Purple.Host.Pages.ProviderTypes.Index
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index
+  nameWithType: Index
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index._crumbs
+  name: _crumbs
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index__crumbs
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.Index._crumbs
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index._crumbs
+  nameWithType: Index._crumbs
 - uid: CG.Purple.Host.Services
   name: CG.Purple.Host.Services
   href: api/CG.Purple.Host.Services.html
@@ -1561,6 +2020,102 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.SignalR.StatusHub.OnStatusChangeAsync
   nameWithType: StatusHub.OnStatusChangeAsync
+- uid: CG.Purple.Host.ViewModels
+  name: CG.Purple.Host.ViewModels
+  href: api/CG.Purple.Host.ViewModels.html
+  commentId: N:CG.Purple.Host.ViewModels
+  fullName: CG.Purple.Host.ViewModels
+  nameWithType: CG.Purple.Host.ViewModels
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile
+  name: AttachmentBrowserFile
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html
+  commentId: T:CG.Purple.Host.ViewModels.AttachmentBrowserFile
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile
+  nameWithType: AttachmentBrowserFile
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.#ctor(Attachment)
+  name: AttachmentBrowserFile(Attachment)
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile__ctor_Attachment_
+  commentId: M:CG.Purple.Host.ViewModels.AttachmentBrowserFile.#ctor(Attachment)
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.AttachmentBrowserFile(Attachment)
+  nameWithType: AttachmentBrowserFile.AttachmentBrowserFile(Attachment)
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.#ctor*
+  name: AttachmentBrowserFile
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile__ctor_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentBrowserFile.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.AttachmentBrowserFile
+  nameWithType: AttachmentBrowserFile.AttachmentBrowserFile
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile._attachment
+  name: _attachment
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile__attachment
+  commentId: F:CG.Purple.Host.ViewModels.AttachmentBrowserFile._attachment
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile._attachment
+  nameWithType: AttachmentBrowserFile._attachment
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.ContentType
+  name: ContentType
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_ContentType
+  commentId: P:CG.Purple.Host.ViewModels.AttachmentBrowserFile.ContentType
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.ContentType
+  nameWithType: AttachmentBrowserFile.ContentType
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.ContentType*
+  name: ContentType
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_ContentType_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentBrowserFile.ContentType
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.ContentType
+  nameWithType: AttachmentBrowserFile.ContentType
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.LastModified
+  name: LastModified
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_LastModified
+  commentId: P:CG.Purple.Host.ViewModels.AttachmentBrowserFile.LastModified
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.LastModified
+  nameWithType: AttachmentBrowserFile.LastModified
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.LastModified*
+  name: LastModified
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_LastModified_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentBrowserFile.LastModified
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.LastModified
+  nameWithType: AttachmentBrowserFile.LastModified
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.Name
+  name: Name
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_Name
+  commentId: P:CG.Purple.Host.ViewModels.AttachmentBrowserFile.Name
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.Name
+  nameWithType: AttachmentBrowserFile.Name
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.Name*
+  name: Name
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_Name_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentBrowserFile.Name
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.Name
+  nameWithType: AttachmentBrowserFile.Name
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.OpenReadStream(System.Int64,CancellationToken)
+  name: OpenReadStream(Int64, CancellationToken)
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_OpenReadStream_System_Int64_CancellationToken_
+  commentId: M:CG.Purple.Host.ViewModels.AttachmentBrowserFile.OpenReadStream(System.Int64,CancellationToken)
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.OpenReadStream(System.Int64, CancellationToken)
+  nameWithType: AttachmentBrowserFile.OpenReadStream(Int64, CancellationToken)
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.OpenReadStream*
+  name: OpenReadStream
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_OpenReadStream_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentBrowserFile.OpenReadStream
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.OpenReadStream
+  nameWithType: AttachmentBrowserFile.OpenReadStream
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.Size
+  name: Size
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_Size
+  commentId: P:CG.Purple.Host.ViewModels.AttachmentBrowserFile.Size
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.Size
+  nameWithType: AttachmentBrowserFile.Size
+- uid: CG.Purple.Host.ViewModels.AttachmentBrowserFile.Size*
+  name: Size
+  href: api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.html#CG_Purple_Host_ViewModels_AttachmentBrowserFile_Size_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentBrowserFile.Size
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.Size
+  nameWithType: AttachmentBrowserFile.Size
 - uid: CG.Purple.Managers
   name: CG.Purple.Managers
   href: api/CG.Purple.Managers.html
@@ -2519,6 +3074,32 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IProcessLogManager.DeleteAsync
   nameWithType: IProcessLogManager.DeleteAsync
+- uid: CG.Purple.Managers.IProcessLogManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.IProcessLogManager.html#CG_Purple_Managers_IProcessLogManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.IProcessLogManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.IProcessLogManager.FindAllAsync(CancellationToken)
+  nameWithType: IProcessLogManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.IProcessLogManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.IProcessLogManager.html#CG_Purple_Managers_IProcessLogManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.IProcessLogManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IProcessLogManager.FindAllAsync
+  nameWithType: IProcessLogManager.FindAllAsync
+- uid: CG.Purple.Managers.IProcessLogManager.FindByMessageAsync(Message,CancellationToken)
+  name: FindByMessageAsync(Message, CancellationToken)
+  href: api/CG.Purple.Managers.IProcessLogManager.html#CG_Purple_Managers_IProcessLogManager_FindByMessageAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.Managers.IProcessLogManager.FindByMessageAsync(Message,CancellationToken)
+  fullName: CG.Purple.Managers.IProcessLogManager.FindByMessageAsync(Message, CancellationToken)
+  nameWithType: IProcessLogManager.FindByMessageAsync(Message, CancellationToken)
+- uid: CG.Purple.Managers.IProcessLogManager.FindByMessageAsync*
+  name: FindByMessageAsync
+  href: api/CG.Purple.Managers.IProcessLogManager.html#CG_Purple_Managers_IProcessLogManager_FindByMessageAsync_
+  commentId: Overload:CG.Purple.Managers.IProcessLogManager.FindByMessageAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IProcessLogManager.FindByMessageAsync
+  nameWithType: IProcessLogManager.FindByMessageAsync
 - uid: CG.Purple.Managers.IProcessLogManager.UpdateAsync(ProcessLog,System.String,CancellationToken)
   name: UpdateAsync(ProcessLog, String, CancellationToken)
   href: api/CG.Purple.Managers.IProcessLogManager.html#CG_Purple_Managers_IProcessLogManager_UpdateAsync_ProcessLog_System_String_CancellationToken_
@@ -3648,13 +4229,13 @@ references:
   commentId: T:CG.Purple.Managers.ProcessLogManager
   fullName: CG.Purple.Managers.ProcessLogManager
   nameWithType: ProcessLogManager
-- uid: CG.Purple.Managers.ProcessLogManager.#ctor(IProcessLogRepository,IDistributedCache,ILogger{CG.Purple.Managers.IProcessLogManager})
+- uid: CG.Purple.Managers.ProcessLogManager.#ctor(CG.Purple.Repositories.IProcessLogRepository,IDistributedCache,ILogger{CG.Purple.Managers.IProcessLogManager})
   name: ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger<IProcessLogManager>)
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager__ctor_IProcessLogRepository_IDistributedCache_ILogger_CG_Purple_Managers_IProcessLogManager__
-  commentId: M:CG.Purple.Managers.ProcessLogManager.#ctor(IProcessLogRepository,IDistributedCache,ILogger{CG.Purple.Managers.IProcessLogManager})
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager__ctor_CG_Purple_Repositories_IProcessLogRepository_IDistributedCache_ILogger_CG_Purple_Managers_IProcessLogManager__
+  commentId: M:CG.Purple.Managers.ProcessLogManager.#ctor(CG.Purple.Repositories.IProcessLogRepository,IDistributedCache,ILogger{CG.Purple.Managers.IProcessLogManager})
   name.vb: ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger(Of IProcessLogManager))
-  fullName: CG.Purple.Managers.ProcessLogManager.ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger<CG.Purple.Managers.IProcessLogManager>)
-  fullName.vb: CG.Purple.Managers.ProcessLogManager.ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IProcessLogManager))
+  fullName: CG.Purple.Managers.ProcessLogManager.ProcessLogManager(CG.Purple.Repositories.IProcessLogRepository, IDistributedCache, ILogger<CG.Purple.Managers.IProcessLogManager>)
+  fullName.vb: CG.Purple.Managers.ProcessLogManager.ProcessLogManager(CG.Purple.Repositories.IProcessLogRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IProcessLogManager))
   nameWithType: ProcessLogManager.ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger<IProcessLogManager>)
   nameWithType.vb: ProcessLogManager.ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger(Of IProcessLogManager))
 - uid: CG.Purple.Managers.ProcessLogManager.#ctor*
@@ -3714,11 +4295,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManager.CountAsync
   nameWithType: ProcessLogManager.CountAsync
-- uid: CG.Purple.Managers.ProcessLogManager.CreateAsync(ProcessLog,System.String,CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManager.CreateAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
   name: CreateAsync(ProcessLog, String, CancellationToken)
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_CreateAsync_ProcessLog_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProcessLogManager.CreateAsync(ProcessLog,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ProcessLogManager.CreateAsync(ProcessLog, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_CreateAsync_CG_Purple_Models_ProcessLog_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManager.CreateAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManager.CreateAsync(CG.Purple.Models.ProcessLog, System.String, CancellationToken)
   nameWithType: ProcessLogManager.CreateAsync(ProcessLog, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManager.CreateAsync*
   name: CreateAsync
@@ -3727,11 +4308,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManager.CreateAsync
   nameWithType: ProcessLogManager.CreateAsync
-- uid: CG.Purple.Managers.ProcessLogManager.DeleteAsync(ProcessLog,System.String,CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManager.DeleteAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
   name: DeleteAsync(ProcessLog, String, CancellationToken)
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_DeleteAsync_ProcessLog_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProcessLogManager.DeleteAsync(ProcessLog,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ProcessLogManager.DeleteAsync(ProcessLog, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_DeleteAsync_CG_Purple_Models_ProcessLog_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManager.DeleteAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManager.DeleteAsync(CG.Purple.Models.ProcessLog, System.String, CancellationToken)
   nameWithType: ProcessLogManager.DeleteAsync(ProcessLog, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManager.DeleteAsync*
   name: DeleteAsync
@@ -3740,11 +4321,37 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManager.DeleteAsync
   nameWithType: ProcessLogManager.DeleteAsync
-- uid: CG.Purple.Managers.ProcessLogManager.UpdateAsync(ProcessLog,System.String,CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManager.FindAllAsync(CancellationToken)
+  nameWithType: ProcessLogManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.ProcessLogManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.ProcessLogManager.FindAllAsync
+  nameWithType: ProcessLogManager.FindAllAsync
+- uid: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync(CG.Purple.Models.Message,CancellationToken)
+  name: FindByMessageAsync(Message, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_FindByMessageAsync_CG_Purple_Models_Message_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManager.FindByMessageAsync(CG.Purple.Models.Message,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync(CG.Purple.Models.Message, CancellationToken)
+  nameWithType: ProcessLogManager.FindByMessageAsync(Message, CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync*
+  name: FindByMessageAsync
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_FindByMessageAsync_
+  commentId: Overload:CG.Purple.Managers.ProcessLogManager.FindByMessageAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync
+  nameWithType: ProcessLogManager.FindByMessageAsync
+- uid: CG.Purple.Managers.ProcessLogManager.UpdateAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
   name: UpdateAsync(ProcessLog, String, CancellationToken)
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_UpdateAsync_ProcessLog_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProcessLogManager.UpdateAsync(ProcessLog,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ProcessLogManager.UpdateAsync(ProcessLog, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_UpdateAsync_CG_Purple_Models_ProcessLog_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManager.UpdateAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManager.UpdateAsync(CG.Purple.Models.ProcessLog, System.String, CancellationToken)
   nameWithType: ProcessLogManager.UpdateAsync(ProcessLog, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManager.UpdateAsync*
   name: UpdateAsync
@@ -4566,6 +5173,25 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.Attachment.OriginalFileName
   nameWithType: Attachment.OriginalFileName
+- uid: CG.Purple.Models.AttachmentExtensions001
+  name: AttachmentExtensions001
+  href: api/CG.Purple.Models.AttachmentExtensions001.html
+  commentId: T:CG.Purple.Models.AttachmentExtensions001
+  fullName: CG.Purple.Models.AttachmentExtensions001
+  nameWithType: AttachmentExtensions001
+- uid: CG.Purple.Models.AttachmentExtensions001.SafeOriginalFileName(CG.Purple.Models.Attachment)
+  name: SafeOriginalFileName(Attachment)
+  href: api/CG.Purple.Models.AttachmentExtensions001.html#CG_Purple_Models_AttachmentExtensions001_SafeOriginalFileName_CG_Purple_Models_Attachment_
+  commentId: M:CG.Purple.Models.AttachmentExtensions001.SafeOriginalFileName(CG.Purple.Models.Attachment)
+  fullName: CG.Purple.Models.AttachmentExtensions001.SafeOriginalFileName(CG.Purple.Models.Attachment)
+  nameWithType: AttachmentExtensions001.SafeOriginalFileName(Attachment)
+- uid: CG.Purple.Models.AttachmentExtensions001.SafeOriginalFileName*
+  name: SafeOriginalFileName
+  href: api/CG.Purple.Models.AttachmentExtensions001.html#CG_Purple_Models_AttachmentExtensions001_SafeOriginalFileName_
+  commentId: Overload:CG.Purple.Models.AttachmentExtensions001.SafeOriginalFileName
+  isSpec: "True"
+  fullName: CG.Purple.Models.AttachmentExtensions001.SafeOriginalFileName
+  nameWithType: AttachmentExtensions001.SafeOriginalFileName
 - uid: CG.Purple.Models.FileType
   name: FileType
   href: api/CG.Purple.Models.FileType.html
@@ -4695,6 +5321,25 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.MailMessage.To
   nameWithType: MailMessage.To
+- uid: CG.Purple.Models.MailMessageExtensions001
+  name: MailMessageExtensions001
+  href: api/CG.Purple.Models.MailMessageExtensions001.html
+  commentId: T:CG.Purple.Models.MailMessageExtensions001
+  fullName: CG.Purple.Models.MailMessageExtensions001
+  nameWithType: MailMessageExtensions001
+- uid: CG.Purple.Models.MailMessageExtensions001.SafeSubject(CG.Purple.Models.MailMessage)
+  name: SafeSubject(MailMessage)
+  href: api/CG.Purple.Models.MailMessageExtensions001.html#CG_Purple_Models_MailMessageExtensions001_SafeSubject_CG_Purple_Models_MailMessage_
+  commentId: M:CG.Purple.Models.MailMessageExtensions001.SafeSubject(CG.Purple.Models.MailMessage)
+  fullName: CG.Purple.Models.MailMessageExtensions001.SafeSubject(CG.Purple.Models.MailMessage)
+  nameWithType: MailMessageExtensions001.SafeSubject(MailMessage)
+- uid: CG.Purple.Models.MailMessageExtensions001.SafeSubject*
+  name: SafeSubject
+  href: api/CG.Purple.Models.MailMessageExtensions001.html#CG_Purple_Models_MailMessageExtensions001_SafeSubject_
+  commentId: Overload:CG.Purple.Models.MailMessageExtensions001.SafeSubject
+  isSpec: "True"
+  fullName: CG.Purple.Models.MailMessageExtensions001.SafeSubject
+  nameWithType: MailMessageExtensions001.SafeSubject
 - uid: CG.Purple.Models.Message
   name: Message
   href: api/CG.Purple.Models.Message.html
@@ -5110,6 +5755,25 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.MimeType.Type
   nameWithType: MimeType.Type
+- uid: CG.Purple.Models.MimeTypeExtensions001
+  name: MimeTypeExtensions001
+  href: api/CG.Purple.Models.MimeTypeExtensions001.html
+  commentId: T:CG.Purple.Models.MimeTypeExtensions001
+  fullName: CG.Purple.Models.MimeTypeExtensions001
+  nameWithType: MimeTypeExtensions001
+- uid: CG.Purple.Models.MimeTypeExtensions001.FullType(CG.Purple.Models.MimeType)
+  name: FullType(MimeType)
+  href: api/CG.Purple.Models.MimeTypeExtensions001.html#CG_Purple_Models_MimeTypeExtensions001_FullType_CG_Purple_Models_MimeType_
+  commentId: M:CG.Purple.Models.MimeTypeExtensions001.FullType(CG.Purple.Models.MimeType)
+  fullName: CG.Purple.Models.MimeTypeExtensions001.FullType(CG.Purple.Models.MimeType)
+  nameWithType: MimeTypeExtensions001.FullType(MimeType)
+- uid: CG.Purple.Models.MimeTypeExtensions001.FullType*
+  name: FullType
+  href: api/CG.Purple.Models.MimeTypeExtensions001.html#CG_Purple_Models_MimeTypeExtensions001_FullType_
+  commentId: Overload:CG.Purple.Models.MimeTypeExtensions001.FullType
+  isSpec: "True"
+  fullName: CG.Purple.Models.MimeTypeExtensions001.FullType
+  nameWithType: MimeTypeExtensions001.FullType
 - uid: CG.Purple.Models.ModelBase
   name: ModelBase
   href: api/CG.Purple.Models.ModelBase.html
@@ -5371,6 +6035,77 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.ProcessLog.ProviderType
   nameWithType: ProcessLog.ProviderType
+- uid: CG.Purple.Models.ProcessLogExtensions001
+  name: ProcessLogExtensions001
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html
+  commentId: T:CG.Purple.Models.ProcessLogExtensions001
+  fullName: CG.Purple.Models.ProcessLogExtensions001
+  nameWithType: ProcessLogExtensions001
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeAfterState(CG.Purple.Models.ProcessLog)
+  name: SafeAfterState(ProcessLog)
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeAfterState_CG_Purple_Models_ProcessLog_
+  commentId: M:CG.Purple.Models.ProcessLogExtensions001.SafeAfterState(CG.Purple.Models.ProcessLog)
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeAfterState(CG.Purple.Models.ProcessLog)
+  nameWithType: ProcessLogExtensions001.SafeAfterState(ProcessLog)
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeAfterState*
+  name: SafeAfterState
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeAfterState_
+  commentId: Overload:CG.Purple.Models.ProcessLogExtensions001.SafeAfterState
+  isSpec: "True"
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeAfterState
+  nameWithType: ProcessLogExtensions001.SafeAfterState
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeBeforeState(CG.Purple.Models.ProcessLog)
+  name: SafeBeforeState(ProcessLog)
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeBeforeState_CG_Purple_Models_ProcessLog_
+  commentId: M:CG.Purple.Models.ProcessLogExtensions001.SafeBeforeState(CG.Purple.Models.ProcessLog)
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeBeforeState(CG.Purple.Models.ProcessLog)
+  nameWithType: ProcessLogExtensions001.SafeBeforeState(ProcessLog)
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeBeforeState*
+  name: SafeBeforeState
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeBeforeState_
+  commentId: Overload:CG.Purple.Models.ProcessLogExtensions001.SafeBeforeState
+  isSpec: "True"
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeBeforeState
+  nameWithType: ProcessLogExtensions001.SafeBeforeState
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeData(CG.Purple.Models.ProcessLog)
+  name: SafeData(ProcessLog)
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeData_CG_Purple_Models_ProcessLog_
+  commentId: M:CG.Purple.Models.ProcessLogExtensions001.SafeData(CG.Purple.Models.ProcessLog)
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeData(CG.Purple.Models.ProcessLog)
+  nameWithType: ProcessLogExtensions001.SafeData(ProcessLog)
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeData*
+  name: SafeData
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeData_
+  commentId: Overload:CG.Purple.Models.ProcessLogExtensions001.SafeData
+  isSpec: "True"
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeData
+  nameWithType: ProcessLogExtensions001.SafeData
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeError(CG.Purple.Models.ProcessLog)
+  name: SafeError(ProcessLog)
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeError_CG_Purple_Models_ProcessLog_
+  commentId: M:CG.Purple.Models.ProcessLogExtensions001.SafeError(CG.Purple.Models.ProcessLog)
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeError(CG.Purple.Models.ProcessLog)
+  nameWithType: ProcessLogExtensions001.SafeError(ProcessLog)
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeError*
+  name: SafeError
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeError_
+  commentId: Overload:CG.Purple.Models.ProcessLogExtensions001.SafeError
+  isSpec: "True"
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeError
+  nameWithType: ProcessLogExtensions001.SafeError
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeProviderType(CG.Purple.Models.ProcessLog)
+  name: SafeProviderType(ProcessLog)
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeProviderType_CG_Purple_Models_ProcessLog_
+  commentId: M:CG.Purple.Models.ProcessLogExtensions001.SafeProviderType(CG.Purple.Models.ProcessLog)
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeProviderType(CG.Purple.Models.ProcessLog)
+  nameWithType: ProcessLogExtensions001.SafeProviderType(ProcessLog)
+- uid: CG.Purple.Models.ProcessLogExtensions001.SafeProviderType*
+  name: SafeProviderType
+  href: api/CG.Purple.Models.ProcessLogExtensions001.html#CG_Purple_Models_ProcessLogExtensions001_SafeProviderType_
+  commentId: Overload:CG.Purple.Models.ProcessLogExtensions001.SafeProviderType
+  isSpec: "True"
+  fullName: CG.Purple.Models.ProcessLogExtensions001.SafeProviderType
+  nameWithType: ProcessLogExtensions001.SafeProviderType
 - uid: CG.Purple.Models.PropertyType
   name: PropertyType
   href: api/CG.Purple.Models.PropertyType.html
@@ -5403,6 +6138,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.PropertyType.Id
   nameWithType: PropertyType.Id
+- uid: CG.Purple.Models.PropertyType.IsSystem
+  name: IsSystem
+  href: api/CG.Purple.Models.PropertyType.html#CG_Purple_Models_PropertyType_IsSystem
+  commentId: P:CG.Purple.Models.PropertyType.IsSystem
+  fullName: CG.Purple.Models.PropertyType.IsSystem
+  nameWithType: PropertyType.IsSystem
+- uid: CG.Purple.Models.PropertyType.IsSystem*
+  name: IsSystem
+  href: api/CG.Purple.Models.PropertyType.html#CG_Purple_Models_PropertyType_IsSystem_
+  commentId: Overload:CG.Purple.Models.PropertyType.IsSystem
+  isSpec: "True"
+  fullName: CG.Purple.Models.PropertyType.IsSystem
+  nameWithType: PropertyType.IsSystem
 - uid: CG.Purple.Models.PropertyType.Name
   name: Name
   href: api/CG.Purple.Models.PropertyType.html#CG_Purple_Models_PropertyType_Name
@@ -5486,6 +6234,19 @@ references:
   commentId: T:CG.Purple.Models.ProviderParameter
   fullName: CG.Purple.Models.ProviderParameter
   nameWithType: ProviderParameter
+- uid: CG.Purple.Models.ProviderParameter.IsReadOnly
+  name: IsReadOnly
+  href: api/CG.Purple.Models.ProviderParameter.html#CG_Purple_Models_ProviderParameter_IsReadOnly
+  commentId: P:CG.Purple.Models.ProviderParameter.IsReadOnly
+  fullName: CG.Purple.Models.ProviderParameter.IsReadOnly
+  nameWithType: ProviderParameter.IsReadOnly
+- uid: CG.Purple.Models.ProviderParameter.IsReadOnly*
+  name: IsReadOnly
+  href: api/CG.Purple.Models.ProviderParameter.html#CG_Purple_Models_ProviderParameter_IsReadOnly_
+  commentId: Overload:CG.Purple.Models.ProviderParameter.IsReadOnly
+  isSpec: "True"
+  fullName: CG.Purple.Models.ProviderParameter.IsReadOnly
+  nameWithType: ProviderParameter.IsReadOnly
 - uid: CG.Purple.Models.ProviderParameter.ParameterType
   name: ParameterType
   href: api/CG.Purple.Models.ProviderParameter.html#CG_Purple_Models_ProviderParameter_ParameterType
@@ -5750,6 +6511,25 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Options.FileTypeOptions.DefaultCacheDuration
   nameWithType: FileTypeOptions.DefaultCacheDuration
+- uid: CG.Purple.Options.HostedServiceOptions
+  name: HostedServiceOptions
+  href: api/CG.Purple.Options.HostedServiceOptions.html
+  commentId: T:CG.Purple.Options.HostedServiceOptions
+  fullName: CG.Purple.Options.HostedServiceOptions
+  nameWithType: HostedServiceOptions
+- uid: CG.Purple.Options.HostedServiceOptions.MessageProcessing
+  name: MessageProcessing
+  href: api/CG.Purple.Options.HostedServiceOptions.html#CG_Purple_Options_HostedServiceOptions_MessageProcessing
+  commentId: P:CG.Purple.Options.HostedServiceOptions.MessageProcessing
+  fullName: CG.Purple.Options.HostedServiceOptions.MessageProcessing
+  nameWithType: HostedServiceOptions.MessageProcessing
+- uid: CG.Purple.Options.HostedServiceOptions.MessageProcessing*
+  name: MessageProcessing
+  href: api/CG.Purple.Options.HostedServiceOptions.html#CG_Purple_Options_HostedServiceOptions_MessageProcessing_
+  commentId: Overload:CG.Purple.Options.HostedServiceOptions.MessageProcessing
+  isSpec: "True"
+  fullName: CG.Purple.Options.HostedServiceOptions.MessageProcessing
+  nameWithType: HostedServiceOptions.MessageProcessing
 - uid: CG.Purple.Options.MailMessageOptions
   name: MailMessageOptions
   href: api/CG.Purple.Options.MailMessageOptions.html
@@ -5769,6 +6549,64 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Options.MailMessageOptions.DefaultCacheDuration
   nameWithType: MailMessageOptions.DefaultCacheDuration
+- uid: CG.Purple.Options.MessageProcessingOptions
+  name: MessageProcessingOptions
+  href: api/CG.Purple.Options.MessageProcessingOptions.html
+  commentId: T:CG.Purple.Options.MessageProcessingOptions
+  fullName: CG.Purple.Options.MessageProcessingOptions
+  nameWithType: MessageProcessingOptions
+- uid: CG.Purple.Options.MessageProcessingOptions.MaxDaysToLive
+  name: MaxDaysToLive
+  href: api/CG.Purple.Options.MessageProcessingOptions.html#CG_Purple_Options_MessageProcessingOptions_MaxDaysToLive
+  commentId: P:CG.Purple.Options.MessageProcessingOptions.MaxDaysToLive
+  fullName: CG.Purple.Options.MessageProcessingOptions.MaxDaysToLive
+  nameWithType: MessageProcessingOptions.MaxDaysToLive
+- uid: CG.Purple.Options.MessageProcessingOptions.MaxDaysToLive*
+  name: MaxDaysToLive
+  href: api/CG.Purple.Options.MessageProcessingOptions.html#CG_Purple_Options_MessageProcessingOptions_MaxDaysToLive_
+  commentId: Overload:CG.Purple.Options.MessageProcessingOptions.MaxDaysToLive
+  isSpec: "True"
+  fullName: CG.Purple.Options.MessageProcessingOptions.MaxDaysToLive
+  nameWithType: MessageProcessingOptions.MaxDaysToLive
+- uid: CG.Purple.Options.MessageProcessingOptions.MaxErrorCount
+  name: MaxErrorCount
+  href: api/CG.Purple.Options.MessageProcessingOptions.html#CG_Purple_Options_MessageProcessingOptions_MaxErrorCount
+  commentId: P:CG.Purple.Options.MessageProcessingOptions.MaxErrorCount
+  fullName: CG.Purple.Options.MessageProcessingOptions.MaxErrorCount
+  nameWithType: MessageProcessingOptions.MaxErrorCount
+- uid: CG.Purple.Options.MessageProcessingOptions.MaxErrorCount*
+  name: MaxErrorCount
+  href: api/CG.Purple.Options.MessageProcessingOptions.html#CG_Purple_Options_MessageProcessingOptions_MaxErrorCount_
+  commentId: Overload:CG.Purple.Options.MessageProcessingOptions.MaxErrorCount
+  isSpec: "True"
+  fullName: CG.Purple.Options.MessageProcessingOptions.MaxErrorCount
+  nameWithType: MessageProcessingOptions.MaxErrorCount
+- uid: CG.Purple.Options.MessageProcessingOptions.StartupDelay
+  name: StartupDelay
+  href: api/CG.Purple.Options.MessageProcessingOptions.html#CG_Purple_Options_MessageProcessingOptions_StartupDelay
+  commentId: P:CG.Purple.Options.MessageProcessingOptions.StartupDelay
+  fullName: CG.Purple.Options.MessageProcessingOptions.StartupDelay
+  nameWithType: MessageProcessingOptions.StartupDelay
+- uid: CG.Purple.Options.MessageProcessingOptions.StartupDelay*
+  name: StartupDelay
+  href: api/CG.Purple.Options.MessageProcessingOptions.html#CG_Purple_Options_MessageProcessingOptions_StartupDelay_
+  commentId: Overload:CG.Purple.Options.MessageProcessingOptions.StartupDelay
+  isSpec: "True"
+  fullName: CG.Purple.Options.MessageProcessingOptions.StartupDelay
+  nameWithType: MessageProcessingOptions.StartupDelay
+- uid: CG.Purple.Options.MessageProcessingOptions.ThrottleDuration
+  name: ThrottleDuration
+  href: api/CG.Purple.Options.MessageProcessingOptions.html#CG_Purple_Options_MessageProcessingOptions_ThrottleDuration
+  commentId: P:CG.Purple.Options.MessageProcessingOptions.ThrottleDuration
+  fullName: CG.Purple.Options.MessageProcessingOptions.ThrottleDuration
+  nameWithType: MessageProcessingOptions.ThrottleDuration
+- uid: CG.Purple.Options.MessageProcessingOptions.ThrottleDuration*
+  name: ThrottleDuration
+  href: api/CG.Purple.Options.MessageProcessingOptions.html#CG_Purple_Options_MessageProcessingOptions_ThrottleDuration_
+  commentId: Overload:CG.Purple.Options.MessageProcessingOptions.ThrottleDuration
+  isSpec: "True"
+  fullName: CG.Purple.Options.MessageProcessingOptions.ThrottleDuration
+  nameWithType: MessageProcessingOptions.ThrottleDuration
 - uid: CG.Purple.Options.TextMessageOptions
   name: TextMessageOptions
   href: api/CG.Purple.Options.TextMessageOptions.html
@@ -6762,6 +7600,32 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IProcessLogRepository.DeleteAsync
   nameWithType: IProcessLogRepository.DeleteAsync
+- uid: CG.Purple.Repositories.IProcessLogRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Repositories.IProcessLogRepository.html#CG_Purple_Repositories_IProcessLogRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IProcessLogRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Repositories.IProcessLogRepository.FindAllAsync(CancellationToken)
+  nameWithType: IProcessLogRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Repositories.IProcessLogRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Repositories.IProcessLogRepository.html#CG_Purple_Repositories_IProcessLogRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.Repositories.IProcessLogRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IProcessLogRepository.FindAllAsync
+  nameWithType: IProcessLogRepository.FindAllAsync
+- uid: CG.Purple.Repositories.IProcessLogRepository.FindByMessageAsync(Message,CancellationToken)
+  name: FindByMessageAsync(Message, CancellationToken)
+  href: api/CG.Purple.Repositories.IProcessLogRepository.html#CG_Purple_Repositories_IProcessLogRepository_FindByMessageAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IProcessLogRepository.FindByMessageAsync(Message,CancellationToken)
+  fullName: CG.Purple.Repositories.IProcessLogRepository.FindByMessageAsync(Message, CancellationToken)
+  nameWithType: IProcessLogRepository.FindByMessageAsync(Message, CancellationToken)
+- uid: CG.Purple.Repositories.IProcessLogRepository.FindByMessageAsync*
+  name: FindByMessageAsync
+  href: api/CG.Purple.Repositories.IProcessLogRepository.html#CG_Purple_Repositories_IProcessLogRepository_FindByMessageAsync_
+  commentId: Overload:CG.Purple.Repositories.IProcessLogRepository.FindByMessageAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IProcessLogRepository.FindByMessageAsync
+  nameWithType: IProcessLogRepository.FindByMessageAsync
 - uid: CG.Purple.Repositories.IProcessLogRepository.UpdateAsync(ProcessLog,CancellationToken)
   name: UpdateAsync(ProcessLog, CancellationToken)
   href: api/CG.Purple.Repositories.IProcessLogRepository.html#CG_Purple_Repositories_IProcessLogRepository_UpdateAsync_ProcessLog_CancellationToken_
@@ -7306,13 +8170,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedMailMessagesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{CG.Purple.Seeding.Options.MailMessageOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{MailMessageOptions},System.String,System.Boolean,CancellationToken)
   name: SeedMailMessagesAsync(List<MailMessageOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedMailMessagesAsync_List_CG_Purple_Seeding_Options_MailMessageOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{CG.Purple.Seeding.Options.MailMessageOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedMailMessagesAsync_List_MailMessageOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{MailMessageOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedMailMessagesAsync(List(Of MailMessageOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List<CG.Purple.Seeding.Options.MailMessageOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List(Of CG.Purple.Seeding.Options.MailMessageOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List<MailMessageOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List(Of MailMessageOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedMailMessagesAsync(List<MailMessageOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedMailMessagesAsync(List(Of MailMessageOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync*
@@ -7328,13 +8192,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedMimeTypesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{CG.Purple.Seeding.Options.MimeTypeOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{MimeTypeOptions},System.String,System.Boolean,CancellationToken)
   name: SeedMimeTypesAsync(List<MimeTypeOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedMimeTypesAsync_List_CG_Purple_Seeding_Options_MimeTypeOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{CG.Purple.Seeding.Options.MimeTypeOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedMimeTypesAsync_List_MimeTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{MimeTypeOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedMimeTypesAsync(List(Of MimeTypeOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List<CG.Purple.Seeding.Options.MimeTypeOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List(Of CG.Purple.Seeding.Options.MimeTypeOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List<MimeTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List(Of MimeTypeOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedMimeTypesAsync(List<MimeTypeOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedMimeTypesAsync(List(Of MimeTypeOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync*
@@ -7350,13 +8214,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedParameterTypesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{CG.Purple.Seeding.Options.ParameterTypeOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{ParameterTypeOptions},System.String,System.Boolean,CancellationToken)
   name: SeedParameterTypesAsync(List<ParameterTypeOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedParameterTypesAsync_List_CG_Purple_Seeding_Options_ParameterTypeOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{CG.Purple.Seeding.Options.ParameterTypeOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedParameterTypesAsync_List_ParameterTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{ParameterTypeOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedParameterTypesAsync(List(Of ParameterTypeOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List<CG.Purple.Seeding.Options.ParameterTypeOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List(Of CG.Purple.Seeding.Options.ParameterTypeOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List<ParameterTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List(Of ParameterTypeOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedParameterTypesAsync(List<ParameterTypeOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedParameterTypesAsync(List(Of ParameterTypeOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync*
@@ -7372,13 +8236,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProcessLogsAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{CG.Purple.Seeding.Options.ProcessLogOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{ProcessLogOptions},System.String,System.Boolean,CancellationToken)
   name: SeedProcessLogsAsync(List<ProcessLogOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProcessLogsAsync_List_CG_Purple_Seeding_Options_ProcessLogOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{CG.Purple.Seeding.Options.ProcessLogOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProcessLogsAsync_List_ProcessLogOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{ProcessLogOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedProcessLogsAsync(List(Of ProcessLogOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List<CG.Purple.Seeding.Options.ProcessLogOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List(Of CG.Purple.Seeding.Options.ProcessLogOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List<ProcessLogOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List(Of ProcessLogOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProcessLogsAsync(List<ProcessLogOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedProcessLogsAsync(List(Of ProcessLogOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync*
@@ -7394,13 +8258,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedPropertyTypesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{CG.Purple.Seeding.Options.PropertyTypeOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{PropertyTypeOptions},System.String,System.Boolean,CancellationToken)
   name: SeedPropertyTypesAsync(List<PropertyTypeOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedPropertyTypesAsync_List_CG_Purple_Seeding_Options_PropertyTypeOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{CG.Purple.Seeding.Options.PropertyTypeOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedPropertyTypesAsync_List_PropertyTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{PropertyTypeOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedPropertyTypesAsync(List(Of PropertyTypeOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List<CG.Purple.Seeding.Options.PropertyTypeOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List(Of CG.Purple.Seeding.Options.PropertyTypeOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List<PropertyTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List(Of PropertyTypeOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedPropertyTypesAsync(List<PropertyTypeOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedPropertyTypesAsync(List(Of PropertyTypeOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync*
@@ -7416,13 +8280,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProviderParametersAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{CG.Purple.Seeding.Options.ProviderParameterOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{ProviderParameterOptions},System.String,System.Boolean,CancellationToken)
   name: SeedProviderParametersAsync(List<ProviderParameterOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProviderParametersAsync_List_CG_Purple_Seeding_Options_ProviderParameterOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{CG.Purple.Seeding.Options.ProviderParameterOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProviderParametersAsync_List_ProviderParameterOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{ProviderParameterOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedProviderParametersAsync(List(Of ProviderParameterOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List<CG.Purple.Seeding.Options.ProviderParameterOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List(Of CG.Purple.Seeding.Options.ProviderParameterOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List<ProviderParameterOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List(Of ProviderParameterOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProviderParametersAsync(List<ProviderParameterOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedProviderParametersAsync(List(Of ProviderParameterOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync*
@@ -7438,13 +8302,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProviderTypesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{CG.Purple.Seeding.Options.ProviderTypeOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{ProviderTypeOptions},System.String,System.Boolean,CancellationToken)
   name: SeedProviderTypesAsync(List<ProviderTypeOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProviderTypesAsync_List_CG_Purple_Seeding_Options_ProviderTypeOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{CG.Purple.Seeding.Options.ProviderTypeOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedProviderTypesAsync_List_ProviderTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{ProviderTypeOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedProviderTypesAsync(List(Of ProviderTypeOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List<CG.Purple.Seeding.Options.ProviderTypeOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List(Of CG.Purple.Seeding.Options.ProviderTypeOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List<ProviderTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List(Of ProviderTypeOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedProviderTypesAsync(List<ProviderTypeOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedProviderTypesAsync(List(Of ProviderTypeOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync*
@@ -7460,13 +8324,13 @@ references:
   commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
   fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedTextMessagesAsync(IConfiguration, String, Boolean, CancellationToken)
-- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{CG.Purple.Seeding.Options.TextMessageOptions},System.String,System.Boolean,CancellationToken)
+- uid: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{TextMessageOptions},System.String,System.Boolean,CancellationToken)
   name: SeedTextMessagesAsync(List<TextMessageOptions>, String, Boolean, CancellationToken)
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedTextMessagesAsync_List_CG_Purple_Seeding_Options_TextMessageOptions__System_String_System_Boolean_CancellationToken_
-  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{CG.Purple.Seeding.Options.TextMessageOptions},System.String,System.Boolean,CancellationToken)
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector_SeedTextMessagesAsync_List_TextMessageOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{TextMessageOptions},System.String,System.Boolean,CancellationToken)
   name.vb: SeedTextMessagesAsync(List(Of TextMessageOptions), String, Boolean, CancellationToken)
-  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List<CG.Purple.Seeding.Options.TextMessageOptions>, System.String, System.Boolean, CancellationToken)
-  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List(Of CG.Purple.Seeding.Options.TextMessageOptions), System.String, System.Boolean, CancellationToken)
+  fullName: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List<TextMessageOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List(Of TextMessageOptions), System.String, System.Boolean, CancellationToken)
   nameWithType: SeedDirector.SeedTextMessagesAsync(List<TextMessageOptions>, String, Boolean, CancellationToken)
   nameWithType.vb: SeedDirector.SeedTextMessagesAsync(List(Of TextMessageOptions), String, Boolean, CancellationToken)
 - uid: CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync*
@@ -7869,6 +8733,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Seeding.Options.PropertyTypeOptions.Description
   nameWithType: PropertyTypeOptions.Description
+- uid: CG.Purple.Seeding.Options.PropertyTypeOptions.IsSystem
+  name: IsSystem
+  href: api/CG.Purple.Seeding.Options.PropertyTypeOptions.html#CG_Purple_Seeding_Options_PropertyTypeOptions_IsSystem
+  commentId: P:CG.Purple.Seeding.Options.PropertyTypeOptions.IsSystem
+  fullName: CG.Purple.Seeding.Options.PropertyTypeOptions.IsSystem
+  nameWithType: PropertyTypeOptions.IsSystem
+- uid: CG.Purple.Seeding.Options.PropertyTypeOptions.IsSystem*
+  name: IsSystem
+  href: api/CG.Purple.Seeding.Options.PropertyTypeOptions.html#CG_Purple_Seeding_Options_PropertyTypeOptions_IsSystem_
+  commentId: Overload:CG.Purple.Seeding.Options.PropertyTypeOptions.IsSystem
+  isSpec: "True"
+  fullName: CG.Purple.Seeding.Options.PropertyTypeOptions.IsSystem
+  nameWithType: PropertyTypeOptions.IsSystem
 - uid: CG.Purple.Seeding.Options.PropertyTypeOptions.Name
   name: Name
   href: api/CG.Purple.Seeding.Options.PropertyTypeOptions.html#CG_Purple_Seeding_Options_PropertyTypeOptions_Name
@@ -9103,6 +9980,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Entities.PropertyType.Id
   nameWithType: PropertyType.Id
+- uid: CG.Purple.SqlServer.Entities.PropertyType.IsSystem
+  name: IsSystem
+  href: api/CG.Purple.SqlServer.Entities.PropertyType.html#CG_Purple_SqlServer_Entities_PropertyType_IsSystem
+  commentId: P:CG.Purple.SqlServer.Entities.PropertyType.IsSystem
+  fullName: CG.Purple.SqlServer.Entities.PropertyType.IsSystem
+  nameWithType: PropertyType.IsSystem
+- uid: CG.Purple.SqlServer.Entities.PropertyType.IsSystem*
+  name: IsSystem
+  href: api/CG.Purple.SqlServer.Entities.PropertyType.html#CG_Purple_SqlServer_Entities_PropertyType_IsSystem_
+  commentId: Overload:CG.Purple.SqlServer.Entities.PropertyType.IsSystem
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Entities.PropertyType.IsSystem
+  nameWithType: PropertyType.IsSystem
 - uid: CG.Purple.SqlServer.Entities.PropertyType.Name
   name: Name
   href: api/CG.Purple.SqlServer.Entities.PropertyType.html#CG_Purple_SqlServer_Entities_PropertyType_Name
@@ -11162,6 +12052,32 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.ProcessLogRepository.DeleteAsync
   nameWithType: ProcessLogRepository.DeleteAsync
+- uid: CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.ProcessLogRepository.html#CG_Purple_SqlServer_Repositories_ProcessLogRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindAllAsync(CancellationToken)
+  nameWithType: ProcessLogRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.SqlServer.Repositories.ProcessLogRepository.html#CG_Purple_SqlServer_Repositories_ProcessLogRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindAllAsync
+  nameWithType: ProcessLogRepository.FindAllAsync
+- uid: CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindByMessageAsync(Message,CancellationToken)
+  name: FindByMessageAsync(Message, CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.ProcessLogRepository.html#CG_Purple_SqlServer_Repositories_ProcessLogRepository_FindByMessageAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindByMessageAsync(Message,CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindByMessageAsync(Message, CancellationToken)
+  nameWithType: ProcessLogRepository.FindByMessageAsync(Message, CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindByMessageAsync*
+  name: FindByMessageAsync
+  href: api/CG.Purple.SqlServer.Repositories.ProcessLogRepository.html#CG_Purple_SqlServer_Repositories_ProcessLogRepository_FindByMessageAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindByMessageAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.ProcessLogRepository.FindByMessageAsync
+  nameWithType: ProcessLogRepository.FindByMessageAsync
 - uid: CG.Purple.SqlServer.Repositories.ProcessLogRepository.UpdateAsync(ProcessLog,CancellationToken)
   name: UpdateAsync(ProcessLog, CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.ProcessLogRepository.html#CG_Purple_SqlServer_Repositories_ProcessLogRepository_UpdateAsync_ProcessLog_CancellationToken_
@@ -11995,3 +12911,28 @@ references:
   isSpec: "True"
   fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions002.UseDalStartup
   nameWithType: WebApplicationExtensions002.UseDalStartup
+- uid: System
+  name: System
+  href: api/System.html
+  commentId: N:System
+  fullName: System
+  nameWithType: System
+- uid: System.StringExtensions
+  name: StringExtensions
+  href: api/System.StringExtensions.html
+  commentId: T:System.StringExtensions
+  fullName: System.StringExtensions
+  nameWithType: StringExtensions
+- uid: System.StringExtensions.Truncate(System.String,System.Int32)
+  name: Truncate(String, Int32)
+  href: api/System.StringExtensions.html#System_StringExtensions_Truncate_System_String_System_Int32_
+  commentId: M:System.StringExtensions.Truncate(System.String,System.Int32)
+  fullName: System.StringExtensions.Truncate(System.String, System.Int32)
+  nameWithType: StringExtensions.Truncate(String, Int32)
+- uid: System.StringExtensions.Truncate*
+  name: Truncate
+  href: api/System.StringExtensions.html#System_StringExtensions_Truncate_
+  commentId: Overload:System.StringExtensions.Truncate
+  isSpec: "True"
+  fullName: System.StringExtensions.Truncate
+  nameWithType: StringExtensions.Truncate

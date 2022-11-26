@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ProviderType
+    <title>Class MailPreview
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ProviderType
+    <meta name="title" content="Class MailPreview
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,34 +78,21 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.SqlServer.Entities.ProviderType">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Pages.Messages.MailPreview">
   
   
-  <h1 id="CG_Purple_SqlServer_Entities_ProviderType" data-uid="CG.Purple.SqlServer.Entities.ProviderType" class="text-break">Class ProviderType
+  <h1 id="CG_Purple_Host_Pages_Messages_MailPreview" data-uid="CG.Purple.Host.Pages.Messages.MailPreview" class="text-break">Class MailPreview
   </h1>
-  <div class="markdown level0 summary"><p>This class represents a message provider type entity.</p>
+  <div class="markdown level0 summary"><p>This class is the code-behind for the <a class="xref" href="CG.Purple.Host.Pages.Messages.MailPreview.html">MailPreview</a> page.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="CG.Purple.SqlServer.Entities.EntityBase.html">EntityBase</a></div>
-    <div class="level2"><span class="xref">ProviderType</span></div>
+    <div class="level1"><span class="xref">MailPreview</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="CG.Purple.SqlServer.Entities.EntityBase.html#CG_Purple_SqlServer_Entities_EntityBase_CreatedBy">EntityBase.CreatedBy</a>
-    </div>
-    <div>
-      <a class="xref" href="CG.Purple.SqlServer.Entities.EntityBase.html#CG_Purple_SqlServer_Entities_EntityBase_CreatedOnUtc">EntityBase.CreatedOnUtc</a>
-    </div>
-    <div>
-      <a class="xref" href="CG.Purple.SqlServer.Entities.EntityBase.html#CG_Purple_SqlServer_Entities_EntityBase_LastUpdatedBy">EntityBase.LastUpdatedBy</a>
-    </div>
-    <div>
-      <a class="xref" href="CG.Purple.SqlServer.Entities.EntityBase.html#CG_Purple_SqlServer_Entities_EntityBase_LastUpdatedOnUtc">EntityBase.LastUpdatedOnUtc</a>
-    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -128,23 +115,116 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.SqlServer.Entities.html">CG.Purple.SqlServer.Entities</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.SqlServer.dll</h6>
-  <h5 id="CG_Purple_SqlServer_Entities_ProviderType_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Pages.Messages.html">CG.Purple.Host.Pages.Messages</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Host.dll</h6>
+  <h5 id="CG_Purple_Host_Pages_Messages_MailPreview_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">class ProviderType : EntityBase</code></pre>
+    <pre><code class="lang-csharp hljs">public class MailPreview</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview__crumbs" data-uid="CG.Purple.Host.Pages.Messages.MailPreview._crumbs">_crumbs</h4>
+  <div class="markdown level1 summary"><p>This field contains a reference to breadcrumbs for this page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly List&lt;BreadcrumbItem&gt; _crumbs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">BreadcrumbItem</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview__html" data-uid="CG.Purple.Host.Pages.Messages.MailPreview._html">_html</h4>
+  <div class="markdown level1 summary"><p>This field contains the HTML encoded body of the message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string _html</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview__isBusy" data-uid="CG.Purple.Host.Pages.Messages.MailPreview._isBusy">_isBusy</h4>
+  <div class="markdown level1 summary"><p>This field indicates the page is busy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool _isBusy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview__message" data-uid="CG.Purple.Host.Pages.Messages.MailPreview._message">_message</h4>
+  <div class="markdown level1 summary"><p>This field contains the message for this page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MailMessage _message</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Models.MailMessage.html">MailMessage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
-  <a id="CG_Purple_SqlServer_Entities_ProviderType_CanProcessEmails_" data-uid="CG.Purple.SqlServer.Entities.ProviderType.CanProcessEmails*"></a>
-  <h4 id="CG_Purple_SqlServer_Entities_ProviderType_CanProcessEmails" data-uid="CG.Purple.SqlServer.Entities.ProviderType.CanProcessEmails">CanProcessEmails</h4>
-  <div class="markdown level1 summary"><p>This property indicates whether this provider type can process
-emails.</p>
+  <a id="CG_Purple_Host_Pages_Messages_MailPreview_Logger_" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.Logger*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview_Logger" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>This property contains the logger for this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool CanProcessEmails { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected ILogger&lt;MailPreview&gt; Logger { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,20 +236,19 @@ emails.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Host.Pages.Messages.MailPreview.html">MailPreview</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_SqlServer_Entities_ProviderType_CanProcessTexts_" data-uid="CG.Purple.SqlServer.Entities.ProviderType.CanProcessTexts*"></a>
-  <h4 id="CG_Purple_SqlServer_Entities_ProviderType_CanProcessTexts" data-uid="CG.Purple.SqlServer.Entities.ProviderType.CanProcessTexts">CanProcessTexts</h4>
-  <div class="markdown level1 summary"><p>This property indicates whether this provider type can process
-texts.</p>
+  <a id="CG_Purple_Host_Pages_Messages_MailPreview_MailManager_" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.MailManager*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview_MailManager" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.MailManager">MailManager</h4>
+  <div class="markdown level1 summary"><p>This property contains the mail message manager for this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool CanProcessTexts { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected IMailMessageManager MailManager { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -181,68 +260,19 @@ texts.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">IMailMessageManager</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_SqlServer_Entities_ProviderType_Description_" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Description*"></a>
-  <h4 id="CG_Purple_SqlServer_Entities_ProviderType_Description" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Description">Description</h4>
-  <div class="markdown level1 summary"><p>This property contains the description of the provider type.</p>
+  <a id="CG_Purple_Host_Pages_Messages_MailPreview_MessageId_" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.MessageId*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview_MessageId" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.MessageId">MessageId</h4>
+  <div class="markdown level1 summary"><p>This property contains the identifier for the message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Description { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_SqlServer_Entities_ProviderType_FactoryType_" data-uid="CG.Purple.SqlServer.Entities.ProviderType.FactoryType*"></a>
-  <h4 id="CG_Purple_SqlServer_Entities_ProviderType_FactoryType" data-uid="CG.Purple.SqlServer.Entities.ProviderType.FactoryType">FactoryType</h4>
-  <div class="markdown level1 summary"><p>This property contains the .NET type for the associated provider
-type.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FactoryType { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_SqlServer_Entities_ProviderType_Id_" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Id*"></a>
-  <h4 id="CG_Purple_SqlServer_Entities_ProviderType_Id" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Id">Id</h4>
-  <div class="markdown level1 summary"><p>This property contains the unique identifier for the provider type.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int MessageId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -259,14 +289,14 @@ type.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_SqlServer_Entities_ProviderType_IsDisabled_" data-uid="CG.Purple.SqlServer.Entities.ProviderType.IsDisabled*"></a>
-  <h4 id="CG_Purple_SqlServer_Entities_ProviderType_IsDisabled" data-uid="CG.Purple.SqlServer.Entities.ProviderType.IsDisabled">IsDisabled</h4>
-  <div class="markdown level1 summary"><p>This property indicates the provider type has been disabled.</p>
+  <a id="CG_Purple_Host_Pages_Messages_MailPreview_SnackbarService_" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview_SnackbarService" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService">SnackbarService</h4>
+  <div class="markdown level1 summary"><p>This property contains the snackbar service for this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsDisabled { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected ISnackbar SnackbarService { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -278,45 +308,39 @@ type.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">ISnackbar</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_SqlServer_Entities_ProviderType_Name_" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Name*"></a>
-  <h4 id="CG_Purple_SqlServer_Entities_ProviderType_Name" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Name">Name</h4>
-  <div class="markdown level1 summary"><p>This property contains the name of the provider type.</p>
-</div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Purple_Host_Pages_Messages_MailPreview_HandleContentError_" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview_HandleContentError_MudBlazor_Extensions_Components_IFileDisplayInfos_" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError(MudBlazor.Extensions.Components.IFileDisplayInfos)">HandleContentError(IFileDisplayInfos)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected Task&lt;ContentErrorResult&gt; HandleContentError(IFileDisplayInfos arg)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">MudBlazor.Extensions.Components.IFileDisplayInfos</span></td>
+        <td><span class="parametername">arg</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_SqlServer_Entities_ProviderType_Parameters_" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Parameters*"></a>
-  <h4 id="CG_Purple_SqlServer_Entities_ProviderType_Parameters" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Parameters">Parameters</h4>
-  <div class="markdown level1 summary"><p>This property contains the associated parameters.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual ICollection&lt;ProviderParameter&gt; Parameters { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -326,21 +350,21 @@ type.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ICollection</span>&lt;<a class="xref" href="CG.Purple.SqlServer.Entities.ProviderParameter.html">ProviderParameter</a>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">MudBlazor.Extensions.Components.ContentErrorResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_SqlServer_Entities_ProviderType_Priority_" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Priority*"></a>
-  <h4 id="CG_Purple_SqlServer_Entities_ProviderType_Priority" data-uid="CG.Purple.SqlServer.Entities.ProviderType.Priority">Priority</h4>
-  <div class="markdown level1 summary"><p>This property contains the relative priority for this provider.</p>
+  <a id="CG_Purple_Host_Pages_Messages_MailPreview_OnInitializedAsync_" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_MailPreview_OnInitializedAsync" data-uid="CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync">OnInitializedAsync()</h4>
+  <div class="markdown level1 summary"><p>This method is called by the framework to initialize the page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Priority { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected override async Task OnInitializedAsync()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -350,8 +374,9 @@ type.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td></td>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
