@@ -253,12 +253,41 @@ public partial class Index
         string searchString
         )
     {
+        // How should we filter?
+        if (searchString.Contains(':'))
+        {
+            // If we get here then we might need to filter by property types.
+
+            // Should be: property type:value
+            var parts = searchString.Split(':');
+            if (parts.Length == 2)
+            {
+                // If we get here then we need to filter by property types.
+
+                // Look for a matching property.
+                var match = element.MessageProperties.FirstOrDefault(x => 
+                    x.PropertyType.Name == parts[0]
+                    );
+
+                // Did we find one?
+                if (match is not null)
+                {
+                    return match.Value.Contains(
+                        parts[1],
+                        StringComparison.OrdinalIgnoreCase
+                        );
+                }
+            }
+        }
+
+        // If we get here then we should filter on all properties.
+
         if (string.IsNullOrWhiteSpace(searchString))
         {
             return true;
         }
         if (element.To.Contains(
-            searchString, 
+            searchString,
             StringComparison.OrdinalIgnoreCase)
             )
         {
@@ -267,7 +296,7 @@ public partial class Index
         if (!string.IsNullOrEmpty(element.CC))
         {
             if (element.CC.Contains(
-                searchString, 
+                searchString,
                 StringComparison.OrdinalIgnoreCase)
                 )
             {
@@ -277,7 +306,7 @@ public partial class Index
         if (!string.IsNullOrEmpty(element.BCC))
         {
             if (element.BCC.Contains(
-                searchString, 
+                searchString,
                 StringComparison.OrdinalIgnoreCase)
                 )
             {
@@ -287,7 +316,7 @@ public partial class Index
         if (!string.IsNullOrEmpty(element.Subject))
         {
             if (element.Subject.Contains(
-                searchString, 
+                searchString,
                 StringComparison.OrdinalIgnoreCase)
                 )
             {
@@ -300,7 +329,7 @@ public partial class Index
             return true;
         }
         if (element.Body.Contains(
-            searchString, 
+            searchString,
             StringComparison.OrdinalIgnoreCase)
             )
         {
@@ -322,6 +351,35 @@ public partial class Index
         string searchString
         )
     {
+        // How should we filter?
+        if (searchString.Contains(':'))
+        {
+            // If we get here then we might need to filter by property types.
+
+            // Should be: property type:value
+            var parts = searchString.Split(':');
+            if (parts.Length == 2)
+            {
+                // If we get here then we need to filter by property types.
+
+                // Look for a matching property.
+                var match = element.MessageProperties.FirstOrDefault(x =>
+                    x.PropertyType.Name == parts[0]
+                    );
+
+                // Did we find one?
+                if (match is not null)
+                {
+                    return match.Value.Contains(
+                        parts[1],
+                        StringComparison.OrdinalIgnoreCase
+                        );
+                }
+            }
+        }
+
+        // If we get here then we should filter on all properties.
+
         if (string.IsNullOrWhiteSpace(searchString))
         {
             return true;
