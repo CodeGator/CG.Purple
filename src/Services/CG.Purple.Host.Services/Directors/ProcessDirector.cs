@@ -56,7 +56,7 @@ internal class ProcessDirector : IProcessDirector
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="ProcessDirector"/>
+    /// This constructor creates a new instance of the <see cref="RetryDirector"/>
     /// class.
     /// </summary>
     /// <param name="messageManager">The message manager to use with this 
@@ -206,88 +206,6 @@ internal class ProcessDirector : IProcessDirector
             // Provider better context.
             throw new DirectorException(
                 message: $"The director failed to process one or more messages!",
-                innerException: ex
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <inheritdoc/>
-    public virtual async Task RetryMessagesAsync(
-        int maxErrorCount,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfLessThanOrEqualZero(maxErrorCount, nameof(maxErrorCount));
-
-        try
-        {
-            // =======
-            // Step 1: Find messages ready to retry (if any).
-            // =======
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Looking for messages that are ready to retry."
-                );
-
-            // Get any messages that are ready to retry.
-            var messages = await _messageManager.FindReadyToRetryAsync(
-                maxErrorCount,
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Are we done?
-            if (!messages.Any())
-            {
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "No messages were ready to retry."
-                    );
-                return; // Done!
-            }
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Retrying {count} failed messages.",
-                messages.Count()
-                );
-
-            // Loop and retry these messages.
-            foreach (var message in messages)
-            {
-                // Note: we are setting the state to 'pending' 
-                //   here, in case the pipeline needs to assign
-                //   a provider type to the message, for processing.
-
-                // Log what we are about to do.
-                _logger.LogInformation(
-                    "Retrying message: {id}",
-                    message.Id
-                    );
-
-                // Reset the state of this message.
-                await message.ToPendingStateAsync(
-                    _messageManager,
-                    _processLogManager,
-                    "host",
-                    cancellationToken
-                    ).ConfigureAwait(false);
-            }
-        }
-        catch (Exception ex)
-        {
-            // Log what happened.
-            _logger.LogError(
-                ex,
-                "Failed to retry one or more messages!"
-                );
-
-            // Provider better context.
-            throw new DirectorException(
-                message: $"The director failed to retry one or more messages!",
                 innerException: ex
                 );
         }

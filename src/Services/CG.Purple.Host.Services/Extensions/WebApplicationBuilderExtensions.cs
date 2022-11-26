@@ -63,6 +63,7 @@ public static class WebApplicationBuilderExtensions006
 
         // Add the directors.
         webApplicationBuilder.Services.AddScoped<IProcessDirector, ProcessDirector>();
+        webApplicationBuilder.Services.AddScoped<IRetryDirector, RetryDirector>();
         webApplicationBuilder.Services.AddScoped<IArchiveDirector, ArchiveDirector>();
 
         // Return the application builder.
