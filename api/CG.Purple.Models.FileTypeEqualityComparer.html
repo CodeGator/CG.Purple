@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class FileType
+    <title>Class FileTypeEqualityComparer
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class FileType
+    <meta name="title" content="Class FileTypeEqualityComparer
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,74 +78,49 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Models.FileType">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Models.FileTypeEqualityComparer">
   
   
-  <h1 id="CG_Purple_Models_FileType" data-uid="CG.Purple.Models.FileType" class="text-break">Class FileType
+  <h1 id="CG_Purple_Models_FileTypeEqualityComparer" data-uid="CG.Purple.Models.FileTypeEqualityComparer" class="text-break">Class FileTypeEqualityComparer
   </h1>
-  <div class="markdown level0 summary"><p>This class represents a file type model.</p>
+  <div class="markdown level0 summary"><p>This class is a custom equality comparer for the <a class="xref" href="CG.Purple.Models.FileType.html">FileType</a>
+type.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="CG.Purple.Models.ModelBase.html">ModelBase</a></div>
-    <div class="level2"><span class="xref">FileType</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="CG.Purple.Models.ModelBase.html#CG_Purple_Models_ModelBase_CreatedBy">ModelBase.CreatedBy</a>
-    </div>
-    <div>
-      <a class="xref" href="CG.Purple.Models.ModelBase.html#CG_Purple_Models_ModelBase_CreatedOnUtc">ModelBase.CreatedOnUtc</a>
-    </div>
-    <div>
-      <a class="xref" href="CG.Purple.Models.ModelBase.html#CG_Purple_Models_ModelBase_LastUpdatedBy">ModelBase.LastUpdatedBy</a>
-    </div>
-    <div>
-      <a class="xref" href="CG.Purple.Models.ModelBase.html#CG_Purple_Models_ModelBase_LastUpdatedOnUtc">ModelBase.LastUpdatedOnUtc</a>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
+    <div class="level1"><span class="xref">FileTypeEqualityComparer</span></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Models.html">CG.Purple.Models</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Primitives.dll</h6>
-  <h5 id="CG_Purple_Models_FileType_syntax">Syntax</h5>
+  <h6><strong>Assembly</strong>: CG.Purple.Abstractions.dll</h6>
+  <h5 id="CG_Purple_Models_FileTypeEqualityComparer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FileType : ModelBase</code></pre>
+    <pre><code class="lang-csharp hljs">public class FileTypeEqualityComparer : IEqualityComparer&lt;FileType&gt;</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="constructors">Constructors
   </h3>
-  <a id="CG_Purple_Models_FileType_Extension_" data-uid="CG.Purple.Models.FileType.Extension*"></a>
-  <h4 id="CG_Purple_Models_FileType_Extension" data-uid="CG.Purple.Models.FileType.Extension">Extension</h4>
-  <div class="markdown level1 summary"><p>This property contains the extension for the file type.</p>
+  <a id="CG_Purple_Models_FileTypeEqualityComparer__ctor_" data-uid="CG.Purple.Models.FileTypeEqualityComparer.#ctor*"></a>
+  <h4 id="CG_Purple_Models_FileTypeEqualityComparer__ctor" data-uid="CG.Purple.Models.FileTypeEqualityComparer.#ctor">FileTypeEqualityComparer()</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Models.FileTypeEqualityComparer.html">FileTypeEqualityComparer</a>
+class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Extension { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">FileTypeEqualityComparer()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Purple_Models_FileTypeEqualityComparer__instance" data-uid="CG.Purple.Models.FileTypeEqualityComparer._instance">_instance</h4>
+  <div class="markdown level1 summary"><p>This field contains the shared instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static FileTypeEqualityComparer _instance</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -155,21 +130,84 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="CG.Purple.Models.FileTypeEqualityComparer.html">FileTypeEqualityComparer</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Models_FileType_Id_" data-uid="CG.Purple.Models.FileType.Id*"></a>
-  <h4 id="CG_Purple_Models_FileType_Id" data-uid="CG.Purple.Models.FileType.Id">Id</h4>
-  <div class="markdown level1 summary"><p>This property contains the unique identifier for the file type.</p>
-</div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Purple_Models_FileTypeEqualityComparer_Equals_" data-uid="CG.Purple.Models.FileTypeEqualityComparer.Equals*"></a>
+  <h4 id="CG_Purple_Models_FileTypeEqualityComparer_Equals_CG_Purple_Models_FileType_CG_Purple_Models_FileType_" data-uid="CG.Purple.Models.FileTypeEqualityComparer.Equals(CG.Purple.Models.FileType,CG.Purple.Models.FileType)">Equals(FileType, FileType)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(FileType x, FileType y)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Models.FileType.html">FileType</a></td>
+        <td><span class="parametername">x</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Models.FileType.html">FileType</a></td>
+        <td><span class="parametername">y</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Models_FileTypeEqualityComparer_GetHashCode_" data-uid="CG.Purple.Models.FileTypeEqualityComparer.GetHashCode*"></a>
+  <h4 id="CG_Purple_Models_FileTypeEqualityComparer_GetHashCode_CG_Purple_Models_FileType_" data-uid="CG.Purple.Models.FileTypeEqualityComparer.GetHashCode(CG.Purple.Models.FileType)">GetHashCode(FileType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetHashCode(FileType obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Models.FileType.html">FileType</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -184,16 +222,17 @@
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Models_FileType_MimeType_" data-uid="CG.Purple.Models.FileType.MimeType*"></a>
-  <h4 id="CG_Purple_Models_FileType_MimeType" data-uid="CG.Purple.Models.FileType.MimeType">MimeType</h4>
-  <div class="markdown level1 summary"><p>This property contains the associated MIME type.</p>
+  <a id="CG_Purple_Models_FileTypeEqualityComparer_Instance_" data-uid="CG.Purple.Models.FileTypeEqualityComparer.Instance*"></a>
+  <h4 id="CG_Purple_Models_FileTypeEqualityComparer_Instance" data-uid="CG.Purple.Models.FileTypeEqualityComparer.Instance">Instance()</h4>
+  <div class="markdown level1 summary"><p>This method returns the singleton <a class="xref" href="CG.Purple.Models.FileTypeEqualityComparer.html">FileTypeEqualityComparer</a>
+instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual MimeType MimeType { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static FileTypeEqualityComparer Instance()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -203,8 +242,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a></td>
-        <td></td>
+        <td><a class="xref" href="CG.Purple.Models.FileTypeEqualityComparer.html">FileTypeEqualityComparer</a></td>
+        <td><p>An <a class="xref" href="CG.Purple.Models.FileTypeEqualityComparer.html">FileTypeEqualityComparer</a> instance.</p>
+</td>
       </tr>
     </tbody>
   </table>
