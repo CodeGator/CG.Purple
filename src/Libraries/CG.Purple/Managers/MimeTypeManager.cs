@@ -402,6 +402,51 @@ internal class MimeTypeManager : IMimeTypeManager
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<MimeType?> FindByIdAsync(
+        int id,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfZero(id, nameof(id));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IMimeTypeRepository.FindByExtensionAsync)
+                );
+
+            // Perform the operation.
+            var mimeType = await _mimeTypeRepository.FindByIdAsync(
+                id,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return mimeType;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for a matching mime type by id!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for a matching " +
+                "mime type by id!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<MimeType> UpdateAsync(
         MimeType mimeType,
         string userName,

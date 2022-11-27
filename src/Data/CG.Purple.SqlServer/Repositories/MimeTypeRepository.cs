@@ -1,4 +1,7 @@
 ﻿
+using Microsoft.EntityFrameworkCore.Internal;
+using System.Linq;
+
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
@@ -208,6 +211,13 @@ internal class MimeTypeRepository : IMimeTypeRepository
             using var dbContext = await _dbContextFactory.CreateDbContextAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // If we left these here, EFCORE would try to be helpful and insert /
+            //   update, as needed to sync the db to the entity. It would probably
+            //   get that wrong, BTW, and throw errors it otherwise wouldn't. 
+            // For that reason, we'll use our file manager to perform any actions
+            //   on the associated file types.
+            entity.FileTypes.Clear();
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -493,7 +503,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
                 );
         }
     }
-
+    
     // *******************************************************************
 
     /// <inheritdoc/>
@@ -581,6 +591,74 @@ internal class MimeTypeRepository : IMimeTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<MimeType?> FindByIdAsync(
+        int id,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfZero(id, nameof(id));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for file types."
+                );
+
+            // Perform the mime type search.
+            var mimeType = await dbContext.MimeTypes.Where(x => 
+                x.Id == id
+                ).Include(x => x.FileTypes)
+                .FirstOrDefaultAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Did we fail?
+            if (mimeType is null)
+            {
+                return null;
+            }
+
+            // Convert the entity to a model.
+            var result = _mapper.Map<MimeType>(
+                mimeType
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for a mime type by id!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for a mime " +
+                "type by id!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<MimeType> UpdateAsync(
         MimeType mimeType,
         CancellationToken cancellationToken = default
@@ -622,11 +700,18 @@ internal class MimeTypeRepository : IMimeTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // If we left these here, EFCORE would try to be helpful and insert /
+            //   update, as needed to sync the db to the entity. It would probably
+            //   get that wrong, BTW, and throw errors it otherwise wouldn't. 
+            // For that reason, we'll use our file manager to perform any actions
+            //   on the associated file types.
+            entity.FileTypes.Clear();
+
             // We never change these 'read only' properties.
             dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
-
+            
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
@@ -650,23 +735,19 @@ internal class MimeTypeRepository : IMimeTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Converting a {entity} entity to a model",
-                nameof(MimeType)
-                );
-
-            // Convert the entity to a model.
-            var result = _mapper.Map<MimeType>(
-                entity
-                );
+            // Find the mime type again so we pick up any file types
+            //   that we removed, on the entity, earlier (see above).
+            var result = await FindByIdAsync(
+                entity.Id,
+                cancellationToken
+                ).ConfigureAwait(false);
 
             // Did we fail?
             if (result is null)
             {
                 // Panic!!
-                throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(MimeType)} entity to a model."
+                throw new InvalidOperationException(
+                    $"Failed to find mime type: {entity.Id}!"
                     );
             }
 
