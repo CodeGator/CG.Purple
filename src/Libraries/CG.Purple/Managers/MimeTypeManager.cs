@@ -184,6 +184,12 @@ internal class MimeTypeManager : IMimeTypeManager
             mimeType.LastUpdatedBy = null;
             mimeType.LastUpdatedOnUtc = null;
 
+            // types are always lower case.
+            mimeType.Type = mimeType.Type.ToLower().Trim();
+
+            // sub-types are always lower case.
+            mimeType.SubType = mimeType.SubType.ToLower().Trim();
+
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
@@ -417,6 +423,12 @@ internal class MimeTypeManager : IMimeTypeManager
             // Ensure the stats are correct.
             mimeType.LastUpdatedOnUtc = DateTime.UtcNow;
             mimeType.LastUpdatedBy = userName;
+
+            // types are always lower case.
+            mimeType.Type = mimeType.Type.ToLower().Trim();
+
+            // sub-types are always lower case.
+            mimeType.SubType = mimeType.SubType.ToLower().Trim();
 
             // Log what we are about to do.
             _logger.LogTrace(

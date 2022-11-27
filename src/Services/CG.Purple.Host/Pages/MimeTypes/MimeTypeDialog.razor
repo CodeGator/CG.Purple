@@ -1,0 +1,54 @@
+﻿<MudDialog>
+    <DialogContent>
+        <EditForm Model="@Model" OnValidSubmit="OnValidSubmit">
+            <MudCard Outlined>
+                <MudCardContent>
+                    <DataAnnotationsValidator />
+                    <MudTextField AutoFocus
+                                  Immediate
+                                  Counter="127"
+                                  Variant="Variant.Outlined"
+                                  Label="Type"
+                                  For="@(() => Model.Type)"
+                                  @bind-Value="@Model.Type" />
+                    <MudTextField Variant="Variant.Outlined"
+                                  Immediate
+                                  Counter="127"
+                                  Label="SubType"
+                                  For="@(() => Model.SubType)"
+                                  @bind-Value="@Model.SubType" />
+                    <MudTable Items="Model.FileTypes">
+                        <ToolBarContent>
+                            <MudText>File Types</MudText>
+                        </ToolBarContent>
+                        <HeaderContent>
+                            <MudTh><MudTableSortLabel SortBy="new Func<FileType, object>(x=>x.Extension)">Extension</MudTableSortLabel></MudTh>
+                            <MudTh></MudTh>
+                        </HeaderContent>
+                        <RowTemplate Context="context2">
+                            <MudTd DataLabel="Extension">@context2.Extension</MudTd>
+                            <MudTd>
+                                <MudTooltip Text="Delete">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context2)" />
+                                </MudTooltip>
+                                <MudTooltip Text="Edit">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditAsync(context2)" />
+                                </MudTooltip>
+                            </MudTd>
+                        </RowTemplate>
+                        <PagerContent>
+                            <MudTablePager />
+                        </PagerContent>
+                        <NoRecordsContent>
+                            No file types were found.
+                        </NoRecordsContent>
+                    </MudTable>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Color="Color.Inherit" OnClick="Cancel">Cancel</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit" Class="ml-auto" Color="Color.Primary">Save</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
+    </DialogContent>
+</MudDialog>

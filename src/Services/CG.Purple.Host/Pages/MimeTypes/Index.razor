@@ -6,9 +6,17 @@
 
 <MudText Typo="Typo.h6" Class="py-4 px-5">This page contains the MIME types used for file attachments.</MudText>
 
-<MudTable Items="@_mimeTypes" Dense Striped>
+<MudTable Items="@_mimeTypes" Dense 
+                              Striped 
+                              Filter="new Func<MimeType,bool>(FilterFunc1)">
     <ToolBarContent>
         <MudSpacer />
+        <MudTextField @bind-Value="_gridSearchString"
+                      Placeholder="Search"
+                      HelperText="Optionally, search using 'ext:value' syntax, to match a mime type by extension"
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
     <HeaderContent>
         <MudTh><MudTableSortLabel SortBy="new Func<MimeType, object>(x=>x.Type)">Type</MudTableSortLabel></MudTh>
