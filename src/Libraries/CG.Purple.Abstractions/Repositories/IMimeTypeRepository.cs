@@ -120,6 +120,24 @@ public interface IMimeTypeRepository
         );
 
     /// <summary>
+    /// This method searches for a single matching <see cref="MimeType"/> object using
+    /// the given identifier.
+    /// </summary>
+    /// <param name="id">The identifier to use for the search.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a matching <see cref="MimeType"/> 
+    /// object, if one was found, or NULL otherwise.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="RepositoryException">This exception is thrown whenever the
+    /// repository fails to complete the operation.</exception>
+    Task<MimeType?> FindByIdAsync(
+        int id,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method updates an existing <see cref="MimeType"/> object in the 
     /// underlying storage.
     /// </summary>

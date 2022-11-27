@@ -209,6 +209,14 @@ internal class TextMessageRepository : ITextMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // If we left these here, EFCORE would try to be helpful and insert /
+            //   update, as needed to sync the db to the entity. It would probably
+            //   get that wrong, BTW, and throw errors it otherwise wouldn't. 
+            // For that reason, we'll use our managers to perform any actions on
+            // the entities.
+            entity.MessageProperties.Clear();
+            entity.Attachments.Clear();
+
             // We always want the key stored in upper case.
             entity.MessageKey = entity.MessageKey.ToUpper();
 
@@ -521,6 +529,14 @@ internal class TextMessageRepository : ITextMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // If we left these here, EFCORE would try to be helpful and insert /
+            //   update, as needed to sync the db to the entity. It would probably
+            //   get that wrong, BTW, and throw errors it otherwise wouldn't. 
+            // For that reason, we'll use our managers to perform any actions on
+            // the entities.
+            entity.MessageProperties.Clear();
+            entity.Attachments.Clear();
+
             // We never change these 'read only' properties.
             dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
             dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
@@ -562,23 +578,19 @@ internal class TextMessageRepository : ITextMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Converting a {entity} entity to a model",
-                nameof(TextMessage)
-                );
-
-            // Convert the entity to a model.
-            var result = _mapper.Map<TextMessage>(
-                entity
-                );
+            // Find the message again so we pick up any attachments, and/or
+            //   properties that we removed, on the entity, earlier (see above).
+            var result = await FindByIdAsync(
+                entity.Id,
+                cancellationToken
+                ).ConfigureAwait(false);
 
             // Did we fail?
             if (result is null)
             {
                 // Panic!!
-                throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(TextMessage)} entity to a model."
+                throw new InvalidOperationException(
+                    $"Failed to find the message: {entity.Id}!"
                     );
             }
 

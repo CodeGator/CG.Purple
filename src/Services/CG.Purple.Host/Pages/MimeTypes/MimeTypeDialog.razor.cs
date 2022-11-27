@@ -291,14 +291,7 @@ public partial class MimeTypeDialog
             if (!results.Cancelled)
             {
                 // Save the changes
-                if (!tempFileType.Extension.Trim().StartsWith('.'))
-                {
-                    fileType.Extension = $".{tempFileType.Extension.Trim()}";
-                }
-                else
-                {
-                    fileType.Extension = tempFileType.Extension.Trim();
-                }
+                fileType.Extension = tempFileType.Extension;
             }
         }
         catch (Exception ex)

@@ -1,7 +1,4 @@
 
-using CG.Purple.Repositories;
-using Microsoft.Extensions.Caching.Distributed;
-
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -49,6 +46,252 @@ public class AttachmentManagerFixture
             manager._logger != null,
             "The _logger field wasn't initialize!"
             );
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method ensures the <see cref="AttachmentManager.AnyAsync(CancellationToken)"/>
+    /// method property calls the proper repository methods and returns 
+    /// the result.
+    /// </summary>
+    [TestMethod]
+    [TestCategory("UnitTest")]
+    public async Task AttachmentManager_AnyAsync()
+    {
+        // Arrange ...
+        var repository = new Mock<IAttachmentRepository>();
+        var cache = new Mock<IDistributedCache>();
+        var logger = new Mock<ILogger<IAttachmentManager>>();
+
+        repository.Setup(x => x.AnyAsync(
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(true)
+            .Verifiable();
+
+        var manager = new AttachmentManager(
+            repository.Object,
+            cache.Object,
+            logger.Object
+            );
+
+        // Act ...
+        var result = await manager.AnyAsync();
+
+        // Assert ...
+        Assert.IsTrue(
+            result,
+            "The return value was invalid!"
+            );
+
+        repository.Verify();
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method ensures the <see cref="AttachmentManager.CountAsync(CancellationToken)"/>
+    /// method property calls the proper repository methods and returns 
+    /// the result.
+    /// </summary>
+    [TestMethod]
+    [TestCategory("UnitTest")]
+    public async Task AttachmentManager_CountAsync()
+    {
+        // Arrange ...
+        var repository = new Mock<IAttachmentRepository>();
+        var cache = new Mock<IDistributedCache>();
+        var logger = new Mock<ILogger<IAttachmentManager>>();
+
+        repository.Setup(x => x.CountAsync(
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(1)
+            .Verifiable();
+
+        var manager = new AttachmentManager(
+            repository.Object,
+            cache.Object,
+            logger.Object
+            );
+
+        // Act ...
+        var result = await manager.CountAsync();
+
+        // Assert ...
+        Assert.IsTrue(
+            result == 1,
+            "The return value was invalid!"
+            );
+
+        repository.Verify();
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method ensures the <see cref="AttachmentManager.CreateAsync(Models.Attachment, string, CancellationToken)"/>
+    /// method property calls the proper repository methods and returns 
+    /// the result.
+    /// </summary>
+    [TestMethod]
+    [TestCategory("UnitTest")]
+    public async Task AttachmentManager_CreateAsync()
+    {
+        // Arrange ...
+        var repository = new Mock<IAttachmentRepository>();
+        var cache = new Mock<IDistributedCache>();
+        var logger = new Mock<ILogger<IAttachmentManager>>();
+
+        repository.Setup(x => x.CreateAsync(
+            It.IsAny<Models.Attachment>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(
+            new Models.Attachment()
+            {
+                Message = new Models.Message(),
+                CreatedBy = "test",
+                CreatedOnUtc = DateTime.UtcNow,
+                Data = Array.Empty<byte>(),
+                Length = 0,
+                MimeType = new Models.MimeType(),
+                OriginalFileName = "test.bin"
+            }).Verifiable();
+
+        var manager = new AttachmentManager(
+            repository.Object,
+            cache.Object,
+            logger.Object
+            );
+
+        // Act ...
+        var result = await manager.CreateAsync(
+            new Models.Attachment()
+            {
+                Message = new Models.Message(),
+                CreatedBy = "test",
+                CreatedOnUtc = DateTime.UtcNow,
+                Data = Array.Empty<byte>(),
+                Length = 0,
+                MimeType = new Models.MimeType(),
+                OriginalFileName = "test.bin"
+            },
+            "test"
+            );
+
+        // Assert ...
+        Assert.IsTrue(
+            result is not null,
+            "The return value was invalid!"
+            );
+
+        repository.Verify();
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method ensures the <see cref="AttachmentManager.DeleteAsync(Models.Attachment, string, CancellationToken)"/>
+    /// method property calls the proper repository methods and returns 
+    /// the result.
+    /// </summary>
+    [TestMethod]
+    [TestCategory("UnitTest")]
+    public async Task AttachmentManager_DeleteAsync()
+    {
+        // Arrange ...
+        var repository = new Mock<IAttachmentRepository>();
+        var cache = new Mock<IDistributedCache>();
+        var logger = new Mock<ILogger<IAttachmentManager>>();
+
+        repository.Setup(x => x.DeleteAsync(
+            It.IsAny<Models.Attachment>(),
+            It.IsAny<CancellationToken>()
+            )).Verifiable();
+
+        var manager = new AttachmentManager(
+            repository.Object,
+            cache.Object,
+            logger.Object
+            );
+
+        // Act ...
+        await manager.DeleteAsync(
+            new Models.Attachment()
+            {
+                Message = new Models.Message(),
+                CreatedBy = "test",
+                CreatedOnUtc = DateTime.UtcNow,
+                Data = Array.Empty<byte>(),
+                Length = 0,
+                MimeType = new Models.MimeType(),
+                OriginalFileName = "test.bin"
+            },
+            "test"
+            );
+
+        // Assert ...
+        repository.Verify();
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method ensures the <see cref="AttachmentManager.UpdateAsync(Models.Attachment, string, CancellationToken)"/>
+    /// method property calls the proper repository methods and returns 
+    /// the result.
+    /// </summary>
+    [TestMethod]
+    [TestCategory("UnitTest")]
+    public async Task AttachmentManager_UpdateAsync()
+    {
+        // Arrange ...
+        var repository = new Mock<IAttachmentRepository>();
+        var cache = new Mock<IDistributedCache>();
+        var logger = new Mock<ILogger<IAttachmentManager>>();
+
+        repository.Setup(x => x.UpdateAsync(
+            It.IsAny<Models.Attachment>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(
+            new Models.Attachment()
+            {
+                Message = new Models.Message(),
+                CreatedBy = "test",
+                CreatedOnUtc = DateTime.UtcNow,
+                Data = Array.Empty<byte>(),
+                Length = 0,
+                MimeType = new Models.MimeType(),
+                OriginalFileName = "test.bin"
+            }).Verifiable();
+
+        var manager = new AttachmentManager(
+            repository.Object,
+            cache.Object,
+            logger.Object
+            );
+
+        // Act ...
+        var result = await manager.UpdateAsync(
+            new Models.Attachment()
+            {
+                Message = new Models.Message(),
+                CreatedBy = "test",
+                CreatedOnUtc = DateTime.UtcNow,
+                Data = Array.Empty<byte>(),
+                Length = 0,
+                MimeType = new Models.MimeType(),
+                OriginalFileName = "test.bin"
+            },
+            "test"
+            );
+
+        // Assert ...
+        Assert.IsTrue(
+            result is not null,
+            "The return value was invalid!"
+            );
+
+        repository.Verify();
     }
 
     #endregion

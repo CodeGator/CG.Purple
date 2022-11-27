@@ -1,4 +1,6 @@
 ﻿
+using CG.Collections.Generic;
+
 namespace CG.Purple.Host.Pages.MimeTypes;
 
 /// <summary>
@@ -556,21 +558,9 @@ public partial class Index
 
                 // Recover the edited mime type.
                 var changedMimeType = (MimeType)result.Data;
-
-                // Log what we are about to do.
-                Logger.LogDebug(
-                    "Saving changes to mime type: {id}",
-                    changedMimeType.Id
-                    );
-
-                // Defer to the manager for the update.
-                _ = await MimeTypeManager.UpdateAsync(
-                    changedMimeType,
-                    UserName
-                    );
-
+                
                 // =======
-                // Step 1: Find any file types that were deleted.
+                // Step 1: Find any file types that were deleted, which .
                 // =======
 
                 // Log what we are about to do.
@@ -652,7 +642,7 @@ public partial class Index
                     // =======
                     // Step 3: Assume anything else was changed.
                     // =======
-
+                    
                     // If a file type wasn't added, or deleted, assume it was edited.
                     var editedFileTypes = changedMimeType.FileTypes.Except(
                         addedFileTypes,
@@ -690,6 +680,18 @@ public partial class Index
                         }
                     }
                 }
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Saving changes to mime type: {id}",
+                    changedMimeType.Id
+                    );
+
+                // Defer to the manager for the update.
+                _ = await MimeTypeManager.UpdateAsync(
+                    changedMimeType,
+                    UserName
+                    );
 
                 // Log what we are about to do.
                 Logger.LogDebug(
