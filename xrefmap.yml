@@ -3283,6 +3283,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IMimeTypeManager.FindByExtensionAsync
   nameWithType: IMimeTypeManager.FindByExtensionAsync
+- uid: CG.Purple.Managers.IMimeTypeManager.FindByIdAsync(System.Int32,CancellationToken)
+  name: FindByIdAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Managers.IMimeTypeManager.html#CG_Purple_Managers_IMimeTypeManager_FindByIdAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Managers.IMimeTypeManager.FindByIdAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Managers.IMimeTypeManager.FindByIdAsync(System.Int32, CancellationToken)
+  nameWithType: IMimeTypeManager.FindByIdAsync(Int32, CancellationToken)
+- uid: CG.Purple.Managers.IMimeTypeManager.FindByIdAsync*
+  name: FindByIdAsync
+  href: api/CG.Purple.Managers.IMimeTypeManager.html#CG_Purple_Managers_IMimeTypeManager_FindByIdAsync_
+  commentId: Overload:CG.Purple.Managers.IMimeTypeManager.FindByIdAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IMimeTypeManager.FindByIdAsync
+  nameWithType: IMimeTypeManager.FindByIdAsync
 - uid: CG.Purple.Managers.IMimeTypeManager.FindByTypeAsync(System.String,System.String,CancellationToken)
   name: FindByTypeAsync(String, String, CancellationToken)
   href: api/CG.Purple.Managers.IMimeTypeManager.html#CG_Purple_Managers_IMimeTypeManager_FindByTypeAsync_System_String_System_String_CancellationToken_
@@ -4463,6 +4476,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.FindByExtensionAsync
   nameWithType: MimeTypeManager.FindByExtensionAsync
+- uid: CG.Purple.Managers.MimeTypeManager.FindByIdAsync(System.Int32,CancellationToken)
+  name: FindByIdAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_FindByIdAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManager.FindByIdAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManager.FindByIdAsync(System.Int32, CancellationToken)
+  nameWithType: MimeTypeManager.FindByIdAsync(Int32, CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManager.FindByIdAsync*
+  name: FindByIdAsync
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_FindByIdAsync_
+  commentId: Overload:CG.Purple.Managers.MimeTypeManager.FindByIdAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.MimeTypeManager.FindByIdAsync
+  nameWithType: MimeTypeManager.FindByIdAsync
 - uid: CG.Purple.Managers.MimeTypeManager.FindByTypeAsync(System.String,System.String,CancellationToken)
   name: FindByTypeAsync(String, String, CancellationToken)
   href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_FindByTypeAsync_System_String_System_String_CancellationToken_
@@ -7899,6 +7925,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IMimeTypeRepository.FindByExtensionAsync
   nameWithType: IMimeTypeRepository.FindByExtensionAsync
+- uid: CG.Purple.Repositories.IMimeTypeRepository.FindByIdAsync(System.Int32,CancellationToken)
+  name: FindByIdAsync(Int32, CancellationToken)
+  href: api/CG.Purple.Repositories.IMimeTypeRepository.html#CG_Purple_Repositories_IMimeTypeRepository_FindByIdAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IMimeTypeRepository.FindByIdAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.Repositories.IMimeTypeRepository.FindByIdAsync(System.Int32, CancellationToken)
+  nameWithType: IMimeTypeRepository.FindByIdAsync(Int32, CancellationToken)
+- uid: CG.Purple.Repositories.IMimeTypeRepository.FindByIdAsync*
+  name: FindByIdAsync
+  href: api/CG.Purple.Repositories.IMimeTypeRepository.html#CG_Purple_Repositories_IMimeTypeRepository_FindByIdAsync_
+  commentId: Overload:CG.Purple.Repositories.IMimeTypeRepository.FindByIdAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IMimeTypeRepository.FindByIdAsync
+  nameWithType: IMimeTypeRepository.FindByIdAsync
 - uid: CG.Purple.Repositories.IMimeTypeRepository.FindByTypeAsync(System.String,System.String,CancellationToken)
   name: FindByTypeAsync(String, String, CancellationToken)
   href: api/CG.Purple.Repositories.IMimeTypeRepository.html#CG_Purple_Repositories_IMimeTypeRepository_FindByTypeAsync_System_String_System_String_CancellationToken_
@@ -12296,6 +12335,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindByExtensionAsync
   nameWithType: MimeTypeRepository.FindByExtensionAsync
+- uid: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindByIdAsync(System.Int32,CancellationToken)
+  name: FindByIdAsync(Int32, CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MimeTypeRepository.html#CG_Purple_SqlServer_Repositories_MimeTypeRepository_FindByIdAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindByIdAsync(System.Int32,CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindByIdAsync(System.Int32, CancellationToken)
+  nameWithType: MimeTypeRepository.FindByIdAsync(Int32, CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindByIdAsync*
+  name: FindByIdAsync
+  href: api/CG.Purple.SqlServer.Repositories.MimeTypeRepository.html#CG_Purple_SqlServer_Repositories_MimeTypeRepository_FindByIdAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindByIdAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindByIdAsync
+  nameWithType: MimeTypeRepository.FindByIdAsync
 - uid: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindByTypeAsync(System.String,System.String,CancellationToken)
   name: FindByTypeAsync(String, String, CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.MimeTypeRepository.html#CG_Purple_SqlServer_Repositories_MimeTypeRepository_FindByTypeAsync_System_String_System_String_CancellationToken_

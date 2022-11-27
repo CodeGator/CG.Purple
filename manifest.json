@@ -630,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Managers.IMimeTypeManager.html",
-          "hash": "3b2bbOtfogO2KBlMBuZ6FLbd2NtA8whYO85ntFNSNC4="
+          "hash": "2HfuDcrzW19128QEeUfxN5Qn2bHh9dzVXS1bdiZ1sSw="
         }
       },
       "is_incremental": false,
@@ -762,7 +762,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Managers.MimeTypeManager.html",
-          "hash": "RXc8RzD8+4ctoTqY3Zn7UeeLidGm86o5M+fw+xI+fPc="
+          "hash": "Wa43l2oVMNY/Z8G9TX/LT/GssKBguaEnQxjdReFHA6Q="
         }
       },
       "is_incremental": false,
@@ -1386,7 +1386,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Repositories.IMimeTypeRepository.html",
-          "hash": "65KdC5zKbt2OXoceemftfL5SLkh2HbCG+Su64kOhEzQ="
+          "hash": "7a24ViBIzhcVbnS6tlzoh6qqnFfZvvkX86G+0bfiAlw="
         }
       },
       "is_incremental": false,
@@ -2190,7 +2190,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.SqlServer.Repositories.MimeTypeRepository.html",
-          "hash": "P3qLyVkY3aAbRJwzuhn5IKFSWeXEWMkfin50qzx/zAQ="
+          "hash": "6TI9YG4BHFDxh6ypLGwph6Qh2bsikMguRFU/dNYOzV0="
         }
       },
       "is_incremental": false,
