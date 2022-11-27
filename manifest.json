@@ -546,7 +546,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Managers.AttachmentManager.html",
-          "hash": "uWjZZK5ES7xCIZ0cb7DKhLxNXqv4k1HzwnjRewK8oVM="
+          "hash": "7UW08rWjA9qTLghDD9/FFKTMhTpZbQerfGiYXvatrrA="
         }
       },
       "is_incremental": false,
@@ -570,7 +570,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Managers.IAttachmentManager.html",
-          "hash": "/YyIBrhytDp8rveYMijUr1kEAzzjM+RRvA3j9SMlRwM="
+          "hash": "kSmGBdr6EKe5M1qSdE/CNB02FgG5+qDoMr/qAXc0ezA="
         }
       },
       "is_incremental": false,
@@ -714,7 +714,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Managers.MailMessageManager.html",
-          "hash": "2ly1c7A3SZWxq+yOYiwAKXC9zwYUehg6dO7AXU28Th4="
+          "hash": "1fO1w6oRnR4asS1E2epLJqwXa9q3u/bHgorQ3Lq8NaE="
         }
       },
       "is_incremental": false,
@@ -762,7 +762,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Managers.MimeTypeManager.html",
-          "hash": "Wa43l2oVMNY/Z8G9TX/LT/GssKBguaEnQxjdReFHA6Q="
+          "hash": "l5p9Vqz8wlwBTvsHJrnQkEGeSSS/ZUUTge66ej9SQzk="
         }
       },
       "is_incremental": false,
@@ -1166,11 +1166,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Options.AttachmentOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Options.AttachmentOptions.html",
+          "hash": "1dxEDGTSsVoTwI6oGjhipb9S2Gf0cFUIrMY8bI9OJug="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CG.Purple.Options.BllOptions.yml",
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Options.BllOptions.html",
-          "hash": "lRf5bu+ol4nE5UXOGH5QQjljFGITM7uasJA3vI38cqI="
+          "hash": "OywOPlKFrklnm9t14Oi3XJhvMhGwM5v1QPH9PDNvrwQ="
         }
       },
       "is_incremental": false,
@@ -1226,6 +1238,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Options.MimeTypeOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Options.MimeTypeOptions.html",
+          "hash": "wiLFPkufuMMZe5hV8htrmBbey41T3ZUhu0LmD+7lwVo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CG.Purple.Options.TextMessageOptions.yml",
       "output": {
         ".html": {
@@ -1242,7 +1266,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Options.html",
-          "hash": "vJEkXWa/fz6XWqJh4xJ+TopnPGDJtcQBO0n56mqE9OI="
+          "hash": "tp8zxLfkdgFIvVP5SsOsMP6UWa4JcxbM5TtSBzB5MG0="
         }
       },
       "is_incremental": false,
@@ -1326,7 +1350,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Repositories.IAttachmentRepository.html",
-          "hash": "QWvr4B/z+ZtZroaNhdOjn03z1qPuBCAJCyPJ7QfO3qs="
+          "hash": "dOJgJnQp0NxrwAr2lPGo8LZIOug/L3AlC+hyCv73msg="
         }
       },
       "is_incremental": false,
@@ -2130,7 +2154,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.SqlServer.Repositories.AttachmentRepository.html",
-          "hash": "aYndEjgoh2LcCGbGiQU7SiP+oX3Yf2pGSF6YNHFmRfo="
+          "hash": "0UbaWM6YVNPvw3ThtqNHEi/BeTT77bAwRfwhyQ/A0qA="
         }
       },
       "is_incremental": false,
@@ -2466,7 +2490,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "FLitiYG6h+kITiOU2y7Pfn0+neYU06CwH1bQF7+cPQM="
+          "hash": "u+Q09niShvPd9/JhTLJu11EzNFNqlwYHRQ/RCvNy4zw="
         }
       },
       "is_incremental": false,
@@ -2585,7 +2609,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 204,
+          "total_file_count": 206,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

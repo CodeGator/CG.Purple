@@ -2492,15 +2492,15 @@ references:
   commentId: T:CG.Purple.Managers.AttachmentManager
   fullName: CG.Purple.Managers.AttachmentManager
   nameWithType: AttachmentManager
-- uid: CG.Purple.Managers.AttachmentManager.#ctor(IAttachmentRepository,IDistributedCache,ILogger{CG.Purple.Managers.IAttachmentManager})
-  name: AttachmentManager(IAttachmentRepository, IDistributedCache, ILogger<IAttachmentManager>)
-  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__ctor_IAttachmentRepository_IDistributedCache_ILogger_CG_Purple_Managers_IAttachmentManager__
-  commentId: M:CG.Purple.Managers.AttachmentManager.#ctor(IAttachmentRepository,IDistributedCache,ILogger{CG.Purple.Managers.IAttachmentManager})
-  name.vb: AttachmentManager(IAttachmentRepository, IDistributedCache, ILogger(Of IAttachmentManager))
-  fullName: CG.Purple.Managers.AttachmentManager.AttachmentManager(IAttachmentRepository, IDistributedCache, ILogger<CG.Purple.Managers.IAttachmentManager>)
-  fullName.vb: CG.Purple.Managers.AttachmentManager.AttachmentManager(IAttachmentRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IAttachmentManager))
-  nameWithType: AttachmentManager.AttachmentManager(IAttachmentRepository, IDistributedCache, ILogger<IAttachmentManager>)
-  nameWithType.vb: AttachmentManager.AttachmentManager(IAttachmentRepository, IDistributedCache, ILogger(Of IAttachmentManager))
+- uid: CG.Purple.Managers.AttachmentManager.#ctor(IOptions{BllOptions},IAttachmentRepository,IDistributedCache,ILogger{CG.Purple.Managers.IAttachmentManager})
+  name: AttachmentManager(IOptions<BllOptions>, IAttachmentRepository, IDistributedCache, ILogger<IAttachmentManager>)
+  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__ctor_IOptions_BllOptions__IAttachmentRepository_IDistributedCache_ILogger_CG_Purple_Managers_IAttachmentManager__
+  commentId: M:CG.Purple.Managers.AttachmentManager.#ctor(IOptions{BllOptions},IAttachmentRepository,IDistributedCache,ILogger{CG.Purple.Managers.IAttachmentManager})
+  name.vb: AttachmentManager(IOptions(Of BllOptions), IAttachmentRepository, IDistributedCache, ILogger(Of IAttachmentManager))
+  fullName: CG.Purple.Managers.AttachmentManager.AttachmentManager(IOptions<BllOptions>, IAttachmentRepository, IDistributedCache, ILogger<CG.Purple.Managers.IAttachmentManager>)
+  fullName.vb: CG.Purple.Managers.AttachmentManager.AttachmentManager(IOptions(Of BllOptions), IAttachmentRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IAttachmentManager))
+  nameWithType: AttachmentManager.AttachmentManager(IOptions<BllOptions>, IAttachmentRepository, IDistributedCache, ILogger<IAttachmentManager>)
+  nameWithType.vb: AttachmentManager.AttachmentManager(IOptions(Of BllOptions), IAttachmentRepository, IDistributedCache, ILogger(Of IAttachmentManager))
 - uid: CG.Purple.Managers.AttachmentManager.#ctor*
   name: AttachmentManager
   href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__ctor_
@@ -2508,6 +2508,12 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.AttachmentManager.AttachmentManager
   nameWithType: AttachmentManager.AttachmentManager
+- uid: CG.Purple.Managers.AttachmentManager._attachmentOptions
+  name: _attachmentOptions
+  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__attachmentOptions
+  commentId: F:CG.Purple.Managers.AttachmentManager._attachmentOptions
+  fullName: CG.Purple.Managers.AttachmentManager._attachmentOptions
+  nameWithType: AttachmentManager._attachmentOptions
 - uid: CG.Purple.Managers.AttachmentManager._attachmentRepository
   name: _attachmentRepository
   href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__attachmentRepository
@@ -2584,6 +2590,32 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.AttachmentManager.DeleteAsync
   nameWithType: AttachmentManager.DeleteAsync
+- uid: CG.Purple.Managers.AttachmentManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.AttachmentManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.AttachmentManager.FindAllAsync(CancellationToken)
+  nameWithType: AttachmentManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.AttachmentManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.AttachmentManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.AttachmentManager.FindAllAsync
+  nameWithType: AttachmentManager.FindAllAsync
+- uid: CG.Purple.Managers.AttachmentManager.GetCachedDataAsync(CancellationToken)
+  name: GetCachedDataAsync(CancellationToken)
+  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_GetCachedDataAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.AttachmentManager.GetCachedDataAsync(CancellationToken)
+  fullName: CG.Purple.Managers.AttachmentManager.GetCachedDataAsync(CancellationToken)
+  nameWithType: AttachmentManager.GetCachedDataAsync(CancellationToken)
+- uid: CG.Purple.Managers.AttachmentManager.GetCachedDataAsync*
+  name: GetCachedDataAsync
+  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_GetCachedDataAsync_
+  commentId: Overload:CG.Purple.Managers.AttachmentManager.GetCachedDataAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.AttachmentManager.GetCachedDataAsync
+  nameWithType: AttachmentManager.GetCachedDataAsync
 - uid: CG.Purple.Managers.AttachmentManager.UpdateAsync(Attachment,System.String,CancellationToken)
   name: UpdateAsync(Attachment, String, CancellationToken)
   href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_UpdateAsync_Attachment_System_String_CancellationToken_
@@ -2798,6 +2830,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IAttachmentManager.DeleteAsync
   nameWithType: IAttachmentManager.DeleteAsync
+- uid: CG.Purple.Managers.IAttachmentManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.IAttachmentManager.html#CG_Purple_Managers_IAttachmentManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.IAttachmentManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.IAttachmentManager.FindAllAsync(CancellationToken)
+  nameWithType: IAttachmentManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.IAttachmentManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.IAttachmentManager.html#CG_Purple_Managers_IAttachmentManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.IAttachmentManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IAttachmentManager.FindAllAsync
+  nameWithType: IAttachmentManager.FindAllAsync
 - uid: CG.Purple.Managers.IAttachmentManager.UpdateAsync(Attachment,System.String,CancellationToken)
   name: UpdateAsync(Attachment, String, CancellationToken)
   href: api/CG.Purple.Managers.IAttachmentManager.html#CG_Purple_Managers_IAttachmentManager_UpdateAsync_Attachment_System_String_CancellationToken_
@@ -3897,15 +3942,15 @@ references:
   commentId: T:CG.Purple.Managers.MailMessageManager
   fullName: CG.Purple.Managers.MailMessageManager
   nameWithType: MailMessageManager
-- uid: CG.Purple.Managers.MailMessageManager.#ctor(IMailMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMailMessageManager})
-  name: MailMessageManager(IMailMessageRepository, IDistributedCache, ILogger<IMailMessageManager>)
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__ctor_IMailMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMailMessageManager__
-  commentId: M:CG.Purple.Managers.MailMessageManager.#ctor(IMailMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMailMessageManager})
-  name.vb: MailMessageManager(IMailMessageRepository, IDistributedCache, ILogger(Of IMailMessageManager))
-  fullName: CG.Purple.Managers.MailMessageManager.MailMessageManager(IMailMessageRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMailMessageManager>)
-  fullName.vb: CG.Purple.Managers.MailMessageManager.MailMessageManager(IMailMessageRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMailMessageManager))
-  nameWithType: MailMessageManager.MailMessageManager(IMailMessageRepository, IDistributedCache, ILogger<IMailMessageManager>)
-  nameWithType.vb: MailMessageManager.MailMessageManager(IMailMessageRepository, IDistributedCache, ILogger(Of IMailMessageManager))
+- uid: CG.Purple.Managers.MailMessageManager.#ctor(IOptions{CG.Purple.Options.BllOptions},IMailMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMailMessageManager})
+  name: MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, IDistributedCache, ILogger<IMailMessageManager>)
+  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__ctor_IOptions_CG_Purple_Options_BllOptions__IMailMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMailMessageManager__
+  commentId: M:CG.Purple.Managers.MailMessageManager.#ctor(IOptions{CG.Purple.Options.BllOptions},IMailMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMailMessageManager})
+  name.vb: MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, IDistributedCache, ILogger(Of IMailMessageManager))
+  fullName: CG.Purple.Managers.MailMessageManager.MailMessageManager(IOptions<CG.Purple.Options.BllOptions>, IMailMessageRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMailMessageManager>)
+  fullName.vb: CG.Purple.Managers.MailMessageManager.MailMessageManager(IOptions(Of CG.Purple.Options.BllOptions), IMailMessageRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMailMessageManager))
+  nameWithType: MailMessageManager.MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, IDistributedCache, ILogger<IMailMessageManager>)
+  nameWithType.vb: MailMessageManager.MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, IDistributedCache, ILogger(Of IMailMessageManager))
 - uid: CG.Purple.Managers.MailMessageManager.#ctor*
   name: MailMessageManager
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__ctor_
@@ -3925,6 +3970,12 @@ references:
   commentId: F:CG.Purple.Managers.MailMessageManager._logger
   fullName: CG.Purple.Managers.MailMessageManager._logger
   nameWithType: MailMessageManager._logger
+- uid: CG.Purple.Managers.MailMessageManager._mailMessageOptions
+  name: _mailMessageOptions
+  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__mailMessageOptions
+  commentId: F:CG.Purple.Managers.MailMessageManager._mailMessageOptions
+  fullName: CG.Purple.Managers.MailMessageManager._mailMessageOptions
+  nameWithType: MailMessageManager._mailMessageOptions
 - uid: CG.Purple.Managers.MailMessageManager._mailMessageRepository
   name: _mailMessageRepository
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__mailMessageRepository
@@ -4015,6 +4066,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MailMessageManager.FindByKeyAsync
   nameWithType: MailMessageManager.FindByKeyAsync
+- uid: CG.Purple.Managers.MailMessageManager.GetCachedDataAsync(CancellationToken)
+  name: GetCachedDataAsync(CancellationToken)
+  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_GetCachedDataAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.MailMessageManager.GetCachedDataAsync(CancellationToken)
+  fullName: CG.Purple.Managers.MailMessageManager.GetCachedDataAsync(CancellationToken)
+  nameWithType: MailMessageManager.GetCachedDataAsync(CancellationToken)
+- uid: CG.Purple.Managers.MailMessageManager.GetCachedDataAsync*
+  name: GetCachedDataAsync
+  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_GetCachedDataAsync_
+  commentId: Overload:CG.Purple.Managers.MailMessageManager.GetCachedDataAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.MailMessageManager.GetCachedDataAsync
+  nameWithType: MailMessageManager.GetCachedDataAsync
 - uid: CG.Purple.Managers.MailMessageManager.UpdateAsync(MailMessage,System.String,CancellationToken)
   name: UpdateAsync(MailMessage, String, CancellationToken)
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_UpdateAsync_MailMessage_System_String_CancellationToken_
@@ -4358,15 +4422,15 @@ references:
   commentId: T:CG.Purple.Managers.MimeTypeManager
   fullName: CG.Purple.Managers.MimeTypeManager
   nameWithType: MimeTypeManager
-- uid: CG.Purple.Managers.MimeTypeManager.#ctor(IMimeTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMimeTypeManager})
-  name: MimeTypeManager(IMimeTypeRepository, IDistributedCache, ILogger<IMimeTypeManager>)
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__ctor_IMimeTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMimeTypeManager__
-  commentId: M:CG.Purple.Managers.MimeTypeManager.#ctor(IMimeTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMimeTypeManager})
-  name.vb: MimeTypeManager(IMimeTypeRepository, IDistributedCache, ILogger(Of IMimeTypeManager))
-  fullName: CG.Purple.Managers.MimeTypeManager.MimeTypeManager(IMimeTypeRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMimeTypeManager>)
-  fullName.vb: CG.Purple.Managers.MimeTypeManager.MimeTypeManager(IMimeTypeRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMimeTypeManager))
-  nameWithType: MimeTypeManager.MimeTypeManager(IMimeTypeRepository, IDistributedCache, ILogger<IMimeTypeManager>)
-  nameWithType.vb: MimeTypeManager.MimeTypeManager(IMimeTypeRepository, IDistributedCache, ILogger(Of IMimeTypeManager))
+- uid: CG.Purple.Managers.MimeTypeManager.#ctor(IOptions{BllOptions},IMimeTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMimeTypeManager})
+  name: MimeTypeManager(IOptions<BllOptions>, IMimeTypeRepository, IDistributedCache, ILogger<IMimeTypeManager>)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__ctor_IOptions_BllOptions__IMimeTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMimeTypeManager__
+  commentId: M:CG.Purple.Managers.MimeTypeManager.#ctor(IOptions{BllOptions},IMimeTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMimeTypeManager})
+  name.vb: MimeTypeManager(IOptions(Of BllOptions), IMimeTypeRepository, IDistributedCache, ILogger(Of IMimeTypeManager))
+  fullName: CG.Purple.Managers.MimeTypeManager.MimeTypeManager(IOptions<BllOptions>, IMimeTypeRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMimeTypeManager>)
+  fullName.vb: CG.Purple.Managers.MimeTypeManager.MimeTypeManager(IOptions(Of BllOptions), IMimeTypeRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMimeTypeManager))
+  nameWithType: MimeTypeManager.MimeTypeManager(IOptions<BllOptions>, IMimeTypeRepository, IDistributedCache, ILogger<IMimeTypeManager>)
+  nameWithType.vb: MimeTypeManager.MimeTypeManager(IOptions(Of BllOptions), IMimeTypeRepository, IDistributedCache, ILogger(Of IMimeTypeManager))
 - uid: CG.Purple.Managers.MimeTypeManager.#ctor*
   name: MimeTypeManager
   href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__ctor_
@@ -4386,6 +4450,12 @@ references:
   commentId: F:CG.Purple.Managers.MimeTypeManager._logger
   fullName: CG.Purple.Managers.MimeTypeManager._logger
   nameWithType: MimeTypeManager._logger
+- uid: CG.Purple.Managers.MimeTypeManager._mimeTypeOptions
+  name: _mimeTypeOptions
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__mimeTypeOptions
+  commentId: F:CG.Purple.Managers.MimeTypeManager._mimeTypeOptions
+  fullName: CG.Purple.Managers.MimeTypeManager._mimeTypeOptions
+  nameWithType: MimeTypeManager._mimeTypeOptions
 - uid: CG.Purple.Managers.MimeTypeManager._mimeTypeRepository
   name: _mimeTypeRepository
   href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__mimeTypeRepository
@@ -4424,11 +4494,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.CountAsync
   nameWithType: MimeTypeManager.CountAsync
-- uid: CG.Purple.Managers.MimeTypeManager.CreateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManager.CreateAsync(MimeType,System.String,CancellationToken)
   name: CreateAsync(MimeType, String, CancellationToken)
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_CreateAsync_CG_Purple_Models_MimeType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.MimeTypeManager.CreateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.MimeTypeManager.CreateAsync(CG.Purple.Models.MimeType, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_CreateAsync_MimeType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManager.CreateAsync(MimeType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManager.CreateAsync(MimeType, System.String, CancellationToken)
   nameWithType: MimeTypeManager.CreateAsync(MimeType, String, CancellationToken)
 - uid: CG.Purple.Managers.MimeTypeManager.CreateAsync*
   name: CreateAsync
@@ -4437,11 +4507,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.CreateAsync
   nameWithType: MimeTypeManager.CreateAsync
-- uid: CG.Purple.Managers.MimeTypeManager.DeleteAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManager.DeleteAsync(MimeType,System.String,CancellationToken)
   name: DeleteAsync(MimeType, String, CancellationToken)
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_DeleteAsync_CG_Purple_Models_MimeType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.MimeTypeManager.DeleteAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.MimeTypeManager.DeleteAsync(CG.Purple.Models.MimeType, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_DeleteAsync_MimeType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManager.DeleteAsync(MimeType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManager.DeleteAsync(MimeType, System.String, CancellationToken)
   nameWithType: MimeTypeManager.DeleteAsync(MimeType, String, CancellationToken)
 - uid: CG.Purple.Managers.MimeTypeManager.DeleteAsync*
   name: DeleteAsync
@@ -4502,11 +4572,24 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.FindByTypeAsync
   nameWithType: MimeTypeManager.FindByTypeAsync
-- uid: CG.Purple.Managers.MimeTypeManager.UpdateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync(CancellationToken)
+  name: GetCachedDataAsync(CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_GetCachedDataAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync(CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync(CancellationToken)
+  nameWithType: MimeTypeManager.GetCachedDataAsync(CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync*
+  name: GetCachedDataAsync
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_GetCachedDataAsync_
+  commentId: Overload:CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync
+  nameWithType: MimeTypeManager.GetCachedDataAsync
+- uid: CG.Purple.Managers.MimeTypeManager.UpdateAsync(MimeType,System.String,CancellationToken)
   name: UpdateAsync(MimeType, String, CancellationToken)
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_UpdateAsync_CG_Purple_Models_MimeType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.MimeTypeManager.UpdateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.MimeTypeManager.UpdateAsync(CG.Purple.Models.MimeType, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_UpdateAsync_MimeType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManager.UpdateAsync(MimeType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManager.UpdateAsync(MimeType, System.String, CancellationToken)
   nameWithType: MimeTypeManager.UpdateAsync(MimeType, String, CancellationToken)
 - uid: CG.Purple.Managers.MimeTypeManager.UpdateAsync*
   name: UpdateAsync
@@ -6927,12 +7010,44 @@ references:
   commentId: N:CG.Purple.Options
   fullName: CG.Purple.Options
   nameWithType: CG.Purple.Options
+- uid: CG.Purple.Options.AttachmentOptions
+  name: AttachmentOptions
+  href: api/CG.Purple.Options.AttachmentOptions.html
+  commentId: T:CG.Purple.Options.AttachmentOptions
+  fullName: CG.Purple.Options.AttachmentOptions
+  nameWithType: AttachmentOptions
+- uid: CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
+  name: DefaultCacheDuration
+  href: api/CG.Purple.Options.AttachmentOptions.html#CG_Purple_Options_AttachmentOptions_DefaultCacheDuration
+  commentId: P:CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
+  fullName: CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
+  nameWithType: AttachmentOptions.DefaultCacheDuration
+- uid: CG.Purple.Options.AttachmentOptions.DefaultCacheDuration*
+  name: DefaultCacheDuration
+  href: api/CG.Purple.Options.AttachmentOptions.html#CG_Purple_Options_AttachmentOptions_DefaultCacheDuration_
+  commentId: Overload:CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
+  isSpec: "True"
+  fullName: CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
+  nameWithType: AttachmentOptions.DefaultCacheDuration
 - uid: CG.Purple.Options.BllOptions
   name: BllOptions
   href: api/CG.Purple.Options.BllOptions.html
   commentId: T:CG.Purple.Options.BllOptions
   fullName: CG.Purple.Options.BllOptions
   nameWithType: BllOptions
+- uid: CG.Purple.Options.BllOptions.Attachments
+  name: Attachments
+  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_Attachments
+  commentId: P:CG.Purple.Options.BllOptions.Attachments
+  fullName: CG.Purple.Options.BllOptions.Attachments
+  nameWithType: BllOptions.Attachments
+- uid: CG.Purple.Options.BllOptions.Attachments*
+  name: Attachments
+  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_Attachments_
+  commentId: Overload:CG.Purple.Options.BllOptions.Attachments
+  isSpec: "True"
+  fullName: CG.Purple.Options.BllOptions.Attachments
+  nameWithType: BllOptions.Attachments
 - uid: CG.Purple.Options.BllOptions.FileTypes
   name: FileTypes
   href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_FileTypes
@@ -6959,6 +7074,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Options.BllOptions.MailMessages
   nameWithType: BllOptions.MailMessages
+- uid: CG.Purple.Options.BllOptions.MimeTypes
+  name: MimeTypes
+  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_MimeTypes
+  commentId: P:CG.Purple.Options.BllOptions.MimeTypes
+  fullName: CG.Purple.Options.BllOptions.MimeTypes
+  nameWithType: BllOptions.MimeTypes
+- uid: CG.Purple.Options.BllOptions.MimeTypes*
+  name: MimeTypes
+  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_MimeTypes_
+  commentId: Overload:CG.Purple.Options.BllOptions.MimeTypes
+  isSpec: "True"
+  fullName: CG.Purple.Options.BllOptions.MimeTypes
+  nameWithType: BllOptions.MimeTypes
 - uid: CG.Purple.Options.BllOptions.TextMessages
   name: TextMessages
   href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_TextMessages
@@ -7087,6 +7215,25 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Options.MessageProcessingOptions.ThrottleDuration
   nameWithType: MessageProcessingOptions.ThrottleDuration
+- uid: CG.Purple.Options.MimeTypeOptions
+  name: MimeTypeOptions
+  href: api/CG.Purple.Options.MimeTypeOptions.html
+  commentId: T:CG.Purple.Options.MimeTypeOptions
+  fullName: CG.Purple.Options.MimeTypeOptions
+  nameWithType: MimeTypeOptions
+- uid: CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
+  name: DefaultCacheDuration
+  href: api/CG.Purple.Options.MimeTypeOptions.html#CG_Purple_Options_MimeTypeOptions_DefaultCacheDuration
+  commentId: P:CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
+  fullName: CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
+  nameWithType: MimeTypeOptions.DefaultCacheDuration
+- uid: CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration*
+  name: DefaultCacheDuration
+  href: api/CG.Purple.Options.MimeTypeOptions.html#CG_Purple_Options_MimeTypeOptions_DefaultCacheDuration_
+  commentId: Overload:CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
+  isSpec: "True"
+  fullName: CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
+  nameWithType: MimeTypeOptions.DefaultCacheDuration
 - uid: CG.Purple.Options.TextMessageOptions
   name: TextMessageOptions
   href: api/CG.Purple.Options.TextMessageOptions.html
@@ -7427,6 +7574,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IAttachmentRepository.DeleteAsync
   nameWithType: IAttachmentRepository.DeleteAsync
+- uid: CG.Purple.Repositories.IAttachmentRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Repositories.IAttachmentRepository.html#CG_Purple_Repositories_IAttachmentRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IAttachmentRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Repositories.IAttachmentRepository.FindAllAsync(CancellationToken)
+  nameWithType: IAttachmentRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Repositories.IAttachmentRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Repositories.IAttachmentRepository.html#CG_Purple_Repositories_IAttachmentRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.Repositories.IAttachmentRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IAttachmentRepository.FindAllAsync
+  nameWithType: IAttachmentRepository.FindAllAsync
 - uid: CG.Purple.Repositories.IAttachmentRepository.UpdateAsync(Attachment,CancellationToken)
   name: UpdateAsync(Attachment, CancellationToken)
   href: api/CG.Purple.Repositories.IAttachmentRepository.html#CG_Purple_Repositories_IAttachmentRepository_UpdateAsync_Attachment_CancellationToken_
@@ -11667,6 +11827,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.AttachmentRepository.DeleteAsync
   nameWithType: AttachmentRepository.DeleteAsync
+- uid: CG.Purple.SqlServer.Repositories.AttachmentRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.AttachmentRepository.html#CG_Purple_SqlServer_Repositories_AttachmentRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.AttachmentRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.AttachmentRepository.FindAllAsync(CancellationToken)
+  nameWithType: AttachmentRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.AttachmentRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.SqlServer.Repositories.AttachmentRepository.html#CG_Purple_SqlServer_Repositories_AttachmentRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.AttachmentRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.AttachmentRepository.FindAllAsync
+  nameWithType: AttachmentRepository.FindAllAsync
 - uid: CG.Purple.SqlServer.Repositories.AttachmentRepository.UpdateAsync(Attachment,CancellationToken)
   name: UpdateAsync(Attachment, CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.AttachmentRepository.html#CG_Purple_SqlServer_Repositories_AttachmentRepository_UpdateAsync_Attachment_CancellationToken_

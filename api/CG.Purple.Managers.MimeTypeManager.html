@@ -129,14 +129,14 @@ interface.</p>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Managers_MimeTypeManager__ctor_" data-uid="CG.Purple.Managers.MimeTypeManager.#ctor*"></a>
-  <h4 id="CG_Purple_Managers_MimeTypeManager__ctor_IMimeTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMimeTypeManager__" data-uid="CG.Purple.Managers.MimeTypeManager.#ctor(IMimeTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMimeTypeManager})">MimeTypeManager(IMimeTypeRepository, IDistributedCache, ILogger&lt;IMimeTypeManager&gt;)</h4>
+  <h4 id="CG_Purple_Managers_MimeTypeManager__ctor_IOptions_BllOptions__IMimeTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMimeTypeManager__" data-uid="CG.Purple.Managers.MimeTypeManager.#ctor(IOptions{BllOptions},IMimeTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMimeTypeManager})">MimeTypeManager(IOptions&lt;BllOptions&gt;, IMimeTypeRepository, IDistributedCache, ILogger&lt;IMimeTypeManager&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Managers.MimeTypeManager.html">MimeTypeManager</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MimeTypeManager(IMimeTypeRepository mimeTypeRepository, IDistributedCache distributedCache, ILogger&lt;IMimeTypeManager&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public MimeTypeManager(IOptions&lt;BllOptions&gt; bllOptions, IMimeTypeRepository mimeTypeRepository, IDistributedCache distributedCache, ILogger&lt;IMimeTypeManager&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -148,6 +148,13 @@ class.</p>
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">IOptions</span>&lt;<span class="xref">BllOptions</span>&gt;</td>
+        <td><span class="parametername">bllOptions</span></td>
+        <td><p>The business logic layer options to use
+with this manager.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">IMimeTypeRepository</span></td>
         <td><span class="parametername">mimeTypeRepository</span></td>
@@ -214,6 +221,29 @@ this manager.</p>
     <tbody>
       <tr>
         <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Managers.IMimeTypeManager.html">IMimeTypeManager</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Managers_MimeTypeManager__mimeTypeOptions" data-uid="CG.Purple.Managers.MimeTypeManager._mimeTypeOptions">_mimeTypeOptions</h4>
+  <div class="markdown level1 summary"><p>This field contains the business logic layer options for this manager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly MimeTypeOptions? _mimeTypeOptions</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">MimeTypeOptions</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -347,7 +377,7 @@ this manager.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Managers_MimeTypeManager_CreateAsync_" data-uid="CG.Purple.Managers.MimeTypeManager.CreateAsync*"></a>
-  <h4 id="CG_Purple_Managers_MimeTypeManager_CreateAsync_CG_Purple_Models_MimeType_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MimeTypeManager.CreateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)">CreateAsync(MimeType, String, CancellationToken)</h4>
+  <h4 id="CG_Purple_Managers_MimeTypeManager_CreateAsync_MimeType_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MimeTypeManager.CreateAsync(MimeType,System.String,CancellationToken)">CreateAsync(MimeType, String, CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -365,7 +395,7 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a></td>
+        <td><span class="xref">MimeType</span></td>
         <td><span class="parametername">mimeType</span></td>
         <td></td>
       </tr>
@@ -391,13 +421,13 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">MimeType</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <a id="CG_Purple_Managers_MimeTypeManager_DeleteAsync_" data-uid="CG.Purple.Managers.MimeTypeManager.DeleteAsync*"></a>
-  <h4 id="CG_Purple_Managers_MimeTypeManager_DeleteAsync_CG_Purple_Models_MimeType_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MimeTypeManager.DeleteAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)">DeleteAsync(MimeType, String, CancellationToken)</h4>
+  <h4 id="CG_Purple_Managers_MimeTypeManager_DeleteAsync_MimeType_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MimeTypeManager.DeleteAsync(MimeType,System.String,CancellationToken)">DeleteAsync(MimeType, String, CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -415,7 +445,7 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a></td>
+        <td><span class="xref">MimeType</span></td>
         <td><span class="parametername">mimeType</span></td>
         <td></td>
       </tr>
@@ -481,7 +511,7 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a>&gt;&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">MimeType</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -492,7 +522,7 @@ this manager.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;MimeType&gt; FindByExtensionAsync(string extension, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;MimeType?&gt; FindByExtensionAsync(string extension, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -526,7 +556,7 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">MimeType</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -537,7 +567,7 @@ this manager.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;MimeType&gt; FindByIdAsync(int id, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;MimeType?&gt; FindByIdAsync(int id, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -571,7 +601,7 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">MimeType</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -621,13 +651,58 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a>&gt;&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">MimeType</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Managers_MimeTypeManager_GetCachedDataAsync_" data-uid="CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync*"></a>
+  <h4 id="CG_Purple_Managers_MimeTypeManager_GetCachedDataAsync_CancellationToken_" data-uid="CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync(CancellationToken)">GetCachedDataAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method gets the cached data for this manager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task&lt;List&lt;MimeType&gt;&gt; GetCachedDataAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">List</span>&lt;<span class="xref">MimeType</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns the cached
+data for this manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Managers_MimeTypeManager_UpdateAsync_" data-uid="CG.Purple.Managers.MimeTypeManager.UpdateAsync*"></a>
-  <h4 id="CG_Purple_Managers_MimeTypeManager_UpdateAsync_CG_Purple_Models_MimeType_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MimeTypeManager.UpdateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)">UpdateAsync(MimeType, String, CancellationToken)</h4>
+  <h4 id="CG_Purple_Managers_MimeTypeManager_UpdateAsync_MimeType_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MimeTypeManager.UpdateAsync(MimeType,System.String,CancellationToken)">UpdateAsync(MimeType, String, CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -645,7 +720,7 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a></td>
+        <td><span class="xref">MimeType</span></td>
         <td><span class="parametername">mimeType</span></td>
         <td></td>
       </tr>
@@ -671,7 +746,7 @@ this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="CG.Purple.Models.MimeType.html">MimeType</a>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">MimeType</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>

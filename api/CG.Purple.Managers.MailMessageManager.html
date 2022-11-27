@@ -129,14 +129,14 @@ interface.</p>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Managers_MailMessageManager__ctor_" data-uid="CG.Purple.Managers.MailMessageManager.#ctor*"></a>
-  <h4 id="CG_Purple_Managers_MailMessageManager__ctor_IMailMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMailMessageManager__" data-uid="CG.Purple.Managers.MailMessageManager.#ctor(IMailMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMailMessageManager})">MailMessageManager(IMailMessageRepository, IDistributedCache, ILogger&lt;IMailMessageManager&gt;)</h4>
+  <h4 id="CG_Purple_Managers_MailMessageManager__ctor_IOptions_CG_Purple_Options_BllOptions__IMailMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMailMessageManager__" data-uid="CG.Purple.Managers.MailMessageManager.#ctor(IOptions{CG.Purple.Options.BllOptions},IMailMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMailMessageManager})">MailMessageManager(IOptions&lt;BllOptions&gt;, IMailMessageRepository, IDistributedCache, ILogger&lt;IMailMessageManager&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Managers.MailMessageManager.html">MailMessageManager</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MailMessageManager(IMailMessageRepository mailMessageRepository, IDistributedCache distributedCache, ILogger&lt;IMailMessageManager&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public MailMessageManager(IOptions&lt;BllOptions&gt; bllOptions, IMailMessageRepository mailMessageRepository, IDistributedCache distributedCache, ILogger&lt;IMailMessageManager&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -148,6 +148,13 @@ class.</p>
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">IOptions</span>&lt;<a class="xref" href="CG.Purple.Options.BllOptions.html">BllOptions</a>&gt;</td>
+        <td><span class="parametername">bllOptions</span></td>
+        <td><p>The business logic layer options to use
+with this manager.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">IMailMessageRepository</span></td>
         <td><span class="parametername">mailMessageRepository</span></td>
@@ -214,6 +221,29 @@ this manager.</p>
     <tbody>
       <tr>
         <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Managers.IMailMessageManager.html">IMailMessageManager</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Managers_MailMessageManager__mailMessageOptions" data-uid="CG.Purple.Managers.MailMessageManager._mailMessageOptions">_mailMessageOptions</h4>
+  <div class="markdown level1 summary"><p>This field contains the business logic layer options for this manager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly MailMessageOptions _mailMessageOptions</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Options.MailMessageOptions.html">MailMessageOptions</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -523,6 +553,51 @@ this manager.</p>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">MailMessage</span>&gt;&gt;</td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Managers_MailMessageManager_GetCachedDataAsync_" data-uid="CG.Purple.Managers.MailMessageManager.GetCachedDataAsync*"></a>
+  <h4 id="CG_Purple_Managers_MailMessageManager_GetCachedDataAsync_CancellationToken_" data-uid="CG.Purple.Managers.MailMessageManager.GetCachedDataAsync(CancellationToken)">GetCachedDataAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method gets the cached data for this manager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task&lt;List&lt;MailMessage&gt;&gt; GetCachedDataAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">List</span>&lt;<span class="xref">MailMessage</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns the cached
+data for this manager.</p>
+</td>
       </tr>
     </tbody>
   </table>
