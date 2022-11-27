@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Options;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -27,6 +29,11 @@ internal class MailMessageManager : IMailMessageManager
     #region Fields
 
     /// <summary>
+    /// This field contains the business logic layer options for this manager.
+    /// </summary>
+    internal protected readonly MailMessageOptions? _mailMessageOptions;
+
+    /// <summary>
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly IMailMessageRepository _mailMessageRepository = null!;
@@ -53,6 +60,8 @@ internal class MailMessageManager : IMailMessageManager
     /// This constructor creates a new instance of the <see cref="MailMessageManager"/>
     /// class.
     /// </summary>
+    /// <param name="bllOptions">The business logic layer options to use 
+    /// with this manager.</param>
     /// <param name="mailMessageRepository">The mail message repository to use
     /// with this manager.</param>
     /// <param name="distributedCache">The distributed cache to use for 
@@ -61,17 +70,20 @@ internal class MailMessageManager : IMailMessageManager
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public MailMessageManager(
+        IOptions<BllOptions> bllOptions,
         IMailMessageRepository mailMessageRepository,
         IDistributedCache distributedCache,
         ILogger<IMailMessageManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(mailMessageRepository, nameof(mailMessageRepository))
+        Guard.Instance().ThrowIfNull(bllOptions, nameof(bllOptions))
+            .ThrowIfNull(mailMessageRepository, nameof(mailMessageRepository))
             .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
+        _mailMessageOptions = bllOptions.Value?.MailMessages;
         _mailMessageRepository = mailMessageRepository;
         _distributedCache = distributedCache;
         _logger = logger;
@@ -418,6 +430,51 @@ internal class MailMessageManager : IMailMessageManager
                 innerException: ex
                 );
         }
+    }
+
+    #endregion
+
+    // *******************************************************************
+    // Private methods.
+    // *******************************************************************
+
+    #region Private methods
+
+    /// <summary>
+    /// This method gets the cached data for this manager.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the cached 
+    /// data for this manager.</returns>
+    private async Task<List<MailMessage>> GetCachedDataAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Log what we are about to do.
+        _logger.LogTrace(
+            "Deferring to IDistributedCache.GetOrSetAsync"
+            );
+
+        // Get (set) the cached data for this manager.
+        var mailMessages = await _distributedCache.GetOrSetAsync<List<MailMessage>>(
+            CACHE_KEY,
+        new DistributedCacheEntryOptions()
+        {
+            SlidingExpiration = _mailMessageOptions?.DefaultCacheDuration
+                ?? TimeSpan.FromHours(1)
+        },
+        () =>
+        {
+            return (_mailMessageRepository.FindAllAsync(
+                cancellationToken
+                ).Result).ToList();
+        },
+        cancellationToken
+        ).ConfigureAwait(false);
+
+        // Return the results.
+        return mailMessages;
     }
 
     #endregion

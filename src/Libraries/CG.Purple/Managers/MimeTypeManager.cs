@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Models;
-
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -29,6 +27,11 @@ internal class MimeTypeManager : IMimeTypeManager
     #region Fields
 
     /// <summary>
+    /// This field contains the business logic layer options for this manager.
+    /// </summary>
+    internal protected readonly MimeTypeOptions? _mimeTypeOptions;
+
+    /// <summary>
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly IMimeTypeRepository _mimeTypeRepository = null!;
@@ -55,6 +58,8 @@ internal class MimeTypeManager : IMimeTypeManager
     /// This constructor creates a new instance of the <see cref="MimeTypeManager"/>
     /// class.
     /// </summary>
+    /// <param name="bllOptions">The business logic layer options to use 
+    /// with this manager.</param>
     /// <param name="mimeTypeRepository">The mime type repository to use
     /// with this manager.</param>
     /// <param name="distributedCache">The distributed cache to use for 
@@ -63,17 +68,20 @@ internal class MimeTypeManager : IMimeTypeManager
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public MimeTypeManager(
+        IOptions<BllOptions> bllOptions,
         IMimeTypeRepository mimeTypeRepository,
         IDistributedCache distributedCache,
         ILogger<IMimeTypeManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(mimeTypeRepository, nameof(mimeTypeRepository))
+        Guard.Instance().ThrowIfNull(bllOptions, nameof(bllOptions))
+            .ThrowIfNull(mimeTypeRepository, nameof(mimeTypeRepository))
             .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
+        _mimeTypeOptions = bllOptions.Value?.MimeTypes;
         _mimeTypeRepository = mimeTypeRepository;
         _distributedCache = distributedCache;
         _logger = logger;
@@ -501,6 +509,51 @@ internal class MimeTypeManager : IMimeTypeManager
                 innerException: ex
                 );
         }
+    }
+
+    #endregion
+
+    // *******************************************************************
+    // Private methods.
+    // *******************************************************************
+
+    #region Private methods
+
+    /// <summary>
+    /// This method gets the cached data for this manager.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the cached 
+    /// data for this manager.</returns>
+    private async Task<List<MimeType>> GetCachedDataAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Log what we are about to do.
+        _logger.LogTrace(
+            "Deferring to IDistributedCache.GetOrSetAsync"
+            );
+
+        // Get (set) the cached data for this manager.
+        var mimeTypes = await _distributedCache.GetOrSetAsync<List<MimeType>>(
+            CACHE_KEY,
+        new DistributedCacheEntryOptions()
+        {
+            SlidingExpiration = _mimeTypeOptions?.DefaultCacheDuration
+                ?? TimeSpan.FromHours(1)
+        },
+        () =>
+        {
+            return (_mimeTypeRepository.FindAllAsync(
+                cancellationToken
+                ).Result).ToList();
+        },
+        cancellationToken
+        ).ConfigureAwait(false);
+
+        // Return the results.
+        return mimeTypes;
     }
 
     #endregion

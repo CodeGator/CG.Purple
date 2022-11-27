@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Repositories;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -73,6 +75,19 @@ public interface IAttachmentManager
     Task DeleteAsync(
         Attachment attachment,
         string userName,
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for all the <ee cref="Attachment"/> objects.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of 
+    /// <see cref="Attachment"/> objects.</returns>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<Attachment>> FindAllAsync(
         CancellationToken cancellationToken = default
         );
 

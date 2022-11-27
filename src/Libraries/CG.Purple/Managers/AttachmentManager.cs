@@ -27,6 +27,11 @@ internal class AttachmentManager : IAttachmentManager
     #region Fields
 
     /// <summary>
+    /// This field contains the business logic layer options for this manager.
+    /// </summary>
+    internal protected readonly AttachmentOptions? _attachmentOptions;
+
+    /// <summary>
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly IAttachmentRepository _attachmentRepository = null!;
@@ -53,6 +58,8 @@ internal class AttachmentManager : IAttachmentManager
     /// This constructor creates a new instance of the <see cref="AttachmentManager"/>
     /// class.
     /// </summary>
+    /// <param name="bllOptions">The business logic layer options to use 
+    /// with this manager.</param>
     /// <param name="attachmentRepository">The attachment repository to use
     /// with this manager.</param>
     /// <param name="distributedCache">The distributed cache to use for 
@@ -61,17 +68,20 @@ internal class AttachmentManager : IAttachmentManager
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public AttachmentManager(
+        IOptions<BllOptions> bllOptions,
         IAttachmentRepository attachmentRepository,
         IDistributedCache distributedCache,
         ILogger<IAttachmentManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(attachmentRepository, nameof(attachmentRepository))
+        Guard.Instance().ThrowIfNull(bllOptions, nameof(bllOptions))
+            .ThrowIfNull(attachmentRepository, nameof(attachmentRepository))
             .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
+        _attachmentOptions = bllOptions.Value?.Attachments;
         _attachmentRepository = attachmentRepository;
         _distributedCache = distributedCache;
         _logger = logger;
@@ -266,6 +276,45 @@ internal class AttachmentManager : IAttachmentManager
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<Attachment>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IMessageRepository.FindAllAsync)
+                );
+
+            // Perform the operation.
+            var result = await _attachmentRepository.FindAllAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for attachments!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for attachments!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<Attachment> UpdateAsync(
         Attachment attachment,
         string userName,
@@ -314,6 +363,51 @@ internal class AttachmentManager : IAttachmentManager
                 innerException: ex
                 );
         }
+    }
+
+    #endregion
+
+    // *******************************************************************
+    // Private methods.
+    // *******************************************************************
+
+    #region Private methods
+
+    /// <summary>
+    /// This method gets the cached data for this manager.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the cached 
+    /// data for this manager.</returns>
+    private async Task<List<Attachment>> GetCachedDataAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Log what we are about to do.
+        _logger.LogTrace(
+            "Deferring to IDistributedCache.GetOrSetAsync"
+            );
+
+        // Get (set) the cached data for this manager.
+        var attachments = await _distributedCache.GetOrSetAsync<List<Attachment>>(
+            CACHE_KEY,
+        new DistributedCacheEntryOptions()
+        {
+            SlidingExpiration = _attachmentOptions?.DefaultCacheDuration
+                ?? TimeSpan.FromHours(1)
+        },
+        () =>
+        {
+            return (_attachmentRepository.FindAllAsync(
+                cancellationToken
+                ).Result).ToList();
+        },
+        cancellationToken
+        ).ConfigureAwait(false);
+
+        // Return the results.
+        return attachments;
     }
 
     #endregion

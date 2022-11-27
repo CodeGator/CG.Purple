@@ -13,10 +13,22 @@ internal class BllOptions
     #region Properties
 
     /// <summary>
+    /// This property contains configuration settings for the <see cref="IAttachmentManager"/>
+    /// type.
+    /// </summary>
+    public AttachmentOptions? Attachments { get; set; }
+
+    /// <summary>
     /// This property contains configuration settings for the <see cref="IFileTypeManager"/>
     /// type.
     /// </summary>
     public FileTypeOptions? FileTypes { get; set; }
+
+    /// <summary>
+    /// This property contains configuration settings for the <see cref="IMimeTypeManager"/>
+    /// type.
+    /// </summary>
+    public MimeTypeOptions? MimeTypes { get; set; }
 
     /// <summary>
     /// This property contains configuration settings for the <see cref="IMailMessageManager"/>

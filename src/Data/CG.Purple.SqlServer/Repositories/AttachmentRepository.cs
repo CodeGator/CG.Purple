@@ -335,6 +335,64 @@ internal class AttachmentRepository : IAttachmentRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<Attachment>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for attachments."
+                );
+
+            // Perform the message search.
+            var Messages = await dbContext.Attachments
+                .Include(x => x.Message)
+                .Include(x => x.MimeType)
+                .ToListAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Convert the entities to a models.
+            var result = Messages.Select(x =>
+                _mapper.Map<Attachment>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for attachments!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for " +
+                "attachments!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<Attachment> UpdateAsync(
         Attachment attachment,
         CancellationToken cancellationToken = default

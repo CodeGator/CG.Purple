@@ -71,6 +71,19 @@ public interface IAttachmentRepository
         );
 
     /// <summary>
+    /// This method searches for all the <ee cref="Attachment"/> objects.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of 
+    /// <see cref="Attachment"/> objects.</returns>
+    /// <exception cref="RepositoryException">This exception is thrown whenever the
+    /// repository fails to complete the operation.</exception>
+    Task<IEnumerable<Attachment>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method updates an existing <see cref="Attachment"/> object in the 
     /// underlying storage.
     /// </summary>
