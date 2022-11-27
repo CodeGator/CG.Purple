@@ -7,6 +7,7 @@
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/codegator/CG.Purple/93)
 [![Github discussion](https://img.shields.io/badge/Discussion-online-blue)](https://github.com/CodeGator/CG.Purple/discussions)
 
+
 ### What does it do?
 Purple is an idea for a self contained messaging microservice. The scenario is: You give Purple an email, or text, via a REST call, and it takes care of storing that message, sending it, and tracking it's history and status, on your behalf.
 
