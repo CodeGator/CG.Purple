@@ -441,6 +441,62 @@ internal class MimeTypeRepository : IMimeTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<MimeType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for file types."
+                );
+
+            // Perform the mime type search.
+            var mimeTypes = await dbContext.MimeTypes
+                .Include(x => x.FileTypes)
+                .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entities to models.
+            var result = mimeTypes.Select(x =>
+                _mapper.Map<MimeType>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for mime types!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for mime types!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<MimeType?> FindByExtensionAsync(
         string extension,
         CancellationToken cancellationToken = default
@@ -481,7 +537,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             }
 
             // Perform the mime type search.
-            var entity = await dbContext.MimeTypes.Where(x =>
+            var mimeType = await dbContext.MimeTypes.Where(x =>
                 x.Id == fileType.MimeTypeId
                 ).Include(x => x.FileTypes)
                 .FirstOrDefaultAsync(
@@ -489,12 +545,12 @@ internal class MimeTypeRepository : IMimeTypeRepository
                     ).ConfigureAwait(false);
 
             // Convert the entity to a model.
-            var model = _mapper.Map<MimeType>(
-                entity
+            var result = _mapper.Map<MimeType>(
+                mimeType
                 );
 
             // Did we fail?
-            if (entity is null)
+            if (result is null)
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
@@ -503,7 +559,7 @@ internal class MimeTypeRepository : IMimeTypeRepository
             }
 
             // Return the results.
-            return model;
+            return result;
         }
         catch (Exception ex)
         {

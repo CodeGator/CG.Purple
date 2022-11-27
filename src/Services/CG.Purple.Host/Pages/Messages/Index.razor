@@ -22,7 +22,7 @@
                 <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshMailMessagesAsync">Refresh</MudButton>
                 <MudText Class="px-4" Typo="Typo.caption">(page refreshes in @_timeTillNextUpdate)</MudText>
                 <MudSpacer />
-                <MudTextField @bind-Value="mailGridSearchString"
+                <MudTextField @bind-Value="_mailGridSearchString"
                               Placeholder="Search"
                               HelperText="Optionally, search using 'property:value' syntax, to match by a message property"
                               Adornment="Adornment.Start"
@@ -61,7 +61,7 @@
                         <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.History" OnClick="() => OnLogsAsync(context)" />
                     </MudTooltip>
                     <MudTooltip Text="View">
-                        <MudIconButton Size="Size.Small" Icon="@MaterialDesignIcons.Normal.Eye" OnClick="() => OnPreview(context)" />
+                        <MudIconButton Size="Size.Small" Icon="@MaterialDesignIcons.Normal.Eye" OnClick="() => OnPreviewAsync(context)" />
                     </MudTooltip>
                     @if (context.Attachments.Any())
                     {
@@ -88,7 +88,7 @@
                 <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Refresh" OnClick="OnRefreshTextMessagesAsync">Refresh</MudButton>
                 <MudText Class="px-4" Typo="Typo.caption">(page refreshes in @_timeTillNextUpdate)</MudText>
                 <MudSpacer />
-                <MudTextField @bind-Value="textGridSearchString"
+                <MudTextField @bind-Value="_textGridSearchString"
                               Placeholder="Search"
                               HelperText="Optionally, search using 'property:value' syntax, to match by a message property"
                               Adornment="Adornment.Start"
@@ -126,7 +126,7 @@
                         <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.History" OnClick="() => OnLogsAsync(context)" />
                     </MudTooltip>
                     <MudTooltip Text="View">
-                        <MudIconButton Size="Size.Small" Icon="@MaterialDesignIcons.Normal.Eye" OnClick="() => OnPreview(context)" />
+                        <MudIconButton Size="Size.Small" Icon="@MaterialDesignIcons.Normal.Eye" OnClick="() => OnPreviewAsync(context)" />
                     </MudTooltip>
                     @if (context.Attachments.Any())
                     {

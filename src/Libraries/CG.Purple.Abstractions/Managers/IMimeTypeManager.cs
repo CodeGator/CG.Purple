@@ -77,6 +77,18 @@ public interface IMimeTypeManager
         );
 
     /// <summary>
+    /// This method searches for a sequence of <see cref="MimeType"/> objects.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the results of the search.</returns>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<IEnumerable<MimeType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
     /// This method searches for matching <see cref="MimeType"/> objects using
     /// the given type and/or subtype.
     /// </summary>

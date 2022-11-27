@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Models;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -266,6 +268,45 @@ internal class MimeTypeManager : IMimeTypeManager
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<MimeType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IMimeTypeRepository.FindAllAsync)
+                );
+
+            // Perform the operation.
+            var mimeTypes = await _mimeTypeRepository.FindAllAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return mimeTypes;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for mime types!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for mime types!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<IEnumerable<MimeType>> FindByTypeAsync(
         string type,
         string subType,
@@ -281,23 +322,27 @@ internal class MimeTypeManager : IMimeTypeManager
                 );
 
             // Perform the operation.
-            return await _mimeTypeRepository.FindByTypeAsync(
+            var mimeTypes = await _mimeTypeRepository.FindByTypeAsync(
                 type,
                 subType,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return mimeTypes;
         }
         catch (Exception ex)
         {
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for mime types!"
+                "Failed to search for mime types by type/subtype!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to search for mime types!",
+                message: $"The manager failed to search for mime " +
+                "types by type/subtype!",
                 innerException: ex
                 );
         }
@@ -323,22 +368,26 @@ internal class MimeTypeManager : IMimeTypeManager
                 );
 
             // Perform the operation.
-            return await _mimeTypeRepository.FindByExtensionAsync(
+            var mimeType = await _mimeTypeRepository.FindByExtensionAsync(
                 extension,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return mimeType;
         }
         catch (Exception ex)
         {
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for mime types!"
+                "Failed to search for a matching mime type!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to search for mime types!",
+                message: $"The manager failed to search for a matching " +
+                "mime type!",
                 innerException: ex
                 );
         }

@@ -1,6 +1,4 @@
 ﻿
-using Microsoft.Extensions.Options;
-
 namespace CG.Purple.Host.Pages.Messages;
 
 /// <summary>
@@ -41,12 +39,12 @@ public partial class Index
     /// <summary>
     /// This field contains the current mail search string.
     /// </summary>
-    protected string mailGridSearchString = "";
+    protected string _mailGridSearchString = "";
 
     /// <summary>
     /// This field contains the current text search string.
     /// </summary>
-    protected string textGridSearchString = "";
+    protected string _textGridSearchString = "";
 
     /// <summary>
     /// This field contains the time until the next page update.
@@ -113,12 +111,6 @@ public partial class Index
     /// </summary>
     [Inject]
     protected IProcessLogManager ProcessLogManager { get; set; } = null!;
-
-    /// <summary>
-    /// This property contains the navigation manager for this page.
-    /// </summary>
-    [Inject]
-    NavigationManager NavigationManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the dialog service for this page.
@@ -238,7 +230,7 @@ public partial class Index
     /// <param name="element">The element to use for the operation.</param>
     /// <returns><c>true</c> if a match was found; <c>false</c> otherwise.</returns>
     protected bool MailFilterFunc1(MailMessage element) => 
-        MailFilterFunc(element, mailGridSearchString);
+        MailFilterFunc(element, _mailGridSearchString);
 
     // *******************************************************************
 
@@ -249,7 +241,7 @@ public partial class Index
     /// <param name="element">The element to use for the operation.</param>
     /// <returns><c>true</c> if a match was found; <c>false</c> otherwise.</returns>
     protected bool TextFilterFunc1(TextMessage element) => 
-        TextFilterFunc(element, textGridSearchString);
+        TextFilterFunc(element, _textGridSearchString);
 
     // *******************************************************************
 
@@ -634,35 +626,119 @@ public partial class Index
     // *******************************************************************
 
     /// <summary>
-    /// This method navigates to the preview page.
+    /// This method displays the mail preview dialog.
     /// </summary>
     /// <param name="message">The mail message to use for the operation.</param>
     /// <returns>A task to perform the operation.</returns>
-    protected void OnPreview(
+    protected async Task OnPreviewAsync(
         MailMessage message
         )
     {
-        // Go the preview page.
-        NavigationManager.NavigateTo(
-            $"/messages/mail/{message.Id}"
-            );
+        try
+        {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating the preview dialog."
+                );
+
+            // Show the dialog.
+            var dialog = await DialogService.ShowEx<MailPreviewDialog>(
+                "Preview Email", new DialogParameters()
+                {
+                    { "Model", message }
+                },
+                new DialogOptionsEx()
+                {
+                    MaximizeButton = true,
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.Large,
+                    FullWidth = true,
+                    FullHeight = true,
+                    DragMode = MudDialogDragMode.Simple,
+                    Animations = new[] { AnimationType.SlideIn },
+                    Position = DialogPosition.CenterRight,
+                    DisableSizeMarginY = true,
+                    DisablePositionMargin = true
+                });
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the preview dialog."
+                );
+
+            // Show the dialog.
+            await dialog.Result;
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
     }
 
     // *******************************************************************
 
     /// <summary>
-    /// This method navigates to the preview page.
+    /// This method displays the text preview page.
     /// </summary>
     /// <param name="message">The text message to use for the operation.</param>
     /// <returns>A task to perform the operation.</returns>
-    protected void OnPreview(
+    protected async Task OnPreviewAsync(
         TextMessage message
         )
     {
-        // Go the preview page.
-        NavigationManager.NavigateTo(
-            $"/messages/text/{message.Id}"
-            );
+        try
+        {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating the preview dialog."
+                );
+
+            // Show the dialog.
+            var dialog = await DialogService.ShowEx<TextPreviewDialog>(
+                "Preview Text", new DialogParameters()
+                {
+                    { "Model", message }
+                },
+                new DialogOptionsEx()
+                {
+                    MaximizeButton = true,
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.Large,
+                    FullWidth = true,
+                    FullHeight = true,
+                    DragMode = MudDialogDragMode.Simple,
+                    Animations = new[] { AnimationType.SlideIn },
+                    Position = DialogPosition.CenterRight,
+                    DisableSizeMarginY = true,
+                    DisablePositionMargin = true
+                });
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the preview dialog."
+                );
+
+            // Show the dialog.
+            await dialog.Result;
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
     }
 
     // *******************************************************************

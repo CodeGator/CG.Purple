@@ -3,3 +3,34 @@
 <PageTitle>Mime Types</PageTitle>
 
 <MudBreadcrumbs Items="_crumbs"></MudBreadcrumbs>
+
+<MudText Typo="Typo.h6" Class="py-4 px-5">This page contains the MIME types used for file attachments.</MudText>
+
+<MudTable Items="@_mimeTypes" Dense Striped>
+    <ToolBarContent>
+        <MudSpacer />
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh><MudTableSortLabel SortBy="new Func<MimeType, object>(x=>x.Type)">Type</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<MimeType, object>(x=>x.SubType)">SubType</MudTableSortLabel></MudTh>
+        <MudTh></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Type">@context.Type</MudTd>
+        <MudTd DataLabel="Type">@context.SubType</MudTd>
+        <MudTd>
+            <MudTooltip Text="Delete">
+                <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context)" />
+            </MudTooltip>
+            <MudTooltip Text="Edit">
+                <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditAsync(context)" />
+            </MudTooltip>
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+    <NoRecordsContent>
+        No mime types were found.
+    </NoRecordsContent>
+</MudTable>
