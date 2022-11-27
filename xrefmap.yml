@@ -810,12 +810,24 @@ references:
   commentId: F:CG.Purple.Host.Pages.Messages.Index._isBusy
   fullName: CG.Purple.Host.Pages.Messages.Index._isBusy
   nameWithType: Index._isBusy
+- uid: CG.Purple.Host.Pages.Messages.Index._mailGridSearchString
+  name: _mailGridSearchString
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index__mailGridSearchString
+  commentId: F:CG.Purple.Host.Pages.Messages.Index._mailGridSearchString
+  fullName: CG.Purple.Host.Pages.Messages.Index._mailGridSearchString
+  nameWithType: Index._mailGridSearchString
 - uid: CG.Purple.Host.Pages.Messages.Index._mailMessages
   name: _mailMessages
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index__mailMessages
   commentId: F:CG.Purple.Host.Pages.Messages.Index._mailMessages
   fullName: CG.Purple.Host.Pages.Messages.Index._mailMessages
   nameWithType: Index._mailMessages
+- uid: CG.Purple.Host.Pages.Messages.Index._textGridSearchString
+  name: _textGridSearchString
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index__textGridSearchString
+  commentId: F:CG.Purple.Host.Pages.Messages.Index._textGridSearchString
+  fullName: CG.Purple.Host.Pages.Messages.Index._textGridSearchString
+  nameWithType: Index._textGridSearchString
 - uid: CG.Purple.Host.Pages.Messages.Index._textMessages
   name: _textMessages
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index__textMessages
@@ -925,12 +937,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.MailFilterFunc1
   nameWithType: Index.MailFilterFunc1
-- uid: CG.Purple.Host.Pages.Messages.Index.mailGridSearchString
-  name: mailGridSearchString
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_mailGridSearchString
-  commentId: F:CG.Purple.Host.Pages.Messages.Index.mailGridSearchString
-  fullName: CG.Purple.Host.Pages.Messages.Index.mailGridSearchString
-  nameWithType: Index.mailGridSearchString
 - uid: CG.Purple.Host.Pages.Messages.Index.MailManager
   name: MailManager
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_MailManager
@@ -970,19 +976,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.MessagePropertyManager
   nameWithType: Index.MessagePropertyManager
-- uid: CG.Purple.Host.Pages.Messages.Index.NavigationManager
-  name: NavigationManager
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_NavigationManager
-  commentId: P:CG.Purple.Host.Pages.Messages.Index.NavigationManager
-  fullName: CG.Purple.Host.Pages.Messages.Index.NavigationManager
-  nameWithType: Index.NavigationManager
-- uid: CG.Purple.Host.Pages.Messages.Index.NavigationManager*
-  name: NavigationManager
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_NavigationManager_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.NavigationManager
-  isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.Index.NavigationManager
-  nameWithType: Index.NavigationManager
 - uid: CG.Purple.Host.Pages.Messages.Index.OnAttachmentsAsync(Message)
   name: OnAttachmentsAsync(Message)
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnAttachmentsAsync_Message_
@@ -1022,25 +1015,25 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.OnLogsAsync
   nameWithType: Index.OnLogsAsync
-- uid: CG.Purple.Host.Pages.Messages.Index.OnPreview(MailMessage)
-  name: OnPreview(MailMessage)
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPreview_MailMessage_
-  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnPreview(MailMessage)
-  fullName: CG.Purple.Host.Pages.Messages.Index.OnPreview(MailMessage)
-  nameWithType: Index.OnPreview(MailMessage)
-- uid: CG.Purple.Host.Pages.Messages.Index.OnPreview(TextMessage)
-  name: OnPreview(TextMessage)
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPreview_TextMessage_
-  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnPreview(TextMessage)
-  fullName: CG.Purple.Host.Pages.Messages.Index.OnPreview(TextMessage)
-  nameWithType: Index.OnPreview(TextMessage)
-- uid: CG.Purple.Host.Pages.Messages.Index.OnPreview*
-  name: OnPreview
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPreview_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnPreview
+- uid: CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync(MailMessage)
+  name: OnPreviewAsync(MailMessage)
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPreviewAsync_MailMessage_
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync(MailMessage)
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync(MailMessage)
+  nameWithType: Index.OnPreviewAsync(MailMessage)
+- uid: CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync(TextMessage)
+  name: OnPreviewAsync(TextMessage)
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPreviewAsync_TextMessage_
+  commentId: M:CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync(TextMessage)
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync(TextMessage)
+  nameWithType: Index.OnPreviewAsync(TextMessage)
+- uid: CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync*
+  name: OnPreviewAsync
+  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPreviewAsync_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.Index.OnPreview
-  nameWithType: Index.OnPreview
+  fullName: CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync
+  nameWithType: Index.OnPreviewAsync
 - uid: CG.Purple.Host.Pages.Messages.Index.OnPropertiesAsync(Message)
   name: OnPropertiesAsync(Message)
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_OnPropertiesAsync_Message_
@@ -1184,12 +1177,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.Index.TextFilterFunc1
   nameWithType: Index.TextFilterFunc1
-- uid: CG.Purple.Host.Pages.Messages.Index.textGridSearchString
-  name: textGridSearchString
-  href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_textGridSearchString
-  commentId: F:CG.Purple.Host.Pages.Messages.Index.textGridSearchString
-  fullName: CG.Purple.Host.Pages.Messages.Index.textGridSearchString
-  nameWithType: Index.textGridSearchString
 - uid: CG.Purple.Host.Pages.Messages.Index.TextManager
   name: TextManager
   href: api/CG.Purple.Host.Pages.Messages.Index.html#CG_Purple_Host_Pages_Messages_Index_TextManager
@@ -1274,114 +1261,64 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.LogDialog.Ok
   nameWithType: LogDialog.Ok
-- uid: CG.Purple.Host.Pages.Messages.MailPreview
-  name: MailPreview
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html
-  commentId: T:CG.Purple.Host.Pages.Messages.MailPreview
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview
-  nameWithType: MailPreview
-- uid: CG.Purple.Host.Pages.Messages.MailPreview._crumbs
-  name: _crumbs
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview__crumbs
-  commentId: F:CG.Purple.Host.Pages.Messages.MailPreview._crumbs
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview._crumbs
-  nameWithType: MailPreview._crumbs
-- uid: CG.Purple.Host.Pages.Messages.MailPreview._html
-  name: _html
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview__html
-  commentId: F:CG.Purple.Host.Pages.Messages.MailPreview._html
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview._html
-  nameWithType: MailPreview._html
-- uid: CG.Purple.Host.Pages.Messages.MailPreview._isBusy
-  name: _isBusy
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview__isBusy
-  commentId: F:CG.Purple.Host.Pages.Messages.MailPreview._isBusy
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview._isBusy
-  nameWithType: MailPreview._isBusy
-- uid: CG.Purple.Host.Pages.Messages.MailPreview._message
-  name: _message
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview__message
-  commentId: F:CG.Purple.Host.Pages.Messages.MailPreview._message
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview._message
-  nameWithType: MailPreview._message
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError(MudBlazor.Extensions.Components.IFileDisplayInfos)
-  name: HandleContentError(IFileDisplayInfos)
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_HandleContentError_MudBlazor_Extensions_Components_IFileDisplayInfos_
-  commentId: M:CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError(MudBlazor.Extensions.Components.IFileDisplayInfos)
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError(MudBlazor.Extensions.Components.IFileDisplayInfos)
-  nameWithType: MailPreview.HandleContentError(IFileDisplayInfos)
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError*
-  name: HandleContentError
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_HandleContentError_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError
-  isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.HandleContentError
-  nameWithType: MailPreview.HandleContentError
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.Logger
+- uid: CG.Purple.Host.Pages.Messages.MailPreviewDialog
+  name: MailPreviewDialog
+  href: api/CG.Purple.Host.Pages.Messages.MailPreviewDialog.html
+  commentId: T:CG.Purple.Host.Pages.Messages.MailPreviewDialog
+  fullName: CG.Purple.Host.Pages.Messages.MailPreviewDialog
+  nameWithType: MailPreviewDialog
+- uid: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Logger
   name: Logger
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_Logger
-  commentId: P:CG.Purple.Host.Pages.Messages.MailPreview.Logger
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.Logger
-  nameWithType: MailPreview.Logger
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.Logger*
+  href: api/CG.Purple.Host.Pages.Messages.MailPreviewDialog.html#CG_Purple_Host_Pages_Messages_MailPreviewDialog_Logger
+  commentId: P:CG.Purple.Host.Pages.Messages.MailPreviewDialog.Logger
+  fullName: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Logger
+  nameWithType: MailPreviewDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Logger*
   name: Logger
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_Logger_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.Logger
+  href: api/CG.Purple.Host.Pages.Messages.MailPreviewDialog.html#CG_Purple_Host_Pages_Messages_MailPreviewDialog_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreviewDialog.Logger
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.Logger
-  nameWithType: MailPreview.Logger
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.MailManager
-  name: MailManager
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_MailManager
-  commentId: P:CG.Purple.Host.Pages.Messages.MailPreview.MailManager
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.MailManager
-  nameWithType: MailPreview.MailManager
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.MailManager*
-  name: MailManager
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_MailManager_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.MailManager
+  fullName: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Logger
+  nameWithType: MailPreviewDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Model
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.MailPreviewDialog.html#CG_Purple_Host_Pages_Messages_MailPreviewDialog_Model
+  commentId: P:CG.Purple.Host.Pages.Messages.MailPreviewDialog.Model
+  fullName: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Model
+  nameWithType: MailPreviewDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Model*
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.MailPreviewDialog.html#CG_Purple_Host_Pages_Messages_MailPreviewDialog_Model_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreviewDialog.Model
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.MailManager
-  nameWithType: MailPreview.MailManager
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.MessageId
-  name: MessageId
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_MessageId
-  commentId: P:CG.Purple.Host.Pages.Messages.MailPreview.MessageId
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.MessageId
-  nameWithType: MailPreview.MessageId
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.MessageId*
-  name: MessageId
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_MessageId_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.MessageId
+  fullName: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Model
+  nameWithType: MailPreviewDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.MailPreviewDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.MailPreviewDialog.html#CG_Purple_Host_Pages_Messages_MailPreviewDialog_MudDialog
+  commentId: P:CG.Purple.Host.Pages.Messages.MailPreviewDialog.MudDialog
+  fullName: CG.Purple.Host.Pages.Messages.MailPreviewDialog.MudDialog
+  nameWithType: MailPreviewDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.MailPreviewDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.MailPreviewDialog.html#CG_Purple_Host_Pages_Messages_MailPreviewDialog_MudDialog_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreviewDialog.MudDialog
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.MessageId
-  nameWithType: MailPreview.MessageId
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync
-  name: OnInitializedAsync()
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_OnInitializedAsync
-  commentId: M:CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync()
-  nameWithType: MailPreview.OnInitializedAsync()
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync*
-  name: OnInitializedAsync
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_OnInitializedAsync_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync
+  fullName: CG.Purple.Host.Pages.Messages.MailPreviewDialog.MudDialog
+  nameWithType: MailPreviewDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Ok
+  name: Ok()
+  href: api/CG.Purple.Host.Pages.Messages.MailPreviewDialog.html#CG_Purple_Host_Pages_Messages_MailPreviewDialog_Ok
+  commentId: M:CG.Purple.Host.Pages.Messages.MailPreviewDialog.Ok
+  fullName: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Ok()
+  nameWithType: MailPreviewDialog.Ok()
+- uid: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Ok*
+  name: Ok
+  href: api/CG.Purple.Host.Pages.Messages.MailPreviewDialog.html#CG_Purple_Host_Pages_Messages_MailPreviewDialog_Ok_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreviewDialog.Ok
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.OnInitializedAsync
-  nameWithType: MailPreview.OnInitializedAsync
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
-  name: SnackbarService
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_SnackbarService
-  commentId: P:CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
-  nameWithType: MailPreview.SnackbarService
-- uid: CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService*
-  name: SnackbarService
-  href: api/CG.Purple.Host.Pages.Messages.MailPreview.html#CG_Purple_Host_Pages_Messages_MailPreview_SnackbarService_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
-  isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.MailPreview.SnackbarService
-  nameWithType: MailPreview.SnackbarService
+  fullName: CG.Purple.Host.Pages.Messages.MailPreviewDialog.Ok
+  nameWithType: MailPreviewDialog.Ok
 - uid: CG.Purple.Host.Pages.Messages.MessagePropertiesDialog
   name: MessagePropertiesDialog
   href: api/CG.Purple.Host.Pages.Messages.MessagePropertiesDialog.html
@@ -1679,70 +1616,64 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Messages.MessagePropertyDialog.PropertyTypes
   nameWithType: MessagePropertyDialog.PropertyTypes
-- uid: CG.Purple.Host.Pages.Messages.TextPreview
-  name: TextPreview
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html
-  commentId: T:CG.Purple.Host.Pages.Messages.TextPreview
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview
-  nameWithType: TextPreview
-- uid: CG.Purple.Host.Pages.Messages.TextPreview._crumbs
-  name: _crumbs
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview__crumbs
-  commentId: F:CG.Purple.Host.Pages.Messages.TextPreview._crumbs
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview._crumbs
-  nameWithType: TextPreview._crumbs
-- uid: CG.Purple.Host.Pages.Messages.TextPreview.Logger
+- uid: CG.Purple.Host.Pages.Messages.TextPreviewDialog
+  name: TextPreviewDialog
+  href: api/CG.Purple.Host.Pages.Messages.TextPreviewDialog.html
+  commentId: T:CG.Purple.Host.Pages.Messages.TextPreviewDialog
+  fullName: CG.Purple.Host.Pages.Messages.TextPreviewDialog
+  nameWithType: TextPreviewDialog
+- uid: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Logger
   name: Logger
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_Logger
-  commentId: P:CG.Purple.Host.Pages.Messages.TextPreview.Logger
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview.Logger
-  nameWithType: TextPreview.Logger
-- uid: CG.Purple.Host.Pages.Messages.TextPreview.Logger*
+  href: api/CG.Purple.Host.Pages.Messages.TextPreviewDialog.html#CG_Purple_Host_Pages_Messages_TextPreviewDialog_Logger
+  commentId: P:CG.Purple.Host.Pages.Messages.TextPreviewDialog.Logger
+  fullName: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Logger
+  nameWithType: TextPreviewDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Logger*
   name: Logger
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_Logger_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreview.Logger
+  href: api/CG.Purple.Host.Pages.Messages.TextPreviewDialog.html#CG_Purple_Host_Pages_Messages_TextPreviewDialog_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreviewDialog.Logger
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview.Logger
-  nameWithType: TextPreview.Logger
-- uid: CG.Purple.Host.Pages.Messages.TextPreview.MessageId
-  name: MessageId
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_MessageId
-  commentId: P:CG.Purple.Host.Pages.Messages.TextPreview.MessageId
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview.MessageId
-  nameWithType: TextPreview.MessageId
-- uid: CG.Purple.Host.Pages.Messages.TextPreview.MessageId*
-  name: MessageId
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_MessageId_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreview.MessageId
+  fullName: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Logger
+  nameWithType: TextPreviewDialog.Logger
+- uid: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Model
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.TextPreviewDialog.html#CG_Purple_Host_Pages_Messages_TextPreviewDialog_Model
+  commentId: P:CG.Purple.Host.Pages.Messages.TextPreviewDialog.Model
+  fullName: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Model
+  nameWithType: TextPreviewDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Model*
+  name: Model
+  href: api/CG.Purple.Host.Pages.Messages.TextPreviewDialog.html#CG_Purple_Host_Pages_Messages_TextPreviewDialog_Model_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreviewDialog.Model
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview.MessageId
-  nameWithType: TextPreview.MessageId
-- uid: CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync
-  name: OnInitializedAsync()
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_OnInitializedAsync
-  commentId: M:CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync()
-  nameWithType: TextPreview.OnInitializedAsync()
-- uid: CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync*
-  name: OnInitializedAsync
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_OnInitializedAsync_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync
+  fullName: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Model
+  nameWithType: TextPreviewDialog.Model
+- uid: CG.Purple.Host.Pages.Messages.TextPreviewDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.TextPreviewDialog.html#CG_Purple_Host_Pages_Messages_TextPreviewDialog_MudDialog
+  commentId: P:CG.Purple.Host.Pages.Messages.TextPreviewDialog.MudDialog
+  fullName: CG.Purple.Host.Pages.Messages.TextPreviewDialog.MudDialog
+  nameWithType: TextPreviewDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.TextPreviewDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.Messages.TextPreviewDialog.html#CG_Purple_Host_Pages_Messages_TextPreviewDialog_MudDialog_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreviewDialog.MudDialog
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview.OnInitializedAsync
-  nameWithType: TextPreview.OnInitializedAsync
-- uid: CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
-  name: SnackbarService
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_SnackbarService
-  commentId: P:CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
-  nameWithType: TextPreview.SnackbarService
-- uid: CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService*
-  name: SnackbarService
-  href: api/CG.Purple.Host.Pages.Messages.TextPreview.html#CG_Purple_Host_Pages_Messages_TextPreview_SnackbarService_
-  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
+  fullName: CG.Purple.Host.Pages.Messages.TextPreviewDialog.MudDialog
+  nameWithType: TextPreviewDialog.MudDialog
+- uid: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Ok
+  name: Ok()
+  href: api/CG.Purple.Host.Pages.Messages.TextPreviewDialog.html#CG_Purple_Host_Pages_Messages_TextPreviewDialog_Ok
+  commentId: M:CG.Purple.Host.Pages.Messages.TextPreviewDialog.Ok
+  fullName: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Ok()
+  nameWithType: TextPreviewDialog.Ok()
+- uid: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Ok*
+  name: Ok
+  href: api/CG.Purple.Host.Pages.Messages.TextPreviewDialog.html#CG_Purple_Host_Pages_Messages_TextPreviewDialog_Ok_
+  commentId: Overload:CG.Purple.Host.Pages.Messages.TextPreviewDialog.Ok
   isSpec: "True"
-  fullName: CG.Purple.Host.Pages.Messages.TextPreview.SnackbarService
-  nameWithType: TextPreview.SnackbarService
+  fullName: CG.Purple.Host.Pages.Messages.TextPreviewDialog.Ok
+  nameWithType: TextPreviewDialog.Ok
 - uid: CG.Purple.Host.Pages.MimeTypes
   name: CG.Purple.Host.Pages.MimeTypes
   href: api/CG.Purple.Host.Pages.MimeTypes.html
@@ -1761,6 +1692,167 @@ references:
   commentId: F:CG.Purple.Host.Pages.MimeTypes.Index._crumbs
   fullName: CG.Purple.Host.Pages.MimeTypes.Index._crumbs
   nameWithType: Index._crumbs
+- uid: CG.Purple.Host.Pages.MimeTypes.Index._gridSearchString
+  name: _gridSearchString
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index__gridSearchString
+  commentId: F:CG.Purple.Host.Pages.MimeTypes.Index._gridSearchString
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index._gridSearchString
+  nameWithType: Index._gridSearchString
+- uid: CG.Purple.Host.Pages.MimeTypes.Index._isBusy
+  name: _isBusy
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index__isBusy
+  commentId: F:CG.Purple.Host.Pages.MimeTypes.Index._isBusy
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index._isBusy
+  nameWithType: Index._isBusy
+- uid: CG.Purple.Host.Pages.MimeTypes.Index._mimeTypes
+  name: _mimeTypes
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index__mimeTypes
+  commentId: F:CG.Purple.Host.Pages.MimeTypes.Index._mimeTypes
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index._mimeTypes
+  nameWithType: Index._mimeTypes
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.DialogService
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_DialogService
+  commentId: P:CG.Purple.Host.Pages.MimeTypes.Index.DialogService
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.DialogService*
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_DialogService_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.DialogService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc(MimeType,System.String)
+  name: FilterFunc(MimeType, String)
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_FilterFunc_MimeType_System_String_
+  commentId: M:CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc(MimeType,System.String)
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc(MimeType, System.String)
+  nameWithType: Index.FilterFunc(MimeType, String)
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc*
+  name: FilterFunc
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_FilterFunc_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc
+  nameWithType: Index.FilterFunc
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc1(MimeType)
+  name: FilterFunc1(MimeType)
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_FilterFunc1_MimeType_
+  commentId: M:CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc1(MimeType)
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc1(MimeType)
+  nameWithType: Index.FilterFunc1(MimeType)
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc1*
+  name: FilterFunc1
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_FilterFunc1_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc1
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.FilterFunc1
+  nameWithType: Index.FilterFunc1
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.HttpContextAccessor
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_HttpContextAccessor
+  commentId: P:CG.Purple.Host.Pages.MimeTypes.Index.HttpContextAccessor
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.HttpContextAccessor
+  nameWithType: Index.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.HttpContextAccessor*
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_HttpContextAccessor_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.HttpContextAccessor
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.HttpContextAccessor
+  nameWithType: Index.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_Logger
+  commentId: P:CG.Purple.Host.Pages.MimeTypes.Index.Logger
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.MimeTypeManager
+  name: MimeTypeManager
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_MimeTypeManager
+  commentId: P:CG.Purple.Host.Pages.MimeTypes.Index.MimeTypeManager
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.MimeTypeManager
+  nameWithType: Index.MimeTypeManager
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.MimeTypeManager*
+  name: MimeTypeManager
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_MimeTypeManager_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.MimeTypeManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.MimeTypeManager
+  nameWithType: Index.MimeTypeManager
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.OnDeleteAsync(MimeType)
+  name: OnDeleteAsync(MimeType)
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_OnDeleteAsync_MimeType_
+  commentId: M:CG.Purple.Host.Pages.MimeTypes.Index.OnDeleteAsync(MimeType)
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.OnDeleteAsync(MimeType)
+  nameWithType: Index.OnDeleteAsync(MimeType)
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.OnDeleteAsync*
+  name: OnDeleteAsync
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_OnDeleteAsync_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.OnDeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.OnDeleteAsync
+  nameWithType: Index.OnDeleteAsync
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.OnEditAsync(MimeType)
+  name: OnEditAsync(MimeType)
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_OnEditAsync_MimeType_
+  commentId: M:CG.Purple.Host.Pages.MimeTypes.Index.OnEditAsync(MimeType)
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.OnEditAsync(MimeType)
+  nameWithType: Index.OnEditAsync(MimeType)
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.OnEditAsync*
+  name: OnEditAsync
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_OnEditAsync_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.OnEditAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.OnEditAsync
+  nameWithType: Index.OnEditAsync
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.OnInitializedAsync
+  name: OnInitializedAsync()
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_OnInitializedAsync
+  commentId: M:CG.Purple.Host.Pages.MimeTypes.Index.OnInitializedAsync
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.OnInitializedAsync()
+  nameWithType: Index.OnInitializedAsync()
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.OnInitializedAsync*
+  name: OnInitializedAsync
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_OnInitializedAsync_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.OnInitializedAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.OnInitializedAsync
+  nameWithType: Index.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.SnackbarService
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_SnackbarService
+  commentId: P:CG.Purple.Host.Pages.MimeTypes.Index.SnackbarService
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_SnackbarService_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.SnackbarService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.UserName
+  name: UserName
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_UserName
+  commentId: P:CG.Purple.Host.Pages.MimeTypes.Index.UserName
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.UserName
+  nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.MimeTypes.Index.UserName*
+  name: UserName
+  href: api/CG.Purple.Host.Pages.MimeTypes.Index.html#CG_Purple_Host_Pages_MimeTypes_Index_UserName_
+  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.Index.UserName
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.MimeTypes.Index.UserName
+  nameWithType: Index.UserName
 - uid: CG.Purple.Host.Pages.ParameterTypes
   name: CG.Purple.Host.Pages.ParameterTypes
   href: api/CG.Purple.Host.Pages.ParameterTypes.html
@@ -2893,6 +2985,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IMimeTypeManager.DeleteAsync
   nameWithType: IMimeTypeManager.DeleteAsync
+- uid: CG.Purple.Managers.IMimeTypeManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.IMimeTypeManager.html#CG_Purple_Managers_IMimeTypeManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.IMimeTypeManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.IMimeTypeManager.FindAllAsync(CancellationToken)
+  nameWithType: IMimeTypeManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.IMimeTypeManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.IMimeTypeManager.html#CG_Purple_Managers_IMimeTypeManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.IMimeTypeManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IMimeTypeManager.FindAllAsync
+  nameWithType: IMimeTypeManager.FindAllAsync
 - uid: CG.Purple.Managers.IMimeTypeManager.FindByExtensionAsync(System.String,CancellationToken)
   name: FindByExtensionAsync(String, CancellationToken)
   href: api/CG.Purple.Managers.IMimeTypeManager.html#CG_Purple_Managers_IMimeTypeManager_FindByExtensionAsync_System_String_CancellationToken_
@@ -4034,11 +4139,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.CountAsync
   nameWithType: MimeTypeManager.CountAsync
-- uid: CG.Purple.Managers.MimeTypeManager.CreateAsync(MimeType,System.String,CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManager.CreateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
   name: CreateAsync(MimeType, String, CancellationToken)
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_CreateAsync_MimeType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.MimeTypeManager.CreateAsync(MimeType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.MimeTypeManager.CreateAsync(MimeType, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_CreateAsync_CG_Purple_Models_MimeType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManager.CreateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManager.CreateAsync(CG.Purple.Models.MimeType, System.String, CancellationToken)
   nameWithType: MimeTypeManager.CreateAsync(MimeType, String, CancellationToken)
 - uid: CG.Purple.Managers.MimeTypeManager.CreateAsync*
   name: CreateAsync
@@ -4047,11 +4152,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.CreateAsync
   nameWithType: MimeTypeManager.CreateAsync
-- uid: CG.Purple.Managers.MimeTypeManager.DeleteAsync(MimeType,System.String,CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManager.DeleteAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
   name: DeleteAsync(MimeType, String, CancellationToken)
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_DeleteAsync_MimeType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.MimeTypeManager.DeleteAsync(MimeType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.MimeTypeManager.DeleteAsync(MimeType, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_DeleteAsync_CG_Purple_Models_MimeType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManager.DeleteAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManager.DeleteAsync(CG.Purple.Models.MimeType, System.String, CancellationToken)
   nameWithType: MimeTypeManager.DeleteAsync(MimeType, String, CancellationToken)
 - uid: CG.Purple.Managers.MimeTypeManager.DeleteAsync*
   name: DeleteAsync
@@ -4060,6 +4165,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.DeleteAsync
   nameWithType: MimeTypeManager.DeleteAsync
+- uid: CG.Purple.Managers.MimeTypeManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManager.FindAllAsync(CancellationToken)
+  nameWithType: MimeTypeManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.MimeTypeManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.MimeTypeManager.FindAllAsync
+  nameWithType: MimeTypeManager.FindAllAsync
 - uid: CG.Purple.Managers.MimeTypeManager.FindByExtensionAsync(System.String,CancellationToken)
   name: FindByExtensionAsync(String, CancellationToken)
   href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_FindByExtensionAsync_System_String_CancellationToken_
@@ -4086,11 +4204,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.FindByTypeAsync
   nameWithType: MimeTypeManager.FindByTypeAsync
-- uid: CG.Purple.Managers.MimeTypeManager.UpdateAsync(MimeType,System.String,CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManager.UpdateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
   name: UpdateAsync(MimeType, String, CancellationToken)
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_UpdateAsync_MimeType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.MimeTypeManager.UpdateAsync(MimeType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.MimeTypeManager.UpdateAsync(MimeType, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_UpdateAsync_CG_Purple_Models_MimeType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManager.UpdateAsync(CG.Purple.Models.MimeType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManager.UpdateAsync(CG.Purple.Models.MimeType, System.String, CancellationToken)
   nameWithType: MimeTypeManager.UpdateAsync(MimeType, String, CancellationToken)
 - uid: CG.Purple.Managers.MimeTypeManager.UpdateAsync*
   name: UpdateAsync
@@ -7419,6 +7537,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IMimeTypeRepository.DeleteAsync
   nameWithType: IMimeTypeRepository.DeleteAsync
+- uid: CG.Purple.Repositories.IMimeTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Repositories.IMimeTypeRepository.html#CG_Purple_Repositories_IMimeTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IMimeTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Repositories.IMimeTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: IMimeTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Repositories.IMimeTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Repositories.IMimeTypeRepository.html#CG_Purple_Repositories_IMimeTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.Repositories.IMimeTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IMimeTypeRepository.FindAllAsync
+  nameWithType: IMimeTypeRepository.FindAllAsync
 - uid: CG.Purple.Repositories.IMimeTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
   name: FindByExtensionAsync(String, CancellationToken)
   href: api/CG.Purple.Repositories.IMimeTypeRepository.html#CG_Purple_Repositories_IMimeTypeRepository_FindByExtensionAsync_System_String_CancellationToken_
@@ -11803,6 +11934,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.MimeTypeRepository.DeleteAsync
   nameWithType: MimeTypeRepository.DeleteAsync
+- uid: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MimeTypeRepository.html#CG_Purple_SqlServer_Repositories_MimeTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: MimeTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.SqlServer.Repositories.MimeTypeRepository.html#CG_Purple_SqlServer_Repositories_MimeTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindAllAsync
+  nameWithType: MimeTypeRepository.FindAllAsync
 - uid: CG.Purple.SqlServer.Repositories.MimeTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
   name: FindByExtensionAsync(String, CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.MimeTypeRepository.html#CG_Purple_SqlServer_Repositories_MimeTypeRepository_FindByExtensionAsync_System_String_CancellationToken_

@@ -169,6 +169,29 @@
       </tr>
     </tbody>
   </table>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index__mailGridSearchString" data-uid="CG.Purple.Host.Pages.Messages.Index._mailGridSearchString">_mailGridSearchString</h4>
+  <div class="markdown level1 summary"><p>This field contains the current mail search string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string _mailGridSearchString</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h4 id="CG_Purple_Host_Pages_Messages_Index__mailMessages" data-uid="CG.Purple.Host.Pages.Messages.Index._mailMessages">_mailMessages</h4>
   <div class="markdown level1 summary"><p>This field contains the collection of mail messages.</p>
 </div>
@@ -188,6 +211,29 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">MailMessage</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index__textGridSearchString" data-uid="CG.Purple.Host.Pages.Messages.Index._textGridSearchString">_textGridSearchString</h4>
+  <div class="markdown level1 summary"><p>This field contains the current text search string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string _textGridSearchString</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -261,52 +307,6 @@
       </tr>
     </tbody>
   </table>
-  <h4 id="CG_Purple_Host_Pages_Messages_Index_mailGridSearchString" data-uid="CG.Purple.Host.Pages.Messages.Index.mailGridSearchString">mailGridSearchString</h4>
-  <div class="markdown level1 summary"><p>This field contains the current mail search string.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected string mailGridSearchString</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="CG_Purple_Host_Pages_Messages_Index_textGridSearchString" data-uid="CG.Purple.Host.Pages.Messages.Index.textGridSearchString">textGridSearchString</h4>
-  <div class="markdown level1 summary"><p>This field contains the current text search string.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected string textGridSearchString</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   <a id="CG_Purple_Host_Pages_Messages_Index_DialogService_" data-uid="CG.Purple.Host.Pages.Messages.Index.DialogService*"></a>
@@ -352,7 +352,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.Extensions.Options.IOptions</span>&lt;<span class="xref">HostedServiceOptions</span>&gt;</td>
+        <td><span class="xref">IOptions</span>&lt;<span class="xref">HostedServiceOptions</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -473,30 +473,6 @@
     <tbody>
       <tr>
         <td><span class="xref">IMessagePropertyManager</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Host_Pages_Messages_Index_NavigationManager_" data-uid="CG.Purple.Host.Pages.Messages.Index.NavigationManager*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_Index_NavigationManager" data-uid="CG.Purple.Host.Pages.Messages.Index.NavigationManager">NavigationManager</h4>
-  <div class="markdown level1 summary"><p>This property contains the navigation manager for this page.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">NavigationManager NavigationManager { }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">NavigationManager</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -879,14 +855,14 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_Messages_Index_OnPreview_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPreview*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_Index_OnPreview_MailMessage_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPreview(MailMessage)">OnPreview(MailMessage)</h4>
-  <div class="markdown level1 summary"><p>This method navigates to the preview page.</p>
+  <a id="CG_Purple_Host_Pages_Messages_Index_OnPreviewAsync_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index_OnPreviewAsync_MailMessage_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync(MailMessage)">OnPreviewAsync(MailMessage)</h4>
+  <div class="markdown level1 summary"><p>This method displays the mail preview dialog.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnPreview(MailMessage message)</code></pre>
+    <pre><code class="lang-csharp hljs">protected async Task OnPreviewAsync(MailMessage message)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -906,14 +882,30 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_Messages_Index_OnPreview_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPreview*"></a>
-  <h4 id="CG_Purple_Host_Pages_Messages_Index_OnPreview_TextMessage_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPreview(TextMessage)">OnPreview(TextMessage)</h4>
-  <div class="markdown level1 summary"><p>This method navigates to the preview page.</p>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Pages_Messages_Index_OnPreviewAsync_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync*"></a>
+  <h4 id="CG_Purple_Host_Pages_Messages_Index_OnPreviewAsync_TextMessage_" data-uid="CG.Purple.Host.Pages.Messages.Index.OnPreviewAsync(TextMessage)">OnPreviewAsync(TextMessage)</h4>
+  <div class="markdown level1 summary"><p>This method displays the text preview page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnPreview(TextMessage message)</code></pre>
+    <pre><code class="lang-csharp hljs">protected async Task OnPreviewAsync(TextMessage message)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -929,6 +921,22 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
         <td><span class="xref">TextMessage</span></td>
         <td><span class="parametername">message</span></td>
         <td><p>The text message to use for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
 </td>
       </tr>
     </tbody>
