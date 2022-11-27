@@ -1,6 +1,4 @@
 ﻿
-using System.ComponentModel.DataAnnotations;
-
 namespace CG.Purple.Models;
 
 /// <summary>
@@ -28,6 +26,7 @@ public class FileType : ModelBase
     /// <summary>
     /// This property contains the extension for the file type.
     /// </summary>
+    [Required]
     [MaxLength(260)]
     public string Extension { get; set; } = null!;
 

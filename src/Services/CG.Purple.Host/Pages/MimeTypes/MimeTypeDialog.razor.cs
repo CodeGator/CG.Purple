@@ -36,6 +36,24 @@ public partial class MimeTypeDialog
     [Inject]
     protected IDialogService DialogService { get; set; } = null!;
 
+    /// <summary>
+    /// This property contains the HTTP context accessor.
+    /// </summary>
+    [Inject]
+    protected IHttpContextAccessor HttpContextAccessor { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the logger for this page.
+    /// </summary>
+    [Inject]
+    protected ILogger<MimeTypeDialog> Logger { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the name of the current user, or the word
+    /// 'anonymous' if nobody is currently authenticated.
+    /// </summary>
+    protected string UserName => HttpContextAccessor.HttpContext?.User?.Identity?.Name ?? "anonymous";
+
     #endregion
 
     // *******************************************************************
@@ -62,6 +80,101 @@ public partial class MimeTypeDialog
     // *******************************************************************
 
     /// <summary>
+    /// This method creates a file type.
+    /// </summary>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnCreateAsync()
+    {
+        try
+        {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating dialog options."
+                );
+
+            // Create the dialog options.
+            var options = new DialogOptions
+            {
+                CloseOnEscapeKey = true,
+                FullWidth = true
+            };
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating dialog parameters."
+                );
+
+
+            // Create the dialog parameters.
+            var parameters = new DialogParameters()
+            {
+                { "Model", new FileType()
+                {
+                    MimeType = Model,
+                    CreatedBy = UserName,
+                    CreatedOnUtc = DateTime.UtcNow,
+                } }
+            };
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating the file type dialog."
+                );
+
+            // Create the dialog.
+            var dialog = DialogService.Show<FileTypeDialog>(
+                "Edit File Type",
+                parameters,
+                options
+                );
+
+            // Get the results of the dialog.
+            var result = await dialog.Result;
+
+            // Did the user save?
+            if (!result.Cancelled)
+            {
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Recovering the modified file type."
+                    );
+
+                // Recover the edited file type.
+                var changedFileType = (FileType)result.Data;
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Saving the changes."
+                    );
+
+                // Save the changes.
+                Model.FileTypes.Add(
+                    changedFileType
+                    );
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to create a file type for mime type: {id}",
+                Model.Id
+                );
+
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Failed to create the file type!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
     /// This method deletes the given file type.
     /// </summary>
     /// <param name="fileType">The file type to use for the operation.</param>
@@ -72,6 +185,11 @@ public partial class MimeTypeDialog
     {
         try
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Prompting the caller."
+                );
+
             // Prompt the user.
             var result = await DialogService.ShowMessageBox(
                 title: "Purple",
@@ -87,8 +205,18 @@ public partial class MimeTypeDialog
                 return; // Nothing more to do.
             }
 
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Saving the changes."
+                );
+
             // Save the changes.
             Model.FileTypes.Remove(fileType);
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the snackbar message."
+                );
 
             // Tell the world what happened.
             SnackbarService.Add(
@@ -99,6 +227,13 @@ public partial class MimeTypeDialog
         }
         catch (Exception ex)
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to delete a file type for mime type: {id}",
+                Model.Id
+                );
+
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Failed to delete the file type!</b> " +
@@ -168,6 +303,13 @@ public partial class MimeTypeDialog
         }
         catch (Exception ex)
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to edit a file type for mime type: {id}",
+                Model.Id
+                );
+                        
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Failed to edit the file type!</b> " +

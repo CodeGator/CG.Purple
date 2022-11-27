@@ -227,6 +227,142 @@ public partial class Index
     // *******************************************************************
 
     /// <summary>
+    /// This method add a new mime type.
+    /// </summary>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnCreateAsync()
+    {
+        try
+        {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating dialog options."
+                );
+
+            // Create the dialog options.
+            var options = new DialogOptions
+            {
+                CloseOnEscapeKey = true,
+                FullWidth = true
+            };
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating dialog parameters."
+                );
+
+            // Create the dialog parameters.
+            var parameters = new DialogParameters()
+            {
+                { "Model", new MimeType()
+                {
+                    CreatedBy = UserName,
+                    CreatedOnUtc = DateTime.UtcNow, 
+                }}
+            };
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Creating mime type dialog."
+                );
+
+            // Create the dialog.
+            var dialog = DialogService.Show<MimeTypeDialog>(
+                "Edit Mime Type",
+                parameters,
+                options
+                );
+
+            // Get the results of the dialog.
+            var result = await dialog.Result;
+
+            // Did the user save?
+            if (!result.Cancelled)
+            {
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Setting the page to busy."
+                    );
+
+                // We're busy.
+                _isBusy = true;
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Setting the page state to dirty."
+                    );
+
+                // Give the UI time to show the busy indicator.
+                await InvokeAsync(() => StateHasChanged());
+                await Task.Delay(250);
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Recovering the modified mime type."
+                    );
+
+                // Recover the edited mime type.
+                var changedMimeType = (MimeType)result.Data;
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Saving changes to mime type: {id}",
+                    changedMimeType.Id
+                    );
+
+                // Defer to the manager for the update.
+                _ = await MimeTypeManager.CreateAsync(
+                    changedMimeType,
+                    UserName
+                    );
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Showing the snackbar message."
+                    );
+
+                // Tell the world what happened.
+                SnackbarService.Add(
+                    $"Changes were saved",
+                    Severity.Success,
+                    options => options.CloseAfterNavigation = true
+                    );
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Refreshing the page."
+                    );
+
+                // Defer to the manager for the query.
+                _mimeTypes = await MimeTypeManager.FindAllAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to create a mime type."
+                );
+
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Failed to create mime type!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
     /// This method deletes the given mime type.
     /// </summary>
     /// <param name="mimeType">The mime type to use for the operation.</param>

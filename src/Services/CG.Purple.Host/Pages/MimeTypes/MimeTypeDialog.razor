@@ -19,6 +19,10 @@
                                   @bind-Value="@Model.SubType" />
                     <MudTable Items="Model.FileTypes">
                         <ToolBarContent>
+                            <MudButton StartIcon="@Icons.Material.Filled.Create"
+                                       Variant="Variant.Filled"
+                                       OnClick="OnCreateAsync">Create</MudButton>
+                            <MudSpacer />
                             <MudText>File Types</MudText>
                         </ToolBarContent>
                         <HeaderContent>

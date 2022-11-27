@@ -10,6 +10,9 @@
                               Striped 
                               Filter="new Func<MimeType,bool>(FilterFunc1)">
     <ToolBarContent>
+        <MudButton StartIcon="@Icons.Material.Filled.Create"
+                   Variant="Variant.Filled"
+                   OnClick="OnCreateAsync">Create</MudButton>
         <MudSpacer />
         <MudTextField @bind-Value="_gridSearchString"
                       Placeholder="Search"
