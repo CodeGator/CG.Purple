@@ -1,4 +1,4 @@
-![logo](../../../../../logos/codegator-167x79.png)
+![logo](logos/codegator-167x79.png)
 
 # CG.Purple: 
 ---
@@ -23,7 +23,7 @@ Purple is an idea for a self contained messaging microservice. The scenario is: 
 ### What does it look like?
 Here are a few early screen shots (subject to change):
 
-![messges](../../../../../screens/messages.png)
+![messges](screens/messages.png)
 
 ### What platform(s) does it support?
 * .NET 7.x or higher
