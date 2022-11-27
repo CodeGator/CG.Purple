@@ -1,7 +1,7 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things to be done on the project, as of 11/20/2022
+Things to be done on the project, as of 11/27/2022
 
 ### Design
 
@@ -9,13 +9,9 @@ Things to be done on the project, as of 11/20/2022
 
 ### Database
 
-* ProviderLogs should be renamed to MessageLogs.
-
 * Need to test the DB design.
 
 ### Libraries
-
-* Need to add search methods to managers / repositories, as needed.
 
 * Need to test the managers / repositories.
 
@@ -25,9 +21,9 @@ Things to be done on the project, as of 11/20/2022
 
 ### Providers
 
-* Need to write the providers.
+* Need to write the SendGrid and Twillio providers.
 
-* Need to test the providers.
+* Need to test all the providers.
 
 ### Hosted Services
 
@@ -43,9 +39,8 @@ Things to be done on the project, as of 11/20/2022
 
 * Need to design and build the REST controllers.
 
-* Need to design and complete the hosted services.
-
-* Need to complete the UI.
+* There is a problem in the mime type/file type edit dialogs where we're getting
+    duplicate key errors when we shouldn't be.
 
 ### Other Integrations
 
@@ -61,7 +56,7 @@ Things to be done on the project, as of 11/20/2022
 
 * Need to write an overall test plan
 
-* Need to stand up test projects and fixtures.
+* Need to write unit test fixtures.
 
 ### Documentation / Help
 

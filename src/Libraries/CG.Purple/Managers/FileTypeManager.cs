@@ -254,6 +254,15 @@ internal class FileTypeManager : IFileTypeManager
             fileType.LastUpdatedBy = null;
             fileType.LastUpdatedOnUtc = null;
 
+            // Extensions are always lower case.
+            fileType.Extension = fileType.Extension.ToLower().Trim();
+
+            // Extensions always start with a '.' character.
+            if (!fileType.Extension.StartsWith('.'))
+            {
+                fileType.Extension = $".{fileType.Extension}";
+            }
+
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
@@ -449,6 +458,15 @@ internal class FileTypeManager : IFileTypeManager
             // Ensure the stats are correct.
             fileType.LastUpdatedOnUtc = DateTime.UtcNow;
             fileType.LastUpdatedBy = userName;
+
+            // Extensions are always lower case.
+            fileType.Extension = fileType.Extension.ToLower().Trim();
+
+            // Extensions always start with a '.' character.
+            if (!fileType.Extension.StartsWith('.'))
+            {
+                fileType.Extension = $".{fileType.Extension}";
+            }
 
             // Log what we are about to do.
             _logger.LogTrace(

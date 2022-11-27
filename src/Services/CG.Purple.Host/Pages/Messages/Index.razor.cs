@@ -201,6 +201,12 @@ public partial class Index
         }
         catch (Exception ex)
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to initialize the page"
+                );
+
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
@@ -269,7 +275,7 @@ public partial class Index
 
                 // Look for a matching property.
                 var match = element.MessageProperties.FirstOrDefault(x => 
-                    x.PropertyType.Name == parts[0]
+                    x.PropertyType.Name.Contains(parts[1], StringComparison.OrdinalIgnoreCase)
                     );
 
                 // Did we find one?
@@ -367,7 +373,7 @@ public partial class Index
 
                 // Look for a matching property.
                 var match = element.MessageProperties.FirstOrDefault(x =>
-                    x.PropertyType.Name == parts[0]
+                    x.PropertyType.Name.Contains(parts[1], StringComparison.OrdinalIgnoreCase)
                     );
 
                 // Did we find one?
@@ -467,6 +473,12 @@ public partial class Index
         }
         catch (Exception ex)
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to refresh mail messages"
+                );
+
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
@@ -534,6 +546,12 @@ public partial class Index
         }
         catch (Exception ex)
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to refresh text messages"
+                );
+
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
@@ -613,6 +631,13 @@ public partial class Index
         }
         catch (Exception ex)
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to display logs for message: {id}",
+                message.Id
+                );
+
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
@@ -672,6 +697,12 @@ public partial class Index
         }
         catch (Exception ex)
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to display preview"
+                );
+
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
@@ -731,6 +762,12 @@ public partial class Index
         }
         catch (Exception ex)
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to display preview"
+                );
+
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
@@ -789,6 +826,12 @@ public partial class Index
         }
         catch (Exception ex)
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to display attachments"
+                );
+
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
@@ -842,6 +885,11 @@ public partial class Index
         }
         finally
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Refreshing the page data"
+                );
+
             // Update the page.
             await OnRefreshPageAsync();
         }
@@ -1050,7 +1098,7 @@ public partial class Index
                         {
                             // Log what we are about to do.
                             Logger.LogDebug(
-                                "Failed to update message property: {id1} for message: {id2}! Error: {err}",
+                                "Failed to create message property: {id1} for message: {id2}! Error: {err}",
                                 property.PropertyType.Id,
                                 property.Message.Id,
                                 ex.GetBaseException().Message
@@ -1068,7 +1116,7 @@ public partial class Index
                 }
 
                 // =======
-                // Step 3: Assume all message properties were changed.
+                // Step 3: Assume anything else was changed.
                 // =======
 
                 // If a property wasn't added, or deleted, assume it was edited.
@@ -1132,6 +1180,13 @@ public partial class Index
         }
         catch ( Exception ex )
         {
+            // Log what we are about to do.
+            Logger.LogError(
+                ex,
+                "Failed to edit message: {id}",
+                message.Id
+                );
+
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
@@ -1142,6 +1197,11 @@ public partial class Index
         }
         finally
         {
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to not busy."
+                );
+
             // We're no longer busy.
             _isBusy = false;
         }
