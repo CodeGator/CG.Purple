@@ -1,3 +1,5 @@
+![logo](../../../../../logos/codegator-167x79.png)
+
 # CG.Purple: 
 ---
 [![Build Status](https://dev.azure.com/codegator/CG.Purple/_apis/build/status/CodeGator.CG.Purple?branchName=main)](https://dev.azure.com/codegator/CG.Purple/_build/latest?definitionId=93&branchName=main)
@@ -17,6 +19,11 @@ Purple is an idea for a self contained messaging microservice. The scenario is: 
 * There will be a REST interface, for information about messages, history, etc.
 
 * There will (maybe) be a mobile app, for administering the service remotely.
+
+### What does it look like?
+Here are a few early screen shots (subject to change):
+
+![messges](../../../../../screens/messages.png)
 
 ### What platform(s) does it support?
 * .NET 7.x or higher

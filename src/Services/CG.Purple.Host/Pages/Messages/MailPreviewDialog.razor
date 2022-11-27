@@ -1,0 +1,40 @@
+﻿<MudDialog Class="mud-ex-dialog-initial">
+    <DialogContent>
+        <MudCard Outlined>
+            <MudCardContent Class="pt-0">
+                <MudGrid>
+                    <MudItem xs="12">
+                        <MudTextField Variant="Variant.Outlined"
+                                      ReadOnly
+                                      Label="From"
+                                      @bind-Value="@Model.From" />
+                        <MudTextField Variant="Variant.Outlined"
+                                      ReadOnly
+                                      Label="To"
+                                      @bind-Value="@Model.To" />
+                        <MudTextField Variant="Variant.Outlined"
+                                      ReadOnly
+                                      Label="CC"
+                        @bind-Value="@Model.CC" />
+                        <MudTextField Variant="Variant.Outlined"
+                                      ReadOnly
+                                      Label="BCC"
+                        @bind-Value="@Model.BCC" />
+                        <MudTextField Variant="Variant.Outlined"
+                                      ReadOnly
+                                      Label="Subject"
+                        @bind-Value="@Model.Subject" />
+                    </MudItem>
+                    <MudItem xs="12">
+                        <div style="overflow:scroll;min-height:500px;">
+                            @((MarkupString)Model.Body)
+                        </div>                        
+                    </MudItem>
+                </MudGrid>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton OnClick="Ok" Color="Color.Primary">Ok</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </DialogContent>
+</MudDialog>

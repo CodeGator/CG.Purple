@@ -11,7 +11,7 @@
 		<!-- Common package properties -->
 		<Authors>Martin Cook</Authors>
 		<Company>CodeGator</Company>
-		<Copyright>Copyright © 2000 - 2023 by CodeGator. All rights reserved.</Copyright>
+		<Copyright>Copyright © 2019 - 2023 by CodeGator. All rights reserved.</Copyright>
 		<Title>$(AssemblyName)</Title>
 		<PackageProjectUrl>https://github.com/CodeGator/CG.Purple</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/CodeGator/CG.Purple</RepositoryUrl>

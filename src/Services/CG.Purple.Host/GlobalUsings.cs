@@ -18,3 +18,4 @@ global using System.Diagnostics;
 global using System.Reflection;
 global using Microsoft.AspNetCore.Components.Forms;
 global using CG.Purple.Host.ViewModels;
+global using Microsoft.Extensions.Options;
