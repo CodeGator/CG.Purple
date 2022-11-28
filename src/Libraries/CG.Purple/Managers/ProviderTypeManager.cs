@@ -1,6 +1,4 @@
 ﻿
-using System.Xml.Linq;
-
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -9,19 +7,6 @@ namespace CG.Purple.Managers;
 /// </summary>
 internal class ProviderTypeManager : IProviderTypeManager
 {
-    // *******************************************************************
-    // Constants.
-    // *******************************************************************
-
-    #region Constants
-
-    /// <summary>
-    /// This constants contains the cache key for this manager.
-    /// </summary>
-    internal protected const string CACHE_KEY = "ProviderTypeManager";
-
-    #endregion
-
     // *******************************************************************
     // Fields.
     // *******************************************************************
@@ -32,11 +17,6 @@ internal class ProviderTypeManager : IProviderTypeManager
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly IProviderTypeRepository _providerTypeRepository = null!;
-
-    /// <summary>
-    /// This field contains the distributed cache for this manager.
-    /// </summary>
-    internal protected IDistributedCache _distributedCache = null!;
 
     /// <summary>
     /// This field contains the logger for this manager.
@@ -57,25 +37,20 @@ internal class ProviderTypeManager : IProviderTypeManager
     /// </summary>
     /// <param name="providerTypeRepository">The provider type repository to use
     /// with this manager.</param>
-    /// <param name="distributedCache">The distributed cache to use for 
-    /// this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public ProviderTypeManager(
         IProviderTypeRepository providerTypeRepository,
-        IDistributedCache distributedCache,
         ILogger<IProviderTypeManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(providerTypeRepository, nameof(providerTypeRepository))
-            .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _providerTypeRepository = providerTypeRepository;
-        _distributedCache = distributedCache;
         _logger = logger;
     }
 

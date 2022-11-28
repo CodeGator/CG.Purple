@@ -1,10 +1,9 @@
-﻿
-namespace CG.Purple.Host.Pages.MimeTypes;
+﻿namespace CG.Purple.Host.Pages.ProviderTypes;
 
 /// <summary>
-/// This class is the code-behind for the <see cref="FileTypeDialog"/> dialog.
+/// This class is the code-behind for the <see cref="ProviderTypeDialog"/> page.
 /// </summary>
-public partial class FileTypeDialog
+public partial class ProviderTypeDialog
 {
     // *******************************************************************
     // Properties.
@@ -22,7 +21,7 @@ public partial class FileTypeDialog
     /// This property contains the edit form's model.
     /// </summary>
     [Parameter]
-    public FileType Model { get; set; } = null!;
+    public ProviderType Model { get; set; } = null!;
 
     #endregion
 
@@ -48,4 +47,5 @@ public partial class FileTypeDialog
     protected void Cancel() => MudDialog.Cancel();
 
     #endregion
+
 }

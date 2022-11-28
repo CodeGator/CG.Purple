@@ -8,19 +8,6 @@ namespace CG.Purple.Managers;
 internal class ParameterTypeManager : IParameterTypeManager
 {
     // *******************************************************************
-    // Constants.
-    // *******************************************************************
-
-    #region Constants
-
-    /// <summary>
-    /// This constants contains the cache key for this manager.
-    /// </summary>
-    internal protected const string CACHE_KEY = "ParameterTypeManager";
-
-    #endregion
-
-    // *******************************************************************
     // Fields.
     // *******************************************************************
 
@@ -30,11 +17,6 @@ internal class ParameterTypeManager : IParameterTypeManager
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly IParameterTypeRepository _parameterTypeRepository = null!;
-
-    /// <summary>
-    /// This field contains the distributed cache for this manager.
-    /// </summary>
-    internal protected IDistributedCache _distributedCache = null!;
 
     /// <summary>
     /// This field contains the logger for this manager.
@@ -55,25 +37,20 @@ internal class ParameterTypeManager : IParameterTypeManager
     /// </summary>
     /// <param name="parameterTypeRepository">The parameter type repository to use
     /// with this manager.</param>
-    /// <param name="distributedCache">The distributed cache to use for 
-    /// this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public ParameterTypeManager(
         IParameterTypeRepository parameterTypeRepository,
-        IDistributedCache distributedCache,
         ILogger<IParameterTypeManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(parameterTypeRepository, nameof(parameterTypeRepository))
-            .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _parameterTypeRepository = parameterTypeRepository;
-        _distributedCache = distributedCache;
         _logger = logger;
     }
 
@@ -266,6 +243,46 @@ internal class ParameterTypeManager : IParameterTypeManager
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ParameterType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IParameterTypeRepository.FindAllAsync)
+                );
+
+            // Perform the operation.
+            var result = await _parameterTypeRepository.FindAllAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for parameter types!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for parameter " +
+                "types!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<ParameterType?> FindByNameAsync(
         string name,
         CancellationToken cancellationToken = default
@@ -283,10 +300,13 @@ internal class ParameterTypeManager : IParameterTypeManager
                 );
 
             // Perform the operation.
-            return await _parameterTypeRepository.FindByNameAsync(
+            var result = await _parameterTypeRepository.FindByNameAsync(
                 name,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {

@@ -14,7 +14,7 @@ public class AttachmentManagerFixture
     #region Public methods
 
     /// <summary>
-    /// This method ensures the <see cref="AttachmentManager.AttachmentManager(Repositories.IAttachmentRepository, Microsoft.Extensions.Caching.Distributed.IDistributedCache, Microsoft.Extensions.Logging.ILogger{IAttachmentManager})"/>
+    /// This method ensures the <see cref="AttachmentManager.AttachmentManager(IAttachmentRepository, ILogger{IAttachmentManager})"/>
     /// method property initializes the object.
     /// </summary>
     [TestMethod]
@@ -22,16 +22,12 @@ public class AttachmentManagerFixture
     public void AttachmentManager_ctor()
     {
         // Arrange ...
-        var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IAttachmentRepository>();
-        var cache = new Mock<IDistributedCache>();
         var logger = new Mock<ILogger<IAttachmentManager>>();
 
         // Act ...
         var manager = new AttachmentManager(
-            options.Object,
             repository.Object,
-            cache.Object,
             logger.Object
             );
 
@@ -39,10 +35,6 @@ public class AttachmentManagerFixture
         Assert.IsTrue(
             manager._attachmentRepository != null,
             "The _attachmentRepository field wasn't initialize!"
-            );
-        Assert.IsTrue(
-            manager._distributedCache != null,
-            "The _distributedCache field wasn't initialize!"
             );
         Assert.IsTrue(
             manager._logger != null,
@@ -62,9 +54,7 @@ public class AttachmentManagerFixture
     public async Task AttachmentManager_AnyAsync()
     {
         // Arrange ...
-        var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IAttachmentRepository>();
-        var cache = new Mock<IDistributedCache>();
         var logger = new Mock<ILogger<IAttachmentManager>>();
 
         repository.Setup(x => x.AnyAsync(
@@ -73,9 +63,7 @@ public class AttachmentManagerFixture
             .Verifiable();
 
         var manager = new AttachmentManager(
-            options.Object,
             repository.Object,
-            cache.Object,
             logger.Object
             );
 
@@ -103,9 +91,7 @@ public class AttachmentManagerFixture
     public async Task AttachmentManager_CountAsync()
     {
         // Arrange ...
-        var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IAttachmentRepository>();
-        var cache = new Mock<IDistributedCache>();
         var logger = new Mock<ILogger<IAttachmentManager>>();
 
         repository.Setup(x => x.CountAsync(
@@ -114,9 +100,7 @@ public class AttachmentManagerFixture
             .Verifiable();
 
         var manager = new AttachmentManager(
-            options.Object,
             repository.Object,
-            cache.Object,
             logger.Object
             );
 
@@ -144,9 +128,7 @@ public class AttachmentManagerFixture
     public async Task AttachmentManager_CreateAsync()
     {
         // Arrange ...
-        var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IAttachmentRepository>();
-        var cache = new Mock<IDistributedCache>();
         var logger = new Mock<ILogger<IAttachmentManager>>();
 
         repository.Setup(x => x.CreateAsync(
@@ -165,9 +147,7 @@ public class AttachmentManagerFixture
             }).Verifiable();
 
         var manager = new AttachmentManager(
-            options.Object,
             repository.Object,
-            cache.Object,
             logger.Object
             );
 
@@ -207,9 +187,7 @@ public class AttachmentManagerFixture
     public async Task AttachmentManager_DeleteAsync()
     {
         // Arrange ...
-        var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IAttachmentRepository>();
-        var cache = new Mock<IDistributedCache>();
         var logger = new Mock<ILogger<IAttachmentManager>>();
 
         repository.Setup(x => x.DeleteAsync(
@@ -218,9 +196,7 @@ public class AttachmentManagerFixture
             )).Verifiable();
 
         var manager = new AttachmentManager(
-            options.Object,
             repository.Object,
-            cache.Object,
             logger.Object
             );
 
@@ -255,9 +231,7 @@ public class AttachmentManagerFixture
     public async Task AttachmentManager_UpdateAsync()
     {
         // Arrange ...
-        var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IAttachmentRepository>();
-        var cache = new Mock<IDistributedCache>();
         var logger = new Mock<ILogger<IAttachmentManager>>();
 
         repository.Setup(x => x.UpdateAsync(
@@ -276,9 +250,7 @@ public class AttachmentManagerFixture
             }).Verifiable();
 
         var manager = new AttachmentManager(
-            options.Object,
             repository.Object,
-            cache.Object,
             logger.Object
             );
 

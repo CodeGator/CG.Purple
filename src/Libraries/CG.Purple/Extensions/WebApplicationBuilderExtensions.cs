@@ -38,17 +38,6 @@ public static class WebApplicationBuilderExtensions001
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Configuring BLL options from the {section} section",
-            sectionName
-            );
-
-        // Configure the BLL options.
-        webApplicationBuilder.Services.ConfigureOptions<BllOptions>(
-            webApplicationBuilder.Configuration.GetSection(sectionName)
-            );
-
-        // Tell the world what we are about to do.
-        bootstrapLogger?.LogDebug(
             "Wiring up the BLL managers"
             );
 
@@ -65,14 +54,6 @@ public static class WebApplicationBuilderExtensions001
         webApplicationBuilder.Services.AddScoped<IProviderTypeManager, ProviderTypeManager>();
         webApplicationBuilder.Services.AddScoped<IProviderParameterManager, ProviderParameterManager>();
         webApplicationBuilder.Services.AddScoped<ITextMessageManager, TextMessageManager>();
-
-        // Tell the world what we are about to do.
-        bootstrapLogger?.LogDebug(
-            "Wiring up the distributed cache for the managers"
-            );
-
-        // Wire up the in-memory cache.
-        webApplicationBuilder.Services.AddDistributedMemoryCache();
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(

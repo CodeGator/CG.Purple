@@ -1,7 +1,4 @@
 ﻿
-using CG.Purple.Models;
-using CG.Purple.Repositories;
-
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -10,19 +7,6 @@ namespace CG.Purple.Managers;
 /// </summary>
 internal class ProcessLogManager : IProcessLogManager
 {
-    // *******************************************************************
-    // Constants.
-    // *******************************************************************
-
-    #region Constants
-
-    /// <summary>
-    /// This constants contains the cache key for this manager.
-    /// </summary>
-    internal protected const string CACHE_KEY = "ProcessLogManager";
-
-    #endregion
-
     // *******************************************************************
     // Fields.
     // *******************************************************************
@@ -33,11 +17,6 @@ internal class ProcessLogManager : IProcessLogManager
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly IProcessLogRepository _processLogRepository = null!;
-
-    /// <summary>
-    /// This field contains the distributed cache for this manager.
-    /// </summary>
-    internal protected IDistributedCache _distributedCache = null!;
 
     /// <summary>
     /// This field contains the logger for this manager.
@@ -58,25 +37,20 @@ internal class ProcessLogManager : IProcessLogManager
     /// </summary>
     /// <param name="processLogRepository">The process log repository to use
     /// with this manager.</param>
-    /// <param name="distributedCache">The distributed cache to use for 
-    /// this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public ProcessLogManager(
         IProcessLogRepository processLogRepository,
-        IDistributedCache distributedCache,
         ILogger<IProcessLogManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(processLogRepository, nameof(processLogRepository))
-            .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _processLogRepository = processLogRepository;
-        _distributedCache = distributedCache;
         _logger = logger;
     }
 

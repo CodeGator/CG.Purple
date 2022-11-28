@@ -8,7 +8,7 @@
 [![Github discussion](https://img.shields.io/badge/Discussion-online-blue)](https://github.com/CodeGator/CG.Purple/discussions)
 
 
-### What does it do?
+### What are the design goals?
 Purple is an idea for a self contained messaging microservice. The scenario is: You give Purple an email, or text, via a REST call, and it takes care of storing that message, sending it, and tracking it's history and status, on your behalf.
 
 * The service will handle retry logic, notifications, etc.

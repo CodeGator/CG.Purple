@@ -1,6 +1,4 @@
 ﻿
-using System.Xml.Linq;
-
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -9,19 +7,6 @@ namespace CG.Purple.Managers;
 /// </summary>
 internal class PropertyTypeManager : IPropertyTypeManager
 {
-    // *******************************************************************
-    // Constants.
-    // *******************************************************************
-
-    #region Constants
-
-    /// <summary>
-    /// This constants contains the cache key for this manager.
-    /// </summary>
-    internal protected const string CACHE_KEY = "PropertyTypeManager";
-
-    #endregion
-
     // *******************************************************************
     // Fields.
     // *******************************************************************
@@ -32,11 +17,6 @@ internal class PropertyTypeManager : IPropertyTypeManager
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly IPropertyTypeRepository _propertyTypeRepository = null!;
-
-    /// <summary>
-    /// This field contains the distributed cache for this manager.
-    /// </summary>
-    internal protected IDistributedCache _distributedCache = null!;
 
     /// <summary>
     /// This field contains the logger for this manager.
@@ -57,25 +37,20 @@ internal class PropertyTypeManager : IPropertyTypeManager
     /// </summary>
     /// <param name="propertyTypeRepository">The property type repository to use
     /// with this manager.</param>
-    /// <param name="distributedCache">The distributed cache to use for 
-    /// this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public PropertyTypeManager(
         IPropertyTypeRepository propertyTypeRepository,
-        IDistributedCache distributedCache,
         ILogger<IPropertyTypeManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(propertyTypeRepository, nameof(propertyTypeRepository))
-            .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _propertyTypeRepository = propertyTypeRepository;
-        _distributedCache = distributedCache;
         _logger = logger;
     }
 

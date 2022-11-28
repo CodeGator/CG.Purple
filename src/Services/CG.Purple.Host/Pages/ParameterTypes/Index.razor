@@ -4,3 +4,43 @@
 
 <MudBreadcrumbs Items="_crumbs"></MudBreadcrumbs>
 
+<MudText Typo="Typo.h6" Class="py-4 px-5">This page contains the parameter types, used for message properties.</MudText>
+
+<MudTable Items="@_parameterTypes" Dense
+          Striped
+          Filter="new Func<ParameterType,bool>(FilterFunc1)">
+    <ToolBarContent>
+        <MudButton StartIcon="@Icons.Material.Filled.Create"
+                   Variant="Variant.Filled"
+                   OnClick="OnCreateAsync">Create</MudButton>
+        <MudSpacer />
+        <MudTextField @bind-Value="_gridSearchString"
+                      Placeholder="Search"
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh><MudTableSortLabel SortBy="new Func<ParameterType, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ParameterType, object>(x=>x.Description)">Description</MudTableSortLabel></MudTh>
+        <MudTh></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+        <MudTd DataLabel="Description">@context.Description</MudTd>
+        <MudTd>
+            <MudTooltip Text="Delete">
+                <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context)" />
+            </MudTooltip>
+            <MudTooltip Text="Edit">
+                <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditAsync(context)" />
+            </MudTooltip>
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+    <NoRecordsContent>
+        No parameter types were found.
+    </NoRecordsContent>
+</MudTable>
