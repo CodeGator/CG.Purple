@@ -68,14 +68,6 @@ public static class WebApplicationBuilderExtensions001
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Wiring up the distributed cache for the managers"
-            );
-
-        // Wire up the in-memory cache.
-        webApplicationBuilder.Services.AddDistributedMemoryCache();
-
-        // Tell the world what we are about to do.
-        bootstrapLogger?.LogDebug(
             "Wiring up the provider factory"
             );
 

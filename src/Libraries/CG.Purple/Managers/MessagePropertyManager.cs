@@ -8,19 +8,6 @@ namespace CG.Purple.Managers;
 internal class MessagePropertyManager : IMessagePropertyManager
 {
     // *******************************************************************
-    // Constants.
-    // *******************************************************************
-
-    #region Constants
-
-    /// <summary>
-    /// This constants contains the cache key for this manager.
-    /// </summary>
-    internal protected const string CACHE_KEY = "MessagePropertyManager";
-
-    #endregion
-
-    // *******************************************************************
     // Fields.
     // *******************************************************************
 
@@ -30,11 +17,6 @@ internal class MessagePropertyManager : IMessagePropertyManager
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly IMessagePropertyRepository _messagePropertyRepository = null!;
-
-    /// <summary>
-    /// This field contains the distributed cache for this manager.
-    /// </summary>
-    internal protected IDistributedCache _distributedCache = null!;
 
     /// <summary>
     /// This field contains the logger for this manager.
@@ -55,25 +37,20 @@ internal class MessagePropertyManager : IMessagePropertyManager
     /// </summary>
     /// <param name="messagePropertyRepository">The messageProperty repository to use
     /// with this manager.</param>
-    /// <param name="distributedCache">The distributed cache to use for 
-    /// this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public MessagePropertyManager(
         IMessagePropertyRepository messagePropertyRepository,
-        IDistributedCache distributedCache,
         ILogger<IMessagePropertyManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(messagePropertyRepository, nameof(messagePropertyRepository))
-            .ThrowIfNull(distributedCache, nameof(distributedCache))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _messagePropertyRepository = messagePropertyRepository;
-        _distributedCache = distributedCache;
         _logger = logger;
     }
 
