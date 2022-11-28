@@ -329,6 +329,62 @@ internal class ParameterTypeRepository : IParameterTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ParameterType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for parameter types."
+                );
+
+            // Perform the parameter type search.
+            var parameterTypes = await dbContext.ParameterTypes
+                .ToListAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Convert the entities to models.
+            var result = parameterTypes.Select(x => 
+                _mapper.Map<ParameterType>(x)
+                );
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for parameter types!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for parameter " +
+                "types!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<ParameterType?> FindByNameAsync(
         string name,
         CancellationToken cancellationToken = default
@@ -356,7 +412,7 @@ internal class ParameterTypeRepository : IParameterTypeRepository
                 );
 
             // Perform the parameter type search.
-            var parameterType = await dbContext.ParameterTypes.Where(x => 
+            var parameterType = await dbContext.ParameterTypes.Where(x =>
                 x.Name == name
                 ).FirstOrDefaultAsync(
                     cancellationToken

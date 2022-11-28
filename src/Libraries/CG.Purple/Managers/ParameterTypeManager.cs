@@ -243,6 +243,46 @@ internal class ParameterTypeManager : IParameterTypeManager
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<IEnumerable<ParameterType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IParameterTypeRepository.FindAllAsync)
+                );
+
+            // Perform the operation.
+            var result = await _parameterTypeRepository.FindAllAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for parameter types!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for parameter " +
+                "types!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<ParameterType?> FindByNameAsync(
         string name,
         CancellationToken cancellationToken = default
@@ -260,10 +300,13 @@ internal class ParameterTypeManager : IParameterTypeManager
                 );
 
             // Perform the operation.
-            return await _parameterTypeRepository.FindByNameAsync(
+            var result = await _parameterTypeRepository.FindByNameAsync(
                 name,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the results.
+            return result;
         }
         catch (Exception ex)
         {
