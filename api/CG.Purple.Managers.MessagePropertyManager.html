@@ -129,14 +129,14 @@ interface.</p>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Managers_MessagePropertyManager__ctor_" data-uid="CG.Purple.Managers.MessagePropertyManager.#ctor*"></a>
-  <h4 id="CG_Purple_Managers_MessagePropertyManager__ctor_IMessagePropertyRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMessagePropertyManager__" data-uid="CG.Purple.Managers.MessagePropertyManager.#ctor(IMessagePropertyRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessagePropertyManager})">MessagePropertyManager(IMessagePropertyRepository, IDistributedCache, ILogger&lt;IMessagePropertyManager&gt;)</h4>
+  <h4 id="CG_Purple_Managers_MessagePropertyManager__ctor_IMessagePropertyRepository_ILogger_CG_Purple_Managers_IMessagePropertyManager__" data-uid="CG.Purple.Managers.MessagePropertyManager.#ctor(IMessagePropertyRepository,ILogger{CG.Purple.Managers.IMessagePropertyManager})">MessagePropertyManager(IMessagePropertyRepository, ILogger&lt;IMessagePropertyManager&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Managers.MessagePropertyManager.html">MessagePropertyManager</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MessagePropertyManager(IMessagePropertyRepository messagePropertyRepository, IDistributedCache distributedCache, ILogger&lt;IMessagePropertyManager&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public MessagePropertyManager(IMessagePropertyRepository messagePropertyRepository, ILogger&lt;IMessagePropertyManager&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,13 +156,6 @@ with this manager.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IDistributedCache</span></td>
-        <td><span class="parametername">distributedCache</span></td>
-        <td><p>The distributed cache to use for
-this manager.</p>
-</td>
-      </tr>
-      <tr>
         <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Managers.IMessagePropertyManager.html">IMessagePropertyManager</a>&gt;</td>
         <td><span class="parametername">logger</span></td>
         <td><p>The logger to use with this manager.</p>
@@ -172,29 +165,6 @@ this manager.</p>
   </table>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="CG_Purple_Managers_MessagePropertyManager__distributedCache" data-uid="CG.Purple.Managers.MessagePropertyManager._distributedCache">_distributedCache</h4>
-  <div class="markdown level1 summary"><p>This field contains the distributed cache for this manager.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IDistributedCache _distributedCache</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IDistributedCache</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h4 id="CG_Purple_Managers_MessagePropertyManager__logger" data-uid="CG.Purple.Managers.MessagePropertyManager._logger">_logger</h4>
   <div class="markdown level1 summary"><p>This field contains the logger for this manager.</p>
 </div>
@@ -237,29 +207,6 @@ this manager.</p>
     <tbody>
       <tr>
         <td><span class="xref">IMessagePropertyRepository</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="CG_Purple_Managers_MessagePropertyManager_CACHE_KEY" data-uid="CG.Purple.Managers.MessagePropertyManager.CACHE_KEY">CACHE_KEY</h4>
-  <div class="markdown level1 summary"><p>This constants contains the cache key for this manager.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected const string CACHE_KEY = &quot;MessagePropertyManager&quot;</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>

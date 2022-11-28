@@ -129,14 +129,14 @@ interface.</p>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Managers_FileTypeManager__ctor_" data-uid="CG.Purple.Managers.FileTypeManager.#ctor*"></a>
-  <h4 id="CG_Purple_Managers_FileTypeManager__ctor_IOptions_BllOptions__IFileTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IFileTypeManager__" data-uid="CG.Purple.Managers.FileTypeManager.#ctor(IOptions{BllOptions},IFileTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IFileTypeManager})">FileTypeManager(IOptions&lt;BllOptions&gt;, IFileTypeRepository, IDistributedCache, ILogger&lt;IFileTypeManager&gt;)</h4>
+  <h4 id="CG_Purple_Managers_FileTypeManager__ctor_IFileTypeRepository_ILogger_CG_Purple_Managers_IFileTypeManager__" data-uid="CG.Purple.Managers.FileTypeManager.#ctor(IFileTypeRepository,ILogger{CG.Purple.Managers.IFileTypeManager})">FileTypeManager(IFileTypeRepository, ILogger&lt;IFileTypeManager&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Managers.FileTypeManager.html">FileTypeManager</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FileTypeManager(IOptions&lt;BllOptions&gt; bllOptions, IFileTypeRepository fileTypeRepository, IDistributedCache distributedCache, ILogger&lt;IFileTypeManager&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public FileTypeManager(IFileTypeRepository fileTypeRepository, ILogger&lt;IFileTypeManager&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -149,24 +149,10 @@ class.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IOptions</span>&lt;<span class="xref">BllOptions</span>&gt;</td>
-        <td><span class="parametername">bllOptions</span></td>
-        <td><p>The business logic layer options to use
-with this manager.</p>
-</td>
-      </tr>
-      <tr>
         <td><span class="xref">IFileTypeRepository</span></td>
         <td><span class="parametername">fileTypeRepository</span></td>
         <td><p>The file type repository to use
 with this manager.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IDistributedCache</span></td>
-        <td><span class="parametername">distributedCache</span></td>
-        <td><p>The distributed cache to use for
-this manager.</p>
 </td>
       </tr>
       <tr>
@@ -179,52 +165,6 @@ this manager.</p>
   </table>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="CG_Purple_Managers_FileTypeManager__distributedCache" data-uid="CG.Purple.Managers.FileTypeManager._distributedCache">_distributedCache</h4>
-  <div class="markdown level1 summary"><p>This field contains the distributed cache for this manager.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IDistributedCache _distributedCache</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IDistributedCache</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="CG_Purple_Managers_FileTypeManager__fileTypeOptions" data-uid="CG.Purple.Managers.FileTypeManager._fileTypeOptions">_fileTypeOptions</h4>
-  <div class="markdown level1 summary"><p>This field contains the business logic layer options for this manager.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly FileTypeOptions? _fileTypeOptions</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">FileTypeOptions</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h4 id="CG_Purple_Managers_FileTypeManager__fileTypeRepository" data-uid="CG.Purple.Managers.FileTypeManager._fileTypeRepository">_fileTypeRepository</h4>
   <div class="markdown level1 summary"><p>This field contains the repository for this manager.</p>
 </div>
@@ -267,29 +207,6 @@ this manager.</p>
     <tbody>
       <tr>
         <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Managers.IFileTypeManager.html">IFileTypeManager</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="CG_Purple_Managers_FileTypeManager_CACHE_KEY" data-uid="CG.Purple.Managers.FileTypeManager.CACHE_KEY">CACHE_KEY</h4>
-  <div class="markdown level1 summary"><p>This constants contains the cache key for this manager.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected const string CACHE_KEY = &quot;FileTypeManager&quot;</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -518,51 +435,6 @@ this manager.</p>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">FileType</span>&gt;&gt;</td>
         <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Managers_FileTypeManager_GetCachedDataAsync_" data-uid="CG.Purple.Managers.FileTypeManager.GetCachedDataAsync*"></a>
-  <h4 id="CG_Purple_Managers_FileTypeManager_GetCachedDataAsync_CancellationToken_" data-uid="CG.Purple.Managers.FileTypeManager.GetCachedDataAsync(CancellationToken)">GetCachedDataAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method gets the cached data for this manager.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">async Task&lt;List&lt;FileType&gt;&gt; GetCachedDataAsync(CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">List</span>&lt;<span class="xref">FileType</span>&gt;&gt;</td>
-        <td><p>A task to perform the operation that returns the cached
-data for this manager.</p>
-</td>
       </tr>
     </tbody>
   </table>

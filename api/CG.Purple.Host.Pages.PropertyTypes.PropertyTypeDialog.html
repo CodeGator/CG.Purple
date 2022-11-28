@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class AttachmentOptions
+    <title>Class PropertyTypeDialog
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class AttachmentOptions
+    <meta name="title" content="Class PropertyTypeDialog
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,19 +78,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Options.AttachmentOptions">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog">
   
   
-  <h1 id="CG_Purple_Options_AttachmentOptions" data-uid="CG.Purple.Options.AttachmentOptions" class="text-break">Class AttachmentOptions
+  <h1 id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog" class="text-break">Class PropertyTypeDialog
   </h1>
-  <div class="markdown level0 summary"><p>This class contains configuration settings for the <see cref="!:IAttachmentManager"></see>
-type.</p>
+  <div class="markdown level0 summary"><p>This class is the code-behind for the <a class="xref" href="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html">PropertyTypeDialog</a> page.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">AttachmentOptions</span></div>
+    <div class="level1"><span class="xref">PropertyTypeDialog</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -116,23 +115,22 @@ type.</p>
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Options.html">CG.Purple.Options</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.dll</h6>
-  <h5 id="CG_Purple_Options_AttachmentOptions_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Pages.PropertyTypes.html">CG.Purple.Host.Pages.PropertyTypes</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Host.dll</h6>
+  <h5 id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">class AttachmentOptions</code></pre>
+    <pre><code class="lang-csharp hljs">public class PropertyTypeDialog</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
-  <a id="CG_Purple_Options_AttachmentOptions_DefaultCacheDuration_" data-uid="CG.Purple.Options.AttachmentOptions.DefaultCacheDuration*"></a>
-  <h4 id="CG_Purple_Options_AttachmentOptions_DefaultCacheDuration" data-uid="CG.Purple.Options.AttachmentOptions.DefaultCacheDuration">DefaultCacheDuration</h4>
-  <div class="markdown level1 summary"><p>This property contains the default cache duration for <see cref="!:Attachment"></see>
-objects.</p>
+  <a id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Model_" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Model*"></a>
+  <h4 id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Model" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Model">Model</h4>
+  <div class="markdown level1 summary"><p>This property contains the edit form's model.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TimeSpan? DefaultCacheDuration { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public PropertyType Model { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,11 +142,55 @@ objects.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">TimeSpan</span>&gt;</td>
+        <td><span class="xref">PropertyType</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_MudDialog_" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.MudDialog*"></a>
+  <h4 id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_MudDialog" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.MudDialog">MudDialog</h4>
+  <div class="markdown level1 summary"><p>This property contains the dialog reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MudDialogInstance MudDialog { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">MudDialogInstance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Cancel_" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel*"></a>
+  <h4 id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Cancel" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel">Cancel()</h4>
+  <div class="markdown level1 summary"><p>This method cancels the dialog.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Cancel()</code></pre>
+  </div>
+  <a id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_OnValidSubmit_" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.OnValidSubmit*"></a>
+  <h4 id="CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_OnValidSubmit" data-uid="CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.OnValidSubmit">OnValidSubmit()</h4>
+  <div class="markdown level1 summary"><p>This method submits the dialog.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnValidSubmit()</code></pre>
+  </div>
 </article>
           </div>
           

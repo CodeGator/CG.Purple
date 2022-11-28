@@ -689,6 +689,24 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.Help.About.Index.OnInitializedAsync
   nameWithType: Index.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.Logs
+  name: CG.Purple.Host.Pages.Logs
+  href: api/CG.Purple.Host.Pages.Logs.html
+  commentId: N:CG.Purple.Host.Pages.Logs
+  fullName: CG.Purple.Host.Pages.Logs
+  nameWithType: CG.Purple.Host.Pages.Logs
+- uid: CG.Purple.Host.Pages.Logs.Index
+  name: Index
+  href: api/CG.Purple.Host.Pages.Logs.Index.html
+  commentId: T:CG.Purple.Host.Pages.Logs.Index
+  fullName: CG.Purple.Host.Pages.Logs.Index
+  nameWithType: Index
+- uid: CG.Purple.Host.Pages.Logs.Index._crumbs
+  name: _crumbs
+  href: api/CG.Purple.Host.Pages.Logs.Index.html#CG_Purple_Host_Pages_Logs_Index__crumbs
+  commentId: F:CG.Purple.Host.Pages.Logs.Index._crumbs
+  fullName: CG.Purple.Host.Pages.Logs.Index._crumbs
+  nameWithType: Index._crumbs
 - uid: CG.Purple.Host.Pages.Messages
   name: CG.Purple.Host.Pages.Messages
   href: api/CG.Purple.Host.Pages.Messages.html
@@ -1699,19 +1717,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.Cancel
   nameWithType: FileTypeDialog.Cancel
-- uid: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.DialogService
-  name: DialogService
-  href: api/CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.html#CG_Purple_Host_Pages_MimeTypes_FileTypeDialog_DialogService
-  commentId: P:CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.DialogService
-  fullName: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.DialogService
-  nameWithType: FileTypeDialog.DialogService
-- uid: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.DialogService*
-  name: DialogService
-  href: api/CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.html#CG_Purple_Host_Pages_MimeTypes_FileTypeDialog_DialogService_
-  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.DialogService
-  isSpec: "True"
-  fullName: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.DialogService
-  nameWithType: FileTypeDialog.DialogService
 - uid: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.Model
   name: Model
   href: api/CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.html#CG_Purple_Host_Pages_MimeTypes_FileTypeDialog_Model
@@ -1751,19 +1756,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.OnValidSubmit
   nameWithType: FileTypeDialog.OnValidSubmit
-- uid: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.SnackbarService
-  name: SnackbarService
-  href: api/CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.html#CG_Purple_Host_Pages_MimeTypes_FileTypeDialog_SnackbarService
-  commentId: P:CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.SnackbarService
-  fullName: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.SnackbarService
-  nameWithType: FileTypeDialog.SnackbarService
-- uid: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.SnackbarService*
-  name: SnackbarService
-  href: api/CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.html#CG_Purple_Host_Pages_MimeTypes_FileTypeDialog_SnackbarService_
-  commentId: Overload:CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.SnackbarService
-  isSpec: "True"
-  fullName: CG.Purple.Host.Pages.MimeTypes.FileTypeDialog.SnackbarService
-  nameWithType: FileTypeDialog.SnackbarService
 - uid: CG.Purple.Host.Pages.MimeTypes.Index
   name: Index
   href: api/CG.Purple.Host.Pages.MimeTypes.Index.html
@@ -2143,6 +2135,238 @@ references:
   commentId: F:CG.Purple.Host.Pages.ParameterTypes.Index._crumbs
   fullName: CG.Purple.Host.Pages.ParameterTypes.Index._crumbs
   nameWithType: Index._crumbs
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index._gridSearchString
+  name: _gridSearchString
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index__gridSearchString
+  commentId: F:CG.Purple.Host.Pages.ParameterTypes.Index._gridSearchString
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index._gridSearchString
+  nameWithType: Index._gridSearchString
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index._isBusy
+  name: _isBusy
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index__isBusy
+  commentId: F:CG.Purple.Host.Pages.ParameterTypes.Index._isBusy
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index._isBusy
+  nameWithType: Index._isBusy
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index._parameterTypes
+  name: _parameterTypes
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index__parameterTypes
+  commentId: F:CG.Purple.Host.Pages.ParameterTypes.Index._parameterTypes
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index._parameterTypes
+  nameWithType: Index._parameterTypes
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.DialogService
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_DialogService
+  commentId: P:CG.Purple.Host.Pages.ParameterTypes.Index.DialogService
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.DialogService*
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_DialogService_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.DialogService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc(ParameterType,System.String)
+  name: FilterFunc(ParameterType, String)
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_FilterFunc_ParameterType_System_String_
+  commentId: M:CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc(ParameterType,System.String)
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc(ParameterType, System.String)
+  nameWithType: Index.FilterFunc(ParameterType, String)
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc*
+  name: FilterFunc
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_FilterFunc_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc
+  nameWithType: Index.FilterFunc
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc1(ParameterType)
+  name: FilterFunc1(ParameterType)
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_FilterFunc1_ParameterType_
+  commentId: M:CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc1(ParameterType)
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc1(ParameterType)
+  nameWithType: Index.FilterFunc1(ParameterType)
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc1*
+  name: FilterFunc1
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_FilterFunc1_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc1
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc1
+  nameWithType: Index.FilterFunc1
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.HttpContextAccessor
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_HttpContextAccessor
+  commentId: P:CG.Purple.Host.Pages.ParameterTypes.Index.HttpContextAccessor
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.HttpContextAccessor
+  nameWithType: Index.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.HttpContextAccessor*
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_HttpContextAccessor_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.HttpContextAccessor
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.HttpContextAccessor
+  nameWithType: Index.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_Logger
+  commentId: P:CG.Purple.Host.Pages.ParameterTypes.Index.Logger
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.OnCreateAsync
+  name: OnCreateAsync()
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_OnCreateAsync
+  commentId: M:CG.Purple.Host.Pages.ParameterTypes.Index.OnCreateAsync
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.OnCreateAsync()
+  nameWithType: Index.OnCreateAsync()
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.OnCreateAsync*
+  name: OnCreateAsync
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_OnCreateAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.OnCreateAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.OnCreateAsync
+  nameWithType: Index.OnCreateAsync
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.OnDeleteAsync(ParameterType)
+  name: OnDeleteAsync(ParameterType)
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_OnDeleteAsync_ParameterType_
+  commentId: M:CG.Purple.Host.Pages.ParameterTypes.Index.OnDeleteAsync(ParameterType)
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.OnDeleteAsync(ParameterType)
+  nameWithType: Index.OnDeleteAsync(ParameterType)
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.OnDeleteAsync*
+  name: OnDeleteAsync
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_OnDeleteAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.OnDeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.OnDeleteAsync
+  nameWithType: Index.OnDeleteAsync
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.OnEditAsync(ParameterType)
+  name: OnEditAsync(ParameterType)
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_OnEditAsync_ParameterType_
+  commentId: M:CG.Purple.Host.Pages.ParameterTypes.Index.OnEditAsync(ParameterType)
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.OnEditAsync(ParameterType)
+  nameWithType: Index.OnEditAsync(ParameterType)
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.OnEditAsync*
+  name: OnEditAsync
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_OnEditAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.OnEditAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.OnEditAsync
+  nameWithType: Index.OnEditAsync
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.OnInitializedAsync
+  name: OnInitializedAsync()
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_OnInitializedAsync
+  commentId: M:CG.Purple.Host.Pages.ParameterTypes.Index.OnInitializedAsync
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.OnInitializedAsync()
+  nameWithType: Index.OnInitializedAsync()
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.OnInitializedAsync*
+  name: OnInitializedAsync
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_OnInitializedAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.OnInitializedAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.OnInitializedAsync
+  nameWithType: Index.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.ParameterTypeManager
+  name: ParameterTypeManager
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_ParameterTypeManager
+  commentId: P:CG.Purple.Host.Pages.ParameterTypes.Index.ParameterTypeManager
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.ParameterTypeManager
+  nameWithType: Index.ParameterTypeManager
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.ParameterTypeManager*
+  name: ParameterTypeManager
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_ParameterTypeManager_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.ParameterTypeManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.ParameterTypeManager
+  nameWithType: Index.ParameterTypeManager
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.SnackbarService
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_SnackbarService
+  commentId: P:CG.Purple.Host.Pages.ParameterTypes.Index.SnackbarService
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_SnackbarService_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.SnackbarService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.UserName
+  name: UserName
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_UserName
+  commentId: P:CG.Purple.Host.Pages.ParameterTypes.Index.UserName
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.UserName
+  nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.ParameterTypes.Index.UserName*
+  name: UserName
+  href: api/CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_UserName_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.Index.UserName
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.Index.UserName
+  nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog
+  name: ParameterTypeDialog
+  href: api/CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.html
+  commentId: T:CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog
+  fullName: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog
+  nameWithType: ParameterTypeDialog
+- uid: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Cancel
+  name: Cancel()
+  href: api/CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.html#CG_Purple_Host_Pages_ParameterTypes_ParameterTypeDialog_Cancel
+  commentId: M:CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Cancel
+  fullName: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Cancel()
+  nameWithType: ParameterTypeDialog.Cancel()
+- uid: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Cancel*
+  name: Cancel
+  href: api/CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.html#CG_Purple_Host_Pages_ParameterTypes_ParameterTypeDialog_Cancel_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Cancel
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Cancel
+  nameWithType: ParameterTypeDialog.Cancel
+- uid: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Model
+  name: Model
+  href: api/CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.html#CG_Purple_Host_Pages_ParameterTypes_ParameterTypeDialog_Model
+  commentId: P:CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Model
+  fullName: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Model
+  nameWithType: ParameterTypeDialog.Model
+- uid: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Model*
+  name: Model
+  href: api/CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.html#CG_Purple_Host_Pages_ParameterTypes_ParameterTypeDialog_Model_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Model
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.Model
+  nameWithType: ParameterTypeDialog.Model
+- uid: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.html#CG_Purple_Host_Pages_ParameterTypes_ParameterTypeDialog_MudDialog
+  commentId: P:CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.MudDialog
+  fullName: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.MudDialog
+  nameWithType: ParameterTypeDialog.MudDialog
+- uid: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.html#CG_Purple_Host_Pages_ParameterTypes_ParameterTypeDialog_MudDialog_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.MudDialog
+  nameWithType: ParameterTypeDialog.MudDialog
+- uid: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.OnValidSubmit
+  name: OnValidSubmit()
+  href: api/CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.html#CG_Purple_Host_Pages_ParameterTypes_ParameterTypeDialog_OnValidSubmit
+  commentId: M:CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.OnValidSubmit
+  fullName: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.OnValidSubmit()
+  nameWithType: ParameterTypeDialog.OnValidSubmit()
+- uid: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.OnValidSubmit*
+  name: OnValidSubmit
+  href: api/CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.html#CG_Purple_Host_Pages_ParameterTypes_ParameterTypeDialog_OnValidSubmit_
+  commentId: Overload:CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.OnValidSubmit
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ParameterTypes.ParameterTypeDialog.OnValidSubmit
+  nameWithType: ParameterTypeDialog.OnValidSubmit
 - uid: CG.Purple.Host.Pages.PropertyTypes
   name: CG.Purple.Host.Pages.PropertyTypes
   href: api/CG.Purple.Host.Pages.PropertyTypes.html
@@ -2161,6 +2385,238 @@ references:
   commentId: F:CG.Purple.Host.Pages.PropertyTypes.Index._crumbs
   fullName: CG.Purple.Host.Pages.PropertyTypes.Index._crumbs
   nameWithType: Index._crumbs
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index._gridSearchString
+  name: _gridSearchString
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index__gridSearchString
+  commentId: F:CG.Purple.Host.Pages.PropertyTypes.Index._gridSearchString
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index._gridSearchString
+  nameWithType: Index._gridSearchString
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index._isBusy
+  name: _isBusy
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index__isBusy
+  commentId: F:CG.Purple.Host.Pages.PropertyTypes.Index._isBusy
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index._isBusy
+  nameWithType: Index._isBusy
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index._propertyTypes
+  name: _propertyTypes
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index__propertyTypes
+  commentId: F:CG.Purple.Host.Pages.PropertyTypes.Index._propertyTypes
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index._propertyTypes
+  nameWithType: Index._propertyTypes
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.DialogService
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_DialogService
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.Index.DialogService
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.DialogService*
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_DialogService_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.DialogService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc(PropertyType,System.String)
+  name: FilterFunc(PropertyType, String)
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_FilterFunc_PropertyType_System_String_
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc(PropertyType,System.String)
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc(PropertyType, System.String)
+  nameWithType: Index.FilterFunc(PropertyType, String)
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc*
+  name: FilterFunc
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_FilterFunc_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc
+  nameWithType: Index.FilterFunc
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc1(PropertyType)
+  name: FilterFunc1(PropertyType)
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_FilterFunc1_PropertyType_
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc1(PropertyType)
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc1(PropertyType)
+  nameWithType: Index.FilterFunc1(PropertyType)
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc1*
+  name: FilterFunc1
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_FilterFunc1_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc1
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.FilterFunc1
+  nameWithType: Index.FilterFunc1
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.HttpContextAccessor
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_HttpContextAccessor
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.Index.HttpContextAccessor
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.HttpContextAccessor
+  nameWithType: Index.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.HttpContextAccessor*
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_HttpContextAccessor_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.HttpContextAccessor
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.HttpContextAccessor
+  nameWithType: Index.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_Logger
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.Index.Logger
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.OnCreateAsync
+  name: OnCreateAsync()
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_OnCreateAsync
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.Index.OnCreateAsync
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.OnCreateAsync()
+  nameWithType: Index.OnCreateAsync()
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.OnCreateAsync*
+  name: OnCreateAsync
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_OnCreateAsync_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.OnCreateAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.OnCreateAsync
+  nameWithType: Index.OnCreateAsync
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.OnDeleteAsync(PropertyType)
+  name: OnDeleteAsync(PropertyType)
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_OnDeleteAsync_PropertyType_
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.Index.OnDeleteAsync(PropertyType)
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.OnDeleteAsync(PropertyType)
+  nameWithType: Index.OnDeleteAsync(PropertyType)
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.OnDeleteAsync*
+  name: OnDeleteAsync
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_OnDeleteAsync_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.OnDeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.OnDeleteAsync
+  nameWithType: Index.OnDeleteAsync
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.OnEditAsync(PropertyType)
+  name: OnEditAsync(PropertyType)
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_OnEditAsync_PropertyType_
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.Index.OnEditAsync(PropertyType)
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.OnEditAsync(PropertyType)
+  nameWithType: Index.OnEditAsync(PropertyType)
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.OnEditAsync*
+  name: OnEditAsync
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_OnEditAsync_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.OnEditAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.OnEditAsync
+  nameWithType: Index.OnEditAsync
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.OnInitializedAsync
+  name: OnInitializedAsync()
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_OnInitializedAsync
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.Index.OnInitializedAsync
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.OnInitializedAsync()
+  nameWithType: Index.OnInitializedAsync()
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.OnInitializedAsync*
+  name: OnInitializedAsync
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_OnInitializedAsync_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.OnInitializedAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.OnInitializedAsync
+  nameWithType: Index.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.PropertyTypeManager
+  name: PropertyTypeManager
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_PropertyTypeManager
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.Index.PropertyTypeManager
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.PropertyTypeManager
+  nameWithType: Index.PropertyTypeManager
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.PropertyTypeManager*
+  name: PropertyTypeManager
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_PropertyTypeManager_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.PropertyTypeManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.PropertyTypeManager
+  nameWithType: Index.PropertyTypeManager
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.SnackbarService
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_SnackbarService
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.Index.SnackbarService
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_SnackbarService_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.SnackbarService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.UserName
+  name: UserName
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_UserName
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.Index.UserName
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.UserName
+  nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.PropertyTypes.Index.UserName*
+  name: UserName
+  href: api/CG.Purple.Host.Pages.PropertyTypes.Index.html#CG_Purple_Host_Pages_PropertyTypes_Index_UserName_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.Index.UserName
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.Index.UserName
+  nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog
+  name: PropertyTypeDialog
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html
+  commentId: T:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog
+  nameWithType: PropertyTypeDialog
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel
+  name: Cancel()
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Cancel
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel()
+  nameWithType: PropertyTypeDialog.Cancel()
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel*
+  name: Cancel
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Cancel_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel
+  nameWithType: PropertyTypeDialog.Cancel
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Model
+  name: Model
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Model
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Model
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Model
+  nameWithType: PropertyTypeDialog.Model
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Model*
+  name: Model
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Model_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Model
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Model
+  nameWithType: PropertyTypeDialog.Model
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_MudDialog
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.MudDialog
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.MudDialog
+  nameWithType: PropertyTypeDialog.MudDialog
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_MudDialog_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.MudDialog
+  nameWithType: PropertyTypeDialog.MudDialog
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.OnValidSubmit
+  name: OnValidSubmit()
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_OnValidSubmit
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.OnValidSubmit
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.OnValidSubmit()
+  nameWithType: PropertyTypeDialog.OnValidSubmit()
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.OnValidSubmit*
+  name: OnValidSubmit
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_OnValidSubmit_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.OnValidSubmit
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.OnValidSubmit
+  nameWithType: PropertyTypeDialog.OnValidSubmit
 - uid: CG.Purple.Host.Pages.ProviderTypes
   name: CG.Purple.Host.Pages.ProviderTypes
   href: api/CG.Purple.Host.Pages.ProviderTypes.html
@@ -2179,6 +2635,238 @@ references:
   commentId: F:CG.Purple.Host.Pages.ProviderTypes.Index._crumbs
   fullName: CG.Purple.Host.Pages.ProviderTypes.Index._crumbs
   nameWithType: Index._crumbs
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index._gridSearchString
+  name: _gridSearchString
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index__gridSearchString
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.Index._gridSearchString
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index._gridSearchString
+  nameWithType: Index._gridSearchString
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index._isBusy
+  name: _isBusy
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index__isBusy
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.Index._isBusy
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index._isBusy
+  nameWithType: Index._isBusy
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index._providerTypes
+  name: _providerTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index__providerTypes
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.Index._providerTypes
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index._providerTypes
+  nameWithType: Index._providerTypes
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.DialogService
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_DialogService
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.Index.DialogService
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.DialogService*
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_DialogService_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.DialogService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc(ProviderType,System.String)
+  name: FilterFunc(ProviderType, String)
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_FilterFunc_ProviderType_System_String_
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc(ProviderType,System.String)
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc(ProviderType, System.String)
+  nameWithType: Index.FilterFunc(ProviderType, String)
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc*
+  name: FilterFunc
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_FilterFunc_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc
+  nameWithType: Index.FilterFunc
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc1(ProviderType)
+  name: FilterFunc1(ProviderType)
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_FilterFunc1_ProviderType_
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc1(ProviderType)
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc1(ProviderType)
+  nameWithType: Index.FilterFunc1(ProviderType)
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc1*
+  name: FilterFunc1
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_FilterFunc1_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc1
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc1
+  nameWithType: Index.FilterFunc1
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.HttpContextAccessor
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_HttpContextAccessor
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.Index.HttpContextAccessor
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.HttpContextAccessor
+  nameWithType: Index.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.HttpContextAccessor*
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_HttpContextAccessor_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.HttpContextAccessor
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.HttpContextAccessor
+  nameWithType: Index.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_Logger
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.Index.Logger
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.OnCreateAsync
+  name: OnCreateAsync()
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_OnCreateAsync
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.Index.OnCreateAsync
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.OnCreateAsync()
+  nameWithType: Index.OnCreateAsync()
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.OnCreateAsync*
+  name: OnCreateAsync
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_OnCreateAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.OnCreateAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.OnCreateAsync
+  nameWithType: Index.OnCreateAsync
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.OnDeleteAsync(ProviderType)
+  name: OnDeleteAsync(ProviderType)
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_OnDeleteAsync_ProviderType_
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.Index.OnDeleteAsync(ProviderType)
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.OnDeleteAsync(ProviderType)
+  nameWithType: Index.OnDeleteAsync(ProviderType)
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.OnDeleteAsync*
+  name: OnDeleteAsync
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_OnDeleteAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.OnDeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.OnDeleteAsync
+  nameWithType: Index.OnDeleteAsync
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.OnEditAsync(ProviderType)
+  name: OnEditAsync(ProviderType)
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_OnEditAsync_ProviderType_
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.Index.OnEditAsync(ProviderType)
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.OnEditAsync(ProviderType)
+  nameWithType: Index.OnEditAsync(ProviderType)
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.OnEditAsync*
+  name: OnEditAsync
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_OnEditAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.OnEditAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.OnEditAsync
+  nameWithType: Index.OnEditAsync
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.OnInitializedAsync
+  name: OnInitializedAsync()
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_OnInitializedAsync
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.Index.OnInitializedAsync
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.OnInitializedAsync()
+  nameWithType: Index.OnInitializedAsync()
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.OnInitializedAsync*
+  name: OnInitializedAsync
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_OnInitializedAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.OnInitializedAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.OnInitializedAsync
+  nameWithType: Index.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.ProviderTypeManager
+  name: ProviderTypeManager
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_ProviderTypeManager
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.Index.ProviderTypeManager
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.ProviderTypeManager
+  nameWithType: Index.ProviderTypeManager
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.ProviderTypeManager*
+  name: ProviderTypeManager
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_ProviderTypeManager_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.ProviderTypeManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.ProviderTypeManager
+  nameWithType: Index.ProviderTypeManager
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.SnackbarService
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_SnackbarService
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.Index.SnackbarService
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_SnackbarService_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.SnackbarService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.UserName
+  name: UserName
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_UserName
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.Index.UserName
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.UserName
+  nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.UserName*
+  name: UserName
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_UserName_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.UserName
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.UserName
+  nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog
+  name: ProviderTypeDialog
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html
+  commentId: T:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog
+  nameWithType: ProviderTypeDialog
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Cancel
+  name: Cancel()
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_Cancel
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Cancel
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Cancel()
+  nameWithType: ProviderTypeDialog.Cancel()
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Cancel*
+  name: Cancel
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_Cancel_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Cancel
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Cancel
+  nameWithType: ProviderTypeDialog.Cancel
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Model
+  name: Model
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_Model
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Model
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Model
+  nameWithType: ProviderTypeDialog.Model
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Model*
+  name: Model
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_Model_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Model
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Model
+  nameWithType: ProviderTypeDialog.Model
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_MudDialog
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.MudDialog
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.MudDialog
+  nameWithType: ProviderTypeDialog.MudDialog
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_MudDialog_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.MudDialog
+  nameWithType: ProviderTypeDialog.MudDialog
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnValidSubmit
+  name: OnValidSubmit()
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_OnValidSubmit
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnValidSubmit
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnValidSubmit()
+  nameWithType: ProviderTypeDialog.OnValidSubmit()
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnValidSubmit*
+  name: OnValidSubmit
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_OnValidSubmit_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnValidSubmit
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnValidSubmit
+  nameWithType: ProviderTypeDialog.OnValidSubmit
 - uid: CG.Purple.Host.Services
   name: CG.Purple.Host.Services
   href: api/CG.Purple.Host.Services.html
@@ -2492,15 +3180,15 @@ references:
   commentId: T:CG.Purple.Managers.AttachmentManager
   fullName: CG.Purple.Managers.AttachmentManager
   nameWithType: AttachmentManager
-- uid: CG.Purple.Managers.AttachmentManager.#ctor(IOptions{BllOptions},IAttachmentRepository,IDistributedCache,ILogger{CG.Purple.Managers.IAttachmentManager})
-  name: AttachmentManager(IOptions<BllOptions>, IAttachmentRepository, IDistributedCache, ILogger<IAttachmentManager>)
-  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__ctor_IOptions_BllOptions__IAttachmentRepository_IDistributedCache_ILogger_CG_Purple_Managers_IAttachmentManager__
-  commentId: M:CG.Purple.Managers.AttachmentManager.#ctor(IOptions{BllOptions},IAttachmentRepository,IDistributedCache,ILogger{CG.Purple.Managers.IAttachmentManager})
-  name.vb: AttachmentManager(IOptions(Of BllOptions), IAttachmentRepository, IDistributedCache, ILogger(Of IAttachmentManager))
-  fullName: CG.Purple.Managers.AttachmentManager.AttachmentManager(IOptions<BllOptions>, IAttachmentRepository, IDistributedCache, ILogger<CG.Purple.Managers.IAttachmentManager>)
-  fullName.vb: CG.Purple.Managers.AttachmentManager.AttachmentManager(IOptions(Of BllOptions), IAttachmentRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IAttachmentManager))
-  nameWithType: AttachmentManager.AttachmentManager(IOptions<BllOptions>, IAttachmentRepository, IDistributedCache, ILogger<IAttachmentManager>)
-  nameWithType.vb: AttachmentManager.AttachmentManager(IOptions(Of BllOptions), IAttachmentRepository, IDistributedCache, ILogger(Of IAttachmentManager))
+- uid: CG.Purple.Managers.AttachmentManager.#ctor(IAttachmentRepository,ILogger{CG.Purple.Managers.IAttachmentManager})
+  name: AttachmentManager(IAttachmentRepository, ILogger<IAttachmentManager>)
+  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__ctor_IAttachmentRepository_ILogger_CG_Purple_Managers_IAttachmentManager__
+  commentId: M:CG.Purple.Managers.AttachmentManager.#ctor(IAttachmentRepository,ILogger{CG.Purple.Managers.IAttachmentManager})
+  name.vb: AttachmentManager(IAttachmentRepository, ILogger(Of IAttachmentManager))
+  fullName: CG.Purple.Managers.AttachmentManager.AttachmentManager(IAttachmentRepository, ILogger<CG.Purple.Managers.IAttachmentManager>)
+  fullName.vb: CG.Purple.Managers.AttachmentManager.AttachmentManager(IAttachmentRepository, ILogger(Of CG.Purple.Managers.IAttachmentManager))
+  nameWithType: AttachmentManager.AttachmentManager(IAttachmentRepository, ILogger<IAttachmentManager>)
+  nameWithType.vb: AttachmentManager.AttachmentManager(IAttachmentRepository, ILogger(Of IAttachmentManager))
 - uid: CG.Purple.Managers.AttachmentManager.#ctor*
   name: AttachmentManager
   href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__ctor_
@@ -2508,24 +3196,12 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.AttachmentManager.AttachmentManager
   nameWithType: AttachmentManager.AttachmentManager
-- uid: CG.Purple.Managers.AttachmentManager._attachmentOptions
-  name: _attachmentOptions
-  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__attachmentOptions
-  commentId: F:CG.Purple.Managers.AttachmentManager._attachmentOptions
-  fullName: CG.Purple.Managers.AttachmentManager._attachmentOptions
-  nameWithType: AttachmentManager._attachmentOptions
 - uid: CG.Purple.Managers.AttachmentManager._attachmentRepository
   name: _attachmentRepository
   href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__attachmentRepository
   commentId: F:CG.Purple.Managers.AttachmentManager._attachmentRepository
   fullName: CG.Purple.Managers.AttachmentManager._attachmentRepository
   nameWithType: AttachmentManager._attachmentRepository
-- uid: CG.Purple.Managers.AttachmentManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__distributedCache
-  commentId: F:CG.Purple.Managers.AttachmentManager._distributedCache
-  fullName: CG.Purple.Managers.AttachmentManager._distributedCache
-  nameWithType: AttachmentManager._distributedCache
 - uid: CG.Purple.Managers.AttachmentManager._logger
   name: _logger
   href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager__logger
@@ -2545,12 +3221,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.AttachmentManager.AnyAsync
   nameWithType: AttachmentManager.AnyAsync
-- uid: CG.Purple.Managers.AttachmentManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.AttachmentManager.CACHE_KEY
-  fullName: CG.Purple.Managers.AttachmentManager.CACHE_KEY
-  nameWithType: AttachmentManager.CACHE_KEY
 - uid: CG.Purple.Managers.AttachmentManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_CountAsync_CancellationToken_
@@ -2603,19 +3273,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.AttachmentManager.FindAllAsync
   nameWithType: AttachmentManager.FindAllAsync
-- uid: CG.Purple.Managers.AttachmentManager.GetCachedDataAsync(CancellationToken)
-  name: GetCachedDataAsync(CancellationToken)
-  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_GetCachedDataAsync_CancellationToken_
-  commentId: M:CG.Purple.Managers.AttachmentManager.GetCachedDataAsync(CancellationToken)
-  fullName: CG.Purple.Managers.AttachmentManager.GetCachedDataAsync(CancellationToken)
-  nameWithType: AttachmentManager.GetCachedDataAsync(CancellationToken)
-- uid: CG.Purple.Managers.AttachmentManager.GetCachedDataAsync*
-  name: GetCachedDataAsync
-  href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_GetCachedDataAsync_
-  commentId: Overload:CG.Purple.Managers.AttachmentManager.GetCachedDataAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.AttachmentManager.GetCachedDataAsync
-  nameWithType: AttachmentManager.GetCachedDataAsync
 - uid: CG.Purple.Managers.AttachmentManager.UpdateAsync(Attachment,System.String,CancellationToken)
   name: UpdateAsync(Attachment, String, CancellationToken)
   href: api/CG.Purple.Managers.AttachmentManager.html#CG_Purple_Managers_AttachmentManager_UpdateAsync_Attachment_System_String_CancellationToken_
@@ -2635,15 +3292,15 @@ references:
   commentId: T:CG.Purple.Managers.FileTypeManager
   fullName: CG.Purple.Managers.FileTypeManager
   nameWithType: FileTypeManager
-- uid: CG.Purple.Managers.FileTypeManager.#ctor(IOptions{BllOptions},IFileTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IFileTypeManager})
-  name: FileTypeManager(IOptions<BllOptions>, IFileTypeRepository, IDistributedCache, ILogger<IFileTypeManager>)
-  href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager__ctor_IOptions_BllOptions__IFileTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IFileTypeManager__
-  commentId: M:CG.Purple.Managers.FileTypeManager.#ctor(IOptions{BllOptions},IFileTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IFileTypeManager})
-  name.vb: FileTypeManager(IOptions(Of BllOptions), IFileTypeRepository, IDistributedCache, ILogger(Of IFileTypeManager))
-  fullName: CG.Purple.Managers.FileTypeManager.FileTypeManager(IOptions<BllOptions>, IFileTypeRepository, IDistributedCache, ILogger<CG.Purple.Managers.IFileTypeManager>)
-  fullName.vb: CG.Purple.Managers.FileTypeManager.FileTypeManager(IOptions(Of BllOptions), IFileTypeRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IFileTypeManager))
-  nameWithType: FileTypeManager.FileTypeManager(IOptions<BllOptions>, IFileTypeRepository, IDistributedCache, ILogger<IFileTypeManager>)
-  nameWithType.vb: FileTypeManager.FileTypeManager(IOptions(Of BllOptions), IFileTypeRepository, IDistributedCache, ILogger(Of IFileTypeManager))
+- uid: CG.Purple.Managers.FileTypeManager.#ctor(IFileTypeRepository,ILogger{CG.Purple.Managers.IFileTypeManager})
+  name: FileTypeManager(IFileTypeRepository, ILogger<IFileTypeManager>)
+  href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager__ctor_IFileTypeRepository_ILogger_CG_Purple_Managers_IFileTypeManager__
+  commentId: M:CG.Purple.Managers.FileTypeManager.#ctor(IFileTypeRepository,ILogger{CG.Purple.Managers.IFileTypeManager})
+  name.vb: FileTypeManager(IFileTypeRepository, ILogger(Of IFileTypeManager))
+  fullName: CG.Purple.Managers.FileTypeManager.FileTypeManager(IFileTypeRepository, ILogger<CG.Purple.Managers.IFileTypeManager>)
+  fullName.vb: CG.Purple.Managers.FileTypeManager.FileTypeManager(IFileTypeRepository, ILogger(Of CG.Purple.Managers.IFileTypeManager))
+  nameWithType: FileTypeManager.FileTypeManager(IFileTypeRepository, ILogger<IFileTypeManager>)
+  nameWithType.vb: FileTypeManager.FileTypeManager(IFileTypeRepository, ILogger(Of IFileTypeManager))
 - uid: CG.Purple.Managers.FileTypeManager.#ctor*
   name: FileTypeManager
   href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager__ctor_
@@ -2651,18 +3308,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.FileTypeManager.FileTypeManager
   nameWithType: FileTypeManager.FileTypeManager
-- uid: CG.Purple.Managers.FileTypeManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager__distributedCache
-  commentId: F:CG.Purple.Managers.FileTypeManager._distributedCache
-  fullName: CG.Purple.Managers.FileTypeManager._distributedCache
-  nameWithType: FileTypeManager._distributedCache
-- uid: CG.Purple.Managers.FileTypeManager._fileTypeOptions
-  name: _fileTypeOptions
-  href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager__fileTypeOptions
-  commentId: F:CG.Purple.Managers.FileTypeManager._fileTypeOptions
-  fullName: CG.Purple.Managers.FileTypeManager._fileTypeOptions
-  nameWithType: FileTypeManager._fileTypeOptions
 - uid: CG.Purple.Managers.FileTypeManager._fileTypeRepository
   name: _fileTypeRepository
   href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager__fileTypeRepository
@@ -2688,12 +3333,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.FileTypeManager.AnyAsync
   nameWithType: FileTypeManager.AnyAsync
-- uid: CG.Purple.Managers.FileTypeManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.FileTypeManager.CACHE_KEY
-  fullName: CG.Purple.Managers.FileTypeManager.CACHE_KEY
-  nameWithType: FileTypeManager.CACHE_KEY
 - uid: CG.Purple.Managers.FileTypeManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager_CountAsync_CancellationToken_
@@ -2746,19 +3385,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.FileTypeManager.FindByExtensionAsync
   nameWithType: FileTypeManager.FindByExtensionAsync
-- uid: CG.Purple.Managers.FileTypeManager.GetCachedDataAsync(CancellationToken)
-  name: GetCachedDataAsync(CancellationToken)
-  href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager_GetCachedDataAsync_CancellationToken_
-  commentId: M:CG.Purple.Managers.FileTypeManager.GetCachedDataAsync(CancellationToken)
-  fullName: CG.Purple.Managers.FileTypeManager.GetCachedDataAsync(CancellationToken)
-  nameWithType: FileTypeManager.GetCachedDataAsync(CancellationToken)
-- uid: CG.Purple.Managers.FileTypeManager.GetCachedDataAsync*
-  name: GetCachedDataAsync
-  href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager_GetCachedDataAsync_
-  commentId: Overload:CG.Purple.Managers.FileTypeManager.GetCachedDataAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.FileTypeManager.GetCachedDataAsync
-  nameWithType: FileTypeManager.GetCachedDataAsync
 - uid: CG.Purple.Managers.FileTypeManager.UpdateAsync(FileType,System.String,CancellationToken)
   name: UpdateAsync(FileType, String, CancellationToken)
   href: api/CG.Purple.Managers.FileTypeManager.html#CG_Purple_Managers_FileTypeManager_UpdateAsync_FileType_System_String_CancellationToken_
@@ -3425,6 +4051,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.IParameterTypeManager.DeleteAsync
   nameWithType: IParameterTypeManager.DeleteAsync
+- uid: CG.Purple.Managers.IParameterTypeManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.IParameterTypeManager.html#CG_Purple_Managers_IParameterTypeManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.IParameterTypeManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.IParameterTypeManager.FindAllAsync(CancellationToken)
+  nameWithType: IParameterTypeManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.IParameterTypeManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.IParameterTypeManager.html#CG_Purple_Managers_IParameterTypeManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.IParameterTypeManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.IParameterTypeManager.FindAllAsync
+  nameWithType: IParameterTypeManager.FindAllAsync
 - uid: CG.Purple.Managers.IParameterTypeManager.FindByNameAsync(System.String,CancellationToken)
   name: FindByNameAsync(String, CancellationToken)
   href: api/CG.Purple.Managers.IParameterTypeManager.html#CG_Purple_Managers_IParameterTypeManager_FindByNameAsync_System_String_CancellationToken_
@@ -3942,15 +4581,15 @@ references:
   commentId: T:CG.Purple.Managers.MailMessageManager
   fullName: CG.Purple.Managers.MailMessageManager
   nameWithType: MailMessageManager
-- uid: CG.Purple.Managers.MailMessageManager.#ctor(IOptions{CG.Purple.Options.BllOptions},IMailMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMailMessageManager})
-  name: MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, IDistributedCache, ILogger<IMailMessageManager>)
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__ctor_IOptions_CG_Purple_Options_BllOptions__IMailMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMailMessageManager__
-  commentId: M:CG.Purple.Managers.MailMessageManager.#ctor(IOptions{CG.Purple.Options.BllOptions},IMailMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMailMessageManager})
-  name.vb: MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, IDistributedCache, ILogger(Of IMailMessageManager))
-  fullName: CG.Purple.Managers.MailMessageManager.MailMessageManager(IOptions<CG.Purple.Options.BllOptions>, IMailMessageRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMailMessageManager>)
-  fullName.vb: CG.Purple.Managers.MailMessageManager.MailMessageManager(IOptions(Of CG.Purple.Options.BllOptions), IMailMessageRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMailMessageManager))
-  nameWithType: MailMessageManager.MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, IDistributedCache, ILogger<IMailMessageManager>)
-  nameWithType.vb: MailMessageManager.MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, IDistributedCache, ILogger(Of IMailMessageManager))
+- uid: CG.Purple.Managers.MailMessageManager.#ctor(IMailMessageRepository,ILogger{CG.Purple.Managers.IMailMessageManager})
+  name: MailMessageManager(IMailMessageRepository, ILogger<IMailMessageManager>)
+  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__ctor_IMailMessageRepository_ILogger_CG_Purple_Managers_IMailMessageManager__
+  commentId: M:CG.Purple.Managers.MailMessageManager.#ctor(IMailMessageRepository,ILogger{CG.Purple.Managers.IMailMessageManager})
+  name.vb: MailMessageManager(IMailMessageRepository, ILogger(Of IMailMessageManager))
+  fullName: CG.Purple.Managers.MailMessageManager.MailMessageManager(IMailMessageRepository, ILogger<CG.Purple.Managers.IMailMessageManager>)
+  fullName.vb: CG.Purple.Managers.MailMessageManager.MailMessageManager(IMailMessageRepository, ILogger(Of CG.Purple.Managers.IMailMessageManager))
+  nameWithType: MailMessageManager.MailMessageManager(IMailMessageRepository, ILogger<IMailMessageManager>)
+  nameWithType.vb: MailMessageManager.MailMessageManager(IMailMessageRepository, ILogger(Of IMailMessageManager))
 - uid: CG.Purple.Managers.MailMessageManager.#ctor*
   name: MailMessageManager
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__ctor_
@@ -3958,24 +4597,12 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MailMessageManager.MailMessageManager
   nameWithType: MailMessageManager.MailMessageManager
-- uid: CG.Purple.Managers.MailMessageManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__distributedCache
-  commentId: F:CG.Purple.Managers.MailMessageManager._distributedCache
-  fullName: CG.Purple.Managers.MailMessageManager._distributedCache
-  nameWithType: MailMessageManager._distributedCache
 - uid: CG.Purple.Managers.MailMessageManager._logger
   name: _logger
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__logger
   commentId: F:CG.Purple.Managers.MailMessageManager._logger
   fullName: CG.Purple.Managers.MailMessageManager._logger
   nameWithType: MailMessageManager._logger
-- uid: CG.Purple.Managers.MailMessageManager._mailMessageOptions
-  name: _mailMessageOptions
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__mailMessageOptions
-  commentId: F:CG.Purple.Managers.MailMessageManager._mailMessageOptions
-  fullName: CG.Purple.Managers.MailMessageManager._mailMessageOptions
-  nameWithType: MailMessageManager._mailMessageOptions
 - uid: CG.Purple.Managers.MailMessageManager._mailMessageRepository
   name: _mailMessageRepository
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__mailMessageRepository
@@ -3995,12 +4622,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MailMessageManager.AnyAsync
   nameWithType: MailMessageManager.AnyAsync
-- uid: CG.Purple.Managers.MailMessageManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.MailMessageManager.CACHE_KEY
-  fullName: CG.Purple.Managers.MailMessageManager.CACHE_KEY
-  nameWithType: MailMessageManager.CACHE_KEY
 - uid: CG.Purple.Managers.MailMessageManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_CountAsync_CancellationToken_
@@ -4066,19 +4687,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MailMessageManager.FindByKeyAsync
   nameWithType: MailMessageManager.FindByKeyAsync
-- uid: CG.Purple.Managers.MailMessageManager.GetCachedDataAsync(CancellationToken)
-  name: GetCachedDataAsync(CancellationToken)
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_GetCachedDataAsync_CancellationToken_
-  commentId: M:CG.Purple.Managers.MailMessageManager.GetCachedDataAsync(CancellationToken)
-  fullName: CG.Purple.Managers.MailMessageManager.GetCachedDataAsync(CancellationToken)
-  nameWithType: MailMessageManager.GetCachedDataAsync(CancellationToken)
-- uid: CG.Purple.Managers.MailMessageManager.GetCachedDataAsync*
-  name: GetCachedDataAsync
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_GetCachedDataAsync_
-  commentId: Overload:CG.Purple.Managers.MailMessageManager.GetCachedDataAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.MailMessageManager.GetCachedDataAsync
-  nameWithType: MailMessageManager.GetCachedDataAsync
 - uid: CG.Purple.Managers.MailMessageManager.UpdateAsync(MailMessage,System.String,CancellationToken)
   name: UpdateAsync(MailMessage, String, CancellationToken)
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager_UpdateAsync_MailMessage_System_String_CancellationToken_
@@ -4135,15 +4743,15 @@ references:
   commentId: T:CG.Purple.Managers.MessageManager
   fullName: CG.Purple.Managers.MessageManager
   nameWithType: MessageManager
-- uid: CG.Purple.Managers.MessageManager.#ctor(CG.Purple.Repositories.IMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessageManager})
-  name: MessageManager(IMessageRepository, IDistributedCache, ILogger<IMessageManager>)
-  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager__ctor_CG_Purple_Repositories_IMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMessageManager__
-  commentId: M:CG.Purple.Managers.MessageManager.#ctor(CG.Purple.Repositories.IMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessageManager})
-  name.vb: MessageManager(IMessageRepository, IDistributedCache, ILogger(Of IMessageManager))
-  fullName: CG.Purple.Managers.MessageManager.MessageManager(CG.Purple.Repositories.IMessageRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMessageManager>)
-  fullName.vb: CG.Purple.Managers.MessageManager.MessageManager(CG.Purple.Repositories.IMessageRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMessageManager))
-  nameWithType: MessageManager.MessageManager(IMessageRepository, IDistributedCache, ILogger<IMessageManager>)
-  nameWithType.vb: MessageManager.MessageManager(IMessageRepository, IDistributedCache, ILogger(Of IMessageManager))
+- uid: CG.Purple.Managers.MessageManager.#ctor(IMessageRepository,ILogger{CG.Purple.Managers.IMessageManager})
+  name: MessageManager(IMessageRepository, ILogger<IMessageManager>)
+  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager__ctor_IMessageRepository_ILogger_CG_Purple_Managers_IMessageManager__
+  commentId: M:CG.Purple.Managers.MessageManager.#ctor(IMessageRepository,ILogger{CG.Purple.Managers.IMessageManager})
+  name.vb: MessageManager(IMessageRepository, ILogger(Of IMessageManager))
+  fullName: CG.Purple.Managers.MessageManager.MessageManager(IMessageRepository, ILogger<CG.Purple.Managers.IMessageManager>)
+  fullName.vb: CG.Purple.Managers.MessageManager.MessageManager(IMessageRepository, ILogger(Of CG.Purple.Managers.IMessageManager))
+  nameWithType: MessageManager.MessageManager(IMessageRepository, ILogger<IMessageManager>)
+  nameWithType.vb: MessageManager.MessageManager(IMessageRepository, ILogger(Of IMessageManager))
 - uid: CG.Purple.Managers.MessageManager.#ctor*
   name: MessageManager
   href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager__ctor_
@@ -4151,12 +4759,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MessageManager.MessageManager
   nameWithType: MessageManager.MessageManager
-- uid: CG.Purple.Managers.MessageManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager__distributedCache
-  commentId: F:CG.Purple.Managers.MessageManager._distributedCache
-  fullName: CG.Purple.Managers.MessageManager._distributedCache
-  nameWithType: MessageManager._distributedCache
 - uid: CG.Purple.Managers.MessageManager._logger
   name: _logger
   href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager__logger
@@ -4182,12 +4784,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MessageManager.AnyAsync
   nameWithType: MessageManager.AnyAsync
-- uid: CG.Purple.Managers.MessageManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.MessageManager.CACHE_KEY
-  fullName: CG.Purple.Managers.MessageManager.CACHE_KEY
-  nameWithType: MessageManager.CACHE_KEY
 - uid: CG.Purple.Managers.MessageManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.MessageManager.html#CG_Purple_Managers_MessageManager_CountAsync_CancellationToken_
@@ -4311,15 +4907,15 @@ references:
   commentId: T:CG.Purple.Managers.MessagePropertyManager
   fullName: CG.Purple.Managers.MessagePropertyManager
   nameWithType: MessagePropertyManager
-- uid: CG.Purple.Managers.MessagePropertyManager.#ctor(IMessagePropertyRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessagePropertyManager})
-  name: MessagePropertyManager(IMessagePropertyRepository, IDistributedCache, ILogger<IMessagePropertyManager>)
-  href: api/CG.Purple.Managers.MessagePropertyManager.html#CG_Purple_Managers_MessagePropertyManager__ctor_IMessagePropertyRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMessagePropertyManager__
-  commentId: M:CG.Purple.Managers.MessagePropertyManager.#ctor(IMessagePropertyRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMessagePropertyManager})
-  name.vb: MessagePropertyManager(IMessagePropertyRepository, IDistributedCache, ILogger(Of IMessagePropertyManager))
-  fullName: CG.Purple.Managers.MessagePropertyManager.MessagePropertyManager(IMessagePropertyRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMessagePropertyManager>)
-  fullName.vb: CG.Purple.Managers.MessagePropertyManager.MessagePropertyManager(IMessagePropertyRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMessagePropertyManager))
-  nameWithType: MessagePropertyManager.MessagePropertyManager(IMessagePropertyRepository, IDistributedCache, ILogger<IMessagePropertyManager>)
-  nameWithType.vb: MessagePropertyManager.MessagePropertyManager(IMessagePropertyRepository, IDistributedCache, ILogger(Of IMessagePropertyManager))
+- uid: CG.Purple.Managers.MessagePropertyManager.#ctor(IMessagePropertyRepository,ILogger{CG.Purple.Managers.IMessagePropertyManager})
+  name: MessagePropertyManager(IMessagePropertyRepository, ILogger<IMessagePropertyManager>)
+  href: api/CG.Purple.Managers.MessagePropertyManager.html#CG_Purple_Managers_MessagePropertyManager__ctor_IMessagePropertyRepository_ILogger_CG_Purple_Managers_IMessagePropertyManager__
+  commentId: M:CG.Purple.Managers.MessagePropertyManager.#ctor(IMessagePropertyRepository,ILogger{CG.Purple.Managers.IMessagePropertyManager})
+  name.vb: MessagePropertyManager(IMessagePropertyRepository, ILogger(Of IMessagePropertyManager))
+  fullName: CG.Purple.Managers.MessagePropertyManager.MessagePropertyManager(IMessagePropertyRepository, ILogger<CG.Purple.Managers.IMessagePropertyManager>)
+  fullName.vb: CG.Purple.Managers.MessagePropertyManager.MessagePropertyManager(IMessagePropertyRepository, ILogger(Of CG.Purple.Managers.IMessagePropertyManager))
+  nameWithType: MessagePropertyManager.MessagePropertyManager(IMessagePropertyRepository, ILogger<IMessagePropertyManager>)
+  nameWithType.vb: MessagePropertyManager.MessagePropertyManager(IMessagePropertyRepository, ILogger(Of IMessagePropertyManager))
 - uid: CG.Purple.Managers.MessagePropertyManager.#ctor*
   name: MessagePropertyManager
   href: api/CG.Purple.Managers.MessagePropertyManager.html#CG_Purple_Managers_MessagePropertyManager__ctor_
@@ -4327,12 +4923,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MessagePropertyManager.MessagePropertyManager
   nameWithType: MessagePropertyManager.MessagePropertyManager
-- uid: CG.Purple.Managers.MessagePropertyManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.MessagePropertyManager.html#CG_Purple_Managers_MessagePropertyManager__distributedCache
-  commentId: F:CG.Purple.Managers.MessagePropertyManager._distributedCache
-  fullName: CG.Purple.Managers.MessagePropertyManager._distributedCache
-  nameWithType: MessagePropertyManager._distributedCache
 - uid: CG.Purple.Managers.MessagePropertyManager._logger
   name: _logger
   href: api/CG.Purple.Managers.MessagePropertyManager.html#CG_Purple_Managers_MessagePropertyManager__logger
@@ -4358,12 +4948,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MessagePropertyManager.AnyAsync
   nameWithType: MessagePropertyManager.AnyAsync
-- uid: CG.Purple.Managers.MessagePropertyManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.MessagePropertyManager.html#CG_Purple_Managers_MessagePropertyManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.MessagePropertyManager.CACHE_KEY
-  fullName: CG.Purple.Managers.MessagePropertyManager.CACHE_KEY
-  nameWithType: MessagePropertyManager.CACHE_KEY
 - uid: CG.Purple.Managers.MessagePropertyManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.MessagePropertyManager.html#CG_Purple_Managers_MessagePropertyManager_CountAsync_CancellationToken_
@@ -4422,15 +5006,15 @@ references:
   commentId: T:CG.Purple.Managers.MimeTypeManager
   fullName: CG.Purple.Managers.MimeTypeManager
   nameWithType: MimeTypeManager
-- uid: CG.Purple.Managers.MimeTypeManager.#ctor(IOptions{BllOptions},IMimeTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMimeTypeManager})
-  name: MimeTypeManager(IOptions<BllOptions>, IMimeTypeRepository, IDistributedCache, ILogger<IMimeTypeManager>)
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__ctor_IOptions_BllOptions__IMimeTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IMimeTypeManager__
-  commentId: M:CG.Purple.Managers.MimeTypeManager.#ctor(IOptions{BllOptions},IMimeTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IMimeTypeManager})
-  name.vb: MimeTypeManager(IOptions(Of BllOptions), IMimeTypeRepository, IDistributedCache, ILogger(Of IMimeTypeManager))
-  fullName: CG.Purple.Managers.MimeTypeManager.MimeTypeManager(IOptions<BllOptions>, IMimeTypeRepository, IDistributedCache, ILogger<CG.Purple.Managers.IMimeTypeManager>)
-  fullName.vb: CG.Purple.Managers.MimeTypeManager.MimeTypeManager(IOptions(Of BllOptions), IMimeTypeRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IMimeTypeManager))
-  nameWithType: MimeTypeManager.MimeTypeManager(IOptions<BllOptions>, IMimeTypeRepository, IDistributedCache, ILogger<IMimeTypeManager>)
-  nameWithType.vb: MimeTypeManager.MimeTypeManager(IOptions(Of BllOptions), IMimeTypeRepository, IDistributedCache, ILogger(Of IMimeTypeManager))
+- uid: CG.Purple.Managers.MimeTypeManager.#ctor(IMimeTypeRepository,ILogger{CG.Purple.Managers.IMimeTypeManager})
+  name: MimeTypeManager(IMimeTypeRepository, ILogger<IMimeTypeManager>)
+  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__ctor_IMimeTypeRepository_ILogger_CG_Purple_Managers_IMimeTypeManager__
+  commentId: M:CG.Purple.Managers.MimeTypeManager.#ctor(IMimeTypeRepository,ILogger{CG.Purple.Managers.IMimeTypeManager})
+  name.vb: MimeTypeManager(IMimeTypeRepository, ILogger(Of IMimeTypeManager))
+  fullName: CG.Purple.Managers.MimeTypeManager.MimeTypeManager(IMimeTypeRepository, ILogger<CG.Purple.Managers.IMimeTypeManager>)
+  fullName.vb: CG.Purple.Managers.MimeTypeManager.MimeTypeManager(IMimeTypeRepository, ILogger(Of CG.Purple.Managers.IMimeTypeManager))
+  nameWithType: MimeTypeManager.MimeTypeManager(IMimeTypeRepository, ILogger<IMimeTypeManager>)
+  nameWithType.vb: MimeTypeManager.MimeTypeManager(IMimeTypeRepository, ILogger(Of IMimeTypeManager))
 - uid: CG.Purple.Managers.MimeTypeManager.#ctor*
   name: MimeTypeManager
   href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__ctor_
@@ -4438,24 +5022,12 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.MimeTypeManager
   nameWithType: MimeTypeManager.MimeTypeManager
-- uid: CG.Purple.Managers.MimeTypeManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__distributedCache
-  commentId: F:CG.Purple.Managers.MimeTypeManager._distributedCache
-  fullName: CG.Purple.Managers.MimeTypeManager._distributedCache
-  nameWithType: MimeTypeManager._distributedCache
 - uid: CG.Purple.Managers.MimeTypeManager._logger
   name: _logger
   href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__logger
   commentId: F:CG.Purple.Managers.MimeTypeManager._logger
   fullName: CG.Purple.Managers.MimeTypeManager._logger
   nameWithType: MimeTypeManager._logger
-- uid: CG.Purple.Managers.MimeTypeManager._mimeTypeOptions
-  name: _mimeTypeOptions
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__mimeTypeOptions
-  commentId: F:CG.Purple.Managers.MimeTypeManager._mimeTypeOptions
-  fullName: CG.Purple.Managers.MimeTypeManager._mimeTypeOptions
-  nameWithType: MimeTypeManager._mimeTypeOptions
 - uid: CG.Purple.Managers.MimeTypeManager._mimeTypeRepository
   name: _mimeTypeRepository
   href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager__mimeTypeRepository
@@ -4475,12 +5047,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.AnyAsync
   nameWithType: MimeTypeManager.AnyAsync
-- uid: CG.Purple.Managers.MimeTypeManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.MimeTypeManager.CACHE_KEY
-  fullName: CG.Purple.Managers.MimeTypeManager.CACHE_KEY
-  nameWithType: MimeTypeManager.CACHE_KEY
 - uid: CG.Purple.Managers.MimeTypeManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_CountAsync_CancellationToken_
@@ -4572,19 +5138,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.FindByTypeAsync
   nameWithType: MimeTypeManager.FindByTypeAsync
-- uid: CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync(CancellationToken)
-  name: GetCachedDataAsync(CancellationToken)
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_GetCachedDataAsync_CancellationToken_
-  commentId: M:CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync(CancellationToken)
-  fullName: CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync(CancellationToken)
-  nameWithType: MimeTypeManager.GetCachedDataAsync(CancellationToken)
-- uid: CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync*
-  name: GetCachedDataAsync
-  href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_GetCachedDataAsync_
-  commentId: Overload:CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.MimeTypeManager.GetCachedDataAsync
-  nameWithType: MimeTypeManager.GetCachedDataAsync
 - uid: CG.Purple.Managers.MimeTypeManager.UpdateAsync(MimeType,System.String,CancellationToken)
   name: UpdateAsync(MimeType, String, CancellationToken)
   href: api/CG.Purple.Managers.MimeTypeManager.html#CG_Purple_Managers_MimeTypeManager_UpdateAsync_MimeType_System_String_CancellationToken_
@@ -4604,15 +5157,15 @@ references:
   commentId: T:CG.Purple.Managers.ParameterTypeManager
   fullName: CG.Purple.Managers.ParameterTypeManager
   nameWithType: ParameterTypeManager
-- uid: CG.Purple.Managers.ParameterTypeManager.#ctor(IParameterTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IParameterTypeManager})
-  name: ParameterTypeManager(IParameterTypeRepository, IDistributedCache, ILogger<IParameterTypeManager>)
-  href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager__ctor_IParameterTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IParameterTypeManager__
-  commentId: M:CG.Purple.Managers.ParameterTypeManager.#ctor(IParameterTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IParameterTypeManager})
-  name.vb: ParameterTypeManager(IParameterTypeRepository, IDistributedCache, ILogger(Of IParameterTypeManager))
-  fullName: CG.Purple.Managers.ParameterTypeManager.ParameterTypeManager(IParameterTypeRepository, IDistributedCache, ILogger<CG.Purple.Managers.IParameterTypeManager>)
-  fullName.vb: CG.Purple.Managers.ParameterTypeManager.ParameterTypeManager(IParameterTypeRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IParameterTypeManager))
-  nameWithType: ParameterTypeManager.ParameterTypeManager(IParameterTypeRepository, IDistributedCache, ILogger<IParameterTypeManager>)
-  nameWithType.vb: ParameterTypeManager.ParameterTypeManager(IParameterTypeRepository, IDistributedCache, ILogger(Of IParameterTypeManager))
+- uid: CG.Purple.Managers.ParameterTypeManager.#ctor(IParameterTypeRepository,ILogger{CG.Purple.Managers.IParameterTypeManager})
+  name: ParameterTypeManager(IParameterTypeRepository, ILogger<IParameterTypeManager>)
+  href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager__ctor_IParameterTypeRepository_ILogger_CG_Purple_Managers_IParameterTypeManager__
+  commentId: M:CG.Purple.Managers.ParameterTypeManager.#ctor(IParameterTypeRepository,ILogger{CG.Purple.Managers.IParameterTypeManager})
+  name.vb: ParameterTypeManager(IParameterTypeRepository, ILogger(Of IParameterTypeManager))
+  fullName: CG.Purple.Managers.ParameterTypeManager.ParameterTypeManager(IParameterTypeRepository, ILogger<CG.Purple.Managers.IParameterTypeManager>)
+  fullName.vb: CG.Purple.Managers.ParameterTypeManager.ParameterTypeManager(IParameterTypeRepository, ILogger(Of CG.Purple.Managers.IParameterTypeManager))
+  nameWithType: ParameterTypeManager.ParameterTypeManager(IParameterTypeRepository, ILogger<IParameterTypeManager>)
+  nameWithType.vb: ParameterTypeManager.ParameterTypeManager(IParameterTypeRepository, ILogger(Of IParameterTypeManager))
 - uid: CG.Purple.Managers.ParameterTypeManager.#ctor*
   name: ParameterTypeManager
   href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager__ctor_
@@ -4620,12 +5173,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ParameterTypeManager.ParameterTypeManager
   nameWithType: ParameterTypeManager.ParameterTypeManager
-- uid: CG.Purple.Managers.ParameterTypeManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager__distributedCache
-  commentId: F:CG.Purple.Managers.ParameterTypeManager._distributedCache
-  fullName: CG.Purple.Managers.ParameterTypeManager._distributedCache
-  nameWithType: ParameterTypeManager._distributedCache
 - uid: CG.Purple.Managers.ParameterTypeManager._logger
   name: _logger
   href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager__logger
@@ -4651,12 +5198,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ParameterTypeManager.AnyAsync
   nameWithType: ParameterTypeManager.AnyAsync
-- uid: CG.Purple.Managers.ParameterTypeManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.ParameterTypeManager.CACHE_KEY
-  fullName: CG.Purple.Managers.ParameterTypeManager.CACHE_KEY
-  nameWithType: ParameterTypeManager.CACHE_KEY
 - uid: CG.Purple.Managers.ParameterTypeManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager_CountAsync_CancellationToken_
@@ -4696,6 +5237,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ParameterTypeManager.DeleteAsync
   nameWithType: ParameterTypeManager.DeleteAsync
+- uid: CG.Purple.Managers.ParameterTypeManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Managers.ParameterTypeManager.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Managers.ParameterTypeManager.FindAllAsync(CancellationToken)
+  nameWithType: ParameterTypeManager.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Managers.ParameterTypeManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager_FindAllAsync_
+  commentId: Overload:CG.Purple.Managers.ParameterTypeManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.ParameterTypeManager.FindAllAsync
+  nameWithType: ParameterTypeManager.FindAllAsync
 - uid: CG.Purple.Managers.ParameterTypeManager.FindByNameAsync(System.String,CancellationToken)
   name: FindByNameAsync(String, CancellationToken)
   href: api/CG.Purple.Managers.ParameterTypeManager.html#CG_Purple_Managers_ParameterTypeManager_FindByNameAsync_System_String_CancellationToken_
@@ -4728,15 +5282,15 @@ references:
   commentId: T:CG.Purple.Managers.ProcessLogManager
   fullName: CG.Purple.Managers.ProcessLogManager
   nameWithType: ProcessLogManager
-- uid: CG.Purple.Managers.ProcessLogManager.#ctor(CG.Purple.Repositories.IProcessLogRepository,IDistributedCache,ILogger{CG.Purple.Managers.IProcessLogManager})
-  name: ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger<IProcessLogManager>)
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager__ctor_CG_Purple_Repositories_IProcessLogRepository_IDistributedCache_ILogger_CG_Purple_Managers_IProcessLogManager__
-  commentId: M:CG.Purple.Managers.ProcessLogManager.#ctor(CG.Purple.Repositories.IProcessLogRepository,IDistributedCache,ILogger{CG.Purple.Managers.IProcessLogManager})
-  name.vb: ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger(Of IProcessLogManager))
-  fullName: CG.Purple.Managers.ProcessLogManager.ProcessLogManager(CG.Purple.Repositories.IProcessLogRepository, IDistributedCache, ILogger<CG.Purple.Managers.IProcessLogManager>)
-  fullName.vb: CG.Purple.Managers.ProcessLogManager.ProcessLogManager(CG.Purple.Repositories.IProcessLogRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IProcessLogManager))
-  nameWithType: ProcessLogManager.ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger<IProcessLogManager>)
-  nameWithType.vb: ProcessLogManager.ProcessLogManager(IProcessLogRepository, IDistributedCache, ILogger(Of IProcessLogManager))
+- uid: CG.Purple.Managers.ProcessLogManager.#ctor(IProcessLogRepository,ILogger{CG.Purple.Managers.IProcessLogManager})
+  name: ProcessLogManager(IProcessLogRepository, ILogger<IProcessLogManager>)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager__ctor_IProcessLogRepository_ILogger_CG_Purple_Managers_IProcessLogManager__
+  commentId: M:CG.Purple.Managers.ProcessLogManager.#ctor(IProcessLogRepository,ILogger{CG.Purple.Managers.IProcessLogManager})
+  name.vb: ProcessLogManager(IProcessLogRepository, ILogger(Of IProcessLogManager))
+  fullName: CG.Purple.Managers.ProcessLogManager.ProcessLogManager(IProcessLogRepository, ILogger<CG.Purple.Managers.IProcessLogManager>)
+  fullName.vb: CG.Purple.Managers.ProcessLogManager.ProcessLogManager(IProcessLogRepository, ILogger(Of CG.Purple.Managers.IProcessLogManager))
+  nameWithType: ProcessLogManager.ProcessLogManager(IProcessLogRepository, ILogger<IProcessLogManager>)
+  nameWithType.vb: ProcessLogManager.ProcessLogManager(IProcessLogRepository, ILogger(Of IProcessLogManager))
 - uid: CG.Purple.Managers.ProcessLogManager.#ctor*
   name: ProcessLogManager
   href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager__ctor_
@@ -4744,12 +5298,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManager.ProcessLogManager
   nameWithType: ProcessLogManager.ProcessLogManager
-- uid: CG.Purple.Managers.ProcessLogManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager__distributedCache
-  commentId: F:CG.Purple.Managers.ProcessLogManager._distributedCache
-  fullName: CG.Purple.Managers.ProcessLogManager._distributedCache
-  nameWithType: ProcessLogManager._distributedCache
 - uid: CG.Purple.Managers.ProcessLogManager._logger
   name: _logger
   href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager__logger
@@ -4775,12 +5323,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManager.AnyAsync
   nameWithType: ProcessLogManager.AnyAsync
-- uid: CG.Purple.Managers.ProcessLogManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.ProcessLogManager.CACHE_KEY
-  fullName: CG.Purple.Managers.ProcessLogManager.CACHE_KEY
-  nameWithType: ProcessLogManager.CACHE_KEY
 - uid: CG.Purple.Managers.ProcessLogManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_CountAsync_CancellationToken_
@@ -4794,11 +5336,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManager.CountAsync
   nameWithType: ProcessLogManager.CountAsync
-- uid: CG.Purple.Managers.ProcessLogManager.CreateAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManager.CreateAsync(ProcessLog,System.String,CancellationToken)
   name: CreateAsync(ProcessLog, String, CancellationToken)
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_CreateAsync_CG_Purple_Models_ProcessLog_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProcessLogManager.CreateAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ProcessLogManager.CreateAsync(CG.Purple.Models.ProcessLog, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_CreateAsync_ProcessLog_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManager.CreateAsync(ProcessLog,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManager.CreateAsync(ProcessLog, System.String, CancellationToken)
   nameWithType: ProcessLogManager.CreateAsync(ProcessLog, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManager.CreateAsync*
   name: CreateAsync
@@ -4807,11 +5349,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManager.CreateAsync
   nameWithType: ProcessLogManager.CreateAsync
-- uid: CG.Purple.Managers.ProcessLogManager.DeleteAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManager.DeleteAsync(ProcessLog,System.String,CancellationToken)
   name: DeleteAsync(ProcessLog, String, CancellationToken)
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_DeleteAsync_CG_Purple_Models_ProcessLog_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProcessLogManager.DeleteAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ProcessLogManager.DeleteAsync(CG.Purple.Models.ProcessLog, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_DeleteAsync_ProcessLog_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManager.DeleteAsync(ProcessLog,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManager.DeleteAsync(ProcessLog, System.String, CancellationToken)
   nameWithType: ProcessLogManager.DeleteAsync(ProcessLog, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManager.DeleteAsync*
   name: DeleteAsync
@@ -4833,11 +5375,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManager.FindAllAsync
   nameWithType: ProcessLogManager.FindAllAsync
-- uid: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync(CG.Purple.Models.Message,CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync(Message,CancellationToken)
   name: FindByMessageAsync(Message, CancellationToken)
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_FindByMessageAsync_CG_Purple_Models_Message_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProcessLogManager.FindByMessageAsync(CG.Purple.Models.Message,CancellationToken)
-  fullName: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync(CG.Purple.Models.Message, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_FindByMessageAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManager.FindByMessageAsync(Message,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync(Message, CancellationToken)
   nameWithType: ProcessLogManager.FindByMessageAsync(Message, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync*
   name: FindByMessageAsync
@@ -4846,11 +5388,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProcessLogManager.FindByMessageAsync
   nameWithType: ProcessLogManager.FindByMessageAsync
-- uid: CG.Purple.Managers.ProcessLogManager.UpdateAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
+- uid: CG.Purple.Managers.ProcessLogManager.UpdateAsync(ProcessLog,System.String,CancellationToken)
   name: UpdateAsync(ProcessLog, String, CancellationToken)
-  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_UpdateAsync_CG_Purple_Models_ProcessLog_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProcessLogManager.UpdateAsync(CG.Purple.Models.ProcessLog,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ProcessLogManager.UpdateAsync(CG.Purple.Models.ProcessLog, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.ProcessLogManager.html#CG_Purple_Managers_ProcessLogManager_UpdateAsync_ProcessLog_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProcessLogManager.UpdateAsync(ProcessLog,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProcessLogManager.UpdateAsync(ProcessLog, System.String, CancellationToken)
   nameWithType: ProcessLogManager.UpdateAsync(ProcessLog, String, CancellationToken)
 - uid: CG.Purple.Managers.ProcessLogManager.UpdateAsync*
   name: UpdateAsync
@@ -5034,15 +5576,15 @@ references:
   commentId: T:CG.Purple.Managers.PropertyTypeManager
   fullName: CG.Purple.Managers.PropertyTypeManager
   nameWithType: PropertyTypeManager
-- uid: CG.Purple.Managers.PropertyTypeManager.#ctor(IPropertyTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IPropertyTypeManager})
-  name: PropertyTypeManager(IPropertyTypeRepository, IDistributedCache, ILogger<IPropertyTypeManager>)
-  href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager__ctor_IPropertyTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IPropertyTypeManager__
-  commentId: M:CG.Purple.Managers.PropertyTypeManager.#ctor(IPropertyTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IPropertyTypeManager})
-  name.vb: PropertyTypeManager(IPropertyTypeRepository, IDistributedCache, ILogger(Of IPropertyTypeManager))
-  fullName: CG.Purple.Managers.PropertyTypeManager.PropertyTypeManager(IPropertyTypeRepository, IDistributedCache, ILogger<CG.Purple.Managers.IPropertyTypeManager>)
-  fullName.vb: CG.Purple.Managers.PropertyTypeManager.PropertyTypeManager(IPropertyTypeRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IPropertyTypeManager))
-  nameWithType: PropertyTypeManager.PropertyTypeManager(IPropertyTypeRepository, IDistributedCache, ILogger<IPropertyTypeManager>)
-  nameWithType.vb: PropertyTypeManager.PropertyTypeManager(IPropertyTypeRepository, IDistributedCache, ILogger(Of IPropertyTypeManager))
+- uid: CG.Purple.Managers.PropertyTypeManager.#ctor(IPropertyTypeRepository,ILogger{CG.Purple.Managers.IPropertyTypeManager})
+  name: PropertyTypeManager(IPropertyTypeRepository, ILogger<IPropertyTypeManager>)
+  href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager__ctor_IPropertyTypeRepository_ILogger_CG_Purple_Managers_IPropertyTypeManager__
+  commentId: M:CG.Purple.Managers.PropertyTypeManager.#ctor(IPropertyTypeRepository,ILogger{CG.Purple.Managers.IPropertyTypeManager})
+  name.vb: PropertyTypeManager(IPropertyTypeRepository, ILogger(Of IPropertyTypeManager))
+  fullName: CG.Purple.Managers.PropertyTypeManager.PropertyTypeManager(IPropertyTypeRepository, ILogger<CG.Purple.Managers.IPropertyTypeManager>)
+  fullName.vb: CG.Purple.Managers.PropertyTypeManager.PropertyTypeManager(IPropertyTypeRepository, ILogger(Of CG.Purple.Managers.IPropertyTypeManager))
+  nameWithType: PropertyTypeManager.PropertyTypeManager(IPropertyTypeRepository, ILogger<IPropertyTypeManager>)
+  nameWithType.vb: PropertyTypeManager.PropertyTypeManager(IPropertyTypeRepository, ILogger(Of IPropertyTypeManager))
 - uid: CG.Purple.Managers.PropertyTypeManager.#ctor*
   name: PropertyTypeManager
   href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager__ctor_
@@ -5050,12 +5592,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.PropertyTypeManager.PropertyTypeManager
   nameWithType: PropertyTypeManager.PropertyTypeManager
-- uid: CG.Purple.Managers.PropertyTypeManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager__distributedCache
-  commentId: F:CG.Purple.Managers.PropertyTypeManager._distributedCache
-  fullName: CG.Purple.Managers.PropertyTypeManager._distributedCache
-  nameWithType: PropertyTypeManager._distributedCache
 - uid: CG.Purple.Managers.PropertyTypeManager._logger
   name: _logger
   href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager__logger
@@ -5081,12 +5617,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.PropertyTypeManager.AnyAsync
   nameWithType: PropertyTypeManager.AnyAsync
-- uid: CG.Purple.Managers.PropertyTypeManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.PropertyTypeManager.CACHE_KEY
-  fullName: CG.Purple.Managers.PropertyTypeManager.CACHE_KEY
-  nameWithType: PropertyTypeManager.CACHE_KEY
 - uid: CG.Purple.Managers.PropertyTypeManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.PropertyTypeManager.html#CG_Purple_Managers_PropertyTypeManager_CountAsync_CancellationToken_
@@ -5171,15 +5701,15 @@ references:
   commentId: T:CG.Purple.Managers.ProviderParameterManager
   fullName: CG.Purple.Managers.ProviderParameterManager
   nameWithType: ProviderParameterManager
-- uid: CG.Purple.Managers.ProviderParameterManager.#ctor(IProviderParameterRepository,IDistributedCache,ICryptographer,ILogger{CG.Purple.Managers.IProviderParameterManager})
-  name: ProviderParameterManager(IProviderParameterRepository, IDistributedCache, ICryptographer, ILogger<IProviderParameterManager>)
-  href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager__ctor_IProviderParameterRepository_IDistributedCache_ICryptographer_ILogger_CG_Purple_Managers_IProviderParameterManager__
-  commentId: M:CG.Purple.Managers.ProviderParameterManager.#ctor(IProviderParameterRepository,IDistributedCache,ICryptographer,ILogger{CG.Purple.Managers.IProviderParameterManager})
-  name.vb: ProviderParameterManager(IProviderParameterRepository, IDistributedCache, ICryptographer, ILogger(Of IProviderParameterManager))
-  fullName: CG.Purple.Managers.ProviderParameterManager.ProviderParameterManager(IProviderParameterRepository, IDistributedCache, ICryptographer, ILogger<CG.Purple.Managers.IProviderParameterManager>)
-  fullName.vb: CG.Purple.Managers.ProviderParameterManager.ProviderParameterManager(IProviderParameterRepository, IDistributedCache, ICryptographer, ILogger(Of CG.Purple.Managers.IProviderParameterManager))
-  nameWithType: ProviderParameterManager.ProviderParameterManager(IProviderParameterRepository, IDistributedCache, ICryptographer, ILogger<IProviderParameterManager>)
-  nameWithType.vb: ProviderParameterManager.ProviderParameterManager(IProviderParameterRepository, IDistributedCache, ICryptographer, ILogger(Of IProviderParameterManager))
+- uid: CG.Purple.Managers.ProviderParameterManager.#ctor(IProviderParameterRepository,ICryptographer,ILogger{CG.Purple.Managers.IProviderParameterManager})
+  name: ProviderParameterManager(IProviderParameterRepository, ICryptographer, ILogger<IProviderParameterManager>)
+  href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager__ctor_IProviderParameterRepository_ICryptographer_ILogger_CG_Purple_Managers_IProviderParameterManager__
+  commentId: M:CG.Purple.Managers.ProviderParameterManager.#ctor(IProviderParameterRepository,ICryptographer,ILogger{CG.Purple.Managers.IProviderParameterManager})
+  name.vb: ProviderParameterManager(IProviderParameterRepository, ICryptographer, ILogger(Of IProviderParameterManager))
+  fullName: CG.Purple.Managers.ProviderParameterManager.ProviderParameterManager(IProviderParameterRepository, ICryptographer, ILogger<CG.Purple.Managers.IProviderParameterManager>)
+  fullName.vb: CG.Purple.Managers.ProviderParameterManager.ProviderParameterManager(IProviderParameterRepository, ICryptographer, ILogger(Of CG.Purple.Managers.IProviderParameterManager))
+  nameWithType: ProviderParameterManager.ProviderParameterManager(IProviderParameterRepository, ICryptographer, ILogger<IProviderParameterManager>)
+  nameWithType.vb: ProviderParameterManager.ProviderParameterManager(IProviderParameterRepository, ICryptographer, ILogger(Of IProviderParameterManager))
 - uid: CG.Purple.Managers.ProviderParameterManager.#ctor*
   name: ProviderParameterManager
   href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager__ctor_
@@ -5193,12 +5723,6 @@ references:
   commentId: F:CG.Purple.Managers.ProviderParameterManager._cryptographer
   fullName: CG.Purple.Managers.ProviderParameterManager._cryptographer
   nameWithType: ProviderParameterManager._cryptographer
-- uid: CG.Purple.Managers.ProviderParameterManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager__distributedCache
-  commentId: F:CG.Purple.Managers.ProviderParameterManager._distributedCache
-  fullName: CG.Purple.Managers.ProviderParameterManager._distributedCache
-  nameWithType: ProviderParameterManager._distributedCache
 - uid: CG.Purple.Managers.ProviderParameterManager._logger
   name: _logger
   href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager__logger
@@ -5224,12 +5748,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProviderParameterManager.AnyAsync
   nameWithType: ProviderParameterManager.AnyAsync
-- uid: CG.Purple.Managers.ProviderParameterManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.ProviderParameterManager.CACHE_KEY
-  fullName: CG.Purple.Managers.ProviderParameterManager.CACHE_KEY
-  nameWithType: ProviderParameterManager.CACHE_KEY
 - uid: CG.Purple.Managers.ProviderParameterManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager_CountAsync_CancellationToken_
@@ -5288,15 +5806,15 @@ references:
   commentId: T:CG.Purple.Managers.ProviderTypeManager
   fullName: CG.Purple.Managers.ProviderTypeManager
   nameWithType: ProviderTypeManager
-- uid: CG.Purple.Managers.ProviderTypeManager.#ctor(IProviderTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IProviderTypeManager})
-  name: ProviderTypeManager(IProviderTypeRepository, IDistributedCache, ILogger<IProviderTypeManager>)
-  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__ctor_IProviderTypeRepository_IDistributedCache_ILogger_CG_Purple_Managers_IProviderTypeManager__
-  commentId: M:CG.Purple.Managers.ProviderTypeManager.#ctor(IProviderTypeRepository,IDistributedCache,ILogger{CG.Purple.Managers.IProviderTypeManager})
-  name.vb: ProviderTypeManager(IProviderTypeRepository, IDistributedCache, ILogger(Of IProviderTypeManager))
-  fullName: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, IDistributedCache, ILogger<CG.Purple.Managers.IProviderTypeManager>)
-  fullName.vb: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.IProviderTypeManager))
-  nameWithType: ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, IDistributedCache, ILogger<IProviderTypeManager>)
-  nameWithType.vb: ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, IDistributedCache, ILogger(Of IProviderTypeManager))
+- uid: CG.Purple.Managers.ProviderTypeManager.#ctor(IProviderTypeRepository,ILogger{CG.Purple.Managers.IProviderTypeManager})
+  name: ProviderTypeManager(IProviderTypeRepository, ILogger<IProviderTypeManager>)
+  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__ctor_IProviderTypeRepository_ILogger_CG_Purple_Managers_IProviderTypeManager__
+  commentId: M:CG.Purple.Managers.ProviderTypeManager.#ctor(IProviderTypeRepository,ILogger{CG.Purple.Managers.IProviderTypeManager})
+  name.vb: ProviderTypeManager(IProviderTypeRepository, ILogger(Of IProviderTypeManager))
+  fullName: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ILogger<CG.Purple.Managers.IProviderTypeManager>)
+  fullName.vb: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ILogger(Of CG.Purple.Managers.IProviderTypeManager))
+  nameWithType: ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ILogger<IProviderTypeManager>)
+  nameWithType.vb: ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ILogger(Of IProviderTypeManager))
 - uid: CG.Purple.Managers.ProviderTypeManager.#ctor*
   name: ProviderTypeManager
   href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__ctor_
@@ -5304,12 +5822,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager
   nameWithType: ProviderTypeManager.ProviderTypeManager
-- uid: CG.Purple.Managers.ProviderTypeManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__distributedCache
-  commentId: F:CG.Purple.Managers.ProviderTypeManager._distributedCache
-  fullName: CG.Purple.Managers.ProviderTypeManager._distributedCache
-  nameWithType: ProviderTypeManager._distributedCache
 - uid: CG.Purple.Managers.ProviderTypeManager._logger
   name: _logger
   href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__logger
@@ -5335,12 +5847,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProviderTypeManager.AnyAsync
   nameWithType: ProviderTypeManager.AnyAsync
-- uid: CG.Purple.Managers.ProviderTypeManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.ProviderTypeManager.CACHE_KEY
-  fullName: CG.Purple.Managers.ProviderTypeManager.CACHE_KEY
-  nameWithType: ProviderTypeManager.CACHE_KEY
 - uid: CG.Purple.Managers.ProviderTypeManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager_CountAsync_CancellationToken_
@@ -5451,15 +5957,15 @@ references:
   commentId: T:CG.Purple.Managers.TextMessageManager
   fullName: CG.Purple.Managers.TextMessageManager
   nameWithType: TextMessageManager
-- uid: CG.Purple.Managers.TextMessageManager.#ctor(CG.Purple.Repositories.ITextMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.ITextMessageManager})
-  name: TextMessageManager(ITextMessageRepository, IDistributedCache, ILogger<ITextMessageManager>)
-  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__ctor_CG_Purple_Repositories_ITextMessageRepository_IDistributedCache_ILogger_CG_Purple_Managers_ITextMessageManager__
-  commentId: M:CG.Purple.Managers.TextMessageManager.#ctor(CG.Purple.Repositories.ITextMessageRepository,IDistributedCache,ILogger{CG.Purple.Managers.ITextMessageManager})
-  name.vb: TextMessageManager(ITextMessageRepository, IDistributedCache, ILogger(Of ITextMessageManager))
-  fullName: CG.Purple.Managers.TextMessageManager.TextMessageManager(CG.Purple.Repositories.ITextMessageRepository, IDistributedCache, ILogger<CG.Purple.Managers.ITextMessageManager>)
-  fullName.vb: CG.Purple.Managers.TextMessageManager.TextMessageManager(CG.Purple.Repositories.ITextMessageRepository, IDistributedCache, ILogger(Of CG.Purple.Managers.ITextMessageManager))
-  nameWithType: TextMessageManager.TextMessageManager(ITextMessageRepository, IDistributedCache, ILogger<ITextMessageManager>)
-  nameWithType.vb: TextMessageManager.TextMessageManager(ITextMessageRepository, IDistributedCache, ILogger(Of ITextMessageManager))
+- uid: CG.Purple.Managers.TextMessageManager.#ctor(ITextMessageRepository,ILogger{CG.Purple.Managers.ITextMessageManager})
+  name: TextMessageManager(ITextMessageRepository, ILogger<ITextMessageManager>)
+  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__ctor_ITextMessageRepository_ILogger_CG_Purple_Managers_ITextMessageManager__
+  commentId: M:CG.Purple.Managers.TextMessageManager.#ctor(ITextMessageRepository,ILogger{CG.Purple.Managers.ITextMessageManager})
+  name.vb: TextMessageManager(ITextMessageRepository, ILogger(Of ITextMessageManager))
+  fullName: CG.Purple.Managers.TextMessageManager.TextMessageManager(ITextMessageRepository, ILogger<CG.Purple.Managers.ITextMessageManager>)
+  fullName.vb: CG.Purple.Managers.TextMessageManager.TextMessageManager(ITextMessageRepository, ILogger(Of CG.Purple.Managers.ITextMessageManager))
+  nameWithType: TextMessageManager.TextMessageManager(ITextMessageRepository, ILogger<ITextMessageManager>)
+  nameWithType.vb: TextMessageManager.TextMessageManager(ITextMessageRepository, ILogger(Of ITextMessageManager))
 - uid: CG.Purple.Managers.TextMessageManager.#ctor*
   name: TextMessageManager
   href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__ctor_
@@ -5467,12 +5973,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.TextMessageManager.TextMessageManager
   nameWithType: TextMessageManager.TextMessageManager
-- uid: CG.Purple.Managers.TextMessageManager._distributedCache
-  name: _distributedCache
-  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__distributedCache
-  commentId: F:CG.Purple.Managers.TextMessageManager._distributedCache
-  fullName: CG.Purple.Managers.TextMessageManager._distributedCache
-  nameWithType: TextMessageManager._distributedCache
 - uid: CG.Purple.Managers.TextMessageManager._logger
   name: _logger
   href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__logger
@@ -5498,12 +5998,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.TextMessageManager.AnyAsync
   nameWithType: TextMessageManager.AnyAsync
-- uid: CG.Purple.Managers.TextMessageManager.CACHE_KEY
-  name: CACHE_KEY
-  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager_CACHE_KEY
-  commentId: F:CG.Purple.Managers.TextMessageManager.CACHE_KEY
-  fullName: CG.Purple.Managers.TextMessageManager.CACHE_KEY
-  nameWithType: TextMessageManager.CACHE_KEY
 - uid: CG.Purple.Managers.TextMessageManager.CountAsync(CancellationToken)
   name: CountAsync(CancellationToken)
   href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager_CountAsync_CancellationToken_
@@ -7010,115 +7504,6 @@ references:
   commentId: N:CG.Purple.Options
   fullName: CG.Purple.Options
   nameWithType: CG.Purple.Options
-- uid: CG.Purple.Options.AttachmentOptions
-  name: AttachmentOptions
-  href: api/CG.Purple.Options.AttachmentOptions.html
-  commentId: T:CG.Purple.Options.AttachmentOptions
-  fullName: CG.Purple.Options.AttachmentOptions
-  nameWithType: AttachmentOptions
-- uid: CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.AttachmentOptions.html#CG_Purple_Options_AttachmentOptions_DefaultCacheDuration
-  commentId: P:CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
-  fullName: CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
-  nameWithType: AttachmentOptions.DefaultCacheDuration
-- uid: CG.Purple.Options.AttachmentOptions.DefaultCacheDuration*
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.AttachmentOptions.html#CG_Purple_Options_AttachmentOptions_DefaultCacheDuration_
-  commentId: Overload:CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
-  isSpec: "True"
-  fullName: CG.Purple.Options.AttachmentOptions.DefaultCacheDuration
-  nameWithType: AttachmentOptions.DefaultCacheDuration
-- uid: CG.Purple.Options.BllOptions
-  name: BllOptions
-  href: api/CG.Purple.Options.BllOptions.html
-  commentId: T:CG.Purple.Options.BllOptions
-  fullName: CG.Purple.Options.BllOptions
-  nameWithType: BllOptions
-- uid: CG.Purple.Options.BllOptions.Attachments
-  name: Attachments
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_Attachments
-  commentId: P:CG.Purple.Options.BllOptions.Attachments
-  fullName: CG.Purple.Options.BllOptions.Attachments
-  nameWithType: BllOptions.Attachments
-- uid: CG.Purple.Options.BllOptions.Attachments*
-  name: Attachments
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_Attachments_
-  commentId: Overload:CG.Purple.Options.BllOptions.Attachments
-  isSpec: "True"
-  fullName: CG.Purple.Options.BllOptions.Attachments
-  nameWithType: BllOptions.Attachments
-- uid: CG.Purple.Options.BllOptions.FileTypes
-  name: FileTypes
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_FileTypes
-  commentId: P:CG.Purple.Options.BllOptions.FileTypes
-  fullName: CG.Purple.Options.BllOptions.FileTypes
-  nameWithType: BllOptions.FileTypes
-- uid: CG.Purple.Options.BllOptions.FileTypes*
-  name: FileTypes
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_FileTypes_
-  commentId: Overload:CG.Purple.Options.BllOptions.FileTypes
-  isSpec: "True"
-  fullName: CG.Purple.Options.BllOptions.FileTypes
-  nameWithType: BllOptions.FileTypes
-- uid: CG.Purple.Options.BllOptions.MailMessages
-  name: MailMessages
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_MailMessages
-  commentId: P:CG.Purple.Options.BllOptions.MailMessages
-  fullName: CG.Purple.Options.BllOptions.MailMessages
-  nameWithType: BllOptions.MailMessages
-- uid: CG.Purple.Options.BllOptions.MailMessages*
-  name: MailMessages
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_MailMessages_
-  commentId: Overload:CG.Purple.Options.BllOptions.MailMessages
-  isSpec: "True"
-  fullName: CG.Purple.Options.BllOptions.MailMessages
-  nameWithType: BllOptions.MailMessages
-- uid: CG.Purple.Options.BllOptions.MimeTypes
-  name: MimeTypes
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_MimeTypes
-  commentId: P:CG.Purple.Options.BllOptions.MimeTypes
-  fullName: CG.Purple.Options.BllOptions.MimeTypes
-  nameWithType: BllOptions.MimeTypes
-- uid: CG.Purple.Options.BllOptions.MimeTypes*
-  name: MimeTypes
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_MimeTypes_
-  commentId: Overload:CG.Purple.Options.BllOptions.MimeTypes
-  isSpec: "True"
-  fullName: CG.Purple.Options.BllOptions.MimeTypes
-  nameWithType: BllOptions.MimeTypes
-- uid: CG.Purple.Options.BllOptions.TextMessages
-  name: TextMessages
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_TextMessages
-  commentId: P:CG.Purple.Options.BllOptions.TextMessages
-  fullName: CG.Purple.Options.BllOptions.TextMessages
-  nameWithType: BllOptions.TextMessages
-- uid: CG.Purple.Options.BllOptions.TextMessages*
-  name: TextMessages
-  href: api/CG.Purple.Options.BllOptions.html#CG_Purple_Options_BllOptions_TextMessages_
-  commentId: Overload:CG.Purple.Options.BllOptions.TextMessages
-  isSpec: "True"
-  fullName: CG.Purple.Options.BllOptions.TextMessages
-  nameWithType: BllOptions.TextMessages
-- uid: CG.Purple.Options.FileTypeOptions
-  name: FileTypeOptions
-  href: api/CG.Purple.Options.FileTypeOptions.html
-  commentId: T:CG.Purple.Options.FileTypeOptions
-  fullName: CG.Purple.Options.FileTypeOptions
-  nameWithType: FileTypeOptions
-- uid: CG.Purple.Options.FileTypeOptions.DefaultCacheDuration
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.FileTypeOptions.html#CG_Purple_Options_FileTypeOptions_DefaultCacheDuration
-  commentId: P:CG.Purple.Options.FileTypeOptions.DefaultCacheDuration
-  fullName: CG.Purple.Options.FileTypeOptions.DefaultCacheDuration
-  nameWithType: FileTypeOptions.DefaultCacheDuration
-- uid: CG.Purple.Options.FileTypeOptions.DefaultCacheDuration*
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.FileTypeOptions.html#CG_Purple_Options_FileTypeOptions_DefaultCacheDuration_
-  commentId: Overload:CG.Purple.Options.FileTypeOptions.DefaultCacheDuration
-  isSpec: "True"
-  fullName: CG.Purple.Options.FileTypeOptions.DefaultCacheDuration
-  nameWithType: FileTypeOptions.DefaultCacheDuration
 - uid: CG.Purple.Options.HostedServiceOptions
   name: HostedServiceOptions
   href: api/CG.Purple.Options.HostedServiceOptions.html
@@ -7138,25 +7523,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Options.HostedServiceOptions.MessageProcessing
   nameWithType: HostedServiceOptions.MessageProcessing
-- uid: CG.Purple.Options.MailMessageOptions
-  name: MailMessageOptions
-  href: api/CG.Purple.Options.MailMessageOptions.html
-  commentId: T:CG.Purple.Options.MailMessageOptions
-  fullName: CG.Purple.Options.MailMessageOptions
-  nameWithType: MailMessageOptions
-- uid: CG.Purple.Options.MailMessageOptions.DefaultCacheDuration
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.MailMessageOptions.html#CG_Purple_Options_MailMessageOptions_DefaultCacheDuration
-  commentId: P:CG.Purple.Options.MailMessageOptions.DefaultCacheDuration
-  fullName: CG.Purple.Options.MailMessageOptions.DefaultCacheDuration
-  nameWithType: MailMessageOptions.DefaultCacheDuration
-- uid: CG.Purple.Options.MailMessageOptions.DefaultCacheDuration*
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.MailMessageOptions.html#CG_Purple_Options_MailMessageOptions_DefaultCacheDuration_
-  commentId: Overload:CG.Purple.Options.MailMessageOptions.DefaultCacheDuration
-  isSpec: "True"
-  fullName: CG.Purple.Options.MailMessageOptions.DefaultCacheDuration
-  nameWithType: MailMessageOptions.DefaultCacheDuration
 - uid: CG.Purple.Options.MessageProcessingOptions
   name: MessageProcessingOptions
   href: api/CG.Purple.Options.MessageProcessingOptions.html
@@ -7215,44 +7581,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Options.MessageProcessingOptions.ThrottleDuration
   nameWithType: MessageProcessingOptions.ThrottleDuration
-- uid: CG.Purple.Options.MimeTypeOptions
-  name: MimeTypeOptions
-  href: api/CG.Purple.Options.MimeTypeOptions.html
-  commentId: T:CG.Purple.Options.MimeTypeOptions
-  fullName: CG.Purple.Options.MimeTypeOptions
-  nameWithType: MimeTypeOptions
-- uid: CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.MimeTypeOptions.html#CG_Purple_Options_MimeTypeOptions_DefaultCacheDuration
-  commentId: P:CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
-  fullName: CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
-  nameWithType: MimeTypeOptions.DefaultCacheDuration
-- uid: CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration*
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.MimeTypeOptions.html#CG_Purple_Options_MimeTypeOptions_DefaultCacheDuration_
-  commentId: Overload:CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
-  isSpec: "True"
-  fullName: CG.Purple.Options.MimeTypeOptions.DefaultCacheDuration
-  nameWithType: MimeTypeOptions.DefaultCacheDuration
-- uid: CG.Purple.Options.TextMessageOptions
-  name: TextMessageOptions
-  href: api/CG.Purple.Options.TextMessageOptions.html
-  commentId: T:CG.Purple.Options.TextMessageOptions
-  fullName: CG.Purple.Options.TextMessageOptions
-  nameWithType: TextMessageOptions
-- uid: CG.Purple.Options.TextMessageOptions.DefaultCacheDuration
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.TextMessageOptions.html#CG_Purple_Options_TextMessageOptions_DefaultCacheDuration
-  commentId: P:CG.Purple.Options.TextMessageOptions.DefaultCacheDuration
-  fullName: CG.Purple.Options.TextMessageOptions.DefaultCacheDuration
-  nameWithType: TextMessageOptions.DefaultCacheDuration
-- uid: CG.Purple.Options.TextMessageOptions.DefaultCacheDuration*
-  name: DefaultCacheDuration
-  href: api/CG.Purple.Options.TextMessageOptions.html#CG_Purple_Options_TextMessageOptions_DefaultCacheDuration_
-  commentId: Overload:CG.Purple.Options.TextMessageOptions.DefaultCacheDuration
-  isSpec: "True"
-  fullName: CG.Purple.Options.TextMessageOptions.DefaultCacheDuration
-  nameWithType: TextMessageOptions.DefaultCacheDuration
 - uid: CG.Purple.Providers
   name: CG.Purple.Providers
   href: api/CG.Purple.Providers.html
@@ -8182,6 +8510,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Repositories.IParameterTypeRepository.DeleteAsync
   nameWithType: IParameterTypeRepository.DeleteAsync
+- uid: CG.Purple.Repositories.IParameterTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.Repositories.IParameterTypeRepository.html#CG_Purple_Repositories_IParameterTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.Repositories.IParameterTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.Repositories.IParameterTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: IParameterTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.Repositories.IParameterTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.Repositories.IParameterTypeRepository.html#CG_Purple_Repositories_IParameterTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.Repositories.IParameterTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.Repositories.IParameterTypeRepository.FindAllAsync
+  nameWithType: IParameterTypeRepository.FindAllAsync
 - uid: CG.Purple.Repositories.IParameterTypeRepository.FindByNameAsync(System.String,CancellationToken)
   name: FindByNameAsync(String, CancellationToken)
   href: api/CG.Purple.Repositories.IParameterTypeRepository.html#CG_Purple_Repositories_IParameterTypeRepository_FindByNameAsync_System_String_CancellationToken_
@@ -12639,6 +12980,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.ParameterTypeRepository.DeleteAsync
   nameWithType: ParameterTypeRepository.DeleteAsync
+- uid: CG.Purple.SqlServer.Repositories.ParameterTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.ParameterTypeRepository.html#CG_Purple_SqlServer_Repositories_ParameterTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.ParameterTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.ParameterTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: ParameterTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.ParameterTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.SqlServer.Repositories.ParameterTypeRepository.html#CG_Purple_SqlServer_Repositories_ParameterTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.ParameterTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.ParameterTypeRepository.FindAllAsync
+  nameWithType: ParameterTypeRepository.FindAllAsync
 - uid: CG.Purple.SqlServer.Repositories.ParameterTypeRepository.FindByNameAsync(System.String,CancellationToken)
   name: FindByNameAsync(String, CancellationToken)
   href: api/CG.Purple.SqlServer.Repositories.ParameterTypeRepository.html#CG_Purple_SqlServer_Repositories_ParameterTypeRepository_FindByNameAsync_System_String_CancellationToken_
