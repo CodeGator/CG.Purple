@@ -239,7 +239,7 @@ public partial class Index
 
             // Create the dialog.
             var dialog = DialogService.Show<PropertyTypeDialog>(
-                "Edit Parameter Type",
+                "Edit Property Type",
                 properties,
                 options
                 );
@@ -492,7 +492,7 @@ public partial class Index
 
             // Create the dialog.
             var dialog = DialogService.Show<PropertyTypeDialog>(
-                "Edit Mime Type",
+                "Edit Property Type",
                 properties,
                 options
                 );
