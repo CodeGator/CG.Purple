@@ -38,17 +38,6 @@ public static class WebApplicationBuilderExtensions001
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Configuring BLL options from the {section} section",
-            sectionName
-            );
-
-        // Configure the BLL options.
-        webApplicationBuilder.Services.ConfigureOptions<BllOptions>(
-            webApplicationBuilder.Configuration.GetSection(sectionName)
-            );
-
-        // Tell the world what we are about to do.
-        bootstrapLogger?.LogDebug(
             "Wiring up the BLL managers"
             );
 

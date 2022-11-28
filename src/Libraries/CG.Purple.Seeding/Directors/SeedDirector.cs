@@ -637,24 +637,6 @@ internal class SeedDirector : ISeedDirector
                         );
                     return; // Nothing else to do!
                 }
-
-                // Are there existing file types?
-                hasExistingData = await _fileTypeManager.AnyAsync(
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-                // Should we stop?
-                if (hasExistingData)
-                {
-                    // Log what we didn't do.
-                    _logger.LogWarning(
-                        "Skipping seeding mail messages because the 'force' flag " +
-                        "was not specified and there are existing mail messages " +
-                        "in the database.",
-                        mailMessageOptions.Count
-                        );
-                    return; // Nothing else to do!
-                }
             }
 
             // Log what we are about to do.
