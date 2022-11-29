@@ -1,10 +1,10 @@
 ﻿
-namespace CG.Purple.Host.SignalR
+namespace CG.Purple.Host.Services.SignalR
 {
     /// <summary>
     /// This class is a SignalR hub for the status back channel.
     /// </summary>
-    public class StatusHub : Hub
+    internal class StatusHub : Hub
     {
         // *******************************************************************
         // Constructors.

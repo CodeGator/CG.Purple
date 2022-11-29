@@ -179,26 +179,23 @@ public partial class Index
         string searchString
         )
     {
-        // How should we filter?
+        // Should we filter on a sub-property?
         if (searchString.Contains(':'))
         {
-            // If we get here then we might need to filter by file extensions.
-
-            // Should be: ext:value
+            // Split the search term(s).
             var parts = searchString.Split(':');
             if (parts.Length == 2)
             {
-                // If we get here then we need to filter by extensions.
-
-                // Look for a matching file type.
-                var match = element.FileTypes.FirstOrDefault(x =>
-                    x.Extension.Contains(parts[1], StringComparison.OrdinalIgnoreCase)
-                    );
-
-                // Did we find one?
-                if (match is not null)
+                // Should we filter by extension?
+                if (parts[0].Contains("Extension", StringComparison.OrdinalIgnoreCase))
                 {
-                    return true;
+                    // Look for a matching file type.
+                    var match = element.FileTypes.FirstOrDefault(x =>
+                        x.Extension.Contains(parts[1], StringComparison.OrdinalIgnoreCase)
+                        );
+
+                    // Did we find one?
+                    return match is not null;
                 }
             }
         }

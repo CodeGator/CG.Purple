@@ -24,7 +24,14 @@ Purple is an idea for a self contained messaging microservice. The scenario is: 
 ### What does it look like?
 Here are a few early screen shots (subject to change):
 
+Message page:
 ![messges](screens/messages.png)
+
+Mime Type page:
+![messges](screens/mimetypes.png)
+
+Provider Type page:
+![messges](screens/providertypes.png)
 
 ### What platform(s) does it support?
 * .NET 7.x or higher

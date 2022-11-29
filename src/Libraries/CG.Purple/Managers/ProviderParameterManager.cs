@@ -168,6 +168,12 @@ internal class ProviderParameterManager : IProviderParameterManager
             providerParameter.LastUpdatedBy = null;
             providerParameter.LastUpdatedOnUtc = null;
 
+            // We encrypt parameter values, at rest.
+            providerParameter.Value = await _cryptographer.AesEncryptAsync(
+                providerParameter.Value,
+                cancellationToken
+                ).ConfigureAwait(false);    
+
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
@@ -273,6 +279,12 @@ internal class ProviderParameterManager : IProviderParameterManager
             // Ensure the stats are correct.
             providerParameter.LastUpdatedOnUtc = DateTime.UtcNow;
             providerParameter.LastUpdatedBy = userName;
+
+            // We encrypt parameter values, at rest.
+            providerParameter.Value = await _cryptographer.AesEncryptAsync(
+                providerParameter.Value,
+                cancellationToken
+                ).ConfigureAwait(false);
 
             // Log what we are about to do.
             _logger.LogTrace(

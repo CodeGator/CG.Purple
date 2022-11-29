@@ -66,6 +66,17 @@ public static class WebApplicationBuilderExtensions006
         webApplicationBuilder.Services.AddScoped<IRetryDirector, RetryDirector>();
         webApplicationBuilder.Services.AddScoped<IArchiveDirector, ArchiveDirector>();
 
+        // Tell the world what we are about to do.
+        bootstrapLogger?.LogDebug(
+            "Wiring up SignalR"
+            );
+
+        // Add SignalR stuff.
+        webApplicationBuilder.Services.AddSignalR(options =>
+        {
+            options.EnableDetailedErrors = true;
+        });
+
         // Return the application builder.
         return webApplicationBuilder;
     }

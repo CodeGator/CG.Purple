@@ -11,3 +11,5 @@ global using Microsoft.Extensions.Logging;
 global using CG.Purple.Options;
 global using Microsoft.Extensions.Options;
 global using System.Diagnostics;
+global using Microsoft.AspNetCore.SignalR;
+global using CG.Purple.Host.Services.SignalR;

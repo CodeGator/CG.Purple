@@ -57,12 +57,6 @@ try
         bootstrapLogger: BootstrapLogger.Instance()
         );
         
-    // Add SignalR stuff.
-    builder.Services.AddSignalR(options =>
-    {
-        options.EnableDetailedErrors = true;
-    });
-
     // Build the application.
     var app = builder.Build();
 
@@ -78,15 +72,12 @@ try
     app.UseStaticFiles();
     app.UseRouting();
     app.MapControllers();
-    app.MapBlazorHub();
     app.MapFallbackToPage("/_Host");
-
-    // Use SignalR stuff.
-    app.MapHub<StatusHub>("/_status");
 
     // Use CodeGator stuff.
     app.UseDalStartup()
-        .UseStartupSeeding();
+        .UseStartupSeeding()
+        .UseServicesLayer();
 
     // Run the application.
     app.Run();

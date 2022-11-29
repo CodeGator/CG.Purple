@@ -262,29 +262,25 @@ public partial class Index
         string searchString
         )
     {
-        // How should we filter?
+        // Should we filter on a sub-property?
         if (searchString.Contains(':'))
         {
-            // If we get here then we might need to filter by property types.
-
-            // Should be: property type:value
+            // Split the search term(s).
             var parts = searchString.Split(':');
             if (parts.Length == 2)
             {
-                // If we get here then we need to filter by property types.
-
-                // Look for a matching property.
-                var match = element.MessageProperties.FirstOrDefault(x => 
-                    x.PropertyType.Name.Contains(parts[1], StringComparison.OrdinalIgnoreCase)
+                // Look for a matching property type.
+                var match = element.MessageProperties.FirstOrDefault(x =>
+                    x.PropertyType.Name.Contains(parts[0], StringComparison.OrdinalIgnoreCase)
                     );
 
                 // Did we find one?
                 if (match is not null)
                 {
+                    // Does the value match?
                     return match.Value.Contains(
-                        parts[1],
-                        StringComparison.OrdinalIgnoreCase
-                        );
+                        parts[1], 
+                        StringComparison.OrdinalIgnoreCase);
                 }
             }
         }
@@ -360,29 +356,25 @@ public partial class Index
         string searchString
         )
     {
-        // How should we filter?
+        // Should we filter on a sub-property?
         if (searchString.Contains(':'))
         {
-            // If we get here then we might need to filter by property types.
-
-            // Should be: property type:value
+            // Split the search term(s).
             var parts = searchString.Split(':');
             if (parts.Length == 2)
             {
-                // If we get here then we need to filter by property types.
-
-                // Look for a matching property.
+                // Look for a matching property type.
                 var match = element.MessageProperties.FirstOrDefault(x =>
-                    x.PropertyType.Name.Contains(parts[1], StringComparison.OrdinalIgnoreCase)
+                    x.PropertyType.Name.Contains(parts[0], StringComparison.OrdinalIgnoreCase)
                     );
 
                 // Did we find one?
                 if (match is not null)
                 {
+                    // Does the value match?
                     return match.Value.Contains(
                         parts[1],
-                        StringComparison.OrdinalIgnoreCase
-                        );
+                        StringComparison.OrdinalIgnoreCase);
                 }
             }
         }
