@@ -225,11 +225,13 @@ public partial class Index
             // Create the dialog parameters.
             var providers = new DialogParameters()
             {
-                { "Model", new ProviderType()
                 {
-                    CreatedBy = UserName,
-                    CreatedOnUtc = DateTime.UtcNow,
-                }}
+                    "Model", new ProviderType()
+                    {
+                        CreatedBy = UserName,
+                        CreatedOnUtc = DateTime.UtcNow,
+                    }
+                }
             };
 
             // Log what we are about to do.

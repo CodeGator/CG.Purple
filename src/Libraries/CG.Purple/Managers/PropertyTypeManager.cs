@@ -76,9 +76,12 @@ internal class PropertyTypeManager : IPropertyTypeManager
                 );
 
             // Perform the search.
-            return await _propertyTypeRepository.AnyAsync(
+            var result = await _propertyTypeRepository.AnyAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the result.
+            return result;
         }
         catch (Exception ex)
         {
@@ -112,9 +115,12 @@ internal class PropertyTypeManager : IPropertyTypeManager
                 );
 
             // Perform the search.
-            return await _propertyTypeRepository.CountAsync(
+            var result = await _propertyTypeRepository.CountAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the result.
+            return result;
         }
         catch (Exception ex)
         {
@@ -166,10 +172,13 @@ internal class PropertyTypeManager : IPropertyTypeManager
                 );
 
             // Perform the operation.
-            return await _propertyTypeRepository.CreateAsync(
+            var result = await _propertyTypeRepository.CreateAsync(
                 propertyType,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the result.
+            return result;
         }
         catch (Exception ex)
         {
@@ -256,9 +265,12 @@ internal class PropertyTypeManager : IPropertyTypeManager
                 );
 
             // Perform the operation.
-            return await _propertyTypeRepository.FindAllAsync(
+            var result = await _propertyTypeRepository.FindAllAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the result.
+            return result;
         }
         catch (Exception ex)
         {
@@ -298,10 +310,13 @@ internal class PropertyTypeManager : IPropertyTypeManager
                 );
 
             // Perform the operation.
-            return await _propertyTypeRepository.FindByNameAsync(
+            var result = await _propertyTypeRepository.FindByNameAsync(
                 name,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the result.
+            return result;
         }
         catch (Exception ex)
         {
@@ -352,10 +367,13 @@ internal class PropertyTypeManager : IPropertyTypeManager
                 );
 
             // Perform the operation.
-            return await _propertyTypeRepository.UpdateAsync(
+            var result = await _propertyTypeRepository.UpdateAsync(
                 propertyType,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Return the result.
+            return result;
         }
         catch (Exception ex)
         {

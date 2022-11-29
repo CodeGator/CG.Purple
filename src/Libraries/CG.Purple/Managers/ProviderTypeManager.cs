@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Models;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -19,6 +21,11 @@ internal class ProviderTypeManager : IProviderTypeManager
     internal protected readonly IProviderTypeRepository _providerTypeRepository = null!;
 
     /// <summary>
+    /// This field contains the cryptographer for this manager.
+    /// </summary>
+    internal protected readonly ICryptographer _cryptographer = null!;
+
+    /// <summary>
     /// This field contains the logger for this manager.
     /// </summary>
     internal protected readonly ILogger<IProviderTypeManager> _logger = null!;
@@ -37,20 +44,24 @@ internal class ProviderTypeManager : IProviderTypeManager
     /// </summary>
     /// <param name="providerTypeRepository">The provider type repository to use
     /// with this manager.</param>
+    /// <param name="cryptographer">The cryptographer to use with this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public ProviderTypeManager(
         IProviderTypeRepository providerTypeRepository,
+        ICryptographer cryptographer,
         ILogger<IProviderTypeManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(providerTypeRepository, nameof(providerTypeRepository))
+            .ThrowIfNull(cryptographer, nameof(cryptographer))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _providerTypeRepository = providerTypeRepository;
+        _cryptographer = cryptographer;
         _logger = logger;
     }
 
@@ -166,6 +177,24 @@ internal class ProviderTypeManager : IProviderTypeManager
             providerType.LastUpdatedOnUtc = null;
 
             // Log what we are about to do.
+            _logger.LogDebug(
+                "Encrypting provider parameters for provider: {id}",
+                providerType.Id
+                );
+
+            // Get the parameters.
+            var parameters = providerType.Parameters.ToArray();
+
+            // Loop through the parameter types.
+            for (var y = 0; y < parameters.Count(); y++)
+            {
+                // The parameter values are encrypted, at rest.
+                parameters[y].Value = await _cryptographer.AesEncryptAsync(
+                    parameters[y].Value
+                    ).ConfigureAwait(false);
+            }
+
+            // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
                 nameof(IProviderTypeRepository.CreateAsync)
@@ -265,12 +294,35 @@ internal class ProviderTypeManager : IProviderTypeManager
                 );
 
             // Perform the operation.
-            var result = await _providerTypeRepository.FindAllAsync(
+            var providerTypes = (await _providerTypeRepository.FindAllAsync(
                 cancellationToken
-                ).ConfigureAwait(false);
+                ).ConfigureAwait(false)).ToArray();
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Decrypting provider parameters for {count} providers",
+                providerTypes.Count()
+                );
+
+            // Loop through the provider types.
+            for (var x = 0; x < providerTypes.Count(); x++)
+            {
+                // Get the parameters.
+                var parameters = providerTypes[x].Parameters.ToArray();
+
+                // Loop through the parameter types.
+                for (var y = 0; y < parameters.Count(); y++)
+                {
+                    // The parameter values are encrypted, at rest, so we
+                    //   need to undo that now.
+                    parameters[y].Value = await _cryptographer.AesDecryptAsync(
+                        parameters[y].Value
+                        ).ConfigureAwait(false);
+                }                
+            }
 
             // Return the results.
-            return result;
+            return providerTypes;
         }
         catch (Exception ex)
         {
@@ -305,12 +357,35 @@ internal class ProviderTypeManager : IProviderTypeManager
                 );
 
             // Perform the operation.
-            var result = await _providerTypeRepository.FindForEmailsAsync(
+            var providerTypes = (await _providerTypeRepository.FindForEmailsAsync(
                 cancellationToken
-                ).ConfigureAwait(false);
+                ).ConfigureAwait(false)).ToArray();
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Decrypting provider parameters for {count} providers",
+                providerTypes.Count()
+                );
+
+            // Loop through the provider types.
+            for (var x = 0; x < providerTypes.Count(); x++)
+            {
+                // Get the parameters.
+                var parameters = providerTypes[x].Parameters.ToArray();
+
+                // Loop through the parameter types.
+                for (var y = 0; y < parameters.Count(); y++)
+                {
+                    // The parameter values are encrypted, at rest, so we
+                    //   need to undo that now.
+                    parameters[y].Value = await _cryptographer.AesDecryptAsync(
+                        parameters[y].Value
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Return the results.
-            return result;
+            return providerTypes;
         }
         catch (Exception ex)
         {
@@ -345,12 +420,35 @@ internal class ProviderTypeManager : IProviderTypeManager
                 );
 
             // Perform the operation.
-            var result = await _providerTypeRepository.FindForTextsAsync(
+            var providerTypes = (await _providerTypeRepository.FindForTextsAsync(
                 cancellationToken
-                ).ConfigureAwait(false);
+                ).ConfigureAwait(false)).ToArray();
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Decrypting provider parameters for {count} providers",
+                providerTypes.Count()
+                );
+
+            // Loop through the provider types.
+            for (var x = 0; x < providerTypes.Count(); x++)
+            {
+                // Get the parameters.
+                var parameters = providerTypes[x].Parameters.ToArray();
+
+                // Loop through the parameter types.
+                for (var y = 0; y < parameters.Count(); y++)
+                {
+                    // The parameter values are encrypted, at rest, so we
+                    //   need to undo that now.
+                    parameters[y].Value = await _cryptographer.AesDecryptAsync(
+                        parameters[y].Value
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Return the results.
-            return result;
+            return providerTypes;
         }
         catch (Exception ex)
         {
@@ -389,13 +487,36 @@ internal class ProviderTypeManager : IProviderTypeManager
                 );
 
             // Perform the operation.
-            var result = await _providerTypeRepository.FindByNameAsync(
+            var providerType = await _providerTypeRepository.FindByNameAsync(
                 name,
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // Did we find a match?
+            if (providerType is not null)
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Decrypting provider parameters for provider: {id}",
+                    providerType.Id
+                    );
+
+                // Get the parameters.
+                var parameters = providerType.Parameters.ToArray();
+
+                // Loop through the parameter types.
+                for (var y = 0; y < parameters.Count(); y++)
+                {
+                    // The parameter values are encrypted, at rest, so we
+                    //   need to undo that now.
+                    parameters[y].Value = await _cryptographer.AesDecryptAsync(
+                        parameters[y].Value
+                        ).ConfigureAwait(false);
+                }
+            }
+
             // Return the results.
-            return result;
+            return providerType;
         }
         catch (Exception ex)
         {
@@ -438,6 +559,24 @@ internal class ProviderTypeManager : IProviderTypeManager
             // Ensure the stats are correct.
             providerType.LastUpdatedOnUtc = DateTime.UtcNow;
             providerType.LastUpdatedBy = userName;
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Encrypting provider parameters for provider: {id}",
+                providerType.Id
+                );
+
+            // Get the parameters.
+            var parameters = providerType.Parameters.ToArray();
+
+            // Loop through the parameter types.
+            for (var y = 0; y < parameters.Count(); y++)
+            {
+                // The parameter values are encrypted, at rest.
+                parameters[y].Value = await _cryptographer.AesEncryptAsync(
+                    parameters[y].Value
+                    ).ConfigureAwait(false);
+            }
 
             // Log what we are about to do.
             _logger.LogTrace(
