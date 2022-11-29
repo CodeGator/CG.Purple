@@ -1,7 +1,7 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things to be done on the project, as of 11/27/2022
+Things to be done on the project, as of 11/29/2022
 
 ### Design
 
@@ -15,10 +15,6 @@ Things to be done on the project, as of 11/27/2022
 
 * Need to test the managers / repositories.
 
-* Need to encrypt the provider parameters, at rest.
-
-* Need to add the caching code to the managers.
-
 ### Providers
 
 * Need to write the SendGrid and Twillio providers.
@@ -27,20 +23,11 @@ Things to be done on the project, as of 11/27/2022
 
 ### Hosted Services
 
-* The process director needs loads of refactoring.
-
-* Need to finish the logic for the MessageProcessingService
-
 * Need to test everything related to this service.
 
 ### Services 
 
-* SignalR needs to move to CG.Purple.Host.Services.
-
 * Need to design and build the REST controllers.
-
-* There is a problem in the mime type/file type edit dialogs where we're getting
-    duplicate key errors when we shouldn't be.
 
 ### Other Integrations
 
