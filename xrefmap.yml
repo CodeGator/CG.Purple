@@ -2996,6 +2996,44 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Services.ProcessingService.ExecuteAsync
   nameWithType: ProcessingService.ExecuteAsync
+- uid: CG.Purple.Host.Services.SignalR
+  name: CG.Purple.Host.Services.SignalR
+  href: api/CG.Purple.Host.Services.SignalR.html
+  commentId: N:CG.Purple.Host.Services.SignalR
+  fullName: CG.Purple.Host.Services.SignalR
+  nameWithType: CG.Purple.Host.Services.SignalR
+- uid: CG.Purple.Host.Services.SignalR.StatusHub
+  name: StatusHub
+  href: api/CG.Purple.Host.Services.SignalR.StatusHub.html
+  commentId: T:CG.Purple.Host.Services.SignalR.StatusHub
+  fullName: CG.Purple.Host.Services.SignalR.StatusHub
+  nameWithType: StatusHub
+- uid: CG.Purple.Host.Services.SignalR.StatusHub.#ctor
+  name: StatusHub()
+  href: api/CG.Purple.Host.Services.SignalR.StatusHub.html#CG_Purple_Host_Services_SignalR_StatusHub__ctor
+  commentId: M:CG.Purple.Host.Services.SignalR.StatusHub.#ctor
+  fullName: CG.Purple.Host.Services.SignalR.StatusHub.StatusHub()
+  nameWithType: StatusHub.StatusHub()
+- uid: CG.Purple.Host.Services.SignalR.StatusHub.#ctor*
+  name: StatusHub
+  href: api/CG.Purple.Host.Services.SignalR.StatusHub.html#CG_Purple_Host_Services_SignalR_StatusHub__ctor_
+  commentId: Overload:CG.Purple.Host.Services.SignalR.StatusHub.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Host.Services.SignalR.StatusHub.StatusHub
+  nameWithType: StatusHub.StatusHub
+- uid: CG.Purple.Host.Services.SignalR.StatusHub.OnStatusChangeAsync(CancellationToken)
+  name: OnStatusChangeAsync(CancellationToken)
+  href: api/CG.Purple.Host.Services.SignalR.StatusHub.html#CG_Purple_Host_Services_SignalR_StatusHub_OnStatusChangeAsync_CancellationToken_
+  commentId: M:CG.Purple.Host.Services.SignalR.StatusHub.OnStatusChangeAsync(CancellationToken)
+  fullName: CG.Purple.Host.Services.SignalR.StatusHub.OnStatusChangeAsync(CancellationToken)
+  nameWithType: StatusHub.OnStatusChangeAsync(CancellationToken)
+- uid: CG.Purple.Host.Services.SignalR.StatusHub.OnStatusChangeAsync*
+  name: OnStatusChangeAsync
+  href: api/CG.Purple.Host.Services.SignalR.StatusHub.html#CG_Purple_Host_Services_SignalR_StatusHub_OnStatusChangeAsync_
+  commentId: Overload:CG.Purple.Host.Services.SignalR.StatusHub.OnStatusChangeAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Services.SignalR.StatusHub.OnStatusChangeAsync
+  nameWithType: StatusHub.OnStatusChangeAsync
 - uid: CG.Purple.Host.Shared
   name: CG.Purple.Host.Shared
   href: api/CG.Purple.Host.Shared.html
@@ -3034,44 +3072,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Shared.MainLayout.OnAfterRenderAsync
   nameWithType: MainLayout.OnAfterRenderAsync
-- uid: CG.Purple.Host.SignalR
-  name: CG.Purple.Host.SignalR
-  href: api/CG.Purple.Host.SignalR.html
-  commentId: N:CG.Purple.Host.SignalR
-  fullName: CG.Purple.Host.SignalR
-  nameWithType: CG.Purple.Host.SignalR
-- uid: CG.Purple.Host.SignalR.StatusHub
-  name: StatusHub
-  href: api/CG.Purple.Host.SignalR.StatusHub.html
-  commentId: T:CG.Purple.Host.SignalR.StatusHub
-  fullName: CG.Purple.Host.SignalR.StatusHub
-  nameWithType: StatusHub
-- uid: CG.Purple.Host.SignalR.StatusHub.#ctor
-  name: StatusHub()
-  href: api/CG.Purple.Host.SignalR.StatusHub.html#CG_Purple_Host_SignalR_StatusHub__ctor
-  commentId: M:CG.Purple.Host.SignalR.StatusHub.#ctor
-  fullName: CG.Purple.Host.SignalR.StatusHub.StatusHub()
-  nameWithType: StatusHub.StatusHub()
-- uid: CG.Purple.Host.SignalR.StatusHub.#ctor*
-  name: StatusHub
-  href: api/CG.Purple.Host.SignalR.StatusHub.html#CG_Purple_Host_SignalR_StatusHub__ctor_
-  commentId: Overload:CG.Purple.Host.SignalR.StatusHub.#ctor
-  isSpec: "True"
-  fullName: CG.Purple.Host.SignalR.StatusHub.StatusHub
-  nameWithType: StatusHub.StatusHub
-- uid: CG.Purple.Host.SignalR.StatusHub.OnStatusChangeAsync(CancellationToken)
-  name: OnStatusChangeAsync(CancellationToken)
-  href: api/CG.Purple.Host.SignalR.StatusHub.html#CG_Purple_Host_SignalR_StatusHub_OnStatusChangeAsync_CancellationToken_
-  commentId: M:CG.Purple.Host.SignalR.StatusHub.OnStatusChangeAsync(CancellationToken)
-  fullName: CG.Purple.Host.SignalR.StatusHub.OnStatusChangeAsync(CancellationToken)
-  nameWithType: StatusHub.OnStatusChangeAsync(CancellationToken)
-- uid: CG.Purple.Host.SignalR.StatusHub.OnStatusChangeAsync*
-  name: OnStatusChangeAsync
-  href: api/CG.Purple.Host.SignalR.StatusHub.html#CG_Purple_Host_SignalR_StatusHub_OnStatusChangeAsync_
-  commentId: Overload:CG.Purple.Host.SignalR.StatusHub.OnStatusChangeAsync
-  isSpec: "True"
-  fullName: CG.Purple.Host.SignalR.StatusHub.OnStatusChangeAsync
-  nameWithType: StatusHub.OnStatusChangeAsync
 - uid: CG.Purple.Host.ViewModels
   name: CG.Purple.Host.ViewModels
   href: api/CG.Purple.Host.ViewModels.html
@@ -13970,6 +13970,25 @@ references:
   isSpec: "True"
   fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions002.UseDalStartup
   nameWithType: WebApplicationExtensions002.UseDalStartup
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions006
+  name: WebApplicationExtensions006
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions006.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationExtensions006
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions006
+  nameWithType: WebApplicationExtensions006
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions006.UseServicesLayer(Microsoft.AspNetCore.Builder.WebApplication)
+  name: UseServicesLayer(WebApplication)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions006.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions006_UseServicesLayer_Microsoft_AspNetCore_Builder_WebApplication_
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationExtensions006.UseServicesLayer(Microsoft.AspNetCore.Builder.WebApplication)
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions006.UseServicesLayer(Microsoft.AspNetCore.Builder.WebApplication)
+  nameWithType: WebApplicationExtensions006.UseServicesLayer(WebApplication)
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions006.UseServicesLayer*
+  name: UseServicesLayer
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions006.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions006_UseServicesLayer_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationExtensions006.UseServicesLayer
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions006.UseServicesLayer
+  nameWithType: WebApplicationExtensions006.UseServicesLayer
 - uid: System
   name: System
   href: api/System.html
