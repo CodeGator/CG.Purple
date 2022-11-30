@@ -107,6 +107,28 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Directors.IArchiveDirector.ArchiveMessagesAsync
   nameWithType: IArchiveDirector.ArchiveMessagesAsync
+- uid: CG.Purple.Directors.IAssignmentDirector
+  name: IAssignmentDirector
+  href: api/CG.Purple.Directors.IAssignmentDirector.html
+  commentId: T:CG.Purple.Directors.IAssignmentDirector
+  fullName: CG.Purple.Directors.IAssignmentDirector
+  nameWithType: IAssignmentDirector
+- uid: CG.Purple.Directors.IAssignmentDirector.SelectProviderAsync(Message,IEnumerable{ProviderType},CancellationToken)
+  name: SelectProviderAsync(Message, IEnumerable<ProviderType>, CancellationToken)
+  href: api/CG.Purple.Directors.IAssignmentDirector.html#CG_Purple_Directors_IAssignmentDirector_SelectProviderAsync_Message_IEnumerable_ProviderType__CancellationToken_
+  commentId: M:CG.Purple.Directors.IAssignmentDirector.SelectProviderAsync(Message,IEnumerable{ProviderType},CancellationToken)
+  name.vb: SelectProviderAsync(Message, IEnumerable(Of ProviderType), CancellationToken)
+  fullName: CG.Purple.Directors.IAssignmentDirector.SelectProviderAsync(Message, IEnumerable<ProviderType>, CancellationToken)
+  fullName.vb: CG.Purple.Directors.IAssignmentDirector.SelectProviderAsync(Message, IEnumerable(Of ProviderType), CancellationToken)
+  nameWithType: IAssignmentDirector.SelectProviderAsync(Message, IEnumerable<ProviderType>, CancellationToken)
+  nameWithType.vb: IAssignmentDirector.SelectProviderAsync(Message, IEnumerable(Of ProviderType), CancellationToken)
+- uid: CG.Purple.Directors.IAssignmentDirector.SelectProviderAsync*
+  name: SelectProviderAsync
+  href: api/CG.Purple.Directors.IAssignmentDirector.html#CG_Purple_Directors_IAssignmentDirector_SelectProviderAsync_
+  commentId: Overload:CG.Purple.Directors.IAssignmentDirector.SelectProviderAsync
+  isSpec: "True"
+  fullName: CG.Purple.Directors.IAssignmentDirector.SelectProviderAsync
+  nameWithType: IAssignmentDirector.SelectProviderAsync
 - uid: CG.Purple.Directors.IProcessDirector
   name: IProcessDirector
   href: api/CG.Purple.Directors.IProcessDirector.html
@@ -255,6 +277,88 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Directors.ISeedDirector.SeedTextMessagesAsync
   nameWithType: ISeedDirector.SeedTextMessagesAsync
+- uid: CG.Purple.DoNothing
+  name: CG.Purple.DoNothing
+  href: api/CG.Purple.DoNothing.html
+  commentId: N:CG.Purple.DoNothing
+  fullName: CG.Purple.DoNothing
+  nameWithType: CG.Purple.DoNothing
+- uid: CG.Purple.DoNothing.DoNothingProvider
+  name: DoNothingProvider
+  href: api/CG.Purple.DoNothing.DoNothingProvider.html
+  commentId: T:CG.Purple.DoNothing.DoNothingProvider
+  fullName: CG.Purple.DoNothing.DoNothingProvider
+  nameWithType: DoNothingProvider
+- uid: CG.Purple.DoNothing.DoNothingProvider.#ctor(ILogger{IMessageProvider})
+  name: DoNothingProvider(ILogger<IMessageProvider>)
+  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider__ctor_ILogger_IMessageProvider__
+  commentId: M:CG.Purple.DoNothing.DoNothingProvider.#ctor(ILogger{IMessageProvider})
+  name.vb: DoNothingProvider(ILogger(Of IMessageProvider))
+  fullName: CG.Purple.DoNothing.DoNothingProvider.DoNothingProvider(ILogger<IMessageProvider>)
+  fullName.vb: CG.Purple.DoNothing.DoNothingProvider.DoNothingProvider(ILogger(Of IMessageProvider))
+  nameWithType: DoNothingProvider.DoNothingProvider(ILogger<IMessageProvider>)
+  nameWithType.vb: DoNothingProvider.DoNothingProvider(ILogger(Of IMessageProvider))
+- uid: CG.Purple.DoNothing.DoNothingProvider.#ctor*
+  name: DoNothingProvider
+  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider__ctor_
+  commentId: Overload:CG.Purple.DoNothing.DoNothingProvider.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.DoNothing.DoNothingProvider.DoNothingProvider
+  nameWithType: DoNothingProvider.DoNothingProvider
+- uid: CG.Purple.DoNothing.DoNothingProvider._logger
+  name: _logger
+  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider__logger
+  commentId: F:CG.Purple.DoNothing.DoNothingProvider._logger
+  fullName: CG.Purple.DoNothing.DoNothingProvider._logger
+  nameWithType: DoNothingProvider._logger
+- uid: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_PropertyType_CancellationToken_
+  commentId: M:CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)
+  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  fullName: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  fullName.vb: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+  nameWithType: DoNothingProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, PropertyType, CancellationToken)
+  nameWithType.vb: DoNothingProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, PropertyType, CancellationToken)
+- uid: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync*
+  name: ProcessMessagesAsync
+  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider_ProcessMessagesAsync_
+  commentId: Overload:CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync
+  isSpec: "True"
+  fullName: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync
+  nameWithType: DoNothingProvider.ProcessMessagesAsync
+- uid: CG.Purple.DoNothing.Module
+  name: Module
+  href: api/CG.Purple.DoNothing.Module.html
+  commentId: T:CG.Purple.DoNothing.Module
+  fullName: CG.Purple.DoNothing.Module
+  nameWithType: Module
+- uid: CG.Purple.DoNothing.Module.Configure(WebApplication)
+  name: Configure(WebApplication)
+  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_Configure_WebApplication_
+  commentId: M:CG.Purple.DoNothing.Module.Configure(WebApplication)
+  fullName: CG.Purple.DoNothing.Module.Configure(WebApplication)
+  nameWithType: Module.Configure(WebApplication)
+- uid: CG.Purple.DoNothing.Module.Configure*
+  name: Configure
+  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_Configure_
+  commentId: Overload:CG.Purple.DoNothing.Module.Configure
+  isSpec: "True"
+  fullName: CG.Purple.DoNothing.Module.Configure
+  nameWithType: Module.Configure
+- uid: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
+  name: ConfigureServices(WebApplicationBuilder, IConfiguration)
+  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_
+  commentId: M:CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
+  fullName: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+- uid: CG.Purple.DoNothing.Module.ConfigureServices*
+  name: ConfigureServices
+  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_ConfigureServices_
+  commentId: Overload:CG.Purple.DoNothing.Module.ConfigureServices
+  isSpec: "True"
+  fullName: CG.Purple.DoNothing.Module.ConfigureServices
+  nameWithType: Module.ConfigureServices
 - uid: CG.Purple.Host.Directors
   name: CG.Purple.Host.Directors
   href: api/CG.Purple.Host.Directors.html
@@ -314,6 +418,50 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Directors.ArchiveDirector.ArchiveMessagesAsync
   nameWithType: ArchiveDirector.ArchiveMessagesAsync
+- uid: CG.Purple.Host.Directors.AssignmentDirector
+  name: AssignmentDirector
+  href: api/CG.Purple.Host.Directors.AssignmentDirector.html
+  commentId: T:CG.Purple.Host.Directors.AssignmentDirector
+  fullName: CG.Purple.Host.Directors.AssignmentDirector
+  nameWithType: AssignmentDirector
+- uid: CG.Purple.Host.Directors.AssignmentDirector.#ctor(ILogger{IArchiveDirector})
+  name: AssignmentDirector(ILogger<IArchiveDirector>)
+  href: api/CG.Purple.Host.Directors.AssignmentDirector.html#CG_Purple_Host_Directors_AssignmentDirector__ctor_ILogger_IArchiveDirector__
+  commentId: M:CG.Purple.Host.Directors.AssignmentDirector.#ctor(ILogger{IArchiveDirector})
+  name.vb: AssignmentDirector(ILogger(Of IArchiveDirector))
+  fullName: CG.Purple.Host.Directors.AssignmentDirector.AssignmentDirector(ILogger<IArchiveDirector>)
+  fullName.vb: CG.Purple.Host.Directors.AssignmentDirector.AssignmentDirector(ILogger(Of IArchiveDirector))
+  nameWithType: AssignmentDirector.AssignmentDirector(ILogger<IArchiveDirector>)
+  nameWithType.vb: AssignmentDirector.AssignmentDirector(ILogger(Of IArchiveDirector))
+- uid: CG.Purple.Host.Directors.AssignmentDirector.#ctor*
+  name: AssignmentDirector
+  href: api/CG.Purple.Host.Directors.AssignmentDirector.html#CG_Purple_Host_Directors_AssignmentDirector__ctor_
+  commentId: Overload:CG.Purple.Host.Directors.AssignmentDirector.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Host.Directors.AssignmentDirector.AssignmentDirector
+  nameWithType: AssignmentDirector.AssignmentDirector
+- uid: CG.Purple.Host.Directors.AssignmentDirector._logger
+  name: _logger
+  href: api/CG.Purple.Host.Directors.AssignmentDirector.html#CG_Purple_Host_Directors_AssignmentDirector__logger
+  commentId: F:CG.Purple.Host.Directors.AssignmentDirector._logger
+  fullName: CG.Purple.Host.Directors.AssignmentDirector._logger
+  nameWithType: AssignmentDirector._logger
+- uid: CG.Purple.Host.Directors.AssignmentDirector.SelectProviderAsync(Message,IEnumerable{ProviderType},CancellationToken)
+  name: SelectProviderAsync(Message, IEnumerable<ProviderType>, CancellationToken)
+  href: api/CG.Purple.Host.Directors.AssignmentDirector.html#CG_Purple_Host_Directors_AssignmentDirector_SelectProviderAsync_Message_IEnumerable_ProviderType__CancellationToken_
+  commentId: M:CG.Purple.Host.Directors.AssignmentDirector.SelectProviderAsync(Message,IEnumerable{ProviderType},CancellationToken)
+  name.vb: SelectProviderAsync(Message, IEnumerable(Of ProviderType), CancellationToken)
+  fullName: CG.Purple.Host.Directors.AssignmentDirector.SelectProviderAsync(Message, IEnumerable<ProviderType>, CancellationToken)
+  fullName.vb: CG.Purple.Host.Directors.AssignmentDirector.SelectProviderAsync(Message, IEnumerable(Of ProviderType), CancellationToken)
+  nameWithType: AssignmentDirector.SelectProviderAsync(Message, IEnumerable<ProviderType>, CancellationToken)
+  nameWithType.vb: AssignmentDirector.SelectProviderAsync(Message, IEnumerable(Of ProviderType), CancellationToken)
+- uid: CG.Purple.Host.Directors.AssignmentDirector.SelectProviderAsync*
+  name: SelectProviderAsync
+  href: api/CG.Purple.Host.Directors.AssignmentDirector.html#CG_Purple_Host_Directors_AssignmentDirector_SelectProviderAsync_
+  commentId: Overload:CG.Purple.Host.Directors.AssignmentDirector.SelectProviderAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Directors.AssignmentDirector.SelectProviderAsync
+  nameWithType: AssignmentDirector.SelectProviderAsync
 - uid: CG.Purple.Host.Directors.ProcessDirector
   name: ProcessDirector
   href: api/CG.Purple.Host.Directors.ProcessDirector.html
@@ -2736,6 +2884,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.ProviderTypes.Index.DialogService
   nameWithType: Index.DialogService
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFactoryTypes
+  name: FilterFactoryTypes()
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_FilterFactoryTypes
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.Index.FilterFactoryTypes
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFactoryTypes()
+  nameWithType: Index.FilterFactoryTypes()
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFactoryTypes*
+  name: FilterFactoryTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_FilterFactoryTypes_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.FilterFactoryTypes
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFactoryTypes
+  nameWithType: Index.FilterFactoryTypes
 - uid: CG.Purple.Host.Pages.ProviderTypes.Index.FilterFunc(ProviderType,System.String)
   name: FilterFunc(ProviderType, String)
   href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_FilterFunc_ProviderType_System_String_
@@ -3020,12 +3181,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.DialogService
   nameWithType: ProviderTypeDialog.DialogService
-- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.factoryTypeConverter
-  name: factoryTypeConverter
-  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_factoryTypeConverter
-  commentId: F:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.factoryTypeConverter
-  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.factoryTypeConverter
-  nameWithType: ProviderTypeDialog.factoryTypeConverter
 - uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.FactoryTypes
   name: FactoryTypes
   href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_FactoryTypes
@@ -10428,6 +10583,38 @@ references:
   commentId: N:CG.Purple.SendGrid
   fullName: CG.Purple.SendGrid
   nameWithType: CG.Purple.SendGrid
+- uid: CG.Purple.SendGrid.Module
+  name: Module
+  href: api/CG.Purple.SendGrid.Module.html
+  commentId: T:CG.Purple.SendGrid.Module
+  fullName: CG.Purple.SendGrid.Module
+  nameWithType: Module
+- uid: CG.Purple.SendGrid.Module.Configure(WebApplication)
+  name: Configure(WebApplication)
+  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_Configure_WebApplication_
+  commentId: M:CG.Purple.SendGrid.Module.Configure(WebApplication)
+  fullName: CG.Purple.SendGrid.Module.Configure(WebApplication)
+  nameWithType: Module.Configure(WebApplication)
+- uid: CG.Purple.SendGrid.Module.Configure*
+  name: Configure
+  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_Configure_
+  commentId: Overload:CG.Purple.SendGrid.Module.Configure
+  isSpec: "True"
+  fullName: CG.Purple.SendGrid.Module.Configure
+  nameWithType: Module.Configure
+- uid: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
+  name: ConfigureServices(WebApplicationBuilder, IConfiguration)
+  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_
+  commentId: M:CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
+  fullName: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+- uid: CG.Purple.SendGrid.Module.ConfigureServices*
+  name: ConfigureServices
+  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_ConfigureServices_
+  commentId: Overload:CG.Purple.SendGrid.Module.ConfigureServices
+  isSpec: "True"
+  fullName: CG.Purple.SendGrid.Module.ConfigureServices
+  nameWithType: Module.ConfigureServices
 - uid: CG.Purple.SendGrid.SendGridProvider
   name: SendGridProvider
   href: api/CG.Purple.SendGrid.SendGridProvider.html
@@ -10478,6 +10665,38 @@ references:
   commentId: N:CG.Purple.Smtp
   fullName: CG.Purple.Smtp
   nameWithType: CG.Purple.Smtp
+- uid: CG.Purple.Smtp.Module
+  name: Module
+  href: api/CG.Purple.Smtp.Module.html
+  commentId: T:CG.Purple.Smtp.Module
+  fullName: CG.Purple.Smtp.Module
+  nameWithType: Module
+- uid: CG.Purple.Smtp.Module.Configure(WebApplication)
+  name: Configure(WebApplication)
+  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_Configure_WebApplication_
+  commentId: M:CG.Purple.Smtp.Module.Configure(WebApplication)
+  fullName: CG.Purple.Smtp.Module.Configure(WebApplication)
+  nameWithType: Module.Configure(WebApplication)
+- uid: CG.Purple.Smtp.Module.Configure*
+  name: Configure
+  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_Configure_
+  commentId: Overload:CG.Purple.Smtp.Module.Configure
+  isSpec: "True"
+  fullName: CG.Purple.Smtp.Module.Configure
+  nameWithType: Module.Configure
+- uid: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
+  name: ConfigureServices(WebApplicationBuilder, IConfiguration)
+  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_
+  commentId: M:CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
+  fullName: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+- uid: CG.Purple.Smtp.Module.ConfigureServices*
+  name: ConfigureServices
+  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_ConfigureServices_
+  commentId: Overload:CG.Purple.Smtp.Module.ConfigureServices
+  isSpec: "True"
+  fullName: CG.Purple.Smtp.Module.ConfigureServices
+  nameWithType: Module.ConfigureServices
 - uid: CG.Purple.Smtp.SmtpProvider
   name: SmtpProvider
   href: api/CG.Purple.Smtp.SmtpProvider.html
@@ -14065,6 +14284,38 @@ references:
   commentId: N:CG.Purple.Twillio
   fullName: CG.Purple.Twillio
   nameWithType: CG.Purple.Twillio
+- uid: CG.Purple.Twillio.Module
+  name: Module
+  href: api/CG.Purple.Twillio.Module.html
+  commentId: T:CG.Purple.Twillio.Module
+  fullName: CG.Purple.Twillio.Module
+  nameWithType: Module
+- uid: CG.Purple.Twillio.Module.Configure(WebApplication)
+  name: Configure(WebApplication)
+  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_Configure_WebApplication_
+  commentId: M:CG.Purple.Twillio.Module.Configure(WebApplication)
+  fullName: CG.Purple.Twillio.Module.Configure(WebApplication)
+  nameWithType: Module.Configure(WebApplication)
+- uid: CG.Purple.Twillio.Module.Configure*
+  name: Configure
+  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_Configure_
+  commentId: Overload:CG.Purple.Twillio.Module.Configure
+  isSpec: "True"
+  fullName: CG.Purple.Twillio.Module.Configure
+  nameWithType: Module.Configure
+- uid: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
+  name: ConfigureServices(WebApplicationBuilder, IConfiguration)
+  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_
+  commentId: M:CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
+  fullName: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+- uid: CG.Purple.Twillio.Module.ConfigureServices*
+  name: ConfigureServices
+  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_ConfigureServices_
+  commentId: Overload:CG.Purple.Twillio.Module.ConfigureServices
+  isSpec: "True"
+  fullName: CG.Purple.Twillio.Module.ConfigureServices
+  nameWithType: Module.ConfigureServices
 - uid: CG.Purple.Twillio.TwillioProvider
   name: TwillioProvider
   href: api/CG.Purple.Twillio.TwillioProvider.html
@@ -14203,50 +14454,6 @@ references:
   isSpec: "True"
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddDataAccessLayer
   nameWithType: WebApplicationBuilderExtensions003.AddDataAccessLayer
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004
-  name: WebApplicationBuilderExtensions004
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.html
-  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004
-  nameWithType: WebApplicationBuilderExtensions004
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
-  name: AddSmtpProvider(WebApplicationBuilder, Nullable<ILogger>)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions004_AddSmtpProvider_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
-  name.vb: AddSmtpProvider(WebApplicationBuilder, Nullable(Of ILogger))
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable<ILogger>)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable(Of ILogger))
-  nameWithType: WebApplicationBuilderExtensions004.AddSmtpProvider(WebApplicationBuilder, Nullable<ILogger>)
-  nameWithType.vb: WebApplicationBuilderExtensions004.AddSmtpProvider(WebApplicationBuilder, Nullable(Of ILogger))
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.AddSmtpProvider*
-  name: AddSmtpProvider
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions004_AddSmtpProvider_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.AddSmtpProvider
-  isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.AddSmtpProvider
-  nameWithType: WebApplicationBuilderExtensions004.AddSmtpProvider
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005
-  name: WebApplicationBuilderExtensions005
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.html
-  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005
-  nameWithType: WebApplicationBuilderExtensions005
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddSendGridProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
-  name: AddSendGridProvider(WebApplicationBuilder, Nullable<ILogger>)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions005_AddSendGridProvider_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddSendGridProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
-  name.vb: AddSendGridProvider(WebApplicationBuilder, Nullable(Of ILogger))
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddSendGridProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable<ILogger>)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddSendGridProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable(Of ILogger))
-  nameWithType: WebApplicationBuilderExtensions005.AddSendGridProvider(WebApplicationBuilder, Nullable<ILogger>)
-  nameWithType.vb: WebApplicationBuilderExtensions005.AddSendGridProvider(WebApplicationBuilder, Nullable(Of ILogger))
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddSendGridProvider*
-  name: AddSendGridProvider
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions005_AddSendGridProvider_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddSendGridProvider
-  isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddSendGridProvider
-  nameWithType: WebApplicationBuilderExtensions005.AddSendGridProvider
 - uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006
   name: WebApplicationBuilderExtensions006
   href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.html
