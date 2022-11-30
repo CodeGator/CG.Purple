@@ -5806,15 +5806,15 @@ references:
   commentId: T:CG.Purple.Managers.ProviderTypeManager
   fullName: CG.Purple.Managers.ProviderTypeManager
   nameWithType: ProviderTypeManager
-- uid: CG.Purple.Managers.ProviderTypeManager.#ctor(IProviderTypeRepository,ILogger{CG.Purple.Managers.IProviderTypeManager})
-  name: ProviderTypeManager(IProviderTypeRepository, ILogger<IProviderTypeManager>)
-  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__ctor_IProviderTypeRepository_ILogger_CG_Purple_Managers_IProviderTypeManager__
-  commentId: M:CG.Purple.Managers.ProviderTypeManager.#ctor(IProviderTypeRepository,ILogger{CG.Purple.Managers.IProviderTypeManager})
-  name.vb: ProviderTypeManager(IProviderTypeRepository, ILogger(Of IProviderTypeManager))
-  fullName: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ILogger<CG.Purple.Managers.IProviderTypeManager>)
-  fullName.vb: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ILogger(Of CG.Purple.Managers.IProviderTypeManager))
-  nameWithType: ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ILogger<IProviderTypeManager>)
-  nameWithType.vb: ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ILogger(Of IProviderTypeManager))
+- uid: CG.Purple.Managers.ProviderTypeManager.#ctor(IProviderTypeRepository,ICryptographer,ILogger{CG.Purple.Managers.IProviderTypeManager})
+  name: ProviderTypeManager(IProviderTypeRepository, ICryptographer, ILogger<IProviderTypeManager>)
+  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__ctor_IProviderTypeRepository_ICryptographer_ILogger_CG_Purple_Managers_IProviderTypeManager__
+  commentId: M:CG.Purple.Managers.ProviderTypeManager.#ctor(IProviderTypeRepository,ICryptographer,ILogger{CG.Purple.Managers.IProviderTypeManager})
+  name.vb: ProviderTypeManager(IProviderTypeRepository, ICryptographer, ILogger(Of IProviderTypeManager))
+  fullName: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ICryptographer, ILogger<CG.Purple.Managers.IProviderTypeManager>)
+  fullName.vb: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ICryptographer, ILogger(Of CG.Purple.Managers.IProviderTypeManager))
+  nameWithType: ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ICryptographer, ILogger<IProviderTypeManager>)
+  nameWithType.vb: ProviderTypeManager.ProviderTypeManager(IProviderTypeRepository, ICryptographer, ILogger(Of IProviderTypeManager))
 - uid: CG.Purple.Managers.ProviderTypeManager.#ctor*
   name: ProviderTypeManager
   href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__ctor_
@@ -5822,6 +5822,12 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProviderTypeManager.ProviderTypeManager
   nameWithType: ProviderTypeManager.ProviderTypeManager
+- uid: CG.Purple.Managers.ProviderTypeManager._cryptographer
+  name: _cryptographer
+  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__cryptographer
+  commentId: F:CG.Purple.Managers.ProviderTypeManager._cryptographer
+  fullName: CG.Purple.Managers.ProviderTypeManager._cryptographer
+  nameWithType: ProviderTypeManager._cryptographer
 - uid: CG.Purple.Managers.ProviderTypeManager._logger
   name: _logger
   href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager__logger
@@ -5860,11 +5866,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProviderTypeManager.CountAsync
   nameWithType: ProviderTypeManager.CountAsync
-- uid: CG.Purple.Managers.ProviderTypeManager.CreateAsync(ProviderType,System.String,CancellationToken)
+- uid: CG.Purple.Managers.ProviderTypeManager.CreateAsync(CG.Purple.Models.ProviderType,System.String,CancellationToken)
   name: CreateAsync(ProviderType, String, CancellationToken)
-  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager_CreateAsync_ProviderType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProviderTypeManager.CreateAsync(ProviderType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ProviderTypeManager.CreateAsync(ProviderType, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager_CreateAsync_CG_Purple_Models_ProviderType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProviderTypeManager.CreateAsync(CG.Purple.Models.ProviderType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProviderTypeManager.CreateAsync(CG.Purple.Models.ProviderType, System.String, CancellationToken)
   nameWithType: ProviderTypeManager.CreateAsync(ProviderType, String, CancellationToken)
 - uid: CG.Purple.Managers.ProviderTypeManager.CreateAsync*
   name: CreateAsync
@@ -5873,11 +5879,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProviderTypeManager.CreateAsync
   nameWithType: ProviderTypeManager.CreateAsync
-- uid: CG.Purple.Managers.ProviderTypeManager.DeleteAsync(ProviderType,System.String,CancellationToken)
+- uid: CG.Purple.Managers.ProviderTypeManager.DeleteAsync(CG.Purple.Models.ProviderType,System.String,CancellationToken)
   name: DeleteAsync(ProviderType, String, CancellationToken)
-  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager_DeleteAsync_ProviderType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProviderTypeManager.DeleteAsync(ProviderType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ProviderTypeManager.DeleteAsync(ProviderType, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager_DeleteAsync_CG_Purple_Models_ProviderType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProviderTypeManager.DeleteAsync(CG.Purple.Models.ProviderType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProviderTypeManager.DeleteAsync(CG.Purple.Models.ProviderType, System.String, CancellationToken)
   nameWithType: ProviderTypeManager.DeleteAsync(ProviderType, String, CancellationToken)
 - uid: CG.Purple.Managers.ProviderTypeManager.DeleteAsync*
   name: DeleteAsync
@@ -5938,11 +5944,11 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.ProviderTypeManager.FindForTextsAsync
   nameWithType: ProviderTypeManager.FindForTextsAsync
-- uid: CG.Purple.Managers.ProviderTypeManager.UpdateAsync(ProviderType,System.String,CancellationToken)
+- uid: CG.Purple.Managers.ProviderTypeManager.UpdateAsync(CG.Purple.Models.ProviderType,System.String,CancellationToken)
   name: UpdateAsync(ProviderType, String, CancellationToken)
-  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager_UpdateAsync_ProviderType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.ProviderTypeManager.UpdateAsync(ProviderType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.ProviderTypeManager.UpdateAsync(ProviderType, System.String, CancellationToken)
+  href: api/CG.Purple.Managers.ProviderTypeManager.html#CG_Purple_Managers_ProviderTypeManager_UpdateAsync_CG_Purple_Models_ProviderType_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProviderTypeManager.UpdateAsync(CG.Purple.Models.ProviderType,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProviderTypeManager.UpdateAsync(CG.Purple.Models.ProviderType, System.String, CancellationToken)
   nameWithType: ProviderTypeManager.UpdateAsync(ProviderType, String, CancellationToken)
 - uid: CG.Purple.Managers.ProviderTypeManager.UpdateAsync*
   name: UpdateAsync
