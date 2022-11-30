@@ -16,6 +16,7 @@
                   Items="@_mailMessages"
                   Dense
                   Striped
+                  Virtualize
                   Loading="@_isBusy"
                   Filter="new Func<MailMessage,bool>(MailFilterFunc1)">
             <ToolBarContent>

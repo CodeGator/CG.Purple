@@ -17,13 +17,13 @@
                                   Label="SubType"
                                   For="@(() => Model.SubType)"
                                   @bind-Value="@Model.SubType" />
+                    <MudText Class="px-6 pt-4 pb-0" Typo="Typo.subtitle1">File Types</MudText>
                     <MudTable Items="Model.FileTypes">
                         <ToolBarContent>
                             <MudButton StartIcon="@Icons.Material.Filled.Create"
                                        Variant="Variant.Filled"
                                        OnClick="OnCreateAsync">Create</MudButton>
                             <MudSpacer />
-                            <MudText>File Types</MudText>
                         </ToolBarContent>
                         <HeaderContent>
                             <MudTh><MudTableSortLabel SortBy="new Func<FileType, object>(x=>x.Extension)">Extension</MudTableSortLabel></MudTh>

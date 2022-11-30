@@ -4,14 +4,17 @@
 
 <MudBreadcrumbs Items="_crumbs"></MudBreadcrumbs>
 
-<MudText Typo="Typo.h6" Class="py-4 px-5">This page contains the parameter types, used for message properties.</MudText>
+<MudText Typo="Typo.h6" Class="py-4 px-5">This page contains the provider types, used to process messages.</MudText>
 
-<MudTable Items="@_providerTypes" Dense
+<MudTable Items="@_providerTypes" 
+          Dense
           Striped
+          Virtualize
           Filter="new Func<ProviderType,bool>(FilterFunc1)">
     <ToolBarContent>
         <MudButton StartIcon="@Icons.Material.Filled.Create"
                    Variant="Variant.Filled"
+                   Disabled="@_factoryTypes.Any()"
                    OnClick="OnCreateAsync">Create</MudButton>
         <MudSpacer />
         <MudTextField @bind-Value="_gridSearchString"

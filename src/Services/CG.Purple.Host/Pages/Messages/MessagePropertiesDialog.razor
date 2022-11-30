@@ -4,7 +4,7 @@
             <MudCard Outlined>
                 <MudCardContent Class="pt-0">
                     <DataAnnotationsValidator />
-                    <MudTable Items="@Model.MessageProperties" Dense Striped Loading="@_isBusy">
+                    <MudTable Items="@Model.MessageProperties" Dense Striped Virtualize Loading="@_isBusy">
                         <ToolBarContent>
                             <MudButton StartIcon="@Icons.Material.Filled.Create"
                                        Variant="Variant.Filled"

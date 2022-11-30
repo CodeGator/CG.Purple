@@ -33,6 +33,16 @@ public partial class Index
     protected IEnumerable<ProviderType>? _providerTypes = Array.Empty<ProviderType>();
 
     /// <summary>
+    /// This field contains the collection of parameter types.
+    /// </summary>
+    protected IEnumerable<ParameterType>? _parameterTypes = Array.Empty<ParameterType>();
+
+    /// <summary>
+    /// This field contains the collection of factory types.
+    /// </summary>
+    protected IEnumerable<string> _factoryTypes = Array.Empty<string>();
+
+    /// <summary>
     /// This field contains the current mail search string.
     /// </summary>
     protected string _gridSearchString = "";
@@ -50,6 +60,12 @@ public partial class Index
     /// </summary>
     [Inject]
     protected IProviderTypeManager ProviderTypeManager { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the parameter type manager for this page.
+    /// </summary>
+    [Inject]
+    protected IParameterTypeManager ParameterTypeManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the dialog service for this page.
@@ -116,11 +132,31 @@ public partial class Index
 
             // Log what we are about to do.
             Logger.LogDebug(
-                "Fetching messages for the page."
+                "Fetching provider types for the page."
                 );
 
             // Find the provider types.
             _providerTypes = await ProviderTypeManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Fetching parameter types for the page."
+                );
+
+            // Find the parameter types.
+            _parameterTypes = await ParameterTypeManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Fetching factory types for the page."
+                );
+
+            // Find all the factory types - except those already used by
+            // an existing provider type.
+            _factoryTypes = AppDomain.CurrentDomain.FindConcreteTypes<IMessageProvider>()
+                .Select(x => x.AssemblyQualifiedName ?? "")
+                .Where(x => !string.IsNullOrEmpty(x))
+                .Except(_providerTypes.Select(x => x.FactoryType));
 
             // Give the base class a chance.
             await base.OnInitializedAsync();
@@ -198,7 +234,7 @@ public partial class Index
     // *******************************************************************
 
     /// <summary>
-    /// This method add a new provider type.
+    /// This method adds a new provider type.
     /// </summary>
     /// <returns>A task to perform the operation.</returns>
     protected async Task OnCreateAsync()
@@ -213,6 +249,7 @@ public partial class Index
             // Create the dialog options.
             var options = new DialogOptions
             {
+                MaxWidth = MaxWidth.Medium,
                 CloseOnEscapeKey = true,
                 FullWidth = true
             };
@@ -230,7 +267,13 @@ public partial class Index
                     {
                         CreatedBy = UserName,
                         CreatedOnUtc = DateTime.UtcNow,
-                    }
+                    }                    
+                },
+                { 
+                    "ParameterTypes", _parameterTypes
+                },
+                {
+                    "FactoryTypes", _factoryTypes
                 }
             };
 
@@ -459,6 +502,7 @@ public partial class Index
             // Create the dialog options.
             var options = new DialogOptions
             {
+                MaxWidth = MaxWidth.Medium,
                 CloseOnEscapeKey = true,
                 FullWidth = true
             };
@@ -478,13 +522,26 @@ public partial class Index
 
             // Log what we are about to do.
             Logger.LogDebug(
+                "Filtering our already used parameter types."
+                );
+
+            // Filter out any parameter types already used by this provider type.
+            var filteredParameterTypes = _parameterTypes.Except(
+                providerType.Parameters.Select(x => x.ParameterType),
+                ParameterTypeEqualityComparer.Instance()
+                );
+
+            // Log what we are about to do.
+            Logger.LogDebug(
                 "Creating dialog parameters."
                 );
 
             // Create the dialog parameters.
             var providers = new DialogParameters()
             {
-                { "Model", tempProviderType }
+                { "Model", tempProviderType },
+                { "FactoryTypes", _factoryTypes },
+                { "ParameterTypes", filteredParameterTypes }
             };
 
             // Log what we are about to do.

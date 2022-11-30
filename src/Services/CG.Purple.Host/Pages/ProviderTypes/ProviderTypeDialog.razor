@@ -10,17 +10,64 @@
                                   Variant="Variant.Outlined"
                                   Label="Name"
                                   For="@(() => Model.Name)"
-                                  @bind-Value="@Model.Name" />
+                    @bind-Value="@Model.Name" />
                     <MudTextField Immediate
                                   Counter="128"
                                   Variant="Variant.Outlined"
                                   Label="Description"
                                   For="@(() => Model.Description)"
-                                  @bind-Value="@Model.Description" />
-                    <MudTextField Variant="Variant.Outlined"
-                                  Label="Factory Type"
-                                  For="@(() => Model.FactoryType)"
-                                  @bind-Value="@Model.FactoryType" />
+                    @bind-Value="@Model.Description" />
+                    <MudSelect T="string"
+                               Class="ml-auto mb-4"
+                               Label="Factory Type"
+                               Placeholder="Select a factory"
+                               Dense
+                               Clearable
+                               ToStringFunc="factoryTypeConverter"
+                               For="@(() => Model.FactoryType)"
+                               @bind-Value="Model.FactoryType">
+                        @foreach (var factoryType in FactoryTypes)
+                        {
+                            <MudSelectItem Value="@factoryType">@(Type.GetType(factoryType)?.FullName ?? factoryType)</MudSelectItem>
+                        }
+                    </MudSelect>
+                    <MudText Class="px-6 pt-4 pb-0" Typo="Typo.subtitle1">Parameters</MudText>
+                    <MudTable Items="@Model.Parameters"
+                              Dense
+                              Striped
+                              Virtualize>
+                        <ToolBarContent>
+                            <MudButton StartIcon="@Icons.Material.Filled.Create"
+                                       Variant="Variant.Filled"
+                                       OnClick="OnCreateAsync">Create</MudButton>
+                            <MudSpacer />
+                        </ToolBarContent>
+                        <HeaderContent>
+                            <MudTh><MudTableSortLabel SortBy="new Func<ProviderParameter, object>(x=>x.ParameterType.Name)">Type</MudTableSortLabel></MudTh>
+                            <MudTh><MudTableSortLabel SortBy="new Func<ProviderParameter, object>(x=>x.Value)">Value</MudTableSortLabel></MudTh>
+                            <MudTh></MudTh>
+                        </HeaderContent>
+                        <RowTemplate Context="context2">
+                            <MudTd DataLabel="Value">@context2.ParameterType.Name</MudTd>
+                            <MudTd DataLabel="Value">
+                                <MudTextField T="string" InputType="InputType.Password" DisableUnderLine ReadOnly Text="@context2.Value" />
+                            </MudTd>
+                            <MudTd>
+                                <MudTooltip Text="Delete">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context2)" />
+                                </MudTooltip>
+                                <MudTooltip Text="Edit">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditAsync(context2)" />
+                                </MudTooltip>
+                            </MudTd>
+                        </RowTemplate>
+                        <PagerContent>
+                            <MudTablePager />
+                        </PagerContent>
+                        <NoRecordsContent>
+                            No provider parameters were found.
+                        </NoRecordsContent>
+                    </MudTable>
                 </MudCardContent>
                 <MudCardActions>
                     <MudButton Color="Color.Inherit" OnClick="Cancel">Cancel</MudButton>

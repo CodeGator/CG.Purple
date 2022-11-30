@@ -1,0 +1,35 @@
+﻿<MudDialog>
+    <DialogContent>
+        <EditForm Model="@Model" OnValidSubmit="OnValidSubmit">
+            <MudCard Outlined>
+                <MudCardContent Class="pt-0">
+                    <DataAnnotationsValidator />
+                    <MudSelect T="ParameterType" 
+                               Label="Parameter Types"
+                               For="@(() => Model.ParameterType)">
+                        @foreach (var parameterType in ParameterTypes)
+                        {
+                            <MudSelectItem Value="@parameterType">@parameterType</MudSelectItem>
+                        }
+                    </MudSelect>
+                    <MudTextField Class="ml-auto"
+                                  Variant="Variant.Outlined"
+                                  Label="Value"
+                                  For="@(() => Model.Value)"
+                                  InputType="@_passwordInput"
+                                  Adornment="Adornment.End"
+                                  AdornmentIcon="@_passwordInputIcon"
+                                  OnAdornmentClick="TogglePasswordVisibility"
+                    @bind-Value="@Model.Value" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Color="Color.Inherit"
+                               OnClick="Cancel">Cancel</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit"
+                               Class="ml-auto"
+                               Color="Color.Primary">Save</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
+    </DialogContent>
+</MudDialog>

@@ -4,10 +4,12 @@
 
 <MudBreadcrumbs Items="_crumbs"></MudBreadcrumbs>
 
-<MudText Typo="Typo.h6" Class="py-4 px-5">This page contains the parameter types, used for message properties.</MudText>
+<MudText Typo="Typo.h6" Class="py-4 px-5">This page contains the property types, used to attach information to messages.</MudText>
 
-<MudTable Items="@_propertyTypes" Dense
+<MudTable Items="@_propertyTypes"
+          Dense
           Striped
+          Virtualize
           Filter="new Func<PropertyType,bool>(FilterFunc1)">
     <ToolBarContent>
         <MudButton StartIcon="@Icons.Material.Filled.Create"
