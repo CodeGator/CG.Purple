@@ -1,4 +1,6 @@
 ﻿
+using System.Reflection;
+
 namespace CG.Purple.Providers;
 
 /// <summary>
@@ -75,11 +77,13 @@ internal class MessageProviderFactory : IMessageProviderFactory
             );
 
         // Create the .NET type.
-        var type = Type.GetType(providerType.FactoryType);
+        var type = Type.GetType(providerType.FactoryType, true);
 
         // Did we fail?
         if (type is null)
         {
+            var asm = Assembly.Load(new AssemblyName(providerType.FactoryType));
+
             // Log what we are about to do.
             _logger.LogError(
                 "Failed to convert factory type: {ft} to .NET type, for provider type: {pt}!",

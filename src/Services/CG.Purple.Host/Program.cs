@@ -1,4 +1,8 @@
 
+using Microsoft.Extensions.DependencyInjection;
+
+BootstrapLogger.LogLevelToDebug();
+
 try
 {
     // Log what we are about to do.
@@ -49,7 +53,9 @@ try
     );
 
     // Add the plugins (providers).
-    builder.AddBlazorPlugins();
+    builder.AddBlazorPlugins(
+        bootstrapLogger: BootstrapLogger.Instance()
+        );
 
     // Build the application.
     var app = builder.Build();
