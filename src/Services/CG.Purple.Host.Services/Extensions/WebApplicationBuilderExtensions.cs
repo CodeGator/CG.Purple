@@ -65,6 +65,7 @@ public static class WebApplicationBuilderExtensions006
         webApplicationBuilder.Services.AddScoped<IProcessDirector, ProcessDirector>();
         webApplicationBuilder.Services.AddScoped<IRetryDirector, RetryDirector>();
         webApplicationBuilder.Services.AddScoped<IArchiveDirector, ArchiveDirector>();
+        webApplicationBuilder.Services.AddScoped<IAssignmentDirector, AssignmentDirector>();
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(

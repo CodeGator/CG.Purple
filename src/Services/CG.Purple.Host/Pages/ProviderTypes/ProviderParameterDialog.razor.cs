@@ -1,6 +1,6 @@
 ﻿namespace CG.Purple.Host.Pages.ProviderTypes;
 
-// <summary>
+/// <summary>
 /// This class is the code-behind for the <see cref="ProviderParameterDialog"/> page.
 /// </summary>
 public partial class ProviderParameterDialog
