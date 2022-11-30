@@ -2565,6 +2565,12 @@ references:
   commentId: T:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog
   fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog
   nameWithType: PropertyTypeDialog
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog._gridSearchString
+  name: _gridSearchString
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog__gridSearchString
+  commentId: F:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog._gridSearchString
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog._gridSearchString
+  nameWithType: PropertyTypeDialog._gridSearchString
 - uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel
   name: Cancel()
   href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Cancel
@@ -2578,6 +2584,45 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Cancel
   nameWithType: PropertyTypeDialog.Cancel
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc(ProviderParameter,System.String)
+  name: FilterFunc(ProviderParameter, String)
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_FilterFunc_ProviderParameter_System_String_
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc(ProviderParameter,System.String)
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc(ProviderParameter, System.String)
+  nameWithType: PropertyTypeDialog.FilterFunc(ProviderParameter, String)
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc*
+  name: FilterFunc
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_FilterFunc_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc
+  nameWithType: PropertyTypeDialog.FilterFunc
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc1(ProviderParameter)
+  name: FilterFunc1(ProviderParameter)
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_FilterFunc1_ProviderParameter_
+  commentId: M:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc1(ProviderParameter)
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc1(ProviderParameter)
+  nameWithType: PropertyTypeDialog.FilterFunc1(ProviderParameter)
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc1*
+  name: FilterFunc1
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_FilterFunc1_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc1
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.FilterFunc1
+  nameWithType: PropertyTypeDialog.FilterFunc1
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.HttpContextAccessor
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_HttpContextAccessor
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.HttpContextAccessor
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.HttpContextAccessor
+  nameWithType: PropertyTypeDialog.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.HttpContextAccessor*
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_HttpContextAccessor_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.HttpContextAccessor
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.HttpContextAccessor
+  nameWithType: PropertyTypeDialog.HttpContextAccessor
 - uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.Model
   name: Model
   href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_Model
@@ -2617,6 +2662,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.OnValidSubmit
   nameWithType: PropertyTypeDialog.OnValidSubmit
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.UserName
+  name: UserName
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_UserName
+  commentId: P:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.UserName
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.UserName
+  nameWithType: PropertyTypeDialog.UserName
+- uid: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.UserName*
+  name: UserName
+  href: api/CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.html#CG_Purple_Host_Pages_PropertyTypes_PropertyTypeDialog_UserName_
+  commentId: Overload:CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.UserName
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.PropertyTypes.PropertyTypeDialog.UserName
+  nameWithType: PropertyTypeDialog.UserName
 - uid: CG.Purple.Host.Pages.ProviderTypes
   name: CG.Purple.Host.Pages.ProviderTypes
   href: api/CG.Purple.Host.Pages.ProviderTypes.html
@@ -2635,6 +2693,12 @@ references:
   commentId: F:CG.Purple.Host.Pages.ProviderTypes.Index._crumbs
   fullName: CG.Purple.Host.Pages.ProviderTypes.Index._crumbs
   nameWithType: Index._crumbs
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index._factoryTypes
+  name: _factoryTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index__factoryTypes
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.Index._factoryTypes
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index._factoryTypes
+  nameWithType: Index._factoryTypes
 - uid: CG.Purple.Host.Pages.ProviderTypes.Index._gridSearchString
   name: _gridSearchString
   href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index__gridSearchString
@@ -2647,6 +2711,12 @@ references:
   commentId: F:CG.Purple.Host.Pages.ProviderTypes.Index._isBusy
   fullName: CG.Purple.Host.Pages.ProviderTypes.Index._isBusy
   nameWithType: Index._isBusy
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index._parameterTypes
+  name: _parameterTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index__parameterTypes
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.Index._parameterTypes
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index._parameterTypes
+  nameWithType: Index._parameterTypes
 - uid: CG.Purple.Host.Pages.ProviderTypes.Index._providerTypes
   name: _providerTypes
   href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index__providerTypes
@@ -2770,6 +2840,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.ProviderTypes.Index.OnInitializedAsync
   nameWithType: Index.OnInitializedAsync
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.ParameterTypeManager
+  name: ParameterTypeManager
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_ParameterTypeManager
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.Index.ParameterTypeManager
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.ParameterTypeManager
+  nameWithType: Index.ParameterTypeManager
+- uid: CG.Purple.Host.Pages.ProviderTypes.Index.ParameterTypeManager*
+  name: ParameterTypeManager
+  href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_ParameterTypeManager_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.Index.ParameterTypeManager
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.Index.ParameterTypeManager
+  nameWithType: Index.ParameterTypeManager
 - uid: CG.Purple.Host.Pages.ProviderTypes.Index.ProviderTypeManager
   name: ProviderTypeManager
   href: api/CG.Purple.Host.Pages.ProviderTypes.Index.html#CG_Purple_Host_Pages_ProviderTypes_Index_ProviderTypeManager
@@ -2809,6 +2892,102 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.ProviderTypes.Index.UserName
   nameWithType: Index.UserName
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog
+  name: ProviderParameterDialog
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html
+  commentId: T:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog
+  nameWithType: ProviderParameterDialog
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog._passwordInput
+  name: _passwordInput
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog__passwordInput
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog._passwordInput
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog._passwordInput
+  nameWithType: ProviderParameterDialog._passwordInput
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog._passwordInputIcon
+  name: _passwordInputIcon
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog__passwordInputIcon
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog._passwordInputIcon
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog._passwordInputIcon
+  nameWithType: ProviderParameterDialog._passwordInputIcon
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Cancel
+  name: Cancel()
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_Cancel
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Cancel
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Cancel()
+  nameWithType: ProviderParameterDialog.Cancel()
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Cancel*
+  name: Cancel
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_Cancel_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Cancel
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Cancel
+  nameWithType: ProviderParameterDialog.Cancel
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Model
+  name: Model
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_Model
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Model
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Model
+  nameWithType: ProviderParameterDialog.Model
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Model*
+  name: Model
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_Model_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Model
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.Model
+  nameWithType: ProviderParameterDialog.Model
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_MudDialog
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.MudDialog
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.MudDialog
+  nameWithType: ProviderParameterDialog.MudDialog
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_MudDialog_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.MudDialog
+  nameWithType: ProviderParameterDialog.MudDialog
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.OnValidSubmit
+  name: OnValidSubmit()
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_OnValidSubmit
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.OnValidSubmit
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.OnValidSubmit()
+  nameWithType: ProviderParameterDialog.OnValidSubmit()
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.OnValidSubmit*
+  name: OnValidSubmit
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_OnValidSubmit_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.OnValidSubmit
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.OnValidSubmit
+  nameWithType: ProviderParameterDialog.OnValidSubmit
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypes
+  name: ParameterTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_ParameterTypes
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypes
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypes
+  nameWithType: ProviderParameterDialog.ParameterTypes
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypes*
+  name: ParameterTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_ParameterTypes_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypes
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypes
+  nameWithType: ProviderParameterDialog.ParameterTypes
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.TogglePasswordVisibility
+  name: TogglePasswordVisibility()
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_TogglePasswordVisibility
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.TogglePasswordVisibility
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.TogglePasswordVisibility()
+  nameWithType: ProviderParameterDialog.TogglePasswordVisibility()
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.TogglePasswordVisibility*
+  name: TogglePasswordVisibility
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_TogglePasswordVisibility_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.TogglePasswordVisibility
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.TogglePasswordVisibility
+  nameWithType: ProviderParameterDialog.TogglePasswordVisibility
 - uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog
   name: ProviderTypeDialog
   href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html
@@ -2828,6 +3007,64 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Cancel
   nameWithType: ProviderTypeDialog.Cancel
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.DialogService
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_DialogService
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.DialogService
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.DialogService
+  nameWithType: ProviderTypeDialog.DialogService
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.DialogService*
+  name: DialogService
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_DialogService_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.DialogService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.DialogService
+  nameWithType: ProviderTypeDialog.DialogService
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.factoryTypeConverter
+  name: factoryTypeConverter
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_factoryTypeConverter
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.factoryTypeConverter
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.factoryTypeConverter
+  nameWithType: ProviderTypeDialog.factoryTypeConverter
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.FactoryTypes
+  name: FactoryTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_FactoryTypes
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.FactoryTypes
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.FactoryTypes
+  nameWithType: ProviderTypeDialog.FactoryTypes
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.FactoryTypes*
+  name: FactoryTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_FactoryTypes_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.FactoryTypes
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.FactoryTypes
+  nameWithType: ProviderTypeDialog.FactoryTypes
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.HttpContextAccessor
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_HttpContextAccessor
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.HttpContextAccessor
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.HttpContextAccessor
+  nameWithType: ProviderTypeDialog.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.HttpContextAccessor*
+  name: HttpContextAccessor
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_HttpContextAccessor_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.HttpContextAccessor
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.HttpContextAccessor
+  nameWithType: ProviderTypeDialog.HttpContextAccessor
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Logger
+  name: Logger
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_Logger
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Logger
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Logger
+  nameWithType: ProviderTypeDialog.Logger
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Logger*
+  name: Logger
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_Logger_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Logger
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Logger
+  nameWithType: ProviderTypeDialog.Logger
 - uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.Model
   name: Model
   href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_Model
@@ -2854,6 +3091,45 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.MudDialog
   nameWithType: ProviderTypeDialog.MudDialog
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnCreateAsync
+  name: OnCreateAsync()
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_OnCreateAsync
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnCreateAsync
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnCreateAsync()
+  nameWithType: ProviderTypeDialog.OnCreateAsync()
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnCreateAsync*
+  name: OnCreateAsync
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_OnCreateAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnCreateAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnCreateAsync
+  nameWithType: ProviderTypeDialog.OnCreateAsync
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnDeleteAsync(ProviderParameter)
+  name: OnDeleteAsync(ProviderParameter)
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_OnDeleteAsync_ProviderParameter_
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnDeleteAsync(ProviderParameter)
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnDeleteAsync(ProviderParameter)
+  nameWithType: ProviderTypeDialog.OnDeleteAsync(ProviderParameter)
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnDeleteAsync*
+  name: OnDeleteAsync
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_OnDeleteAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnDeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnDeleteAsync
+  nameWithType: ProviderTypeDialog.OnDeleteAsync
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnEditAsync(ProviderParameter)
+  name: OnEditAsync(ProviderParameter)
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_OnEditAsync_ProviderParameter_
+  commentId: M:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnEditAsync(ProviderParameter)
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnEditAsync(ProviderParameter)
+  nameWithType: ProviderTypeDialog.OnEditAsync(ProviderParameter)
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnEditAsync*
+  name: OnEditAsync
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_OnEditAsync_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnEditAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnEditAsync
+  nameWithType: ProviderTypeDialog.OnEditAsync
 - uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnValidSubmit
   name: OnValidSubmit()
   href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_OnValidSubmit
@@ -2867,6 +3143,45 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.OnValidSubmit
   nameWithType: ProviderTypeDialog.OnValidSubmit
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.ParameterTypes
+  name: ParameterTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_ParameterTypes
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.ParameterTypes
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.ParameterTypes
+  nameWithType: ProviderTypeDialog.ParameterTypes
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.ParameterTypes*
+  name: ParameterTypes
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_ParameterTypes_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.ParameterTypes
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.ParameterTypes
+  nameWithType: ProviderTypeDialog.ParameterTypes
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.SnackbarService
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_SnackbarService
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.SnackbarService
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.SnackbarService
+  nameWithType: ProviderTypeDialog.SnackbarService
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_SnackbarService_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.SnackbarService
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.SnackbarService
+  nameWithType: ProviderTypeDialog.SnackbarService
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.UserName
+  name: UserName
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_UserName
+  commentId: P:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.UserName
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.UserName
+  nameWithType: ProviderTypeDialog.UserName
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.UserName*
+  name: UserName
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderTypeDialog_UserName_
+  commentId: Overload:CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.UserName
+  isSpec: "True"
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderTypeDialog.UserName
+  nameWithType: ProviderTypeDialog.UserName
 - uid: CG.Purple.Host.Services
   name: CG.Purple.Host.Services
   href: api/CG.Purple.Host.Services.html
@@ -6940,6 +7255,70 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Models.ParameterType.Name
   nameWithType: ParameterType.Name
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer
+  name: ParameterTypeEqualityComparer
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html
+  commentId: T:CG.Purple.Models.ParameterTypeEqualityComparer
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer
+  nameWithType: ParameterTypeEqualityComparer
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer.#ctor
+  name: ParameterTypeEqualityComparer()
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html#CG_Purple_Models_ParameterTypeEqualityComparer__ctor
+  commentId: M:CG.Purple.Models.ParameterTypeEqualityComparer.#ctor
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer.ParameterTypeEqualityComparer()
+  nameWithType: ParameterTypeEqualityComparer.ParameterTypeEqualityComparer()
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer.#ctor*
+  name: ParameterTypeEqualityComparer
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html#CG_Purple_Models_ParameterTypeEqualityComparer__ctor_
+  commentId: Overload:CG.Purple.Models.ParameterTypeEqualityComparer.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer.ParameterTypeEqualityComparer
+  nameWithType: ParameterTypeEqualityComparer.ParameterTypeEqualityComparer
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer._instance
+  name: _instance
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html#CG_Purple_Models_ParameterTypeEqualityComparer__instance
+  commentId: F:CG.Purple.Models.ParameterTypeEqualityComparer._instance
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer._instance
+  nameWithType: ParameterTypeEqualityComparer._instance
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer.Equals(CG.Purple.Models.ParameterType,CG.Purple.Models.ParameterType)
+  name: Equals(ParameterType, ParameterType)
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html#CG_Purple_Models_ParameterTypeEqualityComparer_Equals_CG_Purple_Models_ParameterType_CG_Purple_Models_ParameterType_
+  commentId: M:CG.Purple.Models.ParameterTypeEqualityComparer.Equals(CG.Purple.Models.ParameterType,CG.Purple.Models.ParameterType)
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer.Equals(CG.Purple.Models.ParameterType, CG.Purple.Models.ParameterType)
+  nameWithType: ParameterTypeEqualityComparer.Equals(ParameterType, ParameterType)
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer.Equals*
+  name: Equals
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html#CG_Purple_Models_ParameterTypeEqualityComparer_Equals_
+  commentId: Overload:CG.Purple.Models.ParameterTypeEqualityComparer.Equals
+  isSpec: "True"
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer.Equals
+  nameWithType: ParameterTypeEqualityComparer.Equals
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer.GetHashCode(CG.Purple.Models.ParameterType)
+  name: GetHashCode(ParameterType)
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html#CG_Purple_Models_ParameterTypeEqualityComparer_GetHashCode_CG_Purple_Models_ParameterType_
+  commentId: M:CG.Purple.Models.ParameterTypeEqualityComparer.GetHashCode(CG.Purple.Models.ParameterType)
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer.GetHashCode(CG.Purple.Models.ParameterType)
+  nameWithType: ParameterTypeEqualityComparer.GetHashCode(ParameterType)
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer.GetHashCode*
+  name: GetHashCode
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html#CG_Purple_Models_ParameterTypeEqualityComparer_GetHashCode_
+  commentId: Overload:CG.Purple.Models.ParameterTypeEqualityComparer.GetHashCode
+  isSpec: "True"
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer.GetHashCode
+  nameWithType: ParameterTypeEqualityComparer.GetHashCode
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer.Instance
+  name: Instance()
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html#CG_Purple_Models_ParameterTypeEqualityComparer_Instance
+  commentId: M:CG.Purple.Models.ParameterTypeEqualityComparer.Instance
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer.Instance()
+  nameWithType: ParameterTypeEqualityComparer.Instance()
+- uid: CG.Purple.Models.ParameterTypeEqualityComparer.Instance*
+  name: Instance
+  href: api/CG.Purple.Models.ParameterTypeEqualityComparer.html#CG_Purple_Models_ParameterTypeEqualityComparer_Instance_
+  commentId: Overload:CG.Purple.Models.ParameterTypeEqualityComparer.Instance
+  isSpec: "True"
+  fullName: CG.Purple.Models.ParameterTypeEqualityComparer.Instance
+  nameWithType: ParameterTypeEqualityComparer.Instance
 - uid: CG.Purple.Models.ProcessEvent
   name: ProcessEvent
   href: api/CG.Purple.Models.ProcessEvent.html
