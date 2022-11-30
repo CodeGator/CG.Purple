@@ -10,27 +10,44 @@
                                   Variant="Variant.Outlined"
                                   Label="Name"
                                   For="@(() => Model.Name)"
-                    @bind-Value="@Model.Name" />
+                                  @bind-Value="@Model.Name" />
                     <MudTextField Immediate
                                   Counter="128"
                                   Variant="Variant.Outlined"
                                   Label="Description"
                                   For="@(() => Model.Description)"
-                    @bind-Value="@Model.Description" />
-                    <MudSelect T="string"
-                               Class="ml-auto mb-4"
-                               Label="Factory Type"
-                               Placeholder="Select a factory"
-                               Dense
-                               Clearable
-                               ToStringFunc="factoryTypeConverter"
-                               For="@(() => Model.FactoryType)"
-                               @bind-Value="Model.FactoryType">
-                        @foreach (var factoryType in FactoryTypes)
-                        {
-                            <MudSelectItem Value="@factoryType">@(Type.GetType(factoryType)?.FullName ?? factoryType)</MudSelectItem>
-                        }
-                    </MudSelect>
+                                  @bind-Value="@Model.Description" />
+                    @if (!FactoryTypes.Any())
+                    {
+                        <MudTextField Variant="Variant.Outlined"
+                                      ReadOnly
+                                      Label="Factory Type"
+                                      For="@(() => Model.FactoryType)"
+                                      @bind-Value="@Model.FactoryType" />
+                    }
+                    else
+                    {
+                        <MudSelect T="string"
+                                   Class="ml-auto mb-4"
+                                   Label="Factory Type"
+                                   Placeholder="Select a factory"
+                                   Dense
+                                   Clearable
+                                   For="@(() => Model.FactoryType)"
+                                   @bind-Value="Model.FactoryType">
+                            @foreach (var factoryType in FactoryTypes)
+                            {
+                                <MudSelectItem Value="@factoryType">@(Type.GetType(factoryType)?.FullName ?? factoryType)</MudSelectItem>
+                            }
+                        </MudSelect>
+                    }
+                    <MudCheckBox Label="Disabled"
+                                 @bind-Checked="Model.IsDisabled"
+                                 For="@(() => Model.IsDisabled)" />
+                    @if (Model.IsDisabled)
+                    {
+                        <MudAlert Dense Severity="Severity.Warning" >Disabling a provider affects the pipeline's ability to process messages! Be careful!</MudAlert>
+                    }
                     <MudText Class="px-6 pt-4 pb-0" Typo="Typo.subtitle1">Parameters</MudText>
                     <MudTable Items="@Model.Parameters"
                               Dense
@@ -39,6 +56,7 @@
                         <ToolBarContent>
                             <MudButton StartIcon="@Icons.Material.Filled.Create"
                                        Variant="Variant.Filled"
+                                       Disabled="@(!ParameterTypes.Any())"
                                        OnClick="OnCreateAsync">Create</MudButton>
                             <MudSpacer />
                         </ToolBarContent>

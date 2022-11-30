@@ -14,7 +14,7 @@
     <ToolBarContent>
         <MudButton StartIcon="@Icons.Material.Filled.Create"
                    Variant="Variant.Filled"
-                   Disabled="@_factoryTypes.Any()"
+                   Disabled="@(!_factoryTypes.Any())"
                    OnClick="OnCreateAsync">Create</MudButton>
         <MudSpacer />
         <MudTextField @bind-Value="_gridSearchString"
@@ -26,11 +26,13 @@
     <HeaderContent>
         <MudTh><MudTableSortLabel SortBy="new Func<ProviderType, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
         <MudTh><MudTableSortLabel SortBy="new Func<ProviderType, object>(x=>x.Description)">Description</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProviderType, object>(x=>x.IsDisabled)">Disabled</MudTableSortLabel></MudTh>
         <MudTh></MudTh>
     </HeaderContent>
     <RowTemplate>
         <MudTd DataLabel="Name">@context.Name</MudTd>
         <MudTd DataLabel="Description">@context.Description</MudTd>
+        <MudTd DataLabel="Disabled"><MudCheckBox Checked="@context.IsDisabled" ReadOnly /></MudTd>
         <MudTd>
             <MudTooltip Text="Delete">
                 <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context)" />

@@ -31,25 +31,23 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="CG.Blazor.Plugins" Version="2023.1.3" />
         <PackageReference Include="CG.DataProtection" Version="2023.1.3" />
         <PackageReference Include="CG.Logging" Version="2023.1.2" />
         <PackageReference Include="CG.Reflection" Version="2023.1.2" />
         <PackageReference Include="MudBlazor" Version="6.1.2" />
-        <PackageReference Include="MudBlazor.Extensions" Version="1.7.10" />
+        <PackageReference Include="MudBlazor.Extensions" Version="1.7.11" />
         <PackageReference Include="Nerdbank.GitVersioning" Version="3.5.119">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+        <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\Data\CG.Purple.SqlServer\CG.Purple.SqlServer.csproj" />
         <ProjectReference Include="..\..\Libraries\CG.Purple.Seeding\CG.Purple.Seeding.csproj" />
         <ProjectReference Include="..\..\Libraries\CG.Purple\CG.Purple.csproj" />
-        <ProjectReference Include="..\..\Providers\CG.Purple.SendGrid\CG.Purple.SendGrid.csproj" />
-        <ProjectReference Include="..\..\Providers\CG.Purple.Smtp\CG.Purple.Smtp.csproj" />
-        <ProjectReference Include="..\..\Providers\CG.Purple.Twillio\CG.Purple.Twillio.csproj" />
         <ProjectReference Include="..\CG.Purple.Host.Controllers\CG.Purple.Host.Controllers.csproj" />
         <ProjectReference Include="..\CG.Purple.Host.Services\CG.Purple.Host.Services.csproj" />
     </ItemGroup>

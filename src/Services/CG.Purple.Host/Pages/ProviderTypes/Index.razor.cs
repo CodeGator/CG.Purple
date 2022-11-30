@@ -30,12 +30,12 @@ public partial class Index
     /// <summary>
     /// This field contains the collection of provider types.
     /// </summary>
-    protected IEnumerable<ProviderType>? _providerTypes = Array.Empty<ProviderType>();
+    protected IEnumerable<ProviderType> _providerTypes = Array.Empty<ProviderType>();
 
     /// <summary>
     /// This field contains the collection of parameter types.
     /// </summary>
-    protected IEnumerable<ParameterType>? _parameterTypes = Array.Empty<ParameterType>();
+    protected IEnumerable<ParameterType> _parameterTypes = Array.Empty<ParameterType>();
 
     /// <summary>
     /// This field contains the collection of factory types.
@@ -148,15 +148,11 @@ public partial class Index
 
             // Log what we are about to do.
             Logger.LogDebug(
-                "Fetching factory types for the page."
+                "Fetching factory types."
                 );
 
-            // Find all the factory types - except those already used by
-            // an existing provider type.
-            _factoryTypes = AppDomain.CurrentDomain.FindConcreteTypes<IMessageProvider>()
-                .Select(x => x.AssemblyQualifiedName ?? "")
-                .Where(x => !string.IsNullOrEmpty(x))
-                .Except(_providerTypes.Select(x => x.FactoryType));
+            // Filter the factory types.
+            FilterFactoryTypes();
 
             // Give the base class a chance.
             await base.OnInitializedAsync();
@@ -351,6 +347,14 @@ public partial class Index
 
                 // Defer to the manager for the query.
                 _providerTypes = await ProviderTypeManager.FindAllAsync();
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Fetching factory types."
+                    );
+
+                // Filter the factory types.
+                FilterFactoryTypes();
             }
         }
         catch (Exception ex)
@@ -456,6 +460,14 @@ public partial class Index
 
             // Defer to the manager for the query.
             _providerTypes = await ProviderTypeManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Fetching factory types."
+                );
+
+            // Filter the factory types.
+            FilterFactoryTypes();
         }
         catch (Exception ex)
         {
@@ -525,7 +537,7 @@ public partial class Index
                 "Filtering our already used parameter types."
                 );
 
-            // Filter out any parameter types already used by this provider type.
+            // We don't use parameters more than once per provider.
             var filteredParameterTypes = _parameterTypes.Except(
                 providerType.Parameters.Select(x => x.ParameterType),
                 ParameterTypeEqualityComparer.Instance()
@@ -618,6 +630,14 @@ public partial class Index
 
                 // Defer to the manager for the query.
                 _providerTypes = await ProviderTypeManager.FindAllAsync();
+
+                // Log what we are about to do.
+                Logger.LogDebug(
+                    "Fetching factory types."
+                    );
+
+                // Filter the factory types.
+                FilterFactoryTypes();
             }
         }
         catch (Exception ex)
@@ -635,6 +655,42 @@ public partial class Index
             // We're no longer busy.
             _isBusy = false;
         }
+    }
+
+    #endregion
+
+    // *******************************************************************
+    // Private methods.
+    // *******************************************************************
+
+    #region Private methods
+
+    /// <summary>
+    /// This method filters the list of available factory types.
+    /// </summary>
+    private void FilterFactoryTypes()
+    {
+        // Log what we are about to do.
+        Logger.LogDebug(
+            "Fetching factory types from the app domain."
+            );
+
+        // Find the list of all factory types.
+        _factoryTypes = AppDomain.CurrentDomain.FindConcreteTypes<IMessageProvider>()
+            .Select(x => x.AssemblyQualifiedName ?? "")
+            .Where(x => !string.IsNullOrEmpty(x))
+            .ToList();
+
+        // Log what we are about to do.
+        Logger.LogDebug(
+            "Filtering out the assigned factory types."
+            );
+
+        // Filter out any that have already been assigned to a
+        //   provider type.
+        _factoryTypes = _factoryTypes.Except(
+            _providerTypes.Select(x => x.FactoryType)
+            ).ToList();
     }
 
     #endregion

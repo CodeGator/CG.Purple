@@ -71,20 +71,6 @@ public partial class ProviderTypeDialog
     #endregion
 
     // *******************************************************************
-    // Delegates.
-    // *******************************************************************
-
-    #region Delegates
-
-    /// <summary>
-    /// This delegate converts an assembly name to a type name.
-    /// </summary>
-    Func<string, string> factoryTypeConverter = p =>
-        p is not null ? Type.GetType(p)?.FullName ?? p : "";
-
-    #endregion
-
-    // *******************************************************************
     // Protected methods.
     // *******************************************************************
 

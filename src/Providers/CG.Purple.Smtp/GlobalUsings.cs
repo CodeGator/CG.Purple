@@ -1,7 +1,11 @@
-﻿global using CG.Purple.Models;
+﻿global using CG.Blazor.Plugins;
+global using CG.Purple.Managers;
+global using CG.Purple.Models;
 global using CG.Purple.Providers;
 global using CG.Purple.Smtp;
 global using CG.Validations;
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
-global using CG.Purple.Managers;
