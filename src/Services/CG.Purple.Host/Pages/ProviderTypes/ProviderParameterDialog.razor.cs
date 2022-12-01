@@ -1,4 +1,6 @@
-﻿namespace CG.Purple.Host.Pages.ProviderTypes;
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace CG.Purple.Host.Pages.ProviderTypes;
 
 /// <summary>
 /// This class is the code-behind for the <see cref="ProviderParameterDialog"/> page.
@@ -47,6 +49,19 @@ public partial class ProviderParameterDialog
     [Parameter]
     public IEnumerable<ParameterType> ParameterTypes { get; set; } = null!;
 
+    #endregion
+
+    // *******************************************************************
+    // Delegates.
+    // *******************************************************************
+
+    #region Delegates
+
+    /// <summary>
+    /// This delegate formats a parameter type for display in a dropdown.
+    /// </summary>
+    readonly Func<ParameterType, string> ParameterTypeConverter = p => p?.Name ?? ""; 
+    
     #endregion
 
     // *******************************************************************

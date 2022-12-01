@@ -223,10 +223,10 @@ public partial class ProviderTypeDialog
                 "Filtering the currently used parameter type."
                 );
 
-            // Filter out the currently used parameter type.
-            var filteredParameterTypes = ParameterTypes.Where(x =>
-                x.Id == parameter.ParameterType.Id
-                ).ToList();
+            // Add the currently selected parameter type to the
+            //  available options.
+            var filteredParameterTypes = ParameterTypes.ToList();
+            filteredParameterTypes.Add(parameter.ParameterType);
 
             // Log what we are about to do.
             Logger.LogDebug(
@@ -237,11 +237,7 @@ public partial class ProviderTypeDialog
             var properties = new DialogParameters()
             {
                 {
-                    "Model", new ProviderParameter()
-                    {
-                        CreatedBy = UserName,
-                        CreatedOnUtc = DateTime.UtcNow,
-                    }
+                    "Model", parameter
                 },
                 {
                     "ParameterTypes", filteredParameterTypes
@@ -255,7 +251,7 @@ public partial class ProviderTypeDialog
 
             // Create the dialog.
             var dialog = DialogService.Show<ProviderParameterDialog>(
-                "Provider Parameter",
+                "Edit Parameter",
                 properties,
                 options
                 );

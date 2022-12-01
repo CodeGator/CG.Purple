@@ -1,7 +1,7 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things to be done on the project, as of 11/29/2022
+Things to be done on the project, as of 12/01/2022
 
 ### Design
 
@@ -23,7 +23,13 @@ Things to be done on the project, as of 11/29/2022
 
 ### Hosted Services
 
-* Need to test everything related to this service.
+* Need to add in the assignment director.
+
+* Need to test the service.
+
+### Host
+
+* Need to finish the UI.
 
 ### Services 
 

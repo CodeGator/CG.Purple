@@ -4,14 +4,29 @@
             <MudCard Outlined>
                 <MudCardContent Class="pt-0">
                     <DataAnnotationsValidator />
-                    <MudSelect T="ParameterType" 
-                               Label="Parameter Types"
-                               For="@(() => Model.ParameterType)">
-                        @foreach (var parameterType in ParameterTypes)
-                        {
-                            <MudSelectItem Value="@parameterType">@parameterType</MudSelectItem>
-                        }
-                    </MudSelect>
+                    @if (ParameterTypes.Count() > 1)
+                    {
+                        <MudSelect T="ParameterType"
+                                   AutoFocus
+                                   Label="Parameter Type"
+                                   ToStringFunc="ParameterTypeConverter"
+                                   For="@(() => Model.ParameterType)">
+                            @foreach (var parameterType in ParameterTypes)
+                            {
+                                <MudSelectItem Value="@parameterType">@parameterType</MudSelectItem>
+                            }
+                        </MudSelect>
+                    }
+                    else
+                    {
+                        <MudTextField Class="ml-auto"
+                                      AutoFocus
+                                      ReadOnly
+                                      Variant="Variant.Outlined"
+                                      Label="Parameter Type"
+                                      For="@(() => Model.ParameterType.Name)"
+                                      @bind-Value="@Model.ParameterType.Name" />
+                    }
                     <MudTextField Class="ml-auto"
                                   Variant="Variant.Outlined"
                                   Label="Value"
