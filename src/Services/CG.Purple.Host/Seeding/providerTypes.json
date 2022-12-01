@@ -7,7 +7,7 @@
       "CanProcessEmails": true,
       "CanProcessTexts": false,
       "Priority": 0,
-      "FactoryType": "CG.Purple.Smtp.SmtpProvider, CG.Purple.Smtp"
+      "FactoryType": "SmtpProvider"
     },
     {
       "Name": "Twillio",
@@ -16,7 +16,7 @@
       "CanProcessEmails": true,
       "CanProcessTexts": true,
       "Priority": 1,
-      "FactoryType": "CG.Purple.Twillio.TwillioProvider, CG.Purple.Twillio"
+      "FactoryType": "TwillioProvider"
     },
     {
       "Name": "SendGrid",
@@ -25,7 +25,7 @@
       "CanProcessEmails": true,
       "CanProcessTexts": true,
       "Priority": 2,
-      "FactoryType": "CG.Purple.SendGrid.SendGridProvider, CG.Purple.SendGrid"
+      "FactoryType": "SendGridProvider"
     }    
   ]
 }

@@ -543,6 +543,11 @@ public partial class Index
                 ParameterTypeEqualityComparer.Instance()
                 );
 
+            // Add the currently assigned factory type to the list
+            //   of possible selections.
+            var filteredFactoryTypes = _factoryTypes.ToList();
+            filteredFactoryTypes.Add(providerType.FactoryType);
+
             // Log what we are about to do.
             Logger.LogDebug(
                 "Creating dialog parameters."
@@ -552,7 +557,7 @@ public partial class Index
             var providers = new DialogParameters()
             {
                 { "Model", tempProviderType },
-                { "FactoryTypes", _factoryTypes },
+                { "FactoryTypes", filteredFactoryTypes },
                 { "ParameterTypes", filteredParameterTypes }
             };
 
@@ -677,7 +682,7 @@ public partial class Index
 
         // Find the list of all factory types.
         _factoryTypes = AppDomain.CurrentDomain.FindConcreteTypes<IMessageProvider>()
-            .Select(x => x.AssemblyQualifiedName ?? "")
+            .Select(x => x.Name ?? "")
             .Where(x => !string.IsNullOrEmpty(x))
             .ToList();
 

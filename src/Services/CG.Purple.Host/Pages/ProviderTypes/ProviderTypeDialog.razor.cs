@@ -1,6 +1,4 @@
 ﻿
-using System.Linq;
-
 namespace CG.Purple.Host.Pages.ProviderTypes;
 
 /// <summary>

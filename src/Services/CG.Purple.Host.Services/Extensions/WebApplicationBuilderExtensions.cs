@@ -50,7 +50,7 @@ public static class WebApplicationBuilderExtensions006
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Wiring up the hosted services"
+            "Wiring up the hosted processing service"
             );
 
         // Add the services.
@@ -58,18 +58,39 @@ public static class WebApplicationBuilderExtensions006
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Wiring up the directors"
+            "Wiring up the process director"
             );
 
-        // Add the directors.
+        // Add the director.
         webApplicationBuilder.Services.AddScoped<IProcessDirector, ProcessDirector>();
+
+        // Tell the world what we are about to do.
+        bootstrapLogger?.LogDebug(
+            "Wiring up the retry director"
+            );
+
+        // Add the director.
         webApplicationBuilder.Services.AddScoped<IRetryDirector, RetryDirector>();
+
+        // Tell the world what we are about to do.
+        bootstrapLogger?.LogDebug(
+            "Wiring up the archive director"
+            );
+
+        // Add the director.
         webApplicationBuilder.Services.AddScoped<IArchiveDirector, ArchiveDirector>();
+
+        // Tell the world what we are about to do.
+        bootstrapLogger?.LogDebug(
+            "Wiring up the assignment director"
+            );
+
+        // Add the director.
         webApplicationBuilder.Services.AddScoped<IAssignmentDirector, AssignmentDirector>();
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Wiring up SignalR"
+            "Wiring up SignalR for the hosted service(s)"
             );
 
         // Add SignalR stuff.

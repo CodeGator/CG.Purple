@@ -15,10 +15,17 @@ public class Module : ModuleBase
     /// <inheritdoc/>
     public override void ConfigureServices(
         WebApplicationBuilder webApplicationBuilder,
-        IConfiguration configuration
+        IConfiguration configuration,
+        ILogger? bootstrapLogger
         )
     {
-        // Add the provider.
+        // Log what we are about to do.
+        bootstrapLogger?.LogDebug(
+            "Registering the {name} provider with the DI container.",
+            nameof(DoNothingProvider)
+            );
+
+        // Add the concrete provider to the DI container.
         webApplicationBuilder.Services.AddScoped<DoNothingProvider>();
     }
 

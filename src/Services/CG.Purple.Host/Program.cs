@@ -1,6 +1,4 @@
 
-using Microsoft.Extensions.DependencyInjection;
-
 BootstrapLogger.LogLevelToDebug();
 
 try

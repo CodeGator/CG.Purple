@@ -71,26 +71,31 @@ internal class MessageProviderFactory : IMessageProviderFactory
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(providerType, nameof(providerType));
 
+        // The concrete providers are loaded via plugins, which means
+        //   finding their .NET types can be tricky. So, instead of
+        //   calling Type.GetType, which fails for dynamically loaded
+        //   types (plugins), we'll look in the app-domain itself for
+        //   the type(s) we want. The app-domain knows about these types
+        //   because they were loaded, previously, by the plugin(s).
+
         // Log what we are about to do.
         _logger.LogDebug(
-            "Converting factory type to .NET type, for the provider."
+            "Looking for the loaded provider type: '{name}' in the app-domain",
+            providerType.FactoryType
             );
 
-        // Create the .NET type.
-        var type = Type.GetType(providerType.FactoryType, true);
+        // Look for a matching concrete provider.
+        var type = AppDomain.CurrentDomain.FindConcreteTypes<IMessageProvider>()
+            .FirstOrDefault(x => x.Name == providerType.FactoryType);
 
         // Did we fail?
         if (type is null)
         {
-            var asm = Assembly.Load(new AssemblyName(providerType.FactoryType));
-
             // Log what we are about to do.
             _logger.LogError(
-                "Failed to convert factory type: {ft} to .NET type, for provider type: {pt}!",
-                providerType.FactoryType,
-                providerType.Name
+                "Failed to find provider type: {name} in the app-domain!",
+                providerType.FactoryType
                 );
-
             return Task.FromResult<IMessageProvider?>(null); // Nothing to create!
         }
 
@@ -107,6 +112,13 @@ internal class MessageProviderFactory : IMessageProviderFactory
             "Creating a provider of type: {t}.",
             type.FullName
             );
+
+        // The providers are all registered with the DI container,
+        //   so this call should stand up this instance without a
+        //   problem. Creating the providers this way also allows
+        //   us to inject any supporting types via the DI container,
+        //   and allows the DI container to control the lifetime of
+        //   each provider instance.
 
         // Create the provider (with scope).
         var provider = ActivatorUtilities.CreateInstance(
