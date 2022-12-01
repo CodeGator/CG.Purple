@@ -346,12 +346,15 @@ references:
   isSpec: "True"
   fullName: CG.Purple.DoNothing.Module.Configure
   nameWithType: Module.Configure
-- uid: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
-  name: ConfigureServices(WebApplicationBuilder, IConfiguration)
-  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_
-  commentId: M:CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
-  fullName: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
-  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+- uid: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
+  name: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
+  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_System_Nullable_ILogger__
+  commentId: M:CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
+  name.vb: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
+  fullName: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable<ILogger>)
+  fullName.vb: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable(Of ILogger))
+  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
+  nameWithType.vb: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
 - uid: CG.Purple.DoNothing.Module.ConfigureServices*
   name: ConfigureServices
   href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_ConfigureServices_
@@ -3123,6 +3126,12 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.OnValidSubmit
   nameWithType: ProviderParameterDialog.OnValidSubmit
+- uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypeConverter
+  name: ParameterTypeConverter
+  href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_ParameterTypeConverter
+  commentId: F:CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypeConverter
+  fullName: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypeConverter
+  nameWithType: ProviderParameterDialog.ParameterTypeConverter
 - uid: CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.ParameterTypes
   name: ParameterTypes
   href: api/CG.Purple.Host.Pages.ProviderTypes.ProviderParameterDialog.html#CG_Purple_Host_Pages_ProviderTypes_ProviderParameterDialog_ParameterTypes
@@ -10602,12 +10611,15 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SendGrid.Module.Configure
   nameWithType: Module.Configure
-- uid: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
-  name: ConfigureServices(WebApplicationBuilder, IConfiguration)
-  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_
-  commentId: M:CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
-  fullName: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
-  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+- uid: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
+  name: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
+  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_System_Nullable_ILogger__
+  commentId: M:CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
+  name.vb: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
+  fullName: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable<ILogger>)
+  fullName.vb: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable(Of ILogger))
+  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
+  nameWithType.vb: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
 - uid: CG.Purple.SendGrid.Module.ConfigureServices*
   name: ConfigureServices
   href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_ConfigureServices_
@@ -10684,12 +10696,15 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Smtp.Module.Configure
   nameWithType: Module.Configure
-- uid: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
-  name: ConfigureServices(WebApplicationBuilder, IConfiguration)
-  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_
-  commentId: M:CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
-  fullName: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
-  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+- uid: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
+  name: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
+  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_System_Nullable_ILogger__
+  commentId: M:CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
+  name.vb: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
+  fullName: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable<ILogger>)
+  fullName.vb: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable(Of ILogger))
+  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
+  nameWithType.vb: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
 - uid: CG.Purple.Smtp.Module.ConfigureServices*
   name: ConfigureServices
   href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_ConfigureServices_
@@ -14303,12 +14318,15 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Twillio.Module.Configure
   nameWithType: Module.Configure
-- uid: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
-  name: ConfigureServices(WebApplicationBuilder, IConfiguration)
-  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_
-  commentId: M:CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder,IConfiguration)
-  fullName: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
-  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration)
+- uid: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
+  name: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
+  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_System_Nullable_ILogger__
+  commentId: M:CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
+  name.vb: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
+  fullName: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable<ILogger>)
+  fullName.vb: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable(Of ILogger))
+  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
+  nameWithType.vb: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
 - uid: CG.Purple.Twillio.Module.ConfigureServices*
   name: ConfigureServices
   href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_ConfigureServices_
