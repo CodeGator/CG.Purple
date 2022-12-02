@@ -209,9 +209,6 @@ internal class FileTypeRepository : IFileTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
@@ -220,10 +217,10 @@ internal class FileTypeRepository : IFileTypeRepository
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.FileTypes.AddAsync(
-                    entity,
-                    cancellationToken
-                    ).ConfigureAwait(false);
+            dbContext.FileTypes.Attach(entity);
+
+            // Mark the entity as added so EFCORE will insert it.
+            dbContext.Entry(entity).State = EntityState.Added;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -504,9 +501,6 @@ internal class FileTypeRepository : IFileTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
-
             // We never change these 'read only' properties.
             dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
@@ -519,10 +513,11 @@ internal class FileTypeRepository : IFileTypeRepository
                 nameof(PurpleDbContext)
                 );
 
-            // Update the data-store.
-            _= dbContext.FileTypes.Update(
-                entity
-                );
+            // Start tracking the entity.
+            dbContext.FileTypes.Attach(entity);
+
+            // Mark the entity as modified so EFCORE will update it.
+            dbContext.Entry(entity).State = EntityState.Modified;
 
             // Log what we are about to do.
             _logger.LogDebug(

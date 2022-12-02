@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Repositories;
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -88,6 +90,24 @@ public interface IProviderTypeManager
     /// <exception cref="ManagerException">This exception is thrown whenever the
     /// manager fails to complete the operation.</exception>
     Task<IEnumerable<ProviderType>> FindAllAsync(
+        CancellationToken cancellationToken = default
+        );
+
+    /// <summary>
+    /// This method searches for a matching <see cref="ProviderType"/> object
+    /// by identifier.
+    /// </summary>
+    /// <param name="id">The identifier to use for the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns a sequence of 
+    /// <see cref="ProviderType"/> objects.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    /// <exception cref="ManagerException">This exception is thrown whenever the
+    /// manager fails to complete the operation.</exception>
+    Task<ProviderType?> FindByIdAsync(
+        int id,
         CancellationToken cancellationToken = default
         );
 

@@ -1,9 +1,10 @@
-﻿namespace CG.Purple.Host.Pages.ParameterTypes;
+﻿
+namespace CG.Purple.Host.Pages.Admin.MimeTypes;
 
 /// <summary>
-/// This class is the code-behind for the <see cref="ParameterTypeDialog"/> page.
+/// This class is the code-behind for the <see cref="FileTypeDialog"/> dialog.
 /// </summary>
-public partial class ParameterTypeDialog
+public partial class FileTypeDialog
 {
     // *******************************************************************
     // Properties.
@@ -21,7 +22,7 @@ public partial class ParameterTypeDialog
     /// This property contains the edit form's model.
     /// </summary>
     [Parameter]
-    public ParameterType Model { get; set; } = null!;
+    public FileType Model { get; set; } = null!;
 
     #endregion
 

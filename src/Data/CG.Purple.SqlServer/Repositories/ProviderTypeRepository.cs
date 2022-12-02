@@ -217,10 +217,10 @@ internal class ProviderTypeRepository : IProviderTypeRepository
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.ProviderTypes.AddAsync(
-                    entity,
-                    cancellationToken
-                    ).ConfigureAwait(false);
+            dbContext.ProviderTypes.Attach(entity);
+
+            // Mark the entity as added so EFCORE will insert it.
+            dbContext.Entry(entity).State = EntityState.Added;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -505,6 +505,83 @@ internal class ProviderTypeRepository : IProviderTypeRepository
     // *******************************************************************
 
     /// <inheritdoc/>
+    public virtual async Task<ProviderType?> FindByIdAsync(
+        int id,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfZero(id, nameof(id));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Creating a {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Create a database context.
+            using var dbContext = await _dbContextFactory.CreateDbContextAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Searching for a matching provider type."
+                );
+
+            // Perform the provider type search.
+            var providerType = await dbContext.ProviderTypes.Where(x =>
+                x.Id == id
+                ).Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
+                .FirstOrDefaultAsync(
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+            // Did we fail?
+            if (providerType is null)
+            {
+                return null; // Nothing found!
+            }
+
+            // Convert the entity to a model.
+            var result = _mapper.Map<ProviderType>(
+                providerType
+                );
+
+            // Did we fail?
+            if (result is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(ProviderType)} entity to a model."
+                    );
+            }
+
+            // Return the results.
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for a provider type by id!"
+                );
+
+            // Provider better context.
+            throw new RepositoryException(
+                message: $"The repository failed to search for a provider " +
+                "type by id!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
     public virtual async Task<ProviderType?> FindByNameAsync(
         string name,
         CancellationToken cancellationToken = default
@@ -635,10 +712,11 @@ internal class ProviderTypeRepository : IProviderTypeRepository
                 nameof(PurpleDbContext)
                 );
 
-            // Update the data-store.
-            _= dbContext.ProviderTypes.Update(
-                entity
-                );
+            // Start tracking the entity.
+            dbContext.ProviderTypes.Attach(entity);
+
+            // Mark the entity as modified so EFCORE will update it.
+            dbContext.Entry(entity).State = EntityState.Modified;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -651,23 +729,19 @@ internal class ProviderTypeRepository : IProviderTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Converting a {entity} entity to a model",
-                nameof(ProviderType)
-                );
-
-            // Convert the entity to a model.
-            var result = _mapper.Map<ProviderType>(
-                entity
-                );
+            // Find the provider type again so we pick up any parameters
+            //   that we removed, on the entity, earlier (see above).
+            var result = await FindByIdAsync(
+                entity.Id,
+                cancellationToken
+                ).ConfigureAwait(false);
 
             // Did we fail?
             if (result is null)
             {
                 // Panic!!
-                throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ProviderType)} entity to a model."
+                throw new InvalidOperationException(
+                    $"Failed to find provider type: {entity.Id}!"
                     );
             }
 

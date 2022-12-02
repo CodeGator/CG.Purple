@@ -1,5 +1,5 @@
 ﻿
-namespace CG.Purple.Host.Pages.ProviderTypes;
+namespace CG.Purple.Host.Pages.Admin.ProviderTypes;
 
 /// <summary>
 /// This class is the code-behind for the <see cref="ProviderTypeDialog"/> page.
@@ -67,7 +67,7 @@ public partial class ProviderTypeDialog
     protected string UserName => HttpContextAccessor.HttpContext?.User?.Identity?.Name ?? "anonymous";
 
     #endregion
-
+    
     // *******************************************************************
     // Protected methods.
     // *******************************************************************
@@ -122,6 +122,7 @@ public partial class ProviderTypeDialog
                 { 
                     "Model", new ProviderParameter()
                     {
+                        ProviderType = Model,
                         CreatedBy = UserName,
                         CreatedOnUtc = DateTime.UtcNow,
                     }

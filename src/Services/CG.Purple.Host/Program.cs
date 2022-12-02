@@ -1,5 +1,5 @@
 
-BootstrapLogger.LogLevelToDebug();
+//BootstrapLogger.LogLevelToDebug();
 
 try
 {

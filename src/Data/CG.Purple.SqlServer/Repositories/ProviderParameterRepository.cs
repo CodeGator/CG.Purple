@@ -209,10 +209,6 @@ internal class ProviderParameterRepository : IProviderParameterRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            dbContext.Entry(entity.ParameterType).State = EntityState.Unchanged;
-            dbContext.Entry(entity.ProviderType).State = EntityState.Unchanged;
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
@@ -221,10 +217,10 @@ internal class ProviderParameterRepository : IProviderParameterRepository
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.ProviderParameters.AddAsync(
-                    entity,
-                    cancellationToken
-                    ).ConfigureAwait(false);
+            dbContext.ProviderParameters.Attach(entity);
+
+            // Mark the entity as added so EFCORE will insert it.
+            dbContext.Entry(entity).State = EntityState.Added;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -392,10 +388,11 @@ internal class ProviderParameterRepository : IProviderParameterRepository
                 nameof(PurpleDbContext)
                 );
 
-            // Update the data-store.
-            _= dbContext.ProviderParameters.Update(
-                entity
-                );
+            // Start tracking the entity.
+            dbContext.ProviderParameters.Attach(entity);
+
+            // Mark the entity as modified so EFCORE will update it.
+            dbContext.Entry(entity).State = EntityState.Modified;
 
             // Log what we are about to do.
             _logger.LogDebug(

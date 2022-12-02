@@ -10,10 +10,11 @@
                                    AutoFocus
                                    Label="Parameter Type"
                                    ToStringFunc="ParameterTypeConverter"
-                                   For="@(() => Model.ParameterType)">
+                                   For="@(() => Model.ParameterType)"
+                                   @bind-Value="Model.ParameterType">
                             @foreach (var parameterType in ParameterTypes)
                             {
-                                <MudSelectItem Value="@parameterType">@parameterType</MudSelectItem>
+                                <MudSelectItem Value="@parameterType">@parameterType.Name</MudSelectItem>
                             }
                         </MudSelect>
                     }

@@ -209,14 +209,6 @@ internal class MailMessageRepository : IMailMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // If we left these here, EFCORE would try to be helpful and insert /
-            //   update, as needed to sync the db to the entity. It would probably
-            //   get that wrong, BTW, and throw errors it otherwise wouldn't. 
-            // For that reason, we'll use our managers to perform any actions on
-            // the entities.
-            entity.MessageProperties.Clear();
-            entity.Attachments.Clear();
-
             // We always want the key stored in upper case.
             entity.MessageKey = entity.MessageKey.ToUpper();
 
@@ -228,10 +220,10 @@ internal class MailMessageRepository : IMailMessageRepository
                 );            
 
             // Add the entity to the data-store.
-            _ = await dbContext.MailMessages.AddAsync(
-                    entity,
-                    cancellationToken
-                    ).ConfigureAwait(false);
+            dbContext.MailMessages.Attach(entity);
+
+            // Mark the entity as added so EFCORE will insert it.
+            dbContext.Entry(entity).State = EntityState.Added;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -541,14 +533,6 @@ internal class MailMessageRepository : IMailMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // If we left these here, EFCORE would try to be helpful and insert /
-            //   update, as needed to sync the db to the entity. It would probably
-            //   get that wrong, BTW, and throw errors it otherwise wouldn't. 
-            // For that reason, we'll use our managers to perform any actions on
-            // the entities.
-            entity.MessageProperties.Clear();
-            entity.Attachments.Clear();
-
             // We never change these 'read only' properties.
             dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
             dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
@@ -562,10 +546,11 @@ internal class MailMessageRepository : IMailMessageRepository
                 nameof(PurpleDbContext)
                 );
 
-            // Update the data-store.
-            _= dbContext.MailMessages.Update(
-                entity
-                );
+            // Start tracking the entity.
+            dbContext.MailMessages.Attach(entity);
+
+            // Mark the entity as modified so EFCORE will update it.
+            dbContext.Entry(entity).State = EntityState.Modified;
 
             // Log what we are about to do.
             _logger.LogDebug(

@@ -681,18 +681,6 @@ internal class MessageRepository : IMessageRepository
             dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
-            // We don't mess with associated attachments.
-            entity.Attachments.ForEach(x =>
-            {
-                dbContext.Entry(x).State = EntityState.Unchanged;
-            });
-
-            // We don't mess with associated message properties.
-            entity.MessageProperties.ForEach(x =>
-            {
-                dbContext.Entry(x).State = EntityState.Unchanged;
-            });
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
@@ -700,10 +688,11 @@ internal class MessageRepository : IMessageRepository
                 nameof(PurpleDbContext)
                 );
 
-            // Update the data-store.
-            _ = dbContext.Messages.Update(
-                entity
-                );
+            // Start tracking the entity.
+            dbContext.Messages.Attach(entity);
+
+            // Mark the entity as modified so EFCORE will update it.
+            dbContext.Entry(entity).State = EntityState.Modified;
 
             // Log what we are about to do.
             _logger.LogDebug(

@@ -1,4 +1,4 @@
-﻿namespace CG.Purple.Host.Pages.PropertyTypes;
+﻿namespace CG.Purple.Host.Pages.Admin.PropertyTypes;
 
 /// <summary>
 /// This class is the code-behind for the <see cref="PropertyTypeDialog"/> page.

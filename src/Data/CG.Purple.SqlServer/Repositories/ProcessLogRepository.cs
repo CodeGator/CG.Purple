@@ -209,16 +209,6 @@ internal class ProcessLogRepository : IProcessLogRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            if (entity.Message is not null)
-            { 
-                dbContext.Entry(entity.Message).State = EntityState.Unchanged;
-            }
-            if (entity.ProviderType is not null)
-            {
-                dbContext.Entry(entity.ProviderType).State = EntityState.Unchanged;
-            }
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
@@ -227,10 +217,10 @@ internal class ProcessLogRepository : IProcessLogRepository
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.ProviderLogs.AddAsync(
-                    entity,
-                    cancellationToken
-                    ).ConfigureAwait(false);
+            dbContext.ProviderLogs.Attach(entity);
+
+            // Mark the entity as added so EFCORE will insert it.
+            dbContext.Entry(entity).State = EntityState.Added;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -505,16 +495,6 @@ internal class ProcessLogRepository : IProcessLogRepository
             dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
-            // We don't mess with associated entity types.
-            if (entity.Message is not null)
-            {
-                dbContext.Entry(entity.Message).State = EntityState.Unchanged;
-            }
-            if (entity.ProviderType is not null)
-            {
-                dbContext.Entry(entity.ProviderType).State = EntityState.Unchanged;
-            }
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
@@ -522,10 +502,11 @@ internal class ProcessLogRepository : IProcessLogRepository
                 nameof(PurpleDbContext)
                 );
 
-            // Update the data-store.
-            _= dbContext.ProviderLogs.Update(
-                entity
-                );
+            // Start tracking the entity.
+            dbContext.ProviderLogs.Attach(entity);
+
+            // Mark the entity as modified so EFCORE will update it.
+            dbContext.Entry(entity).State = EntityState.Modified;
 
             // Log what we are about to do.
             _logger.LogDebug(

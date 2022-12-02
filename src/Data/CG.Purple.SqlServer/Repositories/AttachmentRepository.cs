@@ -1,6 +1,4 @@
 ﻿
-using Microsoft.EntityFrameworkCore.Internal;
-
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
@@ -211,10 +209,6 @@ internal class AttachmentRepository : IAttachmentRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
-            dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
@@ -223,10 +217,10 @@ internal class AttachmentRepository : IAttachmentRepository
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.Attachments.AddAsync(
-                    entity,
-                    cancellationToken
-                    ).ConfigureAwait(false);
+            dbContext.Attachments.Attach(entity);
+
+            // Mark the entity as added so EFCORE will insert it.
+            dbContext.Entry(entity).State = EntityState.Added;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -434,10 +428,6 @@ internal class AttachmentRepository : IAttachmentRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            dbContext.Entry(entity.MimeType).State = EntityState.Unchanged;
-            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
-
             // We never change these 'read only' properties.
             dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
@@ -450,10 +440,11 @@ internal class AttachmentRepository : IAttachmentRepository
                 nameof(PurpleDbContext)
                 );
 
-            // Update the data-store.
-            _= dbContext.Attachments.Update(
-                entity
-                );
+            // Start tracking the entity.
+            dbContext.Attachments.Attach(entity);
+
+            // Mark the entity as modified so EFCORE will update it.
+            dbContext.Entry(entity).State = EntityState.Modified;
 
             // Log what we are about to do.
             _logger.LogDebug(

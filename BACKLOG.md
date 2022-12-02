@@ -13,6 +13,8 @@ Things to be done on the project, as of 12/01/2022
 
 ### Libraries
 
+* Need to address missing logic for saving/updating related entities.
+
 * Need to test the managers / repositories.
 
 ### Providers

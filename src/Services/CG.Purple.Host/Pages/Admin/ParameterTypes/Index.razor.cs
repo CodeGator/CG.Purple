@@ -1,5 +1,5 @@
 ﻿
-namespace CG.Purple.Host.Pages.ParameterTypes;
+namespace CG.Purple.Host.Pages.Admin.ParameterTypes;
 
 /// <summary>
 /// This class is the code-behind for the <see cref="Index"/> page.

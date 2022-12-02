@@ -1,5 +1,5 @@
 ﻿
-namespace CG.Purple.Host.Pages.MimeTypes;
+namespace CG.Purple.Host.Pages.Admin.MimeTypes;
 
 /// <summary>
 /// This class is the code-behind for the <see cref="MimeTypeDialog"/> dialog.
@@ -212,18 +212,6 @@ public partial class MimeTypeDialog
 
             // Save the changes.
             Model.FileTypes.Remove(fileType);
-
-            // Log what we are about to do.
-            Logger.LogDebug(
-                "Showing the snackbar message."
-                );
-
-            // Tell the world what happened.
-            SnackbarService.Add(
-                $"Changes were saved",
-                Severity.Success,
-                options => options.CloseAfterNavigation = true
-                );
         }
         catch (Exception ex)
         {

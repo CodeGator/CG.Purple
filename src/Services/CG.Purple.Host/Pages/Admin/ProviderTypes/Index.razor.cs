@@ -1,5 +1,5 @@
 ﻿
-namespace CG.Purple.Host.Pages.ProviderTypes;
+namespace CG.Purple.Host.Pages.Admin.ProviderTypes;
 
 /// <summary>
 /// This class is the code-behind for the <see cref="Index"/> page.
@@ -280,7 +280,7 @@ public partial class Index
 
             // Create the dialog.
             var dialog = DialogService.Show<ProviderTypeDialog>(
-                "Edit Provider Type",
+                "Create Provider Type",
                 providers,
                 options
                 );
@@ -322,7 +322,7 @@ public partial class Index
                     changedProviderType.Id
                     );
 
-                // Defer to the manager for the update.
+                // Defer to the manager for the create.
                 _ = await ProviderTypeManager.CreateAsync(
                     changedProviderType,
                     UserName

@@ -1,5 +1,6 @@
 ﻿
 using CG.Purple.Models;
+using System.Xml.Linq;
 
 namespace CG.Purple.Managers;
 
@@ -462,6 +463,74 @@ internal class ProviderTypeManager : IProviderTypeManager
             throw new ManagerException(
                 message: $"The manager failed to search for provider " +
                 "types for texts!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <inheritdoc/>
+    public virtual async Task<ProviderType?> FindByIdAsync(
+        int id,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfZero(id, nameof(id));
+
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogTrace(
+                "Deferring to {name}",
+                nameof(IProviderTypeRepository.FindByIdAsync)
+                );
+
+            // Perform the operation.
+            var providerType = await _providerTypeRepository.FindByIdAsync(
+                id,
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Did we find a match?
+            if (providerType is not null)
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Decrypting provider parameters for provider: {id}",
+                    providerType.Id
+                    );
+
+                // Get the parameters.
+                var parameters = providerType.Parameters.ToArray();
+
+                // Loop through the parameter types.
+                for (var y = 0; y < parameters.Count(); y++)
+                {
+                    // The parameter values are encrypted, at rest, so we
+                    //   need to undo that now.
+                    parameters[y].Value = await _cryptographer.AesDecryptAsync(
+                        parameters[y].Value
+                        ).ConfigureAwait(false);
+                }
+            }
+
+            // Return the results.
+            return providerType;
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to search for provider types by id!"
+                );
+
+            // Provider better context.
+            throw new ManagerException(
+                message: $"The manager failed to search for provider " +
+                "types by id!",
                 innerException: ex
                 );
         }

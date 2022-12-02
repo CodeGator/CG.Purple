@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace CG.Purple.Host.Pages.ProviderTypes;
+﻿namespace CG.Purple.Host.Pages.Admin.ProviderTypes;
 
 /// <summary>
 /// This class is the code-behind for the <see cref="ProviderParameterDialog"/> page.
@@ -60,8 +58,8 @@ public partial class ProviderParameterDialog
     /// <summary>
     /// This delegate formats a parameter type for display in a dropdown.
     /// </summary>
-    readonly Func<ParameterType, string> ParameterTypeConverter = p => p?.Name ?? ""; 
-    
+    readonly Func<ParameterType, string> ParameterTypeConverter = p => p?.Name ?? "";
+        
     #endregion
 
     // *******************************************************************

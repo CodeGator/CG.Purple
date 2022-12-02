@@ -1,7 +1,6 @@
 ﻿
-using CG.Collections.Generic;
 
-namespace CG.Purple.Host.Pages.MimeTypes;
+namespace CG.Purple.Host.Pages.Admin.MimeTypes;
 
 /// <summary>
 /// This class is the code-behind for the <see cref="Index"/> page.
@@ -310,7 +309,7 @@ public partial class Index
                     );
 
                 // Defer to the manager for the update.
-                _ = await MimeTypeManager.CreateAsync(
+                changedMimeType = await MimeTypeManager.CreateAsync(
                     changedMimeType,
                     UserName
                     );

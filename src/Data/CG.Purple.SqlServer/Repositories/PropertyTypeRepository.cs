@@ -217,10 +217,10 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.PropertyTypes.AddAsync(
-                    entity,
-                    cancellationToken
-                    ).ConfigureAwait(false);
+            dbContext.PropertyTypes.Attach(entity);
+
+            // Mark the entity as added so EFCORE will insert it.
+            dbContext.Entry(entity).State = EntityState.Added;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -514,10 +514,11 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
                 nameof(PurpleDbContext)
                 );
 
-            // Update the data-store.
-            _= dbContext.PropertyTypes.Update(
-                entity
-                );
+            // Start tracking the entity.
+            dbContext.PropertyTypes.Attach(entity);
+
+            // Mark the entity as modified so EFCORE will update it.
+            dbContext.Entry(entity).State = EntityState.Modified;
 
             // Log what we are about to do.
             _logger.LogDebug(

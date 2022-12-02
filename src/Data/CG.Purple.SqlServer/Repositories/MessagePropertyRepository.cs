@@ -209,10 +209,6 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
-            dbContext.Entry(entity.PropertyType).State = EntityState.Unchanged;
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
@@ -221,10 +217,10 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
                 );
 
             // Add the entity to the data-store.
-            _ = await dbContext.MessageProperties.AddAsync(
-                    entity,
-                    cancellationToken
-                    ).ConfigureAwait(false);
+            dbContext.MessageProperties.Attach(entity);
+
+            // Mark the entity as added so EFCORE will insert it.
+            dbContext.Entry(entity).State = EntityState.Added;
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -379,10 +375,6 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We don't mess with associated entity types.
-            dbContext.Entry(entity.Message).State = EntityState.Unchanged;
-            dbContext.Entry(entity.PropertyType).State = EntityState.Unchanged;
-
             // We never change these 'read only' properties.
             dbContext.Entry(entity).Property(x => x.PropertyTypeId).IsModified = false;
             dbContext.Entry(entity).Property(x => x.MessageId).IsModified = false;
@@ -396,10 +388,11 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
                 nameof(PurpleDbContext)
                 );
 
-            // Update the data-store.
-            _= dbContext.MessageProperties.Update(
-                entity
-                );
+            // Start tracking the entity.
+            dbContext.MessageProperties.Attach(entity);
+
+            // Mark the entity as modified so EFCORE will update it.
+            dbContext.Entry(entity).State = EntityState.Modified;
 
             // Log what we are about to do.
             _logger.LogDebug(
