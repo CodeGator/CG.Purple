@@ -376,12 +376,44 @@ public partial class MimeTypeDialog
             // Get the results of the dialog.
             var results = await dialog.Result;
 
-            // Did the user save?
-            if (!results.Cancelled)
+            // Did the user cancel?
+            if (results.Cancelled)
             {
-                // Save the changes
-                fileType.Extension = tempFileType.Extension;
+                return;
             }
+
+            // We're busy.
+            _isBusy = true;
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page state to dirty."
+                );
+
+            // Give the UI time to show the busy indicator.
+            await InvokeAsync(() => StateHasChanged());
+            await Task.Delay(250);
+
+            // Update the local copy.
+            fileType.Extension = tempFileType.Extension;
+
+            // Save the changes.
+            _ = await FileTypeManager.UpdateAsync(
+                fileType,
+                UserName
+                ).ConfigureAwait(false);
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the snackbar message."
+                );
+
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"Changes were saved",
+                Severity.Success,
+                options => options.CloseAfterNavigation = true
+                );
         }
         catch (Exception ex)
         {
@@ -399,6 +431,11 @@ public partial class MimeTypeDialog
                 Severity.Error,
                 options => options.CloseAfterNavigation = true
                 );
+        }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
         }
     }
 

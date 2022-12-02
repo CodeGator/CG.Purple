@@ -627,23 +627,26 @@ public partial class Index
                     Severity.Success,
                     options => options.CloseAfterNavigation = true
                     );
-
-                // Log what we are about to do.
-                Logger.LogDebug(
-                    "Refreshing the page."
-                    );
-
-                // Defer to the manager for the query.
-                _providerTypes = await ProviderTypeManager.FindAllAsync();
-
-                // Log what we are about to do.
-                Logger.LogDebug(
-                    "Fetching factory types."
-                    );
-
-                // Filter the factory types.
-                FilterFactoryTypes();
             }
+
+            // We always refresh because the caller might have modified
+            //   the provider parameter(s).
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Refreshing the page."
+                );
+
+            // Defer to the manager for the query.
+            _providerTypes = await ProviderTypeManager.FindAllAsync();
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Fetching factory types."
+                );
+
+            // Filter the factory types.
+            FilterFactoryTypes();
         }
         catch (Exception ex)
         {
