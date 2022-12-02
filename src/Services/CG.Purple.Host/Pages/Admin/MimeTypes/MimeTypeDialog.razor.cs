@@ -7,6 +7,19 @@ namespace CG.Purple.Host.Pages.Admin.MimeTypes;
 public partial class MimeTypeDialog
 {
     // *******************************************************************
+    // Fields.
+    // *******************************************************************
+
+    #region Fields
+
+    /// <summary>
+    /// This field indicates the page is busy.
+    /// </summary>
+    protected bool _isBusy;
+
+    #endregion
+
+    // *******************************************************************
     // Properties.
     // *******************************************************************
 
@@ -41,6 +54,12 @@ public partial class MimeTypeDialog
     /// </summary>
     [Inject]
     protected IHttpContextAccessor HttpContextAccessor { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the file type manager for this page.
+    /// </summary>
+    [Inject]
+    protected IFileTypeManager FileTypeManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the logger for this page.
@@ -131,27 +150,64 @@ public partial class MimeTypeDialog
             // Get the results of the dialog.
             var result = await dialog.Result;
 
-            // Did the user save?
-            if (!result.Cancelled)
+            // Did the user cancel?
+            if (result.Cancelled)
             {
-                // Log what we are about to do.
-                Logger.LogDebug(
-                    "Recovering the modified file type."
-                    );
-
-                // Recover the edited file type.
-                var changedFileType = (FileType)result.Data;
-
-                // Log what we are about to do.
-                Logger.LogDebug(
-                    "Saving the changes."
-                    );
-
-                // Save the changes.
-                Model.FileTypes.Add(
-                    changedFileType
-                    );
+                return; // Nothing more to do.
             }
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page to busy."
+                );
+
+            // We're busy.
+            _isBusy = true;
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page state to dirty."
+                );
+
+            // Give the UI time to show the busy indicator.
+            await InvokeAsync(() => StateHasChanged());
+            await Task.Delay(250);
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Recovering the modified file type."
+                );
+
+            // Recover the edited file type.
+            var changedFileType = (FileType)result.Data;
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Saving the changes to the database."
+                );
+
+            // Save the changes.
+            changedFileType = await FileTypeManager.CreateAsync(
+                changedFileType,
+                UserName
+                ).ConfigureAwait(false);
+
+            // Update the local copy.
+            Model.FileTypes.Add(
+                changedFileType
+                );
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the snackbar message."
+                );
+
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"Changes were saved",
+                Severity.Success,
+                options => options.CloseAfterNavigation = true
+                );
         }
         catch (Exception ex)
         {
@@ -169,6 +225,11 @@ public partial class MimeTypeDialog
                 Severity.Error,
                 options => options.CloseAfterNavigation = true
                 );
+        }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
         }
     }
 
@@ -207,11 +268,46 @@ public partial class MimeTypeDialog
 
             // Log what we are about to do.
             Logger.LogDebug(
+                "Setting the page to busy."
+                );
+
+            // We're busy.
+            _isBusy = true;
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Setting the page state to dirty."
+                );
+
+            // Give the UI time to show the busy indicator.
+            await InvokeAsync(() => StateHasChanged());
+            await Task.Delay(250);
+
+            // Log what we are about to do.
+            Logger.LogDebug(
                 "Saving the changes."
                 );
 
-            // Save the changes.
+            // Defer to the manager for the delete.
+            await FileTypeManager.DeleteAsync(
+                fileType,
+                UserName
+                );
+
+            // Updating the local copy.
             Model.FileTypes.Remove(fileType);
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Showing the snackbar message."
+                );
+
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"Changes were saved",
+                Severity.Success,
+                options => options.CloseAfterNavigation = true
+                );
         }
         catch (Exception ex)
         {
@@ -229,6 +325,11 @@ public partial class MimeTypeDialog
                 Severity.Error,
                 options => options.CloseAfterNavigation = true
                 );
+        }
+        finally
+        {
+            // We're no longer busy.
+            _isBusy = false;
         }
     }
 

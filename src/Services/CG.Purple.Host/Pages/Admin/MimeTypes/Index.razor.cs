@@ -554,128 +554,6 @@ public partial class Index
 
                 // Recover the edited mime type.
                 var changedMimeType = (MimeType)result.Data;
-                
-                // =======
-                // Step 1: Find any file types that were deleted, which .
-                // =======
-
-                // Log what we are about to do.
-                Logger.LogDebug(
-                    "Looking for deleted file types."
-                    );
-
-                // Find any file types that were deleted.
-                var deletedFileTypes = mimeType.FileTypes.Except(
-                    changedMimeType.FileTypes,
-                    FileTypeEqualityComparer.Instance()
-                    );
-
-                // Were there any?
-                if (deletedFileTypes.Any())
-                {
-                    // Log what we are about to do.
-                    Logger.LogDebug(
-                        "Deleting {count} file types on mime type: {id}.",
-                        deletedFileTypes.Count(),
-                        mimeType.Id
-                        );
-
-                    // Loop through the file types.
-                    foreach (var fileType in deletedFileTypes)
-                    {
-                        // Log what we are about to do.
-                        Logger.LogDebug(
-                            "Deleting file type: {id1} for mime type: {id2}.",
-                            mimeType.Id,
-                            fileType.Id
-                            );
-
-                        // Delete the file type.
-                        await FileTypeManager.DeleteAsync(
-                            fileType,
-                            UserName
-                            );
-                    }
-                }
-
-                // =======
-                // Step 2: Find any file types that were added.
-                // =======
-
-                // Find any file types that were added.
-                var addedFileTypes = changedMimeType.FileTypes.Except(
-                    mimeType.FileTypes,
-                    FileTypeEqualityComparer.Instance()
-                    );
-
-                // Were there any?
-                if (addedFileTypes.Any())
-                {
-                    // Log what we are about to do.
-                    Logger.LogDebug(
-                        "Adding {count} file types to mime type: {id}.",
-                        addedFileTypes.Count(),
-                        mimeType.Id
-                        );
-
-                    // Loop through the file types.
-                    foreach (var fileType in addedFileTypes)
-                    {
-                        // Log what we are about to do.
-                        Logger.LogDebug(
-                            "Adding file type: {id1} for mime type: {id2}.",
-                            fileType.Id,
-                            mimeType.Id
-                            );
-
-                        // Create the new file type.
-                        var newMessageProperty = await FileTypeManager.CreateAsync(
-                            fileType,
-                            UserName
-                            );
-                    }
-
-                    // =======
-                    // Step 3: Assume anything else was changed.
-                    // =======
-                    
-                    // If a file type wasn't added, or deleted, assume it was edited.
-                    var editedFileTypes = changedMimeType.FileTypes.Except(
-                        addedFileTypes,
-                        FileTypeEqualityComparer.Instance()
-                        ).Except(
-                            deletedFileTypes,
-                            FileTypeEqualityComparer.Instance()
-                            ).ToList();
-
-                    // Were there any?
-                    if (editedFileTypes.Any())
-                    {
-                        // Log what we are about to do.
-                        Logger.LogDebug(
-                            "Editing {count} file types for mime type: {id}.",
-                            editedFileTypes.Count(),
-                            mimeType.Id
-                            );
-
-                        // Loop through the file types.
-                        foreach (var fileType in editedFileTypes)
-                        {
-                            // Log what we are about to do.
-                            Logger.LogDebug(
-                                "Updating file type: {id1} for mime type: {id2}.",
-                                fileType.Id,
-                                mimeType.Id
-                                );
-
-                            // Update the file type.
-                            await FileTypeManager.UpdateAsync(
-                                fileType,
-                                UserName
-                                );
-                        }
-                    }
-                }
 
                 // Log what we are about to do.
                 Logger.LogDebug(
@@ -700,15 +578,16 @@ public partial class Index
                     Severity.Success,
                     options => options.CloseAfterNavigation = true
                     );
-
-                // Log what we are about to do.
-                Logger.LogDebug(
-                    "Refreshing the page."
-                    );
-
-                // Defer to the manager for the query.
-                _mimeTypes = await MimeTypeManager.FindAllAsync();
             }
+
+            // Log what we are about to do.
+            Logger.LogDebug(
+                "Refreshing the page."
+                );
+
+            // We always update the data for the page because the caller
+            //   may have modified the associated file types.
+            _mimeTypes = await MimeTypeManager.FindAllAsync();
         }
         catch (Exception ex)
         {
