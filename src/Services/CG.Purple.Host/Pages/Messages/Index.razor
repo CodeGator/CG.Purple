@@ -53,7 +53,7 @@
                 <MudTd DataLabel="Subject">@context.SafeSubject()</MudTd>
                 <MudTh>
                     <MudTooltip Text="Enable/Disable">
-                        <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.FormatOverline" OnClick="() => OnToggleDisableAsync(context)" />
+                        <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.FormatOverline" OnClick="() => OnToggleDisableAsync(context)" Disabled="@(context.MessageState == MessageState.Failed)" />
                     </MudTooltip>
                     <MudTooltip Text="Properties">
                         <MudIconButton Size="Size.Small" Icon="@Icons.Material.Filled.Settings" OnClick="() => OnPropertiesAsync(context)" />

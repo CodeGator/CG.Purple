@@ -188,12 +188,25 @@ internal class ProcessDirector : IProcessDirector
             // Step 6: Send messages to the provider.
             // =======
 
-            // Attempt to send messages to their respective provider.
-            await SendPendingMessagesToProvidersAsync(
-                messages,
-                providerPropertyType,
-                cancellationToken
-                ).ConfigureAwait(false);
+            try
+            {
+                // Attempt to send messages to their respective provider.
+                await SendPendingMessagesToProvidersAsync(
+                    messages,
+                    providerPropertyType,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+            }
+            catch (ProviderException ex)
+            {
+                // Log what happened.
+                _logger.LogError(
+                    ex,
+                    "Provider failed to process one or more messages!"
+                    );
+
+                // TODO : we need a recovery mechanism here.
+            }
         }
         catch (Exception ex)
         {

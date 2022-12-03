@@ -1,7 +1,7 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things to be done on the project, as of 12/01/2022
+Things to be done on the project, as of 12/03/2022
 
 ### Design
 
@@ -9,11 +9,17 @@ Things to be done on the project, as of 12/01/2022
 
 ### Database
 
+* Need to remove all cascaded deletes in EFCORE.
+
+* Need to figure out why adding an optional provider type to message gives auto mapper and EFCORE a nervous breakdown.
+
+* At some point should we map all CRUD operations to stored procedures?
+
+* At some point, should we write stored procedures for all queries?
+
 * Need to test the DB design.
 
 ### Libraries
-
-* Need to address missing logic for saving/updating related entities.
 
 * Need to test the managers / repositories.
 
@@ -25,11 +31,15 @@ Things to be done on the project, as of 12/01/2022
 
 ### Hosted Services
 
-* Need to add in the assignment director.
+* Need to design a recovery mechanism that will deal with unrecoverable errors in a provider by reassigning any affected messages.
 
 * Need to test the service.
 
 ### Host
+
+* All dialogs should use the mudblazor extensions.
+
+* Need to write code to prevent delete operations that will fail due to FK relations.
 
 * Need to finish the UI.
 
