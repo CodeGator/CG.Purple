@@ -1,7 +1,6 @@
 ![logo](logos/codegator-167x79.png)
 
 # CG.Purple: 
----
 [![Build Status](https://dev.azure.com/codegator/CG.Purple/_apis/build/status/CodeGator.CG.Purple?branchName=main)](https://dev.azure.com/codegator/CG.Purple/_build/latest?definitionId=93&branchName=main)
 [![Github docs](https://img.shields.io/static/v1?label=Documentation&message=online&color=blue)](https://codegator.github.io/CG.Purple/index.html)
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/codegator/CG.Purple/93)
@@ -51,8 +50,6 @@ We also have a discussion group [HERE](https://github.com/CodeGator/CG.Purple/di
 There is developer documentation [HERE](https://codegator.github.io/CG.Purple/)
 
 We also blog about projects like this one on our website, [HERE](http://www.codegator.com)
-
----
 
 ## Disclaimer
 This project and it's contents are experimental in nature. There is no official support. Use at your own risk.

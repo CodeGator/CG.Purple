@@ -107,18 +107,24 @@ public static class WebApplicationBuilderExtensions003
         {
             // Wire up the conversion maps.
 
-            cfg.CreateMap<Attachment, CG.Purple.SqlServer.Entities.Attachment>().ReverseMap();
-            cfg.CreateMap<FileType, CG.Purple.SqlServer.Entities.FileType>().ReverseMap();
-            cfg.CreateMap<MailMessage, CG.Purple.SqlServer.Entities.MailMessage>().ReverseMap();
-            cfg.CreateMap<Message, CG.Purple.SqlServer.Entities.Message>().ReverseMap();
-            cfg.CreateMap<MessageProperty, CG.Purple.SqlServer.Entities.MessageProperty>().ReverseMap();
-            cfg.CreateMap<MimeType, CG.Purple.SqlServer.Entities.MimeType>().ReverseMap();
-            cfg.CreateMap<ParameterType, CG.Purple.SqlServer.Entities.ParameterType>().ReverseMap();
-            cfg.CreateMap<PropertyType, CG.Purple.SqlServer.Entities.PropertyType>().ReverseMap();
-            cfg.CreateMap<ProcessLog, CG.Purple.SqlServer.Entities.ProcessLog>().ReverseMap();
-            cfg.CreateMap<ProviderType, CG.Purple.SqlServer.Entities.ProviderType>().ReverseMap();
-            cfg.CreateMap<ProviderParameter, CG.Purple.SqlServer.Entities.ProviderParameter>().ReverseMap();
-            cfg.CreateMap<TextMessage, CG.Purple.SqlServer.Entities.TextMessage>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.Attachment, Attachment>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.FileType, FileType>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.MailMessage, MailMessage>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.Message, Message>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.MessageProperty, MessageProperty>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.MimeType, MimeType>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.ParameterType, ParameterType>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.PropertyType, PropertyType>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.ProcessLog, ProcessLog>()
+                .AfterMap((src, dest) =>
+                {
+                    // We want to map to NULL to NULL, for optional properties.
+                    dest.ProviderType = src.ProviderType == null ? null : dest.ProviderType;
+                    dest.Message = src.Message == null ? null : dest.Message;
+                }).ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.ProviderType, ProviderType>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.ProviderParameter, ProviderParameter>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.TextMessage, TextMessage>().ReverseMap();
         });
 
         // Tell the world what we are about to do.

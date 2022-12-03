@@ -4,3 +4,68 @@
 
 <MudBreadcrumbs Items="_crumbs"></MudBreadcrumbs>
 
+<MudText Typo="Typo.h6" Class="py-4 px-5">This page contains the processing history log.</MudText>
+
+<MudGrid Class="py-4">
+    <MudItem xs="3">
+        <MudDatePicker Label="Start Date" Clearable @bind-Date="_startDate" />
+    </MudItem>
+    <MudItem xs="3">
+        <MudDatePicker Label="End Date" Clearable @bind-Date="_endDate" />
+    </MudItem>
+    <MudItem xs="3">
+        <MudExEnumSelect TEnum="ProcessEvent?" Label="Event Type" @bind-Value="_eventType"/>
+    </MudItem>
+    <MudItem xs="3">
+        <MudExEnumSelect TEnum="MessageState?" Label="Before State" @bind-Value="_beforeState" />
+    </MudItem>
+    <MudItem xs="3">
+        <MudExEnumSelect TEnum="MessageState?" Label="After State" @bind-Value="_afterState" />
+    </MudItem>
+    <MudItem xs="3">
+        <MudSelect T="ProviderType" Label="Provider Types" Clearable @bind-Value="_providerType">
+            @foreach (var providerType in _providerTypes ?? Array.Empty<ProviderType>())
+            {
+                <MudSelectItem Value="providerType">@providerType.Name</MudSelectItem>
+            }
+        </MudSelect>
+    </MudItem>
+</MudGrid>
+
+<MudTable Items="@_logs" Dense Striped Virtualize Filter="new Func<ProcessLog,bool>(FilterFunc)">
+    <ToolBarContent>
+        <MudButton StartIcon="@Icons.Material.Filled.Refresh"
+                   Variant="Variant.Filled"
+                   OnClick="OnRefreshAsync">Refresh</MudButton>
+        <MudSpacer />
+        <MudTextField @bind-Value="_gridSearchString"
+                      Placeholder="Search"
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.CreatedOnUtc.ToLocalTime())">DateTime</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.Event)">Event</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeBeforeState())">Before</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeAfterState())">After</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeProviderType())">Provider</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeError())">Error</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeData())">Data</MudTableSortLabel></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="DateTime">@context.CreatedOnUtc.ToLocalTime()</MudTd>
+        <MudTd DataLabel="Event">@context.Event</MudTd>
+        <MudTd DataLabel="Event">@context.SafeBeforeState()</MudTd>
+        <MudTd DataLabel="Event">@context.SafeAfterState()</MudTd>
+        <MudTd DataLabel="Event">@context.SafeProviderType()</MudTd>
+        <MudTd DataLabel="Event">@context.SafeError()</MudTd>
+        <MudTd DataLabel="Event">@context.SafeData()</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+    <NoRecordsContent>
+        No logs were found
+    </NoRecordsContent>
+</MudTable>
