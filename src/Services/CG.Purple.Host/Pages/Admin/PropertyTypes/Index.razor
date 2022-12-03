@@ -24,13 +24,13 @@
     </ToolBarContent>
     <HeaderContent>
         <MudTh><MudTableSortLabel SortBy="new Func<PropertyType, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<PropertyType, object>(x=>x.Description)">Description</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<PropertyType, object>(x=>x.SafeDescription())">Description</MudTableSortLabel></MudTh>
         <MudTh><MudTableSortLabel SortBy="new Func<PropertyType, object>(x=>x.IsSystem)">System</MudTableSortLabel></MudTh>
         <MudTh></MudTh>
     </HeaderContent>
     <RowTemplate>
         <MudTd DataLabel="Name">@context.Name</MudTd>
-        <MudTd DataLabel="Description">@context.Description</MudTd>
+        <MudTd DataLabel="Description">@context.SafeDescription()</MudTd>
         <MudTd DataLabel="System"><MudCheckBox Checked="@context.IsSystem" ReadOnly /></MudTd>
         <MudTd>
             <MudTooltip Text="Delete">

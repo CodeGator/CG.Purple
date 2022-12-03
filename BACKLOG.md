@@ -41,6 +41,8 @@ Things to be done on the project, as of 12/03/2022
 
 * Need to write code to prevent delete operations that will fail due to FK relations.
 
+* Work on the log page some more.
+
 * Need to finish the UI.
 
 ### Services 

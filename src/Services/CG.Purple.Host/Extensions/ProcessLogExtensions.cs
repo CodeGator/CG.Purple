@@ -147,6 +147,26 @@ internal static class ProcessLogExtensions001
         return "N/A";
     }
 
+    // *******************************************************************
+
+    /// <summary>
+    /// This method returns a safe Message for the given <see cref="ProcessLog"/>
+    /// object.
+    /// </summary>
+    /// <param name="processLog">The process log to use for the operation.</param>
+    /// <returns>A rendering of the message that is safe to use in a
+    /// Blazor page.</returns>
+    public static string SafeMessage(
+        this ProcessLog processLog
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNull(processLog, nameof(processLog));
+
+        // Return the message.
+        return $"{processLog.Message?.Id}" ?? "N/A";
+    }
+
     #endregion
 }
 

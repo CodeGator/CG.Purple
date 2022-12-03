@@ -23,12 +23,12 @@
     </ToolBarContent>
     <HeaderContent>
         <MudTh><MudTableSortLabel SortBy="new Func<ParameterType, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<ParameterType, object>(x=>x.Description)">Description</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<ParameterType, object>(x=>x.SafeDescription())">Description</MudTableSortLabel></MudTh>
         <MudTh></MudTh>
     </HeaderContent>
     <RowTemplate>
         <MudTd DataLabel="Name">@context.Name</MudTd>
-        <MudTd DataLabel="Description">@context.Description</MudTd>
+        <MudTd DataLabel="Description">@context.SafeDescription()</MudTd>
         <MudTd>
             <MudTooltip Text="Delete">
                 <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context)" />

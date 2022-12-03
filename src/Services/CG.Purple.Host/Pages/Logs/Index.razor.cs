@@ -71,6 +71,11 @@ public partial class Index
     /// </summary>
     protected ProviderType? _providerType;
 
+    /// <summary>
+    /// This field contains the optional message type.
+    /// </summary>
+    protected MessageType? _messageType;
+
     #endregion
 
     // *******************************************************************
@@ -238,6 +243,12 @@ public partial class Index
             if (_providerType is not null)
             {
                 _logs = _logs.Where(x => x.ProviderType?.Id == _providerType.Id).ToList();
+            }
+
+            // Should we filter by message type?
+            if (_messageType is not null)
+            {
+                _logs = _logs.Where(x => x.Message?.MessageType == _messageType).ToList();
             }
         }
         catch (Exception ex)
