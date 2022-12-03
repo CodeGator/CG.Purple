@@ -78,12 +78,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index">
   
   
-  <h1 id="CG_Purple_Host_Pages_ParameterTypes_Index" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index" class="text-break">Class Index
+  <h1 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index" class="text-break">Class Index
   </h1>
-  <div class="markdown level0 summary"><p>This class is the code-behind for the <a class="xref" href="CG.Purple.Host.Pages.ParameterTypes.Index.html">Index</a> page.</p>
+  <div class="markdown level0 summary"><p>This class is the code-behind for the <a class="xref" href="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.html">Index</a> page.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -115,15 +115,15 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Pages.ParameterTypes.html">CG.Purple.Host.Pages.ParameterTypes</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Pages.Admin.ProviderTypes.html">CG.Purple.Host.Pages.Admin.ProviderTypes</a></h6>
   <h6><strong>Assembly</strong>: CG.Purple.Host.dll</h6>
-  <h5 id="CG_Purple_Host_Pages_ParameterTypes_Index_syntax">Syntax</h5>
+  <h5 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class Index</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index__crumbs" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index._crumbs">_crumbs</h4>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index__crumbs" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index._crumbs">_crumbs</h4>
   <div class="markdown level1 summary"><p>This field contains a reference to breadcrumbs for the view.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -146,7 +146,30 @@
       </tr>
     </tbody>
   </table>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index__gridSearchString" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index._gridSearchString">_gridSearchString</h4>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index__factoryTypes" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index._factoryTypes">_factoryTypes</h4>
+  <div class="markdown level1 summary"><p>This field contains the collection of factory types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;string&gt; _factoryTypes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index__gridSearchString" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index._gridSearchString">_gridSearchString</h4>
   <div class="markdown level1 summary"><p>This field contains the current mail search string.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -169,7 +192,7 @@
       </tr>
     </tbody>
   </table>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index__isBusy" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index._isBusy">_isBusy</h4>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index__isBusy" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index._isBusy">_isBusy</h4>
   <div class="markdown level1 summary"><p>This field indicates the page is busy.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -192,13 +215,13 @@
       </tr>
     </tbody>
   </table>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index__parameterTypes" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index._parameterTypes">_parameterTypes</h4>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index__parameterTypes" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index._parameterTypes">_parameterTypes</h4>
   <div class="markdown level1 summary"><p>This field contains the collection of parameter types.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;ParameterType&gt;? _parameterTypes</code></pre>
+    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;ParameterType&gt; _parameterTypes</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -210,15 +233,38 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">ParameterType</span>&gt;&gt;</td>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">ParameterType</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index__providerTypes" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index._providerTypes">_providerTypes</h4>
+  <div class="markdown level1 summary"><p>This field contains the collection of provider types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;ProviderType&gt; _providerTypes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">ProviderType</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_DialogService_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.DialogService*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_DialogService" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.DialogService">DialogService</h4>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_DialogService_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.DialogService*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_DialogService" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.DialogService">DialogService</h4>
   <div class="markdown level1 summary"><p>This property contains the dialog service for this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -241,8 +287,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_HttpContextAccessor_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.HttpContextAccessor*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_HttpContextAccessor" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.HttpContextAccessor">HttpContextAccessor</h4>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_HttpContextAccessor_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.HttpContextAccessor*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_HttpContextAccessor" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.HttpContextAccessor">HttpContextAccessor</h4>
   <div class="markdown level1 summary"><p>This property contains the HTTP context accessor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -265,8 +311,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_Logger_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.Logger*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_Logger" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.Logger">Logger</h4>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_Logger_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.Logger*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_Logger" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.Logger">Logger</h4>
   <div class="markdown level1 summary"><p>This property contains the logger for this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -284,13 +330,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Host.Pages.ParameterTypes.Index.html">Index</a>&gt;</td>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.html">Index</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_ParameterTypeManager_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.ParameterTypeManager*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_ParameterTypeManager" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.ParameterTypeManager">ParameterTypeManager</h4>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_ParameterTypeManager_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.ParameterTypeManager*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_ParameterTypeManager" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.ParameterTypeManager">ParameterTypeManager</h4>
   <div class="markdown level1 summary"><p>This property contains the parameter type manager for this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -313,8 +359,32 @@
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_SnackbarService_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.SnackbarService*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_SnackbarService" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.SnackbarService">SnackbarService</h4>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_ProviderTypeManager_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.ProviderTypeManager*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_ProviderTypeManager" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.ProviderTypeManager">ProviderTypeManager</h4>
+  <div class="markdown level1 summary"><p>This property contains the provider type manager for this page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IProviderTypeManager ProviderTypeManager { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IProviderTypeManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_SnackbarService_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.SnackbarService*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_SnackbarService" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.SnackbarService">SnackbarService</h4>
   <div class="markdown level1 summary"><p>This property contains the snackbar service for this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -337,8 +407,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_UserName_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.UserName*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_UserName" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.UserName">UserName</h4>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_UserName_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.UserName*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_UserName" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.UserName">UserName</h4>
   <div class="markdown level1 summary"><p>This property contains the name of the current user, or the word
 'anonymous' if nobody is currently authenticated.</p>
 </div>
@@ -364,14 +434,23 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_FilterFunc_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_FilterFunc_ParameterType_System_String_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc(ParameterType,System.String)">FilterFunc(ParameterType, String)</h4>
-  <div class="markdown level1 summary"><p>This method performs a search of the parameter types.</p>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_FilterFactoryTypes_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.FilterFactoryTypes*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_FilterFactoryTypes" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.FilterFactoryTypes">FilterFactoryTypes()</h4>
+  <div class="markdown level1 summary"><p>This method filters the list of available factory types.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool FilterFunc(ParameterType element, string searchString)</code></pre>
+    <pre><code class="lang-csharp hljs">void FilterFactoryTypes()</code></pre>
+  </div>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_FilterFunc_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.FilterFunc*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_FilterFunc_ProviderType_System_String_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.FilterFunc(ProviderType,System.String)">FilterFunc(ProviderType, String)</h4>
+  <div class="markdown level1 summary"><p>This method performs a search of the provider types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool FilterFunc(ProviderType element, string searchString)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -384,7 +463,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ParameterType</span></td>
+        <td><span class="xref">ProviderType</span></td>
         <td><span class="parametername">element</span></td>
         <td><p>The element to uses for the operation.</p>
 </td>
@@ -413,15 +492,15 @@
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_FilterFunc1_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc1*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_FilterFunc1_ParameterType_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.FilterFunc1(ParameterType)">FilterFunc1(ParameterType)</h4>
-  <div class="markdown level1 summary"><p>This method adapts the <a class="xref" href="CG.Purple.Host.Pages.ParameterTypes.Index.html#CG_Purple_Host_Pages_ParameterTypes_Index_FilterFunc_ParameterType_System_String_">FilterFunc(ParameterType, String)</a> method
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_FilterFunc1_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.FilterFunc1*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_FilterFunc1_ProviderType_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.FilterFunc1(ProviderType)">FilterFunc1(ProviderType)</h4>
+  <div class="markdown level1 summary"><p>This method adapts the <a class="xref" href="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.html#CG_Purple_Host_Pages_Admin_ProviderTypes_Index_FilterFunc_ProviderType_System_String_">FilterFunc(ProviderType, String)</a> method
 for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool FilterFunc1(ParameterType element)</code></pre>
+    <pre><code class="lang-csharp hljs">protected bool FilterFunc1(ProviderType element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -434,7 +513,7 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ParameterType</span></td>
+        <td><span class="xref">ProviderType</span></td>
         <td><span class="parametername">element</span></td>
         <td><p>The element to use for the operation.</p>
 </td>
@@ -457,9 +536,9 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_OnCreateAsync_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.OnCreateAsync*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_OnCreateAsync" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.OnCreateAsync">OnCreateAsync()</h4>
-  <div class="markdown level1 summary"><p>This method add a new parameter type.</p>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_OnCreateAsync_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.OnCreateAsync*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_OnCreateAsync" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.OnCreateAsync">OnCreateAsync()</h4>
+  <div class="markdown level1 summary"><p>This method adds a new provider type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -482,14 +561,14 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_OnDeleteAsync_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.OnDeleteAsync*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_OnDeleteAsync_ParameterType_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.OnDeleteAsync(ParameterType)">OnDeleteAsync(ParameterType)</h4>
-  <div class="markdown level1 summary"><p>This method deletes the given parameter type.</p>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_OnDeleteAsync_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.OnDeleteAsync*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_OnDeleteAsync_ProviderType_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.OnDeleteAsync(ProviderType)">OnDeleteAsync(ProviderType)</h4>
+  <div class="markdown level1 summary"><p>This method deletes the given provider type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected async Task OnDeleteAsync(ParameterType parameterType)</code></pre>
+    <pre><code class="lang-csharp hljs">protected async Task OnDeleteAsync(ProviderType providerType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -502,9 +581,9 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ParameterType</span></td>
-        <td><span class="parametername">parameterType</span></td>
-        <td><p>The parameter type to use for the operation.</p>
+        <td><span class="xref">ProviderType</span></td>
+        <td><span class="parametername">providerType</span></td>
+        <td><p>The provider type to use for the operation.</p>
 </td>
       </tr>
     </tbody>
@@ -525,14 +604,14 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_OnEditAsync_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.OnEditAsync*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_OnEditAsync_ParameterType_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.OnEditAsync(ParameterType)">OnEditAsync(ParameterType)</h4>
-  <div class="markdown level1 summary"><p>This method edits the given parameter type.</p>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_OnEditAsync_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.OnEditAsync*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_OnEditAsync_ProviderType_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.OnEditAsync(ProviderType)">OnEditAsync(ProviderType)</h4>
+  <div class="markdown level1 summary"><p>This method edits the given provider type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected async Task OnEditAsync(ParameterType parameterType)</code></pre>
+    <pre><code class="lang-csharp hljs">protected async Task OnEditAsync(ProviderType providerType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -545,9 +624,9 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ParameterType</span></td>
-        <td><span class="parametername">parameterType</span></td>
-        <td><p>The parameter type to use for the operation.</p>
+        <td><span class="xref">ProviderType</span></td>
+        <td><span class="parametername">providerType</span></td>
+        <td><p>The provider type to use for the operation.</p>
 </td>
       </tr>
     </tbody>
@@ -568,8 +647,8 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Host_Pages_ParameterTypes_Index_OnInitializedAsync_" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.OnInitializedAsync*"></a>
-  <h4 id="CG_Purple_Host_Pages_ParameterTypes_Index_OnInitializedAsync" data-uid="CG.Purple.Host.Pages.ParameterTypes.Index.OnInitializedAsync">OnInitializedAsync()</h4>
+  <a id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_OnInitializedAsync_" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.OnInitializedAsync*"></a>
+  <h4 id="CG_Purple_Host_Pages_Admin_ProviderTypes_Index_OnInitializedAsync" data-uid="CG.Purple.Host.Pages.Admin.ProviderTypes.Index.OnInitializedAsync">OnInitializedAsync()</h4>
   <div class="markdown level1 summary"><p>This method is called by the framework to initialize the page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>

@@ -420,6 +420,75 @@ repository fails to complete the operation.</p>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Repositories_IProviderTypeRepository_FindByIdAsync_" data-uid="CG.Purple.Repositories.IProviderTypeRepository.FindByIdAsync*"></a>
+  <h4 id="CG_Purple_Repositories_IProviderTypeRepository_FindByIdAsync_System_Int32_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderTypeRepository.FindByIdAsync(System.Int32,CancellationToken)">FindByIdAsync(Int32, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method searches for a matching <see cref="!:ProviderType"></see> object
+by identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ProviderType?&gt; FindByIdAsync(int id, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The identifier to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">ProviderType</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a sequence of
+<see cref="!:ProviderType"></see> objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Repositories.RepositoryException.html">RepositoryException</a></td>
+        <td><p>This exception is thrown whenever the
+repository fails to complete the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Repositories_IProviderTypeRepository_FindByNameAsync_" data-uid="CG.Purple.Repositories.IProviderTypeRepository.FindByNameAsync*"></a>
   <h4 id="CG_Purple_Repositories_IProviderTypeRepository_FindByNameAsync_System_String_CancellationToken_" data-uid="CG.Purple.Repositories.IProviderTypeRepository.FindByNameAsync(System.String,CancellationToken)">FindByNameAsync(String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method searches for a single matching <see cref="!:ProviderType"></see> object using
