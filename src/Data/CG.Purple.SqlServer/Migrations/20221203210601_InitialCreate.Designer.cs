@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CG.Purple.SqlServer.Migrations
 {
     [DbContext(typeof(PurpleDbContext))]
-    [Migration("20221203151116_InitialCreate")]
+    [Migration("20221203210601_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -135,9 +135,9 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.Property<string>("From")
                         .IsRequired()
-                        .HasMaxLength(1024)
+                        .HasMaxLength(320)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(1024)");
+                        .HasColumnType("varchar(320)");
 
                     b.Property<bool>("IsDisabled")
                         .HasColumnType("bit");

@@ -236,7 +236,7 @@ internal class SmtpProvider : IMessageProvider
                         message.Id
                         );
 
-                    // Since this provider can't process this message, we'll reset
+                    // Since the provider can't process this message, we'll reset
                     //   it, so the pipeline can (hopefully) assign it to a provider
                     //   that can process it.
                     await ResetMessageAsync(
@@ -290,7 +290,7 @@ internal class SmtpProvider : IMessageProvider
                         message.Id
                         );
 
-                    // Since this provider can't process this message, we'll reset
+                    // Since the provider can't process this message, we'll reset
                     //   it, so the pipeline can (hopefully) assign it to a provider
                     //   that can process it.
                     await ResetMessageAsync(
@@ -302,23 +302,23 @@ internal class SmtpProvider : IMessageProvider
                     continue; // Nothing left to do!
                 }
 
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Creating a .NET wrapper for message: {id}",
-                    message.Id
-                    );
-
-                // Create the .NET model.
-                var msg = CreateDotNetMessage(
-                    mailMessage
-                    );
-
-                // =======
-                // Step 4: Send the email.
-                // =======
-
                 try
                 {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Creating a .NET wrapper for message: {id}",
+                        message.Id
+                        );
+
+                    // Create the .NET model.
+                    var msg = CreateDotNetMessage(
+                        mailMessage
+                        );
+
+                    // =======
+                    // Step 4: Send the email.
+                    // =======
+
                     // Log what we are about to do.
                     _logger.LogTrace(
                         "Deferring to {method} for message: {id}",
@@ -404,6 +404,7 @@ internal class SmtpProvider : IMessageProvider
 
             // Provider better context.
             throw new ProviderException(
+                relatedProvider: providerType,
                 message: $"The provider failed to process one or more messages!",
                 innerException: ex
                 );

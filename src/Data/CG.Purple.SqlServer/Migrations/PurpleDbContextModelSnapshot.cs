@@ -132,9 +132,9 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.Property<string>("From")
                         .IsRequired()
-                        .HasMaxLength(1024)
+                        .HasMaxLength(320)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(1024)");
+                        .HasColumnType("varchar(320)");
 
                     b.Property<bool>("IsDisabled")
                         .HasColumnType("bit");

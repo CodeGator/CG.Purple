@@ -63,7 +63,7 @@ internal class MessageMap : EntityMapBase<Entities.Message>
 
         // Setup the column.
         builder.Property(e => e.From)
-            .HasMaxLength(1024)
+            .HasMaxLength(320)
             .IsUnicode(false)
             .IsRequired();
 
