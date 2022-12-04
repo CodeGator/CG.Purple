@@ -259,6 +259,31 @@ the processing of this message.</p>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Models_Message_MaxErrors_" data-uid="CG.Purple.Models.Message.MaxErrors*"></a>
+  <h4 id="CG_Purple_Models_Message_MaxErrors" data-uid="CG.Purple.Models.Message.MaxErrors">MaxErrors</h4>
+  <div class="markdown level1 summary"><p>This property indicates the point at which we stop trying to
+process this message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxErrors { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Models_Message_MessageKey_" data-uid="CG.Purple.Models.Message.MessageKey*"></a>
   <h4 id="CG_Purple_Models_Message_MessageKey" data-uid="CG.Purple.Models.Message.MessageKey">MessageKey</h4>
   <div class="markdown level1 summary"><p>This property contains a unique key for the message.</p>
@@ -375,6 +400,55 @@ the processing of this message.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Models_Message_ProcessAfterUtc_" data-uid="CG.Purple.Models.Message.ProcessAfterUtc*"></a>
+  <h4 id="CG_Purple_Models_Message_ProcessAfterUtc" data-uid="CG.Purple.Models.Message.ProcessAfterUtc">ProcessAfterUtc</h4>
+  <div class="markdown level1 summary"><p>This property indicates when the message should be sent through the
+pipeline for processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime? ProcessAfterUtc { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Models_Message_ProviderType_" data-uid="CG.Purple.Models.Message.ProviderType*"></a>
+  <h4 id="CG_Purple_Models_Message_ProviderType" data-uid="CG.Purple.Models.Message.ProviderType">ProviderType</h4>
+  <div class="markdown level1 summary"><p>This property contains an associated provider type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ProviderType ProviderType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Models.ProviderType.html">ProviderType</a></td>
         <td></td>
       </tr>
     </tbody>

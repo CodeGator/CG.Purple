@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IRetryDirector
+    <title>Enum MessageEvent
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IRetryDirector
+    <meta name="title" content="Enum MessageEvent
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,91 +78,67 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Directors.IRetryDirector">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Models.MessageEvent">
   
   
-  <h1 id="CG_Purple_Directors_IRetryDirector" data-uid="CG.Purple.Directors.IRetryDirector" class="text-break">Interface IRetryDirector
+  <h1 id="CG_Purple_Models_MessageEvent" data-uid="CG.Purple.Models.MessageEvent" class="text-break">Enum MessageEvent
   </h1>
-  <div class="markdown level0 summary"><p>This interface represents an object that performs message retry operations.</p>
+  <div class="markdown level0 summary"><p>This enumeration represents the valid message events.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Directors.html">CG.Purple.Directors</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Abstractions.dll</h6>
-  <h5 id="CG_Purple_Directors_IRetryDirector_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Models.html">CG.Purple.Models</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Primitives.dll</h6>
+  <h5 id="CG_Purple_Models_MessageEvent_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IRetryDirector</code></pre>
+    <pre><code class="lang-csharp hljs">public enum MessageEvent</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h3 id="fields">Fields
   </h3>
-  <a id="CG_Purple_Directors_IRetryDirector_RetryMessagesAsync_" data-uid="CG.Purple.Directors.IRetryDirector.RetryMessagesAsync*"></a>
-  <h4 id="CG_Purple_Directors_IRetryDirector_RetryMessagesAsync_System_Int32_CancellationToken_" data-uid="CG.Purple.Directors.IRetryDirector.RetryMessagesAsync(System.Int32,CancellationToken)">RetryMessagesAsync(Int32, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method attempts to retry processing for any messages in a 'Failed'
-state, whose error count is below the given threshold.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task RetryMessagesAsync(int maxErrorCount, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
-        <th>Type</th>
         <th>Name</th>
         <th>Description</th>
       </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">maxErrorCount</span></td>
-        <td><p>The maximum number of errors a message can
-have before we stop trying to process it.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
     <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
+        <td id="CG_Purple_Models_MessageEvent_Assigned">Assigned</td>
+        <td><p>This enumeration represents an assign processor event.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="CG_Purple_Models_MessageEvent_Disabled">Disabled</td>
+        <td><p>This enumeration represents a message disable event.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="CG_Purple_Models_MessageEvent_Enabled">Enabled</td>
+        <td><p>This enumeration represents an message enable event.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="CG_Purple_Models_MessageEvent_Error">Error</td>
+        <td><p>This enumeration represents a processed related error event.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="CG_Purple_Models_MessageEvent_Reset">Reset</td>
+        <td><p>This enumeration represents a reset message event.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="CG_Purple_Models_MessageEvent_Sent">Sent</td>
+        <td><p>This enumeration represents a successful message send event.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="CG_Purple_Models_MessageEvent_Stored">Stored</td>
+        <td><p>This enumeration represents a message storage event.</p>
 </td>
       </tr>
     </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="CG.Purple.Directors.DirectorException.html">DirectorException</a></td>
-        <td><p>This exception is thrown whenever the
-director fails to complete the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+  </thead></thead></table>
 </article>
           </div>
           

@@ -96,13 +96,13 @@ message providers, such as SMTP, or SendGrid.</p>
   <h3 id="methods">Methods
   </h3>
   <a id="CG_Purple_Providers_IMessageProvider_ProcessMessagesAsync_" data-uid="CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync*"></a>
-  <h4 id="CG_Purple_Providers_IMessageProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_PropertyType_CancellationToken_" data-uid="CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)">ProcessMessagesAsync(IEnumerable&lt;Message&gt;, ProviderType, PropertyType, CancellationToken)</h4>
+  <h4 id="CG_Purple_Providers_IMessageProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_" data-uid="CG.Purple.Providers.IMessageProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)">ProcessMessagesAsync(IEnumerable&lt;Message&gt;, ProviderType, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method sends messages to an external provider.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task ProcessMessagesAsync(IEnumerable&lt;Message&gt; messages, ProviderType providerType, PropertyType providerPropertyType, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task ProcessMessagesAsync(IEnumerable&lt;Message&gt; messages, ProviderType providerType, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -124,13 +124,6 @@ message providers, such as SMTP, or SendGrid.</p>
         <td><span class="xref">ProviderType</span></td>
         <td><span class="parametername">providerType</span></td>
         <td><p>The provider type to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">PropertyType</span></td>
-        <td><span class="parametername">providerPropertyType</span></td>
-        <td><p>The provider property type to use
-for the operation.</p>
 </td>
       </tr>
       <tr>

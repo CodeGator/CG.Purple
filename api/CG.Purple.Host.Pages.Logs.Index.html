@@ -221,7 +221,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected ProcessEvent? _eventType</code></pre>
+    <pre><code class="lang-csharp hljs">protected MessageEvent? _eventType</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -233,7 +233,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">ProcessEvent</span>&gt;</td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">MessageEvent</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -290,7 +290,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;ProcessLog&gt;? _logs</code></pre>
+    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;MessageLog&gt;? _logs</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -302,7 +302,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">ProcessLog</span>&gt;&gt;</td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">MessageLog</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -432,7 +432,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IProcessLogManager ProcessLogManager { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected IMessageLogManager ProcessLogManager { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -444,7 +444,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IProcessLogManager</span></td>
+        <td><span class="xref">IMessageLogManager</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -500,14 +500,14 @@
   <h3 id="methods">Methods
   </h3>
   <a id="CG_Purple_Host_Pages_Logs_Index_FilterFunc_" data-uid="CG.Purple.Host.Pages.Logs.Index.FilterFunc*"></a>
-  <h4 id="CG_Purple_Host_Pages_Logs_Index_FilterFunc_ProcessLog_" data-uid="CG.Purple.Host.Pages.Logs.Index.FilterFunc(ProcessLog)">FilterFunc(ProcessLog)</h4>
-  <div class="markdown level1 summary"><p>This method adapts the <a class="xref" href="CG.Purple.Host.Pages.Logs.Index.html#CG_Purple_Host_Pages_Logs_Index_FilterFunc_ProcessLog_System_String_">FilterFunc(ProcessLog, String)</a> method
+  <h4 id="CG_Purple_Host_Pages_Logs_Index_FilterFunc_MessageLog_" data-uid="CG.Purple.Host.Pages.Logs.Index.FilterFunc(MessageLog)">FilterFunc(MessageLog)</h4>
+  <div class="markdown level1 summary"><p>This method adapts the <a class="xref" href="CG.Purple.Host.Pages.Logs.Index.html#CG_Purple_Host_Pages_Logs_Index_FilterFunc_MessageLog_System_String_">FilterFunc(MessageLog, String)</a> method
 for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool FilterFunc(ProcessLog element)</code></pre>
+    <pre><code class="lang-csharp hljs">protected bool FilterFunc(MessageLog element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -520,7 +520,7 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ProcessLog</span></td>
+        <td><span class="xref">MessageLog</span></td>
         <td><span class="parametername">element</span></td>
         <td><p>The element to use for the operation.</p>
 </td>
@@ -544,13 +544,13 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Host_Pages_Logs_Index_FilterFunc_" data-uid="CG.Purple.Host.Pages.Logs.Index.FilterFunc*"></a>
-  <h4 id="CG_Purple_Host_Pages_Logs_Index_FilterFunc_ProcessLog_System_String_" data-uid="CG.Purple.Host.Pages.Logs.Index.FilterFunc(ProcessLog,System.String)">FilterFunc(ProcessLog, String)</h4>
+  <h4 id="CG_Purple_Host_Pages_Logs_Index_FilterFunc_MessageLog_System_String_" data-uid="CG.Purple.Host.Pages.Logs.Index.FilterFunc(MessageLog,System.String)">FilterFunc(MessageLog, String)</h4>
   <div class="markdown level1 summary"><p>This method performs a search of the log entries.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool FilterFunc(ProcessLog element, string searchString)</code></pre>
+    <pre><code class="lang-csharp hljs">protected bool FilterFunc(MessageLog element, string searchString)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -563,7 +563,7 @@ for use with a <see cref="!:MudTable&lt;T>"></see> control.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ProcessLog</span></td>
+        <td><span class="xref">MessageLog</span></td>
         <td><span class="parametername">element</span></td>
         <td><p>The element to uses for the operation.</p>
 </td>

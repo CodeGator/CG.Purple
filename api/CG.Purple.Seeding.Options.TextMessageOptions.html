@@ -123,6 +123,30 @@
   </div>
   <h3 id="properties">Properties
   </h3>
+  <a id="CG_Purple_Seeding_Options_TextMessageOptions_Attachments_" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.Attachments*"></a>
+  <h4 id="CG_Purple_Seeding_Options_TextMessageOptions_Attachments" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.Attachments">Attachments</h4>
+  <div class="markdown level1 summary"><p>This property contains the file attachments for the message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Attachments { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Seeding_Options_TextMessageOptions_Body_" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.Body*"></a>
   <h4 id="CG_Purple_Seeding_Options_TextMessageOptions_Body" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.Body">Body</h4>
   <div class="markdown level1 summary"><p>This property contains the subject for the message.</p>
@@ -195,6 +219,31 @@
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Seeding_Options_TextMessageOptions_MaxErrors_" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.MaxErrors*"></a>
+  <h4 id="CG_Purple_Seeding_Options_TextMessageOptions_MaxErrors" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.MaxErrors">MaxErrors</h4>
+  <div class="markdown level1 summary"><p>This property indicates the point at which we stop trying to
+process this message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxErrors { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Seeding_Options_TextMessageOptions_MessageKey_" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.MessageKey*"></a>
   <h4 id="CG_Purple_Seeding_Options_TextMessageOptions_MessageKey" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.MessageKey">MessageKey</h4>
   <div class="markdown level1 summary"><p>This property contains the key for the message.</p>
@@ -219,6 +268,55 @@
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Seeding_Options_TextMessageOptions_Priority_" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.Priority*"></a>
+  <h4 id="CG_Purple_Seeding_Options_TextMessageOptions_Priority" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.Priority">Priority</h4>
+  <div class="markdown level1 summary"><p>This property contains the relative priority of the message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Priority { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Seeding_Options_TextMessageOptions_ProcessAfterUtc_" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.ProcessAfterUtc*"></a>
+  <h4 id="CG_Purple_Seeding_Options_TextMessageOptions_ProcessAfterUtc" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.ProcessAfterUtc">ProcessAfterUtc</h4>
+  <div class="markdown level1 summary"><p>This property indicates when the message should be sent through the
+pipeline for processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime? ProcessAfterUtc { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Seeding_Options_TextMessageOptions_Properties_" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.Properties*"></a>
   <h4 id="CG_Purple_Seeding_Options_TextMessageOptions_Properties" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.Properties">Properties</h4>
   <div class="markdown level1 summary"><p>This property contains the properties for the message.</p>
@@ -239,6 +337,31 @@
     <tbody>
       <tr>
         <td><span class="xref">List</span>&lt;<a class="xref" href="CG.Purple.Seeding.Options.MessagePropertyOptions.html">MessagePropertyOptions</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Seeding_Options_TextMessageOptions_ProviderType_" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.ProviderType*"></a>
+  <h4 id="CG_Purple_Seeding_Options_TextMessageOptions_ProviderType" data-uid="CG.Purple.Seeding.Options.TextMessageOptions.ProviderType">ProviderType</h4>
+  <div class="markdown level1 summary"><p>This property contains an optional provider name, for pre-assigning
+a message to a specific provider.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProviderType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>

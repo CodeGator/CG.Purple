@@ -101,14 +101,14 @@ interface.</p>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Smtp_SmtpProvider__ctor_" data-uid="CG.Purple.Smtp.SmtpProvider.#ctor*"></a>
-  <h4 id="CG_Purple_Smtp_SmtpProvider__ctor_IMailMessageManager_IMessageManager_IProcessLogManager_IMessagePropertyManager_ILogger_IMessageProvider__" data-uid="CG.Purple.Smtp.SmtpProvider.#ctor(IMailMessageManager,IMessageManager,IProcessLogManager,IMessagePropertyManager,ILogger{IMessageProvider})">SmtpProvider(IMailMessageManager, IMessageManager, IProcessLogManager, IMessagePropertyManager, ILogger&lt;IMessageProvider&gt;)</h4>
+  <h4 id="CG_Purple_Smtp_SmtpProvider__ctor_IMailMessageManager_IMessageManager_IMessageLogManager_IMessagePropertyManager_ILogger_IMessageProvider__" data-uid="CG.Purple.Smtp.SmtpProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,IMessagePropertyManager,ILogger{IMessageProvider})">SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, ILogger&lt;IMessageProvider&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Smtp.SmtpProvider.html">SmtpProvider</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SmtpProvider(IMailMessageManager mailMessageManager, IMessageManager messageManager, IProcessLogManager processLogManager, IMessagePropertyManager messagePropertyManager, ILogger&lt;IMessageProvider&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public SmtpProvider(IMailMessageManager mailMessageManager, IMessageManager messageManager, IMessageLogManager processLogManager, IMessagePropertyManager messagePropertyManager, ILogger&lt;IMessageProvider&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -135,7 +135,7 @@ provider.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IProcessLogManager</span></td>
+        <td><span class="xref">IMessageLogManager</span></td>
         <td><span class="parametername">processLogManager</span></td>
         <td><p>The process log manager to use
 with this provider.</p>
@@ -256,7 +256,7 @@ to use with this provider.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly IProcessLogManager _processLogManager</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IMessageLogManager _processLogManager</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -268,7 +268,7 @@ to use with this provider.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IProcessLogManager</span></td>
+        <td><span class="xref">IMessageLogManager</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -319,12 +319,12 @@ to use with this provider.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_" data-uid="CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync*"></a>
-  <h4 id="CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_PropertyType_CancellationToken_" data-uid="CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,PropertyType,CancellationToken)">ProcessMessagesAsync(IEnumerable&lt;Message&gt;, ProviderType, PropertyType, CancellationToken)</h4>
+  <h4 id="CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_" data-uid="CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)">ProcessMessagesAsync(IEnumerable&lt;Message&gt;, ProviderType, CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task ProcessMessagesAsync(IEnumerable&lt;Message&gt; messages, ProviderType providerType, PropertyType providerPropertyType, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task ProcessMessagesAsync(IEnumerable&lt;Message&gt; messages, ProviderType providerType, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -344,11 +344,6 @@ to use with this provider.</p>
       <tr>
         <td><span class="xref">ProviderType</span></td>
         <td><span class="parametername">providerType</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">PropertyType</span></td>
-        <td><span class="parametername">providerPropertyType</span></td>
         <td></td>
       </tr>
       <tr>
@@ -374,14 +369,14 @@ to use with this provider.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Smtp_SmtpProvider_ResetMessageAsync_" data-uid="CG.Purple.Smtp.SmtpProvider.ResetMessageAsync*"></a>
-  <h4 id="CG_Purple_Smtp_SmtpProvider_ResetMessageAsync_Message_PropertyType_CancellationToken_" data-uid="CG.Purple.Smtp.SmtpProvider.ResetMessageAsync(Message,PropertyType,CancellationToken)">ResetMessageAsync(Message, PropertyType, CancellationToken)</h4>
+  <h4 id="CG_Purple_Smtp_SmtpProvider_ResetMessageAsync_Message_CancellationToken_" data-uid="CG.Purple.Smtp.SmtpProvider.ResetMessageAsync(Message,CancellationToken)">ResetMessageAsync(Message, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method resets the given message to a 'Pending' state and clears
 the error count on the message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">async Task ResetMessageAsync(Message message, PropertyType providerPropertyType, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">async Task ResetMessageAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -397,13 +392,6 @@ the error count on the message.</p>
         <td><span class="xref">Message</span></td>
         <td><span class="parametername">message</span></td>
         <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">PropertyType</span></td>
-        <td><span class="parametername">providerPropertyType</span></td>
-        <td><p>The provider property type to
-use for the operation.</p>
 </td>
       </tr>
       <tr>

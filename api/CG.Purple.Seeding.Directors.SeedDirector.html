@@ -101,14 +101,14 @@ interface.</p>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Seeding_Directors_SeedDirector__ctor_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.#ctor*"></a>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector__ctor_IAttachmentManager_IFileTypeManager_IMailMessageManager_IMessagePropertyManager_IMimeTypeManager_IParameterTypeManager_IPropertyTypeManager_IProviderParameterManager_IProviderTypeManager_IProcessLogManager_ITextMessageManager_ILogger_ISeedDirector__" data-uid="CG.Purple.Seeding.Directors.SeedDirector.#ctor(IAttachmentManager,IFileTypeManager,IMailMessageManager,IMessagePropertyManager,IMimeTypeManager,IParameterTypeManager,IPropertyTypeManager,IProviderParameterManager,IProviderTypeManager,IProcessLogManager,ITextMessageManager,ILogger{ISeedDirector})">SeedDirector(IAttachmentManager, IFileTypeManager, IMailMessageManager, IMessagePropertyManager, IMimeTypeManager, IParameterTypeManager, IPropertyTypeManager, IProviderParameterManager, IProviderTypeManager, IProcessLogManager, ITextMessageManager, ILogger&lt;ISeedDirector&gt;)</h4>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector__ctor_IAttachmentManager_IFileTypeManager_IMailMessageManager_IMessagePropertyManager_IMimeTypeManager_IParameterTypeManager_IPropertyTypeManager_IProviderParameterManager_IProviderTypeManager_IMessageLogManager_ITextMessageManager_ILogger_ISeedDirector__" data-uid="CG.Purple.Seeding.Directors.SeedDirector.#ctor(IAttachmentManager,IFileTypeManager,IMailMessageManager,IMessagePropertyManager,IMimeTypeManager,IParameterTypeManager,IPropertyTypeManager,IProviderParameterManager,IProviderTypeManager,IMessageLogManager,ITextMessageManager,ILogger{ISeedDirector})">SeedDirector(IAttachmentManager, IFileTypeManager, IMailMessageManager, IMessagePropertyManager, IMimeTypeManager, IParameterTypeManager, IPropertyTypeManager, IProviderParameterManager, IProviderTypeManager, IMessageLogManager, ITextMessageManager, ILogger&lt;ISeedDirector&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Seeding.Directors.SeedDirector.html">SeedDirector</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SeedDirector(IAttachmentManager attachmenteManager, IFileTypeManager fileTypeManager, IMailMessageManager mailMessageManager, IMessagePropertyManager messagePropertyManager, IMimeTypeManager mimeTypeManager, IParameterTypeManager parameterTypeManager, IPropertyTypeManager propertyTypeManager, IProviderParameterManager providerParameterManager, IProviderTypeManager providerTypeManager, IProcessLogManager providerLogManager, ITextMessageManager textMessageManager, ILogger&lt;ISeedDirector&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public SeedDirector(IAttachmentManager attachmenteManager, IFileTypeManager fileTypeManager, IMailMessageManager mailMessageManager, IMessagePropertyManager messagePropertyManager, IMimeTypeManager mimeTypeManager, IParameterTypeManager parameterTypeManager, IPropertyTypeManager propertyTypeManager, IProviderParameterManager providerParameterManager, IProviderTypeManager providerTypeManager, IMessageLogManager providerLogManager, ITextMessageManager textMessageManager, ILogger&lt;ISeedDirector&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -184,7 +184,7 @@ with this director.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IProcessLogManager</span></td>
+        <td><span class="xref">IMessageLogManager</span></td>
         <td><span class="parametername">providerLogManager</span></td>
         <td><p>The provider log manager to use
 with this director.</p>
@@ -397,7 +397,7 @@ this director.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly IProcessLogManager _providerLogManager</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IMessageLogManager _providerLogManager</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -409,7 +409,7 @@ this director.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IProcessLogManager</span></td>
+        <td><span class="xref">IMessageLogManager</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -541,9 +541,9 @@ this director.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Seeding_Directors_SeedDirector_SeedMailMessagesAsync_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync*"></a>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedMailMessagesAsync_List_MailMessageOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{MailMessageOptions},System.String,System.Boolean,CancellationToken)">SeedMailMessagesAsync(List&lt;MailMessageOptions&gt;, String, Boolean, CancellationToken)</h4>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedMailMessagesAsync_List_CG_Purple_Seeding_Options_MailMessageOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedMailMessagesAsync(List{CG.Purple.Seeding.Options.MailMessageOptions},System.String,System.Boolean,CancellationToken)">SeedMailMessagesAsync(List&lt;MailMessageOptions&gt;, String, Boolean, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method performs a seeding operation for the given list of
-<see cref="!:MailMessageOptions"></see> objects.</p>
+<a class="xref" href="CG.Purple.Seeding.Options.MailMessageOptions.html">MailMessageOptions</a> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -561,7 +561,7 @@ this director.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">MailMessageOptions</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="CG.Purple.Seeding.Options.MailMessageOptions.html">MailMessageOptions</a>&gt;</td>
         <td><span class="parametername">mailMessageOptions</span></td>
         <td><p>The options to use for the operation.</p>
 </td>
@@ -660,9 +660,9 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Seeding_Directors_SeedDirector_SeedMimeTypesAsync_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync*"></a>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedMimeTypesAsync_List_MimeTypeOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{MimeTypeOptions},System.String,System.Boolean,CancellationToken)">SeedMimeTypesAsync(List&lt;MimeTypeOptions&gt;, String, Boolean, CancellationToken)</h4>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedMimeTypesAsync_List_CG_Purple_Seeding_Options_MimeTypeOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedMimeTypesAsync(List{CG.Purple.Seeding.Options.MimeTypeOptions},System.String,System.Boolean,CancellationToken)">SeedMimeTypesAsync(List&lt;MimeTypeOptions&gt;, String, Boolean, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method performs a seeding operation for the given list of
-<see cref="!:MimeTypeOptions"></see> objects.</p>
+<a class="xref" href="CG.Purple.Seeding.Options.MimeTypeOptions.html">MimeTypeOptions</a> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -680,7 +680,7 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">MimeTypeOptions</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="CG.Purple.Seeding.Options.MimeTypeOptions.html">MimeTypeOptions</a>&gt;</td>
         <td><span class="parametername">mimeTypeOptions</span></td>
         <td><p>The options to use for the operation.</p>
 </td>
@@ -779,9 +779,9 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Seeding_Directors_SeedDirector_SeedParameterTypesAsync_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync*"></a>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedParameterTypesAsync_List_ParameterTypeOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{ParameterTypeOptions},System.String,System.Boolean,CancellationToken)">SeedParameterTypesAsync(List&lt;ParameterTypeOptions&gt;, String, Boolean, CancellationToken)</h4>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedParameterTypesAsync_List_CG_Purple_Seeding_Options_ParameterTypeOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedParameterTypesAsync(List{CG.Purple.Seeding.Options.ParameterTypeOptions},System.String,System.Boolean,CancellationToken)">SeedParameterTypesAsync(List&lt;ParameterTypeOptions&gt;, String, Boolean, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method performs a seeding operation for the given list of
-<see cref="!:ParameterTypeOptions"></see> objects.</p>
+<a class="xref" href="CG.Purple.Seeding.Options.ParameterTypeOptions.html">ParameterTypeOptions</a> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -799,7 +799,7 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">ParameterTypeOptions</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="CG.Purple.Seeding.Options.ParameterTypeOptions.html">ParameterTypeOptions</a>&gt;</td>
         <td><span class="parametername">parameterTypeOptions</span></td>
         <td><p>The options to use for the operation.</p>
 </td>
@@ -898,9 +898,9 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Seeding_Directors_SeedDirector_SeedProcessLogsAsync_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync*"></a>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedProcessLogsAsync_List_ProcessLogOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{ProcessLogOptions},System.String,System.Boolean,CancellationToken)">SeedProcessLogsAsync(List&lt;ProcessLogOptions&gt;, String, Boolean, CancellationToken)</h4>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedProcessLogsAsync_List_CG_Purple_Seeding_Options_ProcessLogOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedProcessLogsAsync(List{CG.Purple.Seeding.Options.ProcessLogOptions},System.String,System.Boolean,CancellationToken)">SeedProcessLogsAsync(List&lt;ProcessLogOptions&gt;, String, Boolean, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method performs a seeding operation for the given list of
-<see cref="!:ProcessLogOptions"></see> objects.</p>
+<a class="xref" href="CG.Purple.Seeding.Options.ProcessLogOptions.html">ProcessLogOptions</a> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -918,7 +918,7 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">ProcessLogOptions</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="CG.Purple.Seeding.Options.ProcessLogOptions.html">ProcessLogOptions</a>&gt;</td>
         <td><span class="parametername">providerLogOptions</span></td>
         <td><p>The options to use for the operation.</p>
 </td>
@@ -1017,9 +1017,9 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Seeding_Directors_SeedDirector_SeedPropertyTypesAsync_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync*"></a>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedPropertyTypesAsync_List_PropertyTypeOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{PropertyTypeOptions},System.String,System.Boolean,CancellationToken)">SeedPropertyTypesAsync(List&lt;PropertyTypeOptions&gt;, String, Boolean, CancellationToken)</h4>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedPropertyTypesAsync_List_CG_Purple_Seeding_Options_PropertyTypeOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedPropertyTypesAsync(List{CG.Purple.Seeding.Options.PropertyTypeOptions},System.String,System.Boolean,CancellationToken)">SeedPropertyTypesAsync(List&lt;PropertyTypeOptions&gt;, String, Boolean, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method performs a seeding operation for the given list of
-<see cref="!:PropertyTypeOptions"></see> objects.</p>
+<a class="xref" href="CG.Purple.Seeding.Options.PropertyTypeOptions.html">PropertyTypeOptions</a> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1037,7 +1037,7 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">PropertyTypeOptions</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="CG.Purple.Seeding.Options.PropertyTypeOptions.html">PropertyTypeOptions</a>&gt;</td>
         <td><span class="parametername">propertyTypeOptions</span></td>
         <td><p>The options to use for the operation.</p>
 </td>
@@ -1136,9 +1136,9 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Seeding_Directors_SeedDirector_SeedProviderParametersAsync_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync*"></a>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedProviderParametersAsync_List_ProviderParameterOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{ProviderParameterOptions},System.String,System.Boolean,CancellationToken)">SeedProviderParametersAsync(List&lt;ProviderParameterOptions&gt;, String, Boolean, CancellationToken)</h4>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedProviderParametersAsync_List_CG_Purple_Seeding_Options_ProviderParameterOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedProviderParametersAsync(List{CG.Purple.Seeding.Options.ProviderParameterOptions},System.String,System.Boolean,CancellationToken)">SeedProviderParametersAsync(List&lt;ProviderParameterOptions&gt;, String, Boolean, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method performs a seeding operation for the given list of
-<see cref="!:ProviderParameterOptions"></see> objects.</p>
+<a class="xref" href="CG.Purple.Seeding.Options.ProviderParameterOptions.html">ProviderParameterOptions</a> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1156,7 +1156,7 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">ProviderParameterOptions</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="CG.Purple.Seeding.Options.ProviderParameterOptions.html">ProviderParameterOptions</a>&gt;</td>
         <td><span class="parametername">providerParameterOptions</span></td>
         <td><p>The options to use for the operation.</p>
 </td>
@@ -1255,9 +1255,9 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Seeding_Directors_SeedDirector_SeedProviderTypesAsync_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync*"></a>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedProviderTypesAsync_List_ProviderTypeOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{ProviderTypeOptions},System.String,System.Boolean,CancellationToken)">SeedProviderTypesAsync(List&lt;ProviderTypeOptions&gt;, String, Boolean, CancellationToken)</h4>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedProviderTypesAsync_List_CG_Purple_Seeding_Options_ProviderTypeOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedProviderTypesAsync(List{CG.Purple.Seeding.Options.ProviderTypeOptions},System.String,System.Boolean,CancellationToken)">SeedProviderTypesAsync(List&lt;ProviderTypeOptions&gt;, String, Boolean, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method performs a seeding operation for the given list of
-<see cref="!:ProviderTypeOptions"></see> objects.</p>
+<a class="xref" href="CG.Purple.Seeding.Options.ProviderTypeOptions.html">ProviderTypeOptions</a> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1275,7 +1275,7 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">ProviderTypeOptions</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="CG.Purple.Seeding.Options.ProviderTypeOptions.html">ProviderTypeOptions</a>&gt;</td>
         <td><span class="parametername">providerTypeOptions</span></td>
         <td><p>The options to use for the operation.</p>
 </td>
@@ -1374,9 +1374,9 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Seeding_Directors_SeedDirector_SeedTextMessagesAsync_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync*"></a>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedTextMessagesAsync_List_TextMessageOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{TextMessageOptions},System.String,System.Boolean,CancellationToken)">SeedTextMessagesAsync(List&lt;TextMessageOptions&gt;, String, Boolean, CancellationToken)</h4>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector_SeedTextMessagesAsync_List_CG_Purple_Seeding_Options_TextMessageOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Purple.Seeding.Directors.SeedDirector.SeedTextMessagesAsync(List{CG.Purple.Seeding.Options.TextMessageOptions},System.String,System.Boolean,CancellationToken)">SeedTextMessagesAsync(List&lt;TextMessageOptions&gt;, String, Boolean, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method performs a seeding operation for the given list of
-<see cref="!:TextMessageOptions"></see> objects.</p>
+<a class="xref" href="CG.Purple.Seeding.Options.TextMessageOptions.html">TextMessageOptions</a> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1394,7 +1394,7 @@ for the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">TextMessageOptions</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="CG.Purple.Seeding.Options.TextMessageOptions.html">TextMessageOptions</a>&gt;</td>
         <td><span class="parametername">textMessageOptions</span></td>
         <td><p>The options to use for the operation.</p>
 </td>
