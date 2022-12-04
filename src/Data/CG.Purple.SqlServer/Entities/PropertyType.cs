@@ -27,10 +27,5 @@ internal class PropertyType : EntityBase
     /// </summary>
     public string? Description { get; set; }
 
-    /// <summary>
-    /// This property indicates the property type is for system use.
-    /// </summary>
-    public bool IsSystem { get; set; }
-
     #endregion
 }

@@ -1,10 +1,9 @@
-﻿
-namespace CG.Purple.Models;
+﻿namespace CG.Purple.SqlServer.Entities;
 
 /// <summary>
-/// This class represents a provider log model.
+/// This class represents a pipeline processing event entity.
 /// </summary>
-public class ProcessLog : ModelBase
+internal class PipelineLog : EntityBase
 {
     // *******************************************************************
     // Properties.
@@ -18,9 +17,20 @@ public class ProcessLog : ModelBase
     public long Id { get; set; }
 
     /// <summary>
+    /// This property contains the unique identifier for the associated 
+    /// message.
+    /// </summary>
+    public long? MessageId { get; set; }
+
+    /// <summary>
     /// This property contains the associate message.
     /// </summary>
-    public virtual Message? Message { get; set; } = null!;
+    public virtual Message? Message { get; set; }
+
+    /// <summary>
+    /// This property contains the associated provider type.
+    /// </summary>
+    public int? ProviderTypeId { get; set; }
 
     /// <summary>
     /// This property contains the associated provider type.

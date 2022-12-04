@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Seeding.Options;
+
 namespace CG.Purple.Seeding.Directors;
 
 /// <summary>
@@ -667,6 +669,9 @@ internal class SeedDirector : ISeedDirector
                         Body = mailMessageOption.Body,
                         IsHtml = mailMessageOption.IsHtml,
                         IsDisabled = mailMessageOption.IsDisabled,
+                        Priority = mailMessageOption.Priority,
+                        MaxErrors = mailMessageOption.MaxErrors,
+                        ProcessAfterUtc = mailMessageOption.ProcessAfterUtc,
                         MessageType = MessageType.Mail,
                         ErrorCount = 0
                     },
@@ -778,7 +783,7 @@ internal class SeedDirector : ISeedDirector
 
                 // Record what we did, in the log.
                 await _providerLogManager.CreateAsync(
-                    new ProcessLog()
+                    new PipelineLog()
                     {
                         Message = mailMessage,
                         AfterState = MessageState.Pending,
@@ -1110,8 +1115,7 @@ internal class SeedDirector : ISeedDirector
                     new PropertyType()
                     {
                         Name = propertyTypeOption.Name,
-                        Description = propertyTypeOption.Description,
-                        IsSystem = propertyTypeOption.IsSystem
+                        Description = propertyTypeOption.Description
                     },
                     userName,
                     cancellationToken
@@ -1498,7 +1502,7 @@ internal class SeedDirector : ISeedDirector
 
                     // Create the provider log.
                     _ = await _providerLogManager.CreateAsync(
-                        new ProcessLog()
+                        new PipelineLog()
                         {
                             Message = mailMessage,
                             ProviderType = providerType,
@@ -1539,7 +1543,7 @@ internal class SeedDirector : ISeedDirector
 
                     // Create the provider log.
                     _ = await _providerLogManager.CreateAsync(
-                        new ProcessLog()
+                        new PipelineLog()
                         {
                             Message = textMessage,
                             ProviderType = providerType,
@@ -1646,7 +1650,10 @@ internal class SeedDirector : ISeedDirector
                         To = textMessageOption.To,
                         Body = textMessageOption.Body,
                         IsDisabled = textMessageOption.IsDisabled,
-                        MessageType = MessageType.Text
+                        MessageType = MessageType.Text,
+                        Priority = textMessageOption.Priority,
+                        MaxErrors = textMessageOption.MaxErrors,
+                        ProcessAfterUtc = textMessageOption.ProcessAfterUtc
                     },
                     userName,
                     cancellationToken
@@ -1695,7 +1702,7 @@ internal class SeedDirector : ISeedDirector
 
                 // Record what we did, in the log.
                 await _providerLogManager.CreateAsync(
-                    new ProcessLog()
+                    new PipelineLog()
                     {
                         Message = textMessage,
                         AfterState = MessageState.Pending,

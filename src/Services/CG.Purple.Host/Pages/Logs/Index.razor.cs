@@ -29,7 +29,7 @@ public partial class Index
     /// <summary>
     /// This field contains the collection of log entries.
     /// </summary>
-    protected IEnumerable<ProcessLog>? _logs = Array.Empty<ProcessLog>();
+    protected IEnumerable<PipelineLog>? _logs = Array.Empty<PipelineLog>();
 
     /// <summary>
     /// This field contains the collection of provider types.
@@ -282,12 +282,12 @@ public partial class Index
     // *******************************************************************
 
     /// <summary>
-    /// This method adapts the <see cref="FilterFunc(ProcessLog, string)"/> method
+    /// This method adapts the <see cref="FilterFunc(PipelineLog, string)"/> method
     /// for use with a <see cref="MudTable{T}"/> control.
     /// </summary>
     /// <param name="element">The element to use for the operation.</param>
     /// <returns><c>true</c> if a match was found; <c>false</c> otherwise.</returns>
-    protected bool FilterFunc(ProcessLog element) =>
+    protected bool FilterFunc(PipelineLog element) =>
         FilterFunc(element, _gridSearchString);
 
     // *******************************************************************
@@ -299,7 +299,7 @@ public partial class Index
     /// <param name="searchString">The search string to use for the operation.</param>
     /// <returns><c>true</c> if a match was found; <c>false</c> otherwise.</returns>
     protected bool FilterFunc(
-        ProcessLog element,
+        PipelineLog element,
         string searchString
         )
     {

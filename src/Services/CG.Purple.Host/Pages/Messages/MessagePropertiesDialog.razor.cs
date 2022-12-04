@@ -151,11 +151,6 @@ public partial class MessagePropertiesDialog
                 : ProviderTypes.Where(x => x.CanProcessTexts)
                 ).ToList();
 
-            // Filter out system property types, that aren't editable anyway.
-            var filteredPropertyTypes = PropertyTypes.Where(
-                x => !x.IsSystem
-                ).ToList();
-
             // We clone the message property because anything we do to it,
             //   in the dialog, is difficult to undo without a round trip
             //   to the database, which seems silly. This way, if the
@@ -169,8 +164,7 @@ public partial class MessagePropertiesDialog
                 new DialogParameters()
                 {
                     { "Model", tempMessageProperty },
-                    { "PropertyTypes", filteredPropertyTypes },
-                    //{ "ProviderTypes", filteredProviderTypes }
+                    { "PropertyTypes", PropertyTypes }
                 },
                 new DialogOptionsEx()
                 {
@@ -315,13 +309,11 @@ public partial class MessagePropertiesDialog
     {
         try
         {
-            // Remove any property types already used by the message,
-            //   or any system property types, since those aren't editable
-            //   anyway.
+            // Remove any property types already used by the message.
             var filteredPropertyTypes = PropertyTypes.Except(
                 Model.MessageProperties.Select(x => x.PropertyType),
                 PropertyTypeEqualityComparer.Instance()
-                ).Where(x => !x.IsSystem).ToList();
+                ).ToList();
 
             // We remove property types that are already used, on the message,
             //   because we want to avoid duplicate properties.
@@ -403,13 +395,13 @@ public partial class MessagePropertiesDialog
     /// properties added to it; <c>false</c> otherwise.</returns>
     protected bool CanAddMessageProperty()
     {
-        // Return true if there are any non-system property types not
-        //   currently in use by the message; return false otherwise.
+        // Return true if there are any property types not currently
+        // in use by the message; return false otherwise.
 
         return PropertyTypes.Except(
             Model.MessageProperties.Select(x => x.PropertyType),
             PropertyTypeEqualityComparer.Instance()
-            ).Any(x => !x.IsSystem);
+            ).Any();
     }
 
     #endregion

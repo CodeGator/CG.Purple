@@ -2,9 +2,9 @@
 namespace CG.Purple.Options;
 
 /// <summary>
-/// This class contains configuration settings for hosted services.
+/// This class contains configuration settings for message processing.
 /// </summary>
-public class HostedServiceOptions
+public class PipelineOptions
 {
     // *******************************************************************
     // Properties.
@@ -13,9 +13,10 @@ public class HostedServiceOptions
     #region Properties
 
     /// <summary>
-    /// This property contains pipeline processing options.
+    /// This property indicates how long to pause the service before 
+    /// processing is allowed to begin.
     /// </summary>
-    public PipelineOptions? PipelineOptions { get; set; }
+    public TimeSpan? StartupDelay { get; set; }
 
     #endregion
 }

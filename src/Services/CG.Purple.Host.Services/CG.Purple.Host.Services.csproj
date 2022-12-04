@@ -9,6 +9,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Directors\ArchiveDirector.cs" />
+      <Compile Remove="Directors\AssignmentDirector.cs" />
+      <Compile Remove="Directors\ProcessDirector.cs" />
+      <Compile Remove="Directors\RetryDirector.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
     </ItemGroup>
 

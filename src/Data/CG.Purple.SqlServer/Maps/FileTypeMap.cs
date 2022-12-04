@@ -65,7 +65,7 @@ internal class FileTypeMap : EntityMapBase<Entities.FileType>
             .HasOne(e => e.MimeType)
             .WithMany(e => e.FileTypes)
             .HasForeignKey(e => e.MimeTypeId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
 
         // Setup the index.
         builder.HasIndex(e => new

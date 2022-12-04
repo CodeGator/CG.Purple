@@ -168,8 +168,8 @@ internal class ProcessLogRepository : IProcessLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ProcessLog> CreateAsync(
-        ProcessLog processLog,
+    public virtual async Task<PipelineLog> CreateAsync(
+        PipelineLog processLog,
         CancellationToken cancellationToken = default
         )
     {
@@ -181,11 +181,11 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(ProcessLog)
+                nameof(PipelineLog)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.ProcessLog>(
+            var entity = _mapper.Map<Entities.PipelineLog>(
                 processLog
                 );
 
@@ -194,7 +194,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ProcessLog)} model to an entity."
+                    $"Failed to map the {nameof(PipelineLog)} model to an entity."
                     );
             }
 
@@ -212,7 +212,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
-                nameof(ProcessLog),
+                nameof(PipelineLog),
                 nameof(PurpleDbContext)
                 );
 
@@ -236,11 +236,11 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(ProcessLog)
+                nameof(PipelineLog)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<ProcessLog>(
+            var result = _mapper.Map<PipelineLog>(
                 entity
                 );
 
@@ -249,7 +249,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ProcessLog)} entity to a model."
+                    $"Failed to map the {nameof(PipelineLog)} entity to a model."
                     );
             }
 
@@ -275,7 +275,7 @@ internal class ProcessLogRepository : IProcessLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<ProcessLog>> FindAllAsync(
+    public virtual async Task<IEnumerable<PipelineLog>> FindAllAsync(
         CancellationToken cancellationToken = default
         )
     {
@@ -298,7 +298,7 @@ internal class ProcessLogRepository : IProcessLogRepository
                 );
 
             // Perform the log search.
-            var processLogs = await dbContext.ProcessLogs
+            var processLogs = await dbContext.PipelineLogs
                 .Include(x => x.Message)
                 .Include(x => x.ProviderType)
                 .ToListAsync(
@@ -307,7 +307,7 @@ internal class ProcessLogRepository : IProcessLogRepository
 
             // Convert the entities to a models.
             var result = processLogs.Select(x =>
-                _mapper.Map<ProcessLog>(x)
+                _mapper.Map<PipelineLog>(x)
                 );
 
             // Return the results.
@@ -332,7 +332,7 @@ internal class ProcessLogRepository : IProcessLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<ProcessLog>> FindByMessageAsync(
+    public virtual async Task<IEnumerable<PipelineLog>> FindByMessageAsync(
         Message message,
         CancellationToken cancellationToken = default
         )
@@ -359,7 +359,7 @@ internal class ProcessLogRepository : IProcessLogRepository
                 );
 
             // Perform the log search.
-            var processLogs = await dbContext.ProcessLogs.Where(x =>
+            var processLogs = await dbContext.PipelineLogs.Where(x =>
                 x.MessageId == message.Id
                 ).Include(x => x.Message)
                 .Include(x => x.ProviderType)
@@ -369,7 +369,7 @@ internal class ProcessLogRepository : IProcessLogRepository
 
             // Convert the entities to a models.
             var result = processLogs.Select(x =>
-                _mapper.Map<ProcessLog>(x)
+                _mapper.Map<PipelineLog>(x)
                 );
 
             // Return the results.
@@ -396,7 +396,7 @@ internal class ProcessLogRepository : IProcessLogRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ProcessLog processLog,
+        PipelineLog processLog,
         CancellationToken cancellationToken = default
         )
     {
@@ -419,7 +419,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
-                nameof(ProcessLog),
+                nameof(PipelineLog),
                 nameof(PurpleDbContext)
                 );
 
@@ -449,8 +449,8 @@ internal class ProcessLogRepository : IProcessLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ProcessLog> UpdateAsync(
-        ProcessLog processLog,
+    public virtual async Task<PipelineLog> UpdateAsync(
+        PipelineLog processLog,
         CancellationToken cancellationToken = default
         )
     {
@@ -462,11 +462,11 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(ProcessLog)
+                nameof(PipelineLog)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.ProcessLog>(
+            var entity = _mapper.Map<Entities.PipelineLog>(
                 processLog
                 );
 
@@ -475,7 +475,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ProcessLog)} model to an entity."
+                    $"Failed to map the {nameof(PipelineLog)} model to an entity."
                     );
             }
 
@@ -498,7 +498,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
-                nameof(ProcessLog),
+                nameof(PipelineLog),
                 nameof(PurpleDbContext)
                 );
 
@@ -522,11 +522,11 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(ProcessLog)
+                nameof(PipelineLog)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<ProcessLog>(
+            var result = _mapper.Map<PipelineLog>(
                 entity
                 );
 
@@ -535,7 +535,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(ProcessLog)} entity to a model."
+                    $"Failed to map the {nameof(PipelineLog)} entity to a model."
                     );
             }
 

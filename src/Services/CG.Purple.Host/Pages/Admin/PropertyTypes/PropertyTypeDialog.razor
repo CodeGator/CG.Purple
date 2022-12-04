@@ -17,9 +17,6 @@
                                   Label="Description"
                                   For="@(() => Model.Description)"
                     @bind-Value="@Model.Description" />
-                    <MudCheckBox Label="System"
-                                 For="@(() => Model.IsSystem)"
-                                 @bind-Checked="@Model.IsSystem" />
                 </MudCardContent>
                 <MudCardActions>
                     <MudButton Color="Color.Inherit" OnClick="Cancel">Cancel</MudButton>

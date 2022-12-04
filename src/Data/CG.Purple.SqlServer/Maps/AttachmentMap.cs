@@ -73,14 +73,14 @@ internal class AttachmentMap : EntityMapBase<Entities.Attachment>
             .HasOne(e => e.Message)
             .WithMany(e => e.Attachments)
             .HasForeignKey(e => e.MessageId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
 
         // Setup the relationship.
         _modelBuilder.Entity<Entities.Attachment>()
             .HasOne(e => e.MimeType)
             .WithMany()
             .HasForeignKey(e => e.MimeTypeId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
     }
 
     #endregion

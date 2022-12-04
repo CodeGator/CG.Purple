@@ -9,13 +9,10 @@
       "Subject": "test email # 1",
       "Body": "<p>This <font color=\"red\">is</font> test email # <b>1</b></p>",
       "IsHtml": true,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
-      "Properties": [
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "Smtp"
-        }
-      ],
+      "Properties": [],
       "IsDisabled": false
     },
     {
@@ -27,6 +24,8 @@
       "Subject": "test email # 2",
       "Body": "This is test email # 2",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
       "Properties": [],
       "IsDisabled": false
@@ -40,6 +39,8 @@
       "Subject": "test email # 3",
       "Body": "This is test email # 3",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
       "Properties": [],
       "IsDisabled": false
@@ -53,15 +54,13 @@
       "Subject": "test email # 4",
       "Body": "This is test email # 4",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [ "Seeding/file1.txt" ],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
           "Value": "value 1"
-        },
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "Twillio"
         }
       ],
       "IsDisabled": false
@@ -75,6 +74,8 @@
       "Subject": "test email # 5",
       "Body": "This is test email # 5",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [ "Seeding/file1.txt", "Seeding/file2.txt" ],
       "Properties": [
         {
@@ -97,6 +98,8 @@
       "Subject": "test email # 6",
       "Body": "<p>This is test email # <b>6</b></p>",
       "IsHtml": true,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
       "Properties": []
     },
@@ -109,13 +112,10 @@
       "Subject": "test email # 7",
       "Body": "This is test email # 7",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
-      "Properties": [
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "SendGrid"
-        }
-      ],
+      "Properties": [],
       "IsDisabled": false
     },
     {
@@ -127,6 +127,8 @@
       "Subject": "test email # 8",
       "Body": "This is test email # 8",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
       "Properties": [],
       "IsDisabled": true
@@ -140,6 +142,8 @@
       "Subject": "test email # 9",
       "Body": "This is test email # 9",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
       "Properties": [
         {
@@ -162,6 +166,8 @@
       "Subject": "test email # 10",
       "Body": "This is test email # 10",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
       "Properties": [],
       "IsDisabled": false
@@ -175,6 +181,8 @@
       "Subject": "test email # 11",
       "Body": "This is test email # 11",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [ "Seeding/file1.txt" ],
       "Properties": [
         {
@@ -193,13 +201,10 @@
       "Subject": "test email # 12",
       "Body": "This is test email # 12",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
-      "Properties": [
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "Twillio"
-        }
-      ],
+      "Properties": [],
       "IsDisabled": false
     },
     {
@@ -211,13 +216,10 @@
       "Subject": "test email # 13",
       "Body": "This is test email # 13",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [ "Seeding/file3.txt" ],
-      "Properties": [
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "Smtp"
-        }
-      ],
+      "Properties": [],
       "IsDisabled": false
     },
     {
@@ -229,15 +231,13 @@
       "Subject": "test email # 14",
       "Body": "This is test email # 14",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
           "Value": "value 1 for email # 14"
-        },
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "SendGrid"
         }
       ],
       "IsDisabled": false
@@ -251,6 +251,8 @@
       "Subject": "test email # 15",
       "Body": "This is test email # 15",
       "IsHtml": false,
+      "MaxErrors": "3",
+      "Priority": 0,
       "Attachments": [],
       "Properties": [],
       "IsDisabled": false

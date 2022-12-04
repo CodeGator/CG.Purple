@@ -85,12 +85,21 @@ internal class MessageMap : EntityMapBase<Entities.Message>
 
         // Setup the column.
         builder.Property(e => e.Priority)
+            .HasDefaultValue(0)
             .IsRequired();
 
         // Setup the column.
         builder.Property(e => e.ErrorCount)
             .HasDefaultValue(0)
             .IsRequired();
+
+        // Setup the column.
+        builder.Property(e => e.MaxErrors)
+            .HasDefaultValue(3)
+            .IsRequired();
+
+        // Setup the column.
+        builder.Property(e => e.ProcessAfterUtc);
 
         // Setup the conversion.
         _modelBuilder.Entity<Entities.Message>()
@@ -108,6 +117,13 @@ internal class MessageMap : EntityMapBase<Entities.Message>
                 e => Enum.Parse<MessageState>(e)
                 );
 
+        // Setup the relationship.
+        _modelBuilder.Entity<Entities.Message>()
+            .HasOne(e => e.ProviderType)
+            .WithMany()
+            .HasForeignKey(e => e.ProviderTypeId)
+            .OnDelete(DeleteBehavior.Restrict);
+
         // Setup the index.
         builder.HasIndex(e => new
         {
@@ -115,7 +131,9 @@ internal class MessageMap : EntityMapBase<Entities.Message>
             e.From,
             e.MessageType,
             e.MessageState,
-            e.IsDisabled
+            e.IsDisabled,
+            e.ProviderTypeId,
+            e.ProcessAfterUtc
         },
         "IX_Messages"
         );

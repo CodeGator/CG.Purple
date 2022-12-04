@@ -55,14 +55,14 @@ internal class MessagePropertyMap : EntityMapBase<Entities.MessageProperty>
             .HasOne(e => e.Message)
             .WithMany(e => e.MessageProperties)
             .HasForeignKey(e => e.MessageId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
 
         // Setup the relationship.
         _modelBuilder.Entity<Entities.MessageProperty>()
             .HasOne(e => e.PropertyType)
             .WithMany()
             .HasForeignKey(e => e.PropertyTypeId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
 
         // Setup the column.
         builder.Property(e => e.Value)

@@ -2,10 +2,10 @@
 namespace CG.Purple.SqlServer.Maps;
 
 /// <summary>
-/// This class is an EFCore configuration map for the <see cref="Entities.ProcessLog"/>
+/// This class is an EFCore configuration map for the <see cref="Entities.PipelineLog"/>
 /// entity type.
 /// </summary>
-internal class ProcessLogMap : EntityMapBase<Entities.ProcessLog>
+internal class PipelineLogMap : EntityMapBase<Entities.PipelineLog>
 {
     // *******************************************************************
     // Constructors.
@@ -14,11 +14,11 @@ internal class ProcessLogMap : EntityMapBase<Entities.ProcessLog>
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="ProcessLogMap"/>
+    /// This constructor creates a new instance of the <see cref="PipelineLogMap"/>
     /// class.
     /// </summary>
     /// <param name="modelBuilder">The model builder to use with this map.</param>
-    public ProcessLogMap(
+    public PipelineLogMap(
         ModelBuilder modelBuilder
         ) : base(modelBuilder)
     {
@@ -34,11 +34,11 @@ internal class ProcessLogMap : EntityMapBase<Entities.ProcessLog>
     #region Public methods
 
     /// <summary>
-    /// This method configures the <see cref="Entities.ProcessLog"/> entity.
+    /// This method configures the <see cref="Entities.PipelineLog"/> entity.
     /// </summary>
     /// <param name="builder">The builder to use for the operation.</param>
     public override void Configure(
-        EntityTypeBuilder<Entities.ProcessLog> builder
+        EntityTypeBuilder<Entities.PipelineLog> builder
         )
     {
         // Setup the table.
@@ -80,7 +80,7 @@ internal class ProcessLogMap : EntityMapBase<Entities.ProcessLog>
             .IsUnicode(false);
 
         // Setup the conversion.
-        _modelBuilder.Entity<Entities.ProcessLog>()
+        _modelBuilder.Entity<Entities.PipelineLog>()
             .Property(e => e.Event)
             .HasConversion(
                 e => e.ToString(),
@@ -88,7 +88,7 @@ internal class ProcessLogMap : EntityMapBase<Entities.ProcessLog>
                 );
 
         // Setup the conversion.
-        _modelBuilder.Entity<Entities.ProcessLog>()
+        _modelBuilder.Entity<Entities.PipelineLog>()
             .Property(e => e.BeforeState)
             .HasConversion(
                 e => e.ToString(),
@@ -96,7 +96,7 @@ internal class ProcessLogMap : EntityMapBase<Entities.ProcessLog>
                 );
 
         // Setup the conversion.
-        _modelBuilder.Entity<Entities.ProcessLog>()
+        _modelBuilder.Entity<Entities.PipelineLog>()
             .Property(e => e.AfterState)
             .HasConversion(
                 e => e.ToString(),
@@ -104,18 +104,18 @@ internal class ProcessLogMap : EntityMapBase<Entities.ProcessLog>
                 );
 
         // Setup the relationship.
-        _modelBuilder.Entity<Entities.ProcessLog>()
+        _modelBuilder.Entity<Entities.PipelineLog>()
             .HasOne(e => e.Message)
             .WithMany()
             .HasForeignKey(e => e.MessageId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
 
         // Setup the relationship.
-        _modelBuilder.Entity<Entities.ProcessLog>()
+        _modelBuilder.Entity<Entities.PipelineLog>()
             .HasOne(e => e.ProviderType)
             .WithMany()
             .HasForeignKey(e => e.ProviderTypeId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
 
         // Setup the index.
         builder.HasIndex(e => new

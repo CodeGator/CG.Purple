@@ -135,8 +135,8 @@ internal class ProcessLogManager : IProcessLogManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ProcessLog> CreateAsync(
-        ProcessLog processLog,
+    public virtual async Task<PipelineLog> CreateAsync(
+        PipelineLog processLog,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -150,7 +150,7 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating the {name} model stats",
-                nameof(ProcessLog)
+                nameof(PipelineLog)
                 );
 
             // Ensure the stats are correct.
@@ -190,7 +190,7 @@ internal class ProcessLogManager : IProcessLogManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<ProcessLog>> FindAllAsync(
+    public virtual async Task<IEnumerable<PipelineLog>> FindAllAsync(
         CancellationToken cancellationToken = default
         )
     {
@@ -230,7 +230,7 @@ internal class ProcessLogManager : IProcessLogManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<ProcessLog>> FindByMessageAsync(
+    public virtual async Task<IEnumerable<PipelineLog>> FindByMessageAsync(
         Message message,
         CancellationToken cancellationToken = default
         )
@@ -276,7 +276,7 @@ internal class ProcessLogManager : IProcessLogManager
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        ProcessLog processLog,
+        PipelineLog processLog,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -290,7 +290,7 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating the {name} model stats",
-                nameof(ProcessLog)
+                nameof(PipelineLog)
                 );
 
             // Ensure the stats are correct.
@@ -328,8 +328,8 @@ internal class ProcessLogManager : IProcessLogManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<ProcessLog> UpdateAsync(
-        ProcessLog processLog,
+    public virtual async Task<PipelineLog> UpdateAsync(
+        PipelineLog processLog,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -343,7 +343,7 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating the {name} model stats",
-                nameof(ProcessLog)
+                nameof(PipelineLog)
                 );
 
             // Ensure the stats are correct.

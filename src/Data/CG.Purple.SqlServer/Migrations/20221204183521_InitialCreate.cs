@@ -15,30 +15,6 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "Purple");
 
             migrationBuilder.CreateTable(
-                name: "Messages",
-                schema: "Purple",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MessageKey = table.Column<string>(type: "varchar(36)", unicode: false, maxLength: 36, nullable: false),
-                    From = table.Column<string>(type: "varchar(320)", unicode: false, maxLength: 320, nullable: false),
-                    MessageType = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
-                    MessageState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
-                    IsDisabled = table.Column<bool>(type: "bit", nullable: false),
-                    Priority = table.Column<int>(type: "int", nullable: false),
-                    ErrorCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastUpdatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Messages", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "MimeTypes",
                 schema: "Purple",
                 columns: table => new
@@ -85,7 +61,6 @@ namespace CG.Purple.SqlServer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
-                    IsSystem = table.Column<bool>(type: "bit", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -121,49 +96,95 @@ namespace CG.Purple.SqlServer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MailMessages",
+                name: "FileTypes",
                 schema: "Purple",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false),
-                    To = table.Column<string>(type: "varchar(1024)", unicode: false, maxLength: 1024, nullable: false),
-                    CC = table.Column<string>(type: "varchar(1024)", unicode: false, maxLength: 1024, nullable: true),
-                    BCC = table.Column<string>(type: "varchar(1024)", unicode: false, maxLength: 1024, nullable: true),
-                    Subject = table.Column<string>(type: "nvarchar(998)", maxLength: 998, nullable: true),
-                    Body = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsHtml = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MimeTypeId = table.Column<int>(type: "int", nullable: false),
+                    Extension = table.Column<string>(type: "varchar(260)", unicode: false, maxLength: 260, nullable: false),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastUpdatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MailMessages", x => x.Id);
+                    table.PrimaryKey("PK_FileTypes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_MailMessages_Messages_Id",
-                        column: x => x.Id,
+                        name: "FK_FileTypes_MimeTypes_MimeTypeId",
+                        column: x => x.MimeTypeId,
                         principalSchema: "Purple",
-                        principalTable: "Messages",
+                        principalTable: "MimeTypes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TextMessages",
+                name: "Messages",
                 schema: "Purple",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false),
-                    To = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: false),
-                    Body = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MessageKey = table.Column<string>(type: "varchar(36)", unicode: false, maxLength: 36, nullable: false),
+                    From = table.Column<string>(type: "varchar(320)", unicode: false, maxLength: 320, nullable: false),
+                    MessageType = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
+                    MessageState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
+                    IsDisabled = table.Column<bool>(type: "bit", nullable: false),
+                    Priority = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    ErrorCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    MaxErrors = table.Column<int>(type: "int", nullable: false, defaultValue: 3),
+                    ProcessAfterUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ProviderTypeId = table.Column<int>(type: "int", nullable: true),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastUpdatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TextMessages", x => x.Id);
+                    table.PrimaryKey("PK_Messages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TextMessages_Messages_Id",
-                        column: x => x.Id,
+                        name: "FK_Messages_ProviderTypes_ProviderTypeId",
+                        column: x => x.ProviderTypeId,
                         principalSchema: "Purple",
-                        principalTable: "Messages",
+                        principalTable: "ProviderTypes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProviderParameters",
+                schema: "Purple",
+                columns: table => new
+                {
+                    ProviderTypeId = table.Column<int>(type: "int", nullable: false),
+                    ParameterTypeId = table.Column<int>(type: "int", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastUpdatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProviderParameters", x => new { x.ProviderTypeId, x.ParameterTypeId });
+                    table.ForeignKey(
+                        name: "FK_ProviderParameters_ParameterTypes_ParameterTypeId",
+                        column: x => x.ParameterTypeId,
+                        principalSchema: "Purple",
+                        principalTable: "ParameterTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_ProviderParameters_ProviderTypes_ProviderTypeId",
+                        column: x => x.ProviderTypeId,
+                        principalSchema: "Purple",
+                        principalTable: "ProviderTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -192,38 +213,37 @@ namespace CG.Purple.SqlServer.Migrations
                         principalSchema: "Purple",
                         principalTable: "Messages",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Attachments_MimeTypes_MimeTypeId",
                         column: x => x.MimeTypeId,
                         principalSchema: "Purple",
                         principalTable: "MimeTypes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "FileTypes",
+                name: "MailMessages",
                 schema: "Purple",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MimeTypeId = table.Column<int>(type: "int", nullable: false),
-                    Extension = table.Column<string>(type: "varchar(260)", unicode: false, maxLength: 260, nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastUpdatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    To = table.Column<string>(type: "varchar(1024)", unicode: false, maxLength: 1024, nullable: false),
+                    CC = table.Column<string>(type: "varchar(1024)", unicode: false, maxLength: 1024, nullable: true),
+                    BCC = table.Column<string>(type: "varchar(1024)", unicode: false, maxLength: 1024, nullable: true),
+                    Subject = table.Column<string>(type: "nvarchar(998)", maxLength: 998, nullable: true),
+                    Body = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsHtml = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FileTypes", x => x.Id);
+                    table.PrimaryKey("PK_MailMessages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_FileTypes_MimeTypes_MimeTypeId",
-                        column: x => x.MimeTypeId,
+                        name: "FK_MailMessages_Messages_Id",
+                        column: x => x.Id,
                         principalSchema: "Purple",
-                        principalTable: "MimeTypes",
+                        principalTable: "Messages",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -250,14 +270,14 @@ namespace CG.Purple.SqlServer.Migrations
                         principalSchema: "Purple",
                         principalTable: "Messages",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_MessageProperties_PropertyTypes_PropertyTypeId",
                         column: x => x.PropertyTypeId,
                         principalSchema: "Purple",
                         principalTable: "PropertyTypes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -288,44 +308,33 @@ namespace CG.Purple.SqlServer.Migrations
                         principalSchema: "Purple",
                         principalTable: "Messages",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ProcessLogs_ProviderTypes_ProviderTypeId",
                         column: x => x.ProviderTypeId,
                         principalSchema: "Purple",
                         principalTable: "ProviderTypes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProviderParameters",
+                name: "TextMessages",
                 schema: "Purple",
                 columns: table => new
                 {
-                    ProviderTypeId = table.Column<int>(type: "int", nullable: false),
-                    ParameterTypeId = table.Column<int>(type: "int", nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastUpdatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    To = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: false),
+                    Body = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProviderParameters", x => new { x.ProviderTypeId, x.ParameterTypeId });
+                    table.PrimaryKey("PK_TextMessages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProviderParameters_ParameterTypes_ParameterTypeId",
-                        column: x => x.ParameterTypeId,
+                        name: "FK_TextMessages_Messages_Id",
+                        column: x => x.Id,
                         principalSchema: "Purple",
-                        principalTable: "ParameterTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProviderParameters_ProviderTypes_ProviderTypeId",
-                        column: x => x.ProviderTypeId,
-                        principalSchema: "Purple",
-                        principalTable: "ProviderTypes",
+                        principalTable: "Messages",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -371,7 +380,7 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "IX_Messages",
                 schema: "Purple",
                 table: "Messages",
-                columns: new[] { "Priority", "From", "MessageType", "MessageState", "IsDisabled" });
+                columns: new[] { "Priority", "From", "MessageType", "MessageState", "IsDisabled", "ProviderTypeId", "ProcessAfterUtc" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Messages_Keys",
@@ -379,6 +388,12 @@ namespace CG.Purple.SqlServer.Migrations
                 table: "Messages",
                 column: "MessageKey",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Messages_ProviderTypeId",
+                schema: "Purple",
+                table: "Messages",
+                column: "ProviderTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MimeTypes",
@@ -418,12 +433,6 @@ namespace CG.Purple.SqlServer.Migrations
                 table: "PropertyTypes",
                 column: "Name",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PropertyTypes2",
-                schema: "Purple",
-                table: "PropertyTypes",
-                column: "IsSystem");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProviderParameters_ParameterTypeId",
@@ -495,11 +504,11 @@ namespace CG.Purple.SqlServer.Migrations
                 schema: "Purple");
 
             migrationBuilder.DropTable(
-                name: "ProviderTypes",
+                name: "Messages",
                 schema: "Purple");
 
             migrationBuilder.DropTable(
-                name: "Messages",
+                name: "ProviderTypes",
                 schema: "Purple");
         }
     }

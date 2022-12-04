@@ -50,11 +50,21 @@ public static class WebApplicationBuilderExtensions006
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
+            "Wiring up the pipeline director"
+            );
+
+        // Add the director.
+        webApplicationBuilder.Services.AddScoped<IPipelineDirector, PipelineDirector>();
+
+        /*
+        // Tell the world what we are about to do.
+        bootstrapLogger?.LogDebug(
             "Wiring up the hosted processing service"
             );
 
         // Add the services.
         webApplicationBuilder.Services.AddHostedService<ProcessingService>();
+
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
@@ -92,7 +102,7 @@ public static class WebApplicationBuilderExtensions006
         bootstrapLogger?.LogDebug(
             "Wiring up SignalR for the hosted service(s)"
             );
-
+        */
         // Add SignalR stuff.
         webApplicationBuilder.Services.AddSignalR(options =>
         {

@@ -110,15 +110,20 @@ public static class WebApplicationBuilderExtensions003
             cfg.CreateMap<CG.Purple.SqlServer.Entities.Attachment, Attachment>().ReverseMap();
             cfg.CreateMap<CG.Purple.SqlServer.Entities.FileType, FileType>().ReverseMap();
             cfg.CreateMap<CG.Purple.SqlServer.Entities.MailMessage, MailMessage>().ReverseMap();
-            cfg.CreateMap<CG.Purple.SqlServer.Entities.Message, Message>().ReverseMap();
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.Message, Message>()
+                .AfterMap((src, dest) =>
+                {
+                    // We want to map to NULL for optional properties.
+                    dest.ProviderType = src.ProviderType == null ? null : dest.ProviderType;
+                }).ReverseMap();
             cfg.CreateMap<CG.Purple.SqlServer.Entities.MessageProperty, MessageProperty>().ReverseMap();
             cfg.CreateMap<CG.Purple.SqlServer.Entities.MimeType, MimeType>().ReverseMap();
             cfg.CreateMap<CG.Purple.SqlServer.Entities.ParameterType, ParameterType>().ReverseMap();
             cfg.CreateMap<CG.Purple.SqlServer.Entities.PropertyType, PropertyType>().ReverseMap();
-            cfg.CreateMap<CG.Purple.SqlServer.Entities.ProcessLog, ProcessLog>()
+            cfg.CreateMap<CG.Purple.SqlServer.Entities.PipelineLog, PipelineLog>()
                 .AfterMap((src, dest) =>
                 {
-                    // We want to map to NULL to NULL, for optional properties.
+                    // We want to map to NULL for optional properties.
                     dest.ProviderType = src.ProviderType == null ? null : dest.ProviderType;
                     dest.Message = src.Message == null ? null : dest.Message;
                 }).ReverseMap();

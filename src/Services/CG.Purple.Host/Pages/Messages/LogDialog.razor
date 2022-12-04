@@ -7,13 +7,13 @@
                         <MudSpacer />
                     </ToolBarContent>
                     <HeaderContent>
-                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.CreatedOnUtc.ToLocalTime())">DateTime</MudTableSortLabel></MudTh>
-                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.Event)">Event</MudTableSortLabel></MudTh>
-                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeBeforeState())">Before</MudTableSortLabel></MudTh>
-                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeAfterState())">After</MudTableSortLabel></MudTh>
-                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeProviderType())">Provider</MudTableSortLabel></MudTh>
-                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeError())">Error</MudTableSortLabel></MudTh>
-                        <MudTh><MudTableSortLabel SortBy="new Func<ProcessLog, object>(x=>x.SafeData())">Data</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.CreatedOnUtc.ToLocalTime())">DateTime</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.Event)">Event</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeBeforeState())">Before</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeAfterState())">After</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeProviderType())">Provider</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeError())">Error</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeData())">Data</MudTableSortLabel></MudTh>
                     </HeaderContent>
                     <RowTemplate>
                         <MudTd DataLabel="DateTime">@context.CreatedOnUtc.ToLocalTime()</MudTd>

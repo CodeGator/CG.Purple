@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CG.Purple.SqlServer.Migrations
 {
     [DbContext(typeof(PurpleDbContext))]
-    [Migration("20221203210601_InitialCreate")]
+    [Migration("20221204183521_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -148,6 +148,11 @@ namespace CG.Purple.SqlServer.Migrations
                     b.Property<DateTime?>("LastUpdatedOnUtc")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("MaxErrors")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(3);
+
                     b.Property<string>("MessageKey")
                         .IsRequired()
                         .HasMaxLength(36)
@@ -167,11 +172,21 @@ namespace CG.Purple.SqlServer.Migrations
                         .HasColumnType("varchar(30)");
 
                     b.Property<int>("Priority")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<DateTime?>("ProcessAfterUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ProviderTypeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Priority", "From", "MessageType", "MessageState", "IsDisabled" }, "IX_Messages");
+                    b.HasIndex("ProviderTypeId");
+
+                    b.HasIndex(new[] { "Priority", "From", "MessageType", "MessageState", "IsDisabled", "ProviderTypeId", "ProcessAfterUtc" }, "IX_Messages");
 
                     b.HasIndex(new[] { "MessageKey" }, "IX_Messages_Keys")
                         .IsUnique();
@@ -292,7 +307,7 @@ namespace CG.Purple.SqlServer.Migrations
                     b.ToTable("ParameterTypes", "Purple");
                 });
 
-            modelBuilder.Entity("CG.Purple.SqlServer.Entities.ProcessLog", b =>
+            modelBuilder.Entity("CG.Purple.SqlServer.Entities.PipelineLog", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -373,9 +388,6 @@ namespace CG.Purple.SqlServer.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
-                    b.Property<bool>("IsSystem")
-                        .HasColumnType("bit");
-
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -391,8 +403,6 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.HasIndex(new[] { "Name" }, "IX_PropertyTypes")
                         .IsUnique();
-
-                    b.HasIndex(new[] { "IsSystem" }, "IX_PropertyTypes2");
 
                     b.ToTable("PropertyTypes", "Purple");
                 });
@@ -549,13 +559,13 @@ namespace CG.Purple.SqlServer.Migrations
                     b.HasOne("CG.Purple.SqlServer.Entities.Message", "Message")
                         .WithMany("Attachments")
                         .HasForeignKey("MessageId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("CG.Purple.SqlServer.Entities.MimeType", "MimeType")
                         .WithMany()
                         .HasForeignKey("MimeTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Message");
@@ -568,10 +578,20 @@ namespace CG.Purple.SqlServer.Migrations
                     b.HasOne("CG.Purple.SqlServer.Entities.MimeType", "MimeType")
                         .WithMany("FileTypes")
                         .HasForeignKey("MimeTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("MimeType");
+                });
+
+            modelBuilder.Entity("CG.Purple.SqlServer.Entities.Message", b =>
+                {
+                    b.HasOne("CG.Purple.SqlServer.Entities.ProviderType", "ProviderType")
+                        .WithMany()
+                        .HasForeignKey("ProviderTypeId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("ProviderType");
                 });
 
             modelBuilder.Entity("CG.Purple.SqlServer.Entities.MessageProperty", b =>
@@ -579,13 +599,13 @@ namespace CG.Purple.SqlServer.Migrations
                     b.HasOne("CG.Purple.SqlServer.Entities.Message", "Message")
                         .WithMany("MessageProperties")
                         .HasForeignKey("MessageId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("CG.Purple.SqlServer.Entities.PropertyType", "PropertyType")
                         .WithMany()
                         .HasForeignKey("PropertyTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Message");
@@ -593,17 +613,17 @@ namespace CG.Purple.SqlServer.Migrations
                     b.Navigation("PropertyType");
                 });
 
-            modelBuilder.Entity("CG.Purple.SqlServer.Entities.ProcessLog", b =>
+            modelBuilder.Entity("CG.Purple.SqlServer.Entities.PipelineLog", b =>
                 {
                     b.HasOne("CG.Purple.SqlServer.Entities.Message", "Message")
                         .WithMany()
                         .HasForeignKey("MessageId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("CG.Purple.SqlServer.Entities.ProviderType", "ProviderType")
                         .WithMany()
                         .HasForeignKey("ProviderTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Message");
 
@@ -615,13 +635,13 @@ namespace CG.Purple.SqlServer.Migrations
                     b.HasOne("CG.Purple.SqlServer.Entities.ParameterType", "ParameterType")
                         .WithMany()
                         .HasForeignKey("ParameterTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("CG.Purple.SqlServer.Entities.ProviderType", "ProviderType")
                         .WithMany("Parameters")
                         .HasForeignKey("ProviderTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("ParameterType");

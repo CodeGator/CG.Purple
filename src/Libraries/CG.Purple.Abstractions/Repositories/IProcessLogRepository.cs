@@ -3,18 +3,18 @@ namespace CG.Purple.Repositories;
 
 /// <summary>
 /// This interface represents an object that manages the storage and retrieval
-/// of <see cref="ProcessLog"/> objects.
+/// of <see cref="PipelineLog"/> objects.
 /// </summary>
 public interface IProcessLogRepository
 {
     /// <summary>
-    /// This method indicates whether there are any <see cref="ProcessLog"/> objects
+    /// This method indicates whether there are any <see cref="PipelineLog"/> objects
     /// in the underlying storage.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns <c>true</c> if there
-    /// are any <see cref="ProcessLog"/> objects; <c>false</c> otherwise.</returns>
+    /// are any <see cref="PipelineLog"/> objects; <c>false</c> otherwise.</returns>
     /// <exception cref="RepositoryException">This exception is thrown whenever the
     /// repository fails to complete the operation.</exception>
     Task<bool> AnyAsync(
@@ -22,13 +22,13 @@ public interface IProcessLogRepository
         );
 
     /// <summary>
-    /// This method counts the number of <see cref="ProcessLog"/> objects in the 
+    /// This method counts the number of <see cref="PipelineLog"/> objects in the 
     /// underlying storage.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns a count of the 
-    /// number of <see cref="ProcessLog"/> objects in the underlying storage.</returns>
+    /// number of <see cref="PipelineLog"/> objects in the underlying storage.</returns>
     /// <exception cref="RepositoryException">This exception is thrown whenever the
     /// repository fails to complete the operation.</exception>
     Task<long> CountAsync(
@@ -36,25 +36,25 @@ public interface IProcessLogRepository
         );
 
     /// <summary>
-    /// This method creates a new <see cref="ProcessLog"/> object in the 
+    /// This method creates a new <see cref="PipelineLog"/> object in the 
     /// underlying storage.
     /// </summary>
     /// <param name="providerLog">The model to create in the underlying storage.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly created
-    /// <see cref="ProcessLog"/> object.</returns>
+    /// <see cref="PipelineLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     /// <exception cref="RepositoryException">This exception is thrown whenever the
     /// repository fails to complete the operation.</exception>
-    Task<ProcessLog> CreateAsync(
-        ProcessLog providerLog,
+    Task<PipelineLog> CreateAsync(
+        PipelineLog providerLog,
         CancellationToken cancellationToken = default
         );
 
     /// <summary>
-    /// This method searches for a sequence of <see cref="ProcessLog"/> objects.
+    /// This method searches for a sequence of <see cref="PipelineLog"/> objects.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
@@ -62,12 +62,12 @@ public interface IProcessLogRepository
     /// objects.</returns>
     /// <exception cref="RepositoryException">This exception is thrown whenever the
     /// repository fails to complete the operation.</exception>
-    Task<IEnumerable<ProcessLog>> FindAllAsync(
+    Task<IEnumerable<PipelineLog>> FindAllAsync(
         CancellationToken cancellationToken = default
         );
 
     /// <summary>
-    /// This method searches for a sequence of <see cref="ProcessLog"/> objects
+    /// This method searches for a sequence of <see cref="PipelineLog"/> objects
     /// that are associated with the given <see cref="Message"/> object.
     /// </summary>
     /// <param name="message">The message to use for the operation.</param>
@@ -79,13 +79,13 @@ public interface IProcessLogRepository
     /// or more arguments are missing, or invalid.</exception>
     /// <exception cref="RepositoryException">This exception is thrown whenever the
     /// repository fails to complete the operation.</exception>
-    Task<IEnumerable<ProcessLog>> FindByMessageAsync(
+    Task<IEnumerable<PipelineLog>> FindByMessageAsync(
         Message message,
         CancellationToken cancellationToken = default
         );
 
     /// <summary>
-    /// This method deletes an existing <see cref="ProcessLog"/> object from the 
+    /// This method deletes an existing <see cref="PipelineLog"/> object from the 
     /// underlying storage.
     /// </summary>
     /// <param name="providerLog">The model to delete from the underlying storage.</param>
@@ -97,25 +97,25 @@ public interface IProcessLogRepository
     /// <exception cref="RepositoryException">This exception is thrown whenever the
     /// repository fails to complete the operation.</exception>
     Task DeleteAsync(
-        ProcessLog providerLog,
+        PipelineLog providerLog,
         CancellationToken cancellationToken = default
         );
 
     /// <summary>
-    /// This method updates an existing <see cref="ProcessLog"/> object in the 
+    /// This method updates an existing <see cref="PipelineLog"/> object in the 
     /// underlying storage.
     /// </summary>
     /// <param name="providerLog">The model to update in the underlying storage.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly updated
-    /// <see cref="ProcessLog"/> object.</returns>
+    /// <see cref="PipelineLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     /// <exception cref="RepositoryException">This exception is thrown whenever the
     /// repository fails to complete the operation.</exception>
-    Task<ProcessLog> UpdateAsync(
-        ProcessLog providerLog,
+    Task<PipelineLog> UpdateAsync(
+        PipelineLog providerLog,
         CancellationToken cancellationToken = default
         );
 }

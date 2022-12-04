@@ -78,5 +78,22 @@ public class MailMessageOptions
     /// </summary>
     public bool IsDisabled { get; set; }
 
+    /// <summary>
+    /// This property contains the relative priority of the message.
+    /// </summary>
+    public int Priority { get; set; }
+
+    /// <summary>
+    /// This property indicates the point at which we stop trying to 
+    /// process this message.
+    /// </summary>
+    public int MaxErrors { get; set; }
+
+    /// <summary>
+    /// This property indicates when the message should be sent through the
+    /// pipeline for processing.
+    /// </summary>
+    public DateTime? ProcessAfterUtc { get; set; }
+
     #endregion
 }

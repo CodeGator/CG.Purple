@@ -3,7 +3,7 @@ namespace CG.Purple.Models;
 
 
 /// <summary>
-/// This class contains extension methods related to the <see cref="ProcessLog"/>
+/// This class contains extension methods related to the <see cref="PipelineLog"/>
 /// type.
 /// </summary>
 internal static class ProcessLogExtensions001
@@ -15,14 +15,14 @@ internal static class ProcessLogExtensions001
     #region Public methods
 
     /// <summary>
-    /// This method returns a safe BeforeState for the given <see cref="ProcessLog"/>
+    /// This method returns a safe BeforeState for the given <see cref="PipelineLog"/>
     /// object.
     /// </summary>
     /// <param name="processLog">The process log to use for the operation.</param>
     /// <returns>A rendering of the property that is safe to use in a
     /// Blazor page.</returns>
     public static string SafeBeforeState(
-        this ProcessLog processLog
+        this PipelineLog processLog
         )
     {
         // Validate the arguments before attempting to use them.
@@ -42,14 +42,14 @@ internal static class ProcessLogExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method returns a safe AfterState for the given <see cref="ProcessLog"/>
+    /// This method returns a safe AfterState for the given <see cref="PipelineLog"/>
     /// object.
     /// </summary>
     /// <param name="processLog">The process log to use for the operation.</param>
     /// <returns>A rendering of the property that is safe to use in a
     /// Blazor page.</returns>
     public static string SafeAfterState(
-        this ProcessLog processLog
+        this PipelineLog processLog
         )
     {
         // Validate the arguments before attempting to use them.
@@ -69,14 +69,14 @@ internal static class ProcessLogExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method returns a safe ProviderType for the given <see cref="ProcessLog"/>
+    /// This method returns a safe ProviderType for the given <see cref="PipelineLog"/>
     /// object.
     /// </summary>
     /// <param name="processLog">The process log to use for the operation.</param>
     /// <returns>A rendering of the property that is safe to use in a
     /// Blazor page.</returns>
     public static string SafeProviderType(
-        this ProcessLog processLog
+        this PipelineLog processLog
         )
     {
         // Validate the arguments before attempting to use them.
@@ -96,14 +96,14 @@ internal static class ProcessLogExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method returns a safe Error for the given <see cref="ProcessLog"/>
+    /// This method returns a safe Error for the given <see cref="PipelineLog"/>
     /// object.
     /// </summary>
     /// <param name="processLog">The process log to use for the operation.</param>
     /// <returns>A rendering of the property that is safe to use in a
     /// Blazor page.</returns>
     public static string SafeError(
-        this ProcessLog processLog
+        this PipelineLog processLog
         )
     {
         // Validate the arguments before attempting to use them.
@@ -123,14 +123,14 @@ internal static class ProcessLogExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method returns a safe Data for the given <see cref="ProcessLog"/>
+    /// This method returns a safe Data for the given <see cref="PipelineLog"/>
     /// object.
     /// </summary>
     /// <param name="processLog">The process log to use for the operation.</param>
     /// <returns>A rendering of the property that is safe to use in a
     /// Blazor page.</returns>
     public static string SafeData(
-        this ProcessLog processLog
+        this PipelineLog processLog
         )
     {
         // Validate the arguments before attempting to use them.
@@ -150,14 +150,14 @@ internal static class ProcessLogExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method returns a safe Message for the given <see cref="ProcessLog"/>
+    /// This method returns a safe Message for the given <see cref="PipelineLog"/>
     /// object.
     /// </summary>
     /// <param name="processLog">The process log to use for the operation.</param>
     /// <returns>A rendering of the message that is safe to use in a
     /// Blazor page.</returns>
     public static string SafeMessage(
-        this ProcessLog processLog
+        this PipelineLog processLog
         )
     {
         // Validate the arguments before attempting to use them.

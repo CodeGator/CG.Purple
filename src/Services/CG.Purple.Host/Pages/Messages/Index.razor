@@ -6,10 +6,6 @@
 
 <MudText Typo="Typo.h6" Class="py-4 px-5">This page contains the messages that have been sent to <b>Purple</b> for processing.</MudText>
 
-<MudText Typo="Typo.body2" Class="px-5">Messages are retained for up to <font style=@($"color: {DefaultTheme.Instance().Palette.Secondary}")><b>@(HostedServiceOptions?.Value?.MessageProcessing?.MaxDaysToLive ?? 7)</b></font> days before they are automatically archived.</MudText>
-
-<MudText Typo="Typo.body2" Class="pb-4 px-5">Messages are automatically retried up to <font style=@($"color: {DefaultTheme.Instance().Palette.Secondary}")><b>@(HostedServiceOptions?.Value?.MessageProcessing?.MaxErrorCount ?? 3)</b></font> times before they are left in an error state.</MudText>
-
 <MudTabs>
     <MudTabPanel Text="Emails" Icon="@Icons.Material.Filled.Email">
         <MudTable T="MailMessage"

@@ -1,53 +1,50 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things to be done on the project, as of 12/03/2022
-
-### Design
-
-* ... All in my head, need to write it down.
+Things to be done on the project, as of 12/04/2022
 
 ### Database
 
-* Need to remove all cascaded deletes in EFCORE.
+* Should we map all CRUD operations to stored procedures?
 
-* Need to figure out why adding an optional provider type to message gives auto mapper and EFCORE a nervous breakdown.
-
-* At some point should we map all CRUD operations to stored procedures?
-
-* At some point, should we write stored procedures for all queries?
-
-* Need to test the DB design.
+* Should we write stored procedures for all queries?
 
 ### Libraries
 
-* Need to test the managers / repositories.
+* Should we add caching to the managers?
 
 ### Providers
 
 * Need to write the SendGrid and Twillio providers.
 
-* Need to test all the providers.
+### Pipeline
 
-### Hosted Services
+* Need to rework the pipeline, to deal with changes in messages/providers.
 
-* Need to design a recovery mechanism that will deal with unrecoverable errors in a provider by reassigning any affected messages.
-
-* Need to test the service.
+* Eventually, need to deal with provider fallback, for times when a provider is overworked, or rate limited.
 
 ### Host
 
 * All dialogs should use the mudblazor extensions.
 
-* Need to write code to prevent delete operations that will fail due to FK relations.
+* We've removed all cascading deletes from the DAL, so now we need to write code 
+  to disable operations, in the UI, that will fail due to FK relations.
 
-* Work on the log page some more.
+* Need a better UI for messages, just not sure what, yet.
 
-* Need to finish the UI.
+* The logs page still needs some work.
 
-### Services 
+* Should we write our own attachment UI?
 
-* Need to design and build the REST controllers.
+### REST Controllers
+
+* Need to work on the design of the REST controllers.
+
+### Seeding
+
+* Need to rework to deal with changes to messages/providers.
+
+* Should we add seeding by scenario?
 
 ### Other Integrations
 
@@ -57,16 +54,16 @@ Things to be done on the project, as of 12/03/2022
 
 * Possibly need to integrate with a file storage service.
 
-* Possibly need to integrate with a REDIS cache service.
-
 ### Testing
 
-* Need to write an overall test plan
+* Need to write an overall integration test plan
 
 * Need to write unit test fixtures.
 
+* Do we need to write integration test fixtures?.
+
 ### Documentation / Help
 
-* Yup, will need this at some point.
+* Yup, we'll need this at some point.
 
 

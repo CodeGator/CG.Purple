@@ -54,6 +54,23 @@ public class Message : ModelBase
     public int ErrorCount { get; set; }
 
     /// <summary>
+    /// This property indicates the point at which we stop trying to 
+    /// process this message.
+    /// </summary>
+    public int MaxErrors { get; set; }
+
+    /// <summary>
+    /// This property indicates when the message should be sent through the
+    /// pipeline for processing.
+    /// </summary>
+    public DateTime? ProcessAfterUtc { get; set; }
+
+    /// <summary>
+    /// This property contains an associated provider type.
+    /// </summary>
+    public virtual ProviderType? ProviderType { get; set; }
+
+    /// <summary>
     /// This property contains the associated message properties.
     /// </summary>
     public virtual ICollection<MessageProperty> MessageProperties { get; set; }

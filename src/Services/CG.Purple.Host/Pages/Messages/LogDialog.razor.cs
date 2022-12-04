@@ -21,7 +21,7 @@ public partial class LogDialog
     /// This property contains the model for the dialog.
     /// </summary>
     [Parameter]
-    public IEnumerable<ProcessLog> Model { get; set; } = null!;
+    public IEnumerable<PipelineLog> Model { get; set; } = null!;
 
     /// <summary>
     /// This property contains the logger for this page.

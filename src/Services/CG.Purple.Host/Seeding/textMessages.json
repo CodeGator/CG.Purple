@@ -5,6 +5,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 1",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": []
     },
     {
@@ -12,14 +15,13 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 2",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
           "Value": "value 1"
-        },
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "SendGrid"
         }
       ],
       "IsDisabled": false
@@ -29,6 +31,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 3",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
@@ -46,6 +51,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 4",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [],
       "IsDisabled": true
     },
@@ -54,6 +62,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 5",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
@@ -67,14 +78,13 @@
       "From": "test0@codegator.com",
       "To": "9188675309;9188675309",
       "Body": "This is test text # 6",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
           "Value": "value for 1 text # 6"
-        },
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "Twillio"
         }
       ],
       "IsDisabled": false
@@ -84,6 +94,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309;9188675309;9188675309",
       "Body": "This is test text # 7",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
@@ -101,6 +114,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 8",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
@@ -118,6 +134,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 9",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
@@ -135,6 +154,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 10",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [
         {
           "PropertyTypeName": "TestProperty1",
@@ -152,6 +174,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 11",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [],
       "IsDisabled": false
     },
@@ -160,12 +185,10 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 12",
-      "Properties": [
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "Twillio"
-        }
-      ],
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
+      "Properties": [],
       "IsDisabled": false
     },
     {
@@ -173,6 +196,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 13",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [],
       "IsDisabled": false
     },
@@ -181,6 +207,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 14",
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
       "Properties": [],
       "IsDisabled": true
     },
@@ -189,12 +218,10 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 15",
-      "Properties": [
-        {
-          "PropertyTypeName": "Provider",
-          "Value": "SendGrid"
-        }
-      ],
+      "MaxErrors": "3",
+      "Priority": 0,
+      "Attachments": [],
+      "Properties": [],
       "IsDisabled": true
     }
   ]

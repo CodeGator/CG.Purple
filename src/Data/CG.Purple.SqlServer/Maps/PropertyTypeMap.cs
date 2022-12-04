@@ -64,10 +64,6 @@ internal class PropertyTypeMap : EntityMapBase<Entities.PropertyType>
         builder.Property(e => e.Description)
             .HasMaxLength(128);
 
-        // Setup the column.
-        builder.Property(e => e.IsSystem)
-            .IsRequired();
-
         // Setup the index.
         builder.HasIndex(e => new
         {
@@ -75,14 +71,6 @@ internal class PropertyTypeMap : EntityMapBase<Entities.PropertyType>
         },
         "IX_PropertyTypes"
         ).IsUnique();
-
-        // Setup the index.
-        builder.HasIndex(e => new
-        {
-            e.IsSystem
-        },
-        "IX_PropertyTypes2"
-        );
     }
 
     #endregion

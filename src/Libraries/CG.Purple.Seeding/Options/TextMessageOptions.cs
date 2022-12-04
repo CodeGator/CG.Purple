@@ -40,14 +40,36 @@ public class TextMessageOptions
     public string Body { get; set; } = null!;
 
     /// <summary>
-    /// This property indicates whether the message is disabled, or not.
+    /// This property contains the file attachments for the message.
     /// </summary>
-    public bool IsDisabled { get; set; }
+    public List<string> Attachments { get; set; } = new();
 
     /// <summary>
     /// This property contains the properties for the message.
     /// </summary>
     public List<MessagePropertyOptions> Properties { get; set; } = new();
+
+    /// <summary>
+    /// This property indicates whether the message is disabled, or not.
+    /// </summary>
+    public bool IsDisabled { get; set; }
+
+    /// <summary>
+    /// This property contains the relative priority of the message.
+    /// </summary>
+    public int Priority { get; set; }
+
+    /// <summary>
+    /// This property indicates the point at which we stop trying to 
+    /// process this message.
+    /// </summary>
+    public int MaxErrors { get; set; }
+
+    /// <summary>
+    /// This property indicates when the message should be sent through the
+    /// pipeline for processing.
+    /// </summary>
+    public DateTime? ProcessAfterUtc { get; set; }
 
     #endregion
 }
