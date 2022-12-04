@@ -249,6 +249,44 @@ namespace CG.Purple.SqlServer.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MessageLogs",
+                schema: "Purple",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MessageId = table.Column<long>(type: "bigint", nullable: false),
+                    ProviderTypeId = table.Column<int>(type: "int", nullable: true),
+                    Event = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
+                    BeforeState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
+                    AfterState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
+                    Data = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
+                    Error = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastUpdatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MessageLogs", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MessageLogs_Messages_MessageId",
+                        column: x => x.MessageId,
+                        principalSchema: "Purple",
+                        principalTable: "Messages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_MessageLogs_ProviderTypes_ProviderTypeId",
+                        column: x => x.ProviderTypeId,
+                        principalSchema: "Purple",
+                        principalTable: "ProviderTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MessageProperties",
                 schema: "Purple",
                 columns: table => new
@@ -276,44 +314,6 @@ namespace CG.Purple.SqlServer.Migrations
                         column: x => x.PropertyTypeId,
                         principalSchema: "Purple",
                         principalTable: "PropertyTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProcessLogs",
-                schema: "Purple",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MessageId = table.Column<long>(type: "bigint", nullable: true),
-                    ProviderTypeId = table.Column<int>(type: "int", nullable: true),
-                    Event = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
-                    BeforeState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
-                    AfterState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
-                    Data = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
-                    Error = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastUpdatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProcessLogs", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProcessLogs_Messages_MessageId",
-                        column: x => x.MessageId,
-                        principalSchema: "Purple",
-                        principalTable: "Messages",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ProcessLogs_ProviderTypes_ProviderTypeId",
-                        column: x => x.ProviderTypeId,
-                        principalSchema: "Purple",
-                        principalTable: "ProviderTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -371,6 +371,24 @@ namespace CG.Purple.SqlServer.Migrations
                 columns: new[] { "To", "CC", "BCC", "Subject", "IsHtml" });
 
             migrationBuilder.CreateIndex(
+                name: "IX_MessageLogs",
+                schema: "Purple",
+                table: "MessageLogs",
+                columns: new[] { "Event", "BeforeState", "AfterState", "ProviderTypeId", "MessageId" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MessageLogs_MessageId",
+                schema: "Purple",
+                table: "MessageLogs",
+                column: "MessageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MessageLogs_ProviderTypeId",
+                schema: "Purple",
+                table: "MessageLogs",
+                column: "ProviderTypeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_MessageProperties_PropertyTypeId",
                 schema: "Purple",
                 table: "MessageProperties",
@@ -408,24 +426,6 @@ namespace CG.Purple.SqlServer.Migrations
                 table: "ParameterTypes",
                 column: "Name",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProcessLogs",
-                schema: "Purple",
-                table: "ProcessLogs",
-                columns: new[] { "Event", "BeforeState", "AfterState", "ProviderTypeId", "MessageId" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProcessLogs_MessageId",
-                schema: "Purple",
-                table: "ProcessLogs",
-                column: "MessageId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProcessLogs_ProviderTypeId",
-                schema: "Purple",
-                table: "ProcessLogs",
-                column: "ProviderTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PropertyTypes",
@@ -476,11 +476,11 @@ namespace CG.Purple.SqlServer.Migrations
                 schema: "Purple");
 
             migrationBuilder.DropTable(
-                name: "MessageProperties",
+                name: "MessageLogs",
                 schema: "Purple");
 
             migrationBuilder.DropTable(
-                name: "ProcessLogs",
+                name: "MessageProperties",
                 schema: "Purple");
 
             migrationBuilder.DropTable(

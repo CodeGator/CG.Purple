@@ -2,9 +2,9 @@
 namespace CG.Purple.Models;
 
 /// <summary>
-/// This class represents a pipeline processing event model.
+/// This class represents a message processing event model.
 /// </summary>
-public class PipelineLog : ModelBase
+public class MessageLog : ModelBase
 {
     // *******************************************************************
     // Properties.
@@ -20,7 +20,7 @@ public class PipelineLog : ModelBase
     /// <summary>
     /// This property contains the associate message.
     /// </summary>
-    public virtual Message? Message { get; set; } = null!;
+    public virtual Message Message { get; set; } = null!;
 
     /// <summary>
     /// This property contains the associated provider type.
@@ -28,9 +28,10 @@ public class PipelineLog : ModelBase
     public virtual ProviderType? ProviderType { get; set; }
 
     /// <summary>
-    /// This property contains the associate processing event.
+    /// This property contains the associate message processing 
+    /// event.
     /// </summary>
-    public ProcessEvent Event { get; set; }
+    public MessageEvent MessageEvent { get; set; }
 
     /// <summary>
     /// This property contains the state of the message before the 
@@ -45,7 +46,7 @@ public class PipelineLog : ModelBase
     public MessageState? AfterState { get; set; }
 
     /// <summary>
-    /// This property contains extra data associated with the event.
+    /// This property contains optional data associated with the event.
     /// </summary>
     public string? Data { get; set; }
 

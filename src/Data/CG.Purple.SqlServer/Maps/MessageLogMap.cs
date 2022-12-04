@@ -2,10 +2,10 @@
 namespace CG.Purple.SqlServer.Maps;
 
 /// <summary>
-/// This class is an EFCore configuration map for the <see cref="Entities.PipelineLog"/>
+/// This class is an EFCore configuration map for the <see cref="Entities.MessageLog"/>
 /// entity type.
 /// </summary>
-internal class PipelineLogMap : EntityMapBase<Entities.PipelineLog>
+internal class MessageLogMap : EntityMapBase<Entities.MessageLog>
 {
     // *******************************************************************
     // Constructors.
@@ -14,11 +14,11 @@ internal class PipelineLogMap : EntityMapBase<Entities.PipelineLog>
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="PipelineLogMap"/>
+    /// This constructor creates a new instance of the <see cref="MessageLogMap"/>
     /// class.
     /// </summary>
     /// <param name="modelBuilder">The model builder to use with this map.</param>
-    public PipelineLogMap(
+    public MessageLogMap(
         ModelBuilder modelBuilder
         ) : base(modelBuilder)
     {
@@ -34,16 +34,16 @@ internal class PipelineLogMap : EntityMapBase<Entities.PipelineLog>
     #region Public methods
 
     /// <summary>
-    /// This method configures the <see cref="Entities.PipelineLog"/> entity.
+    /// This method configures the <see cref="Entities.MessageLog"/> entity.
     /// </summary>
     /// <param name="builder">The builder to use for the operation.</param>
     public override void Configure(
-        EntityTypeBuilder<Entities.PipelineLog> builder
+        EntityTypeBuilder<Entities.MessageLog> builder
         )
     {
         // Setup the table.
         builder.ToTable(
-            "ProcessLogs",
+            "MessageLogs",
             "Purple"
             );
 
@@ -80,15 +80,15 @@ internal class PipelineLogMap : EntityMapBase<Entities.PipelineLog>
             .IsUnicode(false);
 
         // Setup the conversion.
-        _modelBuilder.Entity<Entities.PipelineLog>()
+        _modelBuilder.Entity<Entities.MessageLog>()
             .Property(e => e.Event)
             .HasConversion(
                 e => e.ToString(),
-                e => Enum.Parse<ProcessEvent>(e)
+                e => Enum.Parse<MessageEvent>(e)
                 );
 
         // Setup the conversion.
-        _modelBuilder.Entity<Entities.PipelineLog>()
+        _modelBuilder.Entity<Entities.MessageLog>()
             .Property(e => e.BeforeState)
             .HasConversion(
                 e => e.ToString(),
@@ -96,7 +96,7 @@ internal class PipelineLogMap : EntityMapBase<Entities.PipelineLog>
                 );
 
         // Setup the conversion.
-        _modelBuilder.Entity<Entities.PipelineLog>()
+        _modelBuilder.Entity<Entities.MessageLog>()
             .Property(e => e.AfterState)
             .HasConversion(
                 e => e.ToString(),
@@ -104,14 +104,14 @@ internal class PipelineLogMap : EntityMapBase<Entities.PipelineLog>
                 );
 
         // Setup the relationship.
-        _modelBuilder.Entity<Entities.PipelineLog>()
+        _modelBuilder.Entity<Entities.MessageLog>()
             .HasOne(e => e.Message)
             .WithMany()
             .HasForeignKey(e => e.MessageId)
             .OnDelete(DeleteBehavior.Restrict);
 
         // Setup the relationship.
-        _modelBuilder.Entity<Entities.PipelineLog>()
+        _modelBuilder.Entity<Entities.MessageLog>()
             .HasOne(e => e.ProviderType)
             .WithMany()
             .HasForeignKey(e => e.ProviderTypeId)
@@ -126,7 +126,7 @@ internal class PipelineLogMap : EntityMapBase<Entities.PipelineLog>
             e.ProviderTypeId,
             e.MessageId
         },
-        "IX_ProcessLogs"
+        "IX_MessageLogs"
         );
     }
 

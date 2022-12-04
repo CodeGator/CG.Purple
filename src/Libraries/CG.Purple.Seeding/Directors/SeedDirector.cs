@@ -58,7 +58,7 @@ internal class SeedDirector : ISeedDirector
     /// <summary>
     /// This field contains the provider log manager for this director.
     /// </summary>
-    internal protected readonly IProcessLogManager _providerLogManager = null!;
+    internal protected readonly IMessageLogManager _providerLogManager = null!;
 
     /// <summary>
     /// This field contains the provider type manager for this director.
@@ -120,7 +120,7 @@ internal class SeedDirector : ISeedDirector
         IPropertyTypeManager propertyTypeManager,
         IProviderParameterManager providerParameterManager,
         IProviderTypeManager providerTypeManager,
-        IProcessLogManager providerLogManager,
+        IMessageLogManager providerLogManager,
         ITextMessageManager textMessageManager,
         ILogger<ISeedDirector> logger
         )
@@ -783,11 +783,11 @@ internal class SeedDirector : ISeedDirector
 
                 // Record what we did, in the log.
                 await _providerLogManager.CreateAsync(
-                    new PipelineLog()
+                    new MessageLog()
                     {
                         Message = mailMessage,
                         AfterState = MessageState.Pending,
-                        Event = ProcessEvent.Stored
+                        MessageEvent = MessageEvent.Stored
                     },
                     "seed",
                     cancellationToken
@@ -1497,16 +1497,16 @@ internal class SeedDirector : ISeedDirector
                     // Log what we are about to do.
                     _logger.LogTrace(
                         "Deferring to {name}",
-                        nameof(IProcessLogManager.CreateAsync)
+                        nameof(IMessageLogManager.CreateAsync)
                         );
 
                     // Create the provider log.
                     _ = await _providerLogManager.CreateAsync(
-                        new PipelineLog()
+                        new MessageLog()
                         {
                             Message = mailMessage,
                             ProviderType = providerType,
-                            Event = Enum.Parse<ProcessEvent>(providerLogOption.Event),
+                            MessageEvent = Enum.Parse<MessageEvent>(providerLogOption.Event),
                             Error = providerLogOption.Error,
                             BeforeState = optionalBeforeState,
                             AfterState = optionalAfterState,
@@ -1538,16 +1538,16 @@ internal class SeedDirector : ISeedDirector
                     // Log what we are about to do.
                     _logger.LogTrace(
                         "Deferring to {name}",
-                        nameof(IProcessLogManager.CreateAsync)
+                        nameof(IMessageLogManager.CreateAsync)
                         );
 
                     // Create the provider log.
                     _ = await _providerLogManager.CreateAsync(
-                        new PipelineLog()
+                        new MessageLog()
                         {
                             Message = textMessage,
                             ProviderType = providerType,
-                            Event = Enum.Parse<ProcessEvent>(providerLogOption.Event),
+                            MessageEvent = Enum.Parse<MessageEvent>(providerLogOption.Event),
                             Error = providerLogOption.Error,
                             BeforeState = optionalBeforeState,
                             AfterState = optionalAfterState,
@@ -1659,6 +1659,67 @@ internal class SeedDirector : ISeedDirector
                     cancellationToken
                     ).ConfigureAwait(false);
 
+                // Are there any attachments?
+                if (textMessageOption.Attachments.Any())
+                {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Seeding {count} attachments.",
+                        textMessageOption.Attachments.Count
+                        );
+
+                    // Loop through the options.
+                    foreach (var attachment in textMessageOption.Attachments)
+                    {
+                        // Is the file missing?
+                        if (!File.Exists(attachment))
+                        {
+                            // Panic!!
+                            throw new FileNotFoundException(
+                                $"The attachment: {attachment} is missing!"
+                                );
+                        }
+
+                        // Get the attachments' file extension.
+                        var ext = Path.GetExtension(attachment);
+
+                        // Look for a mime type, for that extension.
+                        var mimeType = await _mimeTypeManager.FindByExtensionAsync(
+                            ext,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+
+                        // Did we fail?
+                        if (mimeType is null)
+                        {
+                            // Panic!!
+                            throw new KeyNotFoundException(
+                                $"No mime type was found for extension: {ext}!"
+                                );
+                        }
+
+                        // Read the bytes for the file.
+                        var bytes = await File.ReadAllBytesAsync(
+                            attachment,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+
+                        // Create the attachment.
+                        _ = await _attachmentManager.CreateAsync(
+                            new Attachment()
+                            {
+                                Message = textMessage,
+                                MimeType = mimeType,
+                                OriginalFileName = Path.GetFileName(attachment),
+                                Length = bytes.Length,
+                                Data = bytes
+                            },
+                            userName,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+                    }
+                }
+
                 // Are there any properties?
                 if (textMessageOption.Properties.Any())
                 {
@@ -1702,11 +1763,11 @@ internal class SeedDirector : ISeedDirector
 
                 // Record what we did, in the log.
                 await _providerLogManager.CreateAsync(
-                    new PipelineLog()
+                    new MessageLog()
                     {
                         Message = textMessage,
                         AfterState = MessageState.Pending,
-                        Event = ProcessEvent.Stored
+                        MessageEvent = MessageEvent.Stored
                     },
                     "seed",
                     cancellationToken

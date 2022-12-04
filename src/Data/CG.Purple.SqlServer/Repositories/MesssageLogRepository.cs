@@ -2,10 +2,10 @@
 namespace CG.Purple.SqlServer.Repositories;
 
 /// <summary>
-/// This class is an EFCORE implementation of the <see cref="IProcessLogRepository"/>
+/// This class is an EFCORE implementation of the <see cref="IMessageLogRepository"/>
 /// interface.
 /// </summary>
-internal class ProcessLogRepository : IProcessLogRepository
+internal class MesssageLogRepository : IMessageLogRepository
 {
     // *******************************************************************
     // Fields.
@@ -26,7 +26,7 @@ internal class ProcessLogRepository : IProcessLogRepository
     /// <summary>
     /// This field contains the logger for this repository.
     /// </summary>
-    internal protected readonly ILogger<IProcessLogRepository> _logger;
+    internal protected readonly ILogger<IMessageLogRepository> _logger;
 
     #endregion
 
@@ -37,17 +37,17 @@ internal class ProcessLogRepository : IProcessLogRepository
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="ProcessLogRepository"/>
+    /// This constructor creates a new instance of the <see cref="MesssageLogRepository"/>
     /// class.
     /// </summary>
     /// <param name="dbContextFactory">The EFCORE data-context factory
     /// to use with this repository.</param>
     /// <param name="mapper">The auto-mapper to use with this repository.</param>
     /// <param name="logger">The logger to use with this repository.</param>
-    public ProcessLogRepository(
+    public MesssageLogRepository(
         IDbContextFactory<PurpleDbContext> dbContextFactory,
         IMapper mapper,
-        ILogger<IProcessLogRepository> logger
+        ILogger<IMessageLogRepository> logger
         )
     {
         // Validate the parameters before attempting to use them.
@@ -89,7 +89,7 @@ internal class ProcessLogRepository : IProcessLogRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for process logs"
+                "Searching for message logs"
                 );
 
             // Search for any entities in the data-store.
@@ -105,12 +105,12 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for process logs!"
+                "Failed to search for message logs!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for process logs!",
+                message: $"The repository failed to search for message logs!",
                 innerException: ex
                 );
         }
@@ -138,7 +138,7 @@ internal class ProcessLogRepository : IProcessLogRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching for process logs"
+                "Searching for message logs"
                 );
 
             // Search for any entities in the data-store.
@@ -154,12 +154,12 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count process logs!"
+                "Failed to count message logs!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to count process logs!",
+                message: $"The repository failed to count message logs!",
                 innerException: ex
                 );
         }
@@ -168,25 +168,25 @@ internal class ProcessLogRepository : IProcessLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<PipelineLog> CreateAsync(
-        PipelineLog processLog,
+    public virtual async Task<MessageLog> CreateAsync(
+        MessageLog messageLog,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLog, nameof(processLog));
+        Guard.Instance().ThrowIfNull(messageLog, nameof(messageLog));
 
         try
         {
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(PipelineLog)
+                nameof(MessageLog)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.PipelineLog>(
-                processLog
+            var entity = _mapper.Map<Entities.MessageLog>(
+                messageLog
                 );
 
             // Did we fail?
@@ -194,7 +194,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(PipelineLog)} model to an entity."
+                    $"Failed to map the {nameof(MessageLog)} model to an entity."
                     );
             }
 
@@ -212,7 +212,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Adding the {entity} to the {ctx} data-context.",
-                nameof(PipelineLog),
+                nameof(MessageLog),
                 nameof(PurpleDbContext)
                 );
 
@@ -236,11 +236,11 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(PipelineLog)
+                nameof(MessageLog)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<PipelineLog>(
+            var result = _mapper.Map<MessageLog>(
                 entity
                 );
 
@@ -249,7 +249,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(PipelineLog)} entity to a model."
+                    $"Failed to map the {nameof(MessageLog)} entity to a model."
                     );
             }
 
@@ -261,12 +261,12 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a process log!"
+                "Failed to create a message log!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to create a process log!",
+                message: $"The repository failed to create a message log!",
                 innerException: ex
                 );
         }
@@ -275,7 +275,7 @@ internal class ProcessLogRepository : IProcessLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<PipelineLog>> FindAllAsync(
+    public virtual async Task<IEnumerable<MessageLog>> FindAllAsync(
         CancellationToken cancellationToken = default
         )
     {
@@ -294,11 +294,11 @@ internal class ProcessLogRepository : IProcessLogRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching process logs."
+                "Searching message logs."
                 );
 
             // Perform the log search.
-            var processLogs = await dbContext.PipelineLogs
+            var messageLogs = await dbContext.PipelineLogs
                 .Include(x => x.Message)
                 .Include(x => x.ProviderType)
                 .ToListAsync(
@@ -306,8 +306,8 @@ internal class ProcessLogRepository : IProcessLogRepository
                 ).ConfigureAwait(false);
 
             // Convert the entities to a models.
-            var result = processLogs.Select(x =>
-                _mapper.Map<PipelineLog>(x)
+            var result = messageLogs.Select(x =>
+                _mapper.Map<MessageLog>(x)
                 );
 
             // Return the results.
@@ -318,12 +318,12 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for process logs!"
+                "Failed to search for message logs!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for process logs!",
+                message: $"The repository failed to search for message logs!",
                 innerException: ex
                 );
         }
@@ -332,7 +332,7 @@ internal class ProcessLogRepository : IProcessLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<PipelineLog>> FindByMessageAsync(
+    public virtual async Task<IEnumerable<MessageLog>> FindByMessageAsync(
         Message message,
         CancellationToken cancellationToken = default
         )
@@ -355,11 +355,11 @@ internal class ProcessLogRepository : IProcessLogRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Searching process logs."
+                "Searching message logs."
                 );
 
             // Perform the log search.
-            var processLogs = await dbContext.PipelineLogs.Where(x =>
+            var messageLogs = await dbContext.PipelineLogs.Where(x =>
                 x.MessageId == message.Id
                 ).Include(x => x.Message)
                 .Include(x => x.ProviderType)
@@ -368,8 +368,8 @@ internal class ProcessLogRepository : IProcessLogRepository
                 ).ConfigureAwait(false);
 
             // Convert the entities to a models.
-            var result = processLogs.Select(x =>
-                _mapper.Map<PipelineLog>(x)
+            var result = messageLogs.Select(x =>
+                _mapper.Map<MessageLog>(x)
                 );
 
             // Return the results.
@@ -380,12 +380,12 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for process logs by message!"
+                "Failed to search for message logs by message!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to search for process " +
+                message: $"The repository failed to search for message " +
                 "logs by message!",
                 innerException: ex
                 );
@@ -396,12 +396,12 @@ internal class ProcessLogRepository : IProcessLogRepository
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        PipelineLog processLog,
+        MessageLog messageLog,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLog, nameof(processLog));
+        Guard.Instance().ThrowIfNull(messageLog, nameof(messageLog));
 
         try
         {
@@ -419,14 +419,14 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
-                nameof(PipelineLog),
+                nameof(MessageLog),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
                 "DELETE FROM [Purple].[ProviderLogs] WHERE [Id] = {0}",
-                parameters: new object[] { processLog.Id },
+                parameters: new object[] { messageLog.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -435,12 +435,12 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a process log!"
+                "Failed to delete a message log!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to delete a process log!",
+                message: $"The repository failed to delete a message log!",
                 innerException: ex
                 );
         }
@@ -449,25 +449,25 @@ internal class ProcessLogRepository : IProcessLogRepository
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<PipelineLog> UpdateAsync(
-        PipelineLog processLog,
+    public virtual async Task<MessageLog> UpdateAsync(
+        MessageLog messageLog,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLog, nameof(processLog));
+        Guard.Instance().ThrowIfNull(messageLog, nameof(messageLog));
 
         try
         {
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} model to an entity",
-                nameof(PipelineLog)
+                nameof(MessageLog)
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.PipelineLog>(
-                processLog
+            var entity = _mapper.Map<Entities.MessageLog>(
+                messageLog
                 );
 
             // Did we fail?
@@ -475,7 +475,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(PipelineLog)} model to an entity."
+                    $"Failed to map the {nameof(MessageLog)} model to an entity."
                     );
             }
 
@@ -498,7 +498,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
-                nameof(PipelineLog),
+                nameof(MessageLog),
                 nameof(PurpleDbContext)
                 );
 
@@ -522,11 +522,11 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what we are about to do.
             _logger.LogDebug(
                 "Converting a {entity} entity to a model",
-                nameof(PipelineLog)
+                nameof(MessageLog)
                 );
 
             // Convert the entity to a model.
-            var result = _mapper.Map<PipelineLog>(
+            var result = _mapper.Map<MessageLog>(
                 entity
                 );
 
@@ -535,7 +535,7 @@ internal class ProcessLogRepository : IProcessLogRepository
             {
                 // Panic!!
                 throw new AutoMapperMappingException(
-                    $"Failed to map the {nameof(PipelineLog)} entity to a model."
+                    $"Failed to map the {nameof(MessageLog)} entity to a model."
                     );
             }
 
@@ -547,12 +547,12 @@ internal class ProcessLogRepository : IProcessLogRepository
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a process log!"
+                "Failed to update a message log!"
                 );
 
             // Provider better context.
             throw new RepositoryException(
-                message: $"The repository failed to update a process log!",
+                message: $"The repository failed to update a message log!",
                 innerException: ex
                 );
         }

@@ -2,10 +2,10 @@
 namespace CG.Purple.Managers;
 
 /// <summary>
-/// This class is a default implementation of the <see cref="IProcessLogManager"/>
+/// This class is a default implementation of the <see cref="IMessageLogManager"/>
 /// interface.
 /// </summary>
-internal class ProcessLogManager : IProcessLogManager
+internal class MessageLogManager : IMessageLogManager
 {
     // *******************************************************************
     // Fields.
@@ -16,12 +16,12 @@ internal class ProcessLogManager : IProcessLogManager
     /// <summary>
     /// This field contains the repository for this manager.
     /// </summary>
-    internal protected readonly IProcessLogRepository _processLogRepository = null!;
+    internal protected readonly IMessageLogRepository _messageLogRepository = null!;
 
     /// <summary>
     /// This field contains the logger for this manager.
     /// </summary>
-    internal protected readonly ILogger<IProcessLogManager> _logger = null!;
+    internal protected readonly ILogger<IMessageLogManager> _logger = null!;
 
     #endregion
 
@@ -32,25 +32,25 @@ internal class ProcessLogManager : IProcessLogManager
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="ProcessLogManager"/>
+    /// This constructor creates a new instance of the <see cref="MessageLogManager"/>
     /// class.
     /// </summary>
-    /// <param name="processLogRepository">The process log repository to use
-    /// with this manager.</param>
+    /// <param name="messageLogRepository">The message log repository to 
+    /// use with this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public ProcessLogManager(
-        IProcessLogRepository processLogRepository,
-        ILogger<IProcessLogManager> logger
+    public MessageLogManager(
+        IMessageLogRepository messageLogRepository,
+        ILogger<IMessageLogManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogRepository, nameof(processLogRepository))
+        Guard.Instance().ThrowIfNull(messageLogRepository, nameof(messageLogRepository))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
-        _processLogRepository = processLogRepository;
+        _messageLogRepository = messageLogRepository;
         _logger = logger;
     }
 
@@ -72,11 +72,11 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IProcessLogRepository.AnyAsync)
+                nameof(IMessageLogRepository.AnyAsync)
                 );
 
             // Perform the search.
-            return await _processLogRepository.AnyAsync(
+            return await _messageLogRepository.AnyAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -85,12 +85,12 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for process logs!"
+                "Failed to search for message logs!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to search for process logs!",
+                message: $"The manager failed to search for message logs!",
                 innerException: ex
                 );
         }
@@ -108,11 +108,11 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IProcessLogRepository.CountAsync)
+                nameof(IMessageLogRepository.CountAsync)
                 );
 
             // Perform the search.
-            return await _processLogRepository.CountAsync(
+            return await _messageLogRepository.CountAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -121,12 +121,12 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count process logs!"
+                "Failed to count message logs!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to count process logs!",
+                message: $"The manager failed to count message logs!",
                 innerException: ex
                 );
         }
@@ -135,14 +135,14 @@ internal class ProcessLogManager : IProcessLogManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<PipelineLog> CreateAsync(
-        PipelineLog processLog,
+    public virtual async Task<MessageLog> CreateAsync(
+        MessageLog messageLog,
         string userName,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLog, nameof(processLog))
+        Guard.Instance().ThrowIfNull(messageLog, nameof(messageLog))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         try
@@ -150,24 +150,24 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating the {name} model stats",
-                nameof(PipelineLog)
+                nameof(MessageLog)
                 );
 
             // Ensure the stats are correct.
-            processLog.CreatedOnUtc = DateTime.UtcNow;
-            processLog.CreatedBy = userName;
-            processLog.LastUpdatedBy = null;
-            processLog.LastUpdatedOnUtc = null;
+            messageLog.CreatedOnUtc = DateTime.UtcNow;
+            messageLog.CreatedBy = userName;
+            messageLog.LastUpdatedBy = null;
+            messageLog.LastUpdatedOnUtc = null;
 
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IProcessLogRepository.CreateAsync)
+                nameof(IMessageLogRepository.CreateAsync)
                 );
 
             // Perform the operation.
-            return await _processLogRepository.CreateAsync(
-                processLog,
+            return await _messageLogRepository.CreateAsync(
+                messageLog,
                 cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -176,12 +176,12 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to create a new process log!"
+                "Failed to create a new message log!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to create a new process log!",
+                message: $"The manager failed to create a new message log!",
                 innerException: ex
                 );
         }
@@ -190,7 +190,7 @@ internal class ProcessLogManager : IProcessLogManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<PipelineLog>> FindAllAsync(
+    public virtual async Task<IEnumerable<MessageLog>> FindAllAsync(
         CancellationToken cancellationToken = default
         )
     {
@@ -199,11 +199,11 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IProcessLogRepository.FindAllAsync)
+                nameof(IMessageLogRepository.FindAllAsync)
                 );
 
             // Perform the operation.
-            var result = await _processLogRepository.FindAllAsync(
+            var result = await _messageLogRepository.FindAllAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
@@ -215,13 +215,13 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for process logs!"
+                "Failed to search for message logs!"
                 );
 
             // Provider better context.
             throw new ManagerException(
                 message: $"The manager failed to search for  " +
-                "process logs!",
+                "message logs!",
                 innerException: ex
                 );
         }
@@ -230,7 +230,7 @@ internal class ProcessLogManager : IProcessLogManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<IEnumerable<PipelineLog>> FindByMessageAsync(
+    public virtual async Task<IEnumerable<MessageLog>> FindByMessageAsync(
         Message message,
         CancellationToken cancellationToken = default
         )
@@ -243,11 +243,11 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IProcessLogRepository.FindByMessageAsync)
+                nameof(IMessageLogRepository.FindByMessageAsync)
                 );
 
             // Perform the operation.
-            var result = await _processLogRepository.FindByMessageAsync(
+            var result = await _messageLogRepository.FindByMessageAsync(
                 message,
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -260,13 +260,13 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for process logs for a message!"
+                "Failed to search for message logs for a message!"
                 );
 
             // Provider better context.
             throw new ManagerException(
                 message: $"The manager failed to search for  " +
-                "process logs for a message!",
+                "message logs for a message!",
                 innerException: ex
                 );
         }
@@ -276,13 +276,13 @@ internal class ProcessLogManager : IProcessLogManager
 
     /// <inheritdoc/>
     public virtual async Task DeleteAsync(
-        PipelineLog processLog,
+        MessageLog messageLog,
         string userName,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLog, nameof(processLog))
+        Guard.Instance().ThrowIfNull(messageLog, nameof(messageLog))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         try
@@ -290,22 +290,22 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating the {name} model stats",
-                nameof(PipelineLog)
+                nameof(MessageLog)
                 );
 
             // Ensure the stats are correct.
-            processLog.LastUpdatedOnUtc = DateTime.UtcNow;
-            processLog.LastUpdatedBy = userName;
+            messageLog.LastUpdatedOnUtc = DateTime.UtcNow;
+            messageLog.LastUpdatedBy = userName;
 
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IProcessLogRepository.DeleteAsync)
+                nameof(IMessageLogRepository.DeleteAsync)
                 );
 
             // Perform the operation.
-            await _processLogRepository.DeleteAsync(
-                processLog,
+            await _messageLogRepository.DeleteAsync(
+                messageLog,
                 cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -314,12 +314,12 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to delete a process log!"
+                "Failed to delete a message log!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to delete a process log!",
+                message: $"The manager failed to delete a message log!",
                 innerException: ex
                 );
         }
@@ -328,14 +328,14 @@ internal class ProcessLogManager : IProcessLogManager
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task<PipelineLog> UpdateAsync(
-        PipelineLog processLog,
+    public virtual async Task<MessageLog> UpdateAsync(
+        MessageLog messageLog,
         string userName,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLog, nameof(processLog))
+        Guard.Instance().ThrowIfNull(messageLog, nameof(messageLog))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         try
@@ -343,22 +343,22 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating the {name} model stats",
-                nameof(PipelineLog)
+                nameof(MessageLog)
                 );
 
             // Ensure the stats are correct.
-            processLog.LastUpdatedOnUtc = DateTime.UtcNow;
-            processLog.LastUpdatedBy = userName;
+            messageLog.LastUpdatedOnUtc = DateTime.UtcNow;
+            messageLog.LastUpdatedBy = userName;
 
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IProcessLogRepository.UpdateAsync)
+                nameof(IMessageLogRepository.UpdateAsync)
                 );
 
             // Perform the operation.
-            return await _processLogRepository.UpdateAsync(
-                processLog,
+            return await _messageLogRepository.UpdateAsync(
+                messageLog,
                 cancellationToken
                 ).ConfigureAwait(false);
         }
@@ -367,12 +367,12 @@ internal class ProcessLogManager : IProcessLogManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to update a process log!"
+                "Failed to update a message log!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to update a process log!",
+                message: $"The manager failed to update a message log!",
                 innerException: ex
                 );
         }

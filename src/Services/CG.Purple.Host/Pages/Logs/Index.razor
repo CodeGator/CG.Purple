@@ -15,7 +15,7 @@
         <MudDatePicker Label="End Date" Clearable @bind-Date="_endDate" />
     </MudItem>
     <MudItem xs="2">
-        <MudExEnumSelect TEnum="ProcessEvent?" Label="Event Type" @bind-Value="_eventType"/>
+        <MudExEnumSelect TEnum="MessageEvent?" Label="Event Type" @bind-Value="_eventType"/>
     </MudItem>
     <MudItem xs="2">
         <MudExEnumSelect TEnum="MessageType?" Label="Message Type" @bind-Value="_messageType" />
@@ -36,7 +36,7 @@
     </MudItem>    
 </MudGrid>
 
-<MudTable Items="@_logs" Dense Striped Virtualize Filter="new Func<PipelineLog,bool>(FilterFunc)" Loading="_isBusy">
+<MudTable Items="@_logs" Dense Striped Virtualize Filter="new Func<MessageLog,bool>(FilterFunc)" Loading="_isBusy">
     <ToolBarContent>
         <MudButton StartIcon="@Icons.Material.Filled.Refresh"
                    Variant="Variant.Filled"
@@ -49,18 +49,18 @@
                       IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
     <HeaderContent>
-        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.CreatedOnUtc.ToLocalTime())">DateTime</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.Event)">Event</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeBeforeState())">Before</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeAfterState())">After</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeProviderType())">Provider</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeMessage())">Message</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeError())">Error</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<PipelineLog, object>(x=>x.SafeData())">Data</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.CreatedOnUtc.ToLocalTime())">DateTime</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.MessageEvent)">Event</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeBeforeState())">Before</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeAfterState())">After</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeProviderType())">Provider</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeMessage())">Message</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeError())">Error</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeData())">Data</MudTableSortLabel></MudTh>
     </HeaderContent>
     <RowTemplate>
         <MudTd DataLabel="DateTime">@context.CreatedOnUtc.ToLocalTime()</MudTd>
-        <MudTd DataLabel="Event">@context.Event</MudTd>
+        <MudTd DataLabel="Event">@context.MessageEvent</MudTd>
         <MudTd DataLabel="Event">@context.SafeBeforeState()</MudTd>
         <MudTd DataLabel="Event">@context.SafeAfterState()</MudTd>
         <MudTd DataLabel="Event">@context.SafeProviderType()</MudTd>

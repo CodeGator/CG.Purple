@@ -31,7 +31,7 @@ internal class SmtpProvider : IMessageProvider
     /// <summary>
     /// This field contains the process log manager for this director.
     /// </summary>
-    internal protected readonly IProcessLogManager _processLogManager = null!;
+    internal protected readonly IMessageLogManager _processLogManager = null!;
 
     /// <summary>
     /// This field contains the logger for this provider.
@@ -62,7 +62,7 @@ internal class SmtpProvider : IMessageProvider
     public SmtpProvider(
         IMailMessageManager mailMessageManager,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         IMessagePropertyManager messagePropertyManager,
         ILogger<IMessageProvider> logger
         )

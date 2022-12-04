@@ -51,7 +51,7 @@ internal class PurpleDbContext : DbContext
     /// <summary>
     /// This property contains the collection of pipeline events.
     /// </summary>
-    public virtual DbSet<Entities.PipelineLog> PipelineLogs { get; set; } = null!;
+    public virtual DbSet<Entities.MessageLog> PipelineLogs { get; set; } = null!;
 
     /// <summary>
     /// This property contains the collection of property types.
@@ -66,7 +66,7 @@ internal class PurpleDbContext : DbContext
     /// <summary>
     /// This property contains the collection of provider log entries.
     /// </summary>
-    public virtual DbSet<Entities.PipelineLog> ProviderLogs { get; set; } = null!;
+    public virtual DbSet<Entities.MessageLog> ProviderLogs { get; set; } = null!;
 
     /// <summary>
     /// This property contains the collection of message provider types.
@@ -121,7 +121,7 @@ internal class PurpleDbContext : DbContext
         modelBuilder.ApplyConfiguration(new MimeTypeMap(modelBuilder));
         modelBuilder.ApplyConfiguration(new ParameterTypeMap(modelBuilder));
         modelBuilder.ApplyConfiguration(new PropertyTypeMap(modelBuilder));
-        modelBuilder.ApplyConfiguration(new PipelineLogMap(modelBuilder));
+        modelBuilder.ApplyConfiguration(new MessageLogMap(modelBuilder));
         modelBuilder.ApplyConfiguration(new ProviderParameterMap(modelBuilder));
         modelBuilder.ApplyConfiguration(new ProviderTypeMap(modelBuilder));
         modelBuilder.ApplyConfiguration(new TextMessageMap(modelBuilder));

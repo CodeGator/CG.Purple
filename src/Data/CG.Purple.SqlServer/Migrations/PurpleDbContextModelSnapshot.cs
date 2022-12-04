@@ -193,6 +193,68 @@ namespace CG.Purple.SqlServer.Migrations
                     b.UseTptMappingStrategy();
                 });
 
+            modelBuilder.Entity("CG.Purple.SqlServer.Entities.MessageLog", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("AfterState")
+                        .HasMaxLength(30)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("BeforeState")
+                        .HasMaxLength(30)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOnUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Data")
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(max)");
+
+                    b.Property<string>("Error")
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(max)");
+
+                    b.Property<string>("Event")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("LastUpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastUpdatedOnUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("MessageId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int?>("ProviderTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MessageId");
+
+                    b.HasIndex("ProviderTypeId");
+
+                    b.HasIndex(new[] { "Event", "BeforeState", "AfterState", "ProviderTypeId", "MessageId" }, "IX_MessageLogs");
+
+                    b.ToTable("MessageLogs", "Purple");
+                });
+
             modelBuilder.Entity("CG.Purple.SqlServer.Entities.MessageProperty", b =>
                 {
                     b.Property<long>("MessageId")
@@ -302,68 +364,6 @@ namespace CG.Purple.SqlServer.Migrations
                         .IsUnique();
 
                     b.ToTable("ParameterTypes", "Purple");
-                });
-
-            modelBuilder.Entity("CG.Purple.SqlServer.Entities.PipelineLog", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("AfterState")
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(30)");
-
-                    b.Property<string>("BeforeState")
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(30)");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedOnUtc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Data")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<string>("Error")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<string>("Event")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(30)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastUpdatedOnUtc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("MessageId")
-                        .HasColumnType("bigint");
-
-                    b.Property<int?>("ProviderTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MessageId");
-
-                    b.HasIndex("ProviderTypeId");
-
-                    b.HasIndex(new[] { "Event", "BeforeState", "AfterState", "ProviderTypeId", "MessageId" }, "IX_ProcessLogs");
-
-                    b.ToTable("ProcessLogs", "Purple");
                 });
 
             modelBuilder.Entity("CG.Purple.SqlServer.Entities.PropertyType", b =>
@@ -591,6 +591,24 @@ namespace CG.Purple.SqlServer.Migrations
                     b.Navigation("ProviderType");
                 });
 
+            modelBuilder.Entity("CG.Purple.SqlServer.Entities.MessageLog", b =>
+                {
+                    b.HasOne("CG.Purple.SqlServer.Entities.Message", "Message")
+                        .WithMany()
+                        .HasForeignKey("MessageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CG.Purple.SqlServer.Entities.ProviderType", "ProviderType")
+                        .WithMany()
+                        .HasForeignKey("ProviderTypeId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Message");
+
+                    b.Navigation("ProviderType");
+                });
+
             modelBuilder.Entity("CG.Purple.SqlServer.Entities.MessageProperty", b =>
                 {
                     b.HasOne("CG.Purple.SqlServer.Entities.Message", "Message")
@@ -608,23 +626,6 @@ namespace CG.Purple.SqlServer.Migrations
                     b.Navigation("Message");
 
                     b.Navigation("PropertyType");
-                });
-
-            modelBuilder.Entity("CG.Purple.SqlServer.Entities.PipelineLog", b =>
-                {
-                    b.HasOne("CG.Purple.SqlServer.Entities.Message", "Message")
-                        .WithMany()
-                        .HasForeignKey("MessageId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("CG.Purple.SqlServer.Entities.ProviderType", "ProviderType")
-                        .WithMany()
-                        .HasForeignKey("ProviderTypeId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Message");
-
-                    b.Navigation("ProviderType");
                 });
 
             modelBuilder.Entity("CG.Purple.SqlServer.Entities.ProviderParameter", b =>

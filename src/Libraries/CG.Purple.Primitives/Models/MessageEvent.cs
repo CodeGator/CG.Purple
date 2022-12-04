@@ -2,9 +2,9 @@
 namespace CG.Purple.Models;
 
 /// <summary>
-/// This enumeration represents the valid process events.
+/// This enumeration represents the valid message events.
 /// </summary>
-public enum ProcessEvent
+public enum MessageEvent
 {
     /// <summary>
     /// This enumeration represents a message storage event.

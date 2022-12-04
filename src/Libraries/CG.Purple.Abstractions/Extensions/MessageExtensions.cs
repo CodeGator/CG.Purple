@@ -32,7 +32,7 @@ public static class MessageExtensions001
     public static async Task ToSentStateAsync(
         this Message message,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -87,7 +87,7 @@ public static class MessageExtensions001
     public static async Task ToSentStateAsync(
         this Message message,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         string? data,
         string userName,
         CancellationToken cancellationToken = default
@@ -145,7 +145,7 @@ public static class MessageExtensions001
     public static async Task ToSentStateAsync(
         this Message message,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         ProviderType providerType,
         string? data,
         string userName,
@@ -204,7 +204,7 @@ public static class MessageExtensions001
     public static async Task ToPendingStateAsync(
         this Message message,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -260,7 +260,7 @@ public static class MessageExtensions001
         this Message message,
         Exception ex,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -299,7 +299,7 @@ public static class MessageExtensions001
         this Message message,
         Exception ex,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         string? data,
         string userName,
         CancellationToken cancellationToken = default
@@ -341,7 +341,7 @@ public static class MessageExtensions001
         this Message message,
         Exception ex,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         ProviderType providerType,
         string? data,
         string userName,
@@ -383,7 +383,7 @@ public static class MessageExtensions001
         this Message message,
         string errorMessage,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -442,7 +442,7 @@ public static class MessageExtensions001
         this Message message,
         string errorMessage,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         string? data,
         string userName,
         CancellationToken cancellationToken = default
@@ -504,7 +504,7 @@ public static class MessageExtensions001
         this Message message,
         string errorMessage,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         ProviderType providerType,
         string? data,
         string userName,
@@ -567,7 +567,7 @@ public static class MessageExtensions001
     public static async Task ToProcessingStateAsync(
         this Message message,
         IMessageManager messageManager,
-        IProcessLogManager processLogManager,
+        IMessageLogManager processLogManager,
         ProviderType assignedProviderType,
         string userName,
         CancellationToken cancellationToken = default

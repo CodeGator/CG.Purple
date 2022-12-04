@@ -110,7 +110,7 @@ public partial class Index
     /// This property contains the process log manager for this page.
     /// </summary>
     [Inject]
-    protected IProcessLogManager ProcessLogManager { get; set; } = null!;
+    protected IMessageLogManager ProcessLogManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the dialog service for this page.

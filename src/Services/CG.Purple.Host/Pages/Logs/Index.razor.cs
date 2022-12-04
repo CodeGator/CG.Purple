@@ -29,7 +29,7 @@ public partial class Index
     /// <summary>
     /// This field contains the collection of log entries.
     /// </summary>
-    protected IEnumerable<PipelineLog>? _logs = Array.Empty<PipelineLog>();
+    protected IEnumerable<MessageLog>? _logs = Array.Empty<MessageLog>();
 
     /// <summary>
     /// This field contains the collection of provider types.
@@ -54,7 +54,7 @@ public partial class Index
     /// <summary>
     /// This field contains the optional event type.
     /// </summary>
-    protected ProcessEvent? _eventType;
+    protected MessageEvent? _eventType;
 
     /// <summary>
     /// This field contains the optional before state.
@@ -88,7 +88,7 @@ public partial class Index
     /// This property contains the process log manager for this page.
     /// </summary>
     [Inject]
-    protected IProcessLogManager ProcessLogManager { get; set; } = null!;
+    protected IMessageLogManager ProcessLogManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the provider type manager for this page.
@@ -224,7 +224,7 @@ public partial class Index
             // Should we filter by the event type?
             if (_eventType is not null)
             {
-                _logs = _logs.Where(x => x.Event == _eventType).ToList();
+                _logs = _logs.Where(x => x.MessageEvent == _eventType).ToList();
             }
 
             // Should we filter by the before state?
@@ -282,12 +282,12 @@ public partial class Index
     // *******************************************************************
 
     /// <summary>
-    /// This method adapts the <see cref="FilterFunc(PipelineLog, string)"/> method
+    /// This method adapts the <see cref="FilterFunc(MessageLog, string)"/> method
     /// for use with a <see cref="MudTable{T}"/> control.
     /// </summary>
     /// <param name="element">The element to use for the operation.</param>
     /// <returns><c>true</c> if a match was found; <c>false</c> otherwise.</returns>
-    protected bool FilterFunc(PipelineLog element) =>
+    protected bool FilterFunc(MessageLog element) =>
         FilterFunc(element, _gridSearchString);
 
     // *******************************************************************
@@ -299,7 +299,7 @@ public partial class Index
     /// <param name="searchString">The search string to use for the operation.</param>
     /// <returns><c>true</c> if a match was found; <c>false</c> otherwise.</returns>
     protected bool FilterFunc(
-        PipelineLog element,
+        MessageLog element,
         string searchString
         )
     {
@@ -340,7 +340,7 @@ public partial class Index
             }
         }
 
-        var ev = Enum.GetName<ProcessEvent>(element.Event);
+        var ev = Enum.GetName<MessageEvent>(element.MessageEvent);
         if (searchString.Contains(ev ?? "", StringComparison.OrdinalIgnoreCase))
         {
             return true;

@@ -1,9 +1,9 @@
 ﻿namespace CG.Purple.SqlServer.Entities;
 
 /// <summary>
-/// This class represents a pipeline processing event entity.
+/// This class represents a message processing event entity.
 /// </summary>
-internal class PipelineLog : EntityBase
+internal class MessageLog : EntityBase
 {
     // *******************************************************************
     // Properties.
@@ -20,12 +20,12 @@ internal class PipelineLog : EntityBase
     /// This property contains the unique identifier for the associated 
     /// message.
     /// </summary>
-    public long? MessageId { get; set; }
+    public long MessageId { get; set; }
 
     /// <summary>
     /// This property contains the associate message.
     /// </summary>
-    public virtual Message? Message { get; set; }
+    public virtual Message Message { get; set; }
 
     /// <summary>
     /// This property contains the associated provider type.
@@ -40,7 +40,7 @@ internal class PipelineLog : EntityBase
     /// <summary>
     /// This property contains the associate processing event.
     /// </summary>
-    public ProcessEvent Event { get; set; }
+    public MessageEvent Event { get; set; }
 
     /// <summary>
     /// This property contains the state of the message before the 

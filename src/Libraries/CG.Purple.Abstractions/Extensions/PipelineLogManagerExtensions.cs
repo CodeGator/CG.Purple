@@ -2,10 +2,10 @@
 namespace CG.Purple.Managers;
 
 /// <summary>
-/// This class contains extension methods related to the <see cref="IProcessLogManager"/>
+/// This class contains extension methods related to the <see cref="IMessageLogManager"/>
 /// type.
 /// </summary>
-public static class ProcessLogManagerExtensions001
+public static class PipelineLogManagerExtensions001
 {
     // *******************************************************************
     // Public methods.
@@ -14,7 +14,7 @@ public static class ProcessLogManagerExtensions001
     #region Public methods
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -25,11 +25,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         Exception ex,        
         string userName,
         CancellationToken cancellationToken = default
@@ -46,7 +46,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log, for an even that did not cause a state transition
     /// in the associated message.
     /// </summary>
@@ -59,11 +59,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         Exception ex,
         string userName,
@@ -82,7 +82,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log, for an even that caused a state transition in 
     /// the associated message.
     /// </summary>
@@ -97,11 +97,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         Exception ex,
@@ -122,7 +122,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -133,11 +133,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         string errorMessage, 
         string userName,
         CancellationToken cancellationToken = default
@@ -150,9 +150,9 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
-                Event = ProcessEvent.Error,
+                MessageEvent = MessageEvent.Error,
                 Error = errorMessage
             },
             userName,
@@ -166,7 +166,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -178,11 +178,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         string errorMessage,
         string? data,
         string userName,
@@ -196,9 +196,9 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
-                Event = ProcessEvent.Error,
+                MessageEvent = MessageEvent.Error,
                 Error = errorMessage,
                 Data = data
             },
@@ -213,7 +213,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -225,11 +225,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         string errorMessage,
         ProviderType providerType,
         string userName,
@@ -243,9 +243,9 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
-                Event = ProcessEvent.Error,
+                MessageEvent = MessageEvent.Error,
                 Error = errorMessage,
                 ProviderType = providerType
             },
@@ -260,7 +260,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -273,11 +273,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         string errorMessage,
         ProviderType providerType,
         string? data,
@@ -292,9 +292,9 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
-                Event = ProcessEvent.Error,
+                MessageEvent = MessageEvent.Error,
                 Error = errorMessage,
                 ProviderType = providerType,
                 Data = data
@@ -310,7 +310,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log, for an even that caused a state transition in 
     /// the associated message.
     /// </summary>
@@ -325,11 +325,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         string errorMessage,
@@ -344,10 +344,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Error,
+                MessageEvent = MessageEvent.Error,
                 Error = errorMessage,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState
@@ -363,7 +363,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log, for an even that caused a state transition in 
     /// the associated message.
     /// </summary>
@@ -379,11 +379,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         string errorMessage,
@@ -399,10 +399,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Error,
+                MessageEvent = MessageEvent.Error,
                 Error = errorMessage,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState,
@@ -419,7 +419,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log, for an even that caused a state transition in 
     /// the associated message.
     /// </summary>
@@ -436,11 +436,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         string errorMessage,
@@ -458,10 +458,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Error,
+                MessageEvent = MessageEvent.Error,
                 Error = errorMessage,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState,
@@ -479,7 +479,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Error"/> event to
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log, for an even that did not cause a state transition 
     /// in the associated message.
     /// </summary>
@@ -492,11 +492,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogErrorEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         string errorMessage,
         string userName,
@@ -510,10 +510,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Error,
+                MessageEvent = MessageEvent.Error,
                 Error = errorMessage
             },
             userName,
@@ -527,7 +527,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Stored"/> event to
+    /// This method writes an <see cref="MessageEvent.Stored"/> event to
     /// the processing log, for an even that did not cause a state transition 
     /// in the associated message.
     /// </summary>
@@ -539,11 +539,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogStoredEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogStoredEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         string userName,
         CancellationToken cancellationToken = default
@@ -556,10 +556,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Stored,
+                MessageEvent = MessageEvent.Stored,
                 AfterState = message.MessageState
             },
             userName,
@@ -573,7 +573,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Assigned"/> event to
+    /// This method writes an <see cref="MessageEvent.Assigned"/> event to
     /// the processing log, for an even that caused a state transition in
     /// the associated message.
     /// </summary>
@@ -588,11 +588,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogAssignedEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogAssignedEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         ProviderType providerType,
@@ -608,11 +608,11 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 ProviderType = providerType,
                 Message = message,
-                Event = ProcessEvent.Assigned,
+                MessageEvent = MessageEvent.Assigned,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState   
             },
@@ -627,7 +627,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes a <see cref="ProcessEvent.Reset"/> event to
+    /// This method writes a <see cref="MessageEvent.Reset"/> event to
     /// the processing log, for an even that caused a state transition in
     /// the associated message.
     /// </summary>
@@ -641,11 +641,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogResetEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogResetEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         string userName,
@@ -659,10 +659,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Reset,
+                MessageEvent = MessageEvent.Reset,
                 BeforeState = previousMessageState, 
                 AfterState = message.MessageState
             },
@@ -677,7 +677,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes a <see cref="ProcessEvent.Disabled"/> event to
+    /// This method writes a <see cref="MessageEvent.Disabled"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -690,11 +690,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogDisabledEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogDisabledEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         string userName,
@@ -708,10 +708,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Disabled,
+                MessageEvent = MessageEvent.Disabled,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState
             },
@@ -726,7 +726,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Enabled"/> event to
+    /// This method writes an <see cref="MessageEvent.Enabled"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -739,11 +739,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogEnabledEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogEnabledEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         string userName,
@@ -757,10 +757,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Enabled,
+                MessageEvent = MessageEvent.Enabled,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState
             },
@@ -775,7 +775,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Sent"/> event to
+    /// This method writes an <see cref="MessageEvent.Sent"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -788,11 +788,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogSentEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogSentEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         string userName,
@@ -806,10 +806,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Sent,
+                MessageEvent = MessageEvent.Sent,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState
             },
@@ -824,7 +824,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Sent"/> event to
+    /// This method writes an <see cref="MessageEvent.Sent"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -838,11 +838,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogSentEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogSentEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         string? data,
@@ -857,10 +857,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Sent,
+                MessageEvent = MessageEvent.Sent,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState,
                 Data = data
@@ -876,7 +876,7 @@ public static class ProcessLogManagerExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method writes an <see cref="ProcessEvent.Sent"/> event to
+    /// This method writes an <see cref="MessageEvent.Sent"/> event to
     /// the processing log.
     /// </summary>
     /// <param name="processLogManager">The process log manager to use
@@ -891,11 +891,11 @@ public static class ProcessLogManagerExtensions001
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="PipelineLog"/> object.</returns>
+    /// created <see cref="MessageLog"/> object.</returns>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
-    public static async Task<PipelineLog> LogSentEventAsync(
-        this IProcessLogManager processLogManager,
+    public static async Task<MessageLog> LogSentEventAsync(
+        this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
         ProviderType providerType,
@@ -912,10 +912,10 @@ public static class ProcessLogManagerExtensions001
 
         // Record what we did, in the log.
         var result = await processLogManager.CreateAsync(
-            new PipelineLog()
+            new MessageLog()
             {
                 Message = message,
-                Event = ProcessEvent.Sent,
+                MessageEvent = MessageEvent.Sent,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState,
                 ProviderType = providerType,
