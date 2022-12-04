@@ -49,7 +49,7 @@ public class MailMessageOptions
     /// This property contains the subject for the message.
     /// </summary>
     [MaxLength(998)]
-    public string? Subject { get; set; } 
+    public string? Subject { get; set; }
 
     /// <summary>
     /// This property contains the subject for the message.
@@ -94,6 +94,13 @@ public class MailMessageOptions
     /// pipeline for processing.
     /// </summary>
     public DateTime? ProcessAfterUtc { get; set; }
+
+    /// <summary>
+    /// This property contains an optional provider name, for pre-assigning
+    /// a message to a specific provider.
+    /// </summary>
+    [MaxLength(64)]
+    public string? ProviderType { get; set; } 
 
     #endregion
 }

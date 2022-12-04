@@ -73,40 +73,40 @@ internal class PipelineService : BackgroundService
     /// <summary>
     /// This method performs the work for this service.
     /// </summary>
-    /// <param name="stoppingToken">A cancellation token that is signaled
+    /// <param name="cancellationToken">A cancellation token that is signaled
     /// when the service is stopping.</param>
     /// <returns>A task to perform the operation.</returns>
     protected override async Task ExecuteAsync(
-        CancellationToken stoppingToken
+        CancellationToken cancellationToken
         )
     {
         try
         {
             // Log what we are  about to do.
-            _logger.LogDebug(
+            _logger.LogInformation(
                 "The {svc} service is running.",
                 nameof(PipelineService)
                 );
 
             // Register for the stop signal.
-            stoppingToken.Register(() =>
-                _logger.LogDebug(
+            cancellationToken.Register(() =>
+                _logger.LogInformation(
                     "{svc} task is stopping.",
                     nameof(PipelineService)
                     )
                 );
 
             // Were options provided?
-            if (_hostedServiceOptions.PipelineOptions is not null &&
-                _hostedServiceOptions.PipelineOptions.StartupDelay is not null)
+            if (_hostedServiceOptions.Pipeline is not null &&
+                _hostedServiceOptions.Pipeline.StartupDelay is not null)
             {
                 // Get the duration.
-                var delayDuration = _hostedServiceOptions.PipelineOptions.StartupDelay.Value;
+                var delayDuration = _hostedServiceOptions.Pipeline.StartupDelay.Value;
 
                 // Sanity check the duration.
-                if (delayDuration < TimeSpan.FromSeconds(1))
+                if (delayDuration < TimeSpan.FromSeconds(5))
                 {
-                    delayDuration = TimeSpan.FromSeconds(1);
+                    delayDuration = TimeSpan.FromSeconds(5);
                 }
 
                 // Log what we are about to do.
@@ -119,7 +119,7 @@ internal class PipelineService : BackgroundService
                 // Let's not work too soon.
                 await Task.Delay(
                     delayDuration,
-                    stoppingToken
+                    cancellationToken
                     );
             }
             else
@@ -128,13 +128,13 @@ internal class PipelineService : BackgroundService
                 _logger.LogDebug(
                     "Pausing the {svc} startup for {ts}.",
                     nameof(PipelineService),
-                    TimeSpan.FromSeconds(1)
+                    TimeSpan.FromSeconds(5)
                 );
 
                 // Let's not work too soon.
                 await Task.Delay(
-                    TimeSpan.FromSeconds(1),
-                    stoppingToken
+                    TimeSpan.FromSeconds(5),
+                    cancellationToken
                     );
             }
             
@@ -145,7 +145,7 @@ internal class PipelineService : BackgroundService
                 );
 
             // While the service is running ...
-            while (!stoppingToken.IsCancellationRequested)
+            while (!cancellationToken.IsCancellationRequested)
             {
                 // Log what we are about to do.
                 _logger.LogDebug(
@@ -179,7 +179,7 @@ internal class PipelineService : BackgroundService
 
                     // Process pending messages.
                     await pipelineDirector.ProcessAsync(
-                        stoppingToken
+                        cancellationToken
                         ).ConfigureAwait(false);
                 }
                 finally
@@ -195,12 +195,6 @@ internal class PipelineService : BackgroundService
                         );
                 }
             }
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Leaving main {svc} service loop",
-                nameof(PipelineService)
-                );
         }
         catch (Exception ex)
         {
@@ -214,7 +208,7 @@ internal class PipelineService : BackgroundService
         finally
         {
             // Log what happened.
-            _logger.LogDebug(
+            _logger.LogInformation(
                 "{svc} task is stopped.",
                 nameof(PipelineService)
                 );

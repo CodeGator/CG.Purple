@@ -125,7 +125,6 @@ public static class WebApplicationBuilderExtensions003
                 {
                     // We want to map to NULL for optional properties.
                     dest.ProviderType = src.ProviderType == null ? null : dest.ProviderType;
-                    dest.Message = src.Message == null ? null : dest.Message;
                 }).ReverseMap();
             cfg.CreateMap<CG.Purple.SqlServer.Entities.ProviderType, ProviderType>().ReverseMap();
             cfg.CreateMap<CG.Purple.SqlServer.Entities.ProviderParameter, ProviderParameter>().ReverseMap();

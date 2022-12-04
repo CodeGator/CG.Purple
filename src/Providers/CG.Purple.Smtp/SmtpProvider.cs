@@ -94,14 +94,12 @@ internal class SmtpProvider : IMessageProvider
     public virtual async Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
         ProviderType providerType,
-        PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the parameters before attempting to use them.
         Guard.Instance().ThrowIfNull(messages, nameof(messages))
-            .ThrowIfNull(providerType, nameof(providerType))
-            .ThrowIfNull(providerPropertyType, nameof(providerPropertyType));
+            .ThrowIfNull(providerType, nameof(providerType));
 
         try
         {
@@ -237,11 +235,10 @@ internal class SmtpProvider : IMessageProvider
                         );
 
                     // Since the provider can't process this message, we'll reset
-                    //   it, so the pipeline can (hopefully) assign it to a provider
-                    //   that can process it.
+                    //   it so the pipeline can (hopefully) assign it to another
+                    //   provider on the next pass.
                     await ResetMessageAsync(
                         message,
-                        providerPropertyType,
                         cancellationToken
                         ).ConfigureAwait(false);
 
@@ -295,7 +292,6 @@ internal class SmtpProvider : IMessageProvider
                     //   that can process it.
                     await ResetMessageAsync(
                         message,
-                        providerPropertyType,
                         cancellationToken
                         ).ConfigureAwait(false);
 
@@ -528,92 +524,29 @@ internal class SmtpProvider : IMessageProvider
     /// the error count on the message. 
     /// </summary>
     /// <param name="message">The message to use for the operation.</param>
-    /// <param name="providerPropertyType">The provider property type to
-    /// use for the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
     private async Task ResetMessageAsync(
         Message message,
-        PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         )
     {
         // Log what we are about to do.
         _logger.LogDebug(
-            "Looking for provider property on message: {id}",
-            message.Id 
-            );
-
-        // Find the corresponding provider property, for the message.
-        var assignedProviderProperty = message.MessageProperties.FirstOrDefault(
-            x => x.PropertyType.Id == providerPropertyType.Id
-            );
-
-        // Should never happen, but, pffft, check it anyway.
-        if (assignedProviderProperty is null) 
-        {
-            // Log what we are about to do.
-            _logger.LogError(
-                "Failed to find the assigned provider property on message: {id}!",
-                message.Id
-                );
-
-            // Record what happened, in the log.
-            _ = await _processLogManager.LogErrorEventAsync(
-                message,
-                "Failed to find the assigned provider property!",
-                "host",
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Bumping the error count, for message: {id}",
-                message.Id
-                );
-
-            // Bump the error count on the message.
-            await message.BumpErrorCountAsync(
-                _messageManager,
-                "host",
-                cancellationToken
-                ).ConfigureAwait(false);
-
-            return; // Nothing to do!
-        }
-
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Updating the local message: {id}",
+            "Removing the provider from message: {id}",
             message.Id
             );
 
-        // Update the local model.
-        message.MessageProperties.Remove(
-            assignedProviderProperty
-            );
+        // Update the message.
+        message.ProviderType = null;
 
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Deleting the message property type: {id1} from message: {id2}",
-            assignedProviderProperty.PropertyType.Id,
-            assignedProviderProperty.Message.Id
-            );
-
-        // Update the database.
-        await _messagePropertyManager.DeleteAsync(
-            assignedProviderProperty,
+        // Save the changes.
+        _ = await _messageManager.UpdateAsync(
+            message,
             "host",
             cancellationToken
             ).ConfigureAwait(false);
-
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Transitioning message: {id} to the {state} state.",
-            message.Id,
-            MessageState.Pending
-            );
 
         // Transition back to the 'Pending' state.
         await message.ToPendingStateAsync(

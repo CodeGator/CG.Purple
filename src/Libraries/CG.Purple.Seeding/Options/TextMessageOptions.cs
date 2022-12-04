@@ -71,5 +71,12 @@ public class TextMessageOptions
     /// </summary>
     public DateTime? ProcessAfterUtc { get; set; }
 
+    /// <summary>
+    /// This property contains an optional provider name, for pre-assigning
+    /// a message to a specific provider.
+    /// </summary>
+    [MaxLength(64)]
+    public string? ProviderType { get; set; }
+
     #endregion
 }

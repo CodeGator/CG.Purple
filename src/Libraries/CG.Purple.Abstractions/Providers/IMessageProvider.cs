@@ -12,8 +12,6 @@ public interface IMessageProvider
     /// </summary>
     /// <param name="messages">The messages to use for the operation.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
-    /// <param name="providerPropertyType">The provider property type to use
-    /// for the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation.</returns>
@@ -24,7 +22,6 @@ public interface IMessageProvider
     Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
         ProviderType providerType,
-        PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         );
 }

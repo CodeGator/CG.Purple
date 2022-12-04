@@ -1,4 +1,5 @@
 ﻿
+
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -19,6 +20,11 @@ internal class MailMessageManager : IMailMessageManager
     internal protected readonly IMailMessageRepository _mailMessageRepository = null!;
 
     /// <summary>
+    /// This field contains the cryptographer for this manager.
+    /// </summary>
+    internal protected readonly ICryptographer _cryptographer = null!;
+
+    /// <summary>
     /// This field contains the logger for this manager.
     /// </summary>
     internal protected readonly ILogger<IMailMessageManager> _logger = null!;
@@ -37,20 +43,24 @@ internal class MailMessageManager : IMailMessageManager
     /// </summary>
     /// <param name="mailMessageRepository">The mail message repository to use
     /// with this manager.</param>
+    /// <param name="cryptographer">The cryptographer to use with this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public MailMessageManager(
         IMailMessageRepository mailMessageRepository,
+        ICryptographer cryptographer,
         ILogger<IMailMessageManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(mailMessageRepository, nameof(mailMessageRepository))
+            .ThrowIfNull(cryptographer, nameof(cryptographer))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _mailMessageRepository = mailMessageRepository;
+        _cryptographer = cryptographer;
         _logger = logger;
     }
 
@@ -178,7 +188,22 @@ internal class MailMessageManager : IMailMessageManager
 
                 // Generate the unique message key.
                 mailMessage.MessageKey = $"{Guid.NewGuid()}";
-            }            
+            }
+
+            // Do we have an associated provider?
+            if (mailMessage.ProviderType is not null)
+            {
+                // Provider parameters are encrypted, at rest, so we'll need
+                //   to deal with those values now.
+                foreach (var parameter in mailMessage.ProviderType.Parameters)
+                {
+                    // Encrypt the value.
+                    parameter.Value = await _cryptographer.AesEncryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Log what we are about to do.
             _logger.LogTrace(
@@ -191,6 +216,21 @@ internal class MailMessageManager : IMailMessageManager
                 mailMessage,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Do we have an associated provider?
+            if (mailMessage.ProviderType is not null)
+            {
+                // Provider parameters are encrypted, at rest, so we'll need
+                //   to deal with those values now.
+                foreach (var parameter in mailMessage.ProviderType.Parameters)
+                {
+                    // Decrypt the value.
+                    parameter.Value = await _cryptographer.AesDecryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Return the results.
             return result;
@@ -366,6 +406,21 @@ internal class MailMessageManager : IMailMessageManager
             mailMessage.LastUpdatedOnUtc = DateTime.UtcNow;
             mailMessage.LastUpdatedBy = userName;
 
+            // Do we have an associated provider?
+            if (mailMessage.ProviderType is not null)
+            {
+                // Provider parameters are encrypted, at rest, so we'll need
+                //   to deal with those values now.
+                foreach (var parameter in mailMessage.ProviderType.Parameters)
+                {
+                    // Encrypt the value.
+                    parameter.Value = await _cryptographer.AesEncryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
+
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
@@ -377,6 +432,21 @@ internal class MailMessageManager : IMailMessageManager
                 mailMessage,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Do we have an associated provider?
+            if (mailMessage.ProviderType is not null)
+            {
+                // Provider parameters are encrypted, at rest, so we'll need
+                //   to deal with those values now.
+                foreach (var parameter in mailMessage.ProviderType.Parameters)
+                {
+                    // Decrypt the value.
+                    parameter.Value = await _cryptographer.AesDecryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Return the results.
             return result;

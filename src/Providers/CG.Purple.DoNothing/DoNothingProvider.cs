@@ -54,7 +54,6 @@ internal class DoNothingProvider : IMessageProvider
     public virtual async Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
         ProviderType providerType,
-        PropertyType providerPropertyType,
         CancellationToken cancellationToken = default
         )
     {

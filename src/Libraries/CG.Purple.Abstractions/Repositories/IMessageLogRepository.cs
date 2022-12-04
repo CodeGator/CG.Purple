@@ -100,22 +100,4 @@ public interface IMessageLogRepository
         MessageLog providerLog,
         CancellationToken cancellationToken = default
         );
-
-    /// <summary>
-    /// This method updates an existing <see cref="MessageLog"/> object in the 
-    /// underlying storage.
-    /// </summary>
-    /// <param name="providerLog">The model to update in the underlying storage.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation that returns the newly updated
-    /// <see cref="MessageLog"/> object.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    /// <exception cref="RepositoryException">This exception is thrown whenever the
-    /// repository fails to complete the operation.</exception>
-    Task<MessageLog> UpdateAsync(
-        MessageLog providerLog,
-        CancellationToken cancellationToken = default
-        );
 }

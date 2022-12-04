@@ -19,6 +19,11 @@ internal class MessageManager : IMessageManager
     internal protected readonly IMessageRepository _messageRepository = null!;
 
     /// <summary>
+    /// This field contains the cryptographer for this manager.
+    /// </summary>
+    internal protected readonly ICryptographer _cryptographer = null!;
+
+    /// <summary>
     /// This field contains the logger for this manager.
     /// </summary>
     internal protected readonly ILogger<IMessageManager> _logger = null!;
@@ -35,22 +40,26 @@ internal class MessageManager : IMessageManager
     /// This constructor creates a new instance of the <see cref="MessageManager"/>
     /// class.
     /// </summary>
-    /// <param name="MessageRepository">The message repository to use
+    /// <param name="messageRepository">The message repository to use
     /// with this manager.</param>
+    /// <param name="cryptographer">The cryptographer to use with this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public MessageManager(
-        IMessageRepository MessageRepository,
+        IMessageRepository messageRepository,
+        ICryptographer cryptographer,
         ILogger<IMessageManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(MessageRepository, nameof(MessageRepository))
+        Guard.Instance().ThrowIfNull(messageRepository, nameof(messageRepository))
+            .ThrowIfNull(cryptographer, nameof(cryptographer))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
-        _messageRepository = MessageRepository;
+        _messageRepository = messageRepository;
+        _cryptographer = cryptographer;
         _logger = logger;
     }
 
@@ -204,9 +213,25 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the operation.
-            var result = await _messageRepository.FindAllAsync(
+            var result = (await _messageRepository.FindAllAsync(
                 cancellationToken
-                ).ConfigureAwait(false);
+                ).ConfigureAwait(false)).ToArray();
+
+            // This result includes an associated provider, with parameters. Since
+            //   provider parameters are encrypted, at rest, we'll need to decrypt
+            //   the values before we send the data to the caller.
+            foreach (var message in result.Where(x => x.ProviderType != null))
+            {
+                // Loop through the parameters.
+                foreach (var parameter in message?.ProviderType?.Parameters ?? Array.Empty<ProviderParameter>())
+                {
+                    // Decrypt the value.
+                    parameter.Value = await _cryptographer.AesDecryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Return the results.
             return result;
@@ -253,6 +278,22 @@ internal class MessageManager : IMessageManager
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // This result might include an associated provider, with parameters.
+            //   Since provider parameters are encrypted, at rest, we'll need to
+            //   decrypt the values before we send the data to the caller.
+            if (result?.ProviderType is not null)
+            {
+                // Loop through the parameters.
+                foreach (var parameter in result?.ProviderType?.Parameters ?? Array.Empty<ProviderParameter>())
+                {
+                    // Decrypt the value.
+                    parameter.Value = await _cryptographer.AesDecryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
+
             // Return the results.
             return result;
         }
@@ -298,6 +339,22 @@ internal class MessageManager : IMessageManager
                 cancellationToken
                 ).ConfigureAwait(false);
 
+            // This result might include an associated provider, with parameters.
+            //   Since provider parameters are encrypted, at rest, we'll need to
+            //   decrypt the values before we send the data to the caller.
+            if (result?.ProviderType is not null)
+            {
+                // Loop through the parameters.
+                foreach (var parameter in result?.ProviderType?.Parameters ?? Array.Empty<ProviderParameter>())
+                {
+                    // Decrypt the value.
+                    parameter.Value = await _cryptographer.AesDecryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
+
             // Return the results.
             return result;
         }
@@ -338,10 +395,26 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the operation.
-            var result = await _messageRepository.FindReadyToArchiveAsync(
+            var result = (await _messageRepository.FindReadyToArchiveAsync(
                 maxDaysToLive,
                 cancellationToken
-                ).ConfigureAwait(false);
+                ).ConfigureAwait(false)).ToArray();
+
+            // This result includes an associated provider, with parameters. Since
+            //   provider parameters are encrypted, at rest, we'll need to decrypt
+            //   the values before we send the data to the caller.
+            foreach (var message in result.Where(x => x.ProviderType != null))
+            {
+                // Loop through the parameters.
+                foreach (var parameter in message?.ProviderType?.Parameters ?? Array.Empty<ProviderParameter>())
+                {
+                    // Decrypt the value.
+                    parameter.Value = await _cryptographer.AesDecryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Return the results.
             return result;
@@ -379,9 +452,25 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the operation.
-            var result = await _messageRepository.FindReadyToProcessAsync(
+            var result = (await _messageRepository.FindReadyToProcessAsync(
                 cancellationToken
-                ).ConfigureAwait(false);
+                ).ConfigureAwait(false)).ToArray();
+
+            // This result includes an associated provider, with parameters. Since
+            //   provider parameters are encrypted, at rest, we'll need to decrypt
+            //   the values before we send the data to the caller.
+            foreach (var message in result.Where(x => x.ProviderType != null))
+            {
+                // Loop through the parameters.
+                foreach (var parameter in message?.ProviderType?.Parameters ?? Array.Empty<ProviderParameter>())
+                {
+                    // Decrypt the value.
+                    parameter.Value = await _cryptographer.AesDecryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Return the results.
             return result;
@@ -423,10 +512,26 @@ internal class MessageManager : IMessageManager
                 );
 
             // Perform the operation.
-            var result = await _messageRepository.FindReadyToRetryAsync(
+            var result = (await _messageRepository.FindReadyToRetryAsync(
                 maxErrorCount,
                 cancellationToken
-                ).ConfigureAwait(false);
+                ).ConfigureAwait(false)).ToArray();
+
+            // This result includes an associated provider, with parameters. Since
+            //   provider parameters are encrypted, at rest, we'll need to decrypt
+            //   the values before we send the data to the caller.
+            foreach (var message in result.Where(x => x.ProviderType != null))
+            {
+                // Loop through the parameters.
+                foreach (var parameter in message?.ProviderType?.Parameters ?? Array.Empty<ProviderParameter>())
+                {
+                    // Decrypt the value.
+                    parameter.Value = await _cryptographer.AesDecryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Return the results.
             return result;
@@ -473,6 +578,21 @@ internal class MessageManager : IMessageManager
             message.LastUpdatedOnUtc = DateTime.UtcNow;
             message.LastUpdatedBy = userName;
 
+            // Do we have an associated provider?
+            if (message.ProviderType is not null)
+            {
+                // Provider parameters are encrypted, at rest, so we'll need
+                //   to deal with those values now.
+                foreach (var parameter in message.ProviderType.Parameters)
+                {
+                    // Encrypt the value
+                    parameter.Value = await _cryptographer.AesEncryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);   
+                }
+            }
+
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
@@ -484,6 +604,21 @@ internal class MessageManager : IMessageManager
                 message,
                 cancellationToken
                 ).ConfigureAwait(false);
+
+            // Do we have an associated provider?
+            if (message.ProviderType is not null)
+            {
+                // Provider parameters are encrypted, at rest, so we'll need
+                //   to deal with those values now.
+                foreach (var parameter in message.ProviderType.Parameters)
+                {
+                    // Decrypt the value
+                    parameter.Value = await _cryptographer.AesDecryptAsync(
+                        parameter.Value,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+            }
 
             // Return the results.
             return result;

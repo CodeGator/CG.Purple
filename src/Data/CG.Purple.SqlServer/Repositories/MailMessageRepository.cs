@@ -563,19 +563,23 @@ internal class MailMessageRepository : IMailMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // Find the message again so we pick up any attachments, and/or
-            //   properties that we removed, on the entity, earlier (see above).
-            var result = await FindByIdAsync(
-                entity.Id,
-                cancellationToken
-                ).ConfigureAwait(false);
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Converting a {entity} entity to a model",
+                nameof(MailMessage)
+                );
+
+            // Convert the entity to a model.
+            var result = _mapper.Map<MailMessage>(
+                entity
+                );
 
             // Did we fail?
             if (result is null)
             {
                 // Panic!!
-                throw new InvalidOperationException(
-                    $"Failed to find the message: {entity.Id}!"
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(MailMessage)} entity to a model."
                     );
             }
 

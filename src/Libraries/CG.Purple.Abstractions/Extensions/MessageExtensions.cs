@@ -21,7 +21,7 @@ public static class MessageExtensions001
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -75,7 +75,7 @@ public static class MessageExtensions001
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="data">Extra data associated with the event.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
@@ -132,7 +132,7 @@ public static class MessageExtensions001
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
     /// <param name="data">Extra data associated with the event.</param>
@@ -193,7 +193,7 @@ public static class MessageExtensions001
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -248,7 +248,7 @@ public static class MessageExtensions001
     /// <param name="ex">The exception to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -286,7 +286,7 @@ public static class MessageExtensions001
     /// <param name="ex">The exception to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="data">Additional data that is related to the event.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
@@ -327,7 +327,7 @@ public static class MessageExtensions001
     /// <param name="ex">The exception to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
     /// <param name="data">Additional data that is related to the event.</param>
@@ -371,7 +371,7 @@ public static class MessageExtensions001
     /// <param name="errorMessage">The error message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -429,7 +429,7 @@ public static class MessageExtensions001
     /// <param name="errorMessage">The error message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="data">Extra data that is related to the event.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
@@ -490,7 +490,7 @@ public static class MessageExtensions001
     /// <param name="errorMessage">The error message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="processLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
     /// <param name="data">Extra data that is related to the event.</param>
@@ -554,7 +554,7 @@ public static class MessageExtensions001
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The process log manager to use 
+    /// <param name="messageLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="assignedProviderType">The assigned provider type to use
     /// for the operation.</param>
@@ -567,7 +567,7 @@ public static class MessageExtensions001
     public static async Task ToProcessingStateAsync(
         this Message message,
         IMessageManager messageManager,
-        IMessageLogManager processLogManager,
+        IMessageLogManager messageLogManager,
         ProviderType assignedProviderType,
         string userName,
         CancellationToken cancellationToken = default
@@ -576,7 +576,7 @@ public static class MessageExtensions001
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(message, nameof(message))
             .ThrowIfNull(messageManager, nameof(messageManager))
-            .ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(assignedProviderType, nameof(assignedProviderType))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
@@ -594,7 +594,7 @@ public static class MessageExtensions001
             ).ConfigureAwait(false);
 
         // Record what we did, in the log.
-        _ = await processLogManager.LogAssignedEventAsync(
+        _ = await messageLogManager.LogAssignedEventAsync(
             message,
             oldMessageState,
             assignedProviderType,

@@ -45,7 +45,8 @@ public static class WebApplicationBuilderExtensions006
 
         // Configure the BLL options.
         webApplicationBuilder.Services.ConfigureOptions<HostedServiceOptions>(
-            webApplicationBuilder.Configuration.GetSection(sectionName)
+            webApplicationBuilder.Configuration.GetSection(sectionName),
+            out var options
             );
 
         // Tell the world what we are about to do.
@@ -56,53 +57,14 @@ public static class WebApplicationBuilderExtensions006
         // Add the director.
         webApplicationBuilder.Services.AddScoped<IPipelineDirector, PipelineDirector>();
 
-        /*
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Wiring up the hosted processing service"
+            "Wiring up the pipeline service"
             );
 
         // Add the services.
-        webApplicationBuilder.Services.AddHostedService<ProcessingService>();
+        webApplicationBuilder.Services.AddHostedService<PipelineService>();
 
-
-        // Tell the world what we are about to do.
-        bootstrapLogger?.LogDebug(
-            "Wiring up the process director"
-            );
-
-        // Add the director.
-        webApplicationBuilder.Services.AddScoped<IProcessDirector, ProcessDirector>();
-
-        // Tell the world what we are about to do.
-        bootstrapLogger?.LogDebug(
-            "Wiring up the retry director"
-            );
-
-        // Add the director.
-        webApplicationBuilder.Services.AddScoped<IRetryDirector, RetryDirector>();
-
-        // Tell the world what we are about to do.
-        bootstrapLogger?.LogDebug(
-            "Wiring up the archive director"
-            );
-
-        // Add the director.
-        webApplicationBuilder.Services.AddScoped<IArchiveDirector, ArchiveDirector>();
-
-        // Tell the world what we are about to do.
-        bootstrapLogger?.LogDebug(
-            "Wiring up the assignment director"
-            );
-
-        // Add the director.
-        webApplicationBuilder.Services.AddScoped<IAssignmentDirector, AssignmentDirector>();
-
-        // Tell the world what we are about to do.
-        bootstrapLogger?.LogDebug(
-            "Wiring up SignalR for the hosted service(s)"
-            );
-        */
         // Add SignalR stuff.
         webApplicationBuilder.Services.AddSignalR(options =>
         {

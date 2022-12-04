@@ -245,12 +245,15 @@ internal class MessageRepository : IMessageRepository
                 );
 
             // Perform the message search.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var Messages = await dbContext.Messages
                 .Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                .Include(x => x.ProviderType).ThenInclude(x => x.Parameters).ThenInclude(x => x.ParameterType)
                 .ToListAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             // Convert the entities to a models.
             var result = Messages.Select(x =>
@@ -307,13 +310,16 @@ internal class MessageRepository : IMessageRepository
                 );
 
             // Perform the message search.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var message = await dbContext.Messages.Where(x => 
                 x.Id == id
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .Include(x => x.ProviderType).ThenInclude(x => x.Parameters).ThenInclude(x => x.ParameterType)
                  .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             // Did we fail?
             if (message is null)
@@ -385,13 +391,16 @@ internal class MessageRepository : IMessageRepository
                 );
 
             // Perform the message search.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var message = await dbContext.Messages.Where(x =>
                 x.MessageKey == messageKey.ToUpper()
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .Include(x => x.ProviderType).ThenInclude(x => x.Parameters).ThenInclude(x => x.ParameterType)
                  .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             // Did we fail?
             if (message is null) 
@@ -464,14 +473,17 @@ internal class MessageRepository : IMessageRepository
 
             // Perform the message search for:
             //  * messages older than maxDaysToLive.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var messages = await dbContext.Messages.Where(x =>
                 x.CreatedOnUtc < DateTime.UtcNow.AddDays(-(maxDaysToLive))
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .Include(x => x.ProviderType).ThenInclude(x => x.Parameters).ThenInclude(x => x.ParameterType)
                  .OrderByDescending(x => x.CreatedBy).ThenBy(x => x.Priority)
                  .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             // Convert the entities to a models.
             var result = messages.Select(x =>
@@ -524,18 +536,23 @@ internal class MessageRepository : IMessageRepository
                 );
 
             // Perform the message search for:
-            //  * messages that aren't in a terminal state
-            //  * messages that aren't disabled.
+            //  (A) messages that aren't in a terminal state
+            //  (B) messages that aren't disabled.
+            //  (C) messages whose process after date is null or <= now 
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var messages = await dbContext.Messages.Where(x =>
                 x.IsDisabled == false && 
                 x.MessageState != MessageState.Failed &&
-                x.MessageState != MessageState.Sent
+                x.MessageState != MessageState.Sent &&
+                (x.ProcessAfterUtc == null || x.ProcessAfterUtc <= DateTime.UtcNow)
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .Include(x => x.ProviderType).ThenInclude(x => x.Parameters).ThenInclude(x => x.ParameterType)
                  .OrderByDescending(x => x.CreatedBy).ThenBy(x => x.Priority)
                  .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             // Convert the entities to a models.
             var result = messages.Select(x =>
@@ -595,16 +612,19 @@ internal class MessageRepository : IMessageRepository
             //  * messages that are in a failed state
             //  * messages that aren't disabled.
             //  * messages whose error count is < maxErrorCount
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var messages = await dbContext.Messages.Where(x =>
                 x.IsDisabled == false &&
                 x.MessageState == MessageState.Failed &&
                 x.ErrorCount < maxErrorCount
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .Include(x => x.ProviderType).ThenInclude(x => x.Parameters).ThenInclude(x => x.ParameterType)
                  .OrderByDescending(x => x.CreatedBy).ThenBy(x => x.Priority)
                  .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             // Convert the entities to a models.
             var result = messages.Select(x =>

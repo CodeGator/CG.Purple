@@ -25,7 +25,7 @@ internal class MessageLog : EntityBase
     /// <summary>
     /// This property contains the associate message.
     /// </summary>
-    public virtual Message Message { get; set; }
+    public virtual Message Message { get; set; } = null!;
 
     /// <summary>
     /// This property contains the associated provider type.

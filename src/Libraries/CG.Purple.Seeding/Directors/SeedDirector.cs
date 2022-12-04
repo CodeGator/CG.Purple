@@ -650,6 +650,25 @@ internal class SeedDirector : ISeedDirector
             // Loop through the options.
             foreach (var mailMessageOption in mailMessageOptions)
             {
+                // Was a provider given?
+                ProviderType? providerType = null;
+                if (!string.IsNullOrEmpty(mailMessageOption.ProviderType))
+                {
+                    // Look for the provider.
+                    providerType = await _providerTypeManager.FindByNameAsync(
+                        mailMessageOption.ProviderType
+                        ).ConfigureAwait(false);
+
+                    // Did we fail?
+                    if (providerType is null)
+                    {
+                        // Panic!!
+                        throw new KeyNotFoundException(
+                            $"The provider type: {mailMessageOption.ProviderType} is missing!"
+                            );
+                    }
+                }
+
                 // Log what we are about to do.
                 _logger.LogTrace(
                     "Deferring to {name}",
@@ -673,6 +692,7 @@ internal class SeedDirector : ISeedDirector
                         MaxErrors = mailMessageOption.MaxErrors,
                         ProcessAfterUtc = mailMessageOption.ProcessAfterUtc,
                         MessageType = MessageType.Mail,
+                        ProviderType = providerType,
                         ErrorCount = 0
                     },
                     userName,

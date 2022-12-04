@@ -15,7 +15,7 @@ public class HostedServiceOptions
     /// <summary>
     /// This property contains pipeline processing options.
     /// </summary>
-    public PipelineOptions? PipelineOptions { get; set; }
+    public PipelineOptions? Pipeline { get; set; }
 
     #endregion
 }
