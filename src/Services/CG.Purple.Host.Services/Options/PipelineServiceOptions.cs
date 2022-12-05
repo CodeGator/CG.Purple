@@ -1,10 +1,10 @@
 ﻿
-namespace CG.Purple.Options;
+namespace CG.Purple.Host.Services.Options;
 
 /// <summary>
-/// This class contains configuration settings for message processing.
+/// This class contains configuration settings for the Purple pipeline service.
 /// </summary>
-public class PipelineOptions
+public class PipelineServiceOptions
 {
     // *******************************************************************
     // Properties.
@@ -13,8 +13,8 @@ public class PipelineOptions
     #region Properties
 
     /// <summary>
-    /// This property indicates how long to pause the service before 
-    /// processing is allowed to begin.
+    /// This property indicates how long to pause the service,at startup,
+    /// before processing is allowed to begin.
     /// </summary>
     public TimeSpan? StartupDelay { get; set; }
 

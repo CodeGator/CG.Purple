@@ -7,9 +7,13 @@ Things to be done on the project, as of 12/05/2022
 
 * Should we map all CRUD operations to stored procedures?
 
+* Is there are way to reliably tell EFCORE not to update certain associated entities and/or child collections?
+
 * Should we write stored procedures for all queries?
 
 ### Libraries
+
+* Should we remove the parameter collection on provider type so we won't have to encrypt/decrypt the values everywhere those object might be read/written?
 
 * Should we add caching to the managers?
 
@@ -28,7 +32,7 @@ Things to be done on the project, as of 12/05/2022
 * All dialogs should use the mudblazor extensions.
 
 * We've removed all cascading deletes from the DAL, so now we need to write code 
-  to disable operations, in the UI, that will fail due to FK relations.
+  to disable operations, in the UI, that will fail due to FK constraints.
 
 * Need a better UI for messages, just not sure what, yet.
 

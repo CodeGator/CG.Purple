@@ -1,5 +1,4 @@
 ﻿
-
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -13,6 +12,11 @@ internal class MailMessageManager : IMailMessageManager
     // *******************************************************************
 
     #region Fields
+
+    /// <summary>
+    /// This field contains the options for this manager.
+    /// </summary>
+    internal protected readonly MailMessageManagerOptions? _managerOptions;
 
     /// <summary>
     /// This field contains the repository for this manager.
@@ -41,6 +45,8 @@ internal class MailMessageManager : IMailMessageManager
     /// This constructor creates a new instance of the <see cref="MailMessageManager"/>
     /// class.
     /// </summary>
+    /// <param name="bllOptions">The business logic layer options to use 
+    /// with this manager.</param>
     /// <param name="mailMessageRepository">The mail message repository to use
     /// with this manager.</param>
     /// <param name="cryptographer">The cryptographer to use with this manager.</param>
@@ -48,17 +54,20 @@ internal class MailMessageManager : IMailMessageManager
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public MailMessageManager(
+        IOptions<BllOptions> bllOptions,
         IMailMessageRepository mailMessageRepository,
         ICryptographer cryptographer,
         ILogger<IMailMessageManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(mailMessageRepository, nameof(mailMessageRepository))
+        Guard.Instance().ThrowIfNull(bllOptions, nameof(bllOptions))
+            .ThrowIfNull(mailMessageRepository, nameof(mailMessageRepository))
             .ThrowIfNull(cryptographer, nameof(cryptographer))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
+        _managerOptions = bllOptions.Value.MailMessageManager;
         _mailMessageRepository = mailMessageRepository;
         _cryptographer = cryptographer;
         _logger = logger;
@@ -193,6 +202,12 @@ internal class MailMessageManager : IMailMessageManager
             // Do we have an associated provider?
             if (mailMessage.ProviderType is not null)
             {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Encrypting the provider parameter values for message: {id}",
+                    mailMessage.Id
+                    );
+
                 // Provider parameters are encrypted, at rest, so we'll need
                 //   to deal with those values now.
                 foreach (var parameter in mailMessage.ProviderType.Parameters)
@@ -203,6 +218,103 @@ internal class MailMessageManager : IMailMessageManager
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
+            }
+
+            // Were manager options provided?
+            if (_managerOptions is not null)
+            {
+                // Was a default processing delay specified?
+                if (_managerOptions.DefaultProcessDelay.HasValue)
+                {
+                    // Should we generate a default processing delay?
+                    if (mailMessage.ProcessAfterUtc is null)
+                    {
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Setting a processing delay of {ts} for message: {id}",
+                            mailMessage.ProcessAfterUtc,
+                            mailMessage.Id
+                            );
+
+                        // Generate a default processing delay for the message.
+                        mailMessage.ProcessAfterUtc = DateTime.UtcNow + 
+                            _managerOptions.DefaultProcessDelay;
+                    }
+                }
+
+                // Was a default archive delay specified?
+                if (_managerOptions.DefaultArchiveDelay.HasValue)
+                {
+                    // Should we generate a default archive delay?
+                    if (mailMessage.ArchiveAfterUtc is null)
+                    {
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Setting an archive delay of {ts} for message: {id}",
+                            mailMessage.ProcessAfterUtc,
+                            mailMessage.Id
+                            );
+
+                        // Generate a default archive delay for the message.
+                        mailMessage.ArchiveAfterUtc = DateTime.UtcNow +
+                            _managerOptions.DefaultArchiveDelay;
+                    }
+                }
+                else
+                {
+                    // Should we generate a default archive delay?
+                    if (mailMessage.ArchiveAfterUtc is null)
+                    {
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Setting an archive delay of {ts} for message: {id}",
+                            mailMessage.ProcessAfterUtc,
+                            mailMessage.Id
+                            );
+
+                        // Generate a default archive delay for the message.
+                        mailMessage.ArchiveAfterUtc = DateTime.UtcNow.AddDays(7);
+                    }
+                }
+            }
+
+            // Sanity the processing delay.
+            if (mailMessage.ProcessAfterUtc > DateTime.UtcNow.AddDays(30))
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Processing delay > 30 days. Limiting to 30 days for message: {id}",
+                    mailMessage.Id
+                    );
+
+                // Generate a default processing delay for the message.
+                mailMessage.ProcessAfterUtc = DateTime.UtcNow.AddDays(7);
+            }
+
+            // Sanity the archive delay.
+            if (mailMessage.ArchiveAfterUtc < DateTime.UtcNow.AddDays(7))
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Archive delay < 7 days. Limiting to 7 days for message: {id}",
+                    mailMessage.Id
+                    );
+
+                // Generate a default archive delay for the message.
+                mailMessage.ArchiveAfterUtc = DateTime.UtcNow.AddDays(7);
+            }
+
+            // Sanity the archive delay.
+            if (mailMessage.ArchiveAfterUtc > DateTime.UtcNow.AddDays(365))
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Archive delay > 365 days. Limiting to 365 days for message: {id}",
+                    mailMessage.Id
+                    );
+
+                // Generate a default archive delay for the message.
+                mailMessage.ArchiveAfterUtc = DateTime.UtcNow.AddDays(365);
             }
 
             // Log what we are about to do.
@@ -220,6 +332,12 @@ internal class MailMessageManager : IMailMessageManager
             // Do we have an associated provider?
             if (mailMessage.ProviderType is not null)
             {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Decrypting the provider parameter values for message: {id}",
+                    mailMessage.Id
+                    );
+
                 // Provider parameters are encrypted, at rest, so we'll need
                 //   to deal with those values now.
                 foreach (var parameter in mailMessage.ProviderType.Parameters)
@@ -413,6 +531,12 @@ internal class MailMessageManager : IMailMessageManager
                 //   to deal with those values now.
                 foreach (var parameter in mailMessage.ProviderType.Parameters)
                 {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Encrypting the provider parameter values for message: {id}",
+                        mailMessage.Id
+                        );
+
                     // Encrypt the value.
                     parameter.Value = await _cryptographer.AesEncryptAsync(
                         parameter.Value,
@@ -436,6 +560,12 @@ internal class MailMessageManager : IMailMessageManager
             // Do we have an associated provider?
             if (mailMessage.ProviderType is not null)
             {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Decrypting the provider parameter values for message: {id}",
+                    mailMessage.Id
+                    );
+
                 // Provider parameters are encrypted, at rest, so we'll need
                 //   to deal with those values now.
                 foreach (var parameter in mailMessage.ProviderType.Parameters)

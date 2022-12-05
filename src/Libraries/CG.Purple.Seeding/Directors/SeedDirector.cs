@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Seeding.Options;
+
 namespace CG.Purple.Seeding.Directors;
 
 /// <summary>
@@ -689,6 +691,7 @@ internal class SeedDirector : ISeedDirector
                         Priority = mailMessageOption.Priority,
                         MaxErrors = mailMessageOption.MaxErrors,
                         ProcessAfterUtc = mailMessageOption.ProcessAfterUtc,
+                        ArchiveAfterUtc = mailMessageOption.ArchiveAfterUtc,
                         MessageType = MessageType.Mail,
                         ProviderType = providerType,
                         ErrorCount = 0
@@ -1669,7 +1672,8 @@ internal class SeedDirector : ISeedDirector
                         MessageType = MessageType.Text,
                         Priority = textMessageOption.Priority,
                         MaxErrors = textMessageOption.MaxErrors,
-                        ProcessAfterUtc = textMessageOption.ProcessAfterUtc
+                        ProcessAfterUtc = textMessageOption.ProcessAfterUtc,
+                        ArchiveAfterUtc = textMessageOption.ArchiveAfterUtc
                     },
                     userName,
                     cancellationToken

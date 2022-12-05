@@ -4,9 +4,9 @@
       "From": "test0@codegator.com",
       "To": "9188675309",
       "Body": "This is test text # 1",
-      "ProcessAfterUtc": "12/5/2022",
       "Attachments": [],
-      "Properties": []
+      "Properties": [],
+      "IsDisabled" :  true
     }
   ]
 }

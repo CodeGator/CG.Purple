@@ -13,9 +13,9 @@ internal class PipelineDirector : IPipelineDirector
     #region Fields
 
     /// <summary>
-    /// This field contains the options for this director.
+    /// This field contains the attachment manager for this director.
     /// </summary>
-    internal protected readonly PipelineOptions? _pipelineOptions;
+    internal protected readonly IAttachmentManager _attachmentManager;
 
     /// <summary>
     /// This field contains the message manager for this director.
@@ -26,6 +26,11 @@ internal class PipelineDirector : IPipelineDirector
     /// This field contains the message log manager for this director.
     /// </summary>
     internal protected readonly IMessageLogManager _messageLogManager;
+
+    /// <summary>
+    /// This field contains the message property manager for this director.
+    /// </summary>
+    internal protected readonly IMessagePropertyManager _messagePropertyManager;
 
     /// <summary>
     /// This field contains the provider type manager for this director.
@@ -54,38 +59,43 @@ internal class PipelineDirector : IPipelineDirector
     /// This constructor creates a new instance of the <see cref="PipelineDirector"/>
     /// class.
     /// </summary>
-    /// <param name="hostedServiceOptions">The hosted service options to use
-    /// with this director.</param>
+    /// <param name="attachmentManager">The attachment manager to use with 
+    /// this director.</param>
     /// <param name="messageManager">The message manager to use with this
     /// director.</param>
     /// <param name="messageLogManager">The message log manager to use with 
     /// this director.</param>
+    /// <param name="messagePropertyManager">The message property manager to 
+    /// use with this director.</param>
     /// <param name="providerTypeManager">The provider type manager to 
     /// use with this director.</param>
     /// <param name="messageProviderFactory">The message provider factory to
     /// use with this director.</param>
     /// <param name="logger">The logger to use with this director.</param>
     public PipelineDirector(
-        IOptions<HostedServiceOptions> hostedServiceOptions,
+        IAttachmentManager attachmentManager,
         IMessageManager messageManager,
         IMessageLogManager messageLogManager,
+        IMessagePropertyManager messagePropertyManager,
         IProviderTypeManager providerTypeManager,
         IMessageProviderFactory messageProviderFactory,
         ILogger<IPipelineDirector> logger
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(hostedServiceOptions, nameof(hostedServiceOptions))
+        Guard.Instance().ThrowIfNull(attachmentManager, nameof(attachmentManager))
             .ThrowIfNull(messageManager, nameof(messageManager))
             .ThrowIfNull(messageLogManager, nameof(messageLogManager))
+            .ThrowIfNull(messagePropertyManager, nameof(messagePropertyManager))
             .ThrowIfNull(providerTypeManager, nameof(providerTypeManager))
             .ThrowIfNull(messageProviderFactory, nameof(messageProviderFactory))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
-        _pipelineOptions = hostedServiceOptions.Value.Pipeline;
+        _attachmentManager = attachmentManager;
         _messageManager = messageManager;
         _messageLogManager = messageLogManager;
+        _messagePropertyManager = messagePropertyManager;
         _providerTypeManager = providerTypeManager;
         _messageProviderFactory = messageProviderFactory;
         _logger = logger;
@@ -123,12 +133,6 @@ internal class PipelineDirector : IPipelineDirector
                 ex,
                 "Failed to process messages!"
                 );
-
-            // Provider better context.
-            throw new DirectorException(
-                message: $"The director failed to process messages!",
-                innerException: ex
-                );
         }
 
         try
@@ -150,11 +154,26 @@ internal class PipelineDirector : IPipelineDirector
                 ex,
                 "Failed to retry messages!"
                 );
+        }
 
-            // Provider better context.
-            throw new DirectorException(
-                message: $"The director failed to retry messages!",
-                innerException: ex
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Archiving messages."
+                );
+
+            // Archive messages.
+            await ArchiveMessagesAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to archive messages!"
                 );
         }
     }
@@ -635,6 +654,179 @@ internal class PipelineDirector : IPipelineDirector
             // Provider better context.
             throw new DirectorException(
                 message: $"The director failed to retry one or more messages!",
+                innerException: ex
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method looks for any messages that can be archived and removes
+    /// them, along with their associated logs and properties.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation.</returns>
+    private async Task ArchiveMessagesAsync(
+        CancellationToken cancellationToken = default
+        )
+    {
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for messages that are ready to archive."
+                );
+
+            // Get any messages that are ready to archive.
+            var messages = await _messageManager.FindReadyToArchiveAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Are we done?
+            if (!messages.Any())
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "No messages were ready to archive."
+                    );
+                return; // Done!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Archiving {count} messages.",
+                messages.Count()
+                );
+
+            // Loop and archive these messages.
+            foreach (var message in messages)
+            {
+                // Log what we are about to do.
+                _logger.LogInformation(
+                    "Archiving message: {id}",
+                    message.Id
+                    );
+
+                // Are there any properties for this message?
+                if (message.MessageProperties.Any())
+                {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Archiving {count} properties for message: {id}",
+                        message.MessageProperties.Count(),
+                        message.Id
+                        );
+
+                    // Loop through the message properties.
+                    foreach (var property in message.MessageProperties)
+                    {
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Deleting property: {id1} for message: {id2}",
+                            property.PropertyType.Id,
+                            message.Id
+                            );
+
+                        // Delete the property.
+                        await _messagePropertyManager.DeleteAsync(
+                            property,
+                            "host",
+                            cancellationToken
+                            ).ConfigureAwait(false);
+                    }
+                }
+
+                // Are there any attachments for this message?
+                if (message.Attachments.Any())
+                {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Archiving {count} attachments for message: {id}",
+                        message.Attachments.Count(),
+                        message.Id
+                        );
+
+                    // Loop through the message attachments.
+                    foreach (var attachment in message.Attachments)
+                    {
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Deleting attachment: {id1} for message: {id2}",
+                            attachment.Id,
+                            message.Id
+                            );
+
+                        // Delete the attachment.
+                        await _attachmentManager.DeleteAsync(
+                            attachment,
+                            "host",
+                            cancellationToken
+                            ).ConfigureAwait(false);
+                    }
+                }                    
+
+                // Get any logs for this message.
+                var logs = await _messageLogManager.FindByMessageAsync( 
+                    message,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Are there any logs for this message?
+                if (logs.Any())
+                {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Archiving {count} logs for message: {id}",
+                        logs.Count(),
+                        message.Id
+                        );
+
+                    // Loop through the message attachments.
+                    foreach (var log in logs)
+                    {
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Deleting log: {id1} for message: {id2}",
+                            log.Id,
+                            message.Id
+                            );
+
+                        // Delete the log.
+                        await _messageLogManager.DeleteAsync(
+                            log,
+                            "host",
+                            cancellationToken
+                            ).ConfigureAwait(false);
+                    }
+                }
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Deleting message: {id}",
+                    message.Id
+                    );
+
+                // Delete the message.
+                await _messageManager.DeleteAsync(
+                    message,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to archive one or more messages!"
+                );
+
+            // Provider better context.
+            throw new DirectorException(
+                message: $"The director failed to archive one or more messages!",
                 innerException: ex
                 );
         }

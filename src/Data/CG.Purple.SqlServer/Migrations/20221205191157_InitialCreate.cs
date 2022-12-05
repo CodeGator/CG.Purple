@@ -137,6 +137,7 @@ namespace CG.Purple.SqlServer.Migrations
                     ErrorCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     MaxErrors = table.Column<int>(type: "int", nullable: false, defaultValue: 3),
                     ProcessAfterUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ArchiveAfterUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
                     ProviderTypeId = table.Column<int>(type: "int", nullable: true),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -397,7 +398,7 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "IX_Messages",
                 schema: "Purple",
                 table: "Messages",
-                columns: new[] { "Priority", "From", "MessageType", "MessageState", "IsDisabled", "ProviderTypeId", "ProcessAfterUtc" });
+                columns: new[] { "Priority", "From", "MessageType", "MessageState", "IsDisabled", "ProviderTypeId", "ProcessAfterUtc", "ArchiveAfterUtc" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Messages_Keys",

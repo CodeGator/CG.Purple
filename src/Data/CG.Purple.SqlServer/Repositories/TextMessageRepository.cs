@@ -526,6 +526,8 @@ internal class TextMessageRepository : ITextMessageRepository
             dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
             dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.ProcessAfterUtc).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.ArchiveAfterUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(

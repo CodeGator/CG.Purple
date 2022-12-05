@@ -14,9 +14,9 @@ internal class PipelineService : BackgroundService
     #region Fields
 
     /// <summary>
-    /// This field contains the message processing options for this service.
+    /// This field contains the options for this service.
     /// </summary>
-    internal protected readonly HostedServiceOptions _hostedServiceOptions = null!;
+    internal protected readonly PipelineServiceOptions? _pipelineServiceOptions;
 
     /// <summary>
     /// This field contains the service provider for this service.
@@ -57,7 +57,7 @@ internal class PipelineService : BackgroundService
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
-        _hostedServiceOptions = hostedServiceOptions.Value;
+        _pipelineServiceOptions = hostedServiceOptions.Value.PipelineService;
         _serviceProvider = serviceProvider;
         _logger = logger; 
     }
@@ -97,7 +97,7 @@ internal class PipelineService : BackgroundService
                 );
 
             // Get the startup delay.
-            var startupDelay = _hostedServiceOptions?.Pipeline?.StartupDelay
+            var startupDelay = _pipelineServiceOptions?.StartupDelay
                 ?? TimeSpan.FromSeconds(5);
 
             // Sanity check the duration.
@@ -177,7 +177,7 @@ internal class PipelineService : BackgroundService
                 }
 
                 // Get the throttle delay.
-                var throttleDelay = _hostedServiceOptions?.Pipeline?.ThrottleDelay
+                var throttleDelay = _pipelineServiceOptions?.ThrottleDelay
                     ?? TimeSpan.FromSeconds(5);
 
                 // Sanity check the duration.

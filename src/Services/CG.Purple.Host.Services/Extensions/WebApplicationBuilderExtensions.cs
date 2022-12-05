@@ -39,7 +39,7 @@ public static class WebApplicationBuilderExtensions006
 
         // Tell the world what we are about to do.
         bootstrapLogger?.LogDebug(
-            "Configuring service options from the {section} section",
+            "Configuring options from the {section} section",
             sectionName
             );
 

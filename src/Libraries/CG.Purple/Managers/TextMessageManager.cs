@@ -14,6 +14,11 @@ internal class TextMessageManager : ITextMessageManager
     #region Fields
 
     /// <summary>
+    /// This field contains the options for this manager.
+    /// </summary>
+    internal protected readonly TextMessageManagerOptions? _managerOptions;
+
+    /// <summary>
     /// This field contains the repository for this manager.
     /// </summary>
     internal protected readonly ITextMessageRepository _textMessageRepository = null!;
@@ -40,6 +45,8 @@ internal class TextMessageManager : ITextMessageManager
     /// This constructor creates a new instance of the <see cref="TextMessageManager"/>
     /// class.
     /// </summary>
+    /// <param name="bllOptions">The business logic layer options to use 
+    /// with this manager.</param>
     /// <param name="textMessageRepository">The text message repository to use
     /// with this manager.</param>
     /// <param name="cryptographer">The cryptographer to use with this manager.</param>
@@ -47,17 +54,20 @@ internal class TextMessageManager : ITextMessageManager
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public TextMessageManager(
+        IOptions<BllOptions> bllOptions,
         ITextMessageRepository textMessageRepository,
         ICryptographer cryptographer,
         ILogger<ITextMessageManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(textMessageRepository, nameof(textMessageRepository))
+        Guard.Instance().ThrowIfNull(bllOptions, nameof(bllOptions))
+            .ThrowIfNull(textMessageRepository, nameof(textMessageRepository))
             .ThrowIfNull(cryptographer, nameof(cryptographer))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
+        _managerOptions = bllOptions.Value.TextMessageManager;
         _textMessageRepository = textMessageRepository;
         _cryptographer = cryptographer;
         _logger = logger;
@@ -189,6 +199,12 @@ internal class TextMessageManager : ITextMessageManager
             // Do we have an associated provider?
             if (textMessage.ProviderType is not null)
             {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Encrypting the provider parameter values for message: {id}",
+                    textMessage.Id
+                    );
+
                 // Provider parameters are encrypted, at rest, so we'll need
                 //   to deal with those values now.
                 foreach (var parameter in textMessage.ProviderType.Parameters)
@@ -199,6 +215,103 @@ internal class TextMessageManager : ITextMessageManager
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
+            }
+
+            // Were manager options provided?
+            if (_managerOptions is not null)
+            {
+                // Was a default processing delay specified?
+                if (_managerOptions.DefaultProcessDelay.HasValue)
+                {
+                    // Should we generate a default processing delay?
+                    if (textMessage.ProcessAfterUtc is null)
+                    {
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Setting a processing delay of {ts} for message: {id}",
+                            textMessage.ProcessAfterUtc,
+                            textMessage.Id
+                            );
+
+                        // Generate a default processing delay for the message.
+                        textMessage.ProcessAfterUtc = DateTime.UtcNow +
+                            _managerOptions.DefaultProcessDelay;
+                    }
+                }
+
+                // Was a default archive delay specified?
+                if (_managerOptions.DefaultArchiveDelay.HasValue)
+                {
+                    // Should we generate a default archive delay?
+                    if (textMessage.ArchiveAfterUtc is null)
+                    {
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Setting an archive delay of {ts} for message: {id}",
+                            textMessage.ProcessAfterUtc,
+                            textMessage.Id
+                            );
+
+                        // Generate a default archive delay for the message.
+                        textMessage.ArchiveAfterUtc = DateTime.UtcNow +
+                            _managerOptions.DefaultArchiveDelay;
+                    }
+                }
+                else
+                {
+                    // Should we generate a default archive delay?
+                    if (textMessage.ArchiveAfterUtc is null)
+                    {
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Setting an archive delay of {ts} for message: {id}",
+                            textMessage.ProcessAfterUtc,
+                            textMessage.Id
+                            );
+
+                        // Generate a default archive delay for the message.
+                        textMessage.ArchiveAfterUtc = DateTime.UtcNow.AddDays(7);
+                    }
+                }
+            }
+
+            // Sanity the processing delay.
+            if (textMessage.ProcessAfterUtc > DateTime.UtcNow.AddDays(30))
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Processing delay > 30 days. Limiting to 30 days for message: {id}",
+                    textMessage.Id
+                    );
+
+                // Generate a default processing delay for the message.
+                textMessage.ProcessAfterUtc = DateTime.UtcNow.AddDays(7);
+            }
+
+            // Sanity the archive delay.
+            if (textMessage.ArchiveAfterUtc < DateTime.UtcNow.AddDays(7))
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Archive delay < 7 days. Limiting to 7 days for message: {id}",
+                    textMessage.Id
+                    );
+
+                // Generate a default archive delay for the message.
+                textMessage.ArchiveAfterUtc = DateTime.UtcNow.AddDays(7);
+            }
+
+            // Sanity the archive delay.
+            if (textMessage.ArchiveAfterUtc > DateTime.UtcNow.AddDays(365))
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Archive delay > 365 days. Limiting to 365 days for message: {id}",
+                    textMessage.Id
+                    );
+
+                // Generate a default archive delay for the message.
+                textMessage.ArchiveAfterUtc = DateTime.UtcNow.AddDays(365);
             }
 
             // Log what we are about to do.
@@ -216,6 +329,12 @@ internal class TextMessageManager : ITextMessageManager
             // Do we have an associated provider?
             if (textMessage.ProviderType is not null)
             {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Decrypting the provider parameter values for message: {id}",
+                    textMessage.Id
+                    );
+
                 // Provider parameters are encrypted, at rest, so we'll need
                 //   to deal with those values now.
                 foreach (var parameter in textMessage.ProviderType.Parameters)
@@ -400,6 +519,12 @@ internal class TextMessageManager : ITextMessageManager
                 //   to deal with those values now.
                 foreach (var parameter in textMessage.ProviderType.Parameters)
                 {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Encrypting the provider parameter values for message: {id}",
+                        textMessage.Id
+                        );
+
                     // Encrypt the value.
                     parameter.Value = await _cryptographer.AesEncryptAsync(
                         parameter.Value,
@@ -427,6 +552,12 @@ internal class TextMessageManager : ITextMessageManager
                 //   to deal with those values now.
                 foreach (var parameter in textMessage.ProviderType.Parameters)
                 {
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Decrypting the provider parameter values for message: {id}",
+                        textMessage.Id
+                        );
+
                     // Decrypt the value.
                     parameter.Value = await _cryptographer.AesDecryptAsync(
                         parameter.Value,

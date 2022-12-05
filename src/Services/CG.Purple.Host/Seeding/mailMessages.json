@@ -5,13 +5,8 @@
       "To": "test4@codegator.com",
       "Subject": "test email # 1",
       "Body": "This is test email # 1",
-      "Attachments": [ "Seeding/file1.txt" ],
-      "Properties": [
-        {
-          "PropertyTypeName": "TestProperty1",
-          "Value": "value 1"
-        }
-      ]
+      "Attachments": [],
+      "Properties": []
     }
   ]
 }

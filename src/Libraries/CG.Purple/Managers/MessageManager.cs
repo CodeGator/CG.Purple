@@ -379,13 +379,9 @@ internal class MessageManager : IMessageManager
 
     /// <inheritdoc/>
     public virtual async Task<IEnumerable<Message>> FindReadyToArchiveAsync(
-        int maxDaysToLive,
         CancellationToken cancellationToken = default
         )
     {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfLessThanOrEqualZero(maxDaysToLive, nameof(maxDaysToLive));
-
         try
         {
             // Log what we are about to do.
@@ -396,7 +392,6 @@ internal class MessageManager : IMessageManager
 
             // Perform the operation.
             var result = (await _messageRepository.FindReadyToArchiveAsync(
-                maxDaysToLive,
                 cancellationToken
                 ).ConfigureAwait(false)).ToArray();
 

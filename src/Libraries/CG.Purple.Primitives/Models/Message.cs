@@ -71,6 +71,11 @@ public class Message : ModelBase
     public virtual ProviderType? ProviderType { get; set; }
 
     /// <summary>
+    /// This property indicates when the message should be archived.
+    /// </summary>
+    public DateTime? ArchiveAfterUtc { get; set; }
+
+    /// <summary>
     /// This property contains the associated message properties.
     /// </summary>
     public virtual ICollection<MessageProperty> MessageProperties { get; set; }

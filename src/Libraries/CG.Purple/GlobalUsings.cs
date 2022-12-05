@@ -6,3 +6,5 @@ global using CG.Purple.Repositories;
 global using CG.Validations;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
+global using CG.Purple.Options;
+global using Microsoft.Extensions.Options;

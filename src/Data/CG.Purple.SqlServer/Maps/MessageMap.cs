@@ -101,6 +101,9 @@ internal class MessageMap : EntityMapBase<Entities.Message>
         // Setup the column.
         builder.Property(e => e.ProcessAfterUtc);
 
+        // Setup the column.
+        builder.Property(e => e.ArchiveAfterUtc);
+
         // Setup the conversion.
         _modelBuilder.Entity<Entities.Message>()
             .Property(e => e.MessageType)
@@ -133,7 +136,8 @@ internal class MessageMap : EntityMapBase<Entities.Message>
             e.MessageState,
             e.IsDisabled,
             e.ProviderTypeId,
-            e.ProcessAfterUtc
+            e.ProcessAfterUtc,
+            e.ArchiveAfterUtc
         },
         "IX_Messages"
         );

@@ -425,7 +425,7 @@ internal class MesssageLogRepository : IMessageLogRepository
 
             // Delete from the data-store.
             await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[ProviderLogs] WHERE [Id] = {0}",
+                "DELETE FROM [Purple].[MessageLogs] WHERE [Id] = {0}",
                 parameters: new object[] { messageLog.Id },
                 cancellationToken: cancellationToken
                 ).ConfigureAwait(false);

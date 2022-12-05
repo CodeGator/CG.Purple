@@ -106,26 +106,21 @@ public interface IMessageManager
 
     /// <summary>
     /// This method searches for a sequence of <see cref="Message"/> objects
-    /// that are older than the given number of days.
+    /// that are ready to archive.
     /// </summary>
-    /// <param name="maxDaysToLive">The maximum number of days a message can
-    /// live in a terminal state before we archive it.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
     /// <returns>A task to perform the operation that returns a sequence of matching
     /// <see cref="Message"/> objects.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
     /// <exception cref="ManagerException">This exception is thrown whenever the
     /// manager fails to complete the operation.</exception>
     Task<IEnumerable<Message>> FindReadyToArchiveAsync(
-        int maxDaysToLive,
         CancellationToken cancellationToken = default
         );
 
     /// <summary>
     /// This method searches for a sequence of <see cref="Message"/> objects
-    /// that are not disabled, or sent, or processed.
+    /// that are ready to process.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
@@ -139,8 +134,7 @@ public interface IMessageManager
 
     /// <summary>
     /// This method searches for a sequence of <see cref="Message"/> objects
-    /// that are in a failed state with an error count that is less than the
-    /// given maximum.
+    /// that are ready to retry.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>

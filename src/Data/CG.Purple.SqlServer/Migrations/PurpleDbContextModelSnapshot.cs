@@ -118,6 +118,9 @@ namespace CG.Purple.SqlServer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<DateTime?>("ArchiveAfterUtc")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -183,7 +186,7 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.HasIndex("ProviderTypeId");
 
-                    b.HasIndex(new[] { "Priority", "From", "MessageType", "MessageState", "IsDisabled", "ProviderTypeId", "ProcessAfterUtc" }, "IX_Messages");
+                    b.HasIndex(new[] { "Priority", "From", "MessageType", "MessageState", "IsDisabled", "ProviderTypeId", "ProcessAfterUtc", "ArchiveAfterUtc" }, "IX_Messages");
 
                     b.HasIndex(new[] { "MessageKey" }, "IX_Messages_Keys")
                         .IsUnique();

@@ -2,20 +2,16 @@
 namespace CG.Purple.Options;
 
 /// <summary>
-/// This class contains configuration settings for hosted services.
+/// This class contains configuration settings for the <see cref="IMailMessageManager"/> 
+/// manager.
 /// </summary>
-public class HostedServiceOptions
+public class MailMessageManagerOptions : MessageManagerOptions
 {
     // *******************************************************************
     // Properties.
     // *******************************************************************
 
     #region Properties
-
-    /// <summary>
-    /// This property contains pipeline processing options.
-    /// </summary>
-    public PipelineOptions? Pipeline { get; set; }
 
     #endregion
 }

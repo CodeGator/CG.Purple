@@ -65,6 +65,11 @@ internal class Message : EntityBase
     public DateTime? ProcessAfterUtc { get; set; }
 
     /// <summary>
+    /// This property indicates when the message should be archived.
+    /// </summary>
+    public DateTime? ArchiveAfterUtc { get; set; }
+
+    /// <summary>
     /// This property contains the identifier for an associated 
     /// provider type.
     /// </summary>

@@ -446,13 +446,9 @@ internal class MessageRepository : IMessageRepository
 
     /// <inheritdoc/>
     public virtual async Task<IEnumerable<Message>> FindReadyToArchiveAsync(
-        int maxDaysToLive,
         CancellationToken cancellationToken = default
         )
     {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfLessThanOrEqualZero(maxDaysToLive, nameof(maxDaysToLive));
-
         try
         {
             // Log what we are about to do.
@@ -472,10 +468,12 @@ internal class MessageRepository : IMessageRepository
                 );
 
             // Perform the message search for:
-            //  * messages older than maxDaysToLive.
+            //  (A) messages in a terminal state (Sent or Failed)
+            //  (B) messages whose archive after date is <= now.
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
             var messages = await dbContext.Messages.Where(x =>
-                x.CreatedOnUtc < DateTime.UtcNow.AddDays(-(maxDaysToLive))
+                x.ArchiveAfterUtc <= DateTime.UtcNow &&
+                (x.MessageState == MessageState.Failed || x.MessageState == MessageState.Sent)
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                  .Include(x => x.ProviderType).ThenInclude(x => x.Parameters).ThenInclude(x => x.ParameterType)

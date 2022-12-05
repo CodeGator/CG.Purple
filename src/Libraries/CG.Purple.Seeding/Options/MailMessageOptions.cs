@@ -96,6 +96,11 @@ public class MailMessageOptions
     public DateTime? ProcessAfterUtc { get; set; }
 
     /// <summary>
+    /// This property indicates when the message should be archived.
+    /// </summary>
+    public DateTime? ArchiveAfterUtc { get; set; }
+
+    /// <summary>
     /// This property contains an optional provider name, for pre-assigning
     /// a message to a specific provider.
     /// </summary>
