@@ -257,7 +257,7 @@ namespace CG.Purple.SqlServer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MessageId = table.Column<long>(type: "bigint", nullable: false),
                     ProviderTypeId = table.Column<int>(type: "int", nullable: true),
-                    Event = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
+                    MessageEvent = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
                     BeforeState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
                     AfterState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
                     Error = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
@@ -373,7 +373,7 @@ namespace CG.Purple.SqlServer.Migrations
                 name: "IX_MessageLogs",
                 schema: "Purple",
                 table: "MessageLogs",
-                columns: new[] { "Event", "BeforeState", "AfterState", "ProviderTypeId", "MessageId" });
+                columns: new[] { "MessageEvent", "BeforeState", "AfterState", "ProviderTypeId", "MessageId" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_MessageLogs_MessageId",

@@ -56,7 +56,7 @@ internal class MessageLogMap : EntityMapBase<Entities.MessageLog>
         builder.HasKey(e => new { e.Id });
 
         // Setup the column.
-        builder.Property(e => e.Event)
+        builder.Property(e => e.MessageEvent)
             .HasMaxLength(30)
             .IsUnicode(false)
             .IsRequired();
@@ -77,7 +77,7 @@ internal class MessageLogMap : EntityMapBase<Entities.MessageLog>
 
         // Setup the conversion.
         _modelBuilder.Entity<Entities.MessageLog>()
-            .Property(e => e.Event)
+            .Property(e => e.MessageEvent)
             .HasConversion(
                 e => e.ToString(),
                 e => Enum.Parse<MessageEvent>(e)
@@ -116,7 +116,7 @@ internal class MessageLogMap : EntityMapBase<Entities.MessageLog>
         // Setup the index.
         builder.HasIndex(e => new
         {
-            e.Event,
+            e.MessageEvent,
             e.BeforeState,
             e.AfterState,
             e.ProviderTypeId,

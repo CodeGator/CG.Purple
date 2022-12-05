@@ -208,7 +208,7 @@ internal class PipelineDirector : IPipelineDirector
         }
 
         // =======
-        // Step 2: Find processing messages.
+        // Step 2: Find 'in-progress' messages.
         // =======
 
         // Log what we are about to do.
@@ -247,18 +247,20 @@ internal class PipelineDirector : IPipelineDirector
 
             ProviderType? assignedProviderType = null;
 
-            // Assign a provider that can process emails.
+            // Is the message an email?
             if (message.MessageType == MessageType.Mail)
             {
+                // Assign a provider that can process emails.
                 assignedProviderType = providerTypes.Where(x =>
                     x.CanProcessEmails
                     ).OrderBy(x => x.Priority)
                     .FirstOrDefault();
             }
 
-            // Assign a provider that can process texts.
+            // Is the message a text?
             if (message.MessageType == MessageType.Text)
             {
+                // Assign a provider that can process texts.
                 assignedProviderType = providerTypes.Where(x =>
                     x.CanProcessTexts
                     ).OrderBy(x => x.Priority)
@@ -391,6 +393,10 @@ internal class PipelineDirector : IPipelineDirector
         CancellationToken cancellationToken = default
         )
     {
+        // =======
+        // Step 1: Get messages that need to be processed.
+        // =======
+
         // Log what we are about to do.
         _logger.LogDebug(
             "Fetching all the messages that are ready to process."
@@ -406,12 +412,16 @@ internal class PipelineDirector : IPipelineDirector
             return; // We're done!
         }
 
+        // =======
+        // Step 2: Get the available provider types.
+        // =======
+
         // Get the list of all (enabled) provider types.
         var providerTypes = await GetProviderTypesAsync()
             .ConfigureAwait(false);
 
         // =======
-        // Step 1: Assign a provider to messages, as needed.
+        // Step 3: Assign a provider to the messages, as needed.
         // =======
 
         // Assign providers to messages.
@@ -421,8 +431,7 @@ internal class PipelineDirector : IPipelineDirector
             ).ConfigureAwait(false);
 
         // =======
-        // Step 2: Ensure all messages with a provider are now in
-        //   a 'Processing' state.
+        // Step 4: Ensure all messages are now in a 'Processing' state.
         // =======
 
         // Look for any messages that are still in a pending state.
@@ -452,7 +461,7 @@ internal class PipelineDirector : IPipelineDirector
         }
 
         // =======
-        // Step 3: Group messages by provider type.
+        // Step 5: Group messages by provider type.
         // =======
 
         // Log what we are about to do.
@@ -490,7 +499,7 @@ internal class PipelineDirector : IPipelineDirector
             }
 
             // =======
-            // Step 3B: Create the provider instance.
+            // Step 5B: Create the provider instance.
             // =======
 
             // Log what we are about to do.
@@ -519,7 +528,7 @@ internal class PipelineDirector : IPipelineDirector
             }
 
             // =======
-            // Step 3C: Send messages to the corresponding provider.
+            // Step 5C: Send messages to the corresponding provider.
             // =======
 
             try

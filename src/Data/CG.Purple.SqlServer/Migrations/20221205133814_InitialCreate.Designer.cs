@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CG.Purple.SqlServer.Migrations
 {
     [DbContext(typeof(PurpleDbContext))]
-    [Migration("20221205124201_InitialCreate")]
+    [Migration("20221205133814_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -225,17 +225,17 @@ namespace CG.Purple.SqlServer.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(max)");
 
-                    b.Property<string>("Event")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(30)");
-
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastUpdatedOnUtc")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("MessageEvent")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(30)");
 
                     b.Property<long>("MessageId")
                         .HasColumnType("bigint");
@@ -249,7 +249,7 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.HasIndex("ProviderTypeId");
 
-                    b.HasIndex(new[] { "Event", "BeforeState", "AfterState", "ProviderTypeId", "MessageId" }, "IX_MessageLogs");
+                    b.HasIndex(new[] { "MessageEvent", "BeforeState", "AfterState", "ProviderTypeId", "MessageId" }, "IX_MessageLogs");
 
                     b.ToTable("MessageLogs", "Purple");
                 });

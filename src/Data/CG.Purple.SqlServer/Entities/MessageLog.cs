@@ -40,7 +40,7 @@ internal class MessageLog : EntityBase
     /// <summary>
     /// This property contains the associate processing event.
     /// </summary>
-    public MessageEvent Event { get; set; }
+    public MessageEvent MessageEvent { get; set; }
 
     /// <summary>
     /// This property contains the state of the message before the 

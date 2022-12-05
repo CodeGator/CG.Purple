@@ -17,7 +17,7 @@ public static class PipelineLogManagerExtensions001
     /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="ex">The exception to use for the operation.</param>
     /// <param name="userName">The user name of the perform performing
@@ -29,14 +29,14 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Exception ex,        
         string userName,
         CancellationToken cancellationToken = default
         )
     {
         // Call the overload.
-        return await processLogManager.LogErrorEventAsync(
+        return await messageLogManager.LogErrorEventAsync(
             ex.GetBaseException().Message,            
             userName,            
             cancellationToken
@@ -50,7 +50,7 @@ public static class PipelineLogManagerExtensions001
     /// the processing log, for an even that did not cause a state transition
     /// in the associated message.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The optional message to use for the operation.</param>
     /// <param name="ex">The exception to use for the operation.</param>
@@ -63,7 +63,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         Exception ex,
         string userName,
@@ -71,7 +71,7 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Call the overload.
-        return await processLogManager.LogErrorEventAsync(
+        return await messageLogManager.LogErrorEventAsync(
             message,
             ex.GetBaseException().Message,
             userName,
@@ -86,7 +86,7 @@ public static class PipelineLogManagerExtensions001
     /// the processing log, for an even that caused a state transition in 
     /// the associated message.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The optional message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
@@ -101,7 +101,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         MessageState previousMessageState,
         Exception ex,
@@ -110,7 +110,7 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Call the overload.
-        return await processLogManager.LogErrorEventAsync(
+        return await messageLogManager.LogErrorEventAsync(
             message,
             previousMessageState,
             ex.GetBaseException().Message,            
@@ -125,7 +125,7 @@ public static class PipelineLogManagerExtensions001
     /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="errorMessage">The error message to use for the operation.</param>
     /// <param name="userName">The user name of the perform performing
@@ -137,19 +137,19 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         string errorMessage, 
         string userName,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 MessageEvent = MessageEvent.Error,
@@ -169,7 +169,7 @@ public static class PipelineLogManagerExtensions001
     /// This method writes an <see cref="MessageEvent.Error"/> event to
     /// the processing log.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="errorMessage">The error message to use for the operation.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
@@ -182,7 +182,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         string errorMessage,
         ProviderType providerType,
         string userName,
@@ -190,12 +190,12 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 MessageEvent = MessageEvent.Error,
@@ -217,7 +217,7 @@ public static class PipelineLogManagerExtensions001
     /// the processing log, for an even that caused a state transition in 
     /// the associated message.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
@@ -232,7 +232,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         MessageState previousMessageState,
         string errorMessage,
@@ -241,12 +241,12 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 Message = message,
@@ -270,7 +270,7 @@ public static class PipelineLogManagerExtensions001
     /// the processing log, for an even that caused a state transition in 
     /// the associated message.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
@@ -286,7 +286,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         MessageState previousMessageState,
         string errorMessage,
@@ -296,13 +296,13 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
             .ThrowIfNull(providerType, nameof(providerType))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 Message = message,
@@ -327,7 +327,7 @@ public static class PipelineLogManagerExtensions001
     /// the processing log, for an even that did not cause a state transition 
     /// in the associated message.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="errorMessage">The error message to use for the operation.</param>
@@ -340,7 +340,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         string errorMessage,
         string userName,
@@ -348,12 +348,12 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 Message = message,
@@ -375,7 +375,7 @@ public static class PipelineLogManagerExtensions001
     /// the processing log, for an even that did not cause a state transition 
     /// in the associated message.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="userName">The user name of the perform performing
@@ -387,19 +387,19 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogStoredEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         string userName,
         CancellationToken cancellationToken = default
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(message, nameof(message))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 Message = message,
@@ -421,7 +421,7 @@ public static class PipelineLogManagerExtensions001
     /// the processing log, for an even that caused a state transition in
     /// the associated message.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
@@ -436,7 +436,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogAssignedEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         MessageState previousMessageState,
         ProviderType providerType,
@@ -445,13 +445,13 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(message, nameof(message))
             .ThrowIfNull(providerType, nameof(providerType))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 ProviderType = providerType,
@@ -475,7 +475,7 @@ public static class PipelineLogManagerExtensions001
     /// the processing log, for an even that caused a state transition in
     /// the associated message.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
@@ -489,7 +489,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogResetEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         MessageState previousMessageState,
         string userName,
@@ -497,12 +497,12 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(message, nameof(message))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 Message = message,
@@ -524,7 +524,7 @@ public static class PipelineLogManagerExtensions001
     /// This method writes a <see cref="MessageEvent.Disabled"/> event to
     /// the processing log.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
@@ -538,7 +538,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogDisabledEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         MessageState previousMessageState,
         string userName,
@@ -546,12 +546,12 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(message, nameof(message))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 Message = message,
@@ -573,7 +573,7 @@ public static class PipelineLogManagerExtensions001
     /// This method writes an <see cref="MessageEvent.Enabled"/> event to
     /// the processing log.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
@@ -587,7 +587,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogEnabledEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         MessageState previousMessageState,
         string userName,
@@ -595,12 +595,12 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(message, nameof(message))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 Message = message,
@@ -622,7 +622,7 @@ public static class PipelineLogManagerExtensions001
     /// This method writes an <see cref="MessageEvent.Sent"/> event to
     /// the processing log.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
@@ -636,7 +636,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogSentEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         MessageState previousMessageState,
         string userName,
@@ -644,12 +644,12 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(message, nameof(message))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 Message = message,
@@ -672,7 +672,7 @@ public static class PipelineLogManagerExtensions001
     /// This method writes an <see cref="MessageEvent.Sent"/> event to
     /// the processing log.
     /// </summary>
-    /// <param name="processLogManager">The process log manager to use
+    /// <param name="messageLogManager">The message log manager to use
     /// for the operation.</param>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
@@ -687,7 +687,7 @@ public static class PipelineLogManagerExtensions001
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public static async Task<MessageLog> LogSentEventAsync(
-        this IMessageLogManager processLogManager,
+        this IMessageLogManager messageLogManager,
         Message message,
         MessageState previousMessageState,
         ProviderType? providerType,
@@ -696,12 +696,12 @@ public static class PipelineLogManagerExtensions001
         )
     {
         // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(message, nameof(message))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
+        var result = await messageLogManager.CreateAsync(
             new MessageLog()
             {
                 Message = message,

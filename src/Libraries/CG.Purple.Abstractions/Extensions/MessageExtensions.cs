@@ -50,7 +50,7 @@ public static class MessageExtensions001
         message.MessageState = MessageState.Sent;
 
         // Update the message.
-        _ = await messageManager.UpdateAsync(
+        message = await messageManager.UpdateAsync(
             message,
             userName,
             cancellationToken
@@ -107,7 +107,7 @@ public static class MessageExtensions001
         message.ProviderType = null;
 
         // Update the message.
-        _ = await messageManager.UpdateAsync(
+        message = await messageManager.UpdateAsync(
             message,
             userName,
             cancellationToken
@@ -243,7 +243,7 @@ public static class MessageExtensions001
         message.MessageState = MessageState.Failed;
 
         // Update the message.
-        _ = await messageManager.UpdateAsync(
+        message = await messageManager.UpdateAsync(
             message,
             userName,
             cancellationToken
@@ -304,7 +304,7 @@ public static class MessageExtensions001
         message.MessageState = MessageState.Failed;
 
         // Update the message.
-        _ = await messageManager.UpdateAsync(
+        message = await messageManager.UpdateAsync(
             message,
             userName,
             cancellationToken
@@ -364,7 +364,7 @@ public static class MessageExtensions001
         message.MessageState = MessageState.Processing;
 
         // Update the message.
-        _ = await messageManager.UpdateAsync(
+        message = await messageManager.UpdateAsync(
             message,
             userName,
             cancellationToken
@@ -409,7 +409,7 @@ public static class MessageExtensions001
 
         // Clear the error count on the message.
         message.ErrorCount = 0;
-        await messageManager.UpdateAsync(
+        message = await messageManager.UpdateAsync(
             message,
             userName,
             cancellationToken
