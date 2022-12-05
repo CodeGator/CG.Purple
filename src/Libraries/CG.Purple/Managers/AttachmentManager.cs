@@ -62,7 +62,7 @@ internal class AttachmentManager : IAttachmentManager
 
     #region Public methods
 
-    /// <inheritdoc/>
+    /// <inheritdoc cref="IAttachmentManager.AnyAsync(CancellationToken)" />
     public virtual async Task<bool> AnyAsync(
         CancellationToken cancellationToken = default
         )
@@ -98,7 +98,7 @@ internal class AttachmentManager : IAttachmentManager
 
     // *******************************************************************
 
-    /// <inheritdoc/>
+    /// <inheritdoc cref="IAttachmentManager.CountAsync(CancellationToken)"/>
     public virtual async Task<long> CountAsync(
         CancellationToken cancellationToken = default
         )
@@ -134,7 +134,7 @@ internal class AttachmentManager : IAttachmentManager
 
     // *******************************************************************
 
-    /// <inheritdoc/>
+    /// <inheritdoc cref="IAttachmentManager.CreateAsync(Attachment, string, CancellationToken)"/>
     public virtual async Task<Attachment> CreateAsync(
         Attachment attachment,
         string userName,
@@ -189,7 +189,7 @@ internal class AttachmentManager : IAttachmentManager
 
     // *******************************************************************
 
-    /// <inheritdoc/>
+    /// <inheritdoc cref="IAttachmentManager.DeleteAsync(Attachment, string, CancellationToken)"/>
     public virtual async Task DeleteAsync(
         Attachment attachment,
         string userName,
@@ -242,7 +242,7 @@ internal class AttachmentManager : IAttachmentManager
 
     // *******************************************************************
 
-    /// <inheritdoc/>
+    /// <inheritdoc cref="IAttachmentManager.FindAllAsync(CancellationToken)"/>
     public virtual async Task<IEnumerable<Attachment>> FindAllAsync(
         CancellationToken cancellationToken = default
         )
@@ -281,7 +281,7 @@ internal class AttachmentManager : IAttachmentManager
 
     // *******************************************************************
 
-    /// <inheritdoc/>
+    /// <inheritdoc cref="IAttachmentManager.UpdateAsync(Attachment, string, CancellationToken)"/>
     public virtual async Task<Attachment> UpdateAsync(
         Attachment attachment,
         string userName,

@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Solution Items", "00. S
 	ProjectSection(SolutionItems) = preProject
 		..\BACKLOG.md = ..\BACKLOG.md
 		..\README.md = ..\README.md
+		..\ROADMAP.md = ..\ROADMAP.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Primitives", "Libraries\CG.Purple.Primitives\CG.Purple.Primitives.csproj", "{EF3DB6E8-6DA9-4878-9244-EE62886DCE26}"
@@ -61,7 +62,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Tests", "..\tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Twillio.Tests", "..\tests\CG.Purple.Twillio.Tests\CG.Purple.Twillio.Tests.csproj", "{5BEDEA72-FE84-4994-A88B-B57CDAF5FF3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.Purple.DoNothing", "Providers\CG.Purple.DoNothing\CG.Purple.DoNothing.csproj", "{4D1C2055-C8EC-40DD-9A5A-908D7EF14579}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.DoNothing", "Providers\CG.Purple.DoNothing\CG.Purple.DoNothing.csproj", "{4D1C2055-C8EC-40DD-9A5A-908D7EF14579}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

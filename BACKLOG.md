@@ -1,7 +1,7 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things to be done on the project, as of 12/04/2022
+Things to be done on the project, as of 12/05/2022
 
 ### Database
 
@@ -19,7 +19,7 @@ Things to be done on the project, as of 12/04/2022
 
 ### Pipeline
 
-* Need to rework the pipeline, to deal with changes in messages/providers.
+* Need to finish the rework on the pipeline.
 
 * Eventually, need to deal with provider fallback, for times when a provider is overworked, or rate limited.
 
@@ -41,8 +41,6 @@ Things to be done on the project, as of 12/04/2022
 * Need to work on the design of the REST controllers.
 
 ### Seeding
-
-* Need to rework to deal with changes to messages/providers.
 
 * Should we add seeding by scenario?
 
