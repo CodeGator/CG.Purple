@@ -69,8 +69,8 @@ public static class MessageExtensions001
 
     /// <summary>
     /// This method transitions the given <see cref="Message"/> to a 
-    /// <see cref="MessageState.Pending"/> state, and records the event
-    /// in the processing log.
+    /// <see cref="MessageState.Pending"/> state, clears any currently 
+    /// assigned provider type, and records the event in the message log.
     /// </summary>
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
@@ -102,6 +102,9 @@ public static class MessageExtensions001
 
         // The message is now in a 'Pending' state.
         message.MessageState = MessageState.Pending;
+
+        // Clear the currently assigned provider type (if any).
+        message.ProviderType = null;
 
         // Update the message.
         _ = await messageManager.UpdateAsync(

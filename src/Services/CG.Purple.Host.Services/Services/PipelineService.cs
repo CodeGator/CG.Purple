@@ -96,47 +96,28 @@ internal class PipelineService : BackgroundService
                     )
                 );
 
-            // Were options provided?
-            if (_hostedServiceOptions.Pipeline is not null &&
-                _hostedServiceOptions.Pipeline.StartupDelay is not null)
+            // Get the startup delay.
+            var startupDelay = _hostedServiceOptions?.Pipeline?.StartupDelay
+                ?? TimeSpan.FromSeconds(5);
+
+            // Sanity check the duration.
+            if (startupDelay < TimeSpan.FromSeconds(5))
             {
-                // Get the duration.
-                var delayDuration = _hostedServiceOptions.Pipeline.StartupDelay.Value;
-
-                // Sanity check the duration.
-                if (delayDuration < TimeSpan.FromSeconds(5))
-                {
-                    delayDuration = TimeSpan.FromSeconds(5);
-                }
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Pausing the {svc} startup for {ts}.",
-                    nameof(PipelineService),
-                    delayDuration
-                );
-
-                // Let's not work too soon.
-                await Task.Delay(
-                    delayDuration,
-                    cancellationToken
-                    );
+                startupDelay = TimeSpan.FromSeconds(5);
             }
-            else
-            {
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Pausing the {svc} startup for {ts}.",
-                    nameof(PipelineService),
-                    TimeSpan.FromSeconds(5)
-                );
 
-                // Let's not work too soon.
-                await Task.Delay(
-                    TimeSpan.FromSeconds(5),
-                    cancellationToken
-                    );
-            }
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Pausing the {svc} startup for {ts}.",
+                nameof(PipelineService),
+                startupDelay
+            );
+
+            // Let's not work too soon.
+            await Task.Delay(
+                startupDelay,
+                cancellationToken
+                );
             
             // Log what we are about to do.
             _logger.LogDebug(
@@ -194,6 +175,29 @@ internal class PipelineService : BackgroundService
                         sw.Elapsed
                         );
                 }
+
+                // Get the throttle delay.
+                var throttleDelay = _hostedServiceOptions?.Pipeline?.ThrottleDelay
+                    ?? TimeSpan.FromSeconds(5);
+
+                // Sanity check the duration.
+                if (throttleDelay < TimeSpan.FromSeconds(5))
+                {
+                    throttleDelay = TimeSpan.FromSeconds(5);
+                }
+
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "Pausing the {svc} for {ts}.",
+                    nameof(PipelineService),
+                    throttleDelay
+                );
+
+                // Let's not work too hard.
+                await Task.Delay(
+                    throttleDelay,
+                    cancellationToken
+                    );
             }
         }
         catch (Exception ex)

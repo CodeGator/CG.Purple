@@ -496,13 +496,9 @@ internal class MessageManager : IMessageManager
 
     /// <inheritdoc/>
     public virtual async Task<IEnumerable<Message>> FindReadyToRetryAsync(
-        int maxErrorCount,
         CancellationToken cancellationToken = default
         )
     {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfLessThanOrEqualZero(maxErrorCount, nameof(maxErrorCount));
-
         try
         {
             // Log what we are about to do.
@@ -513,7 +509,6 @@ internal class MessageManager : IMessageManager
 
             // Perform the operation.
             var result = (await _messageRepository.FindReadyToRetryAsync(
-                maxErrorCount,
                 cancellationToken
                 ).ConfigureAwait(false)).ToArray();
 

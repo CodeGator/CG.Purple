@@ -583,13 +583,9 @@ internal class MessageRepository : IMessageRepository
 
     /// <inheritdoc/>
     public virtual async Task<IEnumerable<Message>> FindReadyToRetryAsync(
-        int maxErrorCount,
         CancellationToken cancellationToken = default
         )
     {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfLessThanOrEqualZero(maxErrorCount, nameof(maxErrorCount));
-
         try
         {
             // Log what we are about to do.
@@ -609,14 +605,16 @@ internal class MessageRepository : IMessageRepository
                 );
 
             // Perform the message search for:
-            //  * messages that are in a failed state
-            //  * messages that aren't disabled.
-            //  * messages whose error count is < maxErrorCount
+            //  (A) messages that are in a failed state
+            //  (B) messages that aren't disabled.
+            //  (C) messages whose process after date is null or < now.
+            //  (D) messages whose error count is < max errors
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
             var messages = await dbContext.Messages.Where(x =>
                 x.IsDisabled == false &&
                 x.MessageState == MessageState.Failed &&
-                x.ErrorCount < maxErrorCount
+                x.ErrorCount < x.MaxErrors &&
+                (x.ProcessAfterUtc == null || x.ProcessAfterUtc <= DateTime.UtcNow)
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
                  .Include(x => x.ProviderType).ThenInclude(x => x.Parameters).ThenInclude(x => x.ParameterType)

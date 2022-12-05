@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Providers;
-
 namespace CG.Purple.Host.Directors;
 
 /// <summary>
@@ -405,13 +403,6 @@ internal class PipelineDirector : IPipelineDirector
         // Did we fail?
         if (!messages.Any())
         {
-            // If we get here then there's no work to do, so, we'll wait
-            //   a bit before we continue the next stage of the pipeline
-            //   in order to throttle the overall idle load.
-            await Task.Delay(
-                1000,
-                cancellationToken
-                ).ConfigureAwait(false);
             return; // We're done!
         }
 
@@ -446,20 +437,18 @@ internal class PipelineDirector : IPipelineDirector
             );
 
         // Loop through the pending messages.
-        foreach (var message in pendingMessages) 
+        foreach (var message in pendingMessages.Where(x => x.ProviderType != null)) 
         {
-            // Should never happen, but, pffft, check it anyway.
-            if (message.ProviderType is not null)
-            {
-                // Transition the message state.
-                await message.ToProcessingStateAsync(
-                    _messageManager,
-                    _messageLogManager,
-                    message.ProviderType,
-                    "host",
-                    cancellationToken
-                    ).ConfigureAwait(false);
-            }            
+            // Transition the message state.
+#pragma warning disable CS8604 // Possible null reference argument.
+            await message.ToProcessingStateAsync(
+                _messageManager,
+                _messageLogManager,
+                message.ProviderType,
+                "host",
+                cancellationToken
+                ).ConfigureAwait(false);
+#pragma warning restore CS8604 // Possible null reference argument.
         }
 
         // =======
@@ -575,7 +564,66 @@ internal class PipelineDirector : IPipelineDirector
         CancellationToken cancellationToken = default
         )
     {
-        // TODO: write the code for this.
+        try
+        {
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Looking for messages that are ready to retry."
+                );
+
+            // Get any messages that are ready to retry.
+            var messages = await _messageManager.FindReadyToRetryAsync(
+                cancellationToken
+                ).ConfigureAwait(false);
+
+            // Are we done?
+            if (!messages.Any())
+            {
+                // Log what we are about to do.
+                _logger.LogDebug(
+                    "No messages were ready to retry."
+                    );
+                return; // Done!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Retrying {count} failed messages.",
+                messages.Count()
+                );
+
+            // Loop and retry these messages.
+            foreach (var message in messages)
+            {
+                // Log what we are about to do.
+                _logger.LogInformation(
+                    "Retrying message: {id}",
+                    message.Id
+                    );
+
+                // Reset the state of this message.
+                await message.ToPendingStateAsync(
+                    _messageManager,
+                    _messageLogManager,
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log what happened.
+            _logger.LogError(
+                ex,
+                "Failed to retry one or more messages!"
+                );
+
+            // Provider better context.
+            throw new DirectorException(
+                message: $"The director failed to retry one or more messages!",
+                innerException: ex
+                );
+        }
     }
 
     #endregion
