@@ -630,7 +630,7 @@ manager fails to complete the operation.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Managers_IMessageManager_FindReadyToRetryAsync_" data-uid="CG.Purple.Managers.IMessageManager.FindReadyToRetryAsync*"></a>
-  <h4 id="CG_Purple_Managers_IMessageManager_FindReadyToRetryAsync_System_Int32_CancellationToken_" data-uid="CG.Purple.Managers.IMessageManager.FindReadyToRetryAsync(System.Int32,CancellationToken)">FindReadyToRetryAsync(Int32, CancellationToken)</h4>
+  <h4 id="CG_Purple_Managers_IMessageManager_FindReadyToRetryAsync_CancellationToken_" data-uid="CG.Purple.Managers.IMessageManager.FindReadyToRetryAsync(CancellationToken)">FindReadyToRetryAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method searches for a sequence of <see cref="!:Message"></see> objects
 that are in a failed state with an error count that is less than the
 given maximum.</p>
@@ -638,7 +638,7 @@ given maximum.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;Message&gt;&gt; FindReadyToRetryAsync(int maxErrorCount, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;Message&gt;&gt; FindReadyToRetryAsync(CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -650,13 +650,6 @@ given maximum.</p>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">maxErrorCount</span></td>
-        <td><p>The maximum number of errors a message can
-have before we stop trying to process it.</p>
-</td>
-      </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>

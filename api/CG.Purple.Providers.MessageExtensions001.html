@@ -253,7 +253,7 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync*"></a>
-  <h4 id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_Exception_IMessageManager_IMessageLogManager_ProviderType_System_String_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IMessageLogManager,ProviderType,System.String,System.String,CancellationToken)">ToFailedStateAsync(Message, Exception, IMessageManager, IMessageLogManager, ProviderType, String, String, CancellationToken)</h4>
+  <h4 id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_Exception_IMessageManager_IMessageLogManager_ProviderType_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IMessageLogManager,ProviderType,System.String,CancellationToken)">ToFailedStateAsync(Message, Exception, IMessageManager, IMessageLogManager, ProviderType, String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method transitions the given <see cref="!:Message"></see> to a
 <see cref="!:MessageState.Failed"></see> state, and records the event
 in the processing log.</p>
@@ -261,7 +261,7 @@ in the processing log.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, Exception ex, IMessageManager messageManager, IMessageLogManager processLogManager, ProviderType providerType, string data, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, Exception ex, IMessageManager messageManager, IMessageLogManager messageLogManager, ProviderType providerType, string userName, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -294,7 +294,7 @@ operation.</p>
       </tr>
       <tr>
         <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
+        <td><span class="parametername">messageLogManager</span></td>
         <td><p>The message log manager to use
 for the operation.</p>
 </td>
@@ -303,12 +303,6 @@ for the operation.</p>
         <td><span class="xref">ProviderType</span></td>
         <td><span class="parametername">providerType</span></td>
         <td><p>The provider type to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">data</span></td>
-        <td><p>Additional data that is related to the event.</p>
 </td>
       </tr>
       <tr>
@@ -351,7 +345,7 @@ in the processing log.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, Exception ex, IMessageManager messageManager, IMessageLogManager processLogManager, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, Exception ex, IMessageManager messageManager, IMessageLogManager messageLogManager, string userName, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -384,7 +378,7 @@ operation.</p>
       </tr>
       <tr>
         <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
+        <td><span class="parametername">messageLogManager</span></td>
         <td><p>The message log manager to use
 for the operation.</p>
 </td>
@@ -421,7 +415,7 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync*"></a>
-  <h4 id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_Exception_IMessageManager_IMessageLogManager_System_String_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IMessageLogManager,System.String,System.String,CancellationToken)">ToFailedStateAsync(Message, Exception, IMessageManager, IMessageLogManager, String, String, CancellationToken)</h4>
+  <h4 id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_System_String_IMessageManager_IMessageLogManager_ProviderType_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IMessageLogManager,ProviderType,System.String,CancellationToken)">ToFailedStateAsync(Message, String, IMessageManager, IMessageLogManager, ProviderType, String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method transitions the given <see cref="!:Message"></see> to a
 <see cref="!:MessageState.Failed"></see> state, and records the event
 in the processing log.</p>
@@ -429,91 +423,7 @@ in the processing log.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, Exception ex, IMessageManager messageManager, IMessageLogManager processLogManager, string data, string userName, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Exception</span></td>
-        <td><span class="parametername">ex</span></td>
-        <td><p>The exception to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IMessageManager</span></td>
-        <td><span class="parametername">messageManager</span></td>
-        <td><p>The message manager to use for the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
-        <td><p>The message log manager to use
-for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">data</span></td>
-        <td><p>Additional data that is related to the event.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td><p>The name of the user performing the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync*"></a>
-  <h4 id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_System_String_IMessageManager_IMessageLogManager_ProviderType_System_String_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IMessageLogManager,ProviderType,System.String,System.String,CancellationToken)">ToFailedStateAsync(Message, String, IMessageManager, IMessageLogManager, ProviderType, String, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method transitions the given <see cref="!:Message"></see> to a
-<see cref="!:MessageState.Failed"></see> state, and records the event
-in the processing log.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, string errorMessage, IMessageManager messageManager, IMessageLogManager processLogManager, ProviderType providerType, string data, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, string errorMessage, IMessageManager messageManager, IMessageLogManager messageLogManager, ProviderType providerType, string userName, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -546,7 +456,7 @@ operation.</p>
       </tr>
       <tr>
         <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
+        <td><span class="parametername">messageLogManager</span></td>
         <td><p>The message log manager to use
 for the operation.</p>
 </td>
@@ -555,12 +465,6 @@ for the operation.</p>
         <td><span class="xref">ProviderType</span></td>
         <td><span class="parametername">providerType</span></td>
         <td><p>The provider type to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">data</span></td>
-        <td><p>Extra data that is related to the event.</p>
 </td>
       </tr>
       <tr>
@@ -603,7 +507,7 @@ in the processing log.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, string errorMessage, IMessageManager messageManager, IMessageLogManager processLogManager, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, string errorMessage, IMessageManager messageManager, IMessageLogManager messageLogManager, string userName, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -636,93 +540,9 @@ operation.</p>
       </tr>
       <tr>
         <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
+        <td><span class="parametername">messageLogManager</span></td>
         <td><p>The message log manager to use
 for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td><p>The name of the user performing the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync*"></a>
-  <h4 id="CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_System_String_IMessageManager_IMessageLogManager_System_String_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IMessageLogManager,System.String,System.String,CancellationToken)">ToFailedStateAsync(Message, String, IMessageManager, IMessageLogManager, String, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method transitions the given <see cref="!:Message"></see> to a
-<see cref="!:MessageState.Failed"></see> state, and records the event
-in the processing log.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToFailedStateAsync(this Message message, string errorMessage, IMessageManager messageManager, IMessageLogManager processLogManager, string data, string userName, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">errorMessage</span></td>
-        <td><p>The error message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IMessageManager</span></td>
-        <td><span class="parametername">messageManager</span></td>
-        <td><p>The message manager to use for the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
-        <td><p>The message log manager to use
-for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">data</span></td>
-        <td><p>Extra data that is related to the event.</p>
 </td>
       </tr>
       <tr>
@@ -759,13 +579,13 @@ for the lifetime of the method.</p>
   <a id="CG_Purple_Providers_MessageExtensions001_ToPendingStateAsync_" data-uid="CG.Purple.Providers.MessageExtensions001.ToPendingStateAsync*"></a>
   <h4 id="CG_Purple_Providers_MessageExtensions001_ToPendingStateAsync_Message_IMessageManager_IMessageLogManager_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToPendingStateAsync(Message,IMessageManager,IMessageLogManager,System.String,CancellationToken)">ToPendingStateAsync(Message, IMessageManager, IMessageLogManager, String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method transitions the given <see cref="!:Message"></see> to a
-<see cref="!:MessageState.Pending"></see> state, and records the event
-in the processing log.</p>
+<see cref="!:MessageState.Pending"></see> state, clears any currently
+assigned provider type, and records the event in the message log.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToPendingStateAsync(this Message message, IMessageManager messageManager, IMessageLogManager processLogManager, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task ToPendingStateAsync(this Message message, IMessageManager messageManager, IMessageLogManager messageLogManager, string userName, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -792,7 +612,7 @@ operation.</p>
       </tr>
       <tr>
         <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
+        <td><span class="parametername">messageLogManager</span></td>
         <td><p>The message log manager to use
 for the operation.</p>
 </td>
@@ -908,90 +728,6 @@ for the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_" data-uid="CG.Purple.Providers.MessageExtensions001.ToSentStateAsync*"></a>
-  <h4 id="CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_Message_IMessageManager_IMessageLogManager_ProviderType_System_String_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IMessageLogManager,ProviderType,System.String,System.String,CancellationToken)">ToSentStateAsync(Message, IMessageManager, IMessageLogManager, ProviderType, String, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method transitions the given <see cref="!:Message"></see> to a
-<see cref="!:MessageState.Sent"></see> state, and records the event
-in the processing log.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToSentStateAsync(this Message message, IMessageManager messageManager, IMessageLogManager processLogManager, ProviderType providerType, string data, string userName, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IMessageManager</span></td>
-        <td><span class="parametername">messageManager</span></td>
-        <td><p>The message manager to use for the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
-        <td><p>The message log manager to use
-for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">ProviderType</span></td>
-        <td><span class="parametername">providerType</span></td>
-        <td><p>The provider type to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">data</span></td>
-        <td><p>Extra data associated with the event.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td><p>The name of the user performing the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_" data-uid="CG.Purple.Providers.MessageExtensions001.ToSentStateAsync*"></a>
   <h4 id="CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_Message_IMessageManager_IMessageLogManager_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IMessageLogManager,System.String,CancellationToken)">ToSentStateAsync(Message, IMessageManager, IMessageLogManager, String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method transitions the given <see cref="!:Message"></see> to a
 <see cref="!:MessageState.Sent"></see> state, and records the event
@@ -1000,7 +736,7 @@ in the processing log.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToSentStateAsync(this Message message, IMessageManager messageManager, IMessageLogManager processLogManager, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task ToSentStateAsync(this Message message, IMessageManager messageManager, IMessageLogManager messageLogManager, string userName, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1027,87 +763,9 @@ operation.</p>
       </tr>
       <tr>
         <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
+        <td><span class="parametername">messageLogManager</span></td>
         <td><p>The message log manager to use
 for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td><p>The name of the user performing the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_" data-uid="CG.Purple.Providers.MessageExtensions001.ToSentStateAsync*"></a>
-  <h4 id="CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_Message_IMessageManager_IMessageLogManager_System_String_System_String_CancellationToken_" data-uid="CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IMessageLogManager,System.String,System.String,CancellationToken)">ToSentStateAsync(Message, IMessageManager, IMessageLogManager, String, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method transitions the given <see cref="!:Message"></see> to a
-<see cref="!:MessageState.Sent"></see> state, and records the event
-in the processing log.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task ToSentStateAsync(this Message message, IMessageManager messageManager, IMessageLogManager processLogManager, string data, string userName, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IMessageManager</span></td>
-        <td><span class="parametername">messageManager</span></td>
-        <td><p>The message manager to use for the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">processLogManager</span></td>
-        <td><p>The message log manager to use
-for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">data</span></td>
-        <td><p>Extra data associated with the event.</p>
 </td>
       </tr>
       <tr>
