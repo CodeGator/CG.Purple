@@ -46,11 +46,6 @@ public class MessageLog : ModelBase
     public MessageState? AfterState { get; set; }
 
     /// <summary>
-    /// This property contains optional data associated with the event.
-    /// </summary>
-    public string? Data { get; set; }
-
-    /// <summary>
     /// This property contains error data associated with the event.
     /// </summary>
     public string? Error { get; set; }

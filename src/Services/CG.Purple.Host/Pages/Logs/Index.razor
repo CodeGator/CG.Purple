@@ -56,7 +56,6 @@
         <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeProviderType())">Provider</MudTableSortLabel></MudTh>
         <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeMessage())">Message</MudTableSortLabel></MudTh>
         <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeError())">Error</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<MessageLog, object>(x=>x.SafeData())">Data</MudTableSortLabel></MudTh>
     </HeaderContent>
     <RowTemplate>
         <MudTd DataLabel="DateTime">@context.CreatedOnUtc.ToLocalTime()</MudTd>
@@ -66,7 +65,6 @@
         <MudTd DataLabel="Event">@context.SafeProviderType()</MudTd>
         <MudTd DataLabel="Event">@context.SafeMessage()</MudTd>
         <MudTd DataLabel="Event">@context.SafeError()</MudTd>
-        <MudTd DataLabel="Event">@context.SafeData()</MudTd>
     </RowTemplate>
     <PagerContent>
         <MudTablePager />

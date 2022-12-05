@@ -172,53 +172,6 @@ public static class PipelineLogManagerExtensions001
     /// <param name="processLogManager">The process log manager to use
     /// for the operation.</param>
     /// <param name="errorMessage">The error message to use for the operation.</param>
-    /// <param name="data">Extra data associated with the event.</param>
-    /// <param name="userName">The user name of the perform performing
-    /// the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="MessageLog"/> object.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
-        string errorMessage,
-        string? data,
-        string userName,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
-            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
-            .ThrowIfNullOrEmpty(userName, nameof(userName));
-
-        // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
-            new MessageLog()
-            {
-                MessageEvent = MessageEvent.Error,
-                Error = errorMessage,
-                Data = data
-            },
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-
-        // Return the results.
-        return result;
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method writes an <see cref="MessageEvent.Error"/> event to
-    /// the processing log.
-    /// </summary>
-    /// <param name="processLogManager">The process log manager to use
-    /// for the operation.</param>
-    /// <param name="errorMessage">The error message to use for the operation.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
     /// <param name="userName">The user name of the perform performing
     /// the operation.</param>
@@ -248,56 +201,6 @@ public static class PipelineLogManagerExtensions001
                 MessageEvent = MessageEvent.Error,
                 Error = errorMessage,
                 ProviderType = providerType
-            },
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-
-        // Return the results.
-        return result;
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method writes an <see cref="MessageEvent.Error"/> event to
-    /// the processing log.
-    /// </summary>
-    /// <param name="processLogManager">The process log manager to use
-    /// for the operation.</param>
-    /// <param name="errorMessage">The error message to use for the operation.</param>
-    /// <param name="providerType">The provider type to use for the operation.</param>
-    /// <param name="data">Extra data related to the event.</param>
-    /// <param name="userName">The user name of the perform performing
-    /// the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="MessageLog"/> object.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
-        string errorMessage,
-        ProviderType providerType,
-        string? data,
-        string userName,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
-            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
-            .ThrowIfNullOrEmpty(userName, nameof(userName));
-
-        // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
-            new MessageLog()
-            {
-                MessageEvent = MessageEvent.Error,
-                Error = errorMessage,
-                ProviderType = providerType,
-                Data = data
             },
             userName,
             cancellationToken
@@ -373,64 +276,7 @@ public static class PipelineLogManagerExtensions001
     /// <param name="previousMessageState">The message state before the 
     /// event took place.</param>
     /// <param name="errorMessage">The error message to use for the operation.</param>
-    /// <param name="data">Extra data related to the event.</param>
-    /// <param name="userName">The user name of the perform performing
-    /// the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="MessageLog"/> object.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    public static async Task<MessageLog> LogErrorEventAsync(
-        this IMessageLogManager processLogManager,
-        Message message,
-        MessageState previousMessageState,
-        string errorMessage,
-        string? data,
-        string userName,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
-            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
-            .ThrowIfNullOrEmpty(userName, nameof(userName));
-
-        // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
-            new MessageLog()
-            {
-                Message = message,
-                MessageEvent = MessageEvent.Error,
-                Error = errorMessage,
-                BeforeState = previousMessageState,
-                AfterState = message.MessageState,
-                Data = data
-            },
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-
-        // Return the results.
-        return result;
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method writes an <see cref="MessageEvent.Error"/> event to
-    /// the processing log, for an even that caused a state transition in 
-    /// the associated message.
-    /// </summary>
-    /// <param name="processLogManager">The process log manager to use
-    /// for the operation.</param>
-    /// <param name="message">The message to use for the operation.</param>
-    /// <param name="previousMessageState">The message state before the 
-    /// event took place.</param>
-    /// <param name="errorMessage">The error message to use for the operation.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
-    /// <param name="data">Extra data related to the event.</param>
     /// <param name="userName">The user name of the perform performing
     /// the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -445,7 +291,6 @@ public static class PipelineLogManagerExtensions001
         MessageState previousMessageState,
         string errorMessage,
         ProviderType providerType,
-        string? data,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -465,7 +310,6 @@ public static class PipelineLogManagerExtensions001
                 Error = errorMessage,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState,
-                Data = data,
                 ProviderType = providerType
             },
             userName,
@@ -809,6 +653,7 @@ public static class PipelineLogManagerExtensions001
             new MessageLog()
             {
                 Message = message,
+                ProviderType = message.ProviderType,
                 MessageEvent = MessageEvent.Sent,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState
@@ -832,60 +677,7 @@ public static class PipelineLogManagerExtensions001
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="previousMessageState">The message state before the 
     /// event took place.</param>
-    /// <param name="data">Extra data associated with the event.</param>
-    /// <param name="userName">The user name of the perform performing
-    /// the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation that returns the newly 
-    /// created <see cref="MessageLog"/> object.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    public static async Task<MessageLog> LogSentEventAsync(
-        this IMessageLogManager processLogManager,
-        Message message,
-        MessageState previousMessageState,
-        string? data,
-        string userName,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
-            .ThrowIfNull(message, nameof(message))
-            .ThrowIfNullOrEmpty(userName, nameof(userName));
-
-        // Record what we did, in the log.
-        var result = await processLogManager.CreateAsync(
-            new MessageLog()
-            {
-                Message = message,
-                MessageEvent = MessageEvent.Sent,
-                BeforeState = previousMessageState,
-                AfterState = message.MessageState,
-                Data = data
-            },
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-
-        // Return the results.
-        return result;
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method writes an <see cref="MessageEvent.Sent"/> event to
-    /// the processing log.
-    /// </summary>
-    /// <param name="processLogManager">The process log manager to use
-    /// for the operation.</param>
-    /// <param name="message">The message to use for the operation.</param>
-    /// <param name="previousMessageState">The message state before the 
-    /// event took place.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
-    /// <param name="data">Extra data associated with the event.</param>
     /// <param name="userName">The user name of the perform performing
     /// the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -898,8 +690,7 @@ public static class PipelineLogManagerExtensions001
         this IMessageLogManager processLogManager,
         Message message,
         MessageState previousMessageState,
-        ProviderType providerType,
-        string? data,
+        ProviderType? providerType,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -907,7 +698,6 @@ public static class PipelineLogManagerExtensions001
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(processLogManager, nameof(processLogManager))
             .ThrowIfNull(message, nameof(message))
-            .ThrowIfNull(providerType, nameof(providerType))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Record what we did, in the log.
@@ -918,8 +708,7 @@ public static class PipelineLogManagerExtensions001
                 MessageEvent = MessageEvent.Sent,
                 BeforeState = previousMessageState,
                 AfterState = message.MessageState,
-                ProviderType = providerType,
-                Data = data
+                ProviderType = providerType
             },
             userName,
             cancellationToken

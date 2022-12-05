@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Seeding.Options;
-
 namespace CG.Purple.Seeding.Directors;
 
 /// <summary>
@@ -481,7 +479,7 @@ internal class SeedDirector : ISeedDirector
     // *******************************************************************
 
     /// <inheritdoc/>
-    public virtual async Task SeedProcessLogsAsync(
+    public virtual async Task SeedMessageLogsAsync(
         IConfiguration configuration,
         string userName,
         bool force = false,
@@ -495,20 +493,20 @@ internal class SeedDirector : ISeedDirector
         {
             // Log what we are about to do.
             _logger.LogDebug(
-                "Binding process log options."
+                "Binding message log options."
                 );
 
             // Bind the options.
             var providerLogOptions = new List<ProcessLogOptions>();
-            configuration.GetSection("ProcessLogs").Bind(providerLogOptions);
+            configuration.GetSection("MessageLogs").Bind(providerLogOptions);
                         
             // Log what we are about to do.
             _logger.LogDebug(
-                "Seeding process logs from the configuration."
+                "Seeding message logs from the configuration."
                 );
 
-            // Seed the provider logs from the options.
-            await SeedProcessLogsAsync(
+            // Seed the message logs from the options.
+            await SeedMessageLogsAsync(
                 providerLogOptions,
                 userName,
                 force,
@@ -520,12 +518,12 @@ internal class SeedDirector : ISeedDirector
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to seed process logs!"
+                "Failed to seed message logs!"
                 );
 
             // Provider better context.
             throw new DirectorException(
-                message: $"The director failed to seed process logs!",
+                message: $"The director failed to seed message logs!",
                 innerException: ex
                 );
         }
@@ -652,11 +650,11 @@ internal class SeedDirector : ISeedDirector
             {
                 // Was a provider given?
                 ProviderType? providerType = null;
-                if (!string.IsNullOrEmpty(mailMessageOption.ProviderType))
+                if (!string.IsNullOrEmpty(mailMessageOption.ProviderTypeName))
                 {
                     // Look for the provider.
                     providerType = await _providerTypeManager.FindByNameAsync(
-                        mailMessageOption.ProviderType
+                        mailMessageOption.ProviderTypeName
                         ).ConfigureAwait(false);
 
                     // Did we fail?
@@ -664,7 +662,7 @@ internal class SeedDirector : ISeedDirector
                     {
                         // Panic!!
                         throw new KeyNotFoundException(
-                            $"The provider type: {mailMessageOption.ProviderType} is missing!"
+                            $"The provider type: {mailMessageOption.ProviderTypeName} is missing!"
                             );
                     }
                 }
@@ -1401,7 +1399,7 @@ internal class SeedDirector : ISeedDirector
     /// or more arguments are missing, or invalid.</exception>
     /// <exception cref="DirectorException">This exception is thrown whenever
     /// the director fails to complete the operation.</exception>
-    private async Task SeedProcessLogsAsync(
+    private async Task SeedMessageLogsAsync(
         List<ProcessLogOptions> providerLogOptions,
         string userName,
         bool force = false,
@@ -1426,8 +1424,8 @@ internal class SeedDirector : ISeedDirector
                 {
                     // Log what we didn't do.
                     _logger.LogWarning(
-                        "Skipping seeding process logs because the 'force' flag " +
-                        "was not specified and there are existing process logs " +
+                        "Skipping seeding message logs because the 'force' flag " +
+                        "was not specified and there are existing message logs " +
                         "in the database.",
                         providerLogOptions.Count
                         );
@@ -1437,7 +1435,7 @@ internal class SeedDirector : ISeedDirector
 
             // Log what we are about to do.
             _logger.LogDebug(
-                "Seeding {count} process logs.",
+                "Seeding {count} message logs.",
                 providerLogOptions.Count
                 );
 
@@ -1530,7 +1528,6 @@ internal class SeedDirector : ISeedDirector
                             Error = providerLogOption.Error,
                             BeforeState = optionalBeforeState,
                             AfterState = optionalAfterState,
-                            Data = providerLogOption.Data
                         },
                         userName,
                         cancellationToken
@@ -1571,7 +1568,6 @@ internal class SeedDirector : ISeedDirector
                             Error = providerLogOption.Error,
                             BeforeState = optionalBeforeState,
                             AfterState = optionalAfterState,
-                            Data = providerLogOption.Data
                         },
                         userName,
                         cancellationToken
@@ -1584,12 +1580,12 @@ internal class SeedDirector : ISeedDirector
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to seed process logs!"
+                "Failed to seed message logs!"
                 );
 
             // Provider better context.
             throw new DirectorException(
-                message: $"The director failed to seed process logs!",
+                message: $"The director failed to seed message logs!",
                 innerException: ex
                 );
         }

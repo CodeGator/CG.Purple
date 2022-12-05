@@ -76,7 +76,7 @@ public class TextMessageOptions
     /// a message to a specific provider.
     /// </summary>
     [MaxLength(64)]
-    public string? ProviderType { get; set; }
+    public string? ProviderTypeName { get; set; }
 
     #endregion
 }

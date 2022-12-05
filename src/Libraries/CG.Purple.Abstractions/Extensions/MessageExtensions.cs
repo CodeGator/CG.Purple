@@ -21,7 +21,7 @@ public static class MessageExtensions001
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
+    /// <param name="messageLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -32,7 +32,7 @@ public static class MessageExtensions001
     public static async Task ToSentStateAsync(
         this Message message,
         IMessageManager messageManager,
-        IMessageLogManager processLogManager,
+        IMessageLogManager messageLogManager,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -40,7 +40,7 @@ public static class MessageExtensions001
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(message, nameof(message))
             .ThrowIfNull(messageManager, nameof(messageManager))
-            .ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Remember the previous state.
@@ -57,127 +57,9 @@ public static class MessageExtensions001
             ).ConfigureAwait(false);
 
         // Record what we did, in the log.
-        _ = await processLogManager.LogSentEventAsync(
+        _ = await messageLogManager.LogSentEventAsync(
             message,
             oldMessageState,
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method transitions the given <see cref="Message"/> to a 
-    /// <see cref="MessageState.Sent"/> state, and records the event
-    /// in the processing log.
-    /// </summary>
-    /// <param name="message">The message to use for the operation.</param>
-    /// <param name="messageManager">The message manager to use for the
-    /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
-    /// for the operation.</param>
-    /// <param name="data">Extra data associated with the event.</param>
-    /// <param name="userName">The name of the user performing the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    public static async Task ToSentStateAsync(
-        this Message message,
-        IMessageManager messageManager,
-        IMessageLogManager processLogManager,
-        string? data,
-        string userName,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(message, nameof(message))
-            .ThrowIfNull(messageManager, nameof(messageManager))
-            .ThrowIfNull(processLogManager, nameof(processLogManager))
-            .ThrowIfNullOrEmpty(userName, nameof(userName));
-
-        // Remember the previous state.
-        var oldMessageState = message.MessageState;
-
-        // The message is now in a 'Sent' state.
-        message.MessageState = MessageState.Sent;
-
-        // Update the message.
-        _ = await messageManager.UpdateAsync(
-            message,
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-
-        // Record what we did, in the log.
-        _ = await processLogManager.LogSentEventAsync(
-            message,
-            oldMessageState,
-            data,
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method transitions the given <see cref="Message"/> to a 
-    /// <see cref="MessageState.Sent"/> state, and records the event
-    /// in the processing log.
-    /// </summary>
-    /// <param name="message">The message to use for the operation.</param>
-    /// <param name="messageManager">The message manager to use for the
-    /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
-    /// for the operation.</param>
-    /// <param name="providerType">The provider type to use for the operation.</param>
-    /// <param name="data">Extra data associated with the event.</param>
-    /// <param name="userName">The name of the user performing the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    public static async Task ToSentStateAsync(
-        this Message message,
-        IMessageManager messageManager,
-        IMessageLogManager processLogManager,
-        ProviderType providerType,
-        string? data,
-        string userName,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(message, nameof(message))
-            .ThrowIfNull(messageManager, nameof(messageManager))
-            .ThrowIfNull(processLogManager, nameof(processLogManager))
-            .ThrowIfNull(providerType, nameof(providerType))
-            .ThrowIfNullOrEmpty(userName, nameof(userName));
-
-        // Remember the previous state.
-        var oldMessageState = message.MessageState;
-
-        // The message is now in a 'Sent' state.
-        message.MessageState = MessageState.Sent;
-
-        // Update the message.
-        _ = await messageManager.UpdateAsync(
-            message,
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-
-        // Record what we did, in the log.
-        _ = await processLogManager.LogSentEventAsync(
-            message,
-            oldMessageState,
-            providerType,
-            data,
             userName,
             cancellationToken
             ).ConfigureAwait(false);
@@ -193,7 +75,7 @@ public static class MessageExtensions001
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
+    /// <param name="messageLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -204,7 +86,7 @@ public static class MessageExtensions001
     public static async Task ToPendingStateAsync(
         this Message message,
         IMessageManager messageManager,
-        IMessageLogManager processLogManager,
+        IMessageLogManager messageLogManager,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -212,7 +94,7 @@ public static class MessageExtensions001
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(message, nameof(message))
             .ThrowIfNull(messageManager, nameof(messageManager))
-            .ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Remember the previous state.
@@ -229,7 +111,7 @@ public static class MessageExtensions001
             ).ConfigureAwait(false);
 
         // Record what we did, in the log.
-        _ = await processLogManager.LogResetEventAsync(
+        _ = await messageLogManager.LogResetEventAsync(
             message,
             oldMessageState,
             userName,
@@ -248,7 +130,7 @@ public static class MessageExtensions001
     /// <param name="ex">The exception to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
+    /// <param name="messageLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -260,7 +142,7 @@ public static class MessageExtensions001
         this Message message,
         Exception ex,
         IMessageManager messageManager,
-        IMessageLogManager processLogManager,
+        IMessageLogManager messageLogManager,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -269,7 +151,7 @@ public static class MessageExtensions001
         await message.ToFailedStateAsync(
             ex.GetBaseException().Message,
             messageManager,
-            processLogManager,
+            messageLogManager,
             userName,
             cancellationToken
             ).ConfigureAwait(false);
@@ -286,51 +168,9 @@ public static class MessageExtensions001
     /// <param name="ex">The exception to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
-    /// for the operation.</param>
-    /// <param name="data">Additional data that is related to the event.</param>
-    /// <param name="userName">The name of the user performing the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    public static async Task ToFailedStateAsync(
-        this Message message,
-        Exception ex,
-        IMessageManager messageManager,
-        IMessageLogManager processLogManager,
-        string? data,
-        string userName,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Call the overload.
-        await message.ToFailedStateAsync(
-            ex.GetBaseException().Message,
-            messageManager,
-            processLogManager,
-            data,
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method transitions the given <see cref="Message"/> to a 
-    /// <see cref="MessageState.Failed"/> state, and records the event
-    /// in the processing log.
-    /// </summary>
-    /// <param name="message">The message to use for the operation.</param>
-    /// <param name="ex">The exception to use for the operation.</param>
-    /// <param name="messageManager">The message manager to use for the
-    /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
+    /// <param name="messageLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
-    /// <param name="data">Additional data that is related to the event.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
@@ -341,9 +181,8 @@ public static class MessageExtensions001
         this Message message,
         Exception ex,
         IMessageManager messageManager,
-        IMessageLogManager processLogManager,
+        IMessageLogManager messageLogManager,
         ProviderType providerType,
-        string? data,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -352,9 +191,8 @@ public static class MessageExtensions001
         await message.ToFailedStateAsync(
             ex.GetBaseException().Message,
             messageManager,
-            processLogManager,
+            messageLogManager,
             providerType,
-            data,
             userName,
             cancellationToken
             ).ConfigureAwait(false);
@@ -371,7 +209,7 @@ public static class MessageExtensions001
     /// <param name="errorMessage">The error message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
+    /// <param name="messageLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -383,7 +221,7 @@ public static class MessageExtensions001
         this Message message,
         string errorMessage,
         IMessageManager messageManager,
-        IMessageLogManager processLogManager,
+        IMessageLogManager messageLogManager,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -392,7 +230,7 @@ public static class MessageExtensions001
         Guard.Instance().ThrowIfNull(message, nameof(message))
             .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
             .ThrowIfNull(messageManager, nameof(messageManager))
-            .ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
         // Remember the previous state.
@@ -409,7 +247,7 @@ public static class MessageExtensions001
             ).ConfigureAwait(false);
 
         // Record what we did, in the log.
-        _ = await processLogManager.LogErrorEventAsync(
+        _ = await messageLogManager.LogErrorEventAsync(
             message,
             oldMessageState,
             errorMessage,
@@ -429,71 +267,9 @@ public static class MessageExtensions001
     /// <param name="errorMessage">The error message to use for the operation.</param>
     /// <param name="messageManager">The message manager to use for the
     /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
-    /// for the operation.</param>
-    /// <param name="data">Extra data that is related to the event.</param>
-    /// <param name="userName">The name of the user performing the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation.</returns>
-    /// <exception cref="ArgumentException">This exception is thrown whenever one
-    /// or more arguments are missing, or invalid.</exception>
-    public static async Task ToFailedStateAsync(
-        this Message message,
-        string errorMessage,
-        IMessageManager messageManager,
-        IMessageLogManager processLogManager,
-        string? data,
-        string userName,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(message, nameof(message))
-            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
-            .ThrowIfNull(messageManager, nameof(messageManager))
-            .ThrowIfNull(processLogManager, nameof(processLogManager))
-            .ThrowIfNullOrEmpty(userName, nameof(userName));
-
-        // Remember the previous state.
-        var oldMessageState = message.MessageState;
-
-        // The message is now in a 'Failed' state.
-        message.MessageState = MessageState.Failed;
-
-        // Update the message.
-        _ = await messageManager.UpdateAsync(
-            message,
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-
-        // Record what we did, in the log.
-        _ = await processLogManager.LogErrorEventAsync(
-            message,
-            oldMessageState,
-            errorMessage,
-            data,
-            userName,
-            cancellationToken
-            ).ConfigureAwait(false);
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method transitions the given <see cref="Message"/> to a 
-    /// <see cref="MessageState.Failed"/> state, and records the event
-    /// in the processing log.
-    /// </summary>
-    /// <param name="message">The message to use for the operation.</param>
-    /// <param name="errorMessage">The error message to use for the operation.</param>
-    /// <param name="messageManager">The message manager to use for the
-    /// operation.</param>
-    /// <param name="processLogManager">The message log manager to use 
+    /// <param name="messageLogManager">The message log manager to use 
     /// for the operation.</param>
     /// <param name="providerType">The provider type to use for the operation.</param>
-    /// <param name="data">Extra data that is related to the event.</param>
     /// <param name="userName">The name of the user performing the operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
     /// for the lifetime of the method.</param>
@@ -504,9 +280,8 @@ public static class MessageExtensions001
         this Message message,
         string errorMessage,
         IMessageManager messageManager,
-        IMessageLogManager processLogManager,
+        IMessageLogManager messageLogManager,
         ProviderType providerType,
-        string? data,
         string userName,
         CancellationToken cancellationToken = default
         )
@@ -515,7 +290,7 @@ public static class MessageExtensions001
         Guard.Instance().ThrowIfNull(message, nameof(message))
             .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
             .ThrowIfNull(messageManager, nameof(messageManager))
-            .ThrowIfNull(processLogManager, nameof(processLogManager))
+            .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(providerType, nameof(providerType))
             .ThrowIfNullOrEmpty(userName, nameof(userName));
 
@@ -533,12 +308,11 @@ public static class MessageExtensions001
             ).ConfigureAwait(false);
 
         // Record what we did, in the log.
-        _ = await processLogManager.LogErrorEventAsync(
+        _ = await messageLogManager.LogErrorEventAsync(
             message,
             oldMessageState,
             errorMessage,
             providerType,
-            data,
             userName,
             cancellationToken
             ).ConfigureAwait(false);

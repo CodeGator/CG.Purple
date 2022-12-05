@@ -1,5 +1,5 @@
 {
-  "ProcessLogs": [
+  "MessageLogs": [
     {
       "MessageKey": "9D29C7EC-3BB2-4A5D-A3A4-DE3F19F15928",
       "MessageType": "Mail",
@@ -7,7 +7,6 @@
       "Event": "Stored",
       "BeforeState": "",
       "AfterState": "Pending",
-      "Data": "",
       "Error": ""
     },
     {
@@ -17,7 +16,6 @@
       "Event": "Stored",
       "BeforeState": "",
       "AfterState": "Pending",
-      "Data": "",
       "Error": ""
     }
   ]

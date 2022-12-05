@@ -72,10 +72,6 @@ internal class MessageLogMap : EntityMapBase<Entities.MessageLog>
             .IsUnicode(false);
 
         // Setup the column.
-        builder.Property(e => e.Data)
-            .IsUnicode(false);
-
-        // Setup the column.
         builder.Property(e => e.Error)
             .IsUnicode(false);
 

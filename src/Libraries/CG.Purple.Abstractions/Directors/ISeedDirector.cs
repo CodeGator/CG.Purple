@@ -167,7 +167,7 @@ public interface ISeedDirector
     /// or more arguments are missing, or invalid.</exception>
     /// <exception cref="DirectorException">This exception is thrown whenever the
     /// director fails to complete the operation.</exception>
-    Task SeedProcessLogsAsync(
+    Task SeedMessageLogsAsync(
         IConfiguration configuration,
         string userName,
         bool force = false,

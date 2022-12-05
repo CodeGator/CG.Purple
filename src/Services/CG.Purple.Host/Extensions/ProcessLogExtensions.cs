@@ -123,33 +123,6 @@ internal static class ProcessLogExtensions001
     // *******************************************************************
 
     /// <summary>
-    /// This method returns a safe Data for the given <see cref="MessageLog"/>
-    /// object.
-    /// </summary>
-    /// <param name="processLog">The process log to use for the operation.</param>
-    /// <returns>A rendering of the property that is safe to use in a
-    /// Blazor page.</returns>
-    public static string SafeData(
-        this MessageLog processLog
-        )
-    {
-        // Validate the arguments before attempting to use them.
-        Guard.Instance().ThrowIfNull(processLog, nameof(processLog));
-
-        // Is there an data?
-        if (!string.IsNullOrEmpty(processLog.Data))
-        {
-            // Return the data.
-            return processLog.Data;
-        }
-
-        // Return no error.
-        return "N/A";
-    }
-
-    // *******************************************************************
-
-    /// <summary>
     /// This method returns a safe Message for the given <see cref="MessageLog"/>
     /// object.
     /// </summary>

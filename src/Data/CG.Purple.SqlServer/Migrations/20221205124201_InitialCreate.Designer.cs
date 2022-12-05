@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CG.Purple.SqlServer.Migrations
 {
     [DbContext(typeof(PurpleDbContext))]
-    [Migration("20221204190755_InitialCreate")]
+    [Migration("20221205124201_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -220,10 +220,6 @@ namespace CG.Purple.SqlServer.Migrations
 
                     b.Property<DateTime>("CreatedOnUtc")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Data")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
 
                     b.Property<string>("Error")
                         .IsUnicode(false)

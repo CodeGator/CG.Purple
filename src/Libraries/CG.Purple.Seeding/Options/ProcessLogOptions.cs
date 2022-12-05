@@ -51,11 +51,6 @@ public class ProcessLogOptions
     public string? AfterState { get; set; }
 
     /// <summary>
-    /// This property contains extra data associated with the event.
-    /// </summary>
-    public string? Data { get; set; }
-
-    /// <summary>
     /// This property contains error data associated with the event.
     /// </summary>
     public string? Error { get; set; }

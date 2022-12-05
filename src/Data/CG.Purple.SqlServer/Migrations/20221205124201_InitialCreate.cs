@@ -260,7 +260,6 @@ namespace CG.Purple.SqlServer.Migrations
                     Event = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
                     BeforeState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
                     AfterState = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
-                    Data = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
                     Error = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),

@@ -346,14 +346,6 @@ public partial class Index
             return true;
         }
 
-        if (element.Data is not null)
-        {
-            if (searchString.Contains(element.Data, StringComparison.OrdinalIgnoreCase))
-            {
-                return true;
-            }
-        }
-
         if (element.Error is not null)
         {
             if (searchString.Contains(element.Error, StringComparison.OrdinalIgnoreCase))

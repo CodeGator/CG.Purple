@@ -212,8 +212,8 @@ public static class WebApplicationExtensions001
                     seedStartupOptions.Force
                     ).Wait();
                 break;
-            case "ProcessLogs":
-                seedDirector.SeedProcessLogsAsync(
+            case "MessageLogs":
+                seedDirector.SeedMessageLogsAsync(
                     configuration,
                     userName,
                     seedStartupOptions.Force

@@ -218,10 +218,6 @@ namespace CG.Purple.SqlServer.Migrations
                     b.Property<DateTime>("CreatedOnUtc")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Data")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
                     b.Property<string>("Error")
                         .IsUnicode(false)
                         .HasColumnType("varchar(max)");
