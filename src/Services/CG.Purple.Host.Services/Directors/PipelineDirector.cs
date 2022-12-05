@@ -292,11 +292,16 @@ internal class PipelineDirector : IPipelineDirector
             message.ProviderType = assignedProviderType;
 
             // Save the changes.
-            _ = await _messageManager.UpdateAsync(
+            var temp = await _messageManager.UpdateAsync(
                 message,
                 "host",
                 cancellationToken
                 );
+
+            // We can't overwrite 'message', since it's a foreach iterator
+            //   variable, but we still want to capture the update stats.
+            message.LastUpdatedBy = temp.LastUpdatedBy;
+            message.LastUpdatedOnUtc = temp.LastUpdatedOnUtc;
 
             // =======
             // Step 3D: Transition the message to the 'Processing' state.
