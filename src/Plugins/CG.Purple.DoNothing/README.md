@@ -1,7 +1,7 @@
 
 ### CG.Purple.DoNothing - README
 
-This project contains a DoNothing provider for the **CG.Purple** microservice.
+This project is a plugin that contains a DoNothing provider for the **CG.Purple** microservice.
 
 #### Notes
 

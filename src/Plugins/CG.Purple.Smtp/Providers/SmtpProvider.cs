@@ -1,11 +1,12 @@
-﻿
-namespace CG.Purple.Smtp;
+﻿namespace CG.Purple.Smtp.Providers;
 
 /// <summary>
 /// This class is a SMTP implementation of the <see cref="IMessageProvider"/>
 /// interface.
 /// </summary>
-internal class SmtpProvider : IMessageProvider
+internal class SmtpProvider :
+    MessageProviderBase<SmtpProvider>,
+    IMessageProvider
 {
     // *******************************************************************
     // Fields.
@@ -33,11 +34,6 @@ internal class SmtpProvider : IMessageProvider
     /// </summary>
     internal protected readonly IMessageLogManager _processLogManager = null!;
 
-    /// <summary>
-    /// This field contains the logger for this provider.
-    /// </summary>
-    internal protected readonly ILogger<SmtpProvider> _logger = null!;
-
     #endregion
 
     // *******************************************************************
@@ -59,27 +55,27 @@ internal class SmtpProvider : IMessageProvider
     /// <param name="processLogManager">The process log manager to use
     /// with this provider.</param>
     /// <param name="logger">The logger to use with this provider.</param>
+    /// <exception cref="ArgumentException">This exception is thrown whenever
+    /// one or more arguments are missing, or invalid.</exception>
     public SmtpProvider(
         IMailMessageManager mailMessageManager,
         IMessageManager messageManager,
         IMessageLogManager processLogManager,
         IMessagePropertyManager messagePropertyManager,
         ILogger<SmtpProvider> logger
-        )
+        ) : base(logger)
     {
         // Validate the parameters before attempting to use them.
         Guard.Instance().ThrowIfNull(mailMessageManager, nameof(mailMessageManager))
             .ThrowIfNull(messageManager, nameof(messageManager))
             .ThrowIfNull(processLogManager, nameof(processLogManager))
-            .ThrowIfNull(messagePropertyManager, nameof(messagePropertyManager))
-            .ThrowIfNull(logger, nameof(logger));
+            .ThrowIfNull(messagePropertyManager, nameof(messagePropertyManager));
 
         // Save the reference(s).
         _mailMessageManager = mailMessageManager;
         _messageManager = messageManager;
         _messagePropertyManager = messagePropertyManager;
         _processLogManager = processLogManager;
-        _logger = logger;
     }
 
     #endregion
@@ -91,7 +87,7 @@ internal class SmtpProvider : IMessageProvider
     #region Public methods
 
     /// <inheritdoc/>
-    public virtual async Task ProcessMessagesAsync(
+    public override async Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
         ProviderType providerType,
         CancellationToken cancellationToken = default
@@ -234,8 +230,8 @@ internal class SmtpProvider : IMessageProvider
                         );
 
                     // Since the provider can't process this message, we'll reset
-                    //   it so the pipeline can (hopefully) assign it to another
-                    //   provider on the next pass.
+                    //   it. This away the pipeline can (hopefully) assign it to a
+                    //   provider that can process it.
                     await ResetMessageAsync(
                         message,
                         cancellationToken
@@ -286,8 +282,8 @@ internal class SmtpProvider : IMessageProvider
                         );
 
                     // Since the provider can't process this message, we'll reset
-                    //   it, so the pipeline can (hopefully) assign it to a provider
-                    //   that can process it.
+                    //   it. This away the pipeline can (hopefully) assign it to a
+                    //   provider that can process it.
                     await ResetMessageAsync(
                         message,
                         cancellationToken
@@ -445,7 +441,7 @@ internal class SmtpProvider : IMessageProvider
                 dotNetMessage.To.Add(to);
             }
         }
-        
+
         // Was a CC supplied?
         if (!string.IsNullOrEmpty(mailMessage.CC))
         {
@@ -551,6 +547,6 @@ internal class SmtpProvider : IMessageProvider
             cancellationToken
             ).ConfigureAwait(false);
     }
-        
+
     #endregion
 }

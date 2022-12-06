@@ -10,21 +10,12 @@
       "FactoryType": "SmtpProvider"
     },
     {
-      "Name": "Twillio",
-      "Description": "Purple Twillio provider",
-      "IsDisabled": true,
-      "CanProcessEmails": true,
-      "CanProcessTexts": true,
-      "Priority": 1,
-      "FactoryType": "TwillioProvider"
-    },
-    {
       "Name": "SendGrid",
       "Description": "Purple SendGrid provider",
       "IsDisabled": false,
       "CanProcessEmails": true,
-      "CanProcessTexts": true,
-      "Priority": 2,
+      "CanProcessTexts": false,
+      "Priority": 1,
       "FactoryType": "SendGridProvider"
     }    
   ]

@@ -1,25 +1,13 @@
-﻿
-namespace CG.Purple.DoNothing;
+﻿namespace CG.Purple.DoNothing.Providers;
 
 /// <summary>
 /// This class is a "do nothing" implementation of the <see cref="IMessageProvider"/>
 /// interface.
 /// </summary>
-internal class DoNothingProvider : IMessageProvider
+internal class DoNothingProvider :
+    MessageProviderBase<DoNothingProvider>,
+    IMessageProvider
 {
-    // *******************************************************************
-    // Fields.
-    // *******************************************************************
-
-    #region Fields
-
-    /// <summary>
-    /// This field contains the logger for this provider.
-    /// </summary>
-    internal protected readonly ILogger<DoNothingProvider> _logger = null!;
-
-    #endregion
-
     // *******************************************************************
     // Constructors.
     // *******************************************************************
@@ -31,15 +19,13 @@ internal class DoNothingProvider : IMessageProvider
     /// class.
     /// </summary>
     /// <param name="logger">The logger to use with this provider.</param>
+    /// <exception cref="ArgumentException">This exception is thrown whenever
+    /// one or more arguments are missing, or invalid.</exception>
     public DoNothingProvider(
         ILogger<DoNothingProvider> logger
-        )
+        ) : base(logger)
     {
-        // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(logger, nameof(logger));
 
-        // Save the reference(s).
-        _logger = logger;
     }
 
     #endregion
@@ -51,7 +37,7 @@ internal class DoNothingProvider : IMessageProvider
     #region Public methods
 
     /// <inheritdoc/>
-    public virtual async Task ProcessMessagesAsync(
+    public override async Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
         ProviderType providerType,
         CancellationToken cancellationToken = default

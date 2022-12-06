@@ -21,6 +21,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Libraries\CG.Purple.Abstractions\CG.Purple.Abstractions.csproj" />
+      <ProjectReference Include="..\..\Libraries\CG.Purple.Plugins\CG.Purple.Plugins.csproj" />
     </ItemGroup>
     
 </Project>

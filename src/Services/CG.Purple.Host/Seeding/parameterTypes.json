@@ -11,6 +11,10 @@
     {
       "Name": "Password",
       "Description": "The password for the provider"
-    }    
+    },
+    {
+      "Name": "ApiKey",
+      "Description": "An API key for the provider"
+    } 
   ]
 }

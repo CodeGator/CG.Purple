@@ -1,5 +1,7 @@
 ﻿
-namespace CG.Purple.Twillio;
+using CG.Purple.SendGrid.Providers;
+
+namespace CG.Purple.SendGrid;
 
 /// <summary>
 /// This class contains the plugin module's startup logic.
@@ -22,11 +24,11 @@ public class Module : ModuleBase
         // Log what we are about to do.
         bootstrapLogger?.LogDebug(
             "Registering the {name} provider with the DI container.",
-            nameof(TwillioProvider)
+            nameof(SendGridProvider)
             );
 
         // Add the concrete provider to the DI container.
-        webApplicationBuilder.Services.AddScoped<TwillioProvider>();
+        webApplicationBuilder.Services.AddScoped<SendGridProvider>();
     }
 
     // *******************************************************************

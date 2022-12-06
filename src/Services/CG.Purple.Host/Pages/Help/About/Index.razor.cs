@@ -46,10 +46,10 @@ public partial class Index
             .Where(x => !x.IsDynamic)
             .Select(x => new AssemblyModel()
             {
-                Name = x.GetName().Name ?? "",
-                Version = x.ReadInformationalVersion(),
-                Company = x.ReadCompany()
-            }).OrderBy(x => x.Name)
+                Name = !string.IsNullOrEmpty(x.GetName().Name ?? "unknown") ? x.GetName().Name ?? "unknown" : "unknown",
+                Version = !string.IsNullOrEmpty(x.ReadInformationalVersion()) ? x.ReadInformationalVersion() : "unknown",
+                Company = !string.IsNullOrEmpty(x.ReadCompany()) ? x.ReadCompany() : "unknown",
+            }).OrderBy(x => x.Company).ThenBy(x => x.Name)
             .ToList();
 
         // Give the base class a chance.

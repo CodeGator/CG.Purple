@@ -11,7 +11,7 @@ Things to be done on the project, as of 12/06/2022
 
 * Eventually, need to deal with provider failover, for times when a provider is overworked, or rate limited.
 
-* Does it make sense to employ user-configurable policies for things like provider assignment, failover, archiving, etc.?
+* Does it make sense to employ a user-configurable rules engine for things like provider assignment, failover, archiving, etc.?
 
 * Does it make sense to use plugins to extend processing, or even archiving?
 
@@ -23,11 +23,13 @@ Things to be done on the project, as of 12/06/2022
 
 ### Libraries
 
+* Should we add 'tags' for messages? (like properties, but without a value)
+
 * Should we add caching to the managers?
 
-### Providers
+### Plugins
 
-* Need to write the SendGrid and Twillio providers.
+* Need to write the SendGrid provider.
 
 ### Pipeline
 
@@ -35,7 +37,7 @@ Things to be done on the project, as of 12/06/2022
 
 ### Host (UI)
 
-* All dialogs should use the mudblazor extensions.
+* All dialogs should use the MudBlazor extensions.
 
 * We've removed all cascading deletes from the DAL, so now we need to write code 
   to disable operations, in the UI, that will fail due to FK constraints.
@@ -52,6 +54,8 @@ Things to be done on the project, as of 12/06/2022
 
 * Need to work on the design/coding of the REST controllers.
 
+* Should we stand up a swagger page, for the API?
+
 ### Other Integrations
 
 * For sure need to integrate with an OIDC / JWT service.
@@ -59,6 +63,8 @@ Things to be done on the project, as of 12/06/2022
 * Possibly need to integrate with a configuration service.
 
 * Possibly need to integrate with a file storage service.
+
+* Possibly need to integrate with a messaging service (like Azure/Aws) for incoming messages. This might be a good candidate for a plugin.
 
 ### Testing
 

@@ -16,34 +16,9 @@
       "Value": "mysmtppassword"
     },
     {
-      "ProviderTypeName": "Twillio",
-      "ParameterTypeName": "ServerUrl",
-      "Value": "https://mytwillio.com"
-    },
-    {
-      "ProviderTypeName": "Twillio",
-      "ParameterTypeName": "UserName",
-      "Value": "mytwilliousername"
-    },
-    {
-      "ProviderTypeName": "Twillio",
-      "ParameterTypeName": "Password",
-      "Value": "mytwilliopassword"
-    },
-    {
       "ProviderTypeName": "SendGrid",
-      "ParameterTypeName": "ServerUrl",
-      "Value": "https://mysendgrid.com"
-    },
-    {
-      "ProviderTypeName": "SendGrid",
-      "ParameterTypeName": "UserName",
-      "Value": "mysendgridusername"
-    },
-    {
-      "ProviderTypeName": "SendGrid",
-      "ParameterTypeName": "Password",
-      "Value": "mysendgridpassword"
+      "ParameterTypeName": "ApiKey",
+      "Value": "EBD5D09E-0455-4D37-ACFF-B266CE657391"
     }
   ]
 }

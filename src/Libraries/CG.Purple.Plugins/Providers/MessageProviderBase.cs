@@ -1,11 +1,12 @@
 ﻿
-namespace CG.Purple.SendGrid;
+namespace CG.Purple.Plugins.Providers;
 
 /// <summary>
-/// This class is a SendGrid implementation of the <see cref="IMessageProvider"/>
+/// This class is a base implementation of the <see cref="IMessageProvider"/>
 /// interface.
 /// </summary>
-internal class SendGridProvider : IMessageProvider
+public abstract class MessageProviderBase<T> : IMessageProvider
+    where T : MessageProviderBase<T>
 {
     // *******************************************************************
     // Fields.
@@ -16,7 +17,7 @@ internal class SendGridProvider : IMessageProvider
     /// <summary>
     /// This field contains the logger for this provider.
     /// </summary>
-    internal protected readonly ILogger<SendGridProvider> _logger = null!;
+    internal protected readonly ILogger<T> _logger;
 
     #endregion
 
@@ -27,12 +28,14 @@ internal class SendGridProvider : IMessageProvider
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="SendGridProvider"/>
+    /// This constructor create a new instance of the <see cref="MessageProviderBase{T}"/>
     /// class.
     /// </summary>
     /// <param name="logger">The logger to use with this provider.</param>
-    public SendGridProvider(
-        ILogger<SendGridProvider> logger
+    /// <exception cref="ArgumentException">This exception is thrown whenever
+    /// one or more arguments are missing, or invalid.</exception>
+    protected MessageProviderBase(
+        ILogger<T> logger
         )
     {
         // Validate the parameters before attempting to use them.
@@ -51,14 +54,11 @@ internal class SendGridProvider : IMessageProvider
     #region Public methods
 
     /// <inheritdoc/>
-    public virtual async Task ProcessMessagesAsync(
+    public abstract Task ProcessMessagesAsync(
         IEnumerable<Message> messages,
         ProviderType providerType,
         CancellationToken cancellationToken = default
-        )
-    {
-        // TODO : write the code for this.
-    }
+        );
 
     #endregion
 }
