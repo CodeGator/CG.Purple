@@ -3,7 +3,7 @@
     {
       "Name": "Smtp",
       "Description": "Purple SMTP provider",
-      "IsDisabled": false,
+      "IsDisabled": true,
       "CanProcessEmails": true,
       "CanProcessTexts": false,
       "Priority": 0,
@@ -15,7 +15,7 @@
       "IsDisabled": false,
       "CanProcessEmails": true,
       "CanProcessTexts": false,
-      "Priority": 1,
+      "Priority": 0,
       "FactoryType": "SendGridProvider"
     }    
   ]

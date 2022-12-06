@@ -18,12 +18,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Libraries\CG.Purple.Abstractions\CG.Purple.Abstractions.csproj" />
-        <ProjectReference Include="..\..\Libraries\CG.Purple.Plugins\CG.Purple.Plugins.csproj" />
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
     </ItemGroup>
 
     <ItemGroup>
-        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+      <ProjectReference Include="..\..\Libraries\CG.Purple.Providers\CG.Purple.Providers.csproj" />
     </ItemGroup>
 
 </Project>

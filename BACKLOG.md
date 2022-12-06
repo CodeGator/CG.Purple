@@ -5,6 +5,8 @@ Things to be done on the project, as of 12/06/2022
 
 ### General
 
+* Need to remove the plugins until we solve the dependent assembly problem.
+
 * Eventually, we want to capture metrics, both message and provider related. 
 
 * Eventually, we want a dashboard with pretty graphs for displaying the metrics.
@@ -12,8 +14,6 @@ Things to be done on the project, as of 12/06/2022
 * Eventually, need to deal with provider failover, for times when a provider is overworked, or rate limited.
 
 * Does it make sense to employ a user-configurable rules engine for things like provider assignment, failover, archiving, etc.?
-
-* Does it make sense to use plugins to extend processing, or even archiving?
 
 ### Database
 
@@ -27,7 +27,7 @@ Things to be done on the project, as of 12/06/2022
 
 * Should we add caching to the managers?
 
-### Plugins
+### Providers
 
 * Need to write the SendGrid provider.
 
@@ -63,8 +63,6 @@ Things to be done on the project, as of 12/06/2022
 * Possibly need to integrate with a configuration service.
 
 * Possibly need to integrate with a file storage service.
-
-* Possibly need to integrate with a messaging service (like Azure/Aws) for incoming messages. This might be a good candidate for a plugin.
 
 ### Testing
 

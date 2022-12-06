@@ -19,21 +19,6 @@ internal class SmtpProvider :
     /// </summary>
     internal protected readonly IMailMessageManager _mailMessageManager = null!;
 
-    /// <summary>
-    /// This field contains the message manager for this provider.
-    /// </summary>
-    internal protected readonly IMessageManager _messageManager = null!;
-
-    /// <summary>
-    /// This field contains the message property manager for this director.
-    /// </summary>
-    internal protected readonly IMessagePropertyManager _messagePropertyManager = null!;
-
-    /// <summary>
-    /// This field contains the process log manager for this director.
-    /// </summary>
-    internal protected readonly IMessageLogManager _processLogManager = null!;
-
     #endregion
 
     // *******************************************************************
@@ -50,8 +35,6 @@ internal class SmtpProvider :
     /// with this provider.</param>
     /// <param name="messageManager">The message manager to use with this 
     /// provider.</param>
-    /// <param name="messagePropertyManager">The message property manager 
-    /// to use with this provider.</param>
     /// <param name="processLogManager">The process log manager to use
     /// with this provider.</param>
     /// <param name="logger">The logger to use with this provider.</param>
@@ -61,21 +44,18 @@ internal class SmtpProvider :
         IMailMessageManager mailMessageManager,
         IMessageManager messageManager,
         IMessageLogManager processLogManager,
-        IMessagePropertyManager messagePropertyManager,
         ILogger<SmtpProvider> logger
-        ) : base(logger)
+        ) : base(
+            messageManager, 
+            processLogManager, 
+            logger
+            )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(mailMessageManager, nameof(mailMessageManager))
-            .ThrowIfNull(messageManager, nameof(messageManager))
-            .ThrowIfNull(processLogManager, nameof(processLogManager))
-            .ThrowIfNull(messagePropertyManager, nameof(messagePropertyManager));
-
+        Guard.Instance().ThrowIfNull(mailMessageManager, nameof(mailMessageManager));
+            
         // Save the reference(s).
-        _mailMessageManager = mailMessageManager;
-        _messageManager = messageManager;
-        _messagePropertyManager = messagePropertyManager;
-        _processLogManager = processLogManager;
+        _mailMessageManager = mailMessageManager;        
     }
 
     #endregion
@@ -99,9 +79,9 @@ internal class SmtpProvider :
 
         try
         {
-            // =======
-            // Step 1: Find the parameters we'll need.
-            // =======
+            // ========
+            // Step 1: Get the parameters we'll need.
+            // ========
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -160,9 +140,9 @@ internal class SmtpProvider :
                     );
             }
 
-            // =======
-            // Step 2: Create the .NET mail client.
-            // =======
+            // ========
+            // Step 2: Create a .NET client
+            // ========
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -170,7 +150,7 @@ internal class SmtpProvider :
                 );
 
             // Create the SMTP client.
-            using System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient(
+            using var client = new System.Net.Mail.SmtpClient(
                 serverUrlProperty.Value
                 );
 
@@ -181,9 +161,9 @@ internal class SmtpProvider :
                 passwordProperty.Value
                 );
 
-            // =======
-            // Step 3: Process the individual messages.
-            // =======
+            // ========
+            // Step 3: Process the message.
+            // ========
 
             // Log what we are about to do.
             _logger.LogDebug(
@@ -194,106 +174,62 @@ internal class SmtpProvider :
             // Loop through the messages.
             foreach (var message in messages)
             {
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Ensuring the message type is correct"
-                    );
-
-                // Should never happen, but, pffft, check it anyway.
-                if (message.MessageType != MessageType.Mail)
-                {
-                    // Record what happened, in the log.
-                    _ = await _processLogManager.LogErrorEventAsync(
-                        "Message isn't an email!",
-                        providerType,
-                        "host",
-                        cancellationToken
-                        ).ConfigureAwait(false);
-
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Bumping the error count, for message: {id}",
-                        message.Id
-                        );
-
-                    // Bump the error count for the message.
-                    await message.BumpErrorCountAsync(
-                        _messageManager,
-                        "host",
-                        cancellationToken
-                        ).ConfigureAwait(false);
-
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Resetting the provider, for message: {id}",
-                        message.Id
-                        );
-
-                    // Since the provider can't process this message, we'll reset
-                    //   it. This away the pipeline can (hopefully) assign it to a
-                    //   provider that can process it.
-                    await ResetMessageAsync(
-                        message,
-                        cancellationToken
-                        ).ConfigureAwait(false);
-
-                    continue; // Nothing left to do!
-                }
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Fetching the rest of the email message"
-                    );
-
-                // Get the mail portion of the message.
-                var mailMessage = await _mailMessageManager.FindByIdAsync(
-                    message.Id,
-                    cancellationToken
-                    ).ConfigureAwait(false);
-
-                // Should never happen, but, pffft, check it anyway.
-                if (mailMessage is null)
-                {
-                    // Record what happened, in the log.
-                    _ = await _processLogManager.LogErrorEventAsync(
-                        "Unable to find the email for processing!",
-                        providerType,
-                        "host",
-                        cancellationToken
-                        ).ConfigureAwait(false);
-
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Bumping the error count, for message: {id}",
-                        message.Id
-                        );
-
-                    // Bump the error count for the message.
-                    await message.BumpErrorCountAsync(
-                        _messageManager,
-                        "host",
-                        cancellationToken
-                        ).ConfigureAwait(false);
-
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Resetting the provider, for message: {id}",
-                        message.Id
-                        );
-
-                    // Since the provider can't process this message, we'll reset
-                    //   it. This away the pipeline can (hopefully) assign it to a
-                    //   provider that can process it.
-                    await ResetMessageAsync(
-                        message,
-                        cancellationToken
-                        ).ConfigureAwait(false);
-
-                    continue; // Nothing left to do!
-                }
-
                 try
                 {
+                    // ========
+                    // Step 3A: Validate the message type.
+                    // ========
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Ensuring type is correct for message: {id}",
+                        message.Id
+                        );
+
+                    // Should never happen, but, pffft, check it anyway.
+                    if (message.MessageType != MessageType.Mail)
+                    {
+                        // Update the message and record the event.
+                        await MessageIsWrongTypeAsync(
+                            message,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+
+                        continue; // Nothing left to do!
+                    }
+
+                    // ========
+                    // Step 3B: Get the complete message.
+                    // ========
+
+                    // Log what we are about to do.
+                    _logger.LogDebug(
+                        "Fetching the email part of message: {id}",
+                        message.Id
+                        );
+
+                    // Get the mail portion of the message.
+                    var mailMessage = await _mailMessageManager.FindByIdAsync(
+                        message.Id,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+
+                    // Should never happen, but, pffft, check it anyway.
+                    if (mailMessage is null)
+                    {
+                        // Update the message and record the event.
+                        await UnableToFindMailMessageAsync(
+                            message,
+                            cancellationToken
+                            ).ConfigureAwait(false);
+
+                        continue; // Nothing left to do!
+                    }
+
+                    // ========
+                    // Step 3C: Wrap the message.
+                    // ========
+
                     // Log what we are about to do.
                     _logger.LogDebug(
                         "Creating a .NET wrapper for message: {id}",
@@ -305,16 +241,16 @@ internal class SmtpProvider :
                         mailMessage
                         );
 
-                    // =======
-                    // Step 4: Send the email.
-                    // =======
-
                     // Log what we are about to do.
                     _logger.LogTrace(
                         "Deferring to {method} for message: {id}",
                         nameof(System.Net.Mail.SmtpClient.Send),
                         mailMessage.Id
                         );
+
+                    // ========
+                    // Step 3D: Send the message.
+                    // ========
 
                     // Send the message.
                     client.Send(msg);
@@ -325,18 +261,13 @@ internal class SmtpProvider :
                         message.Id
                         );
 
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Transitioning message: {id} to the {state} state.",
-                        mailMessage.Id,
-                        MessageState.Sent
-                        );
+                    // ========
+                    // Step 3E: Transition the message.
+                    // ========
 
-                    // Transition to the 'Sent' state.
-                    await mailMessage.ToSentStateAsync(
-                        _messageManager,
-                        _processLogManager,
-                        "host",
+                    // Update the message and record the event.
+                    await MessageWasSentAsync(
+                        message,
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
@@ -349,33 +280,10 @@ internal class SmtpProvider :
                         ex.GetBaseException().Message
                         );
 
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Bumping the error count, for message: {id}",
-                        message.Id
-                        );
-
-                    // Bump the error count on the message.
-                    await mailMessage.BumpErrorCountAsync(
-                        _messageManager,
-                        "host",
-                        cancellationToken
-                        ).ConfigureAwait(false);
-
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Transitioning message: {id} to the {state} state.",
-                        mailMessage.Id,
-                        MessageState.Failed
-                        );
-
-                    // Transition to the 'Failed' state.
-                    await mailMessage.ToFailedStateAsync(
-                        ex,
-                        _messageManager,
-                        _processLogManager,
-                        providerType,
-                        "host",
+                    // Update the message and record the event.
+                    await MessageFailedToSendAsync(
+                        ex.GetBaseException().Message,
+                        message,
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
@@ -542,7 +450,7 @@ internal class SmtpProvider :
         // Transition back to the 'Pending' state.
         await message.ToPendingStateAsync(
             _messageManager,
-            _processLogManager,
+            _messageLogManager,
             "host",
             cancellationToken
             ).ConfigureAwait(false);

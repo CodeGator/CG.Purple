@@ -1,8 +1,8 @@
 {
   "MailMessages": [
     {
-      "From": "test0@codegator.com",
-      "To": "test4@codegator.com",
+      "From": "test1@codegator.com",
+      "To": "test1@codegator.com",
       "Subject": "test email # 1",
       "Body": "This is test email # 1",
       "Attachments": [],
