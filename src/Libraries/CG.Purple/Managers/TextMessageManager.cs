@@ -24,11 +24,6 @@ internal class TextMessageManager : ITextMessageManager
     internal protected readonly ITextMessageRepository _textMessageRepository = null!;
 
     /// <summary>
-    /// This field contains the cryptographer for this manager.
-    /// </summary>
-    internal protected readonly ICryptographer _cryptographer = null!;
-
-    /// <summary>
     /// This field contains the logger for this manager.
     /// </summary>
     internal protected readonly ILogger<ITextMessageManager> _logger = null!;
@@ -49,27 +44,23 @@ internal class TextMessageManager : ITextMessageManager
     /// with this manager.</param>
     /// <param name="textMessageRepository">The text message repository to use
     /// with this manager.</param>
-    /// <param name="cryptographer">The cryptographer to use with this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public TextMessageManager(
         IOptions<BllOptions> bllOptions,
         ITextMessageRepository textMessageRepository,
-        ICryptographer cryptographer,
         ILogger<ITextMessageManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(bllOptions, nameof(bllOptions))
             .ThrowIfNull(textMessageRepository, nameof(textMessageRepository))
-            .ThrowIfNull(cryptographer, nameof(cryptographer))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _managerOptions = bllOptions.Value.TextMessageManager;
         _textMessageRepository = textMessageRepository;
-        _cryptographer = cryptographer;
         _logger = logger;
     }
 
@@ -183,7 +174,7 @@ internal class TextMessageManager : ITextMessageManager
 
             // Always create messages in this state.
             textMessage.MessageState = MessageState.Pending;
-
+            
             // Should we generate a message key?
             if (string.IsNullOrEmpty(textMessage.MessageKey))
             {
@@ -194,27 +185,6 @@ internal class TextMessageManager : ITextMessageManager
 
                 // Generate the unique message key.
                 textMessage.MessageKey = $"{Guid.NewGuid()}";
-            }
-
-            // Do we have an associated provider?
-            if (textMessage.ProviderType is not null)
-            {
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Encrypting the provider parameter values for message: {id}",
-                    textMessage.Id
-                    );
-
-                // Provider parameters are encrypted, at rest, so we'll need
-                //   to deal with those values now.
-                foreach (var parameter in textMessage.ProviderType.Parameters)
-                {
-                    // Encrypt the value.
-                    parameter.Value = await _cryptographer.AesEncryptAsync(
-                        parameter.Value,
-                        cancellationToken
-                        ).ConfigureAwait(false);
-                }
             }
 
             // Were manager options provided?
@@ -325,27 +295,6 @@ internal class TextMessageManager : ITextMessageManager
                 textMessage,
                 cancellationToken
                 ).ConfigureAwait(false);
-
-            // Do we have an associated provider?
-            if (textMessage.ProviderType is not null)
-            {
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Decrypting the provider parameter values for message: {id}",
-                    textMessage.Id
-                    );
-
-                // Provider parameters are encrypted, at rest, so we'll need
-                //   to deal with those values now.
-                foreach (var parameter in textMessage.ProviderType.Parameters)
-                {
-                    // Decrypt the value.
-                    parameter.Value = await _cryptographer.AesDecryptAsync(
-                        parameter.Value,
-                        cancellationToken
-                        ).ConfigureAwait(false);
-                }
-            }
 
             // Return the results.
             return result;
@@ -512,27 +461,6 @@ internal class TextMessageManager : ITextMessageManager
             textMessage.LastUpdatedOnUtc = DateTime.UtcNow;
             textMessage.LastUpdatedBy = userName;
 
-            // Do we have an associated provider?
-            if (textMessage.ProviderType is not null)
-            {
-                // Provider parameters are encrypted, at rest, so we'll need
-                //   to deal with those values now.
-                foreach (var parameter in textMessage.ProviderType.Parameters)
-                {
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Encrypting the provider parameter values for message: {id}",
-                        textMessage.Id
-                        );
-
-                    // Encrypt the value.
-                    parameter.Value = await _cryptographer.AesEncryptAsync(
-                        parameter.Value,
-                        cancellationToken
-                        ).ConfigureAwait(false);
-                }
-            }
-
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
@@ -544,27 +472,6 @@ internal class TextMessageManager : ITextMessageManager
                 textMessage,
                 cancellationToken
                 ).ConfigureAwait(false);
-
-            // Do we have an associated provider?
-            if (textMessage.ProviderType is not null)
-            {
-                // Provider parameters are encrypted, at rest, so we'll need
-                //   to deal with those values now.
-                foreach (var parameter in textMessage.ProviderType.Parameters)
-                {
-                    // Log what we are about to do.
-                    _logger.LogDebug(
-                        "Decrypting the provider parameter values for message: {id}",
-                        textMessage.Id
-                        );
-
-                    // Decrypt the value.
-                    parameter.Value = await _cryptographer.AesDecryptAsync(
-                        parameter.Value,
-                        cancellationToken
-                        ).ConfigureAwait(false);
-                }
-            }
 
             // Return the results.
             return result;

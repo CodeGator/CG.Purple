@@ -700,11 +700,6 @@ internal class ProviderTypeRepository : IProviderTypeRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We never change these 'read only' properties.
-            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
-            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
-            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
@@ -717,6 +712,11 @@ internal class ProviderTypeRepository : IProviderTypeRepository
 
             // Mark the entity as modified so EFCORE will update it.
             dbContext.Entry(entity).State = EntityState.Modified;
+
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(

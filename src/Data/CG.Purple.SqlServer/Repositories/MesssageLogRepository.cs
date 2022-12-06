@@ -222,6 +222,17 @@ internal class MesssageLogRepository : IMessageLogRepository
             // Mark the entity as added so EFCORE will insert it.
             dbContext.Entry(entity).State = EntityState.Added;
 
+            // Is there an associated provider type?
+            if (entity.ProviderType is not null)
+            {
+                // Loop through the parameters.
+                foreach (var parameter in entity.ProviderType.Parameters)
+                {
+                    // Mark the parameter as detached so EFCORE won't mess with it.
+                    dbContext.Entry(parameter).State = EntityState.Detached;
+                }
+            }
+
             // Log what we are about to do.
             _logger.LogDebug(
                 "Saving changes to the {ctx} data-context",

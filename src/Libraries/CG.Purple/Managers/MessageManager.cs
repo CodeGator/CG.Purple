@@ -568,21 +568,6 @@ internal class MessageManager : IMessageManager
             message.LastUpdatedOnUtc = DateTime.UtcNow;
             message.LastUpdatedBy = userName;
 
-            // Do we have an associated provider?
-            if (message.ProviderType is not null)
-            {
-                // Provider parameters are encrypted, at rest, so we'll need
-                //   to deal with those values now.
-                foreach (var parameter in message.ProviderType.Parameters)
-                {
-                    // Encrypt the value
-                    parameter.Value = await _cryptographer.AesEncryptAsync(
-                        parameter.Value,
-                        cancellationToken
-                        ).ConfigureAwait(false);   
-                }
-            }
-
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
@@ -594,21 +579,6 @@ internal class MessageManager : IMessageManager
                 message,
                 cancellationToken
                 ).ConfigureAwait(false);
-
-            // Do we have an associated provider?
-            if (message.ProviderType is not null)
-            {
-                // Provider parameters are encrypted, at rest, so we'll need
-                //   to deal with those values now.
-                foreach (var parameter in message.ProviderType.Parameters)
-                {
-                    // Decrypt the value
-                    parameter.Value = await _cryptographer.AesDecryptAsync(
-                        parameter.Value,
-                        cancellationToken
-                        ).ConfigureAwait(false);
-                }
-            }
 
             // Return the results.
             return result;

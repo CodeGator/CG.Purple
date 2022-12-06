@@ -375,12 +375,6 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We never change these 'read only' properties.
-            dbContext.Entry(entity).Property(x => x.PropertyTypeId).IsModified = false;
-            dbContext.Entry(entity).Property(x => x.MessageId).IsModified = false;
-            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
-            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
@@ -393,6 +387,12 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
 
             // Mark the entity as modified so EFCORE will update it.
             dbContext.Entry(entity).State = EntityState.Modified;
+
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.PropertyTypeId).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.MessageId).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
 
             // Log what we are about to do.
             _logger.LogDebug(

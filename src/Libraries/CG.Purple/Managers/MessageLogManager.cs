@@ -1,6 +1,4 @@
 ﻿
-using CG.Cryptography;
-
 namespace CG.Purple.Managers;
 
 /// <summary>
@@ -21,11 +19,6 @@ internal class MessageLogManager : IMessageLogManager
     internal protected readonly IMessageLogRepository _messageLogRepository = null!;
 
     /// <summary>
-    /// This field contains the cryptographer for this manager.
-    /// </summary>
-    internal protected readonly ICryptographer _cryptographer = null!;
-
-    /// <summary>
     /// This field contains the logger for this manager.
     /// </summary>
     internal protected readonly ILogger<IMessageLogManager> _logger = null!;
@@ -44,24 +37,20 @@ internal class MessageLogManager : IMessageLogManager
     /// </summary>
     /// <param name="messageLogRepository">The message log repository to 
     /// use with this manager.</param>
-    /// <param name="cryptographer">The cryptographer to use with this manager.</param>
     /// <param name="logger">The logger to use with this manager.</param>
     /// <exception cref="ArgumentException">This exception is thrown whenever one
     /// or more arguments are missing, or invalid.</exception>
     public MessageLogManager(
         IMessageLogRepository messageLogRepository,
-        ICryptographer cryptographer,
         ILogger<IMessageLogManager> logger
         )
     {
         // Validate the arguments before attempting to use them.
         Guard.Instance().ThrowIfNull(messageLogRepository, nameof(messageLogRepository))
-        .ThrowIfNull(cryptographer, nameof(cryptographer))
         .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s)
         _messageLogRepository = messageLogRepository;
-        _cryptographer = cryptographer;
         _logger = logger;
     }
 
@@ -170,21 +159,6 @@ internal class MessageLogManager : IMessageLogManager
             messageLog.LastUpdatedBy = null;
             messageLog.LastUpdatedOnUtc = null;
 
-            // Do we have an associated provider?
-            if (messageLog.ProviderType is not null)
-            {
-                // Provider parameters are encrypted, at rest, so we'll need
-                //   to deal with those values now.
-                foreach (var parameter in messageLog.ProviderType.Parameters)
-                {
-                    // Encrypt the value.
-                    parameter.Value = await _cryptographer.AesEncryptAsync(
-                        parameter.Value,
-                        cancellationToken
-                        ).ConfigureAwait(false);
-                }
-            }
-
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
@@ -196,21 +170,6 @@ internal class MessageLogManager : IMessageLogManager
                 messageLog,
                 cancellationToken
                 ).ConfigureAwait(false);
-
-            // Do we have an associated provider?
-            if (messageLog.ProviderType is not null)
-            {
-                // Provider parameters are encrypted, at rest, so we'll need
-                //   to deal with those values now.
-                foreach (var parameter in messageLog.ProviderType.Parameters)
-                {
-                    // Decrypt the value.
-                    parameter.Value = await _cryptographer.AesDecryptAsync(
-                        parameter.Value,
-                        cancellationToken
-                        ).ConfigureAwait(false);
-                }
-            }
 
             // Return the results.
             return result;

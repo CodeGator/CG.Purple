@@ -691,12 +691,6 @@ internal class MessageRepository : IMessageRepository
                 cancellationToken
                 ).ConfigureAwait(false);
 
-            // We never change these 'read only' properties.
-            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
-            dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
-            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
-            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
-
             // Log what we are about to do.
             _logger.LogDebug(
                 "Updating a {entity} entity in the {ctx} data-context.",
@@ -709,6 +703,23 @@ internal class MessageRepository : IMessageRepository
 
             // Mark the entity as modified so EFCORE will update it.
             dbContext.Entry(entity).State = EntityState.Modified;
+
+            // We never change these 'read only' properties.
+            dbContext.Entry(entity).Property(x => x.Id).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.MessageKey).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedBy).IsModified = false;
+            dbContext.Entry(entity).Property(x => x.CreatedOnUtc).IsModified = false;
+
+            // Is there an associated provider type?
+            if (entity.ProviderType is not null)
+            {
+                // Loop through the parameters.
+                foreach (var parameter in entity.ProviderType.Parameters)
+                {
+                    // Mark the parameter as detached so EFCORE won't mess with it.
+                    dbContext.Entry(parameter).State = EntityState.Detached;
+                }
+            }
 
             // Log what we are about to do.
             _logger.LogDebug(
