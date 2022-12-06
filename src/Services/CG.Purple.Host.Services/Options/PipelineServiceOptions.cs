@@ -19,10 +19,10 @@ public class PipelineServiceOptions
     public TimeSpan? StartupDelay { get; set; }
 
     /// <summary>
-    /// This property indicates how long to pause the service between 
-    /// processing cycles.
+    /// This property indicates how long to pause, between sections, of 
+    /// each pipeline processing cycle.
     /// </summary>
-    public TimeSpan? ThrottleDelay { get; set; }
+    public TimeSpan? SectionDelay { get; set; }
 
     #endregion
 }

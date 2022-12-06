@@ -1,4 +1,6 @@
 ﻿
+using CG.Purple.Managers;
+
 namespace CG.Purple.Host.Directors;
 
 /// <summary>
@@ -111,9 +113,13 @@ internal class PipelineDirector : IPipelineDirector
 
     /// <inheritdoc/>
     public virtual async Task ProcessAsync(
+        TimeSpan sectionDelay,
         CancellationToken cancellationToken = default
         )
     {
+        // Validate the parameters before attempting to use them.
+        Guard.Instance().ThrowIfZero(sectionDelay, nameof(sectionDelay));
+
         try
         {
             // Log what we are about to do.
@@ -135,6 +141,18 @@ internal class PipelineDirector : IPipelineDirector
                 );
         }
 
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Pausing {time} between sections.",
+            sectionDelay
+            );
+
+        // Pause between sections.
+        await Task.Delay(
+            sectionDelay,
+            cancellationToken
+            ).ConfigureAwait(false);
+
         try
         {
             // Log what we are about to do.
@@ -155,6 +173,18 @@ internal class PipelineDirector : IPipelineDirector
                 "Failed to retry messages!"
                 );
         }
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Pausing {time} between sections.",
+            sectionDelay
+            );
+
+        // Pause between sections.
+        await Task.Delay(
+            sectionDelay,
+            cancellationToken
+            ).ConfigureAwait(false);
 
         try
         {

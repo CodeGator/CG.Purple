@@ -16,7 +16,7 @@ internal class DoNothingProvider : IMessageProvider
     /// <summary>
     /// This field contains the logger for this provider.
     /// </summary>
-    internal protected readonly ILogger<IMessageProvider> _logger = null!;
+    internal protected readonly ILogger<DoNothingProvider> _logger = null!;
 
     #endregion
 
@@ -32,7 +32,7 @@ internal class DoNothingProvider : IMessageProvider
     /// </summary>
     /// <param name="logger">The logger to use with this provider.</param>
     public DoNothingProvider(
-        ILogger<IMessageProvider> logger
+        ILogger<DoNothingProvider> logger
         )
     {
         // Validate the parameters before attempting to use them.

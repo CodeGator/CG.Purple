@@ -100,10 +100,28 @@ internal class PipelineService : BackgroundService
             var startupDelay = _pipelineServiceOptions?.StartupDelay
                 ?? TimeSpan.FromSeconds(5);
 
-            // Sanity check the duration.
+            // Sanity check the value.
             if (startupDelay < TimeSpan.FromSeconds(5))
             {
                 startupDelay = TimeSpan.FromSeconds(5);
+            }
+            else if (startupDelay > TimeSpan.FromMinutes(2))
+            {
+                startupDelay = TimeSpan.FromMinutes(2);
+            }
+
+            // Get the section delay.
+            var sectionDelay = _pipelineServiceOptions?.SectionDelay
+                ?? TimeSpan.FromMilliseconds(500);
+
+            // Sanity check the value.
+            if (sectionDelay < TimeSpan.FromMilliseconds(500))
+            {
+                sectionDelay = TimeSpan.FromMilliseconds(500);
+            }
+            else if (sectionDelay > TimeSpan.FromSeconds(2))
+            {
+                sectionDelay = TimeSpan.FromSeconds(2);
             }
 
             // Log what we are about to do.
@@ -160,6 +178,7 @@ internal class PipelineService : BackgroundService
 
                     // Process pending messages.
                     await pipelineDirector.ProcessAsync(
+                        sectionDelay,
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
@@ -175,29 +194,6 @@ internal class PipelineService : BackgroundService
                         sw.Elapsed
                         );
                 }
-
-                // Get the throttle delay.
-                var throttleDelay = _pipelineServiceOptions?.ThrottleDelay
-                    ?? TimeSpan.FromSeconds(5);
-
-                // Sanity check the duration.
-                if (throttleDelay < TimeSpan.FromSeconds(5))
-                {
-                    throttleDelay = TimeSpan.FromSeconds(5);
-                }
-
-                // Log what we are about to do.
-                _logger.LogDebug(
-                    "Pausing the {svc} for {ts}.",
-                    nameof(PipelineService),
-                    throttleDelay
-                );
-
-                // Let's not work too hard.
-                await Task.Delay(
-                    throttleDelay,
-                    cancellationToken
-                    );
             }
         }
         catch (Exception ex)

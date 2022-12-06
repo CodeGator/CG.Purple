@@ -36,7 +36,7 @@ internal class SmtpProvider : IMessageProvider
     /// <summary>
     /// This field contains the logger for this provider.
     /// </summary>
-    internal protected readonly ILogger<IMessageProvider> _logger = null!;
+    internal protected readonly ILogger<SmtpProvider> _logger = null!;
 
     #endregion
 
@@ -64,7 +64,7 @@ internal class SmtpProvider : IMessageProvider
         IMessageManager messageManager,
         IMessageLogManager processLogManager,
         IMessagePropertyManager messagePropertyManager,
-        ILogger<IMessageProvider> logger
+        ILogger<SmtpProvider> logger
         )
     {
         // Validate the parameters before attempting to use them.
@@ -347,7 +347,7 @@ internal class SmtpProvider : IMessageProvider
                 catch (Exception ex)
                 {
                     // Log what happened.
-                    _logger.LogInformation(
+                    _logger.LogWarning(
                         "Message: {id} failed to send: {err}!",
                         message.Id,
                         ex.GetBaseException().Message
