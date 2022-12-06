@@ -1,19 +1,27 @@
 
 ### CG.Purple Solution - BACKLOG
 
-Things to be done on the project, as of 12/05/2022
+Things to be done on the project, as of 12/06/2022
+
+### General
+
+* Eventually, we want to capture metrics, both message and provider related. 
+
+* Eventually, we want a dashboard with pretty graphs for displaying the metrics.
+
+* Eventually, need to deal with provider failover, for times when a provider is overworked, or rate limited.
+
+* Does it make sense to employ user-configurable policies for things like provider assignment, failover, archiving, etc.?
+
+* Does it make sense to use plugins to extend processing, or even archiving?
 
 ### Database
 
 * Should we map all CRUD operations to stored procedures?
 
-* Is there are way to reliably tell EFCORE not to update certain associated entities and/or child collections?
-
 * Should we write stored procedures for all queries?
 
 ### Libraries
-
-* Should we remove the parameter collection on provider type so we won't have to encrypt/decrypt the values everywhere those object might be read/written?
 
 * Should we add caching to the managers?
 
@@ -23,11 +31,9 @@ Things to be done on the project, as of 12/05/2022
 
 ### Pipeline
 
-* Need to finish the rework on the pipeline.
+* During idle periods, we should probably slow the pipeline down so we don't chew up resources querying the database over and over. When there is work to do, we can speed it back up.
 
-* Eventually, need to deal with provider fallback, for times when a provider is overworked, or rate limited.
-
-### Host
+### Host (UI)
 
 * All dialogs should use the mudblazor extensions.
 
@@ -40,13 +46,11 @@ Things to be done on the project, as of 12/05/2022
 
 * Should we write our own attachment UI?
 
+* We need a better error presentation. Toasts just aren't enough.
+
 ### REST Controllers
 
-* Need to work on the design of the REST controllers.
-
-### Seeding
-
-* Should we add seeding by scenario?
+* Need to work on the design/coding of the REST controllers.
 
 ### Other Integrations
 
@@ -60,9 +64,7 @@ Things to be done on the project, as of 12/05/2022
 
 * Need to write an overall integration test plan
 
-* Need to write unit test fixtures.
-
-* Do we need to write integration test fixtures?.
+* Need to write specific unit test fixtures.
 
 ### Documentation / Help
 
