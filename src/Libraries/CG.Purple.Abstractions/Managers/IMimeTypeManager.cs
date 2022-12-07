@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Repositories;
-
 namespace CG.Purple.Managers;
 
 /// <summary>

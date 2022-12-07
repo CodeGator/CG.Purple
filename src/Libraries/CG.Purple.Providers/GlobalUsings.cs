@@ -2,3 +2,5 @@
 global using CG.Purple.Models;
 global using CG.Validations;
 global using Microsoft.Extensions.Logging;
+global using System;
+global using System.Security.Cryptography;

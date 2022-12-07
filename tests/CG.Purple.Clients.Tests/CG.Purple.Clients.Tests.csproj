@@ -1,12 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
-        <RootNamespace>CG.Purple.Host</RootNamespace>
-        <Description>Test fixtures for the CG.Purple.Host assembly.</Description>
+        <Description>Test fixtures for the CG.Purple.Clients assembly.</Description>
+        <RootNamespace>CG.Purple.Clients</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -25,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Services\CG.Purple.Host\CG.Purple.Host.csproj" />
+        <ProjectReference Include="..\..\src\Clients\CG.Purple.Clients\CG.Purple.Clients.csproj" />
     </ItemGroup>
 
 </Project>

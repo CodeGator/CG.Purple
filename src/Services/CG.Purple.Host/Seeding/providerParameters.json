@@ -3,22 +3,32 @@
     {
       "ProviderTypeName": "Smtp",
       "ParameterTypeName": "ServerUrl",
-      "Value": "https://mysmtp.com"
+      "Value": "https://thisshouldbeaurl.com"
     },
     {
       "ProviderTypeName": "Smtp",
       "ParameterTypeName": "UserName",
-      "Value": "mysmtpusername"
+      "Value": "this should be a user name"
     },
     {
       "ProviderTypeName": "Smtp",
       "ParameterTypeName": "Password",
-      "Value": "mysmtppassword"
+      "Value": "this should be a password"
     },
     {
       "ProviderTypeName": "SendGrid",
       "ParameterTypeName": "ApiKey",
-      "Value": "EBD5D09E-0455-4D37-ACFF-B266CE657391"
+      "Value": "this should be an api key"
+    },
+    {
+      "ProviderTypeName": "SendGrid",
+      "ParameterTypeName": "MaxMessagesPerDay",
+      "Value": "50"
+    },
+    {
+      "ProviderTypeName": "DoNothing",
+      "ParameterTypeName": "MaxMessagesPerDay",
+      "Value": "100"
     }
   ]
 }

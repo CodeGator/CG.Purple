@@ -2,11 +2,11 @@
 namespace CG.Purple.Host.Controllers;
 
 /// <summary>
-/// This class is a REST controller for operations related to email resources.
+/// This class is a REST controller for operations related to text resources.
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
-public class MailController : ControllerBase
+public class TextController : ControllerBase
 {
     // *******************************************************************
     // Fields.
@@ -15,9 +15,9 @@ public class MailController : ControllerBase
     #region Fields
 
     /// <summary>
-    /// This field contains the mail message manager for this controller.
+    /// This field contains the text message manager for this controller.
     /// </summary>
-    internal protected readonly IMailMessageManager _mailMessageManager;
+    internal protected readonly ITextMessageManager _textMessageManager;
 
     /// <summary>
     /// This field contains the message log manager for this controller.
@@ -37,7 +37,7 @@ public class MailController : ControllerBase
     /// <summary>
     /// This field contains the logger for this controller.
     /// </summary>
-    internal protected readonly ILogger<MailController> _logger;
+    internal protected readonly ILogger<TextController> _logger;
 
     #endregion
 
@@ -48,10 +48,10 @@ public class MailController : ControllerBase
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="MailController"/>
+    /// This constructor creates a new instance of the <see cref="TextController"/>
     /// class.
     /// </summary>
-    /// <param name="mailMessageManager">The mail message manager to use 
+    /// <param name="textMessageManager">The text message manager to use 
     /// with this controller.</param>
     /// <param name="messageLogManager">The message log manager to use 
     /// with this controller.</param>
@@ -60,23 +60,23 @@ public class MailController : ControllerBase
     /// <param name="propertyTypeManager">The property type manager to
     /// use with this controller.</param>
     /// <param name="logger">The logger to use with this controller.</param>
-    public MailController(
-        IMailMessageManager mailMessageManager,
+    public TextController(
+        ITextMessageManager textMessageManager,
         IMessageLogManager messageLogManager,
         IMimeTypeManager mimeTypeManager,
         IPropertyTypeManager propertyTypeManager,
-        ILogger<MailController> logger
+        ILogger<TextController> logger
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(mailMessageManager, nameof(mailMessageManager))
+        Guard.Instance().ThrowIfNull(textMessageManager, nameof(textMessageManager))
             .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(mimeTypeManager, nameof(mimeTypeManager))
             .ThrowIfNull(propertyTypeManager, nameof(propertyTypeManager))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
-        _mailMessageManager = mailMessageManager;
+        _textMessageManager = textMessageManager;
         _messageLogManager = messageLogManager;
         _mimeTypeManager = mimeTypeManager;
         _propertyTypeManager = propertyTypeManager;
@@ -92,7 +92,7 @@ public class MailController : ControllerBase
     #region Public methods
 
     /// <summary>
-    /// This method searches for a mail message by key.
+    /// This method searches for a text message by key.
     /// </summary>
     /// <param name="messageKey">The message key to use for the operation.</param>
     /// <returns>A task to perform the operation that returns an <see cref="IActionResult"/>
@@ -130,7 +130,7 @@ public class MailController : ControllerBase
                 );
 
             // Look for the given message.
-            var mailMessage = await _mailMessageManager.FindByKeyAsync(
+            var mailMessage = await _textMessageManager.FindByKeyAsync(
                 messageKey
                 ).ConfigureAwait(false);
 
@@ -189,13 +189,13 @@ public class MailController : ControllerBase
             // Log the error in detail.
             _logger.LogError(
                 ex,
-                "Failed to search for a mail message, by key!"
+                "Failed to search for a text message, by key!"
                 );
 
             // Return an overview of the problem.
             return Problem(
                 statusCode: StatusCodes.Status500InternalServerError,
-                detail: "The controller failed to search for a mail " +
+                detail: "The controller failed to search for a text " +
                 "message, by key!"
                 );
         }
@@ -204,7 +204,7 @@ public class MailController : ControllerBase
     // *******************************************************************
 
     /// <summary>
-    /// This method stores a new email.
+    /// This method stores a new text.
     /// </summary>
     /// <param name="request">The request to use for the operation.</param>
     /// <returns>A task to perform the operation that returns an <see cref="IActionResult"/>
@@ -215,7 +215,7 @@ public class MailController : ControllerBase
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public virtual async Task<IActionResult> PostAsync(
-        [FromBody] MailStorageRequest request
+        [FromBody] TextStorageRequest request
         )
     {
         try
@@ -264,7 +264,7 @@ public class MailController : ControllerBase
                     // Add the attachment.
                     attachments.Add(new Attachment()
                     {
-                        MimeType = mimeType,    
+                        MimeType = mimeType,
                         OriginalFileName = attachment.FileName,
                         Length = attachment.Length,
                         Data = Convert.FromBase64String(attachment.Data)
@@ -317,19 +317,13 @@ public class MailController : ControllerBase
                 "Storing a mail message"
                 );
 
-            // Create the mail message.
-            var message = await _mailMessageManager.CreateAsync(
-                new MailMessage()
+            // Create the text message.
+            var message = await _textMessageManager.CreateAsync(
+                new TextMessage()
                 {
                     From = request.From ?? "",
                     To = request.To,
-                    CC = request.CC ?? "",
-                    BCC = request.BCC ?? "",
-                    Subject = request.Subject ?? "",  
-                    Body = request.Body,
-                    IsHtml = request.IsHtml,
-                    Attachments = attachments,
-                    MessageProperties = properties
+                    Body = request.Body
                 },
                 User?.Identity?.Name ?? "anonymous"
                 ).ConfigureAwait(false);
@@ -374,13 +368,13 @@ public class MailController : ControllerBase
             // Log the error in detail.
             _logger.LogError(
                 ex,
-                "Failed to store a mail message!"
+                "Failed to store a text message!"
                 );
 
             // Return an overview of the problem.
             return Problem(
                 statusCode: StatusCodes.Status500InternalServerError,
-                detail: "The controller failed to store a mail message!"
+                detail: "The controller failed to store a text message!"
                 );
         }
     }

@@ -102,6 +102,11 @@ internal class SendGridProvider :
                     );
             }
 
+            // Get the max messages per day.
+            var maxMessagesPerDay = providerType.Parameters.FirstOrDefault(
+                x => x.ParameterType.Name == "MaxMessagesPerDay"
+                );
+
             // =======
             // Step 2: Create the .NET client.
             // =======
@@ -222,9 +227,10 @@ internal class SendGridProvider :
                     {
                         // Log what happened.
                         _logger.LogWarning(
-                            "Message: {id} failed to send. StatusCode: {code}!",
+                            "Message: {id} failed to send. StatusCode: {code} using provider: {name}!",
                             message.Id,
-                            response.StatusCode
+                            response.StatusCode,
+                            nameof(SendGridProvider)
                             );
 
                         // Update the message and record the event.
@@ -238,8 +244,9 @@ internal class SendGridProvider :
                     {
                         // Log what we did.
                         _logger.LogInformation(
-                            "Message: {id} was sent.",
-                            message.Id
+                            "Message: {id} was sent using provider: {name}.",
+                            message.Id,
+                            nameof(SendGridProvider)
                             );
 
                         // Update the message and record the event.
@@ -252,10 +259,11 @@ internal class SendGridProvider :
                 catch (Exception ex)
                 {
                     // Log what happened.
-                    _logger.LogWarning(
-                        "Message: {id} failed to send: {err}!",
+                    _logger.LogInformation(
+                        "Message: {id} failed to send: {err} using provider: {name}!",
                         message.Id,
-                        ex.GetBaseException().Message
+                        ex.GetBaseException().Message,
+                        nameof(SendGridProvider)
                         );
 
                     // Update the message and record the event.

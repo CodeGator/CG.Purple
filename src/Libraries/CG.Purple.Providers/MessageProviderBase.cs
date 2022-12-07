@@ -29,6 +29,11 @@ public abstract class MessageProviderBase<T> : IMessageProvider
     /// </summary>
     internal protected readonly ILogger<T> _logger;
 
+    /// <summary>
+    /// This field contains the random number generator for this provider.
+    /// </summary>
+    internal protected readonly RandomNumberGenerator _random = null!;
+
     #endregion
 
     // *******************************************************************
@@ -63,6 +68,7 @@ public abstract class MessageProviderBase<T> : IMessageProvider
         _messageManager = messageManager;
         _messageLogManager = messageLogManager;
         _logger = logger;
+        _random = RandomNumberGenerator.Create();
     }
 
     #endregion
@@ -343,10 +349,27 @@ public abstract class MessageProviderBase<T> : IMessageProvider
         // Remember any assigned provider type.
         var oldProviderType = message.ProviderType;
 
-        // Update the message.
+        // Clear the provider.
         message.ProviderType = null;
+
+        // Bump up the error count.
         message.ErrorCount++;
+
+        // Set the state to failed.
         message.MessageState = MessageState.Failed;
+
+        // Adjust the next process time by a random number of seconds,
+        //   in case the pipeline is just temporarily clogged.
+        var randomSeconds = _random.Next(1, 60);
+        message.ProcessAfterUtc = message.ProcessAfterUtc.HasValue
+            ? message.ProcessAfterUtc.Value.AddSeconds(randomSeconds)
+            : DateTime.UtcNow.AddSeconds(randomSeconds);
+
+        // Adjust the archive time (if any) to account for any change
+        //   we made to the processing time.
+        message.ArchiveAfterUtc = message.ArchiveAfterUtc.HasValue
+            ? message.ArchiveAfterUtc.Value.AddSeconds(randomSeconds)
+            : null;
 
         // Save the changes.
         _ = await _messageManager.UpdateAsync(

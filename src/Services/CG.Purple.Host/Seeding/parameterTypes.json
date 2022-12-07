@@ -15,6 +15,10 @@
     {
       "Name": "ApiKey",
       "Description": "An API key for the provider"
+    },
+    {
+      "Name": "MaxMessagesPerDay",
+      "Description": "The maximum number of messages this provider will process, in a day"
     } 
   ]
 }

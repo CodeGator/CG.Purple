@@ -10,19 +10,6 @@ internal class DoNothingProvider :
     IMessageProvider
 {
     // *******************************************************************
-    // Fields.
-    // *******************************************************************
-
-    #region Fields
-
-    /// <summary>
-    /// This field contains the random number generator for the provider.
-    /// </summary>
-    internal protected readonly RandomNumberGenerator _random = null!;
-
-    #endregion
-
-    // *******************************************************************
     // Constructors.
     // *******************************************************************
 
@@ -49,8 +36,7 @@ internal class DoNothingProvider :
             logger
             )
     {
-        // Create the randomizer.
-        _random = RandomNumberGenerator.Create();  
+        
     }
 
     #endregion
@@ -77,8 +63,17 @@ internal class DoNothingProvider :
 
         try
         {
+            // =======
+            // Step 1: Find the parameters we'll need.
+            // =======
+
+            // Get the max messages per day.
+            var maxMessagesPerDay = providerType.Parameters.FirstOrDefault(
+                x => x.ParameterType.Name == "MaxMessagesPerDay"
+                );
+
             // ========
-            // Step 1: Simulate the processing of messages.
+            // Step 2: Simulate the processing of messages.
             // ========
 
             // Log what we are about to do.
@@ -90,21 +85,100 @@ internal class DoNothingProvider :
             // Loop through the messages.
             foreach (var message in messages)
             {
-                // TODO : write the code for this.
-                /*
-                // Update the message and record the event.
-                await MessageWasSentAsync(
-                    message,
-                    cancellationToken
-                    ).ConfigureAwait(false);
+                // Get a random number.
+                var bytes = new byte[2];
+                _random.GetNonZeroBytes(bytes);
 
-                // Update the message and record the event.
-                await MessageFailedToSendAsync(
-                    ex.GetBaseException().Message,
-                    message,
-                    cancellationToken
-                    ).ConfigureAwait(false);
-                */
+                // Should we simulate success, or failure?
+                if (bytes[0] > bytes[1]) 
+                {
+                    // Log what we are about to do.
+                    _logger.LogInformation(
+                        "Simulating a send for message: {id} using provider: {name}",
+                        message.Id,
+                        nameof(DoNothingProvider)
+                        );
+
+                    // Update the message and record the event.
+                    await MessageWasSentAsync(
+                        message,
+                        cancellationToken
+                        ).ConfigureAwait(false);
+                }
+                else
+                {
+                    // Has this message already failed at least once? 
+                    if (message.ErrorCount > 0)
+                    {
+                        // Should we simulate success, or failure?
+                        if (bytes[0] < 127)
+                        {
+                            // Log what we are about to do.
+                            _logger.LogInformation(
+                                "Simulating a fail for message: {id} using provider: {name}",
+                                message.Id,
+                                nameof(DoNothingProvider)
+                                );
+
+                            // Update the message and record the event.
+                            await MessageFailedToSendAsync(
+                                "Simulated message send failure",
+                                message,
+                                cancellationToken
+                                ).ConfigureAwait(false);
+                        }
+                        else
+                        {
+                            // Log what we are about to do.
+                            _logger.LogInformation(
+                                "Simulating a send for message: {id} using provider: {name}",
+                                message.Id,
+                                nameof(DoNothingProvider)
+                                );
+
+                            // Update the message and record the event.
+                            await MessageWasSentAsync(
+                                message,
+                                cancellationToken
+                                ).ConfigureAwait(false);
+                        }
+                    }
+                    else
+                    {
+                        // Should we simulate success, or failure?
+                        if (bytes[0] < 85)
+                        {
+                            // Log what we are about to do.
+                            _logger.LogInformation(
+                                "Simulating a fail for message: {id} using provider: {name}",
+                                message.Id,
+                                nameof(DoNothingProvider)
+                                );
+
+                            // Update the message and record the event.
+                            await MessageFailedToSendAsync(
+                                "Simulated message send failure",
+                                message,
+                                cancellationToken
+                                ).ConfigureAwait(false);
+                        }
+                        else
+                        {
+                            // Log what we are about to do.
+                            _logger.LogInformation(
+                                "Simulating a send for message: {id} using provider: {name}",
+                                message.Id,
+                                nameof(DoNothingProvider)
+                                );
+
+                            // Update the message and record the event.
+                            await MessageWasSentAsync(
+                                message,
+                                cancellationToken
+                                ).ConfigureAwait(false);
+                        }
+                    }
+                }
             }
         }
         catch (Exception ex)

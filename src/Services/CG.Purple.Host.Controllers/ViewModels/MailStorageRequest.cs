@@ -2,9 +2,9 @@
 namespace CG.Purple.Host.ViewModels;
 
 /// <summary>
-/// This class represents a mail request.
+/// This class represents a mail storage request.
 /// </summary>
-public class MailRequest
+public class MailStorageRequest
 {
     // *******************************************************************
     // Properties.
@@ -56,13 +56,45 @@ public class MailRequest
     /// <summary>
     /// This property contains the body for the message.
     /// </summary>
+    [Required]
     public string Body { get; set; } = null!;
 
     /// <summary>
-    /// This property indicates whether the <see cref="MailRequest.Body"/>
+    /// This property indicates whether the <see cref="MailStorageRequest.Body"/>
     /// property contains formatted HTML, or not.
     /// </summary>
     public bool IsHtml { get; set; }
+
+    /// <summary>
+    /// This property contains the associated attachments, 
+    /// for the message.
+    /// </summary>
+    [Required]
+    public ICollection<AttachmentRequest> Attachments { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the associated properties, for the message.
+    /// </summary>
+    [Required]
+    public ICollection<MessagePropertyRequest> Properties { get; set; } = null!;
+
+    #endregion
+
+    // *******************************************************************
+    // Constructors.
+    // *******************************************************************
+
+    #region Constructors
+
+    /// <summary>
+    /// This constructor creates a new instance of the <see cref="MailStorageRequest"/>
+    /// class.
+    /// </summary>
+    public MailStorageRequest()
+    {
+        Attachments = new List<AttachmentRequest>();
+        Properties = new List<MessagePropertyRequest>();
+    }
 
     #endregion
 }

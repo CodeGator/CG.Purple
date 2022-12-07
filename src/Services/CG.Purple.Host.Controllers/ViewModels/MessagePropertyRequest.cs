@@ -2,9 +2,9 @@
 namespace CG.Purple.Host.ViewModels;
 
 /// <summary>
-/// This class represents a response to a mail request.
+/// This class represents a message property request.
 /// </summary>
-public class MailResponse
+public class MessagePropertyRequest
 {
     // *******************************************************************
     // Properties.
@@ -13,16 +13,17 @@ public class MailResponse
     #region Properties
 
     /// <summary>
-    /// This property contains the key for the message.
+    /// This property contains the name of the message property.
     /// </summary>
     [Required]
-    [MaxLength(32)]
-    public string MessageKey { get; set; } = null!;
+    [MaxLength(64)]
+    public string PropertyName { get; set; } = null!;
 
     /// <summary>
-    /// This property contains the creation date/time for the message.
+    /// This property contains the value of the message property.
     /// </summary>
-    public DateTime? CreatedOnUtc { get; set; }
+    [Required]
+    public string Value { get; set; } = null!;
 
     #endregion
 }

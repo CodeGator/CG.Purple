@@ -5,15 +5,11 @@ Things to be done on the project, as of 12/06/2022
 
 ### General
 
-* Need to remove the plugins until we solve the dependent assembly problem.
-
 * Eventually, we want to capture metrics, both message and provider related. 
 
-* Eventually, we want a dashboard with pretty graphs for displaying the metrics.
+* Eventually, we want a dashboard with pretty graphs for displaying metrics.
 
-* Eventually, need to deal with provider failover, for times when a provider is overworked, or rate limited.
-
-* Does it make sense to employ a user-configurable rules engine for things like provider assignment, failover, archiving, etc.?
+* Eventually, need to deal with provider failover, for times when a provider is overworked, or rate limited, or just dies for some reason.
 
 ### Database
 
@@ -27,10 +23,6 @@ Things to be done on the project, as of 12/06/2022
 
 * Should we add caching to the managers?
 
-### Pipeline
-
-* During idle periods, we should probably slow the pipeline down so we don't chew up resources querying the database over and over. When there is work to do, we can speed it back up.
-
 ### Host (UI)
 
 * All dialogs should use the MudBlazor extensions.
@@ -38,19 +30,19 @@ Things to be done on the project, as of 12/06/2022
 * We've removed all cascading deletes from the DAL, so now we need to write code 
   to disable operations, in the UI, that will fail due to FK constraints.
 
-* It shouldn't be possible to disable all providers from the UI, since that effectively breaks the processing pipeline. So, we need that dialog to check for that case and save us from ourselves with a pretty error message.
+* It shouldn't be possible to disable all providers from the UI, or even all providers for a type of message (email or text), since that effectively breaks the processing pipeline. So, we need that dialog to check for that case and save us from ourselves with a pretty error message.
 
 * Need a better UI for messages, just not sure what, yet.
 
-* The logs page still needs some work.
+* Need a better UI for logs.
 
-* Should we write our own attachment UI?
+* Need a better UI for errors. Toasts just aren't enough.
 
-* We need a better error presentation. Toasts just aren't enough.
+### Providers
+
+* Need to figure out how to post status back using SignalR.
 
 ### REST Controllers
-
-* Need to work on the design/coding of the REST controllers.
 
 * Should we stand up a swagger page, for the API?
 

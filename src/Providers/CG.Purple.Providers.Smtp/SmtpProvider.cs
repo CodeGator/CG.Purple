@@ -257,8 +257,9 @@ internal class SmtpProvider :
 
                     // Log what we did.
                     _logger.LogInformation(
-                        "Message: {id} was sent.",
-                        message.Id
+                        "Message: {id} was sent using provider: {name}.",
+                        message.Id,
+                        nameof(SmtpProvider)
                         );
 
                     // ========
@@ -275,9 +276,10 @@ internal class SmtpProvider :
                 {
                     // Log what happened.
                     _logger.LogWarning(
-                        "Message: {id} failed to send: {err}!",
+                        "Message: {id} failed to send: {err} using provider: {name}!",
                         message.Id,
-                        ex.GetBaseException().Message
+                        ex.GetBaseException().Message,
+                        nameof(SmtpProvider)
                         );
 
                     // Update the message and record the event.
