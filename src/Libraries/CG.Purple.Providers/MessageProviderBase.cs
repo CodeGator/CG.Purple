@@ -134,6 +134,7 @@ public abstract class MessageProviderBase<T> : IMessageProvider
         var result = await _messageLogManager.CreateAsync(
             new MessageLog()
             {
+                Message = message,
                 MessageEvent = MessageEvent.Error,
                 Error = "Provider is incapable of processing messages of this type!",
                 ProviderType = oldProviderType
@@ -191,6 +192,7 @@ public abstract class MessageProviderBase<T> : IMessageProvider
         var result = await _messageLogManager.CreateAsync(
             new MessageLog()
             {
+                Message = message,
                 MessageEvent = MessageEvent.Error,
                 Error = "Unable to find the mail part of the message!",
                 ProviderType = oldProviderType
@@ -248,6 +250,7 @@ public abstract class MessageProviderBase<T> : IMessageProvider
         var result = await _messageLogManager.CreateAsync(
             new MessageLog()
             {
+                Message = message,
                 MessageEvent = MessageEvent.Error,
                 Error = "Unable to find the text part of the message!",
                 ProviderType = oldProviderType
@@ -362,6 +365,7 @@ public abstract class MessageProviderBase<T> : IMessageProvider
         var result = await _messageLogManager.CreateAsync(
             new MessageLog()
             {
+                Message = message,
                 MessageEvent = MessageEvent.Error,
                 Error = providerMessage,
                 ProviderType = oldProviderType

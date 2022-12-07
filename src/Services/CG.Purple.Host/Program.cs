@@ -49,11 +49,15 @@ try
     builder.AddSeedingLayer(
         bootstrapLogger: BootstrapLogger.Instance()
     );
-
-    // Add the plugins (providers).
-    builder.AddBlazorPlugins(
-        bootstrapLogger: BootstrapLogger.Instance()
-        );
+    builder.AddDoNothingProvider(
+       bootstrapLogger: BootstrapLogger.Instance()
+    );
+    builder.AddSendGridProvider(
+       bootstrapLogger: BootstrapLogger.Instance()
+    );
+    builder.AddSmtpProvider(
+       bootstrapLogger: BootstrapLogger.Instance()
+    );
 
     // Build the application.
     var app = builder.Build();
@@ -76,9 +80,6 @@ try
     app.UseDalStartup()
         .UseStartupSeeding()
         .UseServicesLayer();
-
-    // Use the plugins (providers).
-    app.UseBlazorPlugins();
 
     // Run the application.
     app.Run();

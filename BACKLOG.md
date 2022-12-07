@@ -42,6 +42,8 @@ Things to be done on the project, as of 12/06/2022
 * We've removed all cascading deletes from the DAL, so now we need to write code 
   to disable operations, in the UI, that will fail due to FK constraints.
 
+* It shouldn't be possible to disable all providers from the UI, since that effectively breaks the processing pipeline. So, we need that dialog to check for that case and save us from ourselves with a pretty error message.
+
 * Need a better UI for messages, just not sure what, yet.
 
 * The logs page still needs some work.

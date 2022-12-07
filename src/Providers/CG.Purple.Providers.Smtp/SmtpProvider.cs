@@ -1,4 +1,4 @@
-﻿namespace CG.Purple.Smtp.Providers;
+﻿namespace CG.Purple.Providers.Smtp;
 
 /// <summary>
 /// This class is a SMTP implementation of the <see cref="IMessageProvider"/>
@@ -46,16 +46,16 @@ internal class SmtpProvider :
         IMessageLogManager processLogManager,
         ILogger<SmtpProvider> logger
         ) : base(
-            messageManager, 
-            processLogManager, 
+            messageManager,
+            processLogManager,
             logger
             )
     {
         // Validate the parameters before attempting to use them.
         Guard.Instance().ThrowIfNull(mailMessageManager, nameof(mailMessageManager));
-            
+
         // Save the reference(s).
-        _mailMessageManager = mailMessageManager;        
+        _mailMessageManager = mailMessageManager;
     }
 
     #endregion

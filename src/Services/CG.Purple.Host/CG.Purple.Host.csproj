@@ -31,11 +31,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="CG.Blazor.Plugins" Version="2023.1.6" />
         <PackageReference Include="CG.DataProtection" Version="2023.1.3" />
         <PackageReference Include="CG.Logging" Version="2023.1.2" />
         <PackageReference Include="CG.Reflection" Version="2023.1.2" />
-        <PackageReference Include="MudBlazor" Version="6.1.2" />
+        <PackageReference Include="MudBlazor" Version="6.1.4" />
         <PackageReference Include="MudBlazor.Extensions" Version="1.7.11" />
         <PackageReference Include="Nerdbank.GitVersioning" Version="3.5.119">
             <PrivateAssets>all</PrivateAssets>
@@ -48,6 +47,9 @@
         <ProjectReference Include="..\..\Data\CG.Purple.SqlServer\CG.Purple.SqlServer.csproj" />
         <ProjectReference Include="..\..\Libraries\CG.Purple.Seeding\CG.Purple.Seeding.csproj" />
         <ProjectReference Include="..\..\Libraries\CG.Purple\CG.Purple.csproj" />
+        <ProjectReference Include="..\..\Providers\CG.Purple.Providers.DoNothing\CG.Purple.Providers.DoNothing.csproj" />
+        <ProjectReference Include="..\..\Providers\CG.Purple.Providers.SendGrid\CG.Purple.Providers.SendGrid.csproj" />
+        <ProjectReference Include="..\..\Providers\CG.Purple.Providers.Smtp\CG.Purple.Providers.Smtp.csproj" />
         <ProjectReference Include="..\CG.Purple.Host.Controllers\CG.Purple.Host.Controllers.csproj" />
         <ProjectReference Include="..\CG.Purple.Host.Services\CG.Purple.Host.Services.csproj" />
     </ItemGroup>

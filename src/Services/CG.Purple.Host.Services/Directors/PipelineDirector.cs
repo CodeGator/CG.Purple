@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Managers;
-
 namespace CG.Purple.Host.Directors;
 
 /// <summary>
@@ -120,6 +118,14 @@ internal class PipelineDirector : IPipelineDirector
         // Validate the parameters before attempting to use them.
         Guard.Instance().ThrowIfZero(sectionDelay, nameof(sectionDelay));
 
+        // This pipeline does three things: (1) processing (send) messages,
+        //   (2) retry previously failed messages, and (3) archive old
+        //   messages.
+
+        // =======
+        // Step 1: Process messages.
+        // =======
+
         try
         {
             // Log what we are about to do.
@@ -134,11 +140,24 @@ internal class PipelineDirector : IPipelineDirector
         }
         catch (Exception ex)
         {
+            // If we get here then we're probably not processing any messages,
+            //   which is the primary purpose of this microservice. Instead,
+            //   we're just generating a ton of error messages, in a loop.
+            //   That's because we really can't recover from here. All we can
+            //   do is log the error and continue. So, let's slow way down
+            //   here, while we wait for someone to come help us.
+
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to process messages!"
+                "Failed to process messages - slowing the pipeline way down!"
                 );
+
+            // Pause after error(s).
+            await Task.Delay(
+                TimeSpan.FromMinutes(5),
+                cancellationToken
+                ).ConfigureAwait(false);
         }
 
         // Log what we are about to do.
@@ -152,6 +171,10 @@ internal class PipelineDirector : IPipelineDirector
             sectionDelay,
             cancellationToken
             ).ConfigureAwait(false);
+
+        // =======
+        // Step 2: Retry messages.
+        // =======
 
         try
         {
@@ -167,6 +190,12 @@ internal class PipelineDirector : IPipelineDirector
         }
         catch (Exception ex)
         {
+            // If we get here then we're probably not retrying any messages,
+            //   which is, admittedly, an important part of the microservice.
+            //   But, if we slowdown for this, we're also slowing down message
+            //   processing, which may be working fine. So, we'll just log 
+            //   the problem and not pause here.
+
             // Log what happened.
             _logger.LogError(
                 ex,
@@ -186,6 +215,10 @@ internal class PipelineDirector : IPipelineDirector
             cancellationToken
             ).ConfigureAwait(false);
 
+        // =======
+        // Step 3: Archive messages.
+        // =======
+
         try
         {
             // Log what we are about to do.
@@ -200,6 +233,12 @@ internal class PipelineDirector : IPipelineDirector
         }
         catch (Exception ex)
         {
+            // If we get here then we're probably not archiving messages, which
+            //   is, admittedly, an important part of the microservice. But,
+            //   if we slowdown for this, we're also slowing down message
+            //   processing, and retry operations, both of which may be working
+            //   fine. So, we'll just log the problem and not pause here.
+
             // Log what happened.
             _logger.LogError(
                 ex,

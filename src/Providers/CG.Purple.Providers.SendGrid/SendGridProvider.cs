@@ -1,5 +1,4 @@
-﻿
-namespace CG.Purple.SendGrid.Providers;
+﻿namespace CG.Purple.Providers.SendGrid;
 
 /// <summary>
 /// This class is a SendGrid implementation of the <see cref="IMessageProvider"/>
@@ -113,9 +112,9 @@ internal class SendGridProvider :
                 {
                     ApiKey = apiKeyParameter.Value,
                     ReliabilitySettings = new ReliabilitySettings(
-                        2, 
-                        TimeSpan.FromSeconds(1), 
-                        TimeSpan.FromSeconds(10), 
+                        2,
+                        TimeSpan.FromSeconds(1),
+                        TimeSpan.FromSeconds(10),
                         TimeSpan.FromSeconds(3)
                         )
                 });
@@ -133,7 +132,7 @@ internal class SendGridProvider :
             // Loop through the messages.
             foreach (var message in messages)
             {
-                try 
+                try
                 {
                     // ========
                     // Step 3A: Validate the message type.
@@ -248,7 +247,7 @@ internal class SendGridProvider :
                             message,
                             cancellationToken
                             ).ConfigureAwait(false);
-                    }                    
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -266,7 +265,7 @@ internal class SendGridProvider :
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
-            }            
+            }
         }
         catch (Exception ex)
         {
@@ -306,7 +305,7 @@ internal class SendGridProvider :
         _logger.LogDebug(
             "Creating a SendGridMessage object"
             );
-        
+
         // Create the .NET model.
         var msg = MailHelper.CreateSingleEmailToMultipleRecipients(
             MailHelper.StringToEmailAddress(mailMessage.From),
@@ -343,7 +342,7 @@ internal class SendGridProvider :
                 mailMessage.BCC.Split(';').Select(x => MailHelper.StringToEmailAddress(x)).ToList()
                 );
         }
-        
+
         // Any attachments?
         if (mailMessage.Attachments.Any())
         {
@@ -358,9 +357,9 @@ internal class SendGridProvider :
                 {
                     Content = Convert.ToBase64String(x.Data),
                     ContentId = $"{x.Id}",
-                    Filename = x.OriginalFileName, 
+                    Filename = x.OriginalFileName,
                     Disposition = "attachment",
-                    Type = $"{x.MimeType.Type}/{x.MimeType.SubType}" 
+                    Type = $"{x.MimeType.Type}/{x.MimeType.SubType}"
                 }));
         }
 

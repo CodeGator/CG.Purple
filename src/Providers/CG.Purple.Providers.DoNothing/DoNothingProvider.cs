@@ -1,6 +1,6 @@
 ﻿using CG.Purple.Managers;
 
-namespace CG.Purple.DoNothing.Providers;
+namespace CG.Purple.Providers.DoNothing;
 
 /// <summary>
 /// This class is a "do nothing" implementation of the <see cref="IMessageProvider"/>
