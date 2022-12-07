@@ -229,15 +229,15 @@ references:
   commentId: T:CG.Purple.Host.Controllers.MailController
   fullName: CG.Purple.Host.Controllers.MailController
   nameWithType: MailController
-- uid: CG.Purple.Host.Controllers.MailController.#ctor(CG.Purple.Managers.IMailMessageManager,ILogger{CG.Purple.Host.Controllers.MailController})
-  name: MailController(IMailMessageManager, ILogger<MailController>)
-  href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController__ctor_CG_Purple_Managers_IMailMessageManager_ILogger_CG_Purple_Host_Controllers_MailController__
-  commentId: M:CG.Purple.Host.Controllers.MailController.#ctor(CG.Purple.Managers.IMailMessageManager,ILogger{CG.Purple.Host.Controllers.MailController})
-  name.vb: MailController(IMailMessageManager, ILogger(Of MailController))
-  fullName: CG.Purple.Host.Controllers.MailController.MailController(CG.Purple.Managers.IMailMessageManager, ILogger<CG.Purple.Host.Controllers.MailController>)
-  fullName.vb: CG.Purple.Host.Controllers.MailController.MailController(CG.Purple.Managers.IMailMessageManager, ILogger(Of CG.Purple.Host.Controllers.MailController))
-  nameWithType: MailController.MailController(IMailMessageManager, ILogger<MailController>)
-  nameWithType.vb: MailController.MailController(IMailMessageManager, ILogger(Of MailController))
+- uid: CG.Purple.Host.Controllers.MailController.#ctor(IMailMessageManager,IMessageLogManager,IMimeTypeManager,IPropertyTypeManager,ILogger{CG.Purple.Host.Controllers.MailController})
+  name: MailController(IMailMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger<MailController>)
+  href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController__ctor_IMailMessageManager_IMessageLogManager_IMimeTypeManager_IPropertyTypeManager_ILogger_CG_Purple_Host_Controllers_MailController__
+  commentId: M:CG.Purple.Host.Controllers.MailController.#ctor(IMailMessageManager,IMessageLogManager,IMimeTypeManager,IPropertyTypeManager,ILogger{CG.Purple.Host.Controllers.MailController})
+  name.vb: MailController(IMailMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger(Of MailController))
+  fullName: CG.Purple.Host.Controllers.MailController.MailController(IMailMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger<CG.Purple.Host.Controllers.MailController>)
+  fullName.vb: CG.Purple.Host.Controllers.MailController.MailController(IMailMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger(Of CG.Purple.Host.Controllers.MailController))
+  nameWithType: MailController.MailController(IMailMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger<MailController>)
+  nameWithType.vb: MailController.MailController(IMailMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger(Of MailController))
 - uid: CG.Purple.Host.Controllers.MailController.#ctor*
   name: MailController
   href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController__ctor_
@@ -257,6 +257,24 @@ references:
   commentId: F:CG.Purple.Host.Controllers.MailController._mailMessageManager
   fullName: CG.Purple.Host.Controllers.MailController._mailMessageManager
   nameWithType: MailController._mailMessageManager
+- uid: CG.Purple.Host.Controllers.MailController._messageLogManager
+  name: _messageLogManager
+  href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController__messageLogManager
+  commentId: F:CG.Purple.Host.Controllers.MailController._messageLogManager
+  fullName: CG.Purple.Host.Controllers.MailController._messageLogManager
+  nameWithType: MailController._messageLogManager
+- uid: CG.Purple.Host.Controllers.MailController._mimeTypeManager
+  name: _mimeTypeManager
+  href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController__mimeTypeManager
+  commentId: F:CG.Purple.Host.Controllers.MailController._mimeTypeManager
+  fullName: CG.Purple.Host.Controllers.MailController._mimeTypeManager
+  nameWithType: MailController._mimeTypeManager
+- uid: CG.Purple.Host.Controllers.MailController._propertyTypeManager
+  name: _propertyTypeManager
+  href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController__propertyTypeManager
+  commentId: F:CG.Purple.Host.Controllers.MailController._propertyTypeManager
+  fullName: CG.Purple.Host.Controllers.MailController._propertyTypeManager
+  nameWithType: MailController._propertyTypeManager
 - uid: CG.Purple.Host.Controllers.MailController.GetByKeyAsync(System.String)
   name: GetByKeyAsync(String)
   href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController_GetByKeyAsync_System_String_
@@ -270,12 +288,12 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Controllers.MailController.GetByKeyAsync
   nameWithType: MailController.GetByKeyAsync
-- uid: CG.Purple.Host.Controllers.MailController.PostAsync(MailRequest)
-  name: PostAsync(MailRequest)
-  href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController_PostAsync_MailRequest_
-  commentId: M:CG.Purple.Host.Controllers.MailController.PostAsync(MailRequest)
-  fullName: CG.Purple.Host.Controllers.MailController.PostAsync(MailRequest)
-  nameWithType: MailController.PostAsync(MailRequest)
+- uid: CG.Purple.Host.Controllers.MailController.PostAsync(MailStorageRequest)
+  name: PostAsync(MailStorageRequest)
+  href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController_PostAsync_MailStorageRequest_
+  commentId: M:CG.Purple.Host.Controllers.MailController.PostAsync(MailStorageRequest)
+  fullName: CG.Purple.Host.Controllers.MailController.PostAsync(MailStorageRequest)
+  nameWithType: MailController.PostAsync(MailStorageRequest)
 - uid: CG.Purple.Host.Controllers.MailController.PostAsync*
   name: PostAsync
   href: api/CG.Purple.Host.Controllers.MailController.html#CG_Purple_Host_Controllers_MailController_PostAsync_
@@ -283,6 +301,84 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Controllers.MailController.PostAsync
   nameWithType: MailController.PostAsync
+- uid: CG.Purple.Host.Controllers.TextController
+  name: TextController
+  href: api/CG.Purple.Host.Controllers.TextController.html
+  commentId: T:CG.Purple.Host.Controllers.TextController
+  fullName: CG.Purple.Host.Controllers.TextController
+  nameWithType: TextController
+- uid: CG.Purple.Host.Controllers.TextController.#ctor(ITextMessageManager,IMessageLogManager,IMimeTypeManager,IPropertyTypeManager,ILogger{CG.Purple.Host.Controllers.TextController})
+  name: TextController(ITextMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger<TextController>)
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController__ctor_ITextMessageManager_IMessageLogManager_IMimeTypeManager_IPropertyTypeManager_ILogger_CG_Purple_Host_Controllers_TextController__
+  commentId: M:CG.Purple.Host.Controllers.TextController.#ctor(ITextMessageManager,IMessageLogManager,IMimeTypeManager,IPropertyTypeManager,ILogger{CG.Purple.Host.Controllers.TextController})
+  name.vb: TextController(ITextMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger(Of TextController))
+  fullName: CG.Purple.Host.Controllers.TextController.TextController(ITextMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger<CG.Purple.Host.Controllers.TextController>)
+  fullName.vb: CG.Purple.Host.Controllers.TextController.TextController(ITextMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger(Of CG.Purple.Host.Controllers.TextController))
+  nameWithType: TextController.TextController(ITextMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger<TextController>)
+  nameWithType.vb: TextController.TextController(ITextMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger(Of TextController))
+- uid: CG.Purple.Host.Controllers.TextController.#ctor*
+  name: TextController
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController__ctor_
+  commentId: Overload:CG.Purple.Host.Controllers.TextController.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Host.Controllers.TextController.TextController
+  nameWithType: TextController.TextController
+- uid: CG.Purple.Host.Controllers.TextController._logger
+  name: _logger
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController__logger
+  commentId: F:CG.Purple.Host.Controllers.TextController._logger
+  fullName: CG.Purple.Host.Controllers.TextController._logger
+  nameWithType: TextController._logger
+- uid: CG.Purple.Host.Controllers.TextController._messageLogManager
+  name: _messageLogManager
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController__messageLogManager
+  commentId: F:CG.Purple.Host.Controllers.TextController._messageLogManager
+  fullName: CG.Purple.Host.Controllers.TextController._messageLogManager
+  nameWithType: TextController._messageLogManager
+- uid: CG.Purple.Host.Controllers.TextController._mimeTypeManager
+  name: _mimeTypeManager
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController__mimeTypeManager
+  commentId: F:CG.Purple.Host.Controllers.TextController._mimeTypeManager
+  fullName: CG.Purple.Host.Controllers.TextController._mimeTypeManager
+  nameWithType: TextController._mimeTypeManager
+- uid: CG.Purple.Host.Controllers.TextController._propertyTypeManager
+  name: _propertyTypeManager
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController__propertyTypeManager
+  commentId: F:CG.Purple.Host.Controllers.TextController._propertyTypeManager
+  fullName: CG.Purple.Host.Controllers.TextController._propertyTypeManager
+  nameWithType: TextController._propertyTypeManager
+- uid: CG.Purple.Host.Controllers.TextController._textMessageManager
+  name: _textMessageManager
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController__textMessageManager
+  commentId: F:CG.Purple.Host.Controllers.TextController._textMessageManager
+  fullName: CG.Purple.Host.Controllers.TextController._textMessageManager
+  nameWithType: TextController._textMessageManager
+- uid: CG.Purple.Host.Controllers.TextController.GetByKeyAsync(System.String)
+  name: GetByKeyAsync(String)
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController_GetByKeyAsync_System_String_
+  commentId: M:CG.Purple.Host.Controllers.TextController.GetByKeyAsync(System.String)
+  fullName: CG.Purple.Host.Controllers.TextController.GetByKeyAsync(System.String)
+  nameWithType: TextController.GetByKeyAsync(String)
+- uid: CG.Purple.Host.Controllers.TextController.GetByKeyAsync*
+  name: GetByKeyAsync
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController_GetByKeyAsync_
+  commentId: Overload:CG.Purple.Host.Controllers.TextController.GetByKeyAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Controllers.TextController.GetByKeyAsync
+  nameWithType: TextController.GetByKeyAsync
+- uid: CG.Purple.Host.Controllers.TextController.PostAsync(TextStorageRequest)
+  name: PostAsync(TextStorageRequest)
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController_PostAsync_TextStorageRequest_
+  commentId: M:CG.Purple.Host.Controllers.TextController.PostAsync(TextStorageRequest)
+  fullName: CG.Purple.Host.Controllers.TextController.PostAsync(TextStorageRequest)
+  nameWithType: TextController.PostAsync(TextStorageRequest)
+- uid: CG.Purple.Host.Controllers.TextController.PostAsync*
+  name: PostAsync
+  href: api/CG.Purple.Host.Controllers.TextController.html#CG_Purple_Host_Controllers_TextController_PostAsync_
+  commentId: Overload:CG.Purple.Host.Controllers.TextController.PostAsync
+  isSpec: "True"
+  fullName: CG.Purple.Host.Controllers.TextController.PostAsync
+  nameWithType: TextController.PostAsync
 - uid: CG.Purple.Host.Directors
   name: CG.Purple.Host.Directors
   href: api/CG.Purple.Host.Directors.html
@@ -3571,148 +3667,445 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.ViewModels.AttachmentBrowserFile.Size
   nameWithType: AttachmentBrowserFile.Size
-- uid: CG.Purple.Host.ViewModels.MailRequest
-  name: MailRequest
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html
-  commentId: T:CG.Purple.Host.ViewModels.MailRequest
-  fullName: CG.Purple.Host.ViewModels.MailRequest
-  nameWithType: MailRequest
-- uid: CG.Purple.Host.ViewModels.MailRequest.BCC
+- uid: CG.Purple.Host.ViewModels.AttachmentRequest
+  name: AttachmentRequest
+  href: api/CG.Purple.Host.ViewModels.AttachmentRequest.html
+  commentId: T:CG.Purple.Host.ViewModels.AttachmentRequest
+  fullName: CG.Purple.Host.ViewModels.AttachmentRequest
+  nameWithType: AttachmentRequest
+- uid: CG.Purple.Host.ViewModels.AttachmentRequest.Data
+  name: Data
+  href: api/CG.Purple.Host.ViewModels.AttachmentRequest.html#CG_Purple_Host_ViewModels_AttachmentRequest_Data
+  commentId: P:CG.Purple.Host.ViewModels.AttachmentRequest.Data
+  fullName: CG.Purple.Host.ViewModels.AttachmentRequest.Data
+  nameWithType: AttachmentRequest.Data
+- uid: CG.Purple.Host.ViewModels.AttachmentRequest.Data*
+  name: Data
+  href: api/CG.Purple.Host.ViewModels.AttachmentRequest.html#CG_Purple_Host_ViewModels_AttachmentRequest_Data_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentRequest.Data
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentRequest.Data
+  nameWithType: AttachmentRequest.Data
+- uid: CG.Purple.Host.ViewModels.AttachmentRequest.FileName
+  name: FileName
+  href: api/CG.Purple.Host.ViewModels.AttachmentRequest.html#CG_Purple_Host_ViewModels_AttachmentRequest_FileName
+  commentId: P:CG.Purple.Host.ViewModels.AttachmentRequest.FileName
+  fullName: CG.Purple.Host.ViewModels.AttachmentRequest.FileName
+  nameWithType: AttachmentRequest.FileName
+- uid: CG.Purple.Host.ViewModels.AttachmentRequest.FileName*
+  name: FileName
+  href: api/CG.Purple.Host.ViewModels.AttachmentRequest.html#CG_Purple_Host_ViewModels_AttachmentRequest_FileName_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentRequest.FileName
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentRequest.FileName
+  nameWithType: AttachmentRequest.FileName
+- uid: CG.Purple.Host.ViewModels.AttachmentRequest.Length
+  name: Length
+  href: api/CG.Purple.Host.ViewModels.AttachmentRequest.html#CG_Purple_Host_ViewModels_AttachmentRequest_Length
+  commentId: P:CG.Purple.Host.ViewModels.AttachmentRequest.Length
+  fullName: CG.Purple.Host.ViewModels.AttachmentRequest.Length
+  nameWithType: AttachmentRequest.Length
+- uid: CG.Purple.Host.ViewModels.AttachmentRequest.Length*
+  name: Length
+  href: api/CG.Purple.Host.ViewModels.AttachmentRequest.html#CG_Purple_Host_ViewModels_AttachmentRequest_Length_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentRequest.Length
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentRequest.Length
+  nameWithType: AttachmentRequest.Length
+- uid: CG.Purple.Host.ViewModels.AttachmentRequest.MimeType
+  name: MimeType
+  href: api/CG.Purple.Host.ViewModels.AttachmentRequest.html#CG_Purple_Host_ViewModels_AttachmentRequest_MimeType
+  commentId: P:CG.Purple.Host.ViewModels.AttachmentRequest.MimeType
+  fullName: CG.Purple.Host.ViewModels.AttachmentRequest.MimeType
+  nameWithType: AttachmentRequest.MimeType
+- uid: CG.Purple.Host.ViewModels.AttachmentRequest.MimeType*
+  name: MimeType
+  href: api/CG.Purple.Host.ViewModels.AttachmentRequest.html#CG_Purple_Host_ViewModels_AttachmentRequest_MimeType_
+  commentId: Overload:CG.Purple.Host.ViewModels.AttachmentRequest.MimeType
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.AttachmentRequest.MimeType
+  nameWithType: AttachmentRequest.MimeType
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest
+  name: MailStorageRequest
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html
+  commentId: T:CG.Purple.Host.ViewModels.MailStorageRequest
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest
+  nameWithType: MailStorageRequest
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.#ctor
+  name: MailStorageRequest()
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest__ctor
+  commentId: M:CG.Purple.Host.ViewModels.MailStorageRequest.#ctor
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.MailStorageRequest()
+  nameWithType: MailStorageRequest.MailStorageRequest()
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.#ctor*
+  name: MailStorageRequest
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest__ctor_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.MailStorageRequest
+  nameWithType: MailStorageRequest.MailStorageRequest
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.Attachments
+  name: Attachments
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_Attachments
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.Attachments
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.Attachments
+  nameWithType: MailStorageRequest.Attachments
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.Attachments*
+  name: Attachments
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_Attachments_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.Attachments
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.Attachments
+  nameWithType: MailStorageRequest.Attachments
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.BCC
   name: BCC
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_BCC
-  commentId: P:CG.Purple.Host.ViewModels.MailRequest.BCC
-  fullName: CG.Purple.Host.ViewModels.MailRequest.BCC
-  nameWithType: MailRequest.BCC
-- uid: CG.Purple.Host.ViewModels.MailRequest.BCC*
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_BCC
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.BCC
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.BCC
+  nameWithType: MailStorageRequest.BCC
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.BCC*
   name: BCC
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_BCC_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailRequest.BCC
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_BCC_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.BCC
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailRequest.BCC
-  nameWithType: MailRequest.BCC
-- uid: CG.Purple.Host.ViewModels.MailRequest.Body
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.BCC
+  nameWithType: MailStorageRequest.BCC
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.Body
   name: Body
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_Body
-  commentId: P:CG.Purple.Host.ViewModels.MailRequest.Body
-  fullName: CG.Purple.Host.ViewModels.MailRequest.Body
-  nameWithType: MailRequest.Body
-- uid: CG.Purple.Host.ViewModels.MailRequest.Body*
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_Body
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.Body
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.Body
+  nameWithType: MailStorageRequest.Body
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.Body*
   name: Body
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_Body_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailRequest.Body
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_Body_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.Body
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailRequest.Body
-  nameWithType: MailRequest.Body
-- uid: CG.Purple.Host.ViewModels.MailRequest.CC
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.Body
+  nameWithType: MailStorageRequest.Body
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.CC
   name: CC
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_CC
-  commentId: P:CG.Purple.Host.ViewModels.MailRequest.CC
-  fullName: CG.Purple.Host.ViewModels.MailRequest.CC
-  nameWithType: MailRequest.CC
-- uid: CG.Purple.Host.ViewModels.MailRequest.CC*
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_CC
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.CC
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.CC
+  nameWithType: MailStorageRequest.CC
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.CC*
   name: CC
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_CC_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailRequest.CC
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_CC_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.CC
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailRequest.CC
-  nameWithType: MailRequest.CC
-- uid: CG.Purple.Host.ViewModels.MailRequest.From
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.CC
+  nameWithType: MailStorageRequest.CC
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.From
   name: From
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_From
-  commentId: P:CG.Purple.Host.ViewModels.MailRequest.From
-  fullName: CG.Purple.Host.ViewModels.MailRequest.From
-  nameWithType: MailRequest.From
-- uid: CG.Purple.Host.ViewModels.MailRequest.From*
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_From
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.From
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.From
+  nameWithType: MailStorageRequest.From
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.From*
   name: From
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_From_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailRequest.From
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_From_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.From
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailRequest.From
-  nameWithType: MailRequest.From
-- uid: CG.Purple.Host.ViewModels.MailRequest.IsHtml
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.From
+  nameWithType: MailStorageRequest.From
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.IsHtml
   name: IsHtml
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_IsHtml
-  commentId: P:CG.Purple.Host.ViewModels.MailRequest.IsHtml
-  fullName: CG.Purple.Host.ViewModels.MailRequest.IsHtml
-  nameWithType: MailRequest.IsHtml
-- uid: CG.Purple.Host.ViewModels.MailRequest.IsHtml*
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_IsHtml
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.IsHtml
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.IsHtml
+  nameWithType: MailStorageRequest.IsHtml
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.IsHtml*
   name: IsHtml
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_IsHtml_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailRequest.IsHtml
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_IsHtml_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.IsHtml
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailRequest.IsHtml
-  nameWithType: MailRequest.IsHtml
-- uid: CG.Purple.Host.ViewModels.MailRequest.MessageKey
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.IsHtml
+  nameWithType: MailStorageRequest.IsHtml
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.MessageKey
   name: MessageKey
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_MessageKey
-  commentId: P:CG.Purple.Host.ViewModels.MailRequest.MessageKey
-  fullName: CG.Purple.Host.ViewModels.MailRequest.MessageKey
-  nameWithType: MailRequest.MessageKey
-- uid: CG.Purple.Host.ViewModels.MailRequest.MessageKey*
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_MessageKey
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.MessageKey
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.MessageKey
+  nameWithType: MailStorageRequest.MessageKey
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.MessageKey*
   name: MessageKey
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_MessageKey_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailRequest.MessageKey
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_MessageKey_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.MessageKey
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailRequest.MessageKey
-  nameWithType: MailRequest.MessageKey
-- uid: CG.Purple.Host.ViewModels.MailRequest.Subject
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.MessageKey
+  nameWithType: MailStorageRequest.MessageKey
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.Properties
+  name: Properties
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_Properties
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.Properties
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.Properties
+  nameWithType: MailStorageRequest.Properties
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.Properties*
+  name: Properties
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_Properties_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.Properties
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.Properties
+  nameWithType: MailStorageRequest.Properties
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.Subject
   name: Subject
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_Subject
-  commentId: P:CG.Purple.Host.ViewModels.MailRequest.Subject
-  fullName: CG.Purple.Host.ViewModels.MailRequest.Subject
-  nameWithType: MailRequest.Subject
-- uid: CG.Purple.Host.ViewModels.MailRequest.Subject*
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_Subject
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.Subject
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.Subject
+  nameWithType: MailStorageRequest.Subject
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.Subject*
   name: Subject
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_Subject_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailRequest.Subject
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_Subject_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.Subject
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailRequest.Subject
-  nameWithType: MailRequest.Subject
-- uid: CG.Purple.Host.ViewModels.MailRequest.To
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.Subject
+  nameWithType: MailStorageRequest.Subject
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.To
   name: To
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_To
-  commentId: P:CG.Purple.Host.ViewModels.MailRequest.To
-  fullName: CG.Purple.Host.ViewModels.MailRequest.To
-  nameWithType: MailRequest.To
-- uid: CG.Purple.Host.ViewModels.MailRequest.To*
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_To
+  commentId: P:CG.Purple.Host.ViewModels.MailStorageRequest.To
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.To
+  nameWithType: MailStorageRequest.To
+- uid: CG.Purple.Host.ViewModels.MailStorageRequest.To*
   name: To
-  href: api/CG.Purple.Host.ViewModels.MailRequest.html#CG_Purple_Host_ViewModels_MailRequest_To_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailRequest.To
+  href: api/CG.Purple.Host.ViewModels.MailStorageRequest.html#CG_Purple_Host_ViewModels_MailStorageRequest_To_
+  commentId: Overload:CG.Purple.Host.ViewModels.MailStorageRequest.To
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailRequest.To
-  nameWithType: MailRequest.To
-- uid: CG.Purple.Host.ViewModels.MailResponse
-  name: MailResponse
-  href: api/CG.Purple.Host.ViewModels.MailResponse.html
-  commentId: T:CG.Purple.Host.ViewModels.MailResponse
-  fullName: CG.Purple.Host.ViewModels.MailResponse
-  nameWithType: MailResponse
-- uid: CG.Purple.Host.ViewModels.MailResponse.CreatedOnUtc
+  fullName: CG.Purple.Host.ViewModels.MailStorageRequest.To
+  nameWithType: MailStorageRequest.To
+- uid: CG.Purple.Host.ViewModels.MessagePropertyRequest
+  name: MessagePropertyRequest
+  href: api/CG.Purple.Host.ViewModels.MessagePropertyRequest.html
+  commentId: T:CG.Purple.Host.ViewModels.MessagePropertyRequest
+  fullName: CG.Purple.Host.ViewModels.MessagePropertyRequest
+  nameWithType: MessagePropertyRequest
+- uid: CG.Purple.Host.ViewModels.MessagePropertyRequest.PropertyName
+  name: PropertyName
+  href: api/CG.Purple.Host.ViewModels.MessagePropertyRequest.html#CG_Purple_Host_ViewModels_MessagePropertyRequest_PropertyName
+  commentId: P:CG.Purple.Host.ViewModels.MessagePropertyRequest.PropertyName
+  fullName: CG.Purple.Host.ViewModels.MessagePropertyRequest.PropertyName
+  nameWithType: MessagePropertyRequest.PropertyName
+- uid: CG.Purple.Host.ViewModels.MessagePropertyRequest.PropertyName*
+  name: PropertyName
+  href: api/CG.Purple.Host.ViewModels.MessagePropertyRequest.html#CG_Purple_Host_ViewModels_MessagePropertyRequest_PropertyName_
+  commentId: Overload:CG.Purple.Host.ViewModels.MessagePropertyRequest.PropertyName
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.MessagePropertyRequest.PropertyName
+  nameWithType: MessagePropertyRequest.PropertyName
+- uid: CG.Purple.Host.ViewModels.MessagePropertyRequest.Value
+  name: Value
+  href: api/CG.Purple.Host.ViewModels.MessagePropertyRequest.html#CG_Purple_Host_ViewModels_MessagePropertyRequest_Value
+  commentId: P:CG.Purple.Host.ViewModels.MessagePropertyRequest.Value
+  fullName: CG.Purple.Host.ViewModels.MessagePropertyRequest.Value
+  nameWithType: MessagePropertyRequest.Value
+- uid: CG.Purple.Host.ViewModels.MessagePropertyRequest.Value*
+  name: Value
+  href: api/CG.Purple.Host.ViewModels.MessagePropertyRequest.html#CG_Purple_Host_ViewModels_MessagePropertyRequest_Value_
+  commentId: Overload:CG.Purple.Host.ViewModels.MessagePropertyRequest.Value
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.MessagePropertyRequest.Value
+  nameWithType: MessagePropertyRequest.Value
+- uid: CG.Purple.Host.ViewModels.StatusResponse
+  name: StatusResponse
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html
+  commentId: T:CG.Purple.Host.ViewModels.StatusResponse
+  fullName: CG.Purple.Host.ViewModels.StatusResponse
+  nameWithType: StatusResponse
+- uid: CG.Purple.Host.ViewModels.StatusResponse.CreatedOnUtc
   name: CreatedOnUtc
-  href: api/CG.Purple.Host.ViewModels.MailResponse.html#CG_Purple_Host_ViewModels_MailResponse_CreatedOnUtc
-  commentId: P:CG.Purple.Host.ViewModels.MailResponse.CreatedOnUtc
-  fullName: CG.Purple.Host.ViewModels.MailResponse.CreatedOnUtc
-  nameWithType: MailResponse.CreatedOnUtc
-- uid: CG.Purple.Host.ViewModels.MailResponse.CreatedOnUtc*
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_CreatedOnUtc
+  commentId: P:CG.Purple.Host.ViewModels.StatusResponse.CreatedOnUtc
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.CreatedOnUtc
+  nameWithType: StatusResponse.CreatedOnUtc
+- uid: CG.Purple.Host.ViewModels.StatusResponse.CreatedOnUtc*
   name: CreatedOnUtc
-  href: api/CG.Purple.Host.ViewModels.MailResponse.html#CG_Purple_Host_ViewModels_MailResponse_CreatedOnUtc_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailResponse.CreatedOnUtc
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_CreatedOnUtc_
+  commentId: Overload:CG.Purple.Host.ViewModels.StatusResponse.CreatedOnUtc
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailResponse.CreatedOnUtc
-  nameWithType: MailResponse.CreatedOnUtc
-- uid: CG.Purple.Host.ViewModels.MailResponse.MessageKey
-  name: MessageKey
-  href: api/CG.Purple.Host.ViewModels.MailResponse.html#CG_Purple_Host_ViewModels_MailResponse_MessageKey
-  commentId: P:CG.Purple.Host.ViewModels.MailResponse.MessageKey
-  fullName: CG.Purple.Host.ViewModels.MailResponse.MessageKey
-  nameWithType: MailResponse.MessageKey
-- uid: CG.Purple.Host.ViewModels.MailResponse.MessageKey*
-  name: MessageKey
-  href: api/CG.Purple.Host.ViewModels.MailResponse.html#CG_Purple_Host_ViewModels_MailResponse_MessageKey_
-  commentId: Overload:CG.Purple.Host.ViewModels.MailResponse.MessageKey
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.CreatedOnUtc
+  nameWithType: StatusResponse.CreatedOnUtc
+- uid: CG.Purple.Host.ViewModels.StatusResponse.Error
+  name: Error
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_Error
+  commentId: P:CG.Purple.Host.ViewModels.StatusResponse.Error
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.Error
+  nameWithType: StatusResponse.Error
+- uid: CG.Purple.Host.ViewModels.StatusResponse.Error*
+  name: Error
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_Error_
+  commentId: Overload:CG.Purple.Host.ViewModels.StatusResponse.Error
   isSpec: "True"
-  fullName: CG.Purple.Host.ViewModels.MailResponse.MessageKey
-  nameWithType: MailResponse.MessageKey
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.Error
+  nameWithType: StatusResponse.Error
+- uid: CG.Purple.Host.ViewModels.StatusResponse.FailedOnUtc
+  name: FailedOnUtc
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_FailedOnUtc
+  commentId: P:CG.Purple.Host.ViewModels.StatusResponse.FailedOnUtc
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.FailedOnUtc
+  nameWithType: StatusResponse.FailedOnUtc
+- uid: CG.Purple.Host.ViewModels.StatusResponse.FailedOnUtc*
+  name: FailedOnUtc
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_FailedOnUtc_
+  commentId: Overload:CG.Purple.Host.ViewModels.StatusResponse.FailedOnUtc
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.FailedOnUtc
+  nameWithType: StatusResponse.FailedOnUtc
+- uid: CG.Purple.Host.ViewModels.StatusResponse.MessageKey
+  name: MessageKey
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_MessageKey
+  commentId: P:CG.Purple.Host.ViewModels.StatusResponse.MessageKey
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.MessageKey
+  nameWithType: StatusResponse.MessageKey
+- uid: CG.Purple.Host.ViewModels.StatusResponse.MessageKey*
+  name: MessageKey
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_MessageKey_
+  commentId: Overload:CG.Purple.Host.ViewModels.StatusResponse.MessageKey
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.MessageKey
+  nameWithType: StatusResponse.MessageKey
+- uid: CG.Purple.Host.ViewModels.StatusResponse.SentOnUtc
+  name: SentOnUtc
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_SentOnUtc
+  commentId: P:CG.Purple.Host.ViewModels.StatusResponse.SentOnUtc
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.SentOnUtc
+  nameWithType: StatusResponse.SentOnUtc
+- uid: CG.Purple.Host.ViewModels.StatusResponse.SentOnUtc*
+  name: SentOnUtc
+  href: api/CG.Purple.Host.ViewModels.StatusResponse.html#CG_Purple_Host_ViewModels_StatusResponse_SentOnUtc_
+  commentId: Overload:CG.Purple.Host.ViewModels.StatusResponse.SentOnUtc
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.StatusResponse.SentOnUtc
+  nameWithType: StatusResponse.SentOnUtc
+- uid: CG.Purple.Host.ViewModels.StorageResponse
+  name: StorageResponse
+  href: api/CG.Purple.Host.ViewModels.StorageResponse.html
+  commentId: T:CG.Purple.Host.ViewModels.StorageResponse
+  fullName: CG.Purple.Host.ViewModels.StorageResponse
+  nameWithType: StorageResponse
+- uid: CG.Purple.Host.ViewModels.StorageResponse.CreatedOnUtc
+  name: CreatedOnUtc
+  href: api/CG.Purple.Host.ViewModels.StorageResponse.html#CG_Purple_Host_ViewModels_StorageResponse_CreatedOnUtc
+  commentId: P:CG.Purple.Host.ViewModels.StorageResponse.CreatedOnUtc
+  fullName: CG.Purple.Host.ViewModels.StorageResponse.CreatedOnUtc
+  nameWithType: StorageResponse.CreatedOnUtc
+- uid: CG.Purple.Host.ViewModels.StorageResponse.CreatedOnUtc*
+  name: CreatedOnUtc
+  href: api/CG.Purple.Host.ViewModels.StorageResponse.html#CG_Purple_Host_ViewModels_StorageResponse_CreatedOnUtc_
+  commentId: Overload:CG.Purple.Host.ViewModels.StorageResponse.CreatedOnUtc
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.StorageResponse.CreatedOnUtc
+  nameWithType: StorageResponse.CreatedOnUtc
+- uid: CG.Purple.Host.ViewModels.StorageResponse.MessageKey
+  name: MessageKey
+  href: api/CG.Purple.Host.ViewModels.StorageResponse.html#CG_Purple_Host_ViewModels_StorageResponse_MessageKey
+  commentId: P:CG.Purple.Host.ViewModels.StorageResponse.MessageKey
+  fullName: CG.Purple.Host.ViewModels.StorageResponse.MessageKey
+  nameWithType: StorageResponse.MessageKey
+- uid: CG.Purple.Host.ViewModels.StorageResponse.MessageKey*
+  name: MessageKey
+  href: api/CG.Purple.Host.ViewModels.StorageResponse.html#CG_Purple_Host_ViewModels_StorageResponse_MessageKey_
+  commentId: Overload:CG.Purple.Host.ViewModels.StorageResponse.MessageKey
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.StorageResponse.MessageKey
+  nameWithType: StorageResponse.MessageKey
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest
+  name: TextStorageRequest
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html
+  commentId: T:CG.Purple.Host.ViewModels.TextStorageRequest
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest
+  nameWithType: TextStorageRequest
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.#ctor
+  name: TextStorageRequest()
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest__ctor
+  commentId: M:CG.Purple.Host.ViewModels.TextStorageRequest.#ctor
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.TextStorageRequest()
+  nameWithType: TextStorageRequest.TextStorageRequest()
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.#ctor*
+  name: TextStorageRequest
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest__ctor_
+  commentId: Overload:CG.Purple.Host.ViewModels.TextStorageRequest.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.TextStorageRequest
+  nameWithType: TextStorageRequest.TextStorageRequest
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.Attachments
+  name: Attachments
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_Attachments
+  commentId: P:CG.Purple.Host.ViewModels.TextStorageRequest.Attachments
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.Attachments
+  nameWithType: TextStorageRequest.Attachments
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.Attachments*
+  name: Attachments
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_Attachments_
+  commentId: Overload:CG.Purple.Host.ViewModels.TextStorageRequest.Attachments
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.Attachments
+  nameWithType: TextStorageRequest.Attachments
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.Body
+  name: Body
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_Body
+  commentId: P:CG.Purple.Host.ViewModels.TextStorageRequest.Body
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.Body
+  nameWithType: TextStorageRequest.Body
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.Body*
+  name: Body
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_Body_
+  commentId: Overload:CG.Purple.Host.ViewModels.TextStorageRequest.Body
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.Body
+  nameWithType: TextStorageRequest.Body
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.From
+  name: From
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_From
+  commentId: P:CG.Purple.Host.ViewModels.TextStorageRequest.From
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.From
+  nameWithType: TextStorageRequest.From
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.From*
+  name: From
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_From_
+  commentId: Overload:CG.Purple.Host.ViewModels.TextStorageRequest.From
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.From
+  nameWithType: TextStorageRequest.From
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.MessageKey
+  name: MessageKey
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_MessageKey
+  commentId: P:CG.Purple.Host.ViewModels.TextStorageRequest.MessageKey
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.MessageKey
+  nameWithType: TextStorageRequest.MessageKey
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.MessageKey*
+  name: MessageKey
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_MessageKey_
+  commentId: Overload:CG.Purple.Host.ViewModels.TextStorageRequest.MessageKey
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.MessageKey
+  nameWithType: TextStorageRequest.MessageKey
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.Properties
+  name: Properties
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_Properties
+  commentId: P:CG.Purple.Host.ViewModels.TextStorageRequest.Properties
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.Properties
+  nameWithType: TextStorageRequest.Properties
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.Properties*
+  name: Properties
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_Properties_
+  commentId: Overload:CG.Purple.Host.ViewModels.TextStorageRequest.Properties
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.Properties
+  nameWithType: TextStorageRequest.Properties
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.To
+  name: To
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_To
+  commentId: P:CG.Purple.Host.ViewModels.TextStorageRequest.To
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.To
+  nameWithType: TextStorageRequest.To
+- uid: CG.Purple.Host.ViewModels.TextStorageRequest.To*
+  name: To
+  href: api/CG.Purple.Host.ViewModels.TextStorageRequest.html#CG_Purple_Host_ViewModels_TextStorageRequest_To_
+  commentId: Overload:CG.Purple.Host.ViewModels.TextStorageRequest.To
+  isSpec: "True"
+  fullName: CG.Purple.Host.ViewModels.TextStorageRequest.To
+  nameWithType: TextStorageRequest.To
 - uid: CG.Purple.Managers
   name: CG.Purple.Managers
   href: api/CG.Purple.Managers.html
@@ -5820,6 +6213,25 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MimeTypeManager.UpdateAsync
   nameWithType: MimeTypeManager.UpdateAsync
+- uid: CG.Purple.Managers.MimeTypeManagerExtensions
+  name: MimeTypeManagerExtensions
+  href: api/CG.Purple.Managers.MimeTypeManagerExtensions.html
+  commentId: T:CG.Purple.Managers.MimeTypeManagerExtensions
+  fullName: CG.Purple.Managers.MimeTypeManagerExtensions
+  nameWithType: MimeTypeManagerExtensions
+- uid: CG.Purple.Managers.MimeTypeManagerExtensions.FindByCanonicalTypeAsync(CG.Purple.Managers.IMimeTypeManager,System.String,CancellationToken)
+  name: FindByCanonicalTypeAsync(IMimeTypeManager, String, CancellationToken)
+  href: api/CG.Purple.Managers.MimeTypeManagerExtensions.html#CG_Purple_Managers_MimeTypeManagerExtensions_FindByCanonicalTypeAsync_CG_Purple_Managers_IMimeTypeManager_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.MimeTypeManagerExtensions.FindByCanonicalTypeAsync(CG.Purple.Managers.IMimeTypeManager,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.MimeTypeManagerExtensions.FindByCanonicalTypeAsync(CG.Purple.Managers.IMimeTypeManager, System.String, CancellationToken)
+  nameWithType: MimeTypeManagerExtensions.FindByCanonicalTypeAsync(IMimeTypeManager, String, CancellationToken)
+- uid: CG.Purple.Managers.MimeTypeManagerExtensions.FindByCanonicalTypeAsync*
+  name: FindByCanonicalTypeAsync
+  href: api/CG.Purple.Managers.MimeTypeManagerExtensions.html#CG_Purple_Managers_MimeTypeManagerExtensions_FindByCanonicalTypeAsync_
+  commentId: Overload:CG.Purple.Managers.MimeTypeManagerExtensions.FindByCanonicalTypeAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.MimeTypeManagerExtensions.FindByCanonicalTypeAsync
+  nameWithType: MimeTypeManagerExtensions.FindByCanonicalTypeAsync
 - uid: CG.Purple.Managers.ParameterTypeManager
   name: ParameterTypeManager
   href: api/CG.Purple.Managers.ParameterTypeManager.html
@@ -5964,87 +6376,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogAssignedEventAsync
   nameWithType: PipelineLogManagerExtensions001.LogAssignedEventAsync
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogDisabledEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,CancellationToken)
-  name: LogDisabledEventAsync(IMessageLogManager, Message, MessageState, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogDisabledEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogDisabledEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogDisabledEventAsync(CG.Purple.Managers.IMessageLogManager, Message, MessageState, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogDisabledEventAsync(IMessageLogManager, Message, MessageState, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogDisabledEventAsync*
-  name: LogDisabledEventAsync
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogDisabledEventAsync_
-  commentId: Overload:CG.Purple.Managers.PipelineLogManagerExtensions001.LogDisabledEventAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogDisabledEventAsync
-  nameWithType: PipelineLogManagerExtensions001.LogDisabledEventAsync
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogEnabledEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,CancellationToken)
-  name: LogEnabledEventAsync(IMessageLogManager, Message, MessageState, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogEnabledEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogEnabledEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogEnabledEventAsync(CG.Purple.Managers.IMessageLogManager, Message, MessageState, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogEnabledEventAsync(IMessageLogManager, Message, MessageState, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogEnabledEventAsync*
-  name: LogEnabledEventAsync
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogEnabledEventAsync_
-  commentId: Overload:CG.Purple.Managers.PipelineLogManagerExtensions001.LogEnabledEventAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogEnabledEventAsync
-  nameWithType: PipelineLogManagerExtensions001.LogEnabledEventAsync
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Exception,System.String,CancellationToken)
-  name: LogErrorEventAsync(IMessageLogManager, Exception, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_Exception_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Exception,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager, Exception, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync(IMessageLogManager, Exception, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,Exception,System.String,CancellationToken)
-  name: LogErrorEventAsync(IMessageLogManager, Message, Exception, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_Message_Exception_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,Exception,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager, Message, Exception, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync(IMessageLogManager, Message, Exception, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,Exception,System.String,CancellationToken)
-  name: LogErrorEventAsync(IMessageLogManager, Message, MessageState, Exception, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_Exception_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,Exception,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager, Message, MessageState, Exception, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync(IMessageLogManager, Message, MessageState, Exception, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,ProviderType,System.String,CancellationToken)
-  name: LogErrorEventAsync(IMessageLogManager, Message, MessageState, String, ProviderType, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_ProviderType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,ProviderType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager, Message, MessageState, System.String, ProviderType, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync(IMessageLogManager, Message, MessageState, String, ProviderType, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,System.String,CancellationToken)
-  name: LogErrorEventAsync(IMessageLogManager, Message, MessageState, String, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager, Message, MessageState, System.String, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync(IMessageLogManager, Message, MessageState, String, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,System.String,System.String,CancellationToken)
-  name: LogErrorEventAsync(IMessageLogManager, Message, String, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_Message_System_String_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,System.String,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager, Message, System.String, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync(IMessageLogManager, Message, String, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,System.String,ProviderType,System.String,CancellationToken)
-  name: LogErrorEventAsync(IMessageLogManager, String, ProviderType, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_System_String_ProviderType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,System.String,ProviderType,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager, System.String, ProviderType, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync(IMessageLogManager, String, ProviderType, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,System.String,System.String,CancellationToken)
-  name: LogErrorEventAsync(IMessageLogManager, String, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_System_String_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,System.String,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager, System.String, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync(IMessageLogManager, String, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync*
-  name: LogErrorEventAsync
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_
-  commentId: Overload:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync
-  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync
 - uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogResetEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,CancellationToken)
   name: LogResetEventAsync(IMessageLogManager, Message, MessageState, String, CancellationToken)
   href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogResetEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_CancellationToken_
@@ -6058,41 +6389,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogResetEventAsync
   nameWithType: PipelineLogManagerExtensions001.LogResetEventAsync
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.Nullable{ProviderType},System.String,CancellationToken)
-  name: LogSentEventAsync(IMessageLogManager, Message, MessageState, Nullable<ProviderType>, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogSentEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_Nullable_ProviderType__System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.Nullable{ProviderType},System.String,CancellationToken)
-  name.vb: LogSentEventAsync(IMessageLogManager, Message, MessageState, Nullable(Of ProviderType), String, CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IMessageLogManager, Message, MessageState, System.Nullable<ProviderType>, System.String, CancellationToken)
-  fullName.vb: CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IMessageLogManager, Message, MessageState, System.Nullable(Of ProviderType), System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogSentEventAsync(IMessageLogManager, Message, MessageState, Nullable<ProviderType>, String, CancellationToken)
-  nameWithType.vb: PipelineLogManagerExtensions001.LogSentEventAsync(IMessageLogManager, Message, MessageState, Nullable(Of ProviderType), String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,CancellationToken)
-  name: LogSentEventAsync(IMessageLogManager, Message, MessageState, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogSentEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync(CG.Purple.Managers.IMessageLogManager, Message, MessageState, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogSentEventAsync(IMessageLogManager, Message, MessageState, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync*
-  name: LogSentEventAsync
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogSentEventAsync_
-  commentId: Overload:CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogSentEventAsync
-  nameWithType: PipelineLogManagerExtensions001.LogSentEventAsync
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogStoredEventAsync(CG.Purple.Managers.IMessageLogManager,Message,System.String,CancellationToken)
-  name: LogStoredEventAsync(IMessageLogManager, Message, String, CancellationToken)
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogStoredEventAsync_CG_Purple_Managers_IMessageLogManager_Message_System_String_CancellationToken_
-  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogStoredEventAsync(CG.Purple.Managers.IMessageLogManager,Message,System.String,CancellationToken)
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogStoredEventAsync(CG.Purple.Managers.IMessageLogManager, Message, System.String, CancellationToken)
-  nameWithType: PipelineLogManagerExtensions001.LogStoredEventAsync(IMessageLogManager, Message, String, CancellationToken)
-- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogStoredEventAsync*
-  name: LogStoredEventAsync
-  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogStoredEventAsync_
-  commentId: Overload:CG.Purple.Managers.PipelineLogManagerExtensions001.LogStoredEventAsync
-  isSpec: "True"
-  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogStoredEventAsync
-  nameWithType: PipelineLogManagerExtensions001.LogStoredEventAsync
 - uid: CG.Purple.Managers.PropertyTypeManager
   name: PropertyTypeManager
   href: api/CG.Purple.Managers.PropertyTypeManager.html
@@ -8309,12 +8605,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Providers.DoNothing.DoNothingProvider.DoNothingProvider
   nameWithType: DoNothingProvider.DoNothingProvider
-- uid: CG.Purple.Providers.DoNothing.DoNothingProvider._random
-  name: _random
-  href: api/CG.Purple.Providers.DoNothing.DoNothingProvider.html#CG_Purple_Providers_DoNothing_DoNothingProvider__random
-  commentId: F:CG.Purple.Providers.DoNothing.DoNothingProvider._random
-  fullName: CG.Purple.Providers.DoNothing.DoNothingProvider._random
-  nameWithType: DoNothingProvider._random
 - uid: CG.Purple.Providers.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
   name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
   href: api/CG.Purple.Providers.DoNothing.DoNothingProvider.html#CG_Purple_Providers_DoNothing_DoNothingProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
@@ -8378,63 +8668,6 @@ references:
   commentId: T:CG.Purple.Providers.MessageExtensions001
   fullName: CG.Purple.Providers.MessageExtensions001
   nameWithType: MessageExtensions001
-- uid: CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync(Message,IMessageManager,System.String,CancellationToken)
-  name: BumpErrorCountAsync(Message, IMessageManager, String, CancellationToken)
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_BumpErrorCountAsync_Message_IMessageManager_System_String_CancellationToken_
-  commentId: M:CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync(Message,IMessageManager,System.String,CancellationToken)
-  fullName: CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync(Message, IMessageManager, System.String, CancellationToken)
-  nameWithType: MessageExtensions001.BumpErrorCountAsync(Message, IMessageManager, String, CancellationToken)
-- uid: CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync*
-  name: BumpErrorCountAsync
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_BumpErrorCountAsync_
-  commentId: Overload:CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync
-  isSpec: "True"
-  fullName: CG.Purple.Providers.MessageExtensions001.BumpErrorCountAsync
-  nameWithType: MessageExtensions001.BumpErrorCountAsync
-- uid: CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync(Message,IMessageManager,System.String,CancellationToken)
-  name: ClearErrorCountAsync(Message, IMessageManager, String, CancellationToken)
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ClearErrorCountAsync_Message_IMessageManager_System_String_CancellationToken_
-  commentId: M:CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync(Message,IMessageManager,System.String,CancellationToken)
-  fullName: CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync(Message, IMessageManager, System.String, CancellationToken)
-  nameWithType: MessageExtensions001.ClearErrorCountAsync(Message, IMessageManager, String, CancellationToken)
-- uid: CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync*
-  name: ClearErrorCountAsync
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ClearErrorCountAsync_
-  commentId: Overload:CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync
-  isSpec: "True"
-  fullName: CG.Purple.Providers.MessageExtensions001.ClearErrorCountAsync
-  nameWithType: MessageExtensions001.ClearErrorCountAsync
-- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IMessageLogManager,ProviderType,System.String,CancellationToken)
-  name: ToFailedStateAsync(Message, Exception, IMessageManager, IMessageLogManager, ProviderType, String, CancellationToken)
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_Exception_IMessageManager_IMessageLogManager_ProviderType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IMessageLogManager,ProviderType,System.String,CancellationToken)
-  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IMessageLogManager, ProviderType, System.String, CancellationToken)
-  nameWithType: MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IMessageLogManager, ProviderType, String, CancellationToken)
-- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IMessageLogManager,System.String,CancellationToken)
-  name: ToFailedStateAsync(Message, Exception, IMessageManager, IMessageLogManager, String, CancellationToken)
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_Exception_IMessageManager_IMessageLogManager_System_String_CancellationToken_
-  commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,Exception,IMessageManager,IMessageLogManager,System.String,CancellationToken)
-  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IMessageLogManager, System.String, CancellationToken)
-  nameWithType: MessageExtensions001.ToFailedStateAsync(Message, Exception, IMessageManager, IMessageLogManager, String, CancellationToken)
-- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IMessageLogManager,ProviderType,System.String,CancellationToken)
-  name: ToFailedStateAsync(Message, String, IMessageManager, IMessageLogManager, ProviderType, String, CancellationToken)
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_System_String_IMessageManager_IMessageLogManager_ProviderType_System_String_CancellationToken_
-  commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IMessageLogManager,ProviderType,System.String,CancellationToken)
-  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, System.String, IMessageManager, IMessageLogManager, ProviderType, System.String, CancellationToken)
-  nameWithType: MessageExtensions001.ToFailedStateAsync(Message, String, IMessageManager, IMessageLogManager, ProviderType, String, CancellationToken)
-- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IMessageLogManager,System.String,CancellationToken)
-  name: ToFailedStateAsync(Message, String, IMessageManager, IMessageLogManager, String, CancellationToken)
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_System_String_IMessageManager_IMessageLogManager_System_String_CancellationToken_
-  commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,System.String,IMessageManager,IMessageLogManager,System.String,CancellationToken)
-  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, System.String, IMessageManager, IMessageLogManager, System.String, CancellationToken)
-  nameWithType: MessageExtensions001.ToFailedStateAsync(Message, String, IMessageManager, IMessageLogManager, String, CancellationToken)
-- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync*
-  name: ToFailedStateAsync
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_
-  commentId: Overload:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync
-  isSpec: "True"
-  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync
-  nameWithType: MessageExtensions001.ToFailedStateAsync
 - uid: CG.Purple.Providers.MessageExtensions001.ToPendingStateAsync(Message,IMessageManager,IMessageLogManager,System.String,CancellationToken)
   name: ToPendingStateAsync(Message, IMessageManager, IMessageLogManager, String, CancellationToken)
   href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToPendingStateAsync_Message_IMessageManager_IMessageLogManager_System_String_CancellationToken_
@@ -8461,19 +8694,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Providers.MessageExtensions001.ToProcessingStateAsync
   nameWithType: MessageExtensions001.ToProcessingStateAsync
-- uid: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IMessageLogManager,System.String,CancellationToken)
-  name: ToSentStateAsync(Message, IMessageManager, IMessageLogManager, String, CancellationToken)
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_Message_IMessageManager_IMessageLogManager_System_String_CancellationToken_
-  commentId: M:CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message,IMessageManager,IMessageLogManager,System.String,CancellationToken)
-  fullName: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync(Message, IMessageManager, IMessageLogManager, System.String, CancellationToken)
-  nameWithType: MessageExtensions001.ToSentStateAsync(Message, IMessageManager, IMessageLogManager, String, CancellationToken)
-- uid: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync*
-  name: ToSentStateAsync
-  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToSentStateAsync_
-  commentId: Overload:CG.Purple.Providers.MessageExtensions001.ToSentStateAsync
-  isSpec: "True"
-  fullName: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync
-  nameWithType: MessageExtensions001.ToSentStateAsync
 - uid: CG.Purple.Providers.MessageProviderBase`1
   name: MessageProviderBase<T>
   href: api/CG.Purple.Providers.MessageProviderBase-1.html
@@ -8525,6 +8745,14 @@ references:
   fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T)._messageManager
   nameWithType: MessageProviderBase<T>._messageManager
   nameWithType.vb: MessageProviderBase(Of T)._messageManager
+- uid: CG.Purple.Providers.MessageProviderBase`1._random
+  name: _random
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__random
+  commentId: F:CG.Purple.Providers.MessageProviderBase`1._random
+  fullName: CG.Purple.Providers.MessageProviderBase<T>._random
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T)._random
+  nameWithType: MessageProviderBase<T>._random
+  nameWithType.vb: MessageProviderBase(Of T)._random
 - uid: CG.Purple.Providers.MessageProviderBase`1.MessageFailedToSendAsync(System.String,Message,CancellationToken)
   name: MessageFailedToSendAsync(String, Message, CancellationToken)
   href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageFailedToSendAsync_System_String_Message_CancellationToken_
