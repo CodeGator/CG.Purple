@@ -118,9 +118,11 @@ internal class PipelineDirector : IPipelineDirector
         // Validate the parameters before attempting to use them.
         Guard.Instance().ThrowIfZero(sectionDelay, nameof(sectionDelay));
 
-        // This pipeline does three things: (1) processing (send) messages,
-        //   (2) retry previously failed messages, and (3) archive old
-        //   messages.
+        // This method does three things: (1) processing messages, (2)
+        //   retrying previously failed messages, and (3) archiving
+        //   old messages.
+
+        var errors = new List<Exception>();
 
         // =======
         // Step 1: Process messages.
@@ -140,12 +142,18 @@ internal class PipelineDirector : IPipelineDirector
         }
         catch (Exception ex)
         {
-            // If we get here then we're probably not processing any messages,
-            //   which is the primary purpose of this microservice. Instead,
-            //   we're just generating a ton of error messages, in a loop.
-            //   That's because we really can't recover from here. All we can
-            //   do is log the error and continue. So, let's slow way down
-            //   here, while we wait for someone to come help us.
+            // If we get here then something died in one or more providers,
+            //   or in the pipeline itself. Either way, we're probably not
+            //   processing any messages, which is the primary purpose of
+            //   this microservice. Instead, we're just generating a ton
+            //   of error messages, in a loop. That's because we really
+            //   can't recover from here. All we can do is log the error
+            //   and continue.
+            // So, let's slow way down here, while we wait for someone to
+            //   come help us.
+
+            // Remember the error.
+            errors.Add(ex);
 
             // Log what happened.
             _logger.LogError(
@@ -190,11 +198,15 @@ internal class PipelineDirector : IPipelineDirector
         }
         catch (Exception ex)
         {
-            // If we get here then we're probably not retrying any messages,
-            //   which is, admittedly, an important part of the microservice.
-            //   But, if we slowdown for this, we're also slowing down message
-            //   processing, which may be working fine. So, we'll just log 
-            //   the problem and not pause here.
+            // If we get here then something died in the pipeline. Either way,
+            //   we're probably not retrying any messages, which is, admittedly,
+            //   an important part of the microservice. But, if we slowdown for
+            //   this, we're also slowing down message processing, which may
+            //   be working fine.
+            // So, we'll just log the problem and continue.
+
+            // Remember the error.
+            errors.Add(ex);
 
             // Log what happened.
             _logger.LogError(
@@ -233,16 +245,30 @@ internal class PipelineDirector : IPipelineDirector
         }
         catch (Exception ex)
         {
-            // If we get here then we're probably not archiving messages, which
-            //   is, admittedly, an important part of the microservice. But,
-            //   if we slowdown for this, we're also slowing down message
-            //   processing, and retry operations, both of which may be working
-            //   fine. So, we'll just log the problem and not pause here.
+            // If we get here then something died in the pipeline. Either way,
+            //   we're probably not archiving messages, which is, admittedly,
+            //   an important part of the microservice. But, if we slowdown
+            //   for this, we're also slowing down message processing, and
+            //   retry operations, both of which may be working fine.
+            // So, we'll just log the problem and continue.
+
+            // Remember the error.
+            errors.Add(ex);
 
             // Log what happened.
             _logger.LogError(
                 ex,
                 "Failed to archive messages!"
+                );
+        }
+
+        // Did anything fail?
+        if (errors.Any())
+        {
+            // Panic!!
+            throw new DirectorException(
+                innerException: new AggregateException(errors),
+                message: "Something broke while processing messages!"
                 );
         }
     }

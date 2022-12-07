@@ -6,7 +6,7 @@
       "IsDisabled": true,
       "CanProcessEmails": true,
       "CanProcessTexts": false,
-      "Priority": 0,
+      "Priority": 2,
       "FactoryType": "SmtpProvider"
     },
     {
@@ -15,8 +15,17 @@
       "IsDisabled": true,
       "CanProcessEmails": true,
       "CanProcessTexts": false,
-      "Priority": 0,
+      "Priority": 1,
       "FactoryType": "SendGridProvider"
+    },
+    {
+      "Name": "DoNothing",
+      "Description": "Purple Test provider",
+      "IsDisabled": false,
+      "CanProcessEmails": true,
+      "CanProcessTexts": true,
+      "Priority": 0,
+      "FactoryType": "DoNothingProvider"
     }    
   ]
 }

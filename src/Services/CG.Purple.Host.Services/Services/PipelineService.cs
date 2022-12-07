@@ -182,6 +182,20 @@ internal class PipelineService : BackgroundService
                         cancellationToken
                         ).ConfigureAwait(false);
                 }
+                catch (Exception ex)
+                {
+                    // If we get here then something broke in the director,
+                    //   while it was processing messages. It's probably
+                    //   already been handled, so we'll just log the problem
+                    //   and continue.
+
+                    // Log what happened.
+                    _logger.LogError(
+                        ex,
+                        "The {method} method failed unexpectedly!",
+                        nameof(IPipelineDirector.ProcessAsync)
+                        );
+                }
                 finally
                 {
                     // Stop the stopwatch.
@@ -198,6 +212,10 @@ internal class PipelineService : BackgroundService
         }
         catch (Exception ex)
         {
+            // If we get here then something has completely gone off the rails
+            //   and this hosted service is in the process of shutting down.
+            // No recovery from here is possible.
+
             // Log what happened.
             _logger.LogError(
                 ex,

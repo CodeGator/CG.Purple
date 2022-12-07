@@ -27,10 +27,6 @@ Things to be done on the project, as of 12/06/2022
 
 * Should we add caching to the managers?
 
-### Providers
-
-* Need to write the SendGrid provider.
-
 ### Pipeline
 
 * During idle periods, we should probably slow the pipeline down so we don't chew up resources querying the database over and over. When there is work to do, we can speed it back up.
