@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MailMessageManager
+    <title>Class MessageProviderBase&lt;T&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MailMessageManager
+    <meta name="title" content="Class MessageProviderBase&lt;T&gt;
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,23 +78,26 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Managers.MailMessageManager">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Providers.MessageProviderBase`1">
   
   
-  <h1 id="CG_Purple_Managers_MailMessageManager" data-uid="CG.Purple.Managers.MailMessageManager" class="text-break">Class MailMessageManager
+  <h1 id="CG_Purple_Providers_MessageProviderBase_1" data-uid="CG.Purple.Providers.MessageProviderBase`1" class="text-break">Class MessageProviderBase&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"><p>This class is a default implementation of the <a class="xref" href="CG.Purple.Managers.IMailMessageManager.html">IMailMessageManager</a>
+  <div class="markdown level0 summary"><p>This class is a base implementation of the <a class="xref" href="CG.Purple.Providers.IMessageProvider.html">IMessageProvider</a>
 interface.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">MailMessageManager</span></div>
+    <div class="level1"><span class="xref">MessageProviderBase&lt;T&gt;</span></div>
+      <div class="level2"><a class="xref" href="CG.Purple.Providers.DoNothing.DoNothingProvider.html">DoNothingProvider</a></div>
+      <div class="level2"><a class="xref" href="CG.Purple.Providers.SendGrid.SendGridProvider.html">SendGridProvider</a></div>
+      <div class="level2"><a class="xref" href="CG.Purple.Providers.Smtp.SmtpProvider.html">SmtpProvider</a></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="CG.Purple.Managers.IMailMessageManager.html">IMailMessageManager</a></div>
+    <div><a class="xref" href="CG.Purple.Providers.IMessageProvider.html">IMessageProvider</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -120,23 +123,38 @@ interface.</p>
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Managers.html">CG.Purple.Managers</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.dll</h6>
-  <h5 id="CG_Purple_Managers_MailMessageManager_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Providers.html">CG.Purple.Providers</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Providers.dll</h6>
+  <h5 id="CG_Purple_Providers_MessageProviderBase_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">class MailMessageManager : IMailMessageManager</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class MessageProviderBase&lt;T&gt; : IMessageProvider where T : MessageProviderBase&lt;T&gt;</code></pre>
   </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="constructors">Constructors
   </h3>
-  <a id="CG_Purple_Managers_MailMessageManager__ctor_" data-uid="CG.Purple.Managers.MailMessageManager.#ctor*"></a>
-  <h4 id="CG_Purple_Managers_MailMessageManager__ctor_IOptions_BllOptions__IMailMessageRepository_ILogger_CG_Purple_Managers_IMailMessageManager__" data-uid="CG.Purple.Managers.MailMessageManager.#ctor(IOptions{BllOptions},IMailMessageRepository,ILogger{CG.Purple.Managers.IMailMessageManager})">MailMessageManager(IOptions&lt;BllOptions&gt;, IMailMessageRepository, ILogger&lt;IMailMessageManager&gt;)</h4>
-  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Managers.MailMessageManager.html">MailMessageManager</a>
+  <a id="CG_Purple_Providers_MessageProviderBase_1__ctor_" data-uid="CG.Purple.Providers.MessageProviderBase`1.#ctor*"></a>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1__ctor_IMessageManager_IMessageLogManager_ILogger__0__" data-uid="CG.Purple.Providers.MessageProviderBase`1.#ctor(IMessageManager,IMessageLogManager,ILogger{`0})">MessageProviderBase(IMessageManager, IMessageLogManager, ILogger&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor create a new instance of the <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html">MessageProviderBase&lt;T&gt;</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MailMessageManager(IOptions&lt;BllOptions&gt; bllOptions, IMailMessageRepository mailMessageRepository, ILogger&lt;IMailMessageManager&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">protected MessageProviderBase(IMessageManager messageManager, IMessageLogManager messageLogManager, ILogger&lt;T&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -149,36 +167,36 @@ class.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IOptions</span>&lt;<span class="xref">BllOptions</span>&gt;</td>
-        <td><span class="parametername">bllOptions</span></td>
-        <td><p>The business logic layer options to use
-with this manager.</p>
+        <td><span class="xref">IMessageManager</span></td>
+        <td><span class="parametername">messageManager</span></td>
+        <td><p>The message manager to use with this
+provider.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IMailMessageRepository</span></td>
-        <td><span class="parametername">mailMessageRepository</span></td>
-        <td><p>The mail message repository to use
-with this manager.</p>
+        <td><span class="xref">IMessageLogManager</span></td>
+        <td><span class="parametername">messageLogManager</span></td>
+        <td><p>The message log manager to use
+with this provider.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Managers.IMailMessageManager.html">IMailMessageManager</a>&gt;</td>
+        <td><span class="xref">ILogger</span>&lt;T&gt;</td>
         <td><span class="parametername">logger</span></td>
-        <td><p>The logger to use with this manager.</p>
+        <td><p>The logger to use with this provider.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="CG_Purple_Managers_MailMessageManager__logger" data-uid="CG.Purple.Managers.MailMessageManager._logger">_logger</h4>
-  <div class="markdown level1 summary"><p>This field contains the logger for this manager.</p>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1__logger" data-uid="CG.Purple.Providers.MessageProviderBase`1._logger">_logger</h4>
+  <div class="markdown level1 summary"><p>This field contains the logger for this provider.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly ILogger&lt;IMailMessageManager&gt; _logger</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly ILogger&lt;T&gt; _logger</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -190,18 +208,18 @@ with this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Managers.IMailMessageManager.html">IMailMessageManager</a>&gt;</td>
+        <td><span class="xref">ILogger</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h4 id="CG_Purple_Managers_MailMessageManager__mailMessageRepository" data-uid="CG.Purple.Managers.MailMessageManager._mailMessageRepository">_mailMessageRepository</h4>
-  <div class="markdown level1 summary"><p>This field contains the repository for this manager.</p>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1__messageLogManager" data-uid="CG.Purple.Providers.MessageProviderBase`1._messageLogManager">_messageLogManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the message log manager for this provider.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly IMailMessageRepository _mailMessageRepository</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IMessageLogManager _messageLogManager</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -213,18 +231,18 @@ with this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IMailMessageRepository</span></td>
+        <td><span class="xref">IMessageLogManager</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h4 id="CG_Purple_Managers_MailMessageManager__managerOptions" data-uid="CG.Purple.Managers.MailMessageManager._managerOptions">_managerOptions</h4>
-  <div class="markdown level1 summary"><p>This field contains the options for this manager.</p>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1__messageManager" data-uid="CG.Purple.Providers.MessageProviderBase`1._messageManager">_messageManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the message manager for this provider.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly MailMessageManagerOptions? _managerOptions</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IMessageManager _messageManager</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -236,235 +254,23 @@ with this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">MailMessageManagerOptions</span>&gt;</td>
+        <td><span class="xref">IMessageManager</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Managers_MailMessageManager_AnyAsync_" data-uid="CG.Purple.Managers.MailMessageManager.AnyAsync*"></a>
-  <h4 id="CG_Purple_Managers_MailMessageManager_AnyAsync_CancellationToken_" data-uid="CG.Purple.Managers.MailMessageManager.AnyAsync(CancellationToken)">AnyAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="CG_Purple_Providers_MessageProviderBase_1_MessageFailedToSendAsync_" data-uid="CG.Purple.Providers.MessageProviderBase`1.MessageFailedToSendAsync*"></a>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1_MessageFailedToSendAsync_System_String_Message_CancellationToken_" data-uid="CG.Purple.Providers.MessageProviderBase`1.MessageFailedToSendAsync(System.String,Message,CancellationToken)">MessageFailedToSendAsync(String, Message, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sets the given message to a 'Failed' state, bumps the
+error count, clears any previously assigned provider, and logs the
+event.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;bool&gt; AnyAsync(CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Managers_MailMessageManager_CountAsync_" data-uid="CG.Purple.Managers.MailMessageManager.CountAsync*"></a>
-  <h4 id="CG_Purple_Managers_MailMessageManager_CountAsync_CancellationToken_" data-uid="CG.Purple.Managers.MailMessageManager.CountAsync(CancellationToken)">CountAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;long&gt; CountAsync(CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Managers_MailMessageManager_CreateAsync_" data-uid="CG.Purple.Managers.MailMessageManager.CreateAsync*"></a>
-  <h4 id="CG_Purple_Managers_MailMessageManager_CreateAsync_MailMessage_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MailMessageManager.CreateAsync(MailMessage,System.String,CancellationToken)">CreateAsync(MailMessage, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;MailMessage&gt; CreateAsync(MailMessage mailMessage, string userName, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">MailMessage</span></td>
-        <td><span class="parametername">mailMessage</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">MailMessage</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Managers_MailMessageManager_FindAllAsync_" data-uid="CG.Purple.Managers.MailMessageManager.FindAllAsync*"></a>
-  <h4 id="CG_Purple_Managers_MailMessageManager_FindAllAsync_CancellationToken_" data-uid="CG.Purple.Managers.MailMessageManager.FindAllAsync(CancellationToken)">FindAllAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IEnumerable&lt;MailMessage&gt;&gt; FindAllAsync(CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">MailMessage</span>&gt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Managers_MailMessageManager_FindByIdAsync_" data-uid="CG.Purple.Managers.MailMessageManager.FindByIdAsync*"></a>
-  <h4 id="CG_Purple_Managers_MailMessageManager_FindByIdAsync_System_Int64_CancellationToken_" data-uid="CG.Purple.Managers.MailMessageManager.FindByIdAsync(System.Int64,CancellationToken)">FindByIdAsync(Int64, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;MailMessage?&gt; FindByIdAsync(long id, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int64</span></td>
-        <td><span class="parametername">id</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">MailMessage</span>&gt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Managers_MailMessageManager_FindByKeyAsync_" data-uid="CG.Purple.Managers.MailMessageManager.FindByKeyAsync*"></a>
-  <h4 id="CG_Purple_Managers_MailMessageManager_FindByKeyAsync_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MailMessageManager.FindByKeyAsync(System.String,CancellationToken)">FindByKeyAsync(String, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;MailMessage?&gt; FindByKeyAsync(string messageKey, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual async Task MessageFailedToSendAsync(string providerMessage, Message message, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -478,13 +284,23 @@ with this manager.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">messageKey</span></td>
-        <td></td>
+        <td><span class="parametername">providerMessage</span></td>
+        <td><p>The provider message to use for the
+operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to use for the operation.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -498,18 +314,22 @@ with this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">MailMessage</span>&gt;&gt;</td>
-        <td></td>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Managers_MailMessageManager_UpdateAsync_" data-uid="CG.Purple.Managers.MailMessageManager.UpdateAsync*"></a>
-  <h4 id="CG_Purple_Managers_MailMessageManager_UpdateAsync_MailMessage_System_String_CancellationToken_" data-uid="CG.Purple.Managers.MailMessageManager.UpdateAsync(MailMessage,System.String,CancellationToken)">UpdateAsync(MailMessage, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="CG_Purple_Providers_MessageProviderBase_1_MessageIsWrongTypeAsync_" data-uid="CG.Purple.Providers.MessageProviderBase`1.MessageIsWrongTypeAsync*"></a>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1_MessageIsWrongTypeAsync_Message_CancellationToken_" data-uid="CG.Purple.Providers.MessageProviderBase`1.MessageIsWrongTypeAsync(Message,CancellationToken)">MessageIsWrongTypeAsync(Message, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sets the given message to a 'Failed' state, resets any
+associated provider type, increments the error count on the message,
+and logs the error.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;MailMessage&gt; UpdateAsync(MailMessage mailMessage, string userName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual async Task MessageIsWrongTypeAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -522,13 +342,113 @@ with this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">MailMessage</span></td>
-        <td><span class="parametername">mailMessage</span></td>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Providers_MessageProviderBase_1_MessageWasSentAsync_" data-uid="CG.Purple.Providers.MessageProviderBase`1.MessageWasSentAsync*"></a>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1_MessageWasSentAsync_Message_CancellationToken_" data-uid="CG.Purple.Providers.MessageProviderBase`1.MessageWasSentAsync(Message,CancellationToken)">MessageWasSentAsync(Message, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sets the given message to a 'Sent' state and logs the
+event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task MessageWasSentAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Providers_MessageProviderBase_1_ProcessMessagesAsync_" data-uid="CG.Purple.Providers.MessageProviderBase`1.ProcessMessagesAsync*"></a>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_" data-uid="CG.Purple.Providers.MessageProviderBase`1.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)">ProcessMessagesAsync(IEnumerable&lt;Message&gt;, ProviderType, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task ProcessMessagesAsync(IEnumerable&lt;Message&gt; messages, ProviderType providerType, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;</td>
+        <td><span class="parametername">messages</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
+        <td><span class="xref">ProviderType</span></td>
+        <td><span class="parametername">providerType</span></td>
         <td></td>
       </tr>
       <tr>
@@ -548,14 +468,118 @@ with this manager.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">MailMessage</span>&gt;</td>
+        <td><span class="xref">Task</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Providers_MessageProviderBase_1_UnableToFindMailMessageAsync_" data-uid="CG.Purple.Providers.MessageProviderBase`1.UnableToFindMailMessageAsync*"></a>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1_UnableToFindMailMessageAsync_Message_CancellationToken_" data-uid="CG.Purple.Providers.MessageProviderBase`1.UnableToFindMailMessageAsync(Message,CancellationToken)">UnableToFindMailMessageAsync(Message, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sets the given message to a 'Failed' state, resets any
+associated provider type, increments the error count on the message,
+and logs the error.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task UnableToFindMailMessageAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Providers_MessageProviderBase_1_UnableToFindTextMessageAsync_" data-uid="CG.Purple.Providers.MessageProviderBase`1.UnableToFindTextMessageAsync*"></a>
+  <h4 id="CG_Purple_Providers_MessageProviderBase_1_UnableToFindTextMessageAsync_Message_CancellationToken_" data-uid="CG.Purple.Providers.MessageProviderBase`1.UnableToFindTextMessageAsync(Message,CancellationToken)">UnableToFindTextMessageAsync(Message, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sets the given message to a 'Failed' state, resets any
+associated provider type, increments the error count on the message,
+and logs the error.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task UnableToFindTextMessageAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="CG.Purple.Managers.IMailMessageManager.html">IMailMessageManager</a>
+      <a class="xref" href="CG.Purple.Providers.IMessageProvider.html">IMessageProvider</a>
   </div>
 </article>
           </div>

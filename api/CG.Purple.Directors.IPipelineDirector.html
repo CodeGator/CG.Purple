@@ -95,13 +95,13 @@
   <h3 id="methods">Methods
   </h3>
   <a id="CG_Purple_Directors_IPipelineDirector_ProcessAsync_" data-uid="CG.Purple.Directors.IPipelineDirector.ProcessAsync*"></a>
-  <h4 id="CG_Purple_Directors_IPipelineDirector_ProcessAsync_CancellationToken_" data-uid="CG.Purple.Directors.IPipelineDirector.ProcessAsync(CancellationToken)">ProcessAsync(CancellationToken)</h4>
+  <h4 id="CG_Purple_Directors_IPipelineDirector_ProcessAsync_TimeSpan_CancellationToken_" data-uid="CG.Purple.Directors.IPipelineDirector.ProcessAsync(TimeSpan,CancellationToken)">ProcessAsync(TimeSpan, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method processes messages.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task ProcessAsync(CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task ProcessAsync(TimeSpan sectionDelay, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -113,6 +113,13 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td><span class="parametername">sectionDelay</span></td>
+        <td><p>The amount of time to delay, between sections,
+during each processing cycle.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>

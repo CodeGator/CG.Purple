@@ -94,12 +94,12 @@ references:
   commentId: T:CG.Purple.Directors.IPipelineDirector
   fullName: CG.Purple.Directors.IPipelineDirector
   nameWithType: IPipelineDirector
-- uid: CG.Purple.Directors.IPipelineDirector.ProcessAsync(CancellationToken)
-  name: ProcessAsync(CancellationToken)
-  href: api/CG.Purple.Directors.IPipelineDirector.html#CG_Purple_Directors_IPipelineDirector_ProcessAsync_CancellationToken_
-  commentId: M:CG.Purple.Directors.IPipelineDirector.ProcessAsync(CancellationToken)
-  fullName: CG.Purple.Directors.IPipelineDirector.ProcessAsync(CancellationToken)
-  nameWithType: IPipelineDirector.ProcessAsync(CancellationToken)
+- uid: CG.Purple.Directors.IPipelineDirector.ProcessAsync(TimeSpan,CancellationToken)
+  name: ProcessAsync(TimeSpan, CancellationToken)
+  href: api/CG.Purple.Directors.IPipelineDirector.html#CG_Purple_Directors_IPipelineDirector_ProcessAsync_TimeSpan_CancellationToken_
+  commentId: M:CG.Purple.Directors.IPipelineDirector.ProcessAsync(TimeSpan,CancellationToken)
+  fullName: CG.Purple.Directors.IPipelineDirector.ProcessAsync(TimeSpan, CancellationToken)
+  nameWithType: IPipelineDirector.ProcessAsync(TimeSpan, CancellationToken)
 - uid: CG.Purple.Directors.IPipelineDirector.ProcessAsync*
   name: ProcessAsync
   href: api/CG.Purple.Directors.IPipelineDirector.html#CG_Purple_Directors_IPipelineDirector_ProcessAsync_
@@ -217,91 +217,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Directors.ISeedDirector.SeedTextMessagesAsync
   nameWithType: ISeedDirector.SeedTextMessagesAsync
-- uid: CG.Purple.DoNothing
-  name: CG.Purple.DoNothing
-  href: api/CG.Purple.DoNothing.html
-  commentId: N:CG.Purple.DoNothing
-  fullName: CG.Purple.DoNothing
-  nameWithType: CG.Purple.DoNothing
-- uid: CG.Purple.DoNothing.DoNothingProvider
-  name: DoNothingProvider
-  href: api/CG.Purple.DoNothing.DoNothingProvider.html
-  commentId: T:CG.Purple.DoNothing.DoNothingProvider
-  fullName: CG.Purple.DoNothing.DoNothingProvider
-  nameWithType: DoNothingProvider
-- uid: CG.Purple.DoNothing.DoNothingProvider.#ctor(ILogger{IMessageProvider})
-  name: DoNothingProvider(ILogger<IMessageProvider>)
-  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider__ctor_ILogger_IMessageProvider__
-  commentId: M:CG.Purple.DoNothing.DoNothingProvider.#ctor(ILogger{IMessageProvider})
-  name.vb: DoNothingProvider(ILogger(Of IMessageProvider))
-  fullName: CG.Purple.DoNothing.DoNothingProvider.DoNothingProvider(ILogger<IMessageProvider>)
-  fullName.vb: CG.Purple.DoNothing.DoNothingProvider.DoNothingProvider(ILogger(Of IMessageProvider))
-  nameWithType: DoNothingProvider.DoNothingProvider(ILogger<IMessageProvider>)
-  nameWithType.vb: DoNothingProvider.DoNothingProvider(ILogger(Of IMessageProvider))
-- uid: CG.Purple.DoNothing.DoNothingProvider.#ctor*
-  name: DoNothingProvider
-  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider__ctor_
-  commentId: Overload:CG.Purple.DoNothing.DoNothingProvider.#ctor
-  isSpec: "True"
-  fullName: CG.Purple.DoNothing.DoNothingProvider.DoNothingProvider
-  nameWithType: DoNothingProvider.DoNothingProvider
-- uid: CG.Purple.DoNothing.DoNothingProvider._logger
-  name: _logger
-  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider__logger
-  commentId: F:CG.Purple.DoNothing.DoNothingProvider._logger
-  fullName: CG.Purple.DoNothing.DoNothingProvider._logger
-  nameWithType: DoNothingProvider._logger
-- uid: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
-  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
-  commentId: M:CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
-  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-  fullName: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  fullName.vb: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-  nameWithType: DoNothingProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  nameWithType.vb: DoNothingProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-- uid: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync*
-  name: ProcessMessagesAsync
-  href: api/CG.Purple.DoNothing.DoNothingProvider.html#CG_Purple_DoNothing_DoNothingProvider_ProcessMessagesAsync_
-  commentId: Overload:CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync
-  isSpec: "True"
-  fullName: CG.Purple.DoNothing.DoNothingProvider.ProcessMessagesAsync
-  nameWithType: DoNothingProvider.ProcessMessagesAsync
-- uid: CG.Purple.DoNothing.Module
-  name: Module
-  href: api/CG.Purple.DoNothing.Module.html
-  commentId: T:CG.Purple.DoNothing.Module
-  fullName: CG.Purple.DoNothing.Module
-  nameWithType: Module
-- uid: CG.Purple.DoNothing.Module.Configure(WebApplication)
-  name: Configure(WebApplication)
-  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_Configure_WebApplication_
-  commentId: M:CG.Purple.DoNothing.Module.Configure(WebApplication)
-  fullName: CG.Purple.DoNothing.Module.Configure(WebApplication)
-  nameWithType: Module.Configure(WebApplication)
-- uid: CG.Purple.DoNothing.Module.Configure*
-  name: Configure
-  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_Configure_
-  commentId: Overload:CG.Purple.DoNothing.Module.Configure
-  isSpec: "True"
-  fullName: CG.Purple.DoNothing.Module.Configure
-  nameWithType: Module.Configure
-- uid: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
-  name: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
-  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_System_Nullable_ILogger__
-  commentId: M:CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
-  name.vb: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
-  fullName: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable<ILogger>)
-  fullName.vb: CG.Purple.DoNothing.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable(Of ILogger))
-  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
-  nameWithType.vb: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
-- uid: CG.Purple.DoNothing.Module.ConfigureServices*
-  name: ConfigureServices
-  href: api/CG.Purple.DoNothing.Module.html#CG_Purple_DoNothing_Module_ConfigureServices_
-  commentId: Overload:CG.Purple.DoNothing.Module.ConfigureServices
-  isSpec: "True"
-  fullName: CG.Purple.DoNothing.Module.ConfigureServices
-  nameWithType: Module.ConfigureServices
 - uid: CG.Purple.Host.Controllers
   name: CG.Purple.Host.Controllers
   href: api/CG.Purple.Host.Controllers.html
@@ -480,12 +395,12 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Directors.PipelineDirector.GetProviderTypesAsync
   nameWithType: PipelineDirector.GetProviderTypesAsync
-- uid: CG.Purple.Host.Directors.PipelineDirector.ProcessAsync(CancellationToken)
-  name: ProcessAsync(CancellationToken)
-  href: api/CG.Purple.Host.Directors.PipelineDirector.html#CG_Purple_Host_Directors_PipelineDirector_ProcessAsync_CancellationToken_
-  commentId: M:CG.Purple.Host.Directors.PipelineDirector.ProcessAsync(CancellationToken)
-  fullName: CG.Purple.Host.Directors.PipelineDirector.ProcessAsync(CancellationToken)
-  nameWithType: PipelineDirector.ProcessAsync(CancellationToken)
+- uid: CG.Purple.Host.Directors.PipelineDirector.ProcessAsync(TimeSpan,CancellationToken)
+  name: ProcessAsync(TimeSpan, CancellationToken)
+  href: api/CG.Purple.Host.Directors.PipelineDirector.html#CG_Purple_Host_Directors_PipelineDirector_ProcessAsync_TimeSpan_CancellationToken_
+  commentId: M:CG.Purple.Host.Directors.PipelineDirector.ProcessAsync(TimeSpan,CancellationToken)
+  fullName: CG.Purple.Host.Directors.PipelineDirector.ProcessAsync(TimeSpan, CancellationToken)
+  nameWithType: PipelineDirector.ProcessAsync(TimeSpan, CancellationToken)
 - uid: CG.Purple.Host.Directors.PipelineDirector.ProcessAsync*
   name: ProcessAsync
   href: api/CG.Purple.Host.Directors.PipelineDirector.html#CG_Purple_Host_Directors_PipelineDirector_ProcessAsync_
@@ -3405,6 +3320,19 @@ references:
   commentId: T:CG.Purple.Host.Services.Options.PipelineServiceOptions
   fullName: CG.Purple.Host.Services.Options.PipelineServiceOptions
   nameWithType: PipelineServiceOptions
+- uid: CG.Purple.Host.Services.Options.PipelineServiceOptions.SectionDelay
+  name: SectionDelay
+  href: api/CG.Purple.Host.Services.Options.PipelineServiceOptions.html#CG_Purple_Host_Services_Options_PipelineServiceOptions_SectionDelay
+  commentId: P:CG.Purple.Host.Services.Options.PipelineServiceOptions.SectionDelay
+  fullName: CG.Purple.Host.Services.Options.PipelineServiceOptions.SectionDelay
+  nameWithType: PipelineServiceOptions.SectionDelay
+- uid: CG.Purple.Host.Services.Options.PipelineServiceOptions.SectionDelay*
+  name: SectionDelay
+  href: api/CG.Purple.Host.Services.Options.PipelineServiceOptions.html#CG_Purple_Host_Services_Options_PipelineServiceOptions_SectionDelay_
+  commentId: Overload:CG.Purple.Host.Services.Options.PipelineServiceOptions.SectionDelay
+  isSpec: "True"
+  fullName: CG.Purple.Host.Services.Options.PipelineServiceOptions.SectionDelay
+  nameWithType: PipelineServiceOptions.SectionDelay
 - uid: CG.Purple.Host.Services.Options.PipelineServiceOptions.StartupDelay
   name: StartupDelay
   href: api/CG.Purple.Host.Services.Options.PipelineServiceOptions.html#CG_Purple_Host_Services_Options_PipelineServiceOptions_StartupDelay
@@ -3418,19 +3346,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Host.Services.Options.PipelineServiceOptions.StartupDelay
   nameWithType: PipelineServiceOptions.StartupDelay
-- uid: CG.Purple.Host.Services.Options.PipelineServiceOptions.ThrottleDelay
-  name: ThrottleDelay
-  href: api/CG.Purple.Host.Services.Options.PipelineServiceOptions.html#CG_Purple_Host_Services_Options_PipelineServiceOptions_ThrottleDelay
-  commentId: P:CG.Purple.Host.Services.Options.PipelineServiceOptions.ThrottleDelay
-  fullName: CG.Purple.Host.Services.Options.PipelineServiceOptions.ThrottleDelay
-  nameWithType: PipelineServiceOptions.ThrottleDelay
-- uid: CG.Purple.Host.Services.Options.PipelineServiceOptions.ThrottleDelay*
-  name: ThrottleDelay
-  href: api/CG.Purple.Host.Services.Options.PipelineServiceOptions.html#CG_Purple_Host_Services_Options_PipelineServiceOptions_ThrottleDelay_
-  commentId: Overload:CG.Purple.Host.Services.Options.PipelineServiceOptions.ThrottleDelay
-  isSpec: "True"
-  fullName: CG.Purple.Host.Services.Options.PipelineServiceOptions.ThrottleDelay
-  nameWithType: PipelineServiceOptions.ThrottleDelay
 - uid: CG.Purple.Host.Services.PipelineService
   name: PipelineService
   href: api/CG.Purple.Host.Services.PipelineService.html
@@ -5211,15 +5126,15 @@ references:
   commentId: T:CG.Purple.Managers.MailMessageManager
   fullName: CG.Purple.Managers.MailMessageManager
   nameWithType: MailMessageManager
-- uid: CG.Purple.Managers.MailMessageManager.#ctor(IOptions{BllOptions},IMailMessageRepository,ICryptographer,ILogger{CG.Purple.Managers.IMailMessageManager})
-  name: MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, ICryptographer, ILogger<IMailMessageManager>)
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__ctor_IOptions_BllOptions__IMailMessageRepository_ICryptographer_ILogger_CG_Purple_Managers_IMailMessageManager__
-  commentId: M:CG.Purple.Managers.MailMessageManager.#ctor(IOptions{BllOptions},IMailMessageRepository,ICryptographer,ILogger{CG.Purple.Managers.IMailMessageManager})
-  name.vb: MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, ICryptographer, ILogger(Of IMailMessageManager))
-  fullName: CG.Purple.Managers.MailMessageManager.MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, ICryptographer, ILogger<CG.Purple.Managers.IMailMessageManager>)
-  fullName.vb: CG.Purple.Managers.MailMessageManager.MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, ICryptographer, ILogger(Of CG.Purple.Managers.IMailMessageManager))
-  nameWithType: MailMessageManager.MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, ICryptographer, ILogger<IMailMessageManager>)
-  nameWithType.vb: MailMessageManager.MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, ICryptographer, ILogger(Of IMailMessageManager))
+- uid: CG.Purple.Managers.MailMessageManager.#ctor(IOptions{BllOptions},IMailMessageRepository,ILogger{CG.Purple.Managers.IMailMessageManager})
+  name: MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, ILogger<IMailMessageManager>)
+  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__ctor_IOptions_BllOptions__IMailMessageRepository_ILogger_CG_Purple_Managers_IMailMessageManager__
+  commentId: M:CG.Purple.Managers.MailMessageManager.#ctor(IOptions{BllOptions},IMailMessageRepository,ILogger{CG.Purple.Managers.IMailMessageManager})
+  name.vb: MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, ILogger(Of IMailMessageManager))
+  fullName: CG.Purple.Managers.MailMessageManager.MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, ILogger<CG.Purple.Managers.IMailMessageManager>)
+  fullName.vb: CG.Purple.Managers.MailMessageManager.MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, ILogger(Of CG.Purple.Managers.IMailMessageManager))
+  nameWithType: MailMessageManager.MailMessageManager(IOptions<BllOptions>, IMailMessageRepository, ILogger<IMailMessageManager>)
+  nameWithType.vb: MailMessageManager.MailMessageManager(IOptions(Of BllOptions), IMailMessageRepository, ILogger(Of IMailMessageManager))
 - uid: CG.Purple.Managers.MailMessageManager.#ctor*
   name: MailMessageManager
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__ctor_
@@ -5227,12 +5142,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MailMessageManager.MailMessageManager
   nameWithType: MailMessageManager.MailMessageManager
-- uid: CG.Purple.Managers.MailMessageManager._cryptographer
-  name: _cryptographer
-  href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__cryptographer
-  commentId: F:CG.Purple.Managers.MailMessageManager._cryptographer
-  fullName: CG.Purple.Managers.MailMessageManager._cryptographer
-  nameWithType: MailMessageManager._cryptographer
 - uid: CG.Purple.Managers.MailMessageManager._logger
   name: _logger
   href: api/CG.Purple.Managers.MailMessageManager.html#CG_Purple_Managers_MailMessageManager__logger
@@ -5385,15 +5294,15 @@ references:
   commentId: T:CG.Purple.Managers.MessageLogManager
   fullName: CG.Purple.Managers.MessageLogManager
   nameWithType: MessageLogManager
-- uid: CG.Purple.Managers.MessageLogManager.#ctor(IMessageLogRepository,CG.Cryptography.ICryptographer,ILogger{CG.Purple.Managers.IMessageLogManager})
-  name: MessageLogManager(IMessageLogRepository, ICryptographer, ILogger<IMessageLogManager>)
-  href: api/CG.Purple.Managers.MessageLogManager.html#CG_Purple_Managers_MessageLogManager__ctor_IMessageLogRepository_CG_Cryptography_ICryptographer_ILogger_CG_Purple_Managers_IMessageLogManager__
-  commentId: M:CG.Purple.Managers.MessageLogManager.#ctor(IMessageLogRepository,CG.Cryptography.ICryptographer,ILogger{CG.Purple.Managers.IMessageLogManager})
-  name.vb: MessageLogManager(IMessageLogRepository, ICryptographer, ILogger(Of IMessageLogManager))
-  fullName: CG.Purple.Managers.MessageLogManager.MessageLogManager(IMessageLogRepository, CG.Cryptography.ICryptographer, ILogger<CG.Purple.Managers.IMessageLogManager>)
-  fullName.vb: CG.Purple.Managers.MessageLogManager.MessageLogManager(IMessageLogRepository, CG.Cryptography.ICryptographer, ILogger(Of CG.Purple.Managers.IMessageLogManager))
-  nameWithType: MessageLogManager.MessageLogManager(IMessageLogRepository, ICryptographer, ILogger<IMessageLogManager>)
-  nameWithType.vb: MessageLogManager.MessageLogManager(IMessageLogRepository, ICryptographer, ILogger(Of IMessageLogManager))
+- uid: CG.Purple.Managers.MessageLogManager.#ctor(IMessageLogRepository,ILogger{CG.Purple.Managers.IMessageLogManager})
+  name: MessageLogManager(IMessageLogRepository, ILogger<IMessageLogManager>)
+  href: api/CG.Purple.Managers.MessageLogManager.html#CG_Purple_Managers_MessageLogManager__ctor_IMessageLogRepository_ILogger_CG_Purple_Managers_IMessageLogManager__
+  commentId: M:CG.Purple.Managers.MessageLogManager.#ctor(IMessageLogRepository,ILogger{CG.Purple.Managers.IMessageLogManager})
+  name.vb: MessageLogManager(IMessageLogRepository, ILogger(Of IMessageLogManager))
+  fullName: CG.Purple.Managers.MessageLogManager.MessageLogManager(IMessageLogRepository, ILogger<CG.Purple.Managers.IMessageLogManager>)
+  fullName.vb: CG.Purple.Managers.MessageLogManager.MessageLogManager(IMessageLogRepository, ILogger(Of CG.Purple.Managers.IMessageLogManager))
+  nameWithType: MessageLogManager.MessageLogManager(IMessageLogRepository, ILogger<IMessageLogManager>)
+  nameWithType.vb: MessageLogManager.MessageLogManager(IMessageLogRepository, ILogger(Of IMessageLogManager))
 - uid: CG.Purple.Managers.MessageLogManager.#ctor*
   name: MessageLogManager
   href: api/CG.Purple.Managers.MessageLogManager.html#CG_Purple_Managers_MessageLogManager__ctor_
@@ -5401,12 +5310,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.MessageLogManager.MessageLogManager
   nameWithType: MessageLogManager.MessageLogManager
-- uid: CG.Purple.Managers.MessageLogManager._cryptographer
-  name: _cryptographer
-  href: api/CG.Purple.Managers.MessageLogManager.html#CG_Purple_Managers_MessageLogManager__cryptographer
-  commentId: F:CG.Purple.Managers.MessageLogManager._cryptographer
-  fullName: CG.Purple.Managers.MessageLogManager._cryptographer
-  nameWithType: MessageLogManager._cryptographer
 - uid: CG.Purple.Managers.MessageLogManager._logger
   name: _logger
   href: api/CG.Purple.Managers.MessageLogManager.html#CG_Purple_Managers_MessageLogManager__logger
@@ -6596,15 +6499,15 @@ references:
   commentId: T:CG.Purple.Managers.TextMessageManager
   fullName: CG.Purple.Managers.TextMessageManager
   nameWithType: TextMessageManager
-- uid: CG.Purple.Managers.TextMessageManager.#ctor(IOptions{BllOptions},ITextMessageRepository,ICryptographer,ILogger{CG.Purple.Managers.ITextMessageManager})
-  name: TextMessageManager(IOptions<BllOptions>, ITextMessageRepository, ICryptographer, ILogger<ITextMessageManager>)
-  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__ctor_IOptions_BllOptions__ITextMessageRepository_ICryptographer_ILogger_CG_Purple_Managers_ITextMessageManager__
-  commentId: M:CG.Purple.Managers.TextMessageManager.#ctor(IOptions{BllOptions},ITextMessageRepository,ICryptographer,ILogger{CG.Purple.Managers.ITextMessageManager})
-  name.vb: TextMessageManager(IOptions(Of BllOptions), ITextMessageRepository, ICryptographer, ILogger(Of ITextMessageManager))
-  fullName: CG.Purple.Managers.TextMessageManager.TextMessageManager(IOptions<BllOptions>, ITextMessageRepository, ICryptographer, ILogger<CG.Purple.Managers.ITextMessageManager>)
-  fullName.vb: CG.Purple.Managers.TextMessageManager.TextMessageManager(IOptions(Of BllOptions), ITextMessageRepository, ICryptographer, ILogger(Of CG.Purple.Managers.ITextMessageManager))
-  nameWithType: TextMessageManager.TextMessageManager(IOptions<BllOptions>, ITextMessageRepository, ICryptographer, ILogger<ITextMessageManager>)
-  nameWithType.vb: TextMessageManager.TextMessageManager(IOptions(Of BllOptions), ITextMessageRepository, ICryptographer, ILogger(Of ITextMessageManager))
+- uid: CG.Purple.Managers.TextMessageManager.#ctor(IOptions{BllOptions},ITextMessageRepository,ILogger{CG.Purple.Managers.ITextMessageManager})
+  name: TextMessageManager(IOptions<BllOptions>, ITextMessageRepository, ILogger<ITextMessageManager>)
+  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__ctor_IOptions_BllOptions__ITextMessageRepository_ILogger_CG_Purple_Managers_ITextMessageManager__
+  commentId: M:CG.Purple.Managers.TextMessageManager.#ctor(IOptions{BllOptions},ITextMessageRepository,ILogger{CG.Purple.Managers.ITextMessageManager})
+  name.vb: TextMessageManager(IOptions(Of BllOptions), ITextMessageRepository, ILogger(Of ITextMessageManager))
+  fullName: CG.Purple.Managers.TextMessageManager.TextMessageManager(IOptions<BllOptions>, ITextMessageRepository, ILogger<CG.Purple.Managers.ITextMessageManager>)
+  fullName.vb: CG.Purple.Managers.TextMessageManager.TextMessageManager(IOptions(Of BllOptions), ITextMessageRepository, ILogger(Of CG.Purple.Managers.ITextMessageManager))
+  nameWithType: TextMessageManager.TextMessageManager(IOptions<BllOptions>, ITextMessageRepository, ILogger<ITextMessageManager>)
+  nameWithType.vb: TextMessageManager.TextMessageManager(IOptions(Of BllOptions), ITextMessageRepository, ILogger(Of ITextMessageManager))
 - uid: CG.Purple.Managers.TextMessageManager.#ctor*
   name: TextMessageManager
   href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__ctor_
@@ -6612,12 +6515,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.TextMessageManager.TextMessageManager
   nameWithType: TextMessageManager.TextMessageManager
-- uid: CG.Purple.Managers.TextMessageManager._cryptographer
-  name: _cryptographer
-  href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__cryptographer
-  commentId: F:CG.Purple.Managers.TextMessageManager._cryptographer
-  fullName: CG.Purple.Managers.TextMessageManager._cryptographer
-  nameWithType: TextMessageManager._cryptographer
 - uid: CG.Purple.Managers.TextMessageManager._logger
   name: _logger
   href: api/CG.Purple.Managers.TextMessageManager.html#CG_Purple_Managers_TextMessageManager__logger
@@ -8384,6 +8281,56 @@ references:
   commentId: N:CG.Purple.Providers
   fullName: CG.Purple.Providers
   nameWithType: CG.Purple.Providers
+- uid: CG.Purple.Providers.DoNothing
+  name: CG.Purple.Providers.DoNothing
+  href: api/CG.Purple.Providers.DoNothing.html
+  commentId: N:CG.Purple.Providers.DoNothing
+  fullName: CG.Purple.Providers.DoNothing
+  nameWithType: CG.Purple.Providers.DoNothing
+- uid: CG.Purple.Providers.DoNothing.DoNothingProvider
+  name: DoNothingProvider
+  href: api/CG.Purple.Providers.DoNothing.DoNothingProvider.html
+  commentId: T:CG.Purple.Providers.DoNothing.DoNothingProvider
+  fullName: CG.Purple.Providers.DoNothing.DoNothingProvider
+  nameWithType: DoNothingProvider
+- uid: CG.Purple.Providers.DoNothing.DoNothingProvider.#ctor(IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.DoNothing.DoNothingProvider})
+  name: DoNothingProvider(IMessageManager, IMessageLogManager, ILogger<DoNothingProvider>)
+  href: api/CG.Purple.Providers.DoNothing.DoNothingProvider.html#CG_Purple_Providers_DoNothing_DoNothingProvider__ctor_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_DoNothing_DoNothingProvider__
+  commentId: M:CG.Purple.Providers.DoNothing.DoNothingProvider.#ctor(IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.DoNothing.DoNothingProvider})
+  name.vb: DoNothingProvider(IMessageManager, IMessageLogManager, ILogger(Of DoNothingProvider))
+  fullName: CG.Purple.Providers.DoNothing.DoNothingProvider.DoNothingProvider(IMessageManager, IMessageLogManager, ILogger<CG.Purple.Providers.DoNothing.DoNothingProvider>)
+  fullName.vb: CG.Purple.Providers.DoNothing.DoNothingProvider.DoNothingProvider(IMessageManager, IMessageLogManager, ILogger(Of CG.Purple.Providers.DoNothing.DoNothingProvider))
+  nameWithType: DoNothingProvider.DoNothingProvider(IMessageManager, IMessageLogManager, ILogger<DoNothingProvider>)
+  nameWithType.vb: DoNothingProvider.DoNothingProvider(IMessageManager, IMessageLogManager, ILogger(Of DoNothingProvider))
+- uid: CG.Purple.Providers.DoNothing.DoNothingProvider.#ctor*
+  name: DoNothingProvider
+  href: api/CG.Purple.Providers.DoNothing.DoNothingProvider.html#CG_Purple_Providers_DoNothing_DoNothingProvider__ctor_
+  commentId: Overload:CG.Purple.Providers.DoNothing.DoNothingProvider.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Providers.DoNothing.DoNothingProvider.DoNothingProvider
+  nameWithType: DoNothingProvider.DoNothingProvider
+- uid: CG.Purple.Providers.DoNothing.DoNothingProvider._random
+  name: _random
+  href: api/CG.Purple.Providers.DoNothing.DoNothingProvider.html#CG_Purple_Providers_DoNothing_DoNothingProvider__random
+  commentId: F:CG.Purple.Providers.DoNothing.DoNothingProvider._random
+  fullName: CG.Purple.Providers.DoNothing.DoNothingProvider._random
+  nameWithType: DoNothingProvider._random
+- uid: CG.Purple.Providers.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
+  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  href: api/CG.Purple.Providers.DoNothing.DoNothingProvider.html#CG_Purple_Providers_DoNothing_DoNothingProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
+  commentId: M:CG.Purple.Providers.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
+  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+  fullName: CG.Purple.Providers.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  fullName.vb: CG.Purple.Providers.DoNothing.DoNothingProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+  nameWithType: DoNothingProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  nameWithType.vb: DoNothingProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+- uid: CG.Purple.Providers.DoNothing.DoNothingProvider.ProcessMessagesAsync*
+  name: ProcessMessagesAsync
+  href: api/CG.Purple.Providers.DoNothing.DoNothingProvider.html#CG_Purple_Providers_DoNothing_DoNothingProvider_ProcessMessagesAsync_
+  commentId: Overload:CG.Purple.Providers.DoNothing.DoNothingProvider.ProcessMessagesAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.DoNothing.DoNothingProvider.ProcessMessagesAsync
+  nameWithType: DoNothingProvider.ProcessMessagesAsync
 - uid: CG.Purple.Providers.IMessageProvider
   name: IMessageProvider
   href: api/CG.Purple.Providers.IMessageProvider.html
@@ -8527,6 +8474,160 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Providers.MessageExtensions001.ToSentStateAsync
   nameWithType: MessageExtensions001.ToSentStateAsync
+- uid: CG.Purple.Providers.MessageProviderBase`1
+  name: MessageProviderBase<T>
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html
+  commentId: T:CG.Purple.Providers.MessageProviderBase`1
+  name.vb: MessageProviderBase(Of T)
+  fullName: CG.Purple.Providers.MessageProviderBase<T>
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T)
+  nameWithType: MessageProviderBase<T>
+  nameWithType.vb: MessageProviderBase(Of T)
+- uid: CG.Purple.Providers.MessageProviderBase`1.#ctor(IMessageManager,IMessageLogManager,ILogger{`0})
+  name: MessageProviderBase(IMessageManager, IMessageLogManager, ILogger<T>)
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__ctor_IMessageManager_IMessageLogManager_ILogger__0__
+  commentId: M:CG.Purple.Providers.MessageProviderBase`1.#ctor(IMessageManager,IMessageLogManager,ILogger{`0})
+  name.vb: MessageProviderBase(IMessageManager, IMessageLogManager, ILogger(Of T))
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.MessageProviderBase(IMessageManager, IMessageLogManager, ILogger<T>)
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).MessageProviderBase(IMessageManager, IMessageLogManager, ILogger(Of T))
+  nameWithType: MessageProviderBase<T>.MessageProviderBase(IMessageManager, IMessageLogManager, ILogger<T>)
+  nameWithType.vb: MessageProviderBase(Of T).MessageProviderBase(IMessageManager, IMessageLogManager, ILogger(Of T))
+- uid: CG.Purple.Providers.MessageProviderBase`1.#ctor*
+  name: MessageProviderBase
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__ctor_
+  commentId: Overload:CG.Purple.Providers.MessageProviderBase`1.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.MessageProviderBase
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).MessageProviderBase
+  nameWithType: MessageProviderBase<T>.MessageProviderBase
+  nameWithType.vb: MessageProviderBase(Of T).MessageProviderBase
+- uid: CG.Purple.Providers.MessageProviderBase`1._logger
+  name: _logger
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__logger
+  commentId: F:CG.Purple.Providers.MessageProviderBase`1._logger
+  fullName: CG.Purple.Providers.MessageProviderBase<T>._logger
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T)._logger
+  nameWithType: MessageProviderBase<T>._logger
+  nameWithType.vb: MessageProviderBase(Of T)._logger
+- uid: CG.Purple.Providers.MessageProviderBase`1._messageLogManager
+  name: _messageLogManager
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__messageLogManager
+  commentId: F:CG.Purple.Providers.MessageProviderBase`1._messageLogManager
+  fullName: CG.Purple.Providers.MessageProviderBase<T>._messageLogManager
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T)._messageLogManager
+  nameWithType: MessageProviderBase<T>._messageLogManager
+  nameWithType.vb: MessageProviderBase(Of T)._messageLogManager
+- uid: CG.Purple.Providers.MessageProviderBase`1._messageManager
+  name: _messageManager
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__messageManager
+  commentId: F:CG.Purple.Providers.MessageProviderBase`1._messageManager
+  fullName: CG.Purple.Providers.MessageProviderBase<T>._messageManager
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T)._messageManager
+  nameWithType: MessageProviderBase<T>._messageManager
+  nameWithType.vb: MessageProviderBase(Of T)._messageManager
+- uid: CG.Purple.Providers.MessageProviderBase`1.MessageFailedToSendAsync(System.String,Message,CancellationToken)
+  name: MessageFailedToSendAsync(String, Message, CancellationToken)
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageFailedToSendAsync_System_String_Message_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageProviderBase`1.MessageFailedToSendAsync(System.String,Message,CancellationToken)
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.MessageFailedToSendAsync(System.String, Message, CancellationToken)
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).MessageFailedToSendAsync(System.String, Message, CancellationToken)
+  nameWithType: MessageProviderBase<T>.MessageFailedToSendAsync(String, Message, CancellationToken)
+  nameWithType.vb: MessageProviderBase(Of T).MessageFailedToSendAsync(String, Message, CancellationToken)
+- uid: CG.Purple.Providers.MessageProviderBase`1.MessageFailedToSendAsync*
+  name: MessageFailedToSendAsync
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageFailedToSendAsync_
+  commentId: Overload:CG.Purple.Providers.MessageProviderBase`1.MessageFailedToSendAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.MessageFailedToSendAsync
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).MessageFailedToSendAsync
+  nameWithType: MessageProviderBase<T>.MessageFailedToSendAsync
+  nameWithType.vb: MessageProviderBase(Of T).MessageFailedToSendAsync
+- uid: CG.Purple.Providers.MessageProviderBase`1.MessageIsWrongTypeAsync(Message,CancellationToken)
+  name: MessageIsWrongTypeAsync(Message, CancellationToken)
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageIsWrongTypeAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageProviderBase`1.MessageIsWrongTypeAsync(Message,CancellationToken)
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.MessageIsWrongTypeAsync(Message, CancellationToken)
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).MessageIsWrongTypeAsync(Message, CancellationToken)
+  nameWithType: MessageProviderBase<T>.MessageIsWrongTypeAsync(Message, CancellationToken)
+  nameWithType.vb: MessageProviderBase(Of T).MessageIsWrongTypeAsync(Message, CancellationToken)
+- uid: CG.Purple.Providers.MessageProviderBase`1.MessageIsWrongTypeAsync*
+  name: MessageIsWrongTypeAsync
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageIsWrongTypeAsync_
+  commentId: Overload:CG.Purple.Providers.MessageProviderBase`1.MessageIsWrongTypeAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.MessageIsWrongTypeAsync
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).MessageIsWrongTypeAsync
+  nameWithType: MessageProviderBase<T>.MessageIsWrongTypeAsync
+  nameWithType.vb: MessageProviderBase(Of T).MessageIsWrongTypeAsync
+- uid: CG.Purple.Providers.MessageProviderBase`1.MessageWasSentAsync(Message,CancellationToken)
+  name: MessageWasSentAsync(Message, CancellationToken)
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageWasSentAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageProviderBase`1.MessageWasSentAsync(Message,CancellationToken)
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.MessageWasSentAsync(Message, CancellationToken)
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).MessageWasSentAsync(Message, CancellationToken)
+  nameWithType: MessageProviderBase<T>.MessageWasSentAsync(Message, CancellationToken)
+  nameWithType.vb: MessageProviderBase(Of T).MessageWasSentAsync(Message, CancellationToken)
+- uid: CG.Purple.Providers.MessageProviderBase`1.MessageWasSentAsync*
+  name: MessageWasSentAsync
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageWasSentAsync_
+  commentId: Overload:CG.Purple.Providers.MessageProviderBase`1.MessageWasSentAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.MessageWasSentAsync
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).MessageWasSentAsync
+  nameWithType: MessageProviderBase<T>.MessageWasSentAsync
+  nameWithType.vb: MessageProviderBase(Of T).MessageWasSentAsync
+- uid: CG.Purple.Providers.MessageProviderBase`1.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
+  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageProviderBase`1.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
+  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+  nameWithType: MessageProviderBase<T>.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  nameWithType.vb: MessageProviderBase(Of T).ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+- uid: CG.Purple.Providers.MessageProviderBase`1.ProcessMessagesAsync*
+  name: ProcessMessagesAsync
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_ProcessMessagesAsync_
+  commentId: Overload:CG.Purple.Providers.MessageProviderBase`1.ProcessMessagesAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.ProcessMessagesAsync
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).ProcessMessagesAsync
+  nameWithType: MessageProviderBase<T>.ProcessMessagesAsync
+  nameWithType.vb: MessageProviderBase(Of T).ProcessMessagesAsync
+- uid: CG.Purple.Providers.MessageProviderBase`1.UnableToFindMailMessageAsync(Message,CancellationToken)
+  name: UnableToFindMailMessageAsync(Message, CancellationToken)
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_UnableToFindMailMessageAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageProviderBase`1.UnableToFindMailMessageAsync(Message,CancellationToken)
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.UnableToFindMailMessageAsync(Message, CancellationToken)
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).UnableToFindMailMessageAsync(Message, CancellationToken)
+  nameWithType: MessageProviderBase<T>.UnableToFindMailMessageAsync(Message, CancellationToken)
+  nameWithType.vb: MessageProviderBase(Of T).UnableToFindMailMessageAsync(Message, CancellationToken)
+- uid: CG.Purple.Providers.MessageProviderBase`1.UnableToFindMailMessageAsync*
+  name: UnableToFindMailMessageAsync
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_UnableToFindMailMessageAsync_
+  commentId: Overload:CG.Purple.Providers.MessageProviderBase`1.UnableToFindMailMessageAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.UnableToFindMailMessageAsync
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).UnableToFindMailMessageAsync
+  nameWithType: MessageProviderBase<T>.UnableToFindMailMessageAsync
+  nameWithType.vb: MessageProviderBase(Of T).UnableToFindMailMessageAsync
+- uid: CG.Purple.Providers.MessageProviderBase`1.UnableToFindTextMessageAsync(Message,CancellationToken)
+  name: UnableToFindTextMessageAsync(Message, CancellationToken)
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_UnableToFindTextMessageAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageProviderBase`1.UnableToFindTextMessageAsync(Message,CancellationToken)
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.UnableToFindTextMessageAsync(Message, CancellationToken)
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).UnableToFindTextMessageAsync(Message, CancellationToken)
+  nameWithType: MessageProviderBase<T>.UnableToFindTextMessageAsync(Message, CancellationToken)
+  nameWithType.vb: MessageProviderBase(Of T).UnableToFindTextMessageAsync(Message, CancellationToken)
+- uid: CG.Purple.Providers.MessageProviderBase`1.UnableToFindTextMessageAsync*
+  name: UnableToFindTextMessageAsync
+  href: api/CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_UnableToFindTextMessageAsync_
+  commentId: Overload:CG.Purple.Providers.MessageProviderBase`1.UnableToFindTextMessageAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageProviderBase<T>.UnableToFindTextMessageAsync
+  fullName.vb: CG.Purple.Providers.MessageProviderBase(Of T).UnableToFindTextMessageAsync
+  nameWithType: MessageProviderBase<T>.UnableToFindTextMessageAsync
+  nameWithType.vb: MessageProviderBase(Of T).UnableToFindTextMessageAsync
 - uid: CG.Purple.Providers.MessageProviderFactory
   name: MessageProviderFactory
   href: api/CG.Purple.Providers.MessageProviderFactory.html
@@ -8668,6 +8769,145 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Providers.ProviderException.RelatedProvider
   nameWithType: ProviderException.RelatedProvider
+- uid: CG.Purple.Providers.SendGrid
+  name: CG.Purple.Providers.SendGrid
+  href: api/CG.Purple.Providers.SendGrid.html
+  commentId: N:CG.Purple.Providers.SendGrid
+  fullName: CG.Purple.Providers.SendGrid
+  nameWithType: CG.Purple.Providers.SendGrid
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider
+  name: SendGridProvider
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html
+  commentId: T:CG.Purple.Providers.SendGrid.SendGridProvider
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider
+  nameWithType: SendGridProvider
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.SendGrid.SendGridProvider})
+  name: SendGridProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SendGridProvider>)
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider__ctor_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_SendGrid_SendGridProvider__
+  commentId: M:CG.Purple.Providers.SendGrid.SendGridProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.SendGrid.SendGridProvider})
+  name.vb: SendGridProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SendGridProvider))
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider.SendGridProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<CG.Purple.Providers.SendGrid.SendGridProvider>)
+  fullName.vb: CG.Purple.Providers.SendGrid.SendGridProvider.SendGridProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of CG.Purple.Providers.SendGrid.SendGridProvider))
+  nameWithType: SendGridProvider.SendGridProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SendGridProvider>)
+  nameWithType.vb: SendGridProvider.SendGridProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SendGridProvider))
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider.#ctor*
+  name: SendGridProvider
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider__ctor_
+  commentId: Overload:CG.Purple.Providers.SendGrid.SendGridProvider.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider.SendGridProvider
+  nameWithType: SendGridProvider.SendGridProvider
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider._mailMessageManager
+  name: _mailMessageManager
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider__mailMessageManager
+  commentId: F:CG.Purple.Providers.SendGrid.SendGridProvider._mailMessageManager
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider._mailMessageManager
+  nameWithType: SendGridProvider._mailMessageManager
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider.CreateDotNetMessage(MailMessage)
+  name: CreateDotNetMessage(MailMessage)
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider_CreateDotNetMessage_MailMessage_
+  commentId: M:CG.Purple.Providers.SendGrid.SendGridProvider.CreateDotNetMessage(MailMessage)
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider.CreateDotNetMessage(MailMessage)
+  nameWithType: SendGridProvider.CreateDotNetMessage(MailMessage)
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider.CreateDotNetMessage*
+  name: CreateDotNetMessage
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider_CreateDotNetMessage_
+  commentId: Overload:CG.Purple.Providers.SendGrid.SendGridProvider.CreateDotNetMessage
+  isSpec: "True"
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider.CreateDotNetMessage
+  nameWithType: SendGridProvider.CreateDotNetMessage
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
+  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
+  commentId: M:CG.Purple.Providers.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
+  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  fullName.vb: CG.Purple.Providers.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+  nameWithType: SendGridProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  nameWithType.vb: SendGridProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider.ProcessMessagesAsync*
+  name: ProcessMessagesAsync
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider_ProcessMessagesAsync_
+  commentId: Overload:CG.Purple.Providers.SendGrid.SendGridProvider.ProcessMessagesAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider.ProcessMessagesAsync
+  nameWithType: SendGridProvider.ProcessMessagesAsync
+- uid: CG.Purple.Providers.Smtp
+  name: CG.Purple.Providers.Smtp
+  href: api/CG.Purple.Providers.Smtp.html
+  commentId: N:CG.Purple.Providers.Smtp
+  fullName: CG.Purple.Providers.Smtp
+  nameWithType: CG.Purple.Providers.Smtp
+- uid: CG.Purple.Providers.Smtp.SmtpProvider
+  name: SmtpProvider
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html
+  commentId: T:CG.Purple.Providers.Smtp.SmtpProvider
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider
+  nameWithType: SmtpProvider
+- uid: CG.Purple.Providers.Smtp.SmtpProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.Smtp.SmtpProvider})
+  name: SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SmtpProvider>)
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider__ctor_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_Smtp_SmtpProvider__
+  commentId: M:CG.Purple.Providers.Smtp.SmtpProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.Smtp.SmtpProvider})
+  name.vb: SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SmtpProvider))
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider.SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<CG.Purple.Providers.Smtp.SmtpProvider>)
+  fullName.vb: CG.Purple.Providers.Smtp.SmtpProvider.SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of CG.Purple.Providers.Smtp.SmtpProvider))
+  nameWithType: SmtpProvider.SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SmtpProvider>)
+  nameWithType.vb: SmtpProvider.SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SmtpProvider))
+- uid: CG.Purple.Providers.Smtp.SmtpProvider.#ctor*
+  name: SmtpProvider
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider__ctor_
+  commentId: Overload:CG.Purple.Providers.Smtp.SmtpProvider.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider.SmtpProvider
+  nameWithType: SmtpProvider.SmtpProvider
+- uid: CG.Purple.Providers.Smtp.SmtpProvider._mailMessageManager
+  name: _mailMessageManager
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider__mailMessageManager
+  commentId: F:CG.Purple.Providers.Smtp.SmtpProvider._mailMessageManager
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider._mailMessageManager
+  nameWithType: SmtpProvider._mailMessageManager
+- uid: CG.Purple.Providers.Smtp.SmtpProvider.CreateDotNetMessage(MailMessage)
+  name: CreateDotNetMessage(MailMessage)
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider_CreateDotNetMessage_MailMessage_
+  commentId: M:CG.Purple.Providers.Smtp.SmtpProvider.CreateDotNetMessage(MailMessage)
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider.CreateDotNetMessage(MailMessage)
+  nameWithType: SmtpProvider.CreateDotNetMessage(MailMessage)
+- uid: CG.Purple.Providers.Smtp.SmtpProvider.CreateDotNetMessage*
+  name: CreateDotNetMessage
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider_CreateDotNetMessage_
+  commentId: Overload:CG.Purple.Providers.Smtp.SmtpProvider.CreateDotNetMessage
+  isSpec: "True"
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider.CreateDotNetMessage
+  nameWithType: SmtpProvider.CreateDotNetMessage
+- uid: CG.Purple.Providers.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
+  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
+  commentId: M:CG.Purple.Providers.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
+  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  fullName.vb: CG.Purple.Providers.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+  nameWithType: SmtpProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
+  nameWithType.vb: SmtpProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
+- uid: CG.Purple.Providers.Smtp.SmtpProvider.ProcessMessagesAsync*
+  name: ProcessMessagesAsync
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider_ProcessMessagesAsync_
+  commentId: Overload:CG.Purple.Providers.Smtp.SmtpProvider.ProcessMessagesAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider.ProcessMessagesAsync
+  nameWithType: SmtpProvider.ProcessMessagesAsync
+- uid: CG.Purple.Providers.Smtp.SmtpProvider.ResetMessageAsync(Message,CancellationToken)
+  name: ResetMessageAsync(Message, CancellationToken)
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider_ResetMessageAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.Providers.Smtp.SmtpProvider.ResetMessageAsync(Message,CancellationToken)
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider.ResetMessageAsync(Message, CancellationToken)
+  nameWithType: SmtpProvider.ResetMessageAsync(Message, CancellationToken)
+- uid: CG.Purple.Providers.Smtp.SmtpProvider.ResetMessageAsync*
+  name: ResetMessageAsync
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider_ResetMessageAsync_
+  commentId: Overload:CG.Purple.Providers.Smtp.SmtpProvider.ResetMessageAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider.ResetMessageAsync
+  nameWithType: SmtpProvider.ResetMessageAsync
 - uid: CG.Purple.Repositories
   name: CG.Purple.Repositories
   href: api/CG.Purple.Repositories.html
@@ -10984,226 +11224,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Seeding.Options.TextMessageOptions.To
   nameWithType: TextMessageOptions.To
-- uid: CG.Purple.SendGrid
-  name: CG.Purple.SendGrid
-  href: api/CG.Purple.SendGrid.html
-  commentId: N:CG.Purple.SendGrid
-  fullName: CG.Purple.SendGrid
-  nameWithType: CG.Purple.SendGrid
-- uid: CG.Purple.SendGrid.Module
-  name: Module
-  href: api/CG.Purple.SendGrid.Module.html
-  commentId: T:CG.Purple.SendGrid.Module
-  fullName: CG.Purple.SendGrid.Module
-  nameWithType: Module
-- uid: CG.Purple.SendGrid.Module.Configure(WebApplication)
-  name: Configure(WebApplication)
-  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_Configure_WebApplication_
-  commentId: M:CG.Purple.SendGrid.Module.Configure(WebApplication)
-  fullName: CG.Purple.SendGrid.Module.Configure(WebApplication)
-  nameWithType: Module.Configure(WebApplication)
-- uid: CG.Purple.SendGrid.Module.Configure*
-  name: Configure
-  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_Configure_
-  commentId: Overload:CG.Purple.SendGrid.Module.Configure
-  isSpec: "True"
-  fullName: CG.Purple.SendGrid.Module.Configure
-  nameWithType: Module.Configure
-- uid: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
-  name: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
-  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_System_Nullable_ILogger__
-  commentId: M:CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
-  name.vb: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
-  fullName: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable<ILogger>)
-  fullName.vb: CG.Purple.SendGrid.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable(Of ILogger))
-  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
-  nameWithType.vb: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
-- uid: CG.Purple.SendGrid.Module.ConfigureServices*
-  name: ConfigureServices
-  href: api/CG.Purple.SendGrid.Module.html#CG_Purple_SendGrid_Module_ConfigureServices_
-  commentId: Overload:CG.Purple.SendGrid.Module.ConfigureServices
-  isSpec: "True"
-  fullName: CG.Purple.SendGrid.Module.ConfigureServices
-  nameWithType: Module.ConfigureServices
-- uid: CG.Purple.SendGrid.SendGridProvider
-  name: SendGridProvider
-  href: api/CG.Purple.SendGrid.SendGridProvider.html
-  commentId: T:CG.Purple.SendGrid.SendGridProvider
-  fullName: CG.Purple.SendGrid.SendGridProvider
-  nameWithType: SendGridProvider
-- uid: CG.Purple.SendGrid.SendGridProvider.#ctor(ILogger{IMessageProvider})
-  name: SendGridProvider(ILogger<IMessageProvider>)
-  href: api/CG.Purple.SendGrid.SendGridProvider.html#CG_Purple_SendGrid_SendGridProvider__ctor_ILogger_IMessageProvider__
-  commentId: M:CG.Purple.SendGrid.SendGridProvider.#ctor(ILogger{IMessageProvider})
-  name.vb: SendGridProvider(ILogger(Of IMessageProvider))
-  fullName: CG.Purple.SendGrid.SendGridProvider.SendGridProvider(ILogger<IMessageProvider>)
-  fullName.vb: CG.Purple.SendGrid.SendGridProvider.SendGridProvider(ILogger(Of IMessageProvider))
-  nameWithType: SendGridProvider.SendGridProvider(ILogger<IMessageProvider>)
-  nameWithType.vb: SendGridProvider.SendGridProvider(ILogger(Of IMessageProvider))
-- uid: CG.Purple.SendGrid.SendGridProvider.#ctor*
-  name: SendGridProvider
-  href: api/CG.Purple.SendGrid.SendGridProvider.html#CG_Purple_SendGrid_SendGridProvider__ctor_
-  commentId: Overload:CG.Purple.SendGrid.SendGridProvider.#ctor
-  isSpec: "True"
-  fullName: CG.Purple.SendGrid.SendGridProvider.SendGridProvider
-  nameWithType: SendGridProvider.SendGridProvider
-- uid: CG.Purple.SendGrid.SendGridProvider._logger
-  name: _logger
-  href: api/CG.Purple.SendGrid.SendGridProvider.html#CG_Purple_SendGrid_SendGridProvider__logger
-  commentId: F:CG.Purple.SendGrid.SendGridProvider._logger
-  fullName: CG.Purple.SendGrid.SendGridProvider._logger
-  nameWithType: SendGridProvider._logger
-- uid: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
-  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  href: api/CG.Purple.SendGrid.SendGridProvider.html#CG_Purple_SendGrid_SendGridProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
-  commentId: M:CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
-  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-  fullName: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  fullName.vb: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-  nameWithType: SendGridProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  nameWithType.vb: SendGridProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-- uid: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync*
-  name: ProcessMessagesAsync
-  href: api/CG.Purple.SendGrid.SendGridProvider.html#CG_Purple_SendGrid_SendGridProvider_ProcessMessagesAsync_
-  commentId: Overload:CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync
-  isSpec: "True"
-  fullName: CG.Purple.SendGrid.SendGridProvider.ProcessMessagesAsync
-  nameWithType: SendGridProvider.ProcessMessagesAsync
-- uid: CG.Purple.Smtp
-  name: CG.Purple.Smtp
-  href: api/CG.Purple.Smtp.html
-  commentId: N:CG.Purple.Smtp
-  fullName: CG.Purple.Smtp
-  nameWithType: CG.Purple.Smtp
-- uid: CG.Purple.Smtp.Module
-  name: Module
-  href: api/CG.Purple.Smtp.Module.html
-  commentId: T:CG.Purple.Smtp.Module
-  fullName: CG.Purple.Smtp.Module
-  nameWithType: Module
-- uid: CG.Purple.Smtp.Module.Configure(WebApplication)
-  name: Configure(WebApplication)
-  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_Configure_WebApplication_
-  commentId: M:CG.Purple.Smtp.Module.Configure(WebApplication)
-  fullName: CG.Purple.Smtp.Module.Configure(WebApplication)
-  nameWithType: Module.Configure(WebApplication)
-- uid: CG.Purple.Smtp.Module.Configure*
-  name: Configure
-  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_Configure_
-  commentId: Overload:CG.Purple.Smtp.Module.Configure
-  isSpec: "True"
-  fullName: CG.Purple.Smtp.Module.Configure
-  nameWithType: Module.Configure
-- uid: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
-  name: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
-  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_System_Nullable_ILogger__
-  commentId: M:CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
-  name.vb: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
-  fullName: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable<ILogger>)
-  fullName.vb: CG.Purple.Smtp.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable(Of ILogger))
-  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
-  nameWithType.vb: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
-- uid: CG.Purple.Smtp.Module.ConfigureServices*
-  name: ConfigureServices
-  href: api/CG.Purple.Smtp.Module.html#CG_Purple_Smtp_Module_ConfigureServices_
-  commentId: Overload:CG.Purple.Smtp.Module.ConfigureServices
-  isSpec: "True"
-  fullName: CG.Purple.Smtp.Module.ConfigureServices
-  nameWithType: Module.ConfigureServices
-- uid: CG.Purple.Smtp.SmtpProvider
-  name: SmtpProvider
-  href: api/CG.Purple.Smtp.SmtpProvider.html
-  commentId: T:CG.Purple.Smtp.SmtpProvider
-  fullName: CG.Purple.Smtp.SmtpProvider
-  nameWithType: SmtpProvider
-- uid: CG.Purple.Smtp.SmtpProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,IMessagePropertyManager,ILogger{IMessageProvider})
-  name: SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, ILogger<IMessageProvider>)
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider__ctor_IMailMessageManager_IMessageManager_IMessageLogManager_IMessagePropertyManager_ILogger_IMessageProvider__
-  commentId: M:CG.Purple.Smtp.SmtpProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,IMessagePropertyManager,ILogger{IMessageProvider})
-  name.vb: SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, ILogger(Of IMessageProvider))
-  fullName: CG.Purple.Smtp.SmtpProvider.SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, ILogger<IMessageProvider>)
-  fullName.vb: CG.Purple.Smtp.SmtpProvider.SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, ILogger(Of IMessageProvider))
-  nameWithType: SmtpProvider.SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, ILogger<IMessageProvider>)
-  nameWithType.vb: SmtpProvider.SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, ILogger(Of IMessageProvider))
-- uid: CG.Purple.Smtp.SmtpProvider.#ctor*
-  name: SmtpProvider
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider__ctor_
-  commentId: Overload:CG.Purple.Smtp.SmtpProvider.#ctor
-  isSpec: "True"
-  fullName: CG.Purple.Smtp.SmtpProvider.SmtpProvider
-  nameWithType: SmtpProvider.SmtpProvider
-- uid: CG.Purple.Smtp.SmtpProvider._logger
-  name: _logger
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider__logger
-  commentId: F:CG.Purple.Smtp.SmtpProvider._logger
-  fullName: CG.Purple.Smtp.SmtpProvider._logger
-  nameWithType: SmtpProvider._logger
-- uid: CG.Purple.Smtp.SmtpProvider._mailMessageManager
-  name: _mailMessageManager
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider__mailMessageManager
-  commentId: F:CG.Purple.Smtp.SmtpProvider._mailMessageManager
-  fullName: CG.Purple.Smtp.SmtpProvider._mailMessageManager
-  nameWithType: SmtpProvider._mailMessageManager
-- uid: CG.Purple.Smtp.SmtpProvider._messageManager
-  name: _messageManager
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider__messageManager
-  commentId: F:CG.Purple.Smtp.SmtpProvider._messageManager
-  fullName: CG.Purple.Smtp.SmtpProvider._messageManager
-  nameWithType: SmtpProvider._messageManager
-- uid: CG.Purple.Smtp.SmtpProvider._messagePropertyManager
-  name: _messagePropertyManager
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider__messagePropertyManager
-  commentId: F:CG.Purple.Smtp.SmtpProvider._messagePropertyManager
-  fullName: CG.Purple.Smtp.SmtpProvider._messagePropertyManager
-  nameWithType: SmtpProvider._messagePropertyManager
-- uid: CG.Purple.Smtp.SmtpProvider._processLogManager
-  name: _processLogManager
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider__processLogManager
-  commentId: F:CG.Purple.Smtp.SmtpProvider._processLogManager
-  fullName: CG.Purple.Smtp.SmtpProvider._processLogManager
-  nameWithType: SmtpProvider._processLogManager
-- uid: CG.Purple.Smtp.SmtpProvider.CreateDotNetMessage(MailMessage)
-  name: CreateDotNetMessage(MailMessage)
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider_CreateDotNetMessage_MailMessage_
-  commentId: M:CG.Purple.Smtp.SmtpProvider.CreateDotNetMessage(MailMessage)
-  fullName: CG.Purple.Smtp.SmtpProvider.CreateDotNetMessage(MailMessage)
-  nameWithType: SmtpProvider.CreateDotNetMessage(MailMessage)
-- uid: CG.Purple.Smtp.SmtpProvider.CreateDotNetMessage*
-  name: CreateDotNetMessage
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider_CreateDotNetMessage_
-  commentId: Overload:CG.Purple.Smtp.SmtpProvider.CreateDotNetMessage
-  isSpec: "True"
-  fullName: CG.Purple.Smtp.SmtpProvider.CreateDotNetMessage
-  nameWithType: SmtpProvider.CreateDotNetMessage
-- uid: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
-  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
-  commentId: M:CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
-  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-  fullName: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  fullName.vb: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-  nameWithType: SmtpProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  nameWithType.vb: SmtpProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-- uid: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync*
-  name: ProcessMessagesAsync
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_
-  commentId: Overload:CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync
-  isSpec: "True"
-  fullName: CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync
-  nameWithType: SmtpProvider.ProcessMessagesAsync
-- uid: CG.Purple.Smtp.SmtpProvider.ResetMessageAsync(Message,CancellationToken)
-  name: ResetMessageAsync(Message, CancellationToken)
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider_ResetMessageAsync_Message_CancellationToken_
-  commentId: M:CG.Purple.Smtp.SmtpProvider.ResetMessageAsync(Message,CancellationToken)
-  fullName: CG.Purple.Smtp.SmtpProvider.ResetMessageAsync(Message, CancellationToken)
-  nameWithType: SmtpProvider.ResetMessageAsync(Message, CancellationToken)
-- uid: CG.Purple.Smtp.SmtpProvider.ResetMessageAsync*
-  name: ResetMessageAsync
-  href: api/CG.Purple.Smtp.SmtpProvider.html#CG_Purple_Smtp_SmtpProvider_ResetMessageAsync_
-  commentId: Overload:CG.Purple.Smtp.SmtpProvider.ResetMessageAsync
-  isSpec: "True"
-  fullName: CG.Purple.Smtp.SmtpProvider.ResetMessageAsync
-  nameWithType: SmtpProvider.ResetMessageAsync
 - uid: CG.Purple.SqlServer
   name: CG.Purple.SqlServer
   href: api/CG.Purple.SqlServer.html
@@ -14730,91 +14750,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.TextMessageRepository.UpdateAsync
   nameWithType: TextMessageRepository.UpdateAsync
-- uid: CG.Purple.Twillio
-  name: CG.Purple.Twillio
-  href: api/CG.Purple.Twillio.html
-  commentId: N:CG.Purple.Twillio
-  fullName: CG.Purple.Twillio
-  nameWithType: CG.Purple.Twillio
-- uid: CG.Purple.Twillio.Module
-  name: Module
-  href: api/CG.Purple.Twillio.Module.html
-  commentId: T:CG.Purple.Twillio.Module
-  fullName: CG.Purple.Twillio.Module
-  nameWithType: Module
-- uid: CG.Purple.Twillio.Module.Configure(WebApplication)
-  name: Configure(WebApplication)
-  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_Configure_WebApplication_
-  commentId: M:CG.Purple.Twillio.Module.Configure(WebApplication)
-  fullName: CG.Purple.Twillio.Module.Configure(WebApplication)
-  nameWithType: Module.Configure(WebApplication)
-- uid: CG.Purple.Twillio.Module.Configure*
-  name: Configure
-  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_Configure_
-  commentId: Overload:CG.Purple.Twillio.Module.Configure
-  isSpec: "True"
-  fullName: CG.Purple.Twillio.Module.Configure
-  nameWithType: Module.Configure
-- uid: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
-  name: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
-  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_ConfigureServices_WebApplicationBuilder_IConfiguration_System_Nullable_ILogger__
-  commentId: M:CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder,IConfiguration,System.Nullable{ILogger})
-  name.vb: ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
-  fullName: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable<ILogger>)
-  fullName.vb: CG.Purple.Twillio.Module.ConfigureServices(WebApplicationBuilder, IConfiguration, System.Nullable(Of ILogger))
-  nameWithType: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable<ILogger>)
-  nameWithType.vb: Module.ConfigureServices(WebApplicationBuilder, IConfiguration, Nullable(Of ILogger))
-- uid: CG.Purple.Twillio.Module.ConfigureServices*
-  name: ConfigureServices
-  href: api/CG.Purple.Twillio.Module.html#CG_Purple_Twillio_Module_ConfigureServices_
-  commentId: Overload:CG.Purple.Twillio.Module.ConfigureServices
-  isSpec: "True"
-  fullName: CG.Purple.Twillio.Module.ConfigureServices
-  nameWithType: Module.ConfigureServices
-- uid: CG.Purple.Twillio.TwillioProvider
-  name: TwillioProvider
-  href: api/CG.Purple.Twillio.TwillioProvider.html
-  commentId: T:CG.Purple.Twillio.TwillioProvider
-  fullName: CG.Purple.Twillio.TwillioProvider
-  nameWithType: TwillioProvider
-- uid: CG.Purple.Twillio.TwillioProvider.#ctor(ILogger{IMessageProvider})
-  name: TwillioProvider(ILogger<IMessageProvider>)
-  href: api/CG.Purple.Twillio.TwillioProvider.html#CG_Purple_Twillio_TwillioProvider__ctor_ILogger_IMessageProvider__
-  commentId: M:CG.Purple.Twillio.TwillioProvider.#ctor(ILogger{IMessageProvider})
-  name.vb: TwillioProvider(ILogger(Of IMessageProvider))
-  fullName: CG.Purple.Twillio.TwillioProvider.TwillioProvider(ILogger<IMessageProvider>)
-  fullName.vb: CG.Purple.Twillio.TwillioProvider.TwillioProvider(ILogger(Of IMessageProvider))
-  nameWithType: TwillioProvider.TwillioProvider(ILogger<IMessageProvider>)
-  nameWithType.vb: TwillioProvider.TwillioProvider(ILogger(Of IMessageProvider))
-- uid: CG.Purple.Twillio.TwillioProvider.#ctor*
-  name: TwillioProvider
-  href: api/CG.Purple.Twillio.TwillioProvider.html#CG_Purple_Twillio_TwillioProvider__ctor_
-  commentId: Overload:CG.Purple.Twillio.TwillioProvider.#ctor
-  isSpec: "True"
-  fullName: CG.Purple.Twillio.TwillioProvider.TwillioProvider
-  nameWithType: TwillioProvider.TwillioProvider
-- uid: CG.Purple.Twillio.TwillioProvider._logger
-  name: _logger
-  href: api/CG.Purple.Twillio.TwillioProvider.html#CG_Purple_Twillio_TwillioProvider__logger
-  commentId: F:CG.Purple.Twillio.TwillioProvider._logger
-  fullName: CG.Purple.Twillio.TwillioProvider._logger
-  nameWithType: TwillioProvider._logger
-- uid: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
-  name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  href: api/CG.Purple.Twillio.TwillioProvider.html#CG_Purple_Twillio_TwillioProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
-  commentId: M:CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
-  name.vb: ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-  fullName: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  fullName.vb: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-  nameWithType: TwillioProvider.ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
-  nameWithType.vb: TwillioProvider.ProcessMessagesAsync(IEnumerable(Of Message), ProviderType, CancellationToken)
-- uid: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync*
-  name: ProcessMessagesAsync
-  href: api/CG.Purple.Twillio.TwillioProvider.html#CG_Purple_Twillio_TwillioProvider_ProcessMessagesAsync_
-  commentId: Overload:CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync
-  isSpec: "True"
-  fullName: CG.Purple.Twillio.TwillioProvider.ProcessMessagesAsync
-  nameWithType: TwillioProvider.ProcessMessagesAsync
 - uid: Microsoft.AspNetCore.Builder
   name: Microsoft.AspNetCore.Builder
   href: api/Microsoft.AspNetCore.Builder.html
@@ -14893,22 +14828,22 @@ references:
   commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003
   nameWithType: WebApplicationBuilderExtensions003
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name: AddDataAccessLayer(WebApplicationBuilder, String, Nullable<ILogger>)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddDataAccessLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name.vb: AddDataAccessLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddDataAccessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
-  nameWithType: WebApplicationBuilderExtensions003.AddDataAccessLayer(WebApplicationBuilder, String, Nullable<ILogger>)
-  nameWithType.vb: WebApplicationBuilderExtensions003.AddDataAccessLayer(WebApplicationBuilder, String, Nullable(Of ILogger))
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddDataAccessLayer*
-  name: AddDataAccessLayer
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddDataAccessLayer_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddDataAccessLayer
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name: AddSmtpProvider(WebApplicationBuilder, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddSmtpProvider_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})
+  name.vb: AddSmtpProvider(WebApplicationBuilder, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions003.AddSmtpProvider(WebApplicationBuilder, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions003.AddSmtpProvider(WebApplicationBuilder, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSmtpProvider*
+  name: AddSmtpProvider
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddSmtpProvider_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSmtpProvider
   isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddDataAccessLayer
-  nameWithType: WebApplicationBuilderExtensions003.AddDataAccessLayer
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSmtpProvider
+  nameWithType: WebApplicationBuilderExtensions003.AddSmtpProvider
 - uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006
   name: WebApplicationBuilderExtensions006
   href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.html

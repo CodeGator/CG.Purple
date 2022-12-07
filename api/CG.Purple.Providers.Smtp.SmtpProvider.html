@@ -78,37 +78,90 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Smtp.SmtpProvider">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Providers.Smtp.SmtpProvider">
   
   
-  <h1 id="CG_Purple_Smtp_SmtpProvider" data-uid="CG.Purple.Smtp.SmtpProvider" class="text-break">Class SmtpProvider
+  <h1 id="CG_Purple_Providers_Smtp_SmtpProvider" data-uid="CG.Purple.Providers.Smtp.SmtpProvider" class="text-break">Class SmtpProvider
   </h1>
-  <div class="markdown level0 summary"><p>This class is a SMTP implementation of the <see cref="!:IMessageProvider"></see>
+  <div class="markdown level0 summary"><p>This class is a SMTP implementation of the <a class="xref" href="CG.Purple.Providers.IMessageProvider.html">IMessageProvider</a>
 interface.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">SmtpProvider</span></div>
+    <div class="level1"><a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html">MessageProviderBase</a>&lt;<a class="xref" href="CG.Purple.Providers.Smtp.SmtpProvider.html">SmtpProvider</a>&gt;</div>
+    <div class="level2"><span class="xref">SmtpProvider</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Smtp.html">CG.Purple.Smtp</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Smtp.dll</h6>
-  <h5 id="CG_Purple_Smtp_SmtpProvider_syntax">Syntax</h5>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CG.Purple.Providers.IMessageProvider.html">IMessageProvider</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__messageManager">MessageProviderBase&lt;SmtpProvider&gt;._messageManager</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__messageLogManager">MessageProviderBase&lt;SmtpProvider&gt;._messageLogManager</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__logger">MessageProviderBase&lt;SmtpProvider&gt;._logger</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageIsWrongTypeAsync_Message_CancellationToken_">MessageProviderBase&lt;SmtpProvider&gt;.MessageIsWrongTypeAsync(Message, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_UnableToFindMailMessageAsync_Message_CancellationToken_">MessageProviderBase&lt;SmtpProvider&gt;.UnableToFindMailMessageAsync(Message, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_UnableToFindTextMessageAsync_Message_CancellationToken_">MessageProviderBase&lt;SmtpProvider&gt;.UnableToFindTextMessageAsync(Message, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageWasSentAsync_Message_CancellationToken_">MessageProviderBase&lt;SmtpProvider&gt;.MessageWasSentAsync(Message, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1_MessageFailedToSendAsync_System_String_Message_CancellationToken_">MessageProviderBase&lt;SmtpProvider&gt;.MessageFailedToSendAsync(String, Message, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Providers.Smtp.html">CG.Purple.Providers.Smtp</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Providers.Smtp.dll</h6>
+  <h5 id="CG_Purple_Providers_Smtp_SmtpProvider_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">class SmtpProvider : IMessageProvider</code></pre>
+    <pre><code class="lang-csharp hljs">class SmtpProvider : MessageProviderBase&lt;SmtpProvider&gt;, IMessageProvider</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <a id="CG_Purple_Smtp_SmtpProvider__ctor_" data-uid="CG.Purple.Smtp.SmtpProvider.#ctor*"></a>
-  <h4 id="CG_Purple_Smtp_SmtpProvider__ctor_IMailMessageManager_IMessageManager_IMessageLogManager_IMessagePropertyManager_ILogger_IMessageProvider__" data-uid="CG.Purple.Smtp.SmtpProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,IMessagePropertyManager,ILogger{IMessageProvider})">SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, ILogger&lt;IMessageProvider&gt;)</h4>
-  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Smtp.SmtpProvider.html">SmtpProvider</a>
+  <a id="CG_Purple_Providers_Smtp_SmtpProvider__ctor_" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.#ctor*"></a>
+  <h4 id="CG_Purple_Providers_Smtp_SmtpProvider__ctor_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_Smtp_SmtpProvider__" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.Smtp.SmtpProvider})">SmtpProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger&lt;SmtpProvider&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Providers.Smtp.SmtpProvider.html">SmtpProvider</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SmtpProvider(IMailMessageManager mailMessageManager, IMessageManager messageManager, IMessageLogManager processLogManager, IMessagePropertyManager messagePropertyManager, ILogger&lt;IMessageProvider&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public SmtpProvider(IMailMessageManager mailMessageManager, IMessageManager messageManager, IMessageLogManager processLogManager, ILogger&lt;SmtpProvider&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -142,14 +195,7 @@ with this provider.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IMessagePropertyManager</span></td>
-        <td><span class="parametername">messagePropertyManager</span></td>
-        <td><p>The message property manager
-to use with this provider.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">ILogger</span>&lt;<span class="xref">IMessageProvider</span>&gt;</td>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Providers.Smtp.SmtpProvider.html">SmtpProvider</a>&gt;</td>
         <td><span class="parametername">logger</span></td>
         <td><p>The logger to use with this provider.</p>
 </td>
@@ -158,30 +204,7 @@ to use with this provider.</p>
   </table>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="CG_Purple_Smtp_SmtpProvider__logger" data-uid="CG.Purple.Smtp.SmtpProvider._logger">_logger</h4>
-  <div class="markdown level1 summary"><p>This field contains the logger for this provider.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly ILogger&lt;IMessageProvider&gt; _logger</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ILogger</span>&lt;<span class="xref">IMessageProvider</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="CG_Purple_Smtp_SmtpProvider__mailMessageManager" data-uid="CG.Purple.Smtp.SmtpProvider._mailMessageManager">_mailMessageManager</h4>
+  <h4 id="CG_Purple_Providers_Smtp_SmtpProvider__mailMessageManager" data-uid="CG.Purple.Providers.Smtp.SmtpProvider._mailMessageManager">_mailMessageManager</h4>
   <div class="markdown level1 summary"><p>This field contains the mail manager for this provider.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -204,79 +227,10 @@ to use with this provider.</p>
       </tr>
     </tbody>
   </table>
-  <h4 id="CG_Purple_Smtp_SmtpProvider__messageManager" data-uid="CG.Purple.Smtp.SmtpProvider._messageManager">_messageManager</h4>
-  <div class="markdown level1 summary"><p>This field contains the message manager for this provider.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly IMessageManager _messageManager</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IMessageManager</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="CG_Purple_Smtp_SmtpProvider__messagePropertyManager" data-uid="CG.Purple.Smtp.SmtpProvider._messagePropertyManager">_messagePropertyManager</h4>
-  <div class="markdown level1 summary"><p>This field contains the message property manager for this director.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly IMessagePropertyManager _messagePropertyManager</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IMessagePropertyManager</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="CG_Purple_Smtp_SmtpProvider__processLogManager" data-uid="CG.Purple.Smtp.SmtpProvider._processLogManager">_processLogManager</h4>
-  <div class="markdown level1 summary"><p>This field contains the process log manager for this director.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly IMessageLogManager _processLogManager</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IMessageLogManager</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Smtp_SmtpProvider_CreateDotNetMessage_" data-uid="CG.Purple.Smtp.SmtpProvider.CreateDotNetMessage*"></a>
-  <h4 id="CG_Purple_Smtp_SmtpProvider_CreateDotNetMessage_MailMessage_" data-uid="CG.Purple.Smtp.SmtpProvider.CreateDotNetMessage(MailMessage)">CreateDotNetMessage(MailMessage)</h4>
+  <a id="CG_Purple_Providers_Smtp_SmtpProvider_CreateDotNetMessage_" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.CreateDotNetMessage*"></a>
+  <h4 id="CG_Purple_Providers_Smtp_SmtpProvider_CreateDotNetMessage_MailMessage_" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.CreateDotNetMessage(MailMessage)">CreateDotNetMessage(MailMessage)</h4>
   <div class="markdown level1 summary"><p>This method creates a new .NET wrapper for an email.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -318,13 +272,13 @@ to use with this provider.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_" data-uid="CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync*"></a>
-  <h4 id="CG_Purple_Smtp_SmtpProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_" data-uid="CG.Purple.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)">ProcessMessagesAsync(IEnumerable&lt;Message&gt;, ProviderType, CancellationToken)</h4>
+  <a id="CG_Purple_Providers_Smtp_SmtpProvider_ProcessMessagesAsync_" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.ProcessMessagesAsync*"></a>
+  <h4 id="CG_Purple_Providers_Smtp_SmtpProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)">ProcessMessagesAsync(IEnumerable&lt;Message&gt;, ProviderType, CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task ProcessMessagesAsync(IEnumerable&lt;Message&gt; messages, ProviderType providerType, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public override async Task ProcessMessagesAsync(IEnumerable&lt;Message&gt; messages, ProviderType providerType, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -368,8 +322,8 @@ to use with this provider.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Smtp_SmtpProvider_ResetMessageAsync_" data-uid="CG.Purple.Smtp.SmtpProvider.ResetMessageAsync*"></a>
-  <h4 id="CG_Purple_Smtp_SmtpProvider_ResetMessageAsync_Message_CancellationToken_" data-uid="CG.Purple.Smtp.SmtpProvider.ResetMessageAsync(Message,CancellationToken)">ResetMessageAsync(Message, CancellationToken)</h4>
+  <a id="CG_Purple_Providers_Smtp_SmtpProvider_ResetMessageAsync_" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.ResetMessageAsync*"></a>
+  <h4 id="CG_Purple_Providers_Smtp_SmtpProvider_ResetMessageAsync_Message_CancellationToken_" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.ResetMessageAsync(Message,CancellationToken)">ResetMessageAsync(Message, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method resets the given message to a 'Pending' state and clears
 the error count on the message.</p>
 </div>
@@ -419,6 +373,10 @@ for the lifetime of the method.</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CG.Purple.Providers.IMessageProvider.html">IMessageProvider</a>
+  </div>
 </article>
           </div>
           
