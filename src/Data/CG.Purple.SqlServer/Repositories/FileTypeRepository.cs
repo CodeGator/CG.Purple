@@ -287,6 +287,26 @@ internal class FileTypeRepository : IFileTypeRepository
         {
             // Log what we are about to do.
             _logger.LogDebug(
+                "Converting a {entity} model to an entity",
+                nameof(FileType)
+                );
+
+            // Convert the model to an entity.
+            var entity = _mapper.Map<Entities.Attachment>(
+                fileType
+                );
+
+            // Did we fail?
+            if (entity is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(FileType)} model to an entity."
+                    );
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "Creating a {ctx} data-context",
                 nameof(PurpleDbContext)
                 );
@@ -298,16 +318,44 @@ internal class FileTypeRepository : IFileTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
+                "looking for the tracked {entity} instance from the {ctx} data-context",
+                nameof(FileType),
+                nameof(PurpleDbContext)
+                );
+
+            // Find the tracked entity (if any).
+            var trackedEntry = await dbContext.FileTypes.FindAsync(
+                entity.Id,
+                cancellationToken
+                );
+
+            // Did we fail?
+            if (trackedEntry is null)
+            {
+                return; // Nothing to do!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
                 nameof(FileType),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
-            await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[FileTypes] WHERE [Id] = {0}",
-                parameters: new object[] { fileType.Id },
-                cancellationToken: cancellationToken
+            dbContext.FileTypes.Remove(
+                trackedEntry
+                );
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Saving changes to the {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Save the changes.
+            await dbContext.SaveChangesAsync(
+                cancellationToken
                 ).ConfigureAwait(false);
         }
         catch (Exception ex)
@@ -353,6 +401,7 @@ internal class FileTypeRepository : IFileTypeRepository
 
             // Perform the file type search.
             var fileTypes = await dbContext.FileTypes
+                .AsNoTracking()
                 .ToListAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -413,7 +462,8 @@ internal class FileTypeRepository : IFileTypeRepository
             // Perform the file type search.
             var fileType = await dbContext.FileTypes.Where(x => 
                 x.Extension == extension
-                ).FirstOrDefaultAsync(
+                ).AsNoTracking()
+                .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
 

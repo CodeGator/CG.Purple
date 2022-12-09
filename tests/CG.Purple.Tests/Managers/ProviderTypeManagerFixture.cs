@@ -52,7 +52,7 @@ public class ProviderTypeManagerFixture
 
     /// <summary>
     /// This method ensures the <see cref="ProviderTypeManager.AnyAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -84,14 +84,17 @@ public class ProviderTypeManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ProviderTypeManager.CountAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -123,14 +126,17 @@ public class ProviderTypeManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ProviderTypeManager.CreateAsync(ProviderType, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -178,14 +184,17 @@ public class ProviderTypeManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ProviderTypeManager.DeleteAsync(ProviderType, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -221,14 +230,17 @@ public class ProviderTypeManagerFixture
             );
 
         // Assert ...
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ProviderTypeManager.UpdateAsync(ProviderType, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -276,7 +288,10 @@ public class ProviderTypeManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     #endregion

@@ -46,7 +46,7 @@ public class ParameterTypeManagerFixture
 
     /// <summary>
     /// This method ensures the <see cref="ParameterTypeManager.AnyAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -76,14 +76,17 @@ public class ParameterTypeManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ParameterTypeManager.CountAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -113,14 +116,17 @@ public class ParameterTypeManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ParameterTypeManager.CreateAsync(ParameterType, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -166,14 +172,17 @@ public class ParameterTypeManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ParameterTypeManager.DeleteAsync(ParameterType, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -207,14 +216,17 @@ public class ParameterTypeManagerFixture
             );
 
         // Assert ...
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ParameterTypeManager.UpdateAsync(ParameterType, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -260,7 +272,10 @@ public class ParameterTypeManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     #endregion

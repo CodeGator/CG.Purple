@@ -85,12 +85,12 @@ internal class MessagePropertyManager : IMessagePropertyManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to search for messagePropertys!"
+                "Failed to search for messageProperties!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to search for messagePropertys!",
+                message: $"The manager failed to search for messageProperties!",
                 innerException: ex
                 );
         }
@@ -121,12 +121,12 @@ internal class MessagePropertyManager : IMessagePropertyManager
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to count messagePropertys!"
+                "Failed to count messageProperties!"
                 );
 
             // Provider better context.
             throw new ManagerException(
-                message: $"The manager failed to count messagePropertys!",
+                message: $"The manager failed to count messageProperties!",
                 innerException: ex
                 );
         }

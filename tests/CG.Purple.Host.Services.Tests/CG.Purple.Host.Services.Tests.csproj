@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
-        <RootNamespace>CG.Purple.Host.Services</RootNamespace>
+        <RootNamespace>CG.Purple.Host</RootNamespace>
         <Description>Test fixtures for the CG.Purple.Host.Services assembly.</Description>
     </PropertyGroup>
 
@@ -26,6 +26,11 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\Services\CG.Purple.Host.Services\CG.Purple.Host.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Directors\" />
+      <Folder Include="Services\" />
     </ItemGroup>
 
 </Project>

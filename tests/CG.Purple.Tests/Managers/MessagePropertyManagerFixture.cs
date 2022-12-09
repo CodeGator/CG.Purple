@@ -46,7 +46,7 @@ public class MessagePropertyManagerFixture
 
     /// <summary>
     /// This method ensures the <see cref="MessagePropertyManager.AnyAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -76,14 +76,17 @@ public class MessagePropertyManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="MessagePropertyManager.CountAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -113,14 +116,17 @@ public class MessagePropertyManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="MessagePropertyManager.CreateAsync(MessageProperty, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -166,14 +172,17 @@ public class MessagePropertyManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+             repository,
+             logger
+             );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="MessagePropertyManager.DeleteAsync(MessageProperty, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -207,14 +216,17 @@ public class MessagePropertyManagerFixture
             );
 
         // Assert ...
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="MessagePropertyManager.UpdateAsync(MessageProperty, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -260,7 +272,10 @@ public class MessagePropertyManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     #endregion

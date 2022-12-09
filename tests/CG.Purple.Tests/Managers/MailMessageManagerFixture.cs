@@ -25,6 +25,11 @@ public class MailMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IMailMessageRepository>();
         var logger = new Mock<ILogger<IMailMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var mailMessangerOptions = new Mock<MailMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.MailMessageManager).Returns(mailMessangerOptions.Object);
 
         // Act ...
         var manager = new MailMessageManager(
@@ -52,7 +57,7 @@ public class MailMessageManagerFixture
 
     /// <summary>
     /// This method ensures the <see cref="MailMessageManager.AnyAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -63,6 +68,11 @@ public class MailMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IMailMessageRepository>();
         var logger = new Mock<ILogger<IMailMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var mailMessangerOptions = new Mock<MailMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.MailMessageManager).Returns(mailMessangerOptions.Object);
 
         repository.Setup(x => x.AnyAsync(
             It.IsAny<CancellationToken>()
@@ -84,14 +94,20 @@ public class MailMessageManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            options,
+            repository,
+            bllOptions,
+            mailMessangerOptions,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="MailMessageManager.CountAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -102,6 +118,11 @@ public class MailMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IMailMessageRepository>();
         var logger = new Mock<ILogger<IMailMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var mailMessangerOptions = new Mock<MailMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.MailMessageManager).Returns(mailMessangerOptions.Object);
 
         repository.Setup(x => x.CountAsync(
             It.IsAny<CancellationToken>()
@@ -123,14 +144,20 @@ public class MailMessageManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            options,
+            repository,
+            bllOptions,
+            mailMessangerOptions,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="MailMessageManager.CreateAsync(Models.MailMessage, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -141,6 +168,11 @@ public class MailMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IMailMessageRepository>();
         var logger = new Mock<ILogger<IMailMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var mailMessangerOptions = new Mock<MailMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.MailMessageManager).Returns(mailMessangerOptions.Object);
 
         repository.Setup(x => x.CreateAsync(
             It.IsAny<MailMessage>(),
@@ -182,14 +214,20 @@ public class MailMessageManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            options,
+            repository,
+            bllOptions,
+            mailMessangerOptions,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="MailMessageManager.UpdateAsync(Models.MailMessage, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -200,6 +238,11 @@ public class MailMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<IMailMessageRepository>();
         var logger = new Mock<ILogger<IMailMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var mailMessangerOptions = new Mock<MailMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.MailMessageManager).Returns(mailMessangerOptions.Object);
 
         repository.Setup(x => x.UpdateAsync(
             It.IsAny<MailMessage>(),
@@ -241,7 +284,13 @@ public class MailMessageManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            options,
+            repository,
+            bllOptions,
+            mailMessangerOptions,
+            logger
+            );
     }
 
     #endregion

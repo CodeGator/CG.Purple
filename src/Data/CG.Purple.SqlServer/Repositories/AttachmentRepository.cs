@@ -287,6 +287,26 @@ internal class AttachmentRepository : IAttachmentRepository
         {
             // Log what we are about to do.
             _logger.LogDebug(
+                "Converting a {entity} model to an entity",
+                nameof(Attachment)
+                );
+
+            // Convert the model to an entity.
+            var entity = _mapper.Map<Entities.Attachment>(
+                attachment
+                );
+
+            // Did we fail?
+            if (entity is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(Attachment)} model to an entity."
+                    );
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "Creating a {ctx} data-context",
                 nameof(PurpleDbContext)
                 );
@@ -298,16 +318,44 @@ internal class AttachmentRepository : IAttachmentRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
+                "looking for the tracked {entity} instance from the {ctx} data-context",
+                nameof(Attachment),
+                nameof(PurpleDbContext)
+                );
+
+            // Find the tracked entity (if any).
+            var trackedEntry = await dbContext.Attachments.FindAsync(
+                entity.Id,
+                cancellationToken
+                );
+
+            // Did we fail?
+            if (trackedEntry is null)
+            {
+                return; // Nothing to do!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
                 nameof(Attachment),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
-            await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[Attachments] WHERE [Id] = {0}",
-                parameters: new object[] { attachment.Id },
-                cancellationToken: cancellationToken
+            dbContext.Attachments.Remove(
+                trackedEntry
+                );
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Saving changes to the {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Save the changes.
+            await dbContext.SaveChangesAsync(
+                cancellationToken
                 ).ConfigureAwait(false);
         }
         catch (Exception ex)
@@ -351,16 +399,17 @@ internal class AttachmentRepository : IAttachmentRepository
                 "Searching for attachments."
                 );
 
-            // Perform the message search.
-            var Messages = await dbContext.Attachments
+            // Perform the attachment search.
+            var attachments = await dbContext.Attachments
                 .Include(x => x.Message)
                 .Include(x => x.MimeType)
+                .AsNoTracking()
                 .ToListAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
 
             // Convert the entities to a models.
-            var result = Messages.Select(x =>
+            var result = attachments.Select(x =>
                 _mapper.Map<Attachment>(x)
                 );
 

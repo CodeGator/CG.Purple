@@ -6,5 +6,3 @@ global using CG.Purple.Repositories;
 global using CG.Purple.Models;
 global using CG.Purple.Options;
 global using Microsoft.Extensions.Options;
-
-

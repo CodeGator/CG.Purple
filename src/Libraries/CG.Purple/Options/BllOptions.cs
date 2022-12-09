@@ -17,13 +17,13 @@ public class BllOptions
     /// This property contains the configuration options for the <see cref="IMailMessageManager"/>
     /// manager.
     /// </summary>
-    public MailMessageManagerOptions? MailMessageManager { get; set; }
+    public virtual MailMessageManagerOptions? MailMessageManager { get; set; }
 
     /// <summary>
     /// This property contains the configuration options for the <see cref="ITextMessageManager"/>
     /// manager.
     /// </summary>
-    public TextMessageManagerOptions? TextMessageManager { get; set; }
+    public virtual TextMessageManagerOptions? TextMessageManager { get; set; }
 
     #endregion
 }

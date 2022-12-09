@@ -46,7 +46,7 @@ public class AttachmentManagerFixture
 
     /// <summary>
     /// This method ensures the <see cref="AttachmentManager.AnyAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -76,14 +76,17 @@ public class AttachmentManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="AttachmentManager.CountAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -113,14 +116,17 @@ public class AttachmentManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="AttachmentManager.CreateAsync(Models.Attachment, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -172,14 +178,17 @@ public class AttachmentManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="AttachmentManager.DeleteAsync(Models.Attachment, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -216,14 +225,17 @@ public class AttachmentManagerFixture
             );
 
         // Assert ...
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="AttachmentManager.UpdateAsync(Models.Attachment, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -275,7 +287,10 @@ public class AttachmentManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     #endregion

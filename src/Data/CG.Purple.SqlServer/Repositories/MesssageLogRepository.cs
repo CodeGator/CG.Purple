@@ -309,9 +309,10 @@ internal class MesssageLogRepository : IMessageLogRepository
                 );
 
             // Perform the log search.
-            var messageLogs = await dbContext.PipelineLogs
+            var messageLogs = await dbContext.MessageLogs
                 .Include(x => x.Message)
                 .Include(x => x.ProviderType)
+                .AsNoTracking()
                 .ToListAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -370,10 +371,11 @@ internal class MesssageLogRepository : IMessageLogRepository
                 );
 
             // Perform the log search.
-            var messageLogs = await dbContext.PipelineLogs.Where(x =>
+            var messageLogs = await dbContext.MessageLogs.Where(x =>
                 x.MessageId == message.Id
                 ).Include(x => x.Message)
                 .Include(x => x.ProviderType)
+                .AsNoTracking()
                 .ToListAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -418,6 +420,26 @@ internal class MesssageLogRepository : IMessageLogRepository
         {
             // Log what we are about to do.
             _logger.LogDebug(
+                "Converting a {entity} model to an entity",
+                nameof(MessageLog)
+                );
+
+            // Convert the model to an entity.
+            var entity = _mapper.Map<Entities.MessageLog>(
+                messageLog
+                );
+
+            // Did we fail?
+            if (entity is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(MessageLog)} model to an entity."
+                    );
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "Creating a {ctx} data-context",
                 nameof(PurpleDbContext)
                 );
@@ -429,16 +451,44 @@ internal class MesssageLogRepository : IMessageLogRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
+                "looking for the tracked {entity} instance from the {ctx} data-context",
+                nameof(MessageLog),
+                nameof(PurpleDbContext)
+                );
+
+            // Find the tracked entity (if any).
+            var trackedEntry = await dbContext.MessageLogs.FindAsync(
+                entity.Id,
+                cancellationToken
+                );
+
+            // Did we fail?
+            if (trackedEntry is null)
+            {
+                return; // Nothing to do!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
                 nameof(MessageLog),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
-            await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[MessageLogs] WHERE [Id] = {0}",
-                parameters: new object[] { messageLog.Id },
-                cancellationToken: cancellationToken
+            dbContext.MessageLogs.Remove(
+                trackedEntry
+                );
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Saving changes to the {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Save the changes.
+            await dbContext.SaveChangesAsync(
+                cancellationToken
                 ).ConfigureAwait(false);
         }
         catch (Exception ex)

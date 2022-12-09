@@ -287,6 +287,26 @@ internal class ProviderTypeRepository : IProviderTypeRepository
         {
             // Log what we are about to do.
             _logger.LogDebug(
+                "Converting a {entity} model to an entity",
+                nameof(ProviderType)
+                );
+
+            // Convert the model to an entity.
+            var entity = _mapper.Map<Entities.ProviderType>(
+                providerType
+                );
+
+            // Did we fail?
+            if (entity is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(ProviderType)} model to an entity."
+                    );
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "Creating a {ctx} data-context",
                 nameof(PurpleDbContext)
                 );
@@ -298,16 +318,44 @@ internal class ProviderTypeRepository : IProviderTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
+                "looking for the tracked {entity} instance from the {ctx} data-context",
+                nameof(ProviderType),
+                nameof(PurpleDbContext)
+                );
+
+            // Find the tracked entity (if any).
+            var trackedEntry = await dbContext.ProviderTypes.FindAsync(
+                entity.Id,
+                cancellationToken
+                );
+
+            // Did we fail?
+            if (trackedEntry is null)
+            {
+                return; // Nothing to do!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
                 nameof(ProviderType),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
-            await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[ProviderTypes] WHERE [Id] = {0}",
-                parameters: new object[] { providerType.Id },
-                cancellationToken: cancellationToken
+            dbContext.ProviderTypes.Remove(
+                trackedEntry
+                );
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Saving changes to the {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Save the changes.
+            await dbContext.SaveChangesAsync(
+                cancellationToken
                 ).ConfigureAwait(false);
         }
         catch (Exception ex)
@@ -355,6 +403,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             var providerTypes = await dbContext.ProviderTypes
                 .Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
                 .OrderByDescending(x => x.Priority)
+                .AsNoTracking()
                 .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -413,6 +462,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             var providerTypes = await dbContext.ProviderTypes.Where(x =>
                 x.IsDisabled == false && x.CanProcessEmails
                 ).Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
+                .AsNoTracking()
                 .OrderByDescending(x => x.Priority)
                  .ToListAsync(
                     cancellationToken
@@ -472,6 +522,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             var providerTypes = await dbContext.ProviderTypes.Where(x =>
                 x.IsDisabled == false && x.CanProcessTexts
                 ).Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
+                .AsNoTracking()
                 .OrderByDescending(x => x.Priority)
                  .ToListAsync(
                     cancellationToken
@@ -535,6 +586,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             var providerType = await dbContext.ProviderTypes.Where(x =>
                 x.Id == id
                 ).Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -612,6 +664,7 @@ internal class ProviderTypeRepository : IProviderTypeRepository
             var providerType = await dbContext.ProviderTypes.Where(x => 
                 x.Name == name
                 ).Include(x => x.Parameters).ThenInclude(x => x.ParameterType)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);

@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
-        <RootNamespace>CG.Purple.Host.Controllers</RootNamespace>
+        <RootNamespace>CG.Purple.Host</RootNamespace>
         <Description>Test fixtures for the CG.Purple.Host.Controllers assembly.</Description>
     </PropertyGroup>
 

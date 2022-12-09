@@ -51,7 +51,7 @@ internal class PurpleDbContext : DbContext
     /// <summary>
     /// This property contains the collection of pipeline events.
     /// </summary>
-    public virtual DbSet<Entities.MessageLog> PipelineLogs { get; set; } = null!;
+    public virtual DbSet<Entities.MessageLog> MessageLogs { get; set; } = null!;
 
     /// <summary>
     /// This property contains the collection of property types.

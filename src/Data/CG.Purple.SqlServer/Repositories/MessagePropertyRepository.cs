@@ -287,6 +287,26 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
         {
             // Log what we are about to do.
             _logger.LogDebug(
+                "Converting a {entity} model to an entity",
+                nameof(MessageProperty)
+                );
+
+            // Convert the model to an entity.
+            var entity = _mapper.Map<Entities.MessageProperty>(
+                messageProperty
+                );
+
+            // Did we fail?
+            if (entity is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(MessageProperty)} model to an entity."
+                    );
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "Creating a {ctx} data-context",
                 nameof(PurpleDbContext)
                 );
@@ -298,21 +318,44 @@ internal class MessagePropertyRepository : IMessagePropertyRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
+                "looking for the tracked {entity} instance from the {ctx} data-context",
+                nameof(MessageProperty),
+                nameof(PurpleDbContext)
+                );
+
+            // Find the tracked entity (if any).
+            var trackedEntry = await dbContext.MessageProperties.FirstOrDefaultAsync(x =>
+                x.MessageId == entity.MessageId && x.PropertyTypeId == entity.PropertyTypeId,
+                cancellationToken
+                );
+
+            // Did we fail?
+            if (trackedEntry is null)
+            {
+                return; // Nothing to do!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
                 nameof(MessageProperty),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
-            await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[MessageProperties] WHERE " +
-                "[MessageId] = {0} AND PropertyTypeId = {1}",
-                parameters: new object[]
-                { 
-                    messageProperty.Message.Id, 
-                    messageProperty.PropertyType.Id 
-                },
-                cancellationToken: cancellationToken
+            dbContext.MessageProperties.Remove(
+                trackedEntry
+                );
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Saving changes to the {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Save the changes.
+            await dbContext.SaveChangesAsync(
+                cancellationToken
                 ).ConfigureAwait(false);
         }
         catch (Exception ex)

@@ -25,6 +25,11 @@ public class TextMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<ITextMessageRepository>();
         var logger = new Mock<ILogger<ITextMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var textMessangerOptions = new Mock<TextMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.TextMessageManager).Returns(textMessangerOptions.Object);
 
         // Act ...
         var manager = new TextMessageManager(
@@ -52,7 +57,7 @@ public class TextMessageManagerFixture
 
     /// <summary>
     /// This method ensures the <see cref="TextMessageManager.AnyAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -63,6 +68,11 @@ public class TextMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<ITextMessageRepository>();
         var logger = new Mock<ILogger<ITextMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var textMessangerOptions = new Mock<TextMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.TextMessageManager).Returns(textMessangerOptions.Object);
 
         repository.Setup(x => x.AnyAsync(
             It.IsAny<CancellationToken>()
@@ -84,14 +94,17 @@ public class TextMessageManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="TextMessageManager.CountAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -102,6 +115,11 @@ public class TextMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<ITextMessageRepository>();
         var logger = new Mock<ILogger<ITextMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var textMessangerOptions = new Mock<TextMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.TextMessageManager).Returns(textMessangerOptions.Object);
 
         repository.Setup(x => x.CountAsync(
             It.IsAny<CancellationToken>()
@@ -123,14 +141,17 @@ public class TextMessageManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="TextMessageManager.CreateAsync(Models.TextMessage, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -141,6 +162,11 @@ public class TextMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<ITextMessageRepository>();
         var logger = new Mock<ILogger<ITextMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var textMessangerOptions = new Mock<TextMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.TextMessageManager).Returns(textMessangerOptions.Object);
 
         repository.Setup(x => x.CreateAsync(
             It.IsAny<TextMessage>(),
@@ -180,14 +206,17 @@ public class TextMessageManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+             repository,
+             logger
+             );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="TextMessageManager.UpdateAsync(Models.TextMessage, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -198,6 +227,11 @@ public class TextMessageManagerFixture
         var options = new Mock<IOptions<BllOptions>>();
         var repository = new Mock<ITextMessageRepository>();
         var logger = new Mock<ILogger<ITextMessageManager>>();
+        var bllOptions = new Mock<BllOptions>();
+        var textMessangerOptions = new Mock<TextMessageManagerOptions>();
+
+        options.SetupGet(x => x.Value).Returns(bllOptions.Object);
+        bllOptions.SetupGet(x => x.TextMessageManager).Returns(textMessangerOptions.Object);
 
         repository.Setup(x => x.UpdateAsync(
             It.IsAny<TextMessage>(),
@@ -237,7 +271,10 @@ public class TextMessageManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     #endregion

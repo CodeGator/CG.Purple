@@ -287,6 +287,26 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
         {
             // Log what we are about to do.
             _logger.LogDebug(
+                "Converting a {entity} model to an entity",
+                nameof(PropertyType)
+                );
+
+            // Convert the model to an entity.
+            var entity = _mapper.Map<Entities.PropertyType>(
+                propertyType
+                );
+
+            // Did we fail?
+            if (entity is null)
+            {
+                // Panic!!
+                throw new AutoMapperMappingException(
+                    $"Failed to map the {nameof(PropertyType)} model to an entity."
+                    );
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "Creating a {ctx} data-context",
                 nameof(PurpleDbContext)
                 );
@@ -298,16 +318,44 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
 
             // Log what we are about to do.
             _logger.LogDebug(
+                "looking for the tracked {entity} instance from the {ctx} data-context",
+                nameof(PropertyType),
+                nameof(PurpleDbContext)
+                );
+
+            // Find the tracked entity (if any).
+            var trackedEntry = await dbContext.PropertyTypes.FindAsync(
+                entity.Id,
+                cancellationToken
+                );
+
+            // Did we fail?
+            if (trackedEntry is null)
+            {
+                return; // Nothing to do!
+            }
+
+            // Log what we are about to do.
+            _logger.LogDebug(
                 "deleting an {entity} instance from the {ctx} data-context",
                 nameof(PropertyType),
                 nameof(PurpleDbContext)
                 );
 
             // Delete from the data-store.
-            await dbContext.Database.ExecuteSqlRawAsync(
-                "DELETE FROM [Purple].[PropertyTypes] WHERE [Id] = {0}",
-                parameters: new object[] { propertyType.Id },
-                cancellationToken: cancellationToken
+            dbContext.PropertyTypes.Remove(
+                trackedEntry
+                );
+
+            // Log what we are about to do.
+            _logger.LogDebug(
+                "Saving changes to the {ctx} data-context",
+                nameof(PurpleDbContext)
+                );
+
+            // Save the changes.
+            await dbContext.SaveChangesAsync(
+                cancellationToken
                 ).ConfigureAwait(false);
         }
         catch (Exception ex)
@@ -353,6 +401,7 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
 
             // Perform the property type search.
             var propertyTypes = await dbContext.PropertyTypes
+                .AsNoTracking()
                 .ToListAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -414,7 +463,8 @@ internal class PropertyTypeRepository : IPropertyTypeRepository
             // Perform the property type search.
             var propertyType = await dbContext.PropertyTypes.Where(x => 
                 x.Name == name
-                ).FirstOrDefaultAsync(
+                ).AsNoTracking()
+                .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
 

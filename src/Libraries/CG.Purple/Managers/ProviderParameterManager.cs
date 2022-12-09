@@ -169,7 +169,7 @@ internal class ProviderParameterManager : IProviderParameterManager
             providerParameter.LastUpdatedOnUtc = null;
 
             // We encrypt parameter values, at rest.
-            providerParameter.Value = await _cryptographer.AesEncryptAsync(
+            providerParameter.Value = await AesEncryptAsync(
                 providerParameter.Value,
                 cancellationToken
                 ).ConfigureAwait(false);    
@@ -281,7 +281,7 @@ internal class ProviderParameterManager : IProviderParameterManager
             providerParameter.LastUpdatedBy = userName;
 
             // We encrypt parameter values, at rest.
-            providerParameter.Value = await _cryptographer.AesEncryptAsync(
+            providerParameter.Value = await AesEncryptAsync(
                 providerParameter.Value,
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -312,6 +312,56 @@ internal class ProviderParameterManager : IProviderParameterManager
                 innerException: ex
                 );
         }
+    }
+
+    #endregion
+
+    // *******************************************************************
+    // Protected methods.
+    // *******************************************************************
+
+    #region Protected methods
+
+    /// <summary>
+    /// This method wraps the corresponding cryptographer extension method 
+    /// so we can swap out the implementation in a test fixture (because 
+    /// extension methods are notoriously difficult to mock).
+    /// </summary>
+    /// <param name="value">The value to be encrypted.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The encrypted value.</returns>
+    protected virtual async Task<string> AesEncryptAsync(
+        string value,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Call the extension method.
+        return await _cryptographer.AesEncryptAsync(
+            value,
+            cancellationToken
+            ).ConfigureAwait(false);
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method wraps the corresponding cryptographer extension method 
+    /// so we can swap out the implementation in a test fixture (because 
+    /// extension methods are notoriously difficult to mock).
+    /// </summary>
+    /// <param name="value">The value to be decrypted.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The decrypted value.</returns>
+    protected virtual async Task<string> AesDecryptAsync(
+        string value,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Call the extension method.
+        return await _cryptographer.AesDecryptAsync(
+            value,
+            cancellationToken
+            ).ConfigureAwait(false);
     }
 
     #endregion

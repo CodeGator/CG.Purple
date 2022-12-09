@@ -315,6 +315,7 @@ internal class MailMessageRepository : IMailMessageRepository
             var mailMessages = await dbContext.MailMessages
                 .Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                .AsNoTracking()
                 .ToListAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -378,6 +379,7 @@ internal class MailMessageRepository : IMailMessageRepository
                 x.Id == id
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .AsNoTracking()
                  .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -456,6 +458,7 @@ internal class MailMessageRepository : IMailMessageRepository
                 x.MessageKey == messageKey.ToUpper()
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                  .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                 .AsNoTracking()
                  .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);

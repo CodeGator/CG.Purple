@@ -315,6 +315,7 @@ internal class TextMessageRepository : ITextMessageRepository
             var textMessages = await dbContext.TextMessages
                 .Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                .AsNoTracking()
                 .ToListAsync(
                 cancellationToken
                 ).ConfigureAwait(false);
@@ -378,6 +379,7 @@ internal class TextMessageRepository : ITextMessageRepository
                 x.Id == id
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
@@ -450,6 +452,7 @@ internal class TextMessageRepository : ITextMessageRepository
                 x.MessageKey == messageKey.ToUpper()
                 ).Include(x => x.Attachments).ThenInclude(x => x.MimeType).ThenInclude(x => x.FileTypes)
                 .Include(x => x.MessageProperties).ThenInclude(x => x.PropertyType)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(
                     cancellationToken
                     ).ConfigureAwait(false);

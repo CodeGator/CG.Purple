@@ -8,6 +8,68 @@ namespace CG.Purple.Managers;
 public class ProviderParameterManagerFixture
 {
     // *******************************************************************
+    // Types.
+    // *******************************************************************
+
+    #region Types
+
+    /// <summary>
+    /// The mock library we're using doesn't support mocking up extension
+    /// methods, so, we'll need to use another approach to test the methods
+    /// that encrypt/decrypt. For that purpose, we'll stand up a test version 
+    /// of <see cref="ProviderParameterManager"/>, with the cryptography
+    /// method overridden as no-ops, so we can test the create and update 
+    /// methods.
+    /// </summary>
+    class TestProviderParameterManager : ProviderParameterManager
+    {
+        /// <summary>
+        /// This constructor is for test purposes, only.
+        /// </summary>
+        /// <param name="providerParameterRepository">For test purposes.</param>
+        /// <param name="cryptographer">For test purposes.</param>
+        /// <param name="logger">For test purposes.</param>
+        public TestProviderParameterManager(
+            IProviderParameterRepository providerParameterRepository,
+            ICryptographer cryptographer,
+            ILogger<IProviderParameterManager> logger
+            ) : base(providerParameterRepository, cryptographer, logger)
+        {
+
+        }
+
+        /// <summary>
+        /// This method is overridden as a no-op, for test purposes.
+        /// </summary>
+        /// <param name="value">For test purposes.</param>
+        /// <param name="cancellationToken">For test purposes.</param>
+        /// <returns>A task to perform the operation.</returns>
+        protected override Task<string> AesDecryptAsync(
+            string value, 
+            CancellationToken cancellationToken = default
+            )
+        {
+            return Task.FromResult(value); // Just return something for test purposes.
+        }
+
+        /// <summary>
+        /// This method is overridden as a no-op, for test purposes.
+        /// </summary>
+        /// <param name="value">For test purposes.</param>
+        /// <param name="cancellationToken">For test purposes.</param>
+        /// <returns>A task to perform the operation.</returns>
+        protected override Task<string> AesEncryptAsync(
+            string value, 
+            CancellationToken cancellationToken = default
+            )
+        {
+            return Task.FromResult(value); // Just return something for test purposes.
+        }
+    }
+
+    #endregion
+
+    // *******************************************************************
     // Public methods.
     // *******************************************************************
 
@@ -52,7 +114,7 @@ public class ProviderParameterManagerFixture
 
     /// <summary>
     /// This method ensures the <see cref="ProviderParameterManager.AnyAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -84,14 +146,17 @@ public class ProviderParameterManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ProviderParameterManager.CountAsync(CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -123,14 +188,17 @@ public class ProviderParameterManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ProviderParameterManager.CreateAsync(ProviderParameter, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -141,7 +209,7 @@ public class ProviderParameterManagerFixture
         var repository = new Mock<IProviderParameterRepository>();
         var cryptographer = new Mock<ICryptographer>();
         var logger = new Mock<ILogger<IProviderParameterManager>>();
-
+        
         repository.Setup(x => x.CreateAsync(
             It.IsAny<ProviderParameter>(),
             It.IsAny<CancellationToken>()
@@ -155,7 +223,8 @@ public class ProviderParameterManagerFixture
                 CreatedOnUtc = DateTime.UtcNow,
             }).Verifiable();
 
-        var manager = new ProviderParameterManager(
+        // See remarks on the TestProviderParameterManager class.
+        var manager = new TestProviderParameterManager(
             repository.Object,
             cryptographer.Object,
             logger.Object
@@ -180,14 +249,17 @@ public class ProviderParameterManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ProviderParameterManager.DeleteAsync(ProviderParameter, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -224,14 +296,17 @@ public class ProviderParameterManagerFixture
             );
 
         // Assert ...
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     // *******************************************************************
 
     /// <summary>
     /// This method ensures the <see cref="ProviderParameterManager.UpdateAsync(ProviderParameter, string, CancellationToken)"/>
-    /// method property calls the proper repository methods and returns 
+    /// method properly calls the repository methods and returns 
     /// the result.
     /// </summary>
     [TestMethod]
@@ -256,7 +331,8 @@ public class ProviderParameterManagerFixture
                 CreatedOnUtc = DateTime.UtcNow,
             }).Verifiable();
 
-        var manager = new ProviderParameterManager(
+        // See remarks on the TestProviderParameterManager class.
+        var manager = new TestProviderParameterManager(
             repository.Object,
             cryptographer.Object,
             logger.Object
@@ -281,7 +357,10 @@ public class ProviderParameterManagerFixture
             "The return value was invalid!"
             );
 
-        repository.Verify();
+        Mock.Verify(
+            repository,
+            logger
+            );
     }
 
     #endregion
