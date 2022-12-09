@@ -6554,6 +6554,32 @@ references:
   commentId: F:CG.Purple.Managers.ProviderParameterManager._providerParameterRepository
   fullName: CG.Purple.Managers.ProviderParameterManager._providerParameterRepository
   nameWithType: ProviderParameterManager._providerParameterRepository
+- uid: CG.Purple.Managers.ProviderParameterManager.AesDecryptAsync(System.String,CancellationToken)
+  name: AesDecryptAsync(String, CancellationToken)
+  href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager_AesDecryptAsync_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProviderParameterManager.AesDecryptAsync(System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProviderParameterManager.AesDecryptAsync(System.String, CancellationToken)
+  nameWithType: ProviderParameterManager.AesDecryptAsync(String, CancellationToken)
+- uid: CG.Purple.Managers.ProviderParameterManager.AesDecryptAsync*
+  name: AesDecryptAsync
+  href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager_AesDecryptAsync_
+  commentId: Overload:CG.Purple.Managers.ProviderParameterManager.AesDecryptAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.ProviderParameterManager.AesDecryptAsync
+  nameWithType: ProviderParameterManager.AesDecryptAsync
+- uid: CG.Purple.Managers.ProviderParameterManager.AesEncryptAsync(System.String,CancellationToken)
+  name: AesEncryptAsync(String, CancellationToken)
+  href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager_AesEncryptAsync_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.ProviderParameterManager.AesEncryptAsync(System.String,CancellationToken)
+  fullName: CG.Purple.Managers.ProviderParameterManager.AesEncryptAsync(System.String, CancellationToken)
+  nameWithType: ProviderParameterManager.AesEncryptAsync(String, CancellationToken)
+- uid: CG.Purple.Managers.ProviderParameterManager.AesEncryptAsync*
+  name: AesEncryptAsync
+  href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager_AesEncryptAsync_
+  commentId: Overload:CG.Purple.Managers.ProviderParameterManager.AesEncryptAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.ProviderParameterManager.AesEncryptAsync
+  nameWithType: ProviderParameterManager.AesEncryptAsync
 - uid: CG.Purple.Managers.ProviderParameterManager.AnyAsync(CancellationToken)
   name: AnyAsync(CancellationToken)
   href: api/CG.Purple.Managers.ProviderParameterManager.html#CG_Purple_Managers_ProviderParameterManager_AnyAsync_CancellationToken_
@@ -13231,6 +13257,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.PurpleDbContext.MailMessages
   nameWithType: PurpleDbContext.MailMessages
+- uid: CG.Purple.SqlServer.PurpleDbContext.MessageLogs
+  name: MessageLogs
+  href: api/CG.Purple.SqlServer.PurpleDbContext.html#CG_Purple_SqlServer_PurpleDbContext_MessageLogs
+  commentId: P:CG.Purple.SqlServer.PurpleDbContext.MessageLogs
+  fullName: CG.Purple.SqlServer.PurpleDbContext.MessageLogs
+  nameWithType: PurpleDbContext.MessageLogs
+- uid: CG.Purple.SqlServer.PurpleDbContext.MessageLogs*
+  name: MessageLogs
+  href: api/CG.Purple.SqlServer.PurpleDbContext.html#CG_Purple_SqlServer_PurpleDbContext_MessageLogs_
+  commentId: Overload:CG.Purple.SqlServer.PurpleDbContext.MessageLogs
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.PurpleDbContext.MessageLogs
+  nameWithType: PurpleDbContext.MessageLogs
 - uid: CG.Purple.SqlServer.PurpleDbContext.MessageProperties
   name: MessageProperties
   href: api/CG.Purple.SqlServer.PurpleDbContext.html#CG_Purple_SqlServer_PurpleDbContext_MessageProperties
@@ -13296,19 +13335,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.PurpleDbContext.ParameterTypes
   nameWithType: PurpleDbContext.ParameterTypes
-- uid: CG.Purple.SqlServer.PurpleDbContext.PipelineLogs
-  name: PipelineLogs
-  href: api/CG.Purple.SqlServer.PurpleDbContext.html#CG_Purple_SqlServer_PurpleDbContext_PipelineLogs
-  commentId: P:CG.Purple.SqlServer.PurpleDbContext.PipelineLogs
-  fullName: CG.Purple.SqlServer.PurpleDbContext.PipelineLogs
-  nameWithType: PurpleDbContext.PipelineLogs
-- uid: CG.Purple.SqlServer.PurpleDbContext.PipelineLogs*
-  name: PipelineLogs
-  href: api/CG.Purple.SqlServer.PurpleDbContext.html#CG_Purple_SqlServer_PurpleDbContext_PipelineLogs_
-  commentId: Overload:CG.Purple.SqlServer.PurpleDbContext.PipelineLogs
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.PurpleDbContext.PipelineLogs
-  nameWithType: PurpleDbContext.PipelineLogs
 - uid: CG.Purple.SqlServer.PurpleDbContext.PropertyTypes
   name: PropertyTypes
   href: api/CG.Purple.SqlServer.PurpleDbContext.html#CG_Purple_SqlServer_PurpleDbContext_PropertyTypes

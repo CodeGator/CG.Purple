@@ -990,7 +990,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Managers.ProviderParameterManager.html",
-          "hash": "QGipR+czR2uCF+teI48L92YfZRBAXWDJtp3+tyvaYm4="
+          "hash": "XmrCeXf1B1gztcDub23CRjPCorZgmckmyi3KE91q6HM="
         }
       },
       "is_incremental": false,
@@ -1386,7 +1386,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Options.BllOptions.html",
-          "hash": "hKjbEZL4FfVZ5O62v8TGNPj21RS1C8FbVegHMspttq0="
+          "hash": "nmwFjzXBLyN+OWtCFSDvVEPrm6f6iv4r1u/xE9WWtKA="
         }
       },
       "is_incremental": false,
@@ -2346,7 +2346,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.SqlServer.PurpleDbContext.html",
-          "hash": "EOG6kpt+sL9XyV1xsX1xv3G8ohMhzvDio99mZ3zTUIg="
+          "hash": "cUko1AoP5C9sUpsnxA6TISPNxV18lRC7e8TzEGKsX/o="
         }
       },
       "is_incremental": false,

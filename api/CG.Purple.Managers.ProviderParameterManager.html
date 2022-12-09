@@ -242,6 +242,108 @@ repository to use with this manager.</p>
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="CG_Purple_Managers_ProviderParameterManager_AesDecryptAsync_" data-uid="CG.Purple.Managers.ProviderParameterManager.AesDecryptAsync*"></a>
+  <h4 id="CG_Purple_Managers_ProviderParameterManager_AesDecryptAsync_System_String_CancellationToken_" data-uid="CG.Purple.Managers.ProviderParameterManager.AesDecryptAsync(System.String,CancellationToken)">AesDecryptAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method wraps the corresponding cryptographer extension method
+so we can swap out the implementation in a test fixture (because
+extension methods are notoriously difficult to mock).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task&lt;string&gt; AesDecryptAsync(string value, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to be decrypted.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>The decrypted value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Managers_ProviderParameterManager_AesEncryptAsync_" data-uid="CG.Purple.Managers.ProviderParameterManager.AesEncryptAsync*"></a>
+  <h4 id="CG_Purple_Managers_ProviderParameterManager_AesEncryptAsync_System_String_CancellationToken_" data-uid="CG.Purple.Managers.ProviderParameterManager.AesEncryptAsync(System.String,CancellationToken)">AesEncryptAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method wraps the corresponding cryptographer extension method
+so we can swap out the implementation in a test fixture (because
+extension methods are notoriously difficult to mock).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task&lt;string&gt; AesEncryptAsync(string value, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to be encrypted.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>The encrypted value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Managers_ProviderParameterManager_AnyAsync_" data-uid="CG.Purple.Managers.ProviderParameterManager.AnyAsync*"></a>
   <h4 id="CG_Purple_Managers_ProviderParameterManager_AnyAsync_CancellationToken_" data-uid="CG.Purple.Managers.ProviderParameterManager.AnyAsync(CancellationToken)">AnyAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
