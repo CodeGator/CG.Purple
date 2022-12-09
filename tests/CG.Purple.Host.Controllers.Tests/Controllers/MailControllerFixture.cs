@@ -19,6 +19,7 @@ public class MailControllerFixture
     /// constructor properly initializes object instances.
     /// </summary>
     [TestMethod]
+    [TestCategory("UnitTest")]
     public void MailController_ctor()
     {
         // Arrange ...
@@ -67,6 +68,7 @@ public class MailControllerFixture
     /// method properly calls the managers and returns the result.
     /// </summary>
     [TestMethod]
+    [TestCategory("UnitTest")]
     public async Task MailController_GetByKeyAsync()
     {
         // Arrange ...
@@ -127,6 +129,7 @@ public class MailControllerFixture
     /// method properly calls the managers and returns the result.
     /// </summary>
     [TestMethod]
+    [TestCategory("UnitTest")]
     public async Task MailController_PostAsync()
     {
         // Arrange ...

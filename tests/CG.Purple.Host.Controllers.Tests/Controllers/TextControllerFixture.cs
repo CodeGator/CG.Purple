@@ -19,6 +19,7 @@ public class TextControllerFixture
     /// constructor properly initializes object instances.
     /// </summary>
     [TestMethod]
+    [TestCategory("UnitTest")]
     public void TextController_ctor()
     {
         // Arrange ...
@@ -67,6 +68,7 @@ public class TextControllerFixture
     /// method properly calls the managers and returns the result.
     /// </summary>
     [TestMethod]
+    [TestCategory("UnitTest")]
     public async Task TextController_GetByKeyAsync()
     {
         // Arrange ...
@@ -127,6 +129,7 @@ public class TextControllerFixture
     /// method properly calls the managers and returns the result.
     /// </summary>
     [TestMethod]
+    [TestCategory("UnitTest")]
     public async Task TextController_PostAsync()
     {
         // Arrange ...

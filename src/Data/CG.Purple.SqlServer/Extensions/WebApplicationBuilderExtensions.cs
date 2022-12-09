@@ -145,7 +145,7 @@ public static class WebApplicationBuilderExtensions003
         webApplicationBuilder.Services.AddScoped<IMessagePropertyRepository, MessagePropertyRepository>();
         webApplicationBuilder.Services.AddScoped<IParameterTypeRepository, ParameterTypeRepository>();
         webApplicationBuilder.Services.AddScoped<IPropertyTypeRepository, PropertyTypeRepository>();
-        webApplicationBuilder.Services.AddScoped<IMessageLogRepository, MesssageLogRepository>();
+        webApplicationBuilder.Services.AddScoped<IMessageLogRepository, MessageLogRepository>();
         webApplicationBuilder.Services.AddScoped<IProviderTypeRepository, ProviderTypeRepository>();
         webApplicationBuilder.Services.AddScoped<IProviderParameterRepository, ProviderParameterRepository>();
         webApplicationBuilder.Services.AddScoped<ITextMessageRepository, TextMessageRepository>();

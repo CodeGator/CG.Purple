@@ -19,6 +19,7 @@ public class AttachmentRepositoryFixture
     /// constructor properly initializes object instances.
     /// </summary>
     [TestMethod]
+    [TestCategory("UnitTest")]
     public void AttachmentRepository_ctor()
     {
         // Arrange ...

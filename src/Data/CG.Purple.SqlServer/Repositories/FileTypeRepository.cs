@@ -292,7 +292,7 @@ internal class FileTypeRepository : IFileTypeRepository
                 );
 
             // Convert the model to an entity.
-            var entity = _mapper.Map<Entities.Attachment>(
+            var entity = _mapper.Map<Entities.FileType>(
                 fileType
                 );
 

@@ -5,7 +5,7 @@ namespace CG.Purple.SqlServer.Repositories;
 /// This class is an EFCORE implementation of the <see cref="IMessageLogRepository"/>
 /// interface.
 /// </summary>
-internal class MesssageLogRepository : IMessageLogRepository
+internal class MessageLogRepository : IMessageLogRepository
 {
     // *******************************************************************
     // Fields.
@@ -37,14 +37,14 @@ internal class MesssageLogRepository : IMessageLogRepository
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="MesssageLogRepository"/>
+    /// This constructor creates a new instance of the <see cref="MessageLogRepository"/>
     /// class.
     /// </summary>
     /// <param name="dbContextFactory">The EFCORE data-context factory
     /// to use with this repository.</param>
     /// <param name="mapper">The auto-mapper to use with this repository.</param>
     /// <param name="logger">The logger to use with this repository.</param>
-    public MesssageLogRepository(
+    public MessageLogRepository(
         IDbContextFactory<PurpleDbContext> dbContextFactory,
         IMapper mapper,
         ILogger<IMessageLogRepository> logger
