@@ -2390,6 +2390,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.SqlServer.Repositories.MessageLogRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html",
+          "hash": "rgLisTR60BRvWbJ/nS0kDSrZZJZl3tUWaHu71gfIgLs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CG.Purple.SqlServer.Repositories.MessagePropertyRepository.yml",
       "output": {
         ".html": {
@@ -2407,18 +2419,6 @@
         ".html": {
           "relative_path": "api/CG.Purple.SqlServer.Repositories.MessageRepository.html",
           "hash": "yIDwGL3gJeztYDPnjUKKrkztcFxxzypVzoice+fjYoM="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html",
-          "hash": "1VxOTvSSwEMgza0sZIxc3gjETbcAJEXmKSxwcmDdL8M="
         }
       },
       "is_incremental": false,
@@ -2502,7 +2502,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.SqlServer.Repositories.html",
-          "hash": "EM9E2FLPQH8lSu8Drpjrg8Kb0Un2TuXzFRK2VezVBUI="
+          "hash": "KtZcqdMWOXI9p8/iCLCRKd+hSBaQRUBmccKnG4BptR8="
         }
       },
       "is_incremental": false,
@@ -2658,7 +2658,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "BLkPPXCbR+u0UIQssS9PZDjJ4R89WRm0TloXZ1KXD30="
+          "hash": "v1vFdMTQQnL0JocUVJDKIJBuUo8y8rQa977ZJ4SpSoM="
         }
       },
       "is_incremental": false,

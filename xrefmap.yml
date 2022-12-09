@@ -13786,6 +13786,124 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.MailMessageRepository.UpdateAsync
   nameWithType: MailMessageRepository.UpdateAsync
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository
+  name: MessageLogRepository
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html
+  commentId: T:CG.Purple.SqlServer.Repositories.MessageLogRepository
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository
+  nameWithType: MessageLogRepository
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.#ctor(IDbContextFactory{CG.Purple.SqlServer.PurpleDbContext},IMapper,ILogger{IMessageLogRepository})
+  name: MessageLogRepository(IDbContextFactory<PurpleDbContext>, IMapper, ILogger<IMessageLogRepository>)
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository__ctor_IDbContextFactory_CG_Purple_SqlServer_PurpleDbContext__IMapper_ILogger_IMessageLogRepository__
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageLogRepository.#ctor(IDbContextFactory{CG.Purple.SqlServer.PurpleDbContext},IMapper,ILogger{IMessageLogRepository})
+  name.vb: MessageLogRepository(IDbContextFactory(Of PurpleDbContext), IMapper, ILogger(Of IMessageLogRepository))
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.MessageLogRepository(IDbContextFactory<CG.Purple.SqlServer.PurpleDbContext>, IMapper, ILogger<IMessageLogRepository>)
+  fullName.vb: CG.Purple.SqlServer.Repositories.MessageLogRepository.MessageLogRepository(IDbContextFactory(Of CG.Purple.SqlServer.PurpleDbContext), IMapper, ILogger(Of IMessageLogRepository))
+  nameWithType: MessageLogRepository.MessageLogRepository(IDbContextFactory<PurpleDbContext>, IMapper, ILogger<IMessageLogRepository>)
+  nameWithType.vb: MessageLogRepository.MessageLogRepository(IDbContextFactory(Of PurpleDbContext), IMapper, ILogger(Of IMessageLogRepository))
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.#ctor*
+  name: MessageLogRepository
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository__ctor_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageLogRepository.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.MessageLogRepository
+  nameWithType: MessageLogRepository.MessageLogRepository
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository._dbContextFactory
+  name: _dbContextFactory
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository__dbContextFactory
+  commentId: F:CG.Purple.SqlServer.Repositories.MessageLogRepository._dbContextFactory
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository._dbContextFactory
+  nameWithType: MessageLogRepository._dbContextFactory
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository._logger
+  name: _logger
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository__logger
+  commentId: F:CG.Purple.SqlServer.Repositories.MessageLogRepository._logger
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository._logger
+  nameWithType: MessageLogRepository._logger
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository._mapper
+  name: _mapper
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository__mapper
+  commentId: F:CG.Purple.SqlServer.Repositories.MessageLogRepository._mapper
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository._mapper
+  nameWithType: MessageLogRepository._mapper
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.AnyAsync(CancellationToken)
+  name: AnyAsync(CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_AnyAsync_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageLogRepository.AnyAsync(CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.AnyAsync(CancellationToken)
+  nameWithType: MessageLogRepository.AnyAsync(CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.AnyAsync*
+  name: AnyAsync
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_AnyAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageLogRepository.AnyAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.AnyAsync
+  nameWithType: MessageLogRepository.AnyAsync
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.CountAsync(CancellationToken)
+  name: CountAsync(CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_CountAsync_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageLogRepository.CountAsync(CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.CountAsync(CancellationToken)
+  nameWithType: MessageLogRepository.CountAsync(CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.CountAsync*
+  name: CountAsync
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_CountAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageLogRepository.CountAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.CountAsync
+  nameWithType: MessageLogRepository.CountAsync
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.CreateAsync(MessageLog,CancellationToken)
+  name: CreateAsync(MessageLog, CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_CreateAsync_MessageLog_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageLogRepository.CreateAsync(MessageLog,CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.CreateAsync(MessageLog, CancellationToken)
+  nameWithType: MessageLogRepository.CreateAsync(MessageLog, CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.CreateAsync*
+  name: CreateAsync
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_CreateAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageLogRepository.CreateAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.CreateAsync
+  nameWithType: MessageLogRepository.CreateAsync
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.DeleteAsync(MessageLog,CancellationToken)
+  name: DeleteAsync(MessageLog, CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_DeleteAsync_MessageLog_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageLogRepository.DeleteAsync(MessageLog,CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.DeleteAsync(MessageLog, CancellationToken)
+  nameWithType: MessageLogRepository.DeleteAsync(MessageLog, CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_DeleteAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageLogRepository.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.DeleteAsync
+  nameWithType: MessageLogRepository.DeleteAsync
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageLogRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.FindAllAsync(CancellationToken)
+  nameWithType: MessageLogRepository.FindAllAsync(CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_FindAllAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageLogRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.FindAllAsync
+  nameWithType: MessageLogRepository.FindAllAsync
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.FindByMessageAsync(Message,CancellationToken)
+  name: FindByMessageAsync(Message, CancellationToken)
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_FindByMessageAsync_Message_CancellationToken_
+  commentId: M:CG.Purple.SqlServer.Repositories.MessageLogRepository.FindByMessageAsync(Message,CancellationToken)
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.FindByMessageAsync(Message, CancellationToken)
+  nameWithType: MessageLogRepository.FindByMessageAsync(Message, CancellationToken)
+- uid: CG.Purple.SqlServer.Repositories.MessageLogRepository.FindByMessageAsync*
+  name: FindByMessageAsync
+  href: api/CG.Purple.SqlServer.Repositories.MessageLogRepository.html#CG_Purple_SqlServer_Repositories_MessageLogRepository_FindByMessageAsync_
+  commentId: Overload:CG.Purple.SqlServer.Repositories.MessageLogRepository.FindByMessageAsync
+  isSpec: "True"
+  fullName: CG.Purple.SqlServer.Repositories.MessageLogRepository.FindByMessageAsync
+  nameWithType: MessageLogRepository.FindByMessageAsync
 - uid: CG.Purple.SqlServer.Repositories.MessagePropertyRepository
   name: MessagePropertyRepository
   href: api/CG.Purple.SqlServer.Repositories.MessagePropertyRepository.html
@@ -14061,124 +14179,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.SqlServer.Repositories.MessageRepository.UpdateAsync
   nameWithType: MessageRepository.UpdateAsync
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository
-  name: MesssageLogRepository
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html
-  commentId: T:CG.Purple.SqlServer.Repositories.MesssageLogRepository
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository
-  nameWithType: MesssageLogRepository
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.#ctor(IDbContextFactory{CG.Purple.SqlServer.PurpleDbContext},IMapper,ILogger{IMessageLogRepository})
-  name: MesssageLogRepository(IDbContextFactory<PurpleDbContext>, IMapper, ILogger<IMessageLogRepository>)
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository__ctor_IDbContextFactory_CG_Purple_SqlServer_PurpleDbContext__IMapper_ILogger_IMessageLogRepository__
-  commentId: M:CG.Purple.SqlServer.Repositories.MesssageLogRepository.#ctor(IDbContextFactory{CG.Purple.SqlServer.PurpleDbContext},IMapper,ILogger{IMessageLogRepository})
-  name.vb: MesssageLogRepository(IDbContextFactory(Of PurpleDbContext), IMapper, ILogger(Of IMessageLogRepository))
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.MesssageLogRepository(IDbContextFactory<CG.Purple.SqlServer.PurpleDbContext>, IMapper, ILogger<IMessageLogRepository>)
-  fullName.vb: CG.Purple.SqlServer.Repositories.MesssageLogRepository.MesssageLogRepository(IDbContextFactory(Of CG.Purple.SqlServer.PurpleDbContext), IMapper, ILogger(Of IMessageLogRepository))
-  nameWithType: MesssageLogRepository.MesssageLogRepository(IDbContextFactory<PurpleDbContext>, IMapper, ILogger<IMessageLogRepository>)
-  nameWithType.vb: MesssageLogRepository.MesssageLogRepository(IDbContextFactory(Of PurpleDbContext), IMapper, ILogger(Of IMessageLogRepository))
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.#ctor*
-  name: MesssageLogRepository
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository__ctor_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.MesssageLogRepository.#ctor
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.MesssageLogRepository
-  nameWithType: MesssageLogRepository.MesssageLogRepository
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository._dbContextFactory
-  name: _dbContextFactory
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository__dbContextFactory
-  commentId: F:CG.Purple.SqlServer.Repositories.MesssageLogRepository._dbContextFactory
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository._dbContextFactory
-  nameWithType: MesssageLogRepository._dbContextFactory
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository._logger
-  name: _logger
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository__logger
-  commentId: F:CG.Purple.SqlServer.Repositories.MesssageLogRepository._logger
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository._logger
-  nameWithType: MesssageLogRepository._logger
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository._mapper
-  name: _mapper
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository__mapper
-  commentId: F:CG.Purple.SqlServer.Repositories.MesssageLogRepository._mapper
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository._mapper
-  nameWithType: MesssageLogRepository._mapper
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.AnyAsync(CancellationToken)
-  name: AnyAsync(CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_AnyAsync_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.MesssageLogRepository.AnyAsync(CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.AnyAsync(CancellationToken)
-  nameWithType: MesssageLogRepository.AnyAsync(CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.AnyAsync*
-  name: AnyAsync
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_AnyAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.MesssageLogRepository.AnyAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.AnyAsync
-  nameWithType: MesssageLogRepository.AnyAsync
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.CountAsync(CancellationToken)
-  name: CountAsync(CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_CountAsync_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.MesssageLogRepository.CountAsync(CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.CountAsync(CancellationToken)
-  nameWithType: MesssageLogRepository.CountAsync(CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.CountAsync*
-  name: CountAsync
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_CountAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.MesssageLogRepository.CountAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.CountAsync
-  nameWithType: MesssageLogRepository.CountAsync
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.CreateAsync(MessageLog,CancellationToken)
-  name: CreateAsync(MessageLog, CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_CreateAsync_MessageLog_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.MesssageLogRepository.CreateAsync(MessageLog,CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.CreateAsync(MessageLog, CancellationToken)
-  nameWithType: MesssageLogRepository.CreateAsync(MessageLog, CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.CreateAsync*
-  name: CreateAsync
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_CreateAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.MesssageLogRepository.CreateAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.CreateAsync
-  nameWithType: MesssageLogRepository.CreateAsync
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.DeleteAsync(MessageLog,CancellationToken)
-  name: DeleteAsync(MessageLog, CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_DeleteAsync_MessageLog_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.MesssageLogRepository.DeleteAsync(MessageLog,CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.DeleteAsync(MessageLog, CancellationToken)
-  nameWithType: MesssageLogRepository.DeleteAsync(MessageLog, CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.DeleteAsync*
-  name: DeleteAsync
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_DeleteAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.MesssageLogRepository.DeleteAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.DeleteAsync
-  nameWithType: MesssageLogRepository.DeleteAsync
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindAllAsync(CancellationToken)
-  name: FindAllAsync(CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_FindAllAsync_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindAllAsync(CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindAllAsync(CancellationToken)
-  nameWithType: MesssageLogRepository.FindAllAsync(CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindAllAsync*
-  name: FindAllAsync
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_FindAllAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindAllAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindAllAsync
-  nameWithType: MesssageLogRepository.FindAllAsync
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindByMessageAsync(Message,CancellationToken)
-  name: FindByMessageAsync(Message, CancellationToken)
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_FindByMessageAsync_Message_CancellationToken_
-  commentId: M:CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindByMessageAsync(Message,CancellationToken)
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindByMessageAsync(Message, CancellationToken)
-  nameWithType: MesssageLogRepository.FindByMessageAsync(Message, CancellationToken)
-- uid: CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindByMessageAsync*
-  name: FindByMessageAsync
-  href: api/CG.Purple.SqlServer.Repositories.MesssageLogRepository.html#CG_Purple_SqlServer_Repositories_MesssageLogRepository_FindByMessageAsync_
-  commentId: Overload:CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindByMessageAsync
-  isSpec: "True"
-  fullName: CG.Purple.SqlServer.Repositories.MesssageLogRepository.FindByMessageAsync
-  nameWithType: MesssageLogRepository.FindByMessageAsync
 - uid: CG.Purple.SqlServer.Repositories.MimeTypeRepository
   name: MimeTypeRepository
   href: api/CG.Purple.SqlServer.Repositories.MimeTypeRepository.html
