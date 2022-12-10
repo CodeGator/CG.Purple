@@ -16,12 +16,21 @@ steps:
   fetchDepth: 0
   
 - task: UseDotNet@2
-  displayName: 'install .NET sdk'
+  displayName: 'install .NET 7.x'
   inputs:
     packageType: 'sdk'
     version: '7.x'
     includePreviewVersions: true
-    
+
+- task: Bash@3
+  displayName: 'install .NET MAUI'
+  inputs:
+    targetType: 'inline'
+    script: |
+      dotnet nuget locals all --clear 
+      dotnet workload install maui --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+      dotnet workload install android ios maccatalyst macos maui --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+
 - task: NuGetToolInstaller@1
   displayName: 'install nuget'
   inputs:
@@ -34,7 +43,7 @@ steps:
     restoreSolution: '$(solution)'
     feedsToUse: 'config'
     nugetConfigPath: 'nuget.config'
-    
+
 - task: VSBuild@1
   displayName: 'build code'
   inputs:
