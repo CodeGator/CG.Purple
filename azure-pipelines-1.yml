@@ -15,6 +15,15 @@ steps:
 - checkout: self
   fetchDepth: 0
   
+- task: Bash@3
+  displayName: Install .NET MAUI
+  inputs:
+    targetType: 'inline'
+    script: |
+      dotnet nuget locals all --clear 
+      dotnet workload install maui --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+      dotnet workload install android ios maccatalyst macos maui --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+
 - task: UseDotNet@2
   displayName: 'install .NET sdk'
   inputs:
