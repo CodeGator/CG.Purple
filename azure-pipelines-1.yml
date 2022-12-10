@@ -16,7 +16,7 @@ steps:
   fetchDepth: 0
   
 - task: UseDotNet@2
-  displayName: 'install .NET sdk'
+  displayName: 'install .NET 7.x'
   inputs:
     packageType: 'sdk'
     version: '7.x'
@@ -36,13 +36,6 @@ steps:
   inputs:
     versionSpec: 
     
-- task: Bash@3
-  displayName: 'restore .NET MAUI'
-  inputs:
-    targetType: 'inline'
-    script: |
-      dotnet workload restore '$(solution)'
-     
 - task: NuGetCommand@2
   displayName: 'dotnet restore'
   inputs:
@@ -50,7 +43,7 @@ steps:
     restoreSolution: '$(solution)'
     feedsToUse: 'config'
     nugetConfigPath: 'nuget.config'
-    
+
 - task: VSBuild@1
   displayName: 'build code'
   inputs:
