@@ -160,7 +160,7 @@ public class MessageManagerFixture
             new Message()
             {
                 From = "test1@codegator.com",
-                MessageKey = $"{Guid.NewGuid():D}",
+                MessageKey = $"{Guid.NewGuid():N}",
                 MessageType = MessageType.Mail,
                 CreatedBy = "test",
                 CreatedOnUtc = DateTime.UtcNow,
@@ -198,7 +198,7 @@ public class MessageManagerFixture
             new Message()
             {
                 From = "test1@codegator.com",
-                MessageKey = $"{Guid.NewGuid():D}",
+                MessageKey = $"{Guid.NewGuid():N}",
                 MessageType = MessageType.Mail,
                 CreatedBy = "test",
                 CreatedOnUtc = DateTime.UtcNow,
@@ -215,7 +215,7 @@ public class MessageManagerFixture
             new Message()
             {
                 From = "test1@codegator.com",
-                MessageKey = $"{Guid.NewGuid():D}",
+                MessageKey = $"{Guid.NewGuid():N}",
                 MessageType = MessageType.Mail,
                 CreatedBy = "test",
                 CreatedOnUtc = DateTime.UtcNow,

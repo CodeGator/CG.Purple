@@ -66,7 +66,7 @@ public class MimeTypeRepositoryFixture
         var logger = new Mock<ILogger<IMimeTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.MimeTypes.Add(new Purple.SqlServer.Entities.MimeType()
@@ -124,7 +124,7 @@ public class MimeTypeRepositoryFixture
         var logger = new Mock<ILogger<IMimeTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.MimeTypes.Add(new Purple.SqlServer.Entities.MimeType()
@@ -183,7 +183,7 @@ public class MimeTypeRepositoryFixture
         var logger = new Mock<ILogger<IMimeTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         factory.Setup(x => x.CreateDbContextAsync(
@@ -262,7 +262,7 @@ public class MimeTypeRepositoryFixture
         var logger = new Mock<ILogger<IMimeTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.MimeTypes.Add(new Purple.SqlServer.Entities.MimeType()

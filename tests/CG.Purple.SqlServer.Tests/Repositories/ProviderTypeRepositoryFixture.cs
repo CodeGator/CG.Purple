@@ -66,7 +66,7 @@ public class ProviderTypeRepositoryFixture
         var logger = new Mock<ILogger<IProviderTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.ProviderTypes.Add(new Purple.SqlServer.Entities.ProviderType()
@@ -123,7 +123,7 @@ public class ProviderTypeRepositoryFixture
         var logger = new Mock<ILogger<IProviderTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.ProviderTypes.Add(new Purple.SqlServer.Entities.ProviderType()
@@ -181,7 +181,7 @@ public class ProviderTypeRepositoryFixture
         var logger = new Mock<ILogger<IProviderTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         factory.Setup(x => x.CreateDbContextAsync(
@@ -260,7 +260,7 @@ public class ProviderTypeRepositoryFixture
         var logger = new Mock<ILogger<IProviderTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.ProviderTypes.Add(new Purple.SqlServer.Entities.ProviderType()

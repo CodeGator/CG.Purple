@@ -184,7 +184,7 @@ internal class TextMessageManager : ITextMessageManager
                     );
 
                 // Generate the unique message key.
-                textMessage.MessageKey = $"{Guid.NewGuid()}";
+                textMessage.MessageKey = $"{Guid.NewGuid():N}";
             }
 
             // Were manager options provided?

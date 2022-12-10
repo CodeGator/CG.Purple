@@ -187,7 +187,7 @@ internal class MailMessageManager : IMailMessageManager
                     );
 
                 // Generate the unique message key.
-                mailMessage.MessageKey = $"{Guid.NewGuid()}";
+                mailMessage.MessageKey = $"{Guid.NewGuid():N}";
             }
 
             // Were manager options provided?

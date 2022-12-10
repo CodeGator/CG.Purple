@@ -66,12 +66,12 @@ public class MailMessageRepositoryFixture
         var logger = new Mock<ILogger<IMailMessageRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.MailMessages.Add(new Purple.SqlServer.Entities.MailMessage()
         {
-            MessageKey = $"{Guid.NewGuid():D}",
+            MessageKey = $"{Guid.NewGuid():N}",
             Attachments = Array.Empty<Purple.SqlServer.Entities.Attachment>(),
             MessageProperties = Array.Empty<Purple.SqlServer.Entities.MessageProperty>(),
             MessageType = Models.MessageType.Mail,
@@ -128,12 +128,12 @@ public class MailMessageRepositoryFixture
         var logger = new Mock<ILogger<IMailMessageRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.MailMessages.Add(new Purple.SqlServer.Entities.MailMessage()
         {
-            MessageKey = $"{Guid.NewGuid():D}",
+            MessageKey = $"{Guid.NewGuid():N}",
             Attachments = Array.Empty<Purple.SqlServer.Entities.Attachment>(),
             MessageProperties = Array.Empty<Purple.SqlServer.Entities.MessageProperty>(),
             MessageType = Models.MessageType.Mail,
@@ -191,7 +191,7 @@ public class MailMessageRepositoryFixture
         var logger = new Mock<ILogger<IMailMessageRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         factory.Setup(x => x.CreateDbContextAsync(
@@ -204,7 +204,7 @@ public class MailMessageRepositoryFixture
             )).Returns(new CG.Purple.SqlServer.Entities.MailMessage()
             {
                 Id = 1,
-                MessageKey = $"{Guid.NewGuid():D}",
+                MessageKey = $"{Guid.NewGuid():N}",
                 Attachments = Array.Empty<Purple.SqlServer.Entities.Attachment>(),
                 MessageProperties = Array.Empty<Purple.SqlServer.Entities.MessageProperty>(),
                 MessageType = Models.MessageType.Mail,
@@ -221,7 +221,7 @@ public class MailMessageRepositoryFixture
             )).Returns(new Models.MailMessage()
             {
                 Id = 1,
-                MessageKey = $"{Guid.NewGuid():D}",
+                MessageKey = $"{Guid.NewGuid():N}",
                 Attachments = Array.Empty<Models.Attachment>(),
                 MessageProperties = Array.Empty<Models.MessageProperty>(),
                 MessageType = Models.MessageType.Mail,
@@ -244,7 +244,7 @@ public class MailMessageRepositoryFixture
             new Models.MailMessage()
             {
                 Id = 1,
-                MessageKey = $"{Guid.NewGuid():D}",
+                MessageKey = $"{Guid.NewGuid():N}",
                 Attachments = Array.Empty<Models.Attachment>(),
                 MessageProperties = Array.Empty<Models.MessageProperty>(),
                 MessageType = Models.MessageType.Mail,

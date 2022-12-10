@@ -66,7 +66,7 @@ public class MessageRepositoryFixture
         var logger = new Mock<ILogger<IMessageRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.Messages.Add(new Purple.SqlServer.Entities.Message()
@@ -74,7 +74,7 @@ public class MessageRepositoryFixture
             Id = 1,
             Attachments = Array.Empty<Purple.SqlServer.Entities.Attachment>(),
             From = "test1@codegator.com",
-            MessageKey = $"{Guid.NewGuid():D}",
+            MessageKey = $"{Guid.NewGuid():N}",
             MessageProperties = Array.Empty<Purple.SqlServer.Entities.MessageProperty>(),
             MessageState = Models.MessageState.Pending,
             MessageType = Models.MessageType.Text,             
@@ -127,7 +127,7 @@ public class MessageRepositoryFixture
         var logger = new Mock<ILogger<IMessageRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{  Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.Messages.Add(new Purple.SqlServer.Entities.Message()
@@ -135,7 +135,7 @@ public class MessageRepositoryFixture
             Id = 1,
             Attachments = Array.Empty<Purple.SqlServer.Entities.Attachment>(),
             From = "test1@codegator.com",
-            MessageKey = $"{Guid.NewGuid():D}",
+            MessageKey = $"{Guid.NewGuid():N}",
             MessageProperties = Array.Empty<Purple.SqlServer.Entities.MessageProperty>(),
             MessageState = Models.MessageState.Pending,
             MessageType = Models.MessageType.Text,
@@ -188,7 +188,7 @@ public class MessageRepositoryFixture
         var logger = new Mock<ILogger<IMessageRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.Messages.Add(new Purple.SqlServer.Entities.Message()
@@ -196,7 +196,7 @@ public class MessageRepositoryFixture
             Id = 1,
             Attachments = Array.Empty<Purple.SqlServer.Entities.Attachment>(),
             From = "test1@codegator.com",
-            MessageKey = $"{Guid.NewGuid():D}",
+            MessageKey = $"{Guid.NewGuid():N}",
             MessageProperties = Array.Empty<Purple.SqlServer.Entities.MessageProperty>(),
             MessageState = Models.MessageState.Pending,
             MessageType = Models.MessageType.Text,
@@ -217,7 +217,7 @@ public class MessageRepositoryFixture
                 Id = 1,
                 Attachments = Array.Empty<Purple.SqlServer.Entities.Attachment>(),
                 From = "test1@codegator.com",
-                MessageKey = $"{Guid.NewGuid():D}",
+                MessageKey = $"{Guid.NewGuid():N}",
                 MessageProperties = Array.Empty<Purple.SqlServer.Entities.MessageProperty>(),
                 MessageState = Models.MessageState.Pending,
                 MessageType = Models.MessageType.Text,
@@ -238,7 +238,7 @@ public class MessageRepositoryFixture
                 Id = 1,
                 Attachments = Array.Empty<Models.Attachment>(),
                 From = "test1@codegator.com",
-                MessageKey = $"{Guid.NewGuid():D}",
+                MessageKey = $"{Guid.NewGuid():N}",
                 MessageProperties = Array.Empty<Models.MessageProperty>(),
                 MessageState = Models.MessageState.Pending,
                 MessageType = Models.MessageType.Text,

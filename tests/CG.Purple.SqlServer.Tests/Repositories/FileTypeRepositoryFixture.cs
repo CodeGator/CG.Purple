@@ -66,7 +66,7 @@ public class FileTypeRepositoryFixture
         var logger = new Mock<ILogger<IFileTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.FileTypes.Add(new Purple.SqlServer.Entities.FileType()
@@ -123,7 +123,7 @@ public class FileTypeRepositoryFixture
         var logger = new Mock<ILogger<IFileTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.FileTypes.Add(new Purple.SqlServer.Entities.FileType()
@@ -181,7 +181,7 @@ public class FileTypeRepositoryFixture
         var logger = new Mock<ILogger<IFileTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         factory.Setup(x => x.CreateDbContextAsync(
@@ -256,7 +256,7 @@ public class FileTypeRepositoryFixture
         var logger = new Mock<ILogger<IFileTypeRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.FileTypes.Add(new Purple.SqlServer.Entities.FileType()

@@ -66,7 +66,7 @@ public class MessagePropertyRepositoryFixture
         var logger = new Mock<ILogger<IMessagePropertyRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.MessageProperties.Add(new Purple.SqlServer.Entities.MessageProperty()
@@ -123,7 +123,7 @@ public class MessagePropertyRepositoryFixture
         var logger = new Mock<ILogger<IMessagePropertyRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.MessageProperties.Add(new Purple.SqlServer.Entities.MessageProperty()
@@ -181,7 +181,7 @@ public class MessagePropertyRepositoryFixture
         var logger = new Mock<ILogger<IMessagePropertyRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         factory.Setup(x => x.CreateDbContextAsync(
@@ -257,7 +257,7 @@ public class MessagePropertyRepositoryFixture
         var logger = new Mock<ILogger<IMessagePropertyRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.MessageProperties.Add(new Purple.SqlServer.Entities.MessageProperty()

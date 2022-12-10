@@ -100,7 +100,7 @@ public class MailControllerFixture
 
         // Act ...
         var actionResult = await controller.GetByKeyAsync(
-            $"{Guid.NewGuid():D}"
+            $"{Guid.NewGuid():N}"
             ).ConfigureAwait(false);
 
         // Assert ...

@@ -66,7 +66,7 @@ public class AttachmentRepositoryFixture
         var logger = new Mock<ILogger<IAttachmentRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.Attachments.Add(new Purple.SqlServer.Entities.Attachment()
@@ -126,7 +126,7 @@ public class AttachmentRepositoryFixture
         var logger = new Mock<ILogger<IAttachmentRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.Attachments.Add(new Purple.SqlServer.Entities.Attachment()
@@ -187,7 +187,7 @@ public class AttachmentRepositoryFixture
         var logger = new Mock<ILogger<IAttachmentRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         factory.Setup(x => x.CreateDbContextAsync(
@@ -271,7 +271,7 @@ public class AttachmentRepositoryFixture
         var logger = new Mock<ILogger<IAttachmentRepository>>();
 
         var optionsBuilder = new DbContextOptionsBuilder<PurpleDbContext>();
-        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():D}");
+        optionsBuilder.UseInMemoryDatabase($"{Guid.NewGuid():N}");
         var dbContext = new PurpleDbContext(optionsBuilder.Options);
 
         dbContext.Attachments.Add(new Purple.SqlServer.Entities.Attachment()
