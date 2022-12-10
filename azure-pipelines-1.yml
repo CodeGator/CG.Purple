@@ -15,8 +15,15 @@ steps:
 - checkout: self
   fetchDepth: 0
   
+- task: UseDotNet@2
+  displayName: 'install .NET sdk'
+  inputs:
+    packageType: 'sdk'
+    version: '7.x'
+    includePreviewVersions: true
+
 - task: Bash@3
-  displayName: Install .NET MAUI
+  displayName: 'install .NET MAUI'
   inputs:
     targetType: 'inline'
     script: |
@@ -24,18 +31,18 @@ steps:
       dotnet workload install maui --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
       dotnet workload install android ios maccatalyst macos maui --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
 
-- task: UseDotNet@2
-  displayName: 'install .NET sdk'
-  inputs:
-    packageType: 'sdk'
-    version: '7.x'
-    includePreviewVersions: true
-    
 - task: NuGetToolInstaller@1
   displayName: 'install nuget'
   inputs:
     versionSpec: 
     
+- task: Bash@3
+  displayName: 'restore .NET MAUI'
+  inputs:
+    targetType: 'inline'
+    script: |
+      dotnet workload restore '$(solution)'
+     
 - task: NuGetCommand@2
   displayName: 'dotnet restore'
   inputs:
