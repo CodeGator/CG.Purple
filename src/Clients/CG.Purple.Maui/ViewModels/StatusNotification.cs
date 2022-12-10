@@ -18,19 +18,9 @@ public class StatusNotification
     public string MessageKey { get; set; } = null!;
 
     /// <summary>
-    /// This property indicates whether the messages was created.
-    /// </summary>
-    public bool Created { get; set; }
-
-    /// <summary>
     /// This property indicates whether the message was sent.
     /// </summary>
     public bool Sent { get; set; }
-
-    /// <summary>
-    /// This property indicates whether the message failed to send.
-    /// </summary>
-    public bool Failed { get; set; }
 
     /// <summary>
     /// This property contains the error when the message failed to send.

@@ -18,19 +18,9 @@ public class StatusNotification
     public string MessageKey { get; set; } = null!;
 
     /// <summary>
-    /// This property contains the date/time when the message was created.
+    /// This property indicates whether the message was sent.
     /// </summary>
-    public DateTime? CreatedOnUtc { get; set; }
-
-    /// <summary>
-    /// This property contains the date/time when the message was sent.
-    /// </summary>
-    public DateTime? SentOnUtc { get; set; }
-
-    /// <summary>
-    /// This property contains the date/time when the message failed to send.
-    /// </summary>
-    public DateTime? FailedOnUtc { get; set; }
+    public bool Sent { get; set; }
 
     /// <summary>
     /// This property contains the error when the message failed to send.

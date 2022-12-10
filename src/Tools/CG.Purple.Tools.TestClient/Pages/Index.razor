@@ -1,6 +1,6 @@
 ﻿@page "/"
 
-<MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-4">
+<MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-4" Position="Position.Bottom">
     <MudTabPanel Text="Text Messages">
         <EditForm Model="_textModel" OnValidSubmit="OnValidTextSubmitAsync">
             <MudGrid>
@@ -118,6 +118,36 @@
                 </MudItem>
             </MudGrid>
         </EditForm>
+    </MudTabPanel>
+    <MudTabPanel Text="Status">
+        <MudTable Items="_status" Dense Striped>
+            <ToolBarContent>
+                <MudTooltip>
+                    <MudIconButton Icon="@Icons.Material.Filled.Clear" OnClick="@(() => _status.Clear())" />
+                </MudTooltip>                
+                <MudSpacer />
+                <MudText Typo="Typo.h6">Status</MudText>                
+            </ToolBarContent>
+            <HeaderContent>
+                <MudTh><MudTableSortLabel SortBy="new Func<StatusNotification, object>(x=>x.MessageKey)">Key</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<StatusNotification, object>(x=>x.Sent)">Sent</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<StatusNotification, object>(x=>x.SafeError())">Error</MudTableSortLabel></MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Key">@context.MessageKey</MudTd>
+                <MudTd DataLabel="Sent">@context.Sent</MudTd>
+                <MudTd DataLabel="Error">@context.SafeError()</MudTd>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager />
+            </PagerContent>
+            <NoRecordsContent>
+                No notifications were found.
+            </NoRecordsContent>
+            <LoadingContent>
+                Loading notifications ...
+            </LoadingContent>
+        </MudTable>
     </MudTabPanel>
 </MudTabs>
 

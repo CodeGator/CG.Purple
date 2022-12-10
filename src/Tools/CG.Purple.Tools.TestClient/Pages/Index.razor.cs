@@ -1,5 +1,4 @@
 ﻿
-
 namespace CG.Purple.Tools.TestClient.Pages;
 
 /// <summary>
@@ -33,6 +32,11 @@ public partial class Index
         Subject = "test email",
         Body = "this is a test email"
     };
+
+    /// <summary>
+    /// This field contains a list of status notifications.
+    /// </summary>
+    internal protected List<StatusNotification> _status = new();
 
     #endregion
 
@@ -74,21 +78,23 @@ public partial class Index
 
     #region Protected methods
 
+    /// <summary>
+    /// This method is called by Blazor to initialize the page.
+    /// </summary>
     protected override void OnInitialized()
     {
         // Wire up a handler for status notifications.
         Monitor.Status += (status) =>
         {
-            SnackbarService.Add(
-                $"<b>Status update!</b>",
-                Severity.Normal,
-                options => options.CloseAfterNavigation = true
-                );
+            // Remember the notification.
+            _status.Add(status);
         };
 
         // Give the base class a chance.
         base.OnInitialized();
     }
+
+    // *******************************************************************
 
     /// <summary>
     /// This method sends a mail message to the microservice.

@@ -85,15 +85,13 @@ public class StatusHub : Hub
             var status = new StatusNotification()
             {
                 MessageKey = message.MessageKey,
-                CreatedOnUtc = message.CreatedOnUtc,
-                SentOnUtc = logs.FirstOrDefault(x => x.MessageEvent == MessageEvent.Sent)?.CreatedOnUtc
+                Sent = logs.Any(x => x.MessageEvent == MessageEvent.Sent)
             };
 
             // Should we look for failure information?
-            if (status.SentOnUtc is null)
+            if (status.Sent is false)
             {
                 var log = logs.FirstOrDefault(x => x.MessageEvent == MessageEvent.Error);
-                status.FailedOnUtc = log?.CreatedOnUtc;
                 status.Error = log?.Error;
             }
 
