@@ -65,12 +65,6 @@ public static class WebApplicationBuilderExtensions006
         // Add the services.
         webApplicationBuilder.Services.AddHostedService<PipelineService>();
 
-        // Add SignalR stuff.
-        webApplicationBuilder.Services.AddSignalR(options =>
-        {
-            options.EnableDetailedErrors = true;
-        });
-
         // Return the application builder.
         return webApplicationBuilder;
     }

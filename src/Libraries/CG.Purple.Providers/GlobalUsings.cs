@@ -1,6 +1,9 @@
 ﻿global using CG.Purple.Managers;
 global using CG.Purple.Models;
+global using CG.Purple.Providers.Models;
 global using CG.Validations;
+global using Microsoft.AspNetCore.SignalR;
+global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
 global using System;
 global using System.Security.Cryptography;

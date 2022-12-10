@@ -1,4 +1,5 @@
-﻿namespace CG.Purple.Providers.SendGrid;
+﻿
+namespace CG.Purple.Providers.SendGrid;
 
 /// <summary>
 /// This class is a SendGrid implementation of the <see cref="IMessageProvider"/>
@@ -31,6 +32,8 @@ internal class SendGridProvider :
     /// This constructor creates a new instance of the <see cref="SendGridProvider"/>
     /// class.
     /// </summary>
+    /// <param name="statusHub">The SignalR status hub to use with this 
+    /// provider.</param>
     /// <param name="mailMessageManager">The mail message manager to use
     /// with this provider.</param>
     /// <param name="messageManager">The message manager to use with this 
@@ -41,11 +44,13 @@ internal class SendGridProvider :
     /// <exception cref="ArgumentException">This exception is thrown whenever
     /// one or more arguments are missing, or invalid.</exception>
     public SendGridProvider(
+        StatusHub statusHub,
         IMailMessageManager mailMessageManager,
         IMessageManager messageManager,
         IMessageLogManager processLogManager,
         ILogger<SendGridProvider> logger
         ) : base(
+            statusHub,
             messageManager,
             processLogManager,
             logger

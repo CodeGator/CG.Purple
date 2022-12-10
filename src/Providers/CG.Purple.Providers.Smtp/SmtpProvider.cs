@@ -1,4 +1,5 @@
-﻿namespace CG.Purple.Providers.Smtp;
+﻿
+namespace CG.Purple.Providers.Smtp;
 
 /// <summary>
 /// This class is a SMTP implementation of the <see cref="IMessageProvider"/>
@@ -31,6 +32,8 @@ internal class SmtpProvider :
     /// This constructor creates a new instance of the <see cref="SmtpProvider"/>
     /// class.
     /// </summary>
+    /// <param name="statusHub">The SignalR status context to use with this 
+    /// provider.</param>
     /// <param name="mailMessageManager">The mail message manager to use
     /// with this provider.</param>
     /// <param name="messageManager">The message manager to use with this 
@@ -41,11 +44,13 @@ internal class SmtpProvider :
     /// <exception cref="ArgumentException">This exception is thrown whenever
     /// one or more arguments are missing, or invalid.</exception>
     public SmtpProvider(
+        StatusHub statusHub,
         IMailMessageManager mailMessageManager,
         IMessageManager messageManager,
         IMessageLogManager processLogManager,
         ILogger<SmtpProvider> logger
         ) : base(
+            statusHub,
             messageManager,
             processLogManager,
             logger

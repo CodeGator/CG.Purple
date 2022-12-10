@@ -35,7 +35,7 @@
         <MudTd DataLabel="Disabled"><MudCheckBox Checked="@context.IsDisabled" ReadOnly /></MudTd>
         <MudTd>
             <MudTooltip Text="Delete">
-                <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context)" />
+                <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context)" Disabled=@(context.Parameters.Any()) />
             </MudTooltip>
             <MudTooltip Text="Edit">
                 <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditAsync(context)" />

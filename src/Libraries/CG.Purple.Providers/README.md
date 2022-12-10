@@ -1,7 +1,7 @@
 
 ### CG.Purple.Providers - README
 
-This project common logic for **CG.Purple** providers.
+This project contains common provider logic for the **CG.Purple** microservice.
 
 #### Notes
 

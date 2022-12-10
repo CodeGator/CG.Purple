@@ -19,6 +19,8 @@ internal class DoNothingProvider :
     /// This constructor creates a new instance of the <see cref="DoNothingProvider"/>
     /// class.
     /// </summary>
+    /// <param name="statusHub">The SignalR status hub to use with this 
+    /// provider.</param>
     /// <param name="messageManager">The message manager to use with this 
     /// provider.</param>
     /// <param name="processLogManager">The process log manager to use
@@ -27,10 +29,12 @@ internal class DoNothingProvider :
     /// <exception cref="ArgumentException">This exception is thrown whenever
     /// one or more arguments are missing, or invalid.</exception>
     public DoNothingProvider(
+        StatusHub statusHub,
         IMessageManager messageManager,
         IMessageLogManager processLogManager,
         ILogger<DoNothingProvider> logger
         ) : base(
+            statusHub,
             messageManager,
             processLogManager,
             logger

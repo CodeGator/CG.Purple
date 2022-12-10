@@ -6,7 +6,6 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Description>SqlServer data-access-library for the CG.Purple microservice.</Description>
-        <PackageIcon>packageDefaultIcon-50x50.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 

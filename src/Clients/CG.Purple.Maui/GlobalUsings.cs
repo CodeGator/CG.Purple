@@ -1,0 +1,10 @@
+﻿global using CG.Purple.Maui;
+global using CG.Purple.Maui.Options;
+global using CG.Purple.Maui.ViewModels;
+global using CG.Validations;
+global using Microsoft.AspNetCore.SignalR.Client;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.Options;
+global using System;
+global using System.ComponentModel.DataAnnotations;
+global using System.Net.Http.Json;

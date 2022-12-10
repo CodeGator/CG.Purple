@@ -49,6 +49,9 @@ try
     builder.AddSeedingLayer(
         bootstrapLogger: BootstrapLogger.Instance()
     );
+    builder.AddProviderLayer(
+        bootstrapLogger: BootstrapLogger.Instance()
+    );
     builder.AddDoNothingProvider(
        bootstrapLogger: BootstrapLogger.Instance()
     );
@@ -79,7 +82,7 @@ try
     // Use CodeGator stuff.
     app.UseDalStartup()
         .UseStartupSeeding()
-        .UseServicesLayer();
+        .UseProviderLayer();
 
     // Run the application.
     app.Run();

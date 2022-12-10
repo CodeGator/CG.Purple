@@ -1,0 +1,123 @@
+﻿@page "/"
+
+<MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-4">
+    <MudTabPanel Text="Text Messages">
+        <EditForm Model="_textModel" OnValidSubmit="OnValidTextSubmitAsync">
+            <MudGrid>
+                <MudItem xs="12"><DataAnnotationsValidator /></MudItem>
+                <MudItem xs="6">
+                    <MudButton Color="Color.Secondary"
+                               Variant="Variant.Filled"
+                               FullWidth
+                               Size="Size.Small"
+                               StartIcon="@Icons.Material.Filled.AttachFile"
+                               OnClick="OnTextAttachmentsAsync">Attachments</MudButton>
+                </MudItem>
+                <MudItem xs="6">
+                    <MudButton Color="Color.Secondary"
+                               Variant="Variant.Filled"
+                               FullWidth
+                               Size="Size.Small"
+                               StartIcon="@Icons.Material.Filled.PresentToAll"
+                               OnClick="OnTextPropertiesAsync">Properties</MudButton>
+                </MudItem>
+                <MudItem xs="12">
+                    <MudTextField Variant="Variant.Outlined"
+                                  Label="From"
+                                  For="@(() => _textModel.From)"
+                                  @bind-Value="@_textModel.From" />
+                </MudItem>
+                <MudItem xs="12">
+                    <MudTextField Variant="Variant.Outlined"
+                                  Label="To"
+                                  For="@(() => _textModel.To)"
+                                  @bind-Value="@_textModel.To" />
+                </MudItem>
+                <MudItem xs="12">
+                    <MudTextField Variant="Variant.Outlined"
+                                  Label="Body"
+                                  Lines="4"
+                                  For="@(() => _textModel.Body)"
+                                  @bind-Value="@_textModel.Body" />
+                </MudItem>
+                <MudItem xs="12">
+                    <MudButton ButtonType="ButtonType.Submit"
+                               StartIcon="@Icons.Material.Filled.Send"
+                               Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               FullWidth>Send Text</MudButton>
+                </MudItem>
+            </MudGrid>
+        </EditForm>
+    </MudTabPanel>
+    <MudTabPanel Text="Mail Messages">
+        <EditForm Model="_mailModel" OnValidSubmit="OnValidMailSubmitAsync">
+            <MudGrid>
+                <MudItem xs="12"><DataAnnotationsValidator /></MudItem>
+                <MudItem xs="6">
+                    <MudButton Color="Color.Secondary"
+                               Variant="Variant.Filled"
+                               FullWidth
+                               Size="Size.Small"
+                               StartIcon="@Icons.Material.Filled.AttachFile"
+                               OnClick="OnMailAttachmentsAsync">Attachments</MudButton>
+                </MudItem>
+                <MudItem xs="6">
+                    <MudButton Color="Color.Secondary"
+                               Variant="Variant.Filled"
+                               FullWidth
+                               Size="Size.Small"
+                               StartIcon="@Icons.Material.Filled.PresentToAll"
+                               OnClick="OnMailPropertiesAsync">Properties</MudButton>
+                </MudItem>
+                <MudItem xs="12">
+                    <MudTextField Variant="Variant.Outlined"
+                                  Label="From"
+                                  For="@(() => _mailModel.From)"
+                                  @bind-Value="@_mailModel.From" />
+                </MudItem>
+                <MudItem xs="12">
+                    <MudTextField Variant="Variant.Outlined"
+                                  Label="To"
+                                  For="@(() => _mailModel.To)"
+                                  @bind-Value="@_mailModel.To" />
+                </MudItem>
+                <MudItem xs="12">
+                    <MudExpansionPanels>
+                        <MudExpansionPanel Text="CC/BCC" >
+                            <MudTextField Variant="Variant.Outlined"
+                                          Label="CC"
+                                          For="@(() => _mailModel.CC)"
+                                          @bind-Value="@_mailModel.CC" />
+                            <MudTextField Variant="Variant.Outlined"
+                                          Label="BCC"
+                                          For="@(() => _mailModel.BCC)"
+                                          @bind-Value="@_mailModel.BCC" />
+                        </MudExpansionPanel>
+                    </MudExpansionPanels>                    
+                </MudItem>
+                <MudItem xs="12">
+                    <MudTextField Variant="Variant.Outlined"
+                                  Label="Subject"
+                                  For="@(() => _mailModel.Subject)"
+                                  @bind-Value="@_mailModel.Subject" />
+                </MudItem>
+                <MudItem xs="12">
+                    <MudTextField Variant="Variant.Outlined"
+                                  Label="Body"
+                                  Lines="8"
+                                  For="@(() => _mailModel.Body)"
+                                  @bind-Value="@_mailModel.Body" />
+                </MudItem>
+                <MudItem xs="12">
+                    <MudButton ButtonType="ButtonType.Submit"
+                               StartIcon="@Icons.Material.Filled.Send"
+                               Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               FullWidth>Send Text</MudButton>
+                </MudItem>
+            </MudGrid>
+        </EditForm>
+    </MudTabPanel>
+</MudTabs>
+

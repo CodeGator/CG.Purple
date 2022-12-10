@@ -1,5 +1,5 @@
 ﻿
-namespace CG.Puple.Host.Themes;
+namespace CG.Purple.Host.Themes;
 
 /// <summary>
 /// This class represents the default MudBlazor UI theme.

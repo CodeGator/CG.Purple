@@ -31,7 +31,7 @@
         <MudTd DataLabel="Type">@context.SubType</MudTd>
         <MudTd>
             <MudTooltip Text="Delete">
-                <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context)" />
+                <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context)" Disabled=@(context.FileTypes.Any()) />
             </MudTooltip>
             <MudTooltip Text="Edit">
                 <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditAsync(context)" />

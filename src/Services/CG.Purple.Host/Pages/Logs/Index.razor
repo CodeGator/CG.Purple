@@ -15,16 +15,16 @@
         <MudDatePicker Label="End Date" Clearable @bind-Date="_endDate" />
     </MudItem>
     <MudItem xs="2">
-        <MudExEnumSelect TEnum="MessageEvent?" Label="Event Type" @bind-Value="_eventType"/>
+        <MudExEnumSelect TEnum="MessageEvent?" FilterEnabled=false Label="Event Type" @bind-Value="_eventType" />
     </MudItem>
     <MudItem xs="2">
-        <MudExEnumSelect TEnum="MessageType?" Label="Message Type" @bind-Value="_messageType" />
+        <MudExEnumSelect TEnum="MessageType?" FilterEnabled=false Label="Message Type" @bind-Value="_messageType" />
     </MudItem>
     <MudItem xs="2">
-        <MudExEnumSelect TEnum="MessageState?" Label="Before State" @bind-Value="_beforeState" />
+        <MudExEnumSelect TEnum="MessageState?" FilterEnabled=false Label="Before State" @bind-Value="_beforeState" />
     </MudItem>
     <MudItem xs="2">
-        <MudExEnumSelect TEnum="MessageState?" Label="After State" @bind-Value="_afterState" />
+        <MudExEnumSelect TEnum="MessageState?" FilterEnabled=false Label="After State" @bind-Value="_afterState" />
     </MudItem>
     <MudItem xs="2">
         <MudSelect T="ProviderType" Label="Provider Types" Clearable @bind-Value="_providerType">

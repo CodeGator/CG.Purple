@@ -7,3 +7,4 @@ global using SendGrid.Helpers.Mail;
 global using SendGrid.Helpers.Reliability;
 global using CG.Purple.Providers.SendGrid;
 global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.AspNetCore.SignalR;

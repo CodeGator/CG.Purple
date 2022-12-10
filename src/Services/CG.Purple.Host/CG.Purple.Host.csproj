@@ -45,6 +45,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Data\CG.Purple.SqlServer\CG.Purple.SqlServer.csproj" />
+        <ProjectReference Include="..\..\Framework\CG.Blazor\CG.Blazor.csproj" />
         <ProjectReference Include="..\..\Libraries\CG.Purple.Seeding\CG.Purple.Seeding.csproj" />
         <ProjectReference Include="..\..\Libraries\CG.Purple\CG.Purple.csproj" />
         <ProjectReference Include="..\..\Providers\CG.Purple.Providers.DoNothing\CG.Purple.Providers.DoNothing.csproj" />

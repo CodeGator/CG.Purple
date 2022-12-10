@@ -15,6 +15,11 @@ public abstract class MessageProviderBase<T> : IMessageProvider
     #region Fields
 
     /// <summary>
+    /// This field contains the SignalR status hub for this provider.
+    /// </summary>
+    internal protected readonly StatusHub _statusHub;
+
+    /// <summary>
     /// This field contains the message manager for this provider.
     /// </summary>
     internal protected readonly IMessageManager _messageManager = null!;
@@ -46,6 +51,8 @@ public abstract class MessageProviderBase<T> : IMessageProvider
     /// This constructor create a new instance of the <see cref="MessageProviderBase{T}"/>
     /// class.
     /// </summary>
+    /// <param name="statusHub">The SignalR status hub to use with this 
+    /// provider.</param>
     /// <param name="messageManager">The message manager to use with this 
     /// provider.</param>
     /// <param name="messageLogManager">The message log manager to use
@@ -54,17 +61,20 @@ public abstract class MessageProviderBase<T> : IMessageProvider
     /// <exception cref="ArgumentException">This exception is thrown whenever
     /// one or more arguments are missing, or invalid.</exception>
     protected MessageProviderBase(
+        StatusHub statusHub,
         IMessageManager messageManager,
         IMessageLogManager messageLogManager,
         ILogger<T> logger
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(messageManager, nameof(messageManager))
+        Guard.Instance().ThrowIfNull(statusHub, nameof(statusHub))
+            .ThrowIfNull(messageManager, nameof(messageManager))
             .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
+        _statusHub = statusHub;
         _messageManager = messageManager;
         _messageLogManager = messageLogManager;
         _logger = logger;
@@ -302,7 +312,7 @@ public abstract class MessageProviderBase<T> : IMessageProvider
 
         // Log what we are about to do.
         _logger.LogDebug(
-            "Writing event to the message log for message: {id}",
+            "Logging that the message: {id} was sent.",
             message.Id
             );
 
@@ -317,6 +327,18 @@ public abstract class MessageProviderBase<T> : IMessageProvider
                 AfterState = message.MessageState
             },
             "host",
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Sending a SignalR status update for message: {id}.",
+            message.Id
+            );
+
+        // Send the status update.
+        await _statusHub.OnStatusAsync(
+            message.MessageKey,
             cancellationToken
             ).ConfigureAwait(false);
     }
@@ -380,7 +402,7 @@ public abstract class MessageProviderBase<T> : IMessageProvider
 
         // Log what we are about to do.
         _logger.LogDebug(
-            "The message: {id} failed to send!",
+            "Logging that the message: {id} failed to send.",
             message.Id
             );
 
@@ -394,6 +416,18 @@ public abstract class MessageProviderBase<T> : IMessageProvider
                 ProviderType = oldProviderType
             },
             "host",
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Log what we are about to do.
+        _logger.LogDebug(
+            "Sending a SignalR status update for message: {id}.",
+            message.Id
+            );
+
+        // Send the status update.
+        await _statusHub.OnStatusAsync(
+            message.MessageKey,
             cancellationToken
             ).ConfigureAwait(false);
     }
