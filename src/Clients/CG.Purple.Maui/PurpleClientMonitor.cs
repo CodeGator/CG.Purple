@@ -1,6 +1,4 @@
 ﻿
-using System.Net.Http;
-
 namespace CG.Purple.Maui;
 
 /// <summary>
@@ -75,8 +73,8 @@ public class PurpleClientMonitor
     #region Private methods
 
     /// <summary>
-    /// This method stand up a back channel for continuous status updates 
-    /// from the microservice.
+    /// This method stand up a back channel for status updates from the 
+    /// microservice.
     /// </summary>
     private void EnsureBackchannel()
     {
@@ -117,8 +115,27 @@ public class PurpleClientMonitor
                     }
                 });
 
-            // Start the back channel.
-            _statusHub.StartAsync().Wait();
+            // Try a few times.
+            for (var x = 0; x < 3; x++)
+            {
+                try
+                {
+                    // Start the back channel.
+                    _statusHub.StartAsync().Wait();
+
+                    // Stop trying if we succeed.
+                    break;
+                }
+                catch (AggregateException ex)
+                {
+                    // We might be running before the service is ready ...
+                    if (ex.GetBaseException() is HttpRequestException)
+                    {
+                        // Wait a bit.
+                        Task.Delay(500).Wait();
+                    }                    
+                }
+            }
         }
     }
 

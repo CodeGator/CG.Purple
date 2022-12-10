@@ -338,7 +338,7 @@ public abstract class MessageProviderBase<T> : IMessageProvider
 
         // Send the status update.
         await _statusHub.OnStatusAsync(
-            message.MessageKey,
+            message,
             cancellationToken
             ).ConfigureAwait(false);
     }
@@ -427,7 +427,7 @@ public abstract class MessageProviderBase<T> : IMessageProvider
 
         // Send the status update.
         await _statusHub.OnStatusAsync(
-            message.MessageKey,
+            message,
             cancellationToken
             ).ConfigureAwait(false);
     }
