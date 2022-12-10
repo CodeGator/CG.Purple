@@ -6,22 +6,27 @@
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/codegator/CG.Purple/93)
 [![Github discussion](https://img.shields.io/badge/Discussion-online-blue)](https://github.com/CodeGator/CG.Purple/discussions)
 
-
 ### What are the design goals?
-Purple is an idea for a self contained messaging microservice. The scenario is: You give Purple an email, or text, via a REST call, and it takes care of storing that message, sending it, and tracking it's history and status, on your behalf.
+Purple is an idea for a self contained messaging microservice. The scenario is: You give Purple an email, or a text, via a REST call, and it takes care of storing that message, sending it, and tracking it's history and status, on your behalf.
 
-* The service will handle retry logic, notifications, etc.
+### What's actually working, at this point?
 
-* The service will keep messages for a configurable amount of time. 
+* The service sends mail messages (we're working on the texts).
 
-* The service will send notifications, via SignalR, for status.
+* The service handles retry logic, for failed messages.
 
-* There will be a REST interface, for information about messages, history, etc.
+* The service sends notifications, via SignalR, in real time.
 
-* There will (maybe) be a mobile app, for administering the service remotely.
+* The service keeps messages for a configurable amount of time. 
+
+* The services has a simple REST interface.
+
+* The service has a simple C# client that wraps the REST interface and makes it ridiculously easy to use the microservice from any C# application.
 
 ### What does it look like?
-Here are a few early screen shots (subject to change):
+It's a microservice, who cares?? 
+
+No seriously, here are a few early screen shots (subject to change):
 
 Message page:
 ![messges](screens/messages.png)
@@ -39,7 +44,7 @@ Provider Type page:
 * For now, SqlServer 2019, or higher.
 
 ### What 3rd party providers does it support?
-* For sure, SMTP and SendGrid. Possibly also Twillio. Maybe others, who knows.
+* For sure, SMTP and SendGrid. Possibly others, who knows.
 
 ### How do I contact you?
 If you've spotted a bug in the code please use the project Issues [HERE](https://github.com/CodeGator/CG.Purple/issues)
@@ -47,9 +52,13 @@ If you've spotted a bug in the code please use the project Issues [HERE](https:/
 We also have a discussion group [HERE](https://github.com/CodeGator/CG.Purple/discussions)
 
 ### Is there any documentation?
-There is developer documentation [HERE](https://codegator.github.io/CG.Purple/)
+There is developer documentation [HERE](https://codegator.github.io/CG.Purple/)  (when the blasted CI/CD pipeline works and it gets updated).
 
 We also blog about projects like this one on our website, [HERE](http://www.codegator.com)
 
-## Disclaimer
+### Can I help with the project?
+
+At some point, hopefully soon, I'll be able to include others in the project. Stay tuned for that.
+
+### Disclaimer
 This project and it's contents are experimental in nature. There is no official support. Use at your own risk.
