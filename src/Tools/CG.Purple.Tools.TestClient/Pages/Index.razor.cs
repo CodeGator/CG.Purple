@@ -34,6 +34,41 @@ public partial class Index
     };
 
     /// <summary>
+    /// This field contains a disabled flag, for messages.
+    /// </summary>
+    internal protected string? _messageKey;
+
+    /// <summary>
+    /// This field contains a disabled flag, for messages.
+    /// </summary>
+    internal protected bool? _isDisabled;
+
+    /// <summary>
+    /// This field contains a disabled flag, for messages.
+    /// </summary>
+    internal protected int? _maxErrors;
+
+    /// <summary>
+    /// This field contains a default priority, for messages.
+    /// </summary>
+    internal protected int? _priority;
+
+    /// <summary>
+    /// This field contains a default process after date, for messages.
+    /// </summary>
+    internal protected DateTime? _processAfter;
+
+    /// <summary>
+    /// This field contains a default archive after date, for messages.
+    /// </summary>
+    internal protected DateTime? _archiveAfter;
+
+    /// <summary>
+    /// This field contains a default providerType, for messages.
+    /// </summary>
+    internal protected string? _providerType;
+
+    /// <summary>
     /// This field contains a list of status notifications.
     /// </summary>
     internal protected List<StatusNotification> _status = new();
@@ -107,9 +142,30 @@ public partial class Index
             // Create the HTTP client.
             var client = Factory.CreateClient();
 
+            // Copy the message, in case the advanced properties changed.
+            var message = new MailStorageRequest()
+            {
+                MessageKey = _messageKey,
+                IsDisabled = _isDisabled,
+                Priority = _priority,
+                ProviderType = _providerType,
+                MaxErrors = _maxErrors,
+                ProcessAfterUtc = _processAfter,
+                ArchiveAfterUtc = _archiveAfter,
+                From = _mailModel.From,
+                To = _mailModel.To, 
+                CC = _mailModel.CC,
+                BCC = _mailModel.BCC,
+                Subject = _mailModel.Subject,
+                Body = _mailModel.Body,
+                IsHtml = _mailModel.IsHtml, 
+                Attachments = _mailModel.Attachments,   
+                Properties = _mailModel.Properties,
+            };
+
             // Send the email.
             var response = await client.SendMailMessageAsync(
-                _mailModel
+                message
                 );
 
             // Did we succeed?
@@ -139,6 +195,7 @@ public partial class Index
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.Message}</li></ul>" +
                 $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
                 Severity.Error,
                 options => options.CloseAfterNavigation = true
@@ -159,9 +216,26 @@ public partial class Index
             // Create the HTTP client.
             var client = Factory.CreateClient();
 
+            // Copy the message, in case the advanced properties changed.
+            var message = new TextStorageRequest()
+            {
+                MessageKey = _messageKey,
+                IsDisabled = _isDisabled,
+                Priority = _priority,
+                ProviderType = _providerType,
+                MaxErrors = _maxErrors,
+                ProcessAfterUtc = _processAfter,
+                ArchiveAfterUtc = _archiveAfter,
+                From = _textModel.From,
+                To = _textModel.To, 
+                Body = _textModel.Body,
+                Attachments = _textModel.Attachments,
+                Properties = _textModel.Properties,
+            };
+
             // Send the text.
             var response = await client.SendTextMessageAsync(
-                _textModel
+                message
                 );
 
             // Did we succeed?
@@ -191,6 +265,7 @@ public partial class Index
             // Tell the world what happened.
             SnackbarService.Add(
                 $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.Message}</li></ul>" +
                 $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
                 Severity.Error,
                 options => options.CloseAfterNavigation = true

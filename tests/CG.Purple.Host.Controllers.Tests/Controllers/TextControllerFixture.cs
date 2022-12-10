@@ -15,7 +15,7 @@ public class TextControllerFixture
     #region Public methods
 
     /// <summary>
-    /// This method ensures the <see cref="TextController.TextController(Managers.ITextMessageManager, Managers.IMessageLogManager, Managers.IMimeTypeManager, Managers.IPropertyTypeManager, Microsoft.Extensions.Logging.ILogger{TextController})"/>
+    /// This method ensures the <see cref="TextController.TextController(ITextMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, IProviderTypeManager, ILogger{TextController})"/>
     /// constructor properly initializes object instances.
     /// </summary>
     [TestMethod]
@@ -27,6 +27,7 @@ public class TextControllerFixture
         var messageLogManager = new Mock<IMessageLogManager>();
         var mimeTypeManager = new Mock<IMimeTypeManager>();
         var propertyTypeManager = new Mock<IPropertyTypeManager>();
+        var providerTypeManager = new Mock<IProviderTypeManager>();
         var logger = new Mock<ILogger<TextController>>();
 
         // Act ...
@@ -35,6 +36,7 @@ public class TextControllerFixture
             messageLogManager.Object,
             mimeTypeManager.Object,
             propertyTypeManager.Object,
+            providerTypeManager.Object,
             logger.Object
             );
 
@@ -54,6 +56,10 @@ public class TextControllerFixture
         Assert.IsTrue(
             controller._propertyTypeManager != null,
             "The _propertyTypeManager field wasn't initialize!"
+            );
+        Assert.IsTrue(
+            controller._providerTypeManager != null,
+            "The _providerTypeManager field wasn't initialize!"
             );
         Assert.IsTrue(
             controller._logger != null,
@@ -76,6 +82,7 @@ public class TextControllerFixture
         var messageLogManager = new Mock<IMessageLogManager>();
         var mimeTypeManager = new Mock<IMimeTypeManager>();
         var propertyTypeManager = new Mock<IPropertyTypeManager>();
+        var providerTypeManager = new Mock<IProviderTypeManager>();
         var logger = new Mock<ILogger<TextController>>();
 
         textMessageManager.Setup(x => x.FindByKeyAsync(
@@ -95,6 +102,7 @@ public class TextControllerFixture
             messageLogManager.Object,
             mimeTypeManager.Object,
             propertyTypeManager.Object,
+            providerTypeManager.Object,
             logger.Object
             );
 
@@ -137,6 +145,7 @@ public class TextControllerFixture
         var messageLogManager = new Mock<IMessageLogManager>();
         var mimeTypeManager = new Mock<IMimeTypeManager>();
         var propertyTypeManager = new Mock<IPropertyTypeManager>();
+        var providerTypeManager = new Mock<IProviderTypeManager>();
         var logger = new Mock<ILogger<TextController>>();
 
         textMessageManager.Setup(x => x.CreateAsync(
@@ -151,6 +160,7 @@ public class TextControllerFixture
             messageLogManager.Object,
             mimeTypeManager.Object,
             propertyTypeManager.Object,
+            providerTypeManager.Object,
             logger.Object
             );
 

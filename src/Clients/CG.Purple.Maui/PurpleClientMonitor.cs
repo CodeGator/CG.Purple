@@ -37,6 +37,12 @@ public class PurpleClientMonitor
     /// </summary>
     public Action<StatusNotification>? Status { get; set; }
 
+    /// <summary>
+    /// This property indicates whether or not the monitor is actively 
+    /// connected to the microservice.
+    /// </summary>
+    public bool IsConnected { get; private set; }
+
     #endregion
 
     // *******************************************************************
@@ -109,7 +115,7 @@ public class PurpleClientMonitor
                         // Call the delegate.
                         Status?.Invoke(statusUpdate);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         // TODO : decide what to do here.
                     }
@@ -136,6 +142,9 @@ public class PurpleClientMonitor
                     }                    
                 }
             }
+
+            // Tell the world what happened.
+            IsConnected = _statusHub.State == HubConnectionState.Connected;
         }
     }
 

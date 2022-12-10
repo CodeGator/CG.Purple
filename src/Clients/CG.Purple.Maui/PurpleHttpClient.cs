@@ -84,16 +84,40 @@ public class PurpleHttpClient : HttpClient
             JsonContent.Create(request)
             );
 
-        // Throw if we failed.
-        result.EnsureSuccessStatusCode();
+        try
+        {
+            // Throw if we failed.
+            result.EnsureSuccessStatusCode();
 
-        // Read the response from the microservice.
-        var response = await result.Content.ReadFromJsonAsync<StorageResponse>(
-            cancellationToken : cancellationToken
-            );
+            // Read the response from the microservice.
+            var response = await result.Content.ReadFromJsonAsync<StorageResponse>(
+                cancellationToken: cancellationToken
+                );
 
-        // Return the response.
-        return response;
+            // Return the response.
+            return response;
+        }
+        catch (Exception ex)
+        {
+            // Look for an error message in the body.
+            var error = await result.Content.ReadAsStringAsync(
+                cancellationToken
+                );
+
+            // Did we find anything?
+            if (!string.IsNullOrEmpty(error))
+            {
+                // Add better context.
+                throw new HttpRequestException(
+                    message: error,
+                    inner: ex
+                    );
+            }            
+            else
+            {
+                throw;
+            }
+        }
     }
 
     // *******************************************************************
@@ -120,16 +144,40 @@ public class PurpleHttpClient : HttpClient
             JsonContent.Create(request)
             );
 
-        // Throw if we failed.
-        result.EnsureSuccessStatusCode();
+        try
+        {
+            // Throw if we failed.
+            result.EnsureSuccessStatusCode();
 
-        // Read the response from the microservice.
-        var response = await result.Content.ReadFromJsonAsync<StorageResponse>(
-            cancellationToken: cancellationToken
-            );
+            // Read the response from the microservice.
+            var response = await result.Content.ReadFromJsonAsync<StorageResponse>(
+                cancellationToken: cancellationToken
+                );
 
-        // Return the response.
-        return response;
+            // Return the response.
+            return response;
+        }
+        catch (Exception ex)
+        {
+            // Look for an error message in the body.
+            var error = await result.Content.ReadAsStringAsync(
+                cancellationToken
+                );
+
+            // Did we find anything?
+            if (!string.IsNullOrEmpty(error))
+            {
+                // Add better context.
+                throw new HttpRequestException(
+                    message: error,
+                    inner: ex
+                    );
+            }
+            else
+            {
+                throw;
+            }
+        }
     }
 
     // *******************************************************************

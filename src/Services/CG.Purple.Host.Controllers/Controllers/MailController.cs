@@ -35,6 +35,11 @@ public class MailController : ControllerBase
     internal protected readonly IPropertyTypeManager _propertyTypeManager;
 
     /// <summary>
+    /// This field contains the provider type manager for this controller.
+    /// </summary>
+    internal protected readonly IProviderTypeManager _providerTypeManager;
+
+    /// <summary>
     /// This field contains the logger for this controller.
     /// </summary>
     internal protected readonly ILogger<MailController> _logger;
@@ -59,12 +64,15 @@ public class MailController : ControllerBase
     /// this controller.</param>
     /// <param name="propertyTypeManager">The property type manager to
     /// use with this controller.</param>
+    /// <param name="providerTypeManager">The provider type manager to
+    /// use with this controller.</param>
     /// <param name="logger">The logger to use with this controller.</param>
     public MailController(
         IMailMessageManager mailMessageManager,
         IMessageLogManager messageLogManager,
         IMimeTypeManager mimeTypeManager,
         IPropertyTypeManager propertyTypeManager,
+        IProviderTypeManager providerTypeManager,
         ILogger<MailController> logger
         )
     {
@@ -73,6 +81,7 @@ public class MailController : ControllerBase
             .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(mimeTypeManager, nameof(mimeTypeManager))
             .ThrowIfNull(propertyTypeManager, nameof(propertyTypeManager))
+            .ThrowIfNull(providerTypeManager, nameof(providerTypeManager))
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
@@ -80,6 +89,7 @@ public class MailController : ControllerBase
         _messageLogManager = messageLogManager;
         _mimeTypeManager = mimeTypeManager;
         _propertyTypeManager = propertyTypeManager;
+        _providerTypeManager = providerTypeManager;
         _logger = logger;
     }
 
@@ -137,7 +147,7 @@ public class MailController : ControllerBase
             // Did we fail?
             if (mailMessage is null)
             {
-                return NotFound();
+                return NotFound("The message key is invalid!");
             }
 
             // ======
@@ -153,7 +163,8 @@ public class MailController : ControllerBase
             // Look for the associated logs (oldest first).
             var logs = (await _messageLogManager.FindByMessageAsync(
                 mailMessage
-                ).ConfigureAwait(false)).OrderByDescending(x => x.CreatedOnUtc);
+                ).ConfigureAwait(false))
+                .OrderByDescending(x => x.CreatedOnUtc);
 
             // ======
             // Step 4: Create a response.
@@ -228,6 +239,21 @@ public class MailController : ControllerBase
             if (!ModelState.IsValid)
             {
                 return BadRequest();
+            }
+
+            // Should we validate the provider type?
+            if (!string.IsNullOrEmpty(request.ProviderType))
+            {
+                // Look for the given provider type.
+                var providerType = await _providerTypeManager.FindByNameAsync(
+                    request.ProviderType 
+                    ).ConfigureAwait(false);
+
+                // Did we fail?
+                if (providerType is null)
+                {
+                    return BadRequest("The ProviderType field value is invalid!");
+                }
             }
 
             // ======

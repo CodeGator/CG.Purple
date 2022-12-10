@@ -54,6 +54,40 @@ public class TextStorageRequest
     [Required]
     public ICollection<MessagePropertyRequest> Properties { get; set; } = null!;
 
+    /// <summary>
+    /// This property contains an optional disabled flag.
+    /// </summary>
+    public bool? IsDisabled { get; set; }
+
+    /// <summary>
+    /// This property contains an optional priority, for the message.
+    /// </summary>
+    public int? Priority { get; set; }
+
+    /// <summary>
+    /// This property contains an optional provider type, for the message.
+    /// </summary>
+    [MaxLength(64)]
+    public string? ProviderType { get; set; }
+
+    /// <summary>
+    /// This property indicates the point at which messages processing
+    /// should stop.
+    /// </summary>
+    public int? MaxErrors { get; set; }
+
+    /// <summary>
+    /// This property contains an optional date for delaying the start of 
+    /// process, for this message.
+    /// </summary>
+    public DateTime? ProcessAfterUtc { get; set; }
+
+    /// <summary>
+    /// This property contains an optional date for delaying the archiving, 
+    /// for this message.
+    /// </summary>
+    public DateTime? ArchiveAfterUtc { get; set; }
+
     #endregion
 
     // *******************************************************************
