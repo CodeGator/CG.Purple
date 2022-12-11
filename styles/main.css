@@ -251,3 +251,7 @@ pre {
   border: none;
   box-shadow: var(--custom-box-shadow);
 }
+
+.sidetoc {
+    width: 350px !important;
+}
