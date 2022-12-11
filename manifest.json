@@ -1686,7 +1686,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Providers.MessageProviderBase-1.html",
-          "hash": "ifQ8QH2dKWSioIFWL9izksumMBit/u30EcdR3rXcr/Y="
+          "hash": "5m2nGO/VtYguXCHfiUEF3F+MtKFvSO0+C1aWbtyto30="
         }
       },
       "is_incremental": false,
@@ -1795,6 +1795,30 @@
         ".html": {
           "relative_path": "api/CG.Purple.Providers.StatusHub.html",
           "hash": "diAWkrmMiaJgn+UeIAFnG1gE9wB378qqT+G8LC2ifX8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Providers.Twillio.TwillioProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Providers.Twillio.TwillioProvider.html",
+          "hash": "U/qiv3t76sI5I+rmM2Z8Cpv+y/reImCA7fz1zpYaFCA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Providers.Twillio.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Providers.Twillio.html",
+          "hash": "QagvqNs+Ml4I5MqQQcAIB6ciXNb20NluTzTlNtDSsXo="
         }
       },
       "is_incremental": false,
@@ -3222,7 +3246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "FXP4D1L+6EMOSmFRNr4gSv3P7iKBX3k/l1gkAkbjYh4="
+          "hash": "1cgmk/0G54zL14llNfrQIppma1p3X0pvYO2r7BVLRPc="
         }
       },
       "is_incremental": false,
@@ -3341,7 +3365,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 267,
+          "total_file_count": 269,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
