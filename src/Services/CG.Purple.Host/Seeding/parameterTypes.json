@@ -19,6 +19,14 @@
     {
       "Name": "MaxMessagesPerDay",
       "Description": "The maximum number of messages this provider will process, in a day"
-    } 
+    },
+    {
+      "Name": "AccountSid",
+      "Description": "The account security identifier for the provider"
+    },
+    {
+      "Name": "AuthToken",
+      "Description": "The authentication token for the provider"
+    }
   ]
 }

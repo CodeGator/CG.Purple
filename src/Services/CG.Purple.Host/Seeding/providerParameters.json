@@ -26,6 +26,16 @@
       "Value": "50"
     },
     {
+      "ProviderTypeName": "Twillio",
+      "ParameterTypeName": "AccountSid",
+      "Value": "this should be a SID"
+    },
+    {
+      "ProviderTypeName": "Twillio",
+      "ParameterTypeName": "AuthToken",
+      "Value": "this should be an auth token"
+    },
+    {
       "ProviderTypeName": "DoNothing",
       "ParameterTypeName": "MaxMessagesPerDay",
       "Value": "100"

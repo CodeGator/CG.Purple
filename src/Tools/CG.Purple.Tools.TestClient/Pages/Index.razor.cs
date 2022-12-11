@@ -17,8 +17,8 @@ public partial class Index
     /// </summary>
     internal protected TextStorageRequest _textModel = new()
     {
-        From = "test1@codegator.com",
-        To = "test1@codegator.com",
+        From = "+1 918 867 5309",
+        To = "+1 918 867 5309",
         Body = "this is a test text"
     };
 

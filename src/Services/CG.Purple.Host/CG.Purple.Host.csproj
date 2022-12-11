@@ -51,6 +51,7 @@
         <ProjectReference Include="..\..\Providers\CG.Purple.Providers.DoNothing\CG.Purple.Providers.DoNothing.csproj" />
         <ProjectReference Include="..\..\Providers\CG.Purple.Providers.SendGrid\CG.Purple.Providers.SendGrid.csproj" />
         <ProjectReference Include="..\..\Providers\CG.Purple.Providers.Smtp\CG.Purple.Providers.Smtp.csproj" />
+        <ProjectReference Include="..\..\Providers\CG.Purple.Providers.Twillio\CG.Purple.Providers.Twillio.csproj" />
         <ProjectReference Include="..\CG.Purple.Host.Controllers\CG.Purple.Host.Controllers.csproj" />
         <ProjectReference Include="..\CG.Purple.Host.Services\CG.Purple.Host.Services.csproj" />
     </ItemGroup>

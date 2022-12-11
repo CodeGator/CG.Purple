@@ -58,6 +58,9 @@ try
     builder.AddSendGridProvider(
        bootstrapLogger: BootstrapLogger.Instance()
     );
+    builder.AddTwillioProvider(
+       bootstrapLogger: BootstrapLogger.Instance()
+    );
     builder.AddSmtpProvider(
        bootstrapLogger: BootstrapLogger.Instance()
     );

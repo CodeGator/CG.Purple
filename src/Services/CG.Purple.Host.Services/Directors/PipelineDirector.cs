@@ -367,7 +367,7 @@ internal class PipelineDirector : IPipelineDirector
                 // Assign a provider that can process emails.
                 assignedProviderType = providerTypes.Where(x =>
                     x.CanProcessEmails
-                    ).OrderBy(x => x.Priority)
+                    ).OrderByDescending(x => x.Priority)
                     .FirstOrDefault();
             }
 
@@ -377,7 +377,7 @@ internal class PipelineDirector : IPipelineDirector
                 // Assign a provider that can process texts.
                 assignedProviderType = providerTypes.Where(x =>
                     x.CanProcessTexts
-                    ).OrderBy(x => x.Priority)
+                    ).OrderByDescending(x => x.Priority)
                     .FirstOrDefault();
             }
 

@@ -6,7 +6,7 @@
       "IsDisabled": true,
       "CanProcessEmails": true,
       "CanProcessTexts": false,
-      "Priority": 2,
+      "Priority": 0,
       "FactoryType": "SmtpProvider"
     },
     {
@@ -15,9 +15,18 @@
       "IsDisabled": true,
       "CanProcessEmails": true,
       "CanProcessTexts": false,
-      "Priority": 1,
+      "Priority": 0,
       "FactoryType": "SendGridProvider"
     },
+    {
+      "Name": "Twillio",
+      "Description": "Purple Twillio provider",
+      "IsDisabled": false,
+      "CanProcessEmails": false,
+      "CanProcessTexts": true,
+      "Priority": 1,
+      "FactoryType": "TwillioProvider"
+    },  
     {
       "Name": "DoNothing",
       "Description": "Purple Test provider",

@@ -6,7 +6,8 @@
       "Subject": "test email # 1",
       "Body": "This is test email # 1",
       "Attachments": [],
-      "Properties": []
+      "Properties": [],
+      "IsDisabled": true
     }
   ]
 }
