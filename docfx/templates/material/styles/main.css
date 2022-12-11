@@ -255,3 +255,7 @@ pre {
 .sidetoc {
     width: 350px !important;
 }
+
+.article.grid-right {
+    margin-left: 380px !important;
+}
