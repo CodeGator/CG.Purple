@@ -24,9 +24,7 @@ Purple is an idea for a self contained messaging microservice. The scenario is: 
 * The service has a simple C# client that wraps the REST interface and makes it ridiculously easy to use the microservice from any C# application.
 
 ### What does it look like?
-It's a microservice, who cares?? 
-
-No seriously, here are a few early screen shots (subject to change):
+Here are a few early screen shots (subject to change):
 
 Message page:
 ![messges](screens/messages.png)
@@ -34,8 +32,17 @@ Message page:
 Mime Type page:
 ![messges](screens/mimetypes.png)
 
+Property Type page:
+![messges](screens/propertytypes.png)
+
+Parameter Type page:
+![messges](screens/parametertypes.png)
+
 Provider Type page:
 ![messges](screens/providertypes.png)
+
+There is also a MAUI based test client that looks like this:
+![messges](screens/testclient.png)
 
 ### What platform(s) does it support?
 * .NET 7.x or higher
@@ -44,7 +51,7 @@ Provider Type page:
 * For now, SqlServer 2019, or higher.
 
 ### What 3rd party providers does it support?
-* For sure, SMTP and SendGrid. Possibly others, who knows.
+* For sure, SMTP, Twillio, and SendGrid. Possibly others, who knows.
 
 ### How do I contact you?
 If you've spotted a bug in the code please use the project Issues [HERE](https://github.com/CodeGator/CG.Purple/issues)
