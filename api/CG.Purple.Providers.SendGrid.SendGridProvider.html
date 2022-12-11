@@ -100,6 +100,9 @@ interface.</p>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__statusHub">MessageProviderBase&lt;SendGridProvider&gt;._statusHub</a>
+    </div>
+    <div>
       <a class="xref" href="CG.Purple.Providers.MessageProviderBase-1.html#CG_Purple_Providers_MessageProviderBase_1__messageManager">MessageProviderBase&lt;SendGridProvider&gt;._messageManager</a>
     </div>
     <div>
@@ -157,14 +160,14 @@ interface.</p>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Providers_SendGrid_SendGridProvider__ctor_" data-uid="CG.Purple.Providers.SendGrid.SendGridProvider.#ctor*"></a>
-  <h4 id="CG_Purple_Providers_SendGrid_SendGridProvider__ctor_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_SendGrid_SendGridProvider__" data-uid="CG.Purple.Providers.SendGrid.SendGridProvider.#ctor(IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.SendGrid.SendGridProvider})">SendGridProvider(IMailMessageManager, IMessageManager, IMessageLogManager, ILogger&lt;SendGridProvider&gt;)</h4>
+  <h4 id="CG_Purple_Providers_SendGrid_SendGridProvider__ctor_CG_Purple_Providers_StatusHub_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_SendGrid_SendGridProvider__" data-uid="CG.Purple.Providers.SendGrid.SendGridProvider.#ctor(CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.SendGrid.SendGridProvider})">SendGridProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger&lt;SendGridProvider&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Providers.SendGrid.SendGridProvider.html">SendGridProvider</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SendGridProvider(IMailMessageManager mailMessageManager, IMessageManager messageManager, IMessageLogManager processLogManager, ILogger&lt;SendGridProvider&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public SendGridProvider(StatusHub statusHub, IMailMessageManager mailMessageManager, IMessageManager messageManager, IMessageLogManager processLogManager, ILogger&lt;SendGridProvider&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -176,6 +179,13 @@ class.</p>
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Providers.StatusHub.html">StatusHub</a></td>
+        <td><span class="parametername">statusHub</span></td>
+        <td><p>The SignalR status hub to use with this
+provider.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">IMailMessageManager</span></td>
         <td><span class="parametername">mailMessageManager</span></td>

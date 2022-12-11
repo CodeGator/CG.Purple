@@ -14,11 +14,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Puple.Host.Themes.DefaultTheme.yml",
+      "source_relative_path": "api/CG.Blazor.Services.BackgroundService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Puple.Host.Themes.DefaultTheme.html",
-          "hash": "ix3/snOrLV9mtvUFeD6uYy0GmVHUR2mfRJVt4ylzR70="
+          "relative_path": "api/CG.Blazor.Services.BackgroundService.html",
+          "hash": "3jl83bUf3Sl8abhUVOx9pyhuCSoEbAhZyGvaY6Gm2pA="
         }
       },
       "is_incremental": false,
@@ -26,11 +26,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Puple.Host.Themes.yml",
+      "source_relative_path": "api/CG.Blazor.Services.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Puple.Host.Themes.html",
-          "hash": "nTQPSYCsjgihyM3ESKYhGfAgVrKyjwmlmxPINsNeP6g="
+          "relative_path": "api/CG.Blazor.Services.html",
+          "hash": "Wg6viYRg6rtBci5c/kZWHKzCgFIK1iFXwTWmuRpsOuQ="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Host.Controllers.MailController.html",
-          "hash": "GMfdiCFwvHdb/2qnRPkY/lb7iuBTcMe/4gZRm1gu/ys="
+          "hash": "AR+UbnB3ytGZ+lufHfnIzKH5BaOALYEmAWlmWcTBrCs="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Host.Controllers.TextController.html",
-          "hash": "SZov/Ri/BhF0/fJ25EXOIfLFyHbiJ7RhycI0bn/dc2o="
+          "hash": "6HoAZAR6IvFd/n+mQe4bH5xR6/rwgjCMFWhMWk2aEjs="
         }
       },
       "is_incremental": false,
@@ -542,30 +542,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Purple.Host.Services.SignalR.StatusHub.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Purple.Host.Services.SignalR.StatusHub.html",
-          "hash": "SAELx6ke9A/F+2HwgVOCy4kFD6/0IflAjwHdRO1AHZ4="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Purple.Host.Services.SignalR.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Purple.Host.Services.SignalR.html",
-          "hash": "v+/H9NCTBF3nvZoYl0R7YqUo99MrBDYCZ8uM3Bb6oEE="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/CG.Purple.Host.Services.yml",
       "output": {
         ".html": {
@@ -602,6 +578,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Host.Themes.DefaultTheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Host.Themes.DefaultTheme.html",
+          "hash": "VD07rNplHOuAjfNpneMonRRb+lQKTgwZ4rfMjLcP6AM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Host.Themes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Host.Themes.html",
+          "hash": "lo+mYMKlfqSY8q2c050TIrh0A/kgElaV2QPFaMyz45Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CG.Purple.Host.ViewModels.AttachmentBrowserFile.yml",
       "output": {
         ".html": {
@@ -630,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Host.ViewModels.MailStorageRequest.html",
-          "hash": "OySPde+JuaAlGhbJVxyJV/5KvdGY+BIzpSsGp+xw5Iw="
+          "hash": "OOJ37Sk2dQvTg+3QDJzaofHLEc7FvSH08SdGHvGJcnc="
         }
       },
       "is_incremental": false,
@@ -678,7 +678,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Host.ViewModels.TextStorageRequest.html",
-          "hash": "788qenPB3d15QIRk7jAdGZwpopKBELGjyaNJnePwTTw="
+          "hash": "dvTP+LEREl0kJsV6OMjKFgj8t8Y5cXMetpXpgNzViq8="
         }
       },
       "is_incremental": false,
@@ -1027,6 +1027,186 @@
         ".html": {
           "relative_path": "api/CG.Purple.Managers.html",
           "hash": "2hbn3qqMjTuDg0zKmzgVfzWaU5fT4tY8vHbgVA9IAf8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.Options.PurpleClientOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.Options.PurpleClientOptions.html",
+          "hash": "0cuR/WX5J2KFqJQKS9R9/EQ/Z/E3CgXI96bjIYmpPfA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.Options.html",
+          "hash": "Kk97ng0Hj6VBHXOnZr6iGp6637O0MtMvh8gBLr1ZUDg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.PurpleClientMonitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.PurpleClientMonitor.html",
+          "hash": "RFjJDYXMmubjyTry5FNQ0DGdD/ttMDOwCSENuS+NrxY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.PurpleHttpClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.PurpleHttpClient.html",
+          "hash": "aRBj2ECMFVk9cM+gsAfsTeAhzVlZrOf3fqSJH4PfWbk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.PurpleHttpClientFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.PurpleHttpClientFactory.html",
+          "hash": "fSxZIojih6UDIrIlKpecuXD7AO0L1ybg/MEXu9XxptI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.ViewModels.AttachmentRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.ViewModels.AttachmentRequest.html",
+          "hash": "d+Qt5RxqSExOVSUwQJhxdxtsMA1qu+AQyi7ixEEIWV0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.ViewModels.MailStorageRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.ViewModels.MailStorageRequest.html",
+          "hash": "wMBqJJQ3JffF5WREfFomClOHNgtW4ckkblQxSudFlzE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.ViewModels.MessagePropertyRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.ViewModels.MessagePropertyRequest.html",
+          "hash": "f/1DjNQkN605s9HTK/cBbgNMMCpkDSgU80wxf5fksWA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.ViewModels.StatusNotification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.ViewModels.StatusNotification.html",
+          "hash": "4TJOfmUrSubwTIs936fsiiPQo/jQf2J67S7RsP5Ohi0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.ViewModels.StatusNotificationExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.ViewModels.StatusNotificationExtensions.html",
+          "hash": "zAiCrm4wCJTlBZH1ow77NyRPZsZtdpUJJgd2if7szbU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.ViewModels.StatusResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.ViewModels.StatusResponse.html",
+          "hash": "VLN3P3jY0z6gyDxjtYeIvxIGU7nZp2YWfMFQCeIRj4c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.ViewModels.StorageResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.ViewModels.StorageResponse.html",
+          "hash": "XYvY46hUc7O1dmOGXrXOeSRtAkMAJmsQfZfnW2w/7Y4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.ViewModels.TextStorageRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.ViewModels.TextStorageRequest.html",
+          "hash": "/SqFyZILG/9ZcKfcGFe17i2cx+BnhBdD4gUdz3qdTNQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.ViewModels.html",
+          "hash": "6OOgRUOqzVVgnwOOZkJ2/4HZzt/rikSR1EMDmwmRnac="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Maui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Maui.html",
+          "hash": "wB62IlbPXgTLJOLsS94AlQPiLoFsBOj1PuS3kVov0Oc="
         }
       },
       "is_incremental": false,
@@ -1446,7 +1626,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Providers.DoNothing.DoNothingProvider.html",
-          "hash": "8pZ14ZZiu+8ZlsVI2neZJTZUoP6HZQILRdr4sGi7GVI="
+          "hash": "s1wANXufKqjtKy1VMnJmKi4mgQkiRTkzRUg+Spd404M="
         }
       },
       "is_incremental": false,
@@ -1506,7 +1686,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Providers.MessageProviderBase-1.html",
-          "hash": "ZsPoBMrjk0ggmSENv8DFwBIGlQV4sJjvG8jMpOFf0jU="
+          "hash": "ifQ8QH2dKWSioIFWL9izksumMBit/u30EcdR3rXcr/Y="
         }
       },
       "is_incremental": false,
@@ -1519,6 +1699,30 @@
         ".html": {
           "relative_path": "api/CG.Purple.Providers.MessageProviderFactory.html",
           "hash": "/aFGGg6mFzCBRfI5ZlukgsywZ8nzvUrOJkdFrOoadEU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Providers.Models.StatusNotification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Providers.Models.StatusNotification.html",
+          "hash": "r0o8/w4k2ZRpSktLyVezXJhAbfYPaZJFej8NT6//owQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Providers.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Providers.Models.html",
+          "hash": "Y/fGdOeFhCbkHdw5cEaJiiELBZScvxyEIWybmJE7h/s="
         }
       },
       "is_incremental": false,
@@ -1542,7 +1746,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Providers.SendGrid.SendGridProvider.html",
-          "hash": "4n/v/g7r1tPyntN9QTnAcAXA/mn/zJRVhpqPUM4KKD8="
+          "hash": "oNLGaTjKvJl3+MWD/F9/fOAqjzeXYXFUErE10kvS/1s="
         }
       },
       "is_incremental": false,
@@ -1566,7 +1770,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Providers.Smtp.SmtpProvider.html",
-          "hash": "SbCcpQnqlZedE2yU8QrMLTudRgpbMmIIEpYkX2P6YM0="
+          "hash": "lWW7Eblns3UYqTEgNbCfPxJLBUwv+2eOgsLz3EXa2ZQ="
         }
       },
       "is_incremental": false,
@@ -1586,11 +1790,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Providers.StatusHub.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Providers.StatusHub.html",
+          "hash": "diAWkrmMiaJgn+UeIAFnG1gE9wB378qqT+G8LC2ifX8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CG.Purple.Providers.yml",
       "output": {
         ".html": {
           "relative_path": "api/CG.Purple.Providers.html",
-          "hash": "6LNLJ9UsgJ7FqpdYhtSGGnPeF03WJs/omVDmLd54+pM="
+          "hash": "5aEXnwpOaus3zuW6KLhjc8EfxjhDDOtcOH3+yLgNmHo="
         }
       },
       "is_incremental": false,
@@ -2522,6 +2738,330 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.App.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.App.html",
+          "hash": "aV1nzzC5+5KdYxhOdtx0fEiHcl/4fyOqCJTgILGfRsc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.MainActivity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.MainActivity.html",
+          "hash": "q3nqls/TbH1qxtz3w4ks6kqL0XdvOaeRJ/QZwSfk/w0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.MainApplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.MainApplication.html",
+          "hash": "tEeSfOnpO90NtWMZnG90KedEj0+0gGbzxzHdU7q0CY8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.MainPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.MainPage.html",
+          "hash": "LFuP5hJwAYlDxyNz6fZ9VRfxxZMgfDHZQR2YRRV1ijk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.MauiProgram.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.MauiProgram.html",
+          "hash": "cnL1NyHpgo3Ccu5gnCjpsOqGMmMpFT+KkAujNfhWscc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Pages.Index.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Pages.Index.html",
+          "hash": "cpnAvVU41nq2xi9A/wsRJj8WrnW9q/bJ3zwo7EqMzho="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Pages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Pages.html",
+          "hash": "0vSuYl4bb0ywV5VDAhuuoacc/xS3tVMA+1VPDysQCqE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Animation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Animation.html",
+          "hash": "Yot2YWHE3+TLpRI/d2KJmLyV4odk0lFmF5JgOZFXWgk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Animator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Animator.html",
+          "hash": "YsIPqlpPNcMngUT6U3RFDmE7t/+iVknf2df+LVtoO3E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Attribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Attribute.html",
+          "hash": "ByV3+SDh6ILE7qzluA2MQJa5CE4TCVyNZTWqoCl2AZI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Boolean.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Boolean.html",
+          "hash": "66y03Z4WT8Kk3Vi9CZ6/Dp7ADmVnFzJgx6MPNHKMGbA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Color.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Color.html",
+          "hash": "kR1Gk87KRCjqoLjp7Kj5JmwUIrMzZzVIDa48xncoE0Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Dimension.html",
+          "hash": "4sJTG7dEdVQ6aIU+9ehq9lDYqFpelIpCMo4TVW2cFEc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Drawable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Drawable.html",
+          "hash": "wEwlH+x1QD3+CQUc2ndIUalg9YI0aeNqCCz62cMFpXs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Id.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Id.html",
+          "hash": "dgK/BOEAK/NAzXtuABAN1AYC3rZw7U7aDnl2OcnLR6g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Integer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Integer.html",
+          "hash": "03ZqshcW8xP7YoYu9iiTdnG3PHJ5XwSyen5lWP0kEx0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Interpolator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Interpolator.html",
+          "hash": "Bgo/fsnE3jm18iPx2F6BfZaEfugueoN+2+btuxy/jT8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Layout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Layout.html",
+          "hash": "6YWA6hHYmc2KRXRlDM9eLXeD7ueOTUep0/wON1iZ6jE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Plurals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Plurals.html",
+          "hash": "DTMi2tzMhEE5tnXsi4fZD8tkCplvdCdaM6Rt6hZ2XgI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.String.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.String.html",
+          "hash": "8UXEcFn71/TyQLMurvI2Go0exwSOSVVx0tFQaCAt5K0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Style.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Style.html",
+          "hash": "iyiNj0mjDzocFkKJTxp9v4EGzN53DzoAa42lfG3WH78="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Styleable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Styleable.html",
+          "hash": "e/CdZfwTLKiCgeMKHk3ngkmNKT0UocCWe/znZMNjvjA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.Xml.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.Xml.html",
+          "hash": "YfBXMSv0l4Ye713EeiN2jzwsRZgINY86JXLpaygBw9E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Resource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Resource.html",
+          "hash": "aEL5e2NEW3IQyGkevwbHNRjpKLpJ6A8WaEsU1e8e+Ak="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Themes.DefaultTheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Themes.DefaultTheme.html",
+          "hash": "SrkBoLGXpYZjgZol5r4NuL9KXqiYW7w4/yTijdPUq6o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.Themes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.Themes.html",
+          "hash": "Y1QyEGSRJYlHulPb+7UHt6z96p46jWQspnPwe52s4Tk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Purple.Tools.TestClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Purple.Tools.TestClient.html",
+          "hash": "yZSfqfRzaq2+KUlSQFpZ3NE5pqM9nBgq3/Y9JH/fMMM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.yml",
       "output": {
         ".html": {
@@ -2574,7 +3114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.html",
-          "hash": "1eG1e/fcyEynDblsrZD3CF8foxVsxZAa2HCxANOUJvY="
+          "hash": "fOGOv5aOcmEdA2N/Sbw1wvUWc6xn+ll9a2yTSG7S2QY="
         }
       },
       "is_incremental": false,
@@ -2610,7 +3150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions006.html",
-          "hash": "qZSKdy1qWtRn+S01kFAm/HuObi93DP0FiACHh8FZDBM="
+          "hash": "uaHNXZ5GvuwP0FK50OS34GFW41qxxhYa9luIDbjJefY="
         }
       },
       "is_incremental": false,
@@ -2623,6 +3163,30 @@
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.html",
           "hash": "aYUM5lXzaHqdhQn20W/0sbGp6bBZ+Hk8PlnTNqDHIvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Maui.Hosting.MauiAppBuilderExtensions001.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Maui.Hosting.MauiAppBuilderExtensions001.html",
+          "hash": "NO5Yx46vUMKPRK5vdqDCfccHFeQ7xeFrpkRSMn5lt9Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Maui.Hosting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Maui.Hosting.html",
+          "hash": "E6Zeil8boblHJzuiRGf+cuoYHZT3qCLvsg5scN4LoUE="
         }
       },
       "is_incremental": false,
@@ -2658,7 +3222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "v1vFdMTQQnL0JocUVJDKIJBuUo8y8rQa977ZJ4SpSoM="
+          "hash": "FXP4D1L+6EMOSmFRNr4gSv3P7iKBX3k/l1gkAkbjYh4="
         }
       },
       "is_incremental": false,
@@ -2750,7 +3314,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "fmH2IV/ovjgZ4YOPE0q4VUPn7pf45yE1H1ujjcNAw6c="
+          "hash": "4yICJZl4wEfKArl0ccREKoNJZ1V005/F8y5Fhvc6eZ8="
         }
       },
       "is_incremental": false,
@@ -2777,7 +3341,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 220,
+          "total_file_count": 267,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

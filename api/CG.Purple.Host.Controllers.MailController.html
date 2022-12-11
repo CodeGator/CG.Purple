@@ -100,14 +100,14 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Host_Controllers_MailController__ctor_" data-uid="CG.Purple.Host.Controllers.MailController.#ctor*"></a>
-  <h4 id="CG_Purple_Host_Controllers_MailController__ctor_IMailMessageManager_IMessageLogManager_IMimeTypeManager_IPropertyTypeManager_ILogger_CG_Purple_Host_Controllers_MailController__" data-uid="CG.Purple.Host.Controllers.MailController.#ctor(IMailMessageManager,IMessageLogManager,IMimeTypeManager,IPropertyTypeManager,ILogger{CG.Purple.Host.Controllers.MailController})">MailController(IMailMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, ILogger&lt;MailController&gt;)</h4>
+  <h4 id="CG_Purple_Host_Controllers_MailController__ctor_IMailMessageManager_IMessageLogManager_IMimeTypeManager_IPropertyTypeManager_IProviderTypeManager_ILogger_CG_Purple_Host_Controllers_MailController__" data-uid="CG.Purple.Host.Controllers.MailController.#ctor(IMailMessageManager,IMessageLogManager,IMimeTypeManager,IPropertyTypeManager,IProviderTypeManager,ILogger{CG.Purple.Host.Controllers.MailController})">MailController(IMailMessageManager, IMessageLogManager, IMimeTypeManager, IPropertyTypeManager, IProviderTypeManager, ILogger&lt;MailController&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Host.Controllers.MailController.html">MailController</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MailController(IMailMessageManager mailMessageManager, IMessageLogManager messageLogManager, IMimeTypeManager mimeTypeManager, IPropertyTypeManager propertyTypeManager, ILogger&lt;MailController&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public MailController(IMailMessageManager mailMessageManager, IMessageLogManager messageLogManager, IMimeTypeManager mimeTypeManager, IPropertyTypeManager propertyTypeManager, IProviderTypeManager providerTypeManager, ILogger&lt;MailController&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,6 +144,13 @@ this controller.</p>
         <td><span class="xref">IPropertyTypeManager</span></td>
         <td><span class="parametername">propertyTypeManager</span></td>
         <td><p>The property type manager to
+use with this controller.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IProviderTypeManager</span></td>
+        <td><span class="parametername">providerTypeManager</span></td>
+        <td><p>The provider type manager to
 use with this controller.</p>
 </td>
       </tr>
@@ -268,6 +275,29 @@ use with this controller.</p>
     <tbody>
       <tr>
         <td><span class="xref">IPropertyTypeManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Controllers_MailController__providerTypeManager" data-uid="CG.Purple.Host.Controllers.MailController._providerTypeManager">_providerTypeManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the provider type manager for this controller.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IProviderTypeManager _providerTypeManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IProviderTypeManager</span></td>
         <td></td>
       </tr>
     </tbody>
