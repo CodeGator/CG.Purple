@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <RootNamespace>CG.Purple</RootNamespace>
     <Description>Primitive types for the CG.Purple microservice.</Description>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>

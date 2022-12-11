@@ -7,6 +7,7 @@
     <IsPackable>false</IsPackable>
       <RootNamespace>CG.Purple.Providers</RootNamespace>
       <Description>Test fixtures for the CG.Purple.Providers assembly.</Description>
+      <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>

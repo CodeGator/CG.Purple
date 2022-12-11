@@ -6,6 +6,7 @@
         <Nullable>enable</Nullable>
         <Description>Hosted services for the CG.Purple microservice.</Description>
         <RootNamespace>CG.Purple.Host</RootNamespace>
+        <Platforms>AnyCPU;x64</Platforms>
     </PropertyGroup>
 
     <ItemGroup>

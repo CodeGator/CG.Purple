@@ -1,5 +1,9 @@
 ﻿@page "/"
 
+<PageTitle>Home</PageTitle>
+
+<MudBreadcrumbs Items="_crumbs"></MudBreadcrumbs>
+
 @if (Monitor.IsConnected)
 {
     <MudExpansionPanels>
@@ -63,7 +67,7 @@
                                    FullWidth
                                    Size="Size.Small"
                                    StartIcon="@Icons.Material.Filled.AttachFile"
-                                   OnClick="OnTextAttachmentsAsync">Attachments</MudButton>
+                                   OnClick="OnAttachmentsAsync">Attachments</MudButton>
                     </MudItem>
                     <MudItem xs="6">
                         <MudButton Color="Color.Secondary"
@@ -71,7 +75,7 @@
                                    FullWidth
                                    Size="Size.Small"
                                    StartIcon="@Icons.Material.Filled.PresentToAll"
-                                   OnClick="OnTextPropertiesAsync">Properties</MudButton>
+                                   OnClick="OnPropertiesAsync">Properties</MudButton>
                     </MudItem>
                     <MudItem xs="12">
                         <MudTextField Variant="Variant.Outlined"
@@ -112,7 +116,7 @@
                                    FullWidth
                                    Size="Size.Small"
                                    StartIcon="@Icons.Material.Filled.AttachFile"
-                                   OnClick="OnMailAttachmentsAsync">Attachments</MudButton>
+                                   OnClick="OnAttachmentsAsync">Attachments</MudButton>
                     </MudItem>
                     <MudItem xs="6">
                         <MudButton Color="Color.Secondary"
@@ -120,7 +124,7 @@
                                    FullWidth
                                    Size="Size.Small"
                                    StartIcon="@Icons.Material.Filled.PresentToAll"
-                                   OnClick="OnMailPropertiesAsync">Properties</MudButton>
+                                   OnClick="OnPropertiesAsync">Properties</MudButton>
                     </MudItem>
                     <MudItem xs="12">
                         <MudTextField Variant="Variant.Outlined"

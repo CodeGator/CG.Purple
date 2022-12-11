@@ -11,7 +11,7 @@ Purple is an idea for a self contained messaging microservice. The scenario is: 
 
 ### What's actually working, at this point?
 
-* The service sends mail messages (we're working on the texts).
+* The service sends mail and text messages.
 
 * The service handles retry logic, for failed messages.
 

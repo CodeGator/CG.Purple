@@ -7,6 +7,7 @@
         <IsPackable>false</IsPackable>
         <RootNamespace>CG.Purple.Providers.SendGrid</RootNamespace>
         <Description>Test fixtures for the CG.Purple.Providers.SendGrid assembly.</Description>
+        <Platforms>AnyCPU;x64</Platforms>
     </PropertyGroup>
 
     <ItemGroup>

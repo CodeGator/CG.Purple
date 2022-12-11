@@ -7,6 +7,7 @@
         <RootNamespace>CG.Purple.Tools.TestClient</RootNamespace>
         <IsPackable>false</IsPackable>
         <Description>Test fixtures for the CG.Purple.Tools.TestClient assembly.</Description>
+        <Platforms>AnyCPU;x64</Platforms>
     </PropertyGroup>
 
     <ItemGroup>

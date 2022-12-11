@@ -13,6 +13,14 @@ public partial class Index
     #region Fields
 
     /// <summary>
+    /// This field contains a reference to breadcrumbs for the view.
+    /// </summary>
+    internal protected readonly List<BreadcrumbItem> _crumbs = new()
+    {
+        new BreadcrumbItem("Home", href: "/")
+    };
+
+    /// <summary>
     /// This field contains the model for the text form
     /// </summary>
     internal protected TextStorageRequest _textModel = new()
@@ -98,6 +106,12 @@ public partial class Index
     /// </summary>
     [Inject]
     protected ISnackbar SnackbarService { get; set; } = null!;
+
+    /// <summary>
+    /// This property contains the navigation manager for this page.
+    /// </summary>
+    [Inject]
+    protected NavigationManager NavigationManager { get; set; } = null!;
 
     /// <summary>
     /// This property contains the client options for this page.
@@ -279,11 +293,12 @@ public partial class Index
     /// This method displays the text attributes dialog
     /// </summary>
     /// <returns>A task to perform the operation.</returns>
-    protected async Task OnTextAttachmentsAsync()
+    protected async Task OnAttachmentsAsync()
     {
         try
         {
-            // TODO : write the code for this.   
+            // Go to the attachments page.
+            NavigationManager.NavigateTo("/attachments");
         }
         catch (Exception ex)
         {
@@ -303,59 +318,12 @@ public partial class Index
     /// This method displays the text properties dialog
     /// </summary>
     /// <returns>A task to perform the operation.</returns>
-    protected async Task OnTextPropertiesAsync()
+    protected async Task OnPropertiesAsync()
     {
         try
         {
-            // TODO : write the code for this.   
-        }
-        catch (Exception ex)
-        {
-            // Tell the world what happened.
-            SnackbarService.Add(
-                $"<b>Something broke!</b> " +
-                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
-                Severity.Error,
-                options => options.CloseAfterNavigation = true
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method displays the mail attributes dialog
-    /// </summary>
-    /// <returns>A task to perform the operation.</returns>
-    protected async Task OnMailAttachmentsAsync()
-    {
-        try
-        {
-            // TODO : write the code for this.   
-        }
-        catch (Exception ex)
-        {
-            // Tell the world what happened.
-            SnackbarService.Add(
-                $"<b>Something broke!</b> " +
-                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
-                Severity.Error,
-                options => options.CloseAfterNavigation = true
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method displays the mail properties dialog
-    /// </summary>
-    /// <returns>A task to perform the operation.</returns>
-    protected async Task OnMailPropertiesAsync()
-    {
-        try
-        {
-            // TODO : write the code for this.   
+            // Go to the properties page.
+            NavigationManager.NavigateTo("/properties");
         }
         catch (Exception ex)
         {
