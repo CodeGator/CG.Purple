@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class StatusNotification
+    <title>Class AttachmentRequest
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class StatusNotification
+    <meta name="title" content="Class AttachmentRequest
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,18 +78,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Maui.ViewModels.StatusNotification">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest">
   
   
-  <h1 id="CG_Purple_Maui_ViewModels_StatusNotification" data-uid="CG.Purple.Maui.ViewModels.StatusNotification" class="text-break">Class StatusNotification
+  <h1 id="CG_Purple_Clients_ViewModels_AttachmentRequest" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest" class="text-break">Class AttachmentRequest
   </h1>
-  <div class="markdown level0 summary"><p>This class represents a status notification for a message.</p>
+  <div class="markdown level0 summary"><p>This class represents a file attachment request.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">StatusNotification</span></div>
+    <div class="level1"><span class="xref">AttachmentRequest</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -115,22 +115,22 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Maui.ViewModels.html">CG.Purple.Maui.ViewModels</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Maui.dll</h6>
-  <h5 id="CG_Purple_Maui_ViewModels_StatusNotification_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Clients.ViewModels.html">CG.Purple.Clients.ViewModels</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Clients.dll</h6>
+  <h5 id="CG_Purple_Clients_ViewModels_AttachmentRequest_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StatusNotification</code></pre>
+    <pre><code class="lang-csharp hljs">public class AttachmentRequest</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
-  <a id="CG_Purple_Maui_ViewModels_StatusNotification_Error_" data-uid="CG.Purple.Maui.ViewModels.StatusNotification.Error*"></a>
-  <h4 id="CG_Purple_Maui_ViewModels_StatusNotification_Error" data-uid="CG.Purple.Maui.ViewModels.StatusNotification.Error">Error</h4>
-  <div class="markdown level1 summary"><p>This property contains the error when the message failed to send.</p>
+  <a id="CG_Purple_Clients_ViewModels_AttachmentRequest_Data_" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest.Data*"></a>
+  <h4 id="CG_Purple_Clients_ViewModels_AttachmentRequest_Data" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest.Data">Data</h4>
+  <div class="markdown level1 summary"><p>This property contains the base64 encoded data for the attachment.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Error { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Data { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -147,14 +147,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Maui_ViewModels_StatusNotification_MessageKey_" data-uid="CG.Purple.Maui.ViewModels.StatusNotification.MessageKey*"></a>
-  <h4 id="CG_Purple_Maui_ViewModels_StatusNotification_MessageKey" data-uid="CG.Purple.Maui.ViewModels.StatusNotification.MessageKey">MessageKey</h4>
-  <div class="markdown level1 summary"><p>This property contains the key for the message.</p>
+  <a id="CG_Purple_Clients_ViewModels_AttachmentRequest_FileName_" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest.FileName*"></a>
+  <h4 id="CG_Purple_Clients_ViewModels_AttachmentRequest_FileName" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest.FileName">FileName</h4>
+  <div class="markdown level1 summary"><p>This property contains the file name for the attachment.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string MessageKey { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string FileName { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -171,14 +171,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Maui_ViewModels_StatusNotification_Sent_" data-uid="CG.Purple.Maui.ViewModels.StatusNotification.Sent*"></a>
-  <h4 id="CG_Purple_Maui_ViewModels_StatusNotification_Sent" data-uid="CG.Purple.Maui.ViewModels.StatusNotification.Sent">Sent</h4>
-  <div class="markdown level1 summary"><p>This property indicates whether the message was sent.</p>
+  <a id="CG_Purple_Clients_ViewModels_AttachmentRequest_Length_" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest.Length*"></a>
+  <h4 id="CG_Purple_Clients_ViewModels_AttachmentRequest_Length" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest.Length">Length</h4>
+  <div class="markdown level1 summary"><p>This property contains the length for the attachment.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Sent { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public long Length { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -190,24 +190,35 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">System.Int64</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="extensionmethods">Extension Methods</h3>
-  <div>
-      <a class="xref" href="System.ObjectExtensions.html#System_ObjectExtensions_QuickClone_System_Object_System_Type_">ObjectExtensions.QuickClone(Object, Type)</a>
+  <a id="CG_Purple_Clients_ViewModels_AttachmentRequest_MimeType_" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest.MimeType*"></a>
+  <h4 id="CG_Purple_Clients_ViewModels_AttachmentRequest_MimeType" data-uid="CG.Purple.Clients.ViewModels.AttachmentRequest.MimeType">MimeType</h4>
+  <div class="markdown level1 summary"><p>This property contains the MIME type for the attachment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MimeType { get; set; }</code></pre>
   </div>
-  <div>
-      <a class="xref" href="System.ObjectExtensions.html#System_ObjectExtensions_QuickClone__1___0_">ObjectExtensions.QuickClone&lt;T&gt;(T)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.ObjectExtensions.html#System_ObjectExtensions_QuickCopyTo_System_Object_System_Object_">ObjectExtensions.QuickCopyTo(Object, Object)</a>
-  </div>
-  <div>
-      <a class="xref" href="CG.Purple.Maui.ViewModels.StatusNotificationExtensions.html#CG_Purple_Maui_ViewModels_StatusNotificationExtensions_SafeError_CG_Purple_Maui_ViewModels_StatusNotification_">StatusNotificationExtensions.SafeError(StatusNotification)</a>
-  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

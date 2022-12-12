@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MauiAppBuilderExtensions001
+    <title>Class PurpleHttpClientFactory
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MauiAppBuilderExtensions001
+    <meta name="title" content="Class PurpleHttpClientFactory
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,19 +78,23 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Microsoft.Maui.Hosting.MauiAppBuilderExtensions001">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Clients.PurpleHttpClientFactory">
   
   
-  <h1 id="Microsoft_Maui_Hosting_MauiAppBuilderExtensions001" data-uid="Microsoft.Maui.Hosting.MauiAppBuilderExtensions001" class="text-break">Class MauiAppBuilderExtensions001
+  <h1 id="CG_Purple_Clients_PurpleHttpClientFactory" data-uid="CG.Purple.Clients.PurpleHttpClientFactory" class="text-break">Class PurpleHttpClientFactory
   </h1>
-  <div class="markdown level0 summary"><p>This class contains extension methods related to the <span class="xref">Microsoft.Maui.Hosting.MauiAppBuilder</span>
-type.</p>
+  <div class="markdown level0 summary"><p>This class is a default implementation of the <a class="xref" href="CG.Purple.Clients.IPurpleHttpClientFactory.html">IPurpleHttpClientFactory</a>
+interface.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">MauiAppBuilderExtensions001</span></div>
+    <div class="level1"><span class="xref">PurpleHttpClientFactory</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CG.Purple.Clients.IPurpleHttpClientFactory.html">IPurpleHttpClientFactory</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -116,57 +120,110 @@ type.</p>
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.Maui.Hosting.html">Microsoft.Maui.Hosting</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Maui.dll</h6>
-  <h5 id="Microsoft_Maui_Hosting_MauiAppBuilderExtensions001_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Clients.html">CG.Purple.Clients</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Clients.dll</h6>
+  <h5 id="CG_Purple_Clients_PurpleHttpClientFactory_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class MauiAppBuilderExtensions001</code></pre>
+    <pre><code class="lang-csharp hljs">class PurpleHttpClientFactory : IPurpleHttpClientFactory</code></pre>
   </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="CG_Purple_Clients_PurpleHttpClientFactory__ctor_" data-uid="CG.Purple.Clients.PurpleHttpClientFactory.#ctor*"></a>
+  <h4 id="CG_Purple_Clients_PurpleHttpClientFactory__ctor_IServiceProvider_IHttpClientFactory_" data-uid="CG.Purple.Clients.PurpleHttpClientFactory.#ctor(IServiceProvider,IHttpClientFactory)">PurpleHttpClientFactory(IServiceProvider, IHttpClientFactory)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Clients.PurpleHttpClientFactory.html">PurpleHttpClientFactory</a>
+class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PurpleHttpClientFactory(IServiceProvider serviceProvider, IHttpClientFactory clientFactory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IServiceProvider</span></td>
+        <td><span class="parametername">serviceProvider</span></td>
+        <td><p>The service provider to use with
+this factory.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IHttpClientFactory</span></td>
+        <td><span class="parametername">clientFactory</span></td>
+        <td><p>The HTTP client factory to use with
+this factory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Purple_Clients_PurpleHttpClientFactory__clientFactory" data-uid="CG.Purple.Clients.PurpleHttpClientFactory._clientFactory">_clientFactory</h4>
+  <div class="markdown level1 summary"><p>This field contains the HTTP client factory for this factory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IHttpClientFactory _clientFactory</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IHttpClientFactory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Clients_PurpleHttpClientFactory__serviceProvider" data-uid="CG.Purple.Clients.PurpleHttpClientFactory._serviceProvider">_serviceProvider</h4>
+  <div class="markdown level1 summary"><p>This field contains the service provider for this factory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IServiceProvider _serviceProvider</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IServiceProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="Microsoft_Maui_Hosting_MauiAppBuilderExtensions001_AddPurpleClients_" data-uid="Microsoft.Maui.Hosting.MauiAppBuilderExtensions001.AddPurpleClients*"></a>
-  <h4 id="Microsoft_Maui_Hosting_MauiAppBuilderExtensions001_AddPurpleClients_Microsoft_Maui_Hosting_MauiAppBuilder_Action_PurpleClientOptions__System_Nullable_ILogger__" data-uid="Microsoft.Maui.Hosting.MauiAppBuilderExtensions001.AddPurpleClients(Microsoft.Maui.Hosting.MauiAppBuilder,Action{PurpleClientOptions},System.Nullable{ILogger})">AddPurpleClients(MauiAppBuilder, Action&lt;PurpleClientOptions&gt;, Nullable&lt;ILogger&gt;)</h4>
-  <div class="markdown level1 summary"><p>This method adds the MAUI based REST API clients for the <span class="xref">CG.Purple</span>
-microservice.</p>
+  <a id="CG_Purple_Clients_PurpleHttpClientFactory_CreateClient_" data-uid="CG.Purple.Clients.PurpleHttpClientFactory.CreateClient*"></a>
+  <h4 id="CG_Purple_Clients_PurpleHttpClientFactory_CreateClient" data-uid="CG.Purple.Clients.PurpleHttpClientFactory.CreateClient">CreateClient()</h4>
+  <div class="markdown level1 summary"><p>This method creates and returns a <a class="xref" href="CG.Purple.Clients.IPurpleHttpClient.html">IPurpleHttpClient</a>
+instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static MauiAppBuilder AddPurpleClients(this MauiAppBuilder mauiAppBuilder, Action&lt;PurpleClientOptions&gt; optionDelegate, ILogger? bootstrapLogger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual IPurpleHttpClient CreateClient()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Maui.Hosting.MauiAppBuilder</span></td>
-        <td><span class="parametername">mauiAppBuilder</span></td>
-        <td><p>The MAUI application builder to
-use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Action</span>&lt;<span class="xref">PurpleClientOptions</span>&gt;</td>
-        <td><span class="parametername">optionDelegate</span></td>
-        <td><p>The options delegate to use for the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">ILogger</span>&gt;</td>
-        <td><span class="parametername">bootstrapLogger</span></td>
-        <td><p>A bootstrap logger to use for the
-operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -177,66 +234,16 @@ operation.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.Maui.Hosting.MauiAppBuilder</span></td>
-        <td><p>The value of the <code data-dev-comment-type="paramref" class="paramref">mauiAppBuilder</code>
-parameter, for chaining calls together, Fluent style.</p>
+        <td><a class="xref" href="CG.Purple.Clients.IPurpleHttpClient.html">IPurpleHttpClient</a></td>
+        <td><p>An <a class="xref" href="CG.Purple.Clients.IPurpleHttpClient.html">IPurpleHttpClient</a> instance.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <a id="Microsoft_Maui_Hosting_MauiAppBuilderExtensions001_AddPurpleClients_" data-uid="Microsoft.Maui.Hosting.MauiAppBuilderExtensions001.AddPurpleClients*"></a>
-  <h4 id="Microsoft_Maui_Hosting_MauiAppBuilderExtensions001_AddPurpleClients_Microsoft_Maui_Hosting_MauiAppBuilder_System_Nullable_ILogger__" data-uid="Microsoft.Maui.Hosting.MauiAppBuilderExtensions001.AddPurpleClients(Microsoft.Maui.Hosting.MauiAppBuilder,System.Nullable{ILogger})">AddPurpleClients(MauiAppBuilder, Nullable&lt;ILogger&gt;)</h4>
-  <div class="markdown level1 summary"><p>This method adds the MAUI based REST API clients for the <span class="xref">CG.Purple</span>
-microservice.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static MauiAppBuilder AddPurpleClients(this MauiAppBuilder mauiAppBuilder, ILogger? bootstrapLogger = null)</code></pre>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CG.Purple.Clients.IPurpleHttpClientFactory.html">IPurpleHttpClientFactory</a>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Maui.Hosting.MauiAppBuilder</span></td>
-        <td><span class="parametername">mauiAppBuilder</span></td>
-        <td><p>The MAUI application builder to
-use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">ILogger</span>&gt;</td>
-        <td><span class="parametername">bootstrapLogger</span></td>
-        <td><p>A bootstrap logger to use for the
-operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Maui.Hosting.MauiAppBuilder</span></td>
-        <td><p>The value of the <code data-dev-comment-type="paramref" class="paramref">mauiAppBuilder</code>
-parameter, for chaining calls together, Fluent style.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
 </article>
           </div>
           

@@ -117,22 +117,22 @@ type.</p>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.AspNetCore.Builder.html">Microsoft.AspNetCore.Builder</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.dll</h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Clients.dll</h6>
   <h5 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class WebApplicationBuilderExtensions001</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddBusinessLayer_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddBusinessLayer*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddBusinessLayer_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddBusinessLayer(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})">AddBusinessLayer(WebApplicationBuilder, String, Nullable&lt;ILogger&gt;)</h4>
-  <div class="markdown level1 summary"><p>This method adds the business logic layer (managers and directors)
-for the <span class="xref">CG.Purple</span> project.</p>
+  <a id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddPurpleClients_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddPurpleClients*"></a>
+  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddPurpleClients_Microsoft_AspNetCore_Builder_WebApplicationBuilder_Action_PurpleClientOptions__System_Nullable_ILogger__" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddPurpleClients(Microsoft.AspNetCore.Builder.WebApplicationBuilder,Action{PurpleClientOptions},System.Nullable{ILogger})">AddPurpleClients(WebApplicationBuilder, Action&lt;PurpleClientOptions&gt;, Nullable&lt;ILogger&gt;)</h4>
+  <div class="markdown level1 summary"><p>This method adds the web based REST API clients for the <span class="xref">CG.Purple</span>
+microservice.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static WebApplicationBuilder AddBusinessLayer(this WebApplicationBuilder webApplicationBuilder, string sectionName = &quot;BLL&quot;, ILogger? bootstrapLogger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static WebApplicationBuilder AddPurpleClients(this WebApplicationBuilder webApplicationBuilder, Action&lt;PurpleClientOptions&gt; optionDelegate, ILogger? bootstrapLogger = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -152,16 +152,69 @@ use for the operation.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">sectionName</span></td>
-        <td><p>The configuration section to use for the
-operation. Defaults to <code>BLL</code>.</p>
+        <td><span class="xref">Action</span>&lt;<span class="xref">PurpleClientOptions</span>&gt;</td>
+        <td><span class="parametername">optionDelegate</span></td>
+        <td><p>The options delegate to use for the
+operation.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">ILogger</span>&gt;</td>
         <td><span class="parametername">bootstrapLogger</span></td>
-        <td><p>The bootstrap logger to use for the
+        <td><p>A bootstrap logger to use for the
+operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplicationBuilder</span></td>
+        <td><p>The value of the <code data-dev-comment-type="paramref" class="paramref">webApplicationBuilder</code>
+parameter, for chaining calls together, Fluent style.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddPurpleClients_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddPurpleClients*"></a>
+  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddPurpleClients_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddPurpleClients(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})">AddPurpleClients(WebApplicationBuilder, Nullable&lt;ILogger&gt;)</h4>
+  <div class="markdown level1 summary"><p>This method adds the web based REST API clients for the <span class="xref">CG.Purple</span>
+microservice.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WebApplicationBuilder AddPurpleClients(this WebApplicationBuilder webApplicationBuilder, ILogger? bootstrapLogger = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplicationBuilder</span></td>
+        <td><span class="parametername">webApplicationBuilder</span></td>
+        <td><p>The web application builder to
+use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">ILogger</span>&gt;</td>
+        <td><span class="parametername">bootstrapLogger</span></td>
+        <td><p>A bootstrap logger to use for the
 operation.</p>
 </td>
       </tr>

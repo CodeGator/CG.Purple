@@ -78,12 +78,13 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Maui.PurpleHttpClient">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Clients.PurpleHttpClient">
   
   
-  <h1 id="CG_Purple_Maui_PurpleHttpClient" data-uid="CG.Purple.Maui.PurpleHttpClient" class="text-break">Class PurpleHttpClient
+  <h1 id="CG_Purple_Clients_PurpleHttpClient" data-uid="CG.Purple.Clients.PurpleHttpClient" class="text-break">Class PurpleHttpClient
   </h1>
-  <div class="markdown level0 summary"><p>This class is a REST API client for the <span class="xref">CG.Purple</span> microservice.</p>
+  <div class="markdown level0 summary"><p>This class is a default implementation of the <a class="xref" href="CG.Purple.Clients.IPurpleHttpClient.html">IPurpleHttpClient</a>
+interface.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -91,17 +92,21 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">PurpleHttpClient</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Maui.html">CG.Purple.Maui</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Maui.dll</h6>
-  <h5 id="CG_Purple_Maui_PurpleHttpClient_syntax">Syntax</h5>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CG.Purple.Clients.IPurpleHttpClient.html">IPurpleHttpClient</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Clients.html">CG.Purple.Clients</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Clients.dll</h6>
+  <h5 id="CG_Purple_Clients_PurpleHttpClient_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PurpleHttpClient : HttpClient</code></pre>
+    <pre><code class="lang-csharp hljs">class PurpleHttpClient : HttpClient, IPurpleHttpClient</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <a id="CG_Purple_Maui_PurpleHttpClient__ctor_" data-uid="CG.Purple.Maui.PurpleHttpClient.#ctor*"></a>
-  <h4 id="CG_Purple_Maui_PurpleHttpClient__ctor_HttpClient_IOptions_PurpleClientOptions__" data-uid="CG.Purple.Maui.PurpleHttpClient.#ctor(HttpClient,IOptions{PurpleClientOptions})">PurpleHttpClient(HttpClient, IOptions&lt;PurpleClientOptions&gt;)</h4>
-  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Maui.PurpleHttpClient.html">PurpleHttpClient</a>
+  <a id="CG_Purple_Clients_PurpleHttpClient__ctor_" data-uid="CG.Purple.Clients.PurpleHttpClient.#ctor*"></a>
+  <h4 id="CG_Purple_Clients_PurpleHttpClient__ctor_HttpClient_IOptions_PurpleClientOptions__" data-uid="CG.Purple.Clients.PurpleHttpClient.#ctor(HttpClient,IOptions{PurpleClientOptions})">PurpleHttpClient(HttpClient, IOptions&lt;PurpleClientOptions&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Clients.PurpleHttpClient.html">PurpleHttpClient</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -136,7 +141,7 @@ client.</p>
   </table>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="CG_Purple_Maui_PurpleHttpClient__httpClient" data-uid="CG.Purple.Maui.PurpleHttpClient._httpClient">_httpClient</h4>
+  <h4 id="CG_Purple_Clients_PurpleHttpClient__httpClient" data-uid="CG.Purple.Clients.PurpleHttpClient._httpClient">_httpClient</h4>
   <div class="markdown level1 summary"><p>This field contains the internal HTTP client for this client.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -159,17 +164,43 @@ client.</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="CG_Purple_Clients_PurpleHttpClient_HttpClient_" data-uid="CG.Purple.Clients.PurpleHttpClient.HttpClient*"></a>
+  <h4 id="CG_Purple_Clients_PurpleHttpClient_HttpClient" data-uid="CG.Purple.Clients.PurpleHttpClient.HttpClient">HttpClient</h4>
+  <div class="markdown level1 summary"><p>This property contains a reference to the inner HTTP client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HttpClient HttpClient { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">HttpClient</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Maui_PurpleHttpClient_GetMailStatusByKeyAsync_" data-uid="CG.Purple.Maui.PurpleHttpClient.GetMailStatusByKeyAsync*"></a>
-  <h4 id="CG_Purple_Maui_PurpleHttpClient_GetMailStatusByKeyAsync_System_String_CancellationToken_" data-uid="CG.Purple.Maui.PurpleHttpClient.GetMailStatusByKeyAsync(System.String,CancellationToken)">GetMailStatusByKeyAsync(String, CancellationToken)</h4>
+  <a id="CG_Purple_Clients_PurpleHttpClient_GetMailStatusByKeyAsync_" data-uid="CG.Purple.Clients.PurpleHttpClient.GetMailStatusByKeyAsync*"></a>
+  <h4 id="CG_Purple_Clients_PurpleHttpClient_GetMailStatusByKeyAsync_System_String_CancellationToken_" data-uid="CG.Purple.Clients.PurpleHttpClient.GetMailStatusByKeyAsync(System.String,CancellationToken)">GetMailStatusByKeyAsync(String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method sends a request to the <span class="xref">CG.Purple</span> microservice,
 for the status of the given mail message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public async Task&lt;StatusResponse?&gt; GetMailStatusByKeyAsync(string messageKey, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;StatusResponse?&gt; GetMailStatusByKeyAsync(string messageKey, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -213,15 +244,15 @@ from the microservice, if one was sent, or <code>NULL</code> otherwise.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Maui_PurpleHttpClient_GetTextStatusByKeyAsync_" data-uid="CG.Purple.Maui.PurpleHttpClient.GetTextStatusByKeyAsync*"></a>
-  <h4 id="CG_Purple_Maui_PurpleHttpClient_GetTextStatusByKeyAsync_System_String_CancellationToken_" data-uid="CG.Purple.Maui.PurpleHttpClient.GetTextStatusByKeyAsync(System.String,CancellationToken)">GetTextStatusByKeyAsync(String, CancellationToken)</h4>
+  <a id="CG_Purple_Clients_PurpleHttpClient_GetTextStatusByKeyAsync_" data-uid="CG.Purple.Clients.PurpleHttpClient.GetTextStatusByKeyAsync*"></a>
+  <h4 id="CG_Purple_Clients_PurpleHttpClient_GetTextStatusByKeyAsync_System_String_CancellationToken_" data-uid="CG.Purple.Clients.PurpleHttpClient.GetTextStatusByKeyAsync(System.String,CancellationToken)">GetTextStatusByKeyAsync(String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method sends a request to the <span class="xref">CG.Purple</span> microservice,
 for the status of the given text message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public async Task&lt;StatusResponse?&gt; GetTextStatusByKeyAsync(string messageKey, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;StatusResponse?&gt; GetTextStatusByKeyAsync(string messageKey, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -265,15 +296,15 @@ from the microservice, if one was sent, or <code>NULL</code> otherwise.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Maui_PurpleHttpClient_SendMailMessageAsync_" data-uid="CG.Purple.Maui.PurpleHttpClient.SendMailMessageAsync*"></a>
-  <h4 id="CG_Purple_Maui_PurpleHttpClient_SendMailMessageAsync_MailStorageRequest_CancellationToken_" data-uid="CG.Purple.Maui.PurpleHttpClient.SendMailMessageAsync(MailStorageRequest,CancellationToken)">SendMailMessageAsync(MailStorageRequest, CancellationToken)</h4>
+  <a id="CG_Purple_Clients_PurpleHttpClient_SendMailMessageAsync_" data-uid="CG.Purple.Clients.PurpleHttpClient.SendMailMessageAsync*"></a>
+  <h4 id="CG_Purple_Clients_PurpleHttpClient_SendMailMessageAsync_MailStorageRequest_CancellationToken_" data-uid="CG.Purple.Clients.PurpleHttpClient.SendMailMessageAsync(MailStorageRequest,CancellationToken)">SendMailMessageAsync(MailStorageRequest, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method sends a request to the <span class="xref">CG.Purple</span> microservice,
 to store a mail message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public async Task&lt;StorageResponse?&gt; SendMailMessageAsync(MailStorageRequest request, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;StorageResponse?&gt; SendMailMessageAsync(MailStorageRequest request, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -317,15 +348,15 @@ from the microservice, if one was sent, or <code>NULL</code> otherwise.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Purple_Maui_PurpleHttpClient_SendTextMessageAsync_" data-uid="CG.Purple.Maui.PurpleHttpClient.SendTextMessageAsync*"></a>
-  <h4 id="CG_Purple_Maui_PurpleHttpClient_SendTextMessageAsync_TextStorageRequest_CancellationToken_" data-uid="CG.Purple.Maui.PurpleHttpClient.SendTextMessageAsync(TextStorageRequest,CancellationToken)">SendTextMessageAsync(TextStorageRequest, CancellationToken)</h4>
+  <a id="CG_Purple_Clients_PurpleHttpClient_SendTextMessageAsync_" data-uid="CG.Purple.Clients.PurpleHttpClient.SendTextMessageAsync*"></a>
+  <h4 id="CG_Purple_Clients_PurpleHttpClient_SendTextMessageAsync_TextStorageRequest_CancellationToken_" data-uid="CG.Purple.Clients.PurpleHttpClient.SendTextMessageAsync(TextStorageRequest,CancellationToken)">SendTextMessageAsync(TextStorageRequest, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method sends a request to the <span class="xref">CG.Purple</span> microservice,
 to store a text message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public async Task&lt;StorageResponse?&gt; SendTextMessageAsync(TextStorageRequest request, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;StorageResponse?&gt; SendTextMessageAsync(TextStorageRequest request, CancellationToken cancellationToken = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -369,15 +400,9 @@ from the microservice, if one was sent, or <code>NULL</code> otherwise.</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="System.ObjectExtensions.html#System_ObjectExtensions_QuickClone_System_Object_System_Type_">ObjectExtensions.QuickClone(Object, Type)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.ObjectExtensions.html#System_ObjectExtensions_QuickClone__1___0_">ObjectExtensions.QuickClone&lt;T&gt;(T)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.ObjectExtensions.html#System_ObjectExtensions_QuickCopyTo_System_Object_System_Object_">ObjectExtensions.QuickCopyTo(Object, Object)</a>
+      <a class="xref" href="CG.Purple.Clients.IPurpleHttpClient.html">IPurpleHttpClient</a>
   </div>
 </article>
           </div>
