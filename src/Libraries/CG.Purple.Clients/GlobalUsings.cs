@@ -1,0 +1,10 @@
+﻿global using CG.Purple.Clients;
+global using CG.Purple.Clients.Options;
+global using CG.Purple.Clients.ViewModels;
+global using CG.Validations;
+global using Microsoft.AspNetCore.SignalR.Client;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.Options;
+global using System.ComponentModel.DataAnnotations;
+global using System.Net.Http.Json;

@@ -7,7 +7,7 @@
         <IsPackable>false</IsPackable>
         <RootNamespace>CG.Purple.Host</RootNamespace>
         <Description>Test fixtures for the CG.Purple.Host.Controllers assembly.</Description>
-        <Platforms>AnyCPU;x64</Platforms>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
     <ItemGroup>

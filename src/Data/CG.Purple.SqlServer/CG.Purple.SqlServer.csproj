@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
         <Description>SqlServer data-access-library for the CG.Purple microservice.</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Platforms>AnyCPU;x64</Platforms>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
     <ItemGroup>

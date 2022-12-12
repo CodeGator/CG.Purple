@@ -51,9 +51,6 @@ Parameter Type page:
 Provider Type page:
 ![messges](screens/providertypes.png)
 
-There is also a MAUI based test client (a work in progress) that looks like this:
-![messges](screens/testclient.png)
-
 ### What platform(s) does it support?
 * [.NET 7.x](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) or higher
 
