@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class BackgroundService
+    <title>Class AttachmentsDialog
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class BackgroundService
+    <meta name="title" content="Class AttachmentsDialog
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,39 +78,61 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Blazor.Services.BackgroundService">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog">
   
   
-  <h1 id="CG_Blazor_Services_BackgroundService" data-uid="CG.Blazor.Services.BackgroundService" class="text-break">Class BackgroundService
+  <h1 id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog" class="text-break">Class AttachmentsDialog
   </h1>
-  <div class="markdown level0 summary"><p>Base class for implementing a long running <see cref="!:IHostedService"></see>.</p>
+  <div class="markdown level0 summary"><p>This class is the code-behind for the <a class="xref" href="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.html">AttachmentsDialog</a> page.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">BackgroundService</span></div>
+    <div class="level1"><span class="xref">AttachmentsDialog</span></div>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><span class="xref">IDisposable</span></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Blazor.Services.html">CG.Blazor.Services</a></h6>
-  <h6><strong>Assembly</strong>: CG.Blazor.dll</h6>
-  <h5 id="CG_Blazor_Services_BackgroundService_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Tools.TestClient.Pages.html">CG.Purple.Tools.TestClient.Pages</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Tools.TestClient.dll</h6>
+  <h5 id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BackgroundService : IHostedService</code></pre>
+    <pre><code class="lang-csharp hljs">public class AttachmentsDialog</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h3 id="properties">Properties
   </h3>
-  <h4 id="CG_Blazor_Services_BackgroundService__executingTask" data-uid="CG.Blazor.Services.BackgroundService._executingTask">_executingTask</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_Logger_" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.Logger*"></a>
+  <h4 id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_Logger" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>This property contains the logger for this page.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Task? _executingTask</code></pre>
+    <pre><code class="lang-csharp hljs">protected ILogger&lt;AttachmentsDialog&gt; Logger { get; set; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -120,19 +142,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Task</span>&gt;</td>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.html">AttachmentsDialog</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h4 id="CG_Blazor_Services_BackgroundService__stoppingCts" data-uid="CG.Blazor.Services.BackgroundService._stoppingCts">_stoppingCts</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_Model_" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.Model*"></a>
+  <h4 id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_Model" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.Model">Model</h4>
+  <div class="markdown level1 summary"><p>This property contains the model for the dialog.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly CancellationTokenSource _stoppingCts</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;AttachmentRequest&gt; Model { get; set; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -142,46 +166,88 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CancellationTokenSource</span></td>
+        <td><span class="xref">List</span>&lt;<span class="xref">AttachmentRequest</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_MudDialog_" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.MudDialog*"></a>
+  <h4 id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_MudDialog" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.MudDialog">MudDialog</h4>
+  <div class="markdown level1 summary"><p>This property contains the MudDialog instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">MudDialogInstance MudDialog { }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">MudDialogInstance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_SnackbarService_" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.SnackbarService*"></a>
+  <h4 id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_SnackbarService" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.SnackbarService">SnackbarService</h4>
+  <div class="markdown level1 summary"><p>This property contains the snackbar service for the page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ISnackbar SnackbarService { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ISnackbar</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Blazor_Services_BackgroundService_Dispose_" data-uid="CG.Blazor.Services.BackgroundService.Dispose*"></a>
-  <h4 id="CG_Blazor_Services_BackgroundService_Dispose" data-uid="CG.Blazor.Services.BackgroundService.Dispose">Dispose()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_Cancel_" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.Cancel*"></a>
+  <h4 id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_Cancel" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.Cancel">Cancel()</h4>
+  <div class="markdown level1 summary"><p>This method closes the dialog.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Dispose()</code></pre>
+    <pre><code class="lang-csharp hljs">protected void Cancel()</code></pre>
   </div>
-  <a id="CG_Blazor_Services_BackgroundService_ExecuteAsync_" data-uid="CG.Blazor.Services.BackgroundService.ExecuteAsync*"></a>
-  <h4 id="CG_Blazor_Services_BackgroundService_ExecuteAsync_CancellationToken_" data-uid="CG.Blazor.Services.BackgroundService.ExecuteAsync(CancellationToken)">ExecuteAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_Ok_" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.Ok*"></a>
+  <h4 id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_Ok" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.Ok">Ok()</h4>
+  <div class="markdown level1 summary"><p>This method closes the dialog.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract Task ExecuteAsync(CancellationToken stoppingToken)</code></pre>
+    <pre><code class="lang-csharp hljs">protected void Ok()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">stoppingToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <a id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_OnCreateAsync_" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.OnCreateAsync*"></a>
+  <h4 id="CG_Purple_Tools_TestClient_Pages_AttachmentsDialog_OnCreateAsync" data-uid="CG.Purple.Tools.TestClient.Pages.AttachmentsDialog.OnCreateAsync">OnCreateAsync()</h4>
+  <div class="markdown level1 summary"><p>This method creates (imports) a new file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected async Task OnCreateAsync()</code></pre>
+  </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -193,94 +259,11 @@
     <tbody>
       <tr>
         <td><span class="xref">Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Blazor_Services_BackgroundService_StartAsync_" data-uid="CG.Blazor.Services.BackgroundService.StartAsync*"></a>
-  <h4 id="CG_Blazor_Services_BackgroundService_StartAsync_CancellationToken_" data-uid="CG.Blazor.Services.BackgroundService.StartAsync(CancellationToken)">StartAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Task StartAsync(CancellationToken cancellationToken)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Blazor_Services_BackgroundService_StopAsync_" data-uid="CG.Blazor.Services.BackgroundService.StopAsync*"></a>
-  <h4 id="CG_Blazor_Services_BackgroundService_StopAsync_CancellationToken_" data-uid="CG.Blazor.Services.BackgroundService.StopAsync(CancellationToken)">StopAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task StopAsync(CancellationToken cancellationToken)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <span class="xref">IDisposable</span>
-  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="System.ObjectExtensions.html#System_ObjectExtensions_QuickClone_System_Object_System_Type_">ObjectExtensions.QuickClone(Object, Type)</a>
