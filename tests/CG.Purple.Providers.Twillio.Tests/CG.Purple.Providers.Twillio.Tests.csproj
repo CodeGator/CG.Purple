@@ -24,8 +24,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Providers\CG.Purple.Providers.Twillio\CG.Purple.Providers.Twillio.csproj" />
-  </ItemGroup>
-
 </Project>

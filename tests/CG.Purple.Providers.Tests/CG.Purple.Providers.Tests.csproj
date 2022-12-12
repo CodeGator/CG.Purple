@@ -25,8 +25,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Libraries\CG.Purple.Providers\CG.Purple.Providers.csproj" />
-  </ItemGroup>
-
 </Project>

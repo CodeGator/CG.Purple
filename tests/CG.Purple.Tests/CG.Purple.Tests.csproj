@@ -26,7 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Libraries\CG.Purple\CG.Purple.csproj" />
+      <ProjectReference Include="..\..\src\Libraries\CG.Purple\CG.Purple.csproj" />
     </ItemGroup>
 
 </Project>

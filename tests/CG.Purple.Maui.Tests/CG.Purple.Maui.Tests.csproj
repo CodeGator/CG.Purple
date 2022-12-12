@@ -24,8 +24,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Clients\CG.Purple.Maui\CG.Purple.Maui.csproj" />
-  </ItemGroup>
-
 </Project>

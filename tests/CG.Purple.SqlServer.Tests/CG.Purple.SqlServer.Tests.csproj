@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Data\CG.Purple.SqlServer\CG.Purple.SqlServer.csproj" />
+      <ProjectReference Include="..\..\src\Data\CG.Purple.SqlServer\CG.Purple.SqlServer.csproj" />
     </ItemGroup>
 
 </Project>
