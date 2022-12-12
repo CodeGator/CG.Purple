@@ -58,13 +58,12 @@ steps:
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
-      **\*Tests*.dll
-      !**\*TestAdapter.dll
+      **\*Tests.dll
       !**\obj\**
       !**\bin\**\ref\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
-    platform: '$(buildPlatform)'
+    platform: '$(buildPlatform) win32'
     configuration: '$(buildConfiguration)'
     
 - powershell: |
