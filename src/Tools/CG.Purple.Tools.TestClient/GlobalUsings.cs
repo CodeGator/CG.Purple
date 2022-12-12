@@ -1,10 +1,10 @@
 ﻿global using CG.Purple.Maui;
 global using CG.Purple.Maui.Options;
 global using CG.Purple.Maui.ViewModels;
-global using CG.Purple.Tools.TestClient.Services;
 global using Microsoft.AspNetCore.Components;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
 global using MudBlazor;
+global using Microsoft.AspNetCore.Components.Forms;
 global using MudBlazor.Services;

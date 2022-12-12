@@ -1,4 +1,6 @@
 ﻿
+using System.Text;
+
 namespace CG.Purple.Tools.TestClient.Pages;
 
 /// <summary>
@@ -27,7 +29,16 @@ public partial class Index
     {
         From = "+1 918 867 5309",
         To = "+1 918 867 5309",
-        Body = "this is a test text"
+        Body = "this is a test text",
+        Attachments = new List<AttachmentRequest>()
+        {
+            new AttachmentRequest()
+            {
+                FileName = "test1.bin",
+                Length = 4,
+                Data = Convert.ToBase64String(new byte[] { 0, 1, 2, 3 })
+            }
+        }
     };
 
     /// <summary>
@@ -108,6 +119,12 @@ public partial class Index
     protected ISnackbar SnackbarService { get; set; } = null!;
 
     /// <summary>
+    /// This property contains the dialog service for this page.
+    /// </summary>
+    [Inject]
+    protected IDialogService DialogService { get; set; } = null!;
+
+    /// <summary>
     /// This property contains the navigation manager for this page.
     /// </summary>
     [Inject]
@@ -118,7 +135,7 @@ public partial class Index
     /// </summary>
     [Inject]
     public IOptions<PurpleClientOptions> Options { get; set; } = null!;
-
+    
     #endregion
 
     // *******************************************************************
@@ -293,12 +310,64 @@ public partial class Index
     /// This method displays the text attributes dialog
     /// </summary>
     /// <returns>A task to perform the operation.</returns>
-    protected async Task OnAttachmentsAsync()
+    protected async Task OnTextAttachmentsAsync()
     {
         try
         {
-            // Go to the attachments page.
-            NavigationManager.NavigateTo("/attachments");
+            // Copy the message, so we don't have to back anything out
+            //   if the caller cancels the dialog, later.
+            var temp = _textModel.QuickClone();
+
+            // Show the dialog.
+            var dialog = await DialogService.ShowAsync<AttachmentsDialog>(
+                "Attachments", 
+                new DialogParameters()
+                {
+                    { "Model", temp.Attachments },
+                },
+                new DialogOptions()
+                {
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.Medium,
+                    FullWidth = true,
+                    Position = DialogPosition.TopCenter,
+                });
+
+            // Show the dialog.
+            var result = await dialog.Result;
+
+            // Did the user cancel?
+            if (result.Cancelled)
+            {
+                return;
+            }
+
+
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method displays the mail attributes dialog
+    /// </summary>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnMailAttachmentsAsync()
+    {
+        try
+        {
+
         }
         catch (Exception ex)
         {
@@ -318,12 +387,35 @@ public partial class Index
     /// This method displays the text properties dialog
     /// </summary>
     /// <returns>A task to perform the operation.</returns>
-    protected async Task OnPropertiesAsync()
+    protected async Task OnTextPropertiesAsync()
     {
         try
         {
-            // Go to the properties page.
-            NavigationManager.NavigateTo("/properties");
+            
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Something broke!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method displays the mail properties dialog
+    /// </summary>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnMailPropertiesAsync()
+    {
+        try
+        {
+
         }
         catch (Exception ex)
         {

@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Tools.TestClient.Services;
-
 namespace CG.Purple.Tools.TestClient;
 
 /// <summary>
@@ -34,9 +32,6 @@ public static class MauiProgram
         {
             options.DefaultBaseAddress = "https://localhost:7134";
         });
-
-        // Add the state service.
-        builder.Services.AddSingleton<StateService>();
 
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
