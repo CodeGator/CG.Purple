@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.SqlServer", "Data
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Solution Items", "00. Solution Items", "{A48756AF-260A-458D-891A-B2E51DF966BA}"
 	ProjectSection(SolutionItems) = preProject
-		..\README.md = ..\README.md
+		..\Readme.md = ..\Readme.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Primitives", "Libraries\CG.Purple.Primitives\CG.Purple.Primitives.csproj", "{EF3DB6E8-6DA9-4878-9244-EE62886DCE26}"
