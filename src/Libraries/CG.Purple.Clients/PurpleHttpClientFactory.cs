@@ -2,10 +2,10 @@
 namespace CG.Purple.Clients;
 
 /// <summary>
-/// This class is a factory for creating <see cref="PurpleHttpClient"/>
-/// instances, at runtime.
+/// This class is a default implementation of the <see cref="IPurpleHttpClientFactory"/>
+/// interface.
 /// </summary>
-public class PurpleHttpClientFactory
+internal class PurpleHttpClientFactory : IPurpleHttpClientFactory
 {
     // *******************************************************************
     // Fields.
@@ -61,12 +61,8 @@ public class PurpleHttpClientFactory
 
     #region Public methods
 
-    /// <summary>
-    /// This method creates and returns a <see cref="PurpleHttpClient"/>
-    /// object instance.
-    /// </summary>
-    /// <returns></returns>
-    public virtual PurpleHttpClient CreateClient()
+    /// <inheritdoc/>
+    public virtual IPurpleHttpClient CreateClient()
     {
         // Create the HTTP client.
         var httpClient = _clientFactory.CreateClient();

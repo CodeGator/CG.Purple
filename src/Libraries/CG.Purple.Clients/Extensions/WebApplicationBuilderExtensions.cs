@@ -104,9 +104,9 @@ public static class WebApplicationBuilderExtensions001
             );
 
         // Add the purple clients.
-        webApplicationBuilder.Services.AddSingleton<PurpleClientMonitor>();
-        webApplicationBuilder.Services.AddSingleton<PurpleHttpClientFactory>();
-        webApplicationBuilder.Services.AddScoped<PurpleHttpClient>();        
+        webApplicationBuilder.Services.AddSingleton<IPurpleStatusMonitor, PurpleStatusMonitor>();
+        webApplicationBuilder.Services.AddSingleton<IPurpleHttpClientFactory, PurpleHttpClientFactory>();
+        webApplicationBuilder.Services.AddScoped<IPurpleHttpClient, PurpleHttpClient>();        
 
         // Return the app builder.
         return webApplicationBuilder;

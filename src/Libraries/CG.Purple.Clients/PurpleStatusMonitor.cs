@@ -2,10 +2,10 @@
 namespace CG.Purple.Clients;
 
 /// <summary>
-/// This class represents an object that monitors for status notifications
-/// from the <see cref="CG.Purple"/> microservice.
+/// This class is a default implementation of the <see cref="IPurpleStatusMonitor"/>
+/// interface.
 /// </summary>
-public class PurpleClientMonitor
+internal class PurpleStatusMonitor : IPurpleStatusMonitor
 {
     // *******************************************************************
     // Fields.
@@ -35,13 +35,13 @@ public class PurpleClientMonitor
     /// This property contains a delegate for receiving continuous status 
     /// updates from the microservice.
     /// </summary>
-    public Action<StatusNotification>? Status { get; set; }
+    public virtual Action<StatusNotification>? Status { get; set; }
 
     /// <summary>
     /// This property indicates whether or not the monitor is actively 
     /// connected to the microservice.
     /// </summary>
-    public bool IsConnected { get; private set; }
+    public virtual bool IsConnected { get; private set; }
 
     #endregion
 
@@ -52,11 +52,11 @@ public class PurpleClientMonitor
     #region Constructors
 
     /// <summary>
-    /// This constructor creates a new instance of the <see cref="PurpleClientMonitor"/>
+    /// This constructor creates a new instance of the <see cref="PurpleStatusMonitor"/>
     /// class.
     /// </summary>
     /// <param name="options">The client options to use with this class.</param>
-    public PurpleClientMonitor(
+    public PurpleStatusMonitor(
         IOptions<PurpleClientOptions> options
         )
     {
@@ -149,5 +149,4 @@ public class PurpleClientMonitor
     }
 
     #endregion
-
 }

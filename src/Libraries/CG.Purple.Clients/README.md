@@ -1,7 +1,7 @@
 
-### CG.Purple.Maui - README
+### CG.Purple.Clients - README
 
-This project contains MAUI REST API clients for the **CG.Purple** microservice.
+This project contains REST clients for the **CG.Purple** microservice.
 
 #### Notes
 
