@@ -1,0 +1,43 @@
+﻿<MudDialog Class="mud-ex-dialog-initial">
+    <DialogContent>
+        <MudCard Outlined>
+            <MudCardContent Class="pt-0">
+                <MudPaper @ondragenter="@SetDragClass"
+                    @ondragleave="@ClearDragClass"
+                    @ondragend="@ClearDragClass"
+                    Height="300px"
+                    Outlined="true"
+                    Class="@_dragClass">
+                    @if (!_clearing)
+                    {
+                        <InputFile OnChange="OnInputFileChanged"
+                                   multiple class="absolute mud-width-full mud-height-full overflow-hidden z-2"
+                                   style="opacity:0;" />
+                    }
+                    <MudText Typo="Typo.body1">Drag and drop files here, or click the white square to add</MudText>
+                    <MudText Typo="Typo.body2">Click a chip to remove a file</MudText>
+                    <br />
+                    @foreach (var file in Model)
+                    {
+                        <MudTooltip Text="Click to remove">
+                            <MudChip OnClick="@(() => OnChipClickAsync(file))"
+                                     Color="Color.Dark"
+                                     Class="p-1"
+                                     Text="@file.FileName" />
+                        </MudTooltip>                        
+                    }
+                </MudPaper>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton OnClick="Cancel">Cancel</MudButton>
+                <MudButton Class="ml-auto" OnClick="Ok" Color="Color.Primary">Ok</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </DialogContent>
+</MudDialog>
+
+<style>
+    .input-file {
+        color: @DefaultTheme.Instance().Palette.Primary
+    }
+</style>
