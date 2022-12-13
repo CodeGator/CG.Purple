@@ -1,0 +1,47 @@
+﻿<MudDialog Class="mud-ex-dialog-initial">
+    <DialogContent>
+        <MudCard Outlined>
+            <MudCardContent Class="pt-0">
+                <MudTable Items="@Model" Dense Striped Virtualize Filter="new Func<MessagePropertyRequest, bool>(FilterFunc)">
+                    <ToolBarContent>
+                        <MudButton StartIcon="@Icons.Material.Filled.Create"
+                                   Variant="Variant.Filled"
+                                   OnClick="OnCreateAsync">Create</MudButton>
+                        <MudSpacer />
+                        <MudTextField @bind-Value="_gridSearchString"
+                                      Placeholder="Search"
+                                      Adornment="Adornment.Start"
+                                      AdornmentIcon="@Icons.Material.Filled.Search"
+                                      IconSize="Size.Medium" Class="mt-0"></MudTextField>
+                    </ToolBarContent>
+                    <HeaderContent>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MessagePropertyRequest, object>(x=>x.PropertyName)">Name</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<MessagePropertyRequest, object>(x=>x.Value)">Value</MudTableSortLabel></MudTh>
+                        <MudTh></MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="Name">@context.PropertyName</MudTd>
+                        <MudTd DataLabel="Value">@context.Value</MudTd>
+                        <MudTd></MudTd>
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                    <NoRecordsContent>
+                        No properties were found
+                    </NoRecordsContent>
+                </MudTable>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton OnClick="Cancel">Cancel</MudButton>
+                <MudButton Class="ml-auto" OnClick="Ok" Color="Color.Primary">Ok</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </DialogContent>
+</MudDialog>
+
+<style>
+    .input-file {
+        color: @DefaultTheme.Instance().Palette.Primary
+    }
+</style>

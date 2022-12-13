@@ -70,13 +70,13 @@ public class MailStorageRequest
     /// for the message.
     /// </summary>
     [Required]
-    public ICollection<AttachmentRequest> Attachments { get; set; } = null!;
+    public List<AttachmentRequest> Attachments { get; set; } = null!;
 
     /// <summary>
     /// This property contains the associated properties, for the message.
     /// </summary>
     [Required]
-    public ICollection<MessagePropertyRequest> Properties { get; set; } = null!;
+    public List<MessagePropertyRequest> Properties { get; set; } = null!;
 
     /// <summary>
     /// This property contains an optional disabled flag.

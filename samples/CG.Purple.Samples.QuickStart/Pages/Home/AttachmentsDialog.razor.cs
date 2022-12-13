@@ -1,6 +1,4 @@
 ﻿
-using static System.Net.Mime.MediaTypeNames;
-
 namespace CG.Purple.Samples.QuickStart.Pages.Home;
 
 /// <summary>
@@ -26,11 +24,6 @@ public partial class AttachmentsDialog
     // *******************************************************************
 
     #region Fields
-
-    /// <summary>
-    /// This field indicates the page is busy.
-    /// </summary>
-    private bool _isBusy;
 
     /// <summary>
     /// This field indicates the user is clearing the file collection.
@@ -74,12 +67,6 @@ public partial class AttachmentsDialog
     [Inject]
     protected ISnackbar SnackbarService { get; set; } = null!;
 
-    /// <summary>
-    /// This property contains the logger for this page.
-    /// </summary>
-    [Inject]
-    protected ILogger<AttachmentsDialog> Logger { get; set; } = null!;
-
     #endregion
 
     // *******************************************************************
@@ -109,30 +96,6 @@ public partial class AttachmentsDialog
     // *******************************************************************
 
     /// <summary>
-    /// This method creates (imports) a new file.
-    /// </summary>
-    /// <returns>A task to perform the operation.</returns>
-    protected async Task OnCreateAsync()
-    {
-        try
-        {
-
-        }
-        catch (Exception ex)
-        {
-            // Tell the world what happened.
-            SnackbarService.Add(
-                $"<b>Something broke!</b> " +
-                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
-                Severity.Error,
-                options => options.CloseAfterNavigation = true
-                );
-        }
-    }
-
-    // *******************************************************************
-
-    /// <summary>
     /// This method is called when a file as added to the model.
     /// </summary>
     /// <param name="e">The arguments for the event.</param>
@@ -140,13 +103,6 @@ public partial class AttachmentsDialog
     {
         try
         {
-            // We're busy.
-            _isBusy = true;
-
-            // Give the UI time to show the busy indicator.
-            await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false);
-            await Task.Delay(250);
-
             // Clear the drag CSS style.
             ClearDragClass();
 
@@ -205,11 +161,6 @@ public partial class AttachmentsDialog
                 Severity.Error,
                 options => options.CloseAfterNavigation = true
                 );
-        }
-        finally
-        {
-            // We're no longer busy.
-            _isBusy = false;
         }
     }
 
@@ -270,13 +221,6 @@ public partial class AttachmentsDialog
                 return; // Nothing more to do.
             }
 
-            // We're busy.
-            _isBusy = true;
-
-            // Give the UI time to show the busy indicator.
-            await InvokeAsync(() => StateHasChanged());
-            await Task.Delay(250);
-
             // Update the model.
             Model.Remove(attachmentRequest);
         }
@@ -289,11 +233,6 @@ public partial class AttachmentsDialog
                 Severity.Error,
                 options => options.CloseAfterNavigation = true
                 );
-        }
-        finally
-        {
-            // We're no longer busy.
-            _isBusy = false;
         }
     }
 

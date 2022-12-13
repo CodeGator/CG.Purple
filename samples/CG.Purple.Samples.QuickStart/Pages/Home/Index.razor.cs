@@ -37,6 +37,14 @@ public partial class Index
                 Length = 4,
                 Data = Convert.ToBase64String(new byte[] { 0, 1, 2, 3 })
             }
+        },
+        Properties = new List<MessagePropertyRequest>()
+        { 
+            new MessagePropertyRequest()
+            {
+                PropertyName = "Test 1",
+                Value = "value 1"
+            }
         }
     };
 
@@ -48,7 +56,25 @@ public partial class Index
         From = "test1@codegator.com",
         To = "test1@codegator.com",
         Subject = "test email",
-        Body = "this is a test email"
+        Body = "this is a test email",
+        Attachments = new List<AttachmentRequest>()
+        {
+            new AttachmentRequest()
+            {
+                MimeType = "application/octet-stream",
+                FileName = "test1.bin",
+                Length = 4,
+                Data = Convert.ToBase64String(new byte[] { 0, 1, 2, 3 })
+            }
+        },
+        Properties = new List<MessagePropertyRequest>()
+        {
+            new MessagePropertyRequest()
+            {
+                PropertyName = "Test 1",
+                Value = "value 1"
+            }
+        }
     };
 
     /// <summary>
@@ -342,7 +368,9 @@ public partial class Index
                 return;
             }
 
-
+            // Save the changes.
+            _textModel.Attachments.Clear();
+            _textModel.Attachments.AddRange(temp.Attachments);
         }
         catch (Exception ex)
         {
@@ -366,7 +394,38 @@ public partial class Index
     {
         try
         {
+            // Copy the message, so we don't have to back anything out
+            //   if the caller cancels the dialog, later.
+            var temp = _mailModel.QuickClone();
 
+            // Show the dialog.
+            var dialog = await DialogService.ShowAsync<AttachmentsDialog>(
+                "Attachments",
+                new DialogParameters()
+                {
+                    { "Model", temp.Attachments },
+                },
+                new DialogOptions()
+                {
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.Medium,
+                    FullWidth = true,
+                    Position = DialogPosition.TopCenter,
+                });
+
+            // Show the dialog.
+            var result = await dialog.Result;
+
+            // Did the user cancel?
+            if (result.Cancelled)
+            {
+                return;
+            }
+
+            // Save the changes.
+            _mailModel.Attachments.Clear();
+            _mailModel.Attachments.AddRange(temp.Attachments);
         }
         catch (Exception ex)
         {
@@ -390,7 +449,38 @@ public partial class Index
     {
         try
         {
-            
+            // Copy the message, so we don't have to back anything out
+            //   if the caller cancels the dialog, later.
+            var temp = _textModel.QuickClone();
+
+            // Show the dialog.
+            var dialog = await DialogService.ShowAsync<PropertiesDialog>(
+                "Properties",
+                new DialogParameters()
+                {
+                    { "Model", temp.Properties },
+                },
+                new DialogOptions()
+                {
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.Medium,
+                    FullWidth = true,
+                    Position = DialogPosition.TopCenter,
+                });
+
+            // Show the dialog.
+            var result = await dialog.Result;
+
+            // Did the user cancel?
+            if (result.Cancelled)
+            {
+                return;
+            }
+
+            // Save the changes.
+            _textModel.Properties.Clear();
+            _textModel.Properties.AddRange(temp.Properties);
         }
         catch (Exception ex)
         {
@@ -414,7 +504,38 @@ public partial class Index
     {
         try
         {
+            // Copy the message, so we don't have to back anything out
+            //   if the caller cancels the dialog, later.
+            var temp = _mailModel.QuickClone();
 
+            // Show the dialog.
+            var dialog = await DialogService.ShowAsync<PropertiesDialog>(
+                "Properties",
+                new DialogParameters()
+                {
+                    { "Model", temp.Properties },
+                },
+                new DialogOptions()
+                {
+                    CloseButton = true,
+                    CloseOnEscapeKey = true,
+                    MaxWidth = MaxWidth.Medium,
+                    FullWidth = true,
+                    Position = DialogPosition.TopCenter,
+                });
+
+            // Show the dialog.
+            var result = await dialog.Result;
+
+            // Did the user cancel?
+            if (result.Cancelled)
+            {
+                return;
+            }
+
+            // Save the changes.
+            _mailModel.Properties.Clear();
+            _mailModel.Properties.AddRange(temp.Properties);
         }
         catch (Exception ex)
         {
