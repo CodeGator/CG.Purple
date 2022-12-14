@@ -83,6 +83,518 @@ references:
   commentId: N:CG.Purple.Clients
   fullName: CG.Purple.Clients
   nameWithType: CG.Purple.Clients
+- uid: CG.Purple.Clients.Internal
+  name: CG.Purple.Clients.Internal
+  href: api/CG.Purple.Clients.Internal.html
+  commentId: N:CG.Purple.Clients.Internal
+  fullName: CG.Purple.Clients.Internal
+  nameWithType: CG.Purple.Clients.Internal
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper
+  name: HubConnectionWrapper
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html
+  commentId: T:CG.Purple.Clients.Internal.HubConnectionWrapper
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper
+  nameWithType: HubConnectionWrapper
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.#ctor(HubConnection)
+  name: HubConnectionWrapper(HubConnection)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper__ctor_HubConnection_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.#ctor(HubConnection)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.HubConnectionWrapper(HubConnection)
+  nameWithType: HubConnectionWrapper.HubConnectionWrapper(HubConnection)
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.#ctor*
+  name: HubConnectionWrapper
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper__ctor_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.HubConnectionWrapper
+  nameWithType: HubConnectionWrapper.HubConnectionWrapper
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection
+  name: _innerHubConnection
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper__innerHubConnection
+  commentId: F:CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection
+  nameWithType: HubConnectionWrapper._innerHubConnection
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Closed(System.Nullable{Exception})
+  name: _innerHubConnection_Closed(Nullable<Exception>)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper__innerHubConnection_Closed_System_Nullable_Exception__
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Closed(System.Nullable{Exception})
+  name.vb: _innerHubConnection_Closed(Nullable(Of Exception))
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Closed(System.Nullable<Exception>)
+  fullName.vb: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Closed(System.Nullable(Of Exception))
+  nameWithType: HubConnectionWrapper._innerHubConnection_Closed(Nullable<Exception>)
+  nameWithType.vb: HubConnectionWrapper._innerHubConnection_Closed(Nullable(Of Exception))
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Closed*
+  name: _innerHubConnection_Closed
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper__innerHubConnection_Closed_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Closed
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Closed
+  nameWithType: HubConnectionWrapper._innerHubConnection_Closed
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnected(System.String)
+  name: _innerHubConnection_Reconnected(String)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper__innerHubConnection_Reconnected_System_String_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnected(System.String)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnected(System.String)
+  nameWithType: HubConnectionWrapper._innerHubConnection_Reconnected(String)
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnected*
+  name: _innerHubConnection_Reconnected
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper__innerHubConnection_Reconnected_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnected
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnected
+  nameWithType: HubConnectionWrapper._innerHubConnection_Reconnected
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnecting(System.Nullable{Exception})
+  name: _innerHubConnection_Reconnecting(Nullable<Exception>)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper__innerHubConnection_Reconnecting_System_Nullable_Exception__
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnecting(System.Nullable{Exception})
+  name.vb: _innerHubConnection_Reconnecting(Nullable(Of Exception))
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnecting(System.Nullable<Exception>)
+  fullName.vb: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnecting(System.Nullable(Of Exception))
+  nameWithType: HubConnectionWrapper._innerHubConnection_Reconnecting(Nullable<Exception>)
+  nameWithType.vb: HubConnectionWrapper._innerHubConnection_Reconnecting(Nullable(Of Exception))
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnecting*
+  name: _innerHubConnection_Reconnecting
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper__innerHubConnection_Reconnecting_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnecting
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper._innerHubConnection_Reconnecting
+  nameWithType: HubConnectionWrapper._innerHubConnection_Reconnecting
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.Closed
+  name: Closed
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_Closed
+  commentId: E:CG.Purple.Clients.Internal.HubConnectionWrapper.Closed
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.Closed
+  nameWithType: HubConnectionWrapper.Closed
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.ConnectionId
+  name: ConnectionId
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_ConnectionId
+  commentId: P:CG.Purple.Clients.Internal.HubConnectionWrapper.ConnectionId
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.ConnectionId
+  nameWithType: HubConnectionWrapper.ConnectionId
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.ConnectionId*
+  name: ConnectionId
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_ConnectionId_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.ConnectionId
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.ConnectionId
+  nameWithType: HubConnectionWrapper.ConnectionId
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.DisposeAsync
+  name: DisposeAsync()
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_DisposeAsync
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.DisposeAsync
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.DisposeAsync()
+  nameWithType: HubConnectionWrapper.DisposeAsync()
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.DisposeAsync*
+  name: DisposeAsync
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_DisposeAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.DisposeAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.DisposeAsync
+  nameWithType: HubConnectionWrapper.DisposeAsync
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.HandshakeTimeout
+  name: HandshakeTimeout
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_HandshakeTimeout
+  commentId: P:CG.Purple.Clients.Internal.HubConnectionWrapper.HandshakeTimeout
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.HandshakeTimeout
+  nameWithType: HubConnectionWrapper.HandshakeTimeout
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.HandshakeTimeout*
+  name: HandshakeTimeout
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_HandshakeTimeout_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.HandshakeTimeout
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.HandshakeTimeout
+  nameWithType: HubConnectionWrapper.HandshakeTimeout
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.InvokeCoreAsync(System.String,Type,System.Object[],CancellationToken)
+  name: InvokeCoreAsync(String, Type, Object[], CancellationToken)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_InvokeCoreAsync_System_String_Type_System_Object___CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.InvokeCoreAsync(System.String,Type,System.Object[],CancellationToken)
+  name.vb: InvokeCoreAsync(String, Type, Object(), CancellationToken)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.InvokeCoreAsync(System.String, Type, System.Object[], CancellationToken)
+  fullName.vb: CG.Purple.Clients.Internal.HubConnectionWrapper.InvokeCoreAsync(System.String, Type, System.Object(), CancellationToken)
+  nameWithType: HubConnectionWrapper.InvokeCoreAsync(String, Type, Object[], CancellationToken)
+  nameWithType.vb: HubConnectionWrapper.InvokeCoreAsync(String, Type, Object(), CancellationToken)
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.InvokeCoreAsync*
+  name: InvokeCoreAsync
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_InvokeCoreAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.InvokeCoreAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.InvokeCoreAsync
+  nameWithType: HubConnectionWrapper.InvokeCoreAsync
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.KeepAliveInterval
+  name: KeepAliveInterval
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_KeepAliveInterval
+  commentId: P:CG.Purple.Clients.Internal.HubConnectionWrapper.KeepAliveInterval
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.KeepAliveInterval
+  nameWithType: HubConnectionWrapper.KeepAliveInterval
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.KeepAliveInterval*
+  name: KeepAliveInterval
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_KeepAliveInterval_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.KeepAliveInterval
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.KeepAliveInterval
+  nameWithType: HubConnectionWrapper.KeepAliveInterval
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.On(System.String,Type[],Func{System.Object[],System.Object,Task},System.Object)
+  name: On(String, Type[], Func<Object[], Object, Task>, Object)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_On_System_String_Type___Func_System_Object___System_Object_Task__System_Object_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.On(System.String,Type[],Func{System.Object[],System.Object,Task},System.Object)
+  name.vb: On(String, Type(), Func(Of Object(), Object, Task), Object)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.On(System.String, Type[], Func<System.Object[], System.Object, Task>, System.Object)
+  fullName.vb: CG.Purple.Clients.Internal.HubConnectionWrapper.On(System.String, Type(), Func(Of System.Object(), System.Object, Task), System.Object)
+  nameWithType: HubConnectionWrapper.On(String, Type[], Func<Object[], Object, Task>, Object)
+  nameWithType.vb: HubConnectionWrapper.On(String, Type(), Func(Of Object(), Object, Task), Object)
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.On*
+  name: On
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_On_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.On
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.On
+  nameWithType: HubConnectionWrapper.On
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.Reconnected
+  name: Reconnected
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_Reconnected
+  commentId: E:CG.Purple.Clients.Internal.HubConnectionWrapper.Reconnected
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.Reconnected
+  nameWithType: HubConnectionWrapper.Reconnected
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.Reconnecting
+  name: Reconnecting
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_Reconnecting
+  commentId: E:CG.Purple.Clients.Internal.HubConnectionWrapper.Reconnecting
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.Reconnecting
+  nameWithType: HubConnectionWrapper.Reconnecting
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.Remove(System.String)
+  name: Remove(String)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_Remove_System_String_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.Remove(System.String)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.Remove(System.String)
+  nameWithType: HubConnectionWrapper.Remove(String)
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.Remove*
+  name: Remove
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_Remove_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.Remove
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.Remove
+  nameWithType: HubConnectionWrapper.Remove
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.SendCoreAsync(System.String,System.Object[],CancellationToken)
+  name: SendCoreAsync(String, Object[], CancellationToken)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_SendCoreAsync_System_String_System_Object___CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.SendCoreAsync(System.String,System.Object[],CancellationToken)
+  name.vb: SendCoreAsync(String, Object(), CancellationToken)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.SendCoreAsync(System.String, System.Object[], CancellationToken)
+  fullName.vb: CG.Purple.Clients.Internal.HubConnectionWrapper.SendCoreAsync(System.String, System.Object(), CancellationToken)
+  nameWithType: HubConnectionWrapper.SendCoreAsync(String, Object[], CancellationToken)
+  nameWithType.vb: HubConnectionWrapper.SendCoreAsync(String, Object(), CancellationToken)
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.SendCoreAsync*
+  name: SendCoreAsync
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_SendCoreAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.SendCoreAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.SendCoreAsync
+  nameWithType: HubConnectionWrapper.SendCoreAsync
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.ServerTimeout
+  name: ServerTimeout
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_ServerTimeout
+  commentId: P:CG.Purple.Clients.Internal.HubConnectionWrapper.ServerTimeout
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.ServerTimeout
+  nameWithType: HubConnectionWrapper.ServerTimeout
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.ServerTimeout*
+  name: ServerTimeout
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_ServerTimeout_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.ServerTimeout
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.ServerTimeout
+  nameWithType: HubConnectionWrapper.ServerTimeout
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.StartAsync(CancellationToken)
+  name: StartAsync(CancellationToken)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_StartAsync_CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.StartAsync(CancellationToken)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.StartAsync(CancellationToken)
+  nameWithType: HubConnectionWrapper.StartAsync(CancellationToken)
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.StartAsync*
+  name: StartAsync
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_StartAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.StartAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.StartAsync
+  nameWithType: HubConnectionWrapper.StartAsync
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.State
+  name: State
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_State
+  commentId: P:CG.Purple.Clients.Internal.HubConnectionWrapper.State
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.State
+  nameWithType: HubConnectionWrapper.State
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.State*
+  name: State
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_State_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.State
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.State
+  nameWithType: HubConnectionWrapper.State
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.StopAsync(CancellationToken)
+  name: StopAsync(CancellationToken)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_StopAsync_CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.StopAsync(CancellationToken)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.StopAsync(CancellationToken)
+  nameWithType: HubConnectionWrapper.StopAsync(CancellationToken)
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.StopAsync*
+  name: StopAsync
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_StopAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.StopAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.StopAsync
+  nameWithType: HubConnectionWrapper.StopAsync
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsChannelCoreAsync(System.String,Type,System.Object[],CancellationToken)
+  name: StreamAsChannelCoreAsync(String, Type, Object[], CancellationToken)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_StreamAsChannelCoreAsync_System_String_Type_System_Object___CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsChannelCoreAsync(System.String,Type,System.Object[],CancellationToken)
+  name.vb: StreamAsChannelCoreAsync(String, Type, Object(), CancellationToken)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsChannelCoreAsync(System.String, Type, System.Object[], CancellationToken)
+  fullName.vb: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsChannelCoreAsync(System.String, Type, System.Object(), CancellationToken)
+  nameWithType: HubConnectionWrapper.StreamAsChannelCoreAsync(String, Type, Object[], CancellationToken)
+  nameWithType.vb: HubConnectionWrapper.StreamAsChannelCoreAsync(String, Type, Object(), CancellationToken)
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsChannelCoreAsync*
+  name: StreamAsChannelCoreAsync
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_StreamAsChannelCoreAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsChannelCoreAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsChannelCoreAsync
+  nameWithType: HubConnectionWrapper.StreamAsChannelCoreAsync
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsyncCore*
+  name: StreamAsyncCore
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_StreamAsyncCore_
+  commentId: Overload:CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsyncCore
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsyncCore
+  nameWithType: HubConnectionWrapper.StreamAsyncCore
+- uid: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsyncCore``1(System.String,System.Object[],CancellationToken)
+  name: StreamAsyncCore<TResult>(String, Object[], CancellationToken)
+  href: api/CG.Purple.Clients.Internal.HubConnectionWrapper.html#CG_Purple_Clients_Internal_HubConnectionWrapper_StreamAsyncCore__1_System_String_System_Object___CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsyncCore``1(System.String,System.Object[],CancellationToken)
+  name.vb: StreamAsyncCore(Of TResult)(String, Object(), CancellationToken)
+  fullName: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsyncCore<TResult>(System.String, System.Object[], CancellationToken)
+  fullName.vb: CG.Purple.Clients.Internal.HubConnectionWrapper.StreamAsyncCore(Of TResult)(System.String, System.Object(), CancellationToken)
+  nameWithType: HubConnectionWrapper.StreamAsyncCore<TResult>(String, Object[], CancellationToken)
+  nameWithType.vb: HubConnectionWrapper.StreamAsyncCore(Of TResult)(String, Object(), CancellationToken)
+- uid: CG.Purple.Clients.Internal.IHubConnection
+  name: IHubConnection
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html
+  commentId: T:CG.Purple.Clients.Internal.IHubConnection
+  fullName: CG.Purple.Clients.Internal.IHubConnection
+  nameWithType: IHubConnection
+- uid: CG.Purple.Clients.Internal.IHubConnection.Closed
+  name: Closed
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_Closed
+  commentId: E:CG.Purple.Clients.Internal.IHubConnection.Closed
+  fullName: CG.Purple.Clients.Internal.IHubConnection.Closed
+  nameWithType: IHubConnection.Closed
+- uid: CG.Purple.Clients.Internal.IHubConnection.ConnectionId
+  name: ConnectionId
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_ConnectionId
+  commentId: P:CG.Purple.Clients.Internal.IHubConnection.ConnectionId
+  fullName: CG.Purple.Clients.Internal.IHubConnection.ConnectionId
+  nameWithType: IHubConnection.ConnectionId
+- uid: CG.Purple.Clients.Internal.IHubConnection.ConnectionId*
+  name: ConnectionId
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_ConnectionId_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.ConnectionId
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.ConnectionId
+  nameWithType: IHubConnection.ConnectionId
+- uid: CG.Purple.Clients.Internal.IHubConnection.DisposeAsync
+  name: DisposeAsync()
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_DisposeAsync
+  commentId: M:CG.Purple.Clients.Internal.IHubConnection.DisposeAsync
+  fullName: CG.Purple.Clients.Internal.IHubConnection.DisposeAsync()
+  nameWithType: IHubConnection.DisposeAsync()
+- uid: CG.Purple.Clients.Internal.IHubConnection.DisposeAsync*
+  name: DisposeAsync
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_DisposeAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.DisposeAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.DisposeAsync
+  nameWithType: IHubConnection.DisposeAsync
+- uid: CG.Purple.Clients.Internal.IHubConnection.HandshakeTimeout
+  name: HandshakeTimeout
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_HandshakeTimeout
+  commentId: P:CG.Purple.Clients.Internal.IHubConnection.HandshakeTimeout
+  fullName: CG.Purple.Clients.Internal.IHubConnection.HandshakeTimeout
+  nameWithType: IHubConnection.HandshakeTimeout
+- uid: CG.Purple.Clients.Internal.IHubConnection.HandshakeTimeout*
+  name: HandshakeTimeout
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_HandshakeTimeout_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.HandshakeTimeout
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.HandshakeTimeout
+  nameWithType: IHubConnection.HandshakeTimeout
+- uid: CG.Purple.Clients.Internal.IHubConnection.InvokeCoreAsync(System.String,Type,System.Object[],CancellationToken)
+  name: InvokeCoreAsync(String, Type, Object[], CancellationToken)
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_InvokeCoreAsync_System_String_Type_System_Object___CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.IHubConnection.InvokeCoreAsync(System.String,Type,System.Object[],CancellationToken)
+  name.vb: InvokeCoreAsync(String, Type, Object(), CancellationToken)
+  fullName: CG.Purple.Clients.Internal.IHubConnection.InvokeCoreAsync(System.String, Type, System.Object[], CancellationToken)
+  fullName.vb: CG.Purple.Clients.Internal.IHubConnection.InvokeCoreAsync(System.String, Type, System.Object(), CancellationToken)
+  nameWithType: IHubConnection.InvokeCoreAsync(String, Type, Object[], CancellationToken)
+  nameWithType.vb: IHubConnection.InvokeCoreAsync(String, Type, Object(), CancellationToken)
+- uid: CG.Purple.Clients.Internal.IHubConnection.InvokeCoreAsync*
+  name: InvokeCoreAsync
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_InvokeCoreAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.InvokeCoreAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.InvokeCoreAsync
+  nameWithType: IHubConnection.InvokeCoreAsync
+- uid: CG.Purple.Clients.Internal.IHubConnection.KeepAliveInterval
+  name: KeepAliveInterval
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_KeepAliveInterval
+  commentId: P:CG.Purple.Clients.Internal.IHubConnection.KeepAliveInterval
+  fullName: CG.Purple.Clients.Internal.IHubConnection.KeepAliveInterval
+  nameWithType: IHubConnection.KeepAliveInterval
+- uid: CG.Purple.Clients.Internal.IHubConnection.KeepAliveInterval*
+  name: KeepAliveInterval
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_KeepAliveInterval_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.KeepAliveInterval
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.KeepAliveInterval
+  nameWithType: IHubConnection.KeepAliveInterval
+- uid: CG.Purple.Clients.Internal.IHubConnection.On(System.String,Type[],Func{System.Object[],System.Object,Task},System.Object)
+  name: On(String, Type[], Func<Object[], Object, Task>, Object)
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_On_System_String_Type___Func_System_Object___System_Object_Task__System_Object_
+  commentId: M:CG.Purple.Clients.Internal.IHubConnection.On(System.String,Type[],Func{System.Object[],System.Object,Task},System.Object)
+  name.vb: On(String, Type(), Func(Of Object(), Object, Task), Object)
+  fullName: CG.Purple.Clients.Internal.IHubConnection.On(System.String, Type[], Func<System.Object[], System.Object, Task>, System.Object)
+  fullName.vb: CG.Purple.Clients.Internal.IHubConnection.On(System.String, Type(), Func(Of System.Object(), System.Object, Task), System.Object)
+  nameWithType: IHubConnection.On(String, Type[], Func<Object[], Object, Task>, Object)
+  nameWithType.vb: IHubConnection.On(String, Type(), Func(Of Object(), Object, Task), Object)
+- uid: CG.Purple.Clients.Internal.IHubConnection.On*
+  name: On
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_On_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.On
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.On
+  nameWithType: IHubConnection.On
+- uid: CG.Purple.Clients.Internal.IHubConnection.Reconnected
+  name: Reconnected
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_Reconnected
+  commentId: E:CG.Purple.Clients.Internal.IHubConnection.Reconnected
+  fullName: CG.Purple.Clients.Internal.IHubConnection.Reconnected
+  nameWithType: IHubConnection.Reconnected
+- uid: CG.Purple.Clients.Internal.IHubConnection.Reconnecting
+  name: Reconnecting
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_Reconnecting
+  commentId: E:CG.Purple.Clients.Internal.IHubConnection.Reconnecting
+  fullName: CG.Purple.Clients.Internal.IHubConnection.Reconnecting
+  nameWithType: IHubConnection.Reconnecting
+- uid: CG.Purple.Clients.Internal.IHubConnection.Remove(System.String)
+  name: Remove(String)
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_Remove_System_String_
+  commentId: M:CG.Purple.Clients.Internal.IHubConnection.Remove(System.String)
+  fullName: CG.Purple.Clients.Internal.IHubConnection.Remove(System.String)
+  nameWithType: IHubConnection.Remove(String)
+- uid: CG.Purple.Clients.Internal.IHubConnection.Remove*
+  name: Remove
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_Remove_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.Remove
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.Remove
+  nameWithType: IHubConnection.Remove
+- uid: CG.Purple.Clients.Internal.IHubConnection.SendCoreAsync(System.String,System.Object[],CancellationToken)
+  name: SendCoreAsync(String, Object[], CancellationToken)
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_SendCoreAsync_System_String_System_Object___CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.IHubConnection.SendCoreAsync(System.String,System.Object[],CancellationToken)
+  name.vb: SendCoreAsync(String, Object(), CancellationToken)
+  fullName: CG.Purple.Clients.Internal.IHubConnection.SendCoreAsync(System.String, System.Object[], CancellationToken)
+  fullName.vb: CG.Purple.Clients.Internal.IHubConnection.SendCoreAsync(System.String, System.Object(), CancellationToken)
+  nameWithType: IHubConnection.SendCoreAsync(String, Object[], CancellationToken)
+  nameWithType.vb: IHubConnection.SendCoreAsync(String, Object(), CancellationToken)
+- uid: CG.Purple.Clients.Internal.IHubConnection.SendCoreAsync*
+  name: SendCoreAsync
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_SendCoreAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.SendCoreAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.SendCoreAsync
+  nameWithType: IHubConnection.SendCoreAsync
+- uid: CG.Purple.Clients.Internal.IHubConnection.ServerTimeout
+  name: ServerTimeout
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_ServerTimeout
+  commentId: P:CG.Purple.Clients.Internal.IHubConnection.ServerTimeout
+  fullName: CG.Purple.Clients.Internal.IHubConnection.ServerTimeout
+  nameWithType: IHubConnection.ServerTimeout
+- uid: CG.Purple.Clients.Internal.IHubConnection.ServerTimeout*
+  name: ServerTimeout
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_ServerTimeout_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.ServerTimeout
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.ServerTimeout
+  nameWithType: IHubConnection.ServerTimeout
+- uid: CG.Purple.Clients.Internal.IHubConnection.StartAsync(CancellationToken)
+  name: StartAsync(CancellationToken)
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_StartAsync_CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.IHubConnection.StartAsync(CancellationToken)
+  fullName: CG.Purple.Clients.Internal.IHubConnection.StartAsync(CancellationToken)
+  nameWithType: IHubConnection.StartAsync(CancellationToken)
+- uid: CG.Purple.Clients.Internal.IHubConnection.StartAsync*
+  name: StartAsync
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_StartAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.StartAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.StartAsync
+  nameWithType: IHubConnection.StartAsync
+- uid: CG.Purple.Clients.Internal.IHubConnection.State
+  name: State
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_State
+  commentId: P:CG.Purple.Clients.Internal.IHubConnection.State
+  fullName: CG.Purple.Clients.Internal.IHubConnection.State
+  nameWithType: IHubConnection.State
+- uid: CG.Purple.Clients.Internal.IHubConnection.State*
+  name: State
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_State_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.State
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.State
+  nameWithType: IHubConnection.State
+- uid: CG.Purple.Clients.Internal.IHubConnection.StopAsync(CancellationToken)
+  name: StopAsync(CancellationToken)
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_StopAsync_CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.IHubConnection.StopAsync(CancellationToken)
+  fullName: CG.Purple.Clients.Internal.IHubConnection.StopAsync(CancellationToken)
+  nameWithType: IHubConnection.StopAsync(CancellationToken)
+- uid: CG.Purple.Clients.Internal.IHubConnection.StopAsync*
+  name: StopAsync
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_StopAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.StopAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.StopAsync
+  nameWithType: IHubConnection.StopAsync
+- uid: CG.Purple.Clients.Internal.IHubConnection.StreamAsChannelCoreAsync(System.String,Type,System.Object[],CancellationToken)
+  name: StreamAsChannelCoreAsync(String, Type, Object[], CancellationToken)
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_StreamAsChannelCoreAsync_System_String_Type_System_Object___CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.IHubConnection.StreamAsChannelCoreAsync(System.String,Type,System.Object[],CancellationToken)
+  name.vb: StreamAsChannelCoreAsync(String, Type, Object(), CancellationToken)
+  fullName: CG.Purple.Clients.Internal.IHubConnection.StreamAsChannelCoreAsync(System.String, Type, System.Object[], CancellationToken)
+  fullName.vb: CG.Purple.Clients.Internal.IHubConnection.StreamAsChannelCoreAsync(System.String, Type, System.Object(), CancellationToken)
+  nameWithType: IHubConnection.StreamAsChannelCoreAsync(String, Type, Object[], CancellationToken)
+  nameWithType.vb: IHubConnection.StreamAsChannelCoreAsync(String, Type, Object(), CancellationToken)
+- uid: CG.Purple.Clients.Internal.IHubConnection.StreamAsChannelCoreAsync*
+  name: StreamAsChannelCoreAsync
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_StreamAsChannelCoreAsync_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.StreamAsChannelCoreAsync
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.StreamAsChannelCoreAsync
+  nameWithType: IHubConnection.StreamAsChannelCoreAsync
+- uid: CG.Purple.Clients.Internal.IHubConnection.StreamAsyncCore*
+  name: StreamAsyncCore
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_StreamAsyncCore_
+  commentId: Overload:CG.Purple.Clients.Internal.IHubConnection.StreamAsyncCore
+  isSpec: "True"
+  fullName: CG.Purple.Clients.Internal.IHubConnection.StreamAsyncCore
+  nameWithType: IHubConnection.StreamAsyncCore
+- uid: CG.Purple.Clients.Internal.IHubConnection.StreamAsyncCore``1(System.String,System.Object[],CancellationToken)
+  name: StreamAsyncCore<TResult>(String, Object[], CancellationToken)
+  href: api/CG.Purple.Clients.Internal.IHubConnection.html#CG_Purple_Clients_Internal_IHubConnection_StreamAsyncCore__1_System_String_System_Object___CancellationToken_
+  commentId: M:CG.Purple.Clients.Internal.IHubConnection.StreamAsyncCore``1(System.String,System.Object[],CancellationToken)
+  name.vb: StreamAsyncCore(Of TResult)(String, Object(), CancellationToken)
+  fullName: CG.Purple.Clients.Internal.IHubConnection.StreamAsyncCore<TResult>(System.String, System.Object[], CancellationToken)
+  fullName.vb: CG.Purple.Clients.Internal.IHubConnection.StreamAsyncCore(Of TResult)(System.String, System.Object(), CancellationToken)
+  nameWithType: IHubConnection.StreamAsyncCore<TResult>(String, Object[], CancellationToken)
+  nameWithType.vb: IHubConnection.StreamAsyncCore(Of TResult)(String, Object(), CancellationToken)
 - uid: CG.Purple.Clients.IPurpleHttpClient
   name: IPurpleHttpClient
   href: api/CG.Purple.Clients.IPurpleHttpClient.html
@@ -179,6 +691,12 @@ references:
   commentId: T:CG.Purple.Clients.IPurpleStatusMonitor
   fullName: CG.Purple.Clients.IPurpleStatusMonitor
   nameWithType: IPurpleStatusMonitor
+- uid: CG.Purple.Clients.IPurpleStatusMonitor.Error
+  name: Error
+  href: api/CG.Purple.Clients.IPurpleStatusMonitor.html#CG_Purple_Clients_IPurpleStatusMonitor_Error
+  commentId: E:CG.Purple.Clients.IPurpleStatusMonitor.Error
+  fullName: CG.Purple.Clients.IPurpleStatusMonitor.Error
+  nameWithType: IPurpleStatusMonitor.Error
 - uid: CG.Purple.Clients.IPurpleStatusMonitor.IsConnected
   name: IsConnected
   href: api/CG.Purple.Clients.IPurpleStatusMonitor.html#CG_Purple_Clients_IPurpleStatusMonitor_IsConnected
@@ -195,14 +713,7 @@ references:
 - uid: CG.Purple.Clients.IPurpleStatusMonitor.Status
   name: Status
   href: api/CG.Purple.Clients.IPurpleStatusMonitor.html#CG_Purple_Clients_IPurpleStatusMonitor_Status
-  commentId: P:CG.Purple.Clients.IPurpleStatusMonitor.Status
-  fullName: CG.Purple.Clients.IPurpleStatusMonitor.Status
-  nameWithType: IPurpleStatusMonitor.Status
-- uid: CG.Purple.Clients.IPurpleStatusMonitor.Status*
-  name: Status
-  href: api/CG.Purple.Clients.IPurpleStatusMonitor.html#CG_Purple_Clients_IPurpleStatusMonitor_Status_
-  commentId: Overload:CG.Purple.Clients.IPurpleStatusMonitor.Status
-  isSpec: "True"
+  commentId: E:CG.Purple.Clients.IPurpleStatusMonitor.Status
   fullName: CG.Purple.Clients.IPurpleStatusMonitor.Status
   nameWithType: IPurpleStatusMonitor.Status
 - uid: CG.Purple.Clients.Options
@@ -373,15 +884,12 @@ references:
   commentId: T:CG.Purple.Clients.PurpleStatusMonitor
   fullName: CG.Purple.Clients.PurpleStatusMonitor
   nameWithType: PurpleStatusMonitor
-- uid: CG.Purple.Clients.PurpleStatusMonitor.#ctor(IOptions{PurpleClientOptions})
-  name: PurpleStatusMonitor(IOptions<PurpleClientOptions>)
-  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor__ctor_IOptions_PurpleClientOptions__
-  commentId: M:CG.Purple.Clients.PurpleStatusMonitor.#ctor(IOptions{PurpleClientOptions})
-  name.vb: PurpleStatusMonitor(IOptions(Of PurpleClientOptions))
-  fullName: CG.Purple.Clients.PurpleStatusMonitor.PurpleStatusMonitor(IOptions<PurpleClientOptions>)
-  fullName.vb: CG.Purple.Clients.PurpleStatusMonitor.PurpleStatusMonitor(IOptions(Of PurpleClientOptions))
-  nameWithType: PurpleStatusMonitor.PurpleStatusMonitor(IOptions<PurpleClientOptions>)
-  nameWithType.vb: PurpleStatusMonitor.PurpleStatusMonitor(IOptions(Of PurpleClientOptions))
+- uid: CG.Purple.Clients.PurpleStatusMonitor.#ctor(IHubConnection)
+  name: PurpleStatusMonitor(IHubConnection)
+  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor__ctor_IHubConnection_
+  commentId: M:CG.Purple.Clients.PurpleStatusMonitor.#ctor(IHubConnection)
+  fullName: CG.Purple.Clients.PurpleStatusMonitor.PurpleStatusMonitor(IHubConnection)
+  nameWithType: PurpleStatusMonitor.PurpleStatusMonitor(IHubConnection)
 - uid: CG.Purple.Clients.PurpleStatusMonitor.#ctor*
   name: PurpleStatusMonitor
   href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor__ctor_
@@ -389,38 +897,18 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Clients.PurpleStatusMonitor.PurpleStatusMonitor
   nameWithType: PurpleStatusMonitor.PurpleStatusMonitor
-- uid: CG.Purple.Clients.PurpleStatusMonitor._options
-  name: _options
-  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor__options
-  commentId: F:CG.Purple.Clients.PurpleStatusMonitor._options
-  fullName: CG.Purple.Clients.PurpleStatusMonitor._options
-  nameWithType: PurpleStatusMonitor._options
-- uid: CG.Purple.Clients.PurpleStatusMonitor._statusHub
-  name: _statusHub
-  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor__statusHub
-  commentId: P:CG.Purple.Clients.PurpleStatusMonitor._statusHub
-  fullName: CG.Purple.Clients.PurpleStatusMonitor._statusHub
-  nameWithType: PurpleStatusMonitor._statusHub
-- uid: CG.Purple.Clients.PurpleStatusMonitor._statusHub*
-  name: _statusHub
-  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor__statusHub_
-  commentId: Overload:CG.Purple.Clients.PurpleStatusMonitor._statusHub
-  isSpec: "True"
-  fullName: CG.Purple.Clients.PurpleStatusMonitor._statusHub
-  nameWithType: PurpleStatusMonitor._statusHub
-- uid: CG.Purple.Clients.PurpleStatusMonitor.EnsureBackchannel
-  name: EnsureBackchannel()
-  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor_EnsureBackchannel
-  commentId: M:CG.Purple.Clients.PurpleStatusMonitor.EnsureBackchannel
-  fullName: CG.Purple.Clients.PurpleStatusMonitor.EnsureBackchannel()
-  nameWithType: PurpleStatusMonitor.EnsureBackchannel()
-- uid: CG.Purple.Clients.PurpleStatusMonitor.EnsureBackchannel*
-  name: EnsureBackchannel
-  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor_EnsureBackchannel_
-  commentId: Overload:CG.Purple.Clients.PurpleStatusMonitor.EnsureBackchannel
-  isSpec: "True"
-  fullName: CG.Purple.Clients.PurpleStatusMonitor.EnsureBackchannel
-  nameWithType: PurpleStatusMonitor.EnsureBackchannel
+- uid: CG.Purple.Clients.PurpleStatusMonitor._hubConnection
+  name: _hubConnection
+  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor__hubConnection
+  commentId: F:CG.Purple.Clients.PurpleStatusMonitor._hubConnection
+  fullName: CG.Purple.Clients.PurpleStatusMonitor._hubConnection
+  nameWithType: PurpleStatusMonitor._hubConnection
+- uid: CG.Purple.Clients.PurpleStatusMonitor.Error
+  name: Error
+  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor_Error
+  commentId: E:CG.Purple.Clients.PurpleStatusMonitor.Error
+  fullName: CG.Purple.Clients.PurpleStatusMonitor.Error
+  nameWithType: PurpleStatusMonitor.Error
 - uid: CG.Purple.Clients.PurpleStatusMonitor.IsConnected
   name: IsConnected
   href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor_IsConnected
@@ -437,14 +925,7 @@ references:
 - uid: CG.Purple.Clients.PurpleStatusMonitor.Status
   name: Status
   href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor_Status
-  commentId: P:CG.Purple.Clients.PurpleStatusMonitor.Status
-  fullName: CG.Purple.Clients.PurpleStatusMonitor.Status
-  nameWithType: PurpleStatusMonitor.Status
-- uid: CG.Purple.Clients.PurpleStatusMonitor.Status*
-  name: Status
-  href: api/CG.Purple.Clients.PurpleStatusMonitor.html#CG_Purple_Clients_PurpleStatusMonitor_Status_
-  commentId: Overload:CG.Purple.Clients.PurpleStatusMonitor.Status
-  isSpec: "True"
+  commentId: E:CG.Purple.Clients.PurpleStatusMonitor.Status
   fullName: CG.Purple.Clients.PurpleStatusMonitor.Status
   nameWithType: PurpleStatusMonitor.Status
 - uid: CG.Purple.Clients.ViewModels
