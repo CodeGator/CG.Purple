@@ -1,4 +1,7 @@
 ﻿
+using CG.Purple.Clients.ViewModels;
+using Microsoft.Extensions.Logging;
+
 namespace CG.Purple.Samples.QuickStart.Pages.Home;
 
 /// <summary>
@@ -83,7 +86,174 @@ public partial class PropertiesDialog
     /// <returns>A task to perform the operation.</returns>
     protected async Task OnCreateAsync()
     {
+        try
+        {
+            // Create the dialog options.
+            var options = new DialogOptions
+            {
+                CloseOnEscapeKey = true,
+                FullWidth = true
+            };
 
+            // Create the dialog parameters.
+            var parameters = new DialogParameters()
+            {
+                { "Model", new MessagePropertyRequest() }
+            };
+
+            // Create the dialog.
+            var dialog = DialogService.Show<PropertyDialog>(
+                "Create Property",
+                parameters,
+                options
+                );
+
+            // Get the results of the dialog.
+            var result = await dialog.Result;
+
+            // Did the user cancel?
+            if (result.Cancelled)
+            {
+                return;
+            }
+
+            // Recover the property.
+            var newProperty = (MessagePropertyRequest)result.Data;
+
+            // Add the property to the model.
+            Model.Add(newProperty);
+
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"Changes were saved",
+                Severity.Success,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Failed to create property!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method edits a property.
+    /// </summary>
+    /// <param name="request">The message property to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnEditAsync(MessagePropertyRequest request)
+    {
+        try
+        {
+            // Create the dialog options.
+            var options = new DialogOptions
+            {
+                CloseOnEscapeKey = true,
+                FullWidth = true
+            };
+
+            // Create the dialog parameters.
+            var parameters = new DialogParameters()
+            {
+                { "Model", request.QuickClone() }
+            };
+
+            // Create the dialog.
+            var dialog = DialogService.Show<PropertyDialog>(
+                "Edit Property",
+                parameters,
+                options
+                );
+
+            // Get the results of the dialog.
+            var result = await dialog.Result;
+
+            // Did the user cancel?
+            if (result.Cancelled)
+            {
+                return;
+            }
+
+            // Recover the edited property.
+            var editedProperty = (MessagePropertyRequest)result.Data;
+
+            // Replace the property.
+            Model.Remove(request);
+            Model.Add(editedProperty);  
+
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"Changes were saved",
+                Severity.Success,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Failed to edit property!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method deletes a property.
+    /// </summary>
+    /// <param name="request">The message property to use for the operation.</param>
+    /// <returns>A task to perform the operation.</returns>
+    protected async Task OnDeleteAsync(MessagePropertyRequest request)
+    {
+        try
+        {
+            // Prompt the user.
+            var result = await DialogService.ShowMessageBox(
+                title: "Purple QuickStart",
+                markupMessage: new MarkupString("This will delete the property " +
+                $"<b>{request.PropertyName}</b> <br /> <br /> Are you <i>sure" +
+                "</i> you want to do that?"),
+                noText: "Cancel"
+                );
+
+            // Did the user cancel?
+            if (result.HasValue && !result.Value)
+            {
+                return; // Nothing more to do.
+            }
+
+            // Remove the property.
+            Model.Remove(request);
+
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"Changes were saved",
+                Severity.Success,
+                options => options.CloseAfterNavigation = true
+                );
+        }
+        catch (Exception ex)
+        {
+            // Tell the world what happened.
+            SnackbarService.Add(
+                $"<b>Failed to delete property!</b> " +
+                $"<ul><li>{ex.GetBaseException().Message}</li></ul>",
+                Severity.Error,
+                options => options.CloseAfterNavigation = true
+                );
+        }
     }
 
     // *******************************************************************

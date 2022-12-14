@@ -311,7 +311,7 @@ public class MailController : ControllerBase
                 // Loop through the properties.
                 foreach (var property in request.Properties)
                 {
-                    // Look  for the property type.
+                    // Look for the property type.
                     var propertyType = await _propertyTypeManager.FindByNameAsync(
                         property.PropertyName
                         ).ConfigureAwait(false);
@@ -319,10 +319,14 @@ public class MailController : ControllerBase
                     // Did we fail?
                     if (propertyType is null)
                     {
-                        // Panic!!
-                        throw new KeyNotFoundException(
-                            $"property type: {property.PropertyName} not found!"
+                        // Log what we are about to do.
+                        _logger.LogDebug(
+                            "Dropping mismatched property {name}",
+                            propertyType?.Name ?? "NULL"
                             );
+
+                        // For now, just ignore the offending property.
+                        continue;
                     }
 
                     // Add the message property.

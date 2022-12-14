@@ -22,7 +22,14 @@
                     <RowTemplate>
                         <MudTd DataLabel="Name">@context.PropertyName</MudTd>
                         <MudTd DataLabel="Value">@context.Value</MudTd>
-                        <MudTd></MudTd>
+                        <MudTd>
+                            <MudTooltip Text="Delete">
+                                <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="() => OnDeleteAsync(context)" />
+                            </MudTooltip>
+                            <MudTooltip Text="Edit">
+                                <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => OnEditAsync(context)" />
+                            </MudTooltip>
+                        </MudTd>
                     </RowTemplate>
                     <PagerContent>
                         <MudTablePager />

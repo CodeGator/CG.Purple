@@ -1,0 +1,26 @@
+﻿<MudDialog>
+    <DialogContent>
+        <EditForm Model="@Model" OnValidSubmit="OnValidSubmit">
+            <MudCard Outlined>
+                <MudCardContent>
+                    <DataAnnotationsValidator />
+                    <MudTextField AutoFocus
+                                  Immediate
+                                  Counter="64"
+                                  Variant="Variant.Outlined"
+                                  Label="Name"
+                                  For="@(() => Model.PropertyName)"
+                    @bind-Value="@Model.PropertyName" />
+                    <MudTextField Variant="Variant.Outlined"
+                                  Label="Value"
+                                  For="@(() => Model.Value)"
+                    @bind-Value="@Model.Value" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Color="Color.Inherit" OnClick="Cancel">Cancel</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit" Class="ml-auto" Color="Color.Primary">Save</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
+    </DialogContent>
+</MudDialog>

@@ -38,7 +38,7 @@ public class DefaultTheme : MudTheme
             Secondary = Colors.DeepOrange.Default,
             Tertiary = Colors.Pink.Default,
             Background = Colors.Grey.Lighten5,
-            AppbarBackground = Colors.Purple.Darken4,
+            AppbarBackground = Colors.Purple.Darken1,
             DrawerBackground = "#FFF",
             DrawerText = "rgba(0,0,0, 0.7)",
             Success = "#06d79c"
