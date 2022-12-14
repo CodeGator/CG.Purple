@@ -5,7 +5,7 @@ namespace CG.Purple.Clients;
 /// This class is a default implementation of the <see cref="IPurpleHttpClient"/>
 /// interface.
 /// </summary>
-internal class PurpleHttpClient : HttpClient, IPurpleHttpClient
+internal class PurpleHttpClient : IPurpleHttpClient
 {
     // *******************************************************************
     // Fields.

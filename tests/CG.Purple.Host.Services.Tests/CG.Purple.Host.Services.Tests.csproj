@@ -27,7 +27,10 @@
 
     <ItemGroup>
       <Folder Include="Directors\" />
-      <Folder Include="Services\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Services\CG.Purple.Host.Services\CG.Purple.Host.Services.csproj" />
     </ItemGroup>
 
 </Project>

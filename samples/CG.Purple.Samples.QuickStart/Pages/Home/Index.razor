@@ -182,7 +182,7 @@
                 </MudGrid>
             </EditForm>
         </MudTabPanel>
-        <MudTabPanel Text="Status" Icon="@Icons.Material.Filled.Hail">
+        <MudTabPanel Text="Status" Icon="@Icons.Material.Filled.Hail" BadgeColor="Color.Secondary" BadgeDot="@_hasNewStatus" OnClick="@(() => _hasNewStatus = false)">
             <MudTable Items="_status" Dense Striped>
                 <ToolBarContent>
                     <MudTooltip>

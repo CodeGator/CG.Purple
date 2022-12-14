@@ -117,6 +117,11 @@ public partial class Index
     /// </summary>
     internal protected List<StatusNotification> _status = new();
 
+    /// <summary>
+    /// This field indicates whether or not there is new status.
+    /// </summary>
+    internal protected bool _hasNewStatus;
+
     #endregion
 
     // *******************************************************************
@@ -175,10 +180,14 @@ public partial class Index
     protected override void OnInitialized()
     {
         // Wire up a handler for status notifications.
-        Monitor.Status += (status) =>
+        Monitor.Status += (sender, e) =>
         {
             // Remember the notification.
-            _status.Add(status);
+            _status.Add(e);
+            
+            // Show that we have new status.
+            _hasNewStatus = true;
+            InvokeAsync(() => StateHasChanged());
         };
 
         // Give the base class a chance.

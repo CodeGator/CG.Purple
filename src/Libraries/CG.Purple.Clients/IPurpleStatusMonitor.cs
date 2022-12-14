@@ -8,10 +8,15 @@ namespace CG.Purple.Clients;
 public interface IPurpleStatusMonitor
 {
     /// <summary>
-    /// This property contains a delegate for receiving continuous status 
-    /// updates from the microservice.
+    /// This event is fired when the microservice sends a status update.
     /// </summary>
-    Action<StatusNotification>? Status { get; set; }
+    event EventHandler<StatusNotification>? Status;
+
+    /// <summary>
+    /// This event is fired when an error is detected while processing a 
+    /// status update.
+    /// </summary>
+    event EventHandler<Exception>? Error;
 
     /// <summary>
     /// This property indicates whether or not the monitor is actively 

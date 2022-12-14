@@ -14,14 +14,28 @@ internal class PurpleStatusMonitor : IPurpleStatusMonitor
     #region Fields
 
     /// <summary>
-    /// This field contains the client options.
+    /// This property contains a reference to a hub for the monitor.
     /// </summary>
-    internal protected readonly IOptions<PurpleClientOptions> _options;
+    internal protected readonly IHubConnection _hubConnection = null!;
+
+    #endregion
+
+    // *******************************************************************
+    // Events.
+    // *******************************************************************
+
+    #region Events
 
     /// <summary>
-    /// This property contains an optional reference to a signalR hub.
+    /// This event is fired when the microservice sends a status update.
     /// </summary>
-    internal protected HubConnection? _statusHub { get; set; }
+    public event EventHandler<StatusNotification>? Status;
+
+    /// <summary>
+    /// This event is fired when an error is detected while processing a 
+    /// status update.
+    /// </summary>
+    public event EventHandler<Exception>? Error;
 
     #endregion
 
@@ -32,16 +46,13 @@ internal class PurpleStatusMonitor : IPurpleStatusMonitor
     #region Properties
 
     /// <summary>
-    /// This property contains a delegate for receiving continuous status 
-    /// updates from the microservice.
-    /// </summary>
-    public virtual Action<StatusNotification>? Status { get; set; }
-
-    /// <summary>
     /// This property indicates whether or not the monitor is actively 
     /// connected to the microservice.
     /// </summary>
-    public virtual bool IsConnected { get; private set; }
+    public virtual bool IsConnected 
+    {
+        get { return _hubConnection.State == HubConnectionState.Connected; }
+    }
 
     #endregion
 
@@ -55,97 +66,49 @@ internal class PurpleStatusMonitor : IPurpleStatusMonitor
     /// This constructor creates a new instance of the <see cref="PurpleStatusMonitor"/>
     /// class.
     /// </summary>
-    /// <param name="options">The client options to use with this class.</param>
+    /// <param name="hubConnection">The hub to use with this monitor.</param>
     public PurpleStatusMonitor(
-        IOptions<PurpleClientOptions> options
+        IHubConnection hubConnection
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(options, nameof(options));
+        Guard.Instance().ThrowIfNull(hubConnection, nameof(hubConnection));
 
         // Save the reference(s).
-        _options = options;
+        _hubConnection = hubConnection;
 
-        // Stand up the back channel.
-        EnsureBackchannel();
-    }
-
-    #endregion
-
-    // *******************************************************************
-    // Private methods.
-    // *******************************************************************
-
-    #region Private methods
-
-    /// <summary>
-    /// This method stand up a back channel for status updates from the 
-    /// microservice.
-    /// </summary>
-    private void EnsureBackchannel()
-    {
-        // Do we need a hub?
-        if (_statusHub is null)
-        {
-            // Get the base address.
-            var url = $"{_options.Value.DefaultBaseAddress ?? 
-                "https://localhost:7134"}";
-
-            // Ensure it ends with a trailing '/'
-            if (!url.EndsWith("/"))
-            {
-                url += "/";
-            }
-
-            // Create a signalR hub builder.
-            var builder = new HubConnectionBuilder()
-                .WithUrl($"{url}_status")
-                .WithAutomaticReconnect();
-
-            // Create the signalR hub.
-            _statusHub = builder.Build();
-
-            // Wire up a back-channel handler.
-            _statusHub.On(
-                "Status",
-                (StatusNotification statusUpdate) =>
-                {
-                    try
-                    {
-                        // Call the delegate.
-                        Status?.Invoke(statusUpdate);
-                    }
-                    catch (Exception)
-                    {
-                        // TODO : decide what to do here.
-                    }
-                });
-
-            // Try a few times.
-            for (var x = 0; x < 3; x++)
+        // Wire up a back-channel handler.
+        _hubConnection.On(
+            "Status", 
+            new[] { typeof(StatusNotification) },
+            (arg1, arg2) => 
             {
                 try
                 {
-                    // Start the back channel.
-                    _statusHub.StartAsync().Wait();
-
-                    // Stop trying if we succeed.
-                    break;
-                }
-                catch (AggregateException ex)
-                {
-                    // We might be running before the service is ready ...
-                    if (ex.GetBaseException() is HttpRequestException)
+                    // Do we have 1 argument?
+                    if (arg1.Length == 1)
                     {
-                        // Wait a bit.
-                        Task.Delay(500).Wait();
-                    }                    
+                        // Is the argument the right type?
+                        if (arg1[0] is StatusNotification)
+                        {
+                            // Raise the event.
+#pragma warning disable CS8604 // Possible null reference argument.
+                            Status?.Invoke(this, arg1[0] as StatusNotification);
+    #pragma warning restore CS8604 // Possible null reference argument.
+                        }                        
+                    }
                 }
-            }
+                catch (Exception ex)
+                {
+                    // Raise the event.
+                    Error?.Invoke(this, ex);
+                }
 
-            // Tell the world what happened.
-            IsConnected = _statusHub.State == HubConnectionState.Connected;
-        }
+                // Return the task.
+                return Task.CompletedTask; 
+            }, 
+            this
+            );
     }
 
     #endregion

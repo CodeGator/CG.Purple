@@ -5,9 +5,6 @@
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/codegator/CG.Purple/93?logo=codecov&logoColor=white&style=flat-square&token=4BBNQPPATD)
 [![Github docs](https://img.shields.io/static/v1?label=Documentation&message=online&color=blue)](https://codegator.github.io/CG.Purple/index.html)
 [![GitHub last commit](https://img.shields.io/github/last-commit/CodeGator/CG.Purple?color=594ae2&style=flat-square&logo=github)](https://github.com/CodeGator/CG.Purple)
-[![GitHub Issues](https://img.shields.io/github/issues/CodeGator/CG.Purple?style=plastic)](https://github.com/CodeGator/CG.Purple/issues)
-[![GitHub Repo stars](https://img.shields.io/github/stars/CodeGator/CG.Purple?color=594ae2&style=flat-square&logo=github)](https://github.com/CodeGator/CG.Purple/stargazers)
-[![Discussions](https://img.shields.io/github/discussions/CodeGator/CG.Purple?color=594ae2&logo=github&style=flat-square)](https://github.com/CodeGator/CG.Purple/discussions)
 
 
 #### GitHub Stats

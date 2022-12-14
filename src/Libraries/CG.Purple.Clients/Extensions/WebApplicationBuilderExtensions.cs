@@ -103,9 +103,65 @@ public static class WebApplicationBuilderExtensions001
             "Wiring up the Purple HTTP client wrapper(s)"
             );
 
-        // Add the purple clients.
-        webApplicationBuilder.Services.AddSingleton<IPurpleStatusMonitor, PurpleStatusMonitor>();
+        // Add the status monitor.
+        webApplicationBuilder.Services.AddSingleton<IPurpleStatusMonitor, PurpleStatusMonitor>(serviceProvider =>
+        {
+            // Get the client options.
+            var options = serviceProvider.GetRequiredService<IOptions<PurpleClientOptions>>();
+
+            // Get the base address.
+            var url = $"{options.Value.DefaultBaseAddress ?? "https://localhost:7134"}";
+
+            // Ensure it ends with a trailing '/'
+            if (!url.EndsWith("/"))
+            {
+                url += "/";
+            }
+
+            // Create a signalR hub builder.
+            var builder = new HubConnectionBuilder()
+                .WithUrl($"{url}_status")
+                .WithAutomaticReconnect();
+
+            // Create the signalR hub.
+            var hubConnection = new HubConnectionWrapper(builder.Build());
+
+            // Try a few times.
+            for (var x = 0; x < 3; x++)
+            {
+                try
+                {
+                    // Start the hub.
+                    hubConnection.StartAsync().Wait();
+
+                    // Stop trying if we succeed.
+                    break;
+                }
+                catch (AggregateException ex)
+                {
+                    // We might be running before the service is ready ...
+                    if (ex.GetBaseException() is HttpRequestException)
+                    {
+                        // Wait a bit.
+                        Task.Delay(500).Wait();
+                    }
+                }
+            }
+
+            // Create the status monitor.
+            var monitor = new PurpleStatusMonitor(
+                hubConnection
+                );
+
+            // Return the results.
+            return monitor;
+
+        });
+
+        // Add the client factory.
         webApplicationBuilder.Services.AddSingleton<IPurpleHttpClientFactory, PurpleHttpClientFactory>();
+
+        // Add the client.
         webApplicationBuilder.Services.AddScoped<IPurpleHttpClient, PurpleHttpClient>();        
 
         // Return the app builder.
