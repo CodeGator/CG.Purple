@@ -58,7 +58,7 @@ internal class SeedDirector : ISeedDirector
     /// <summary>
     /// This field contains the provider log manager for this director.
     /// </summary>
-    internal protected readonly IMessageLogManager _providerLogManager = null!;
+    internal protected readonly IMessageLogManager _messageLogManager = null!;
 
     /// <summary>
     /// This field contains the provider type manager for this director.
@@ -105,7 +105,7 @@ internal class SeedDirector : ISeedDirector
     /// to use with this director.</param>
     /// <param name="providerTypeManager">The provider type manager to use 
     /// with this director.</param>
-    /// <param name="providerLogManager">The provider log manager to use 
+    /// <param name="messageLogManager">The message log manager to use 
     /// with this director.</param>
     /// <param name="textMessageManager">The text message manager to use with 
     /// this director.</param>
@@ -120,7 +120,7 @@ internal class SeedDirector : ISeedDirector
         IPropertyTypeManager propertyTypeManager,
         IProviderParameterManager providerParameterManager,
         IProviderTypeManager providerTypeManager,
-        IMessageLogManager providerLogManager,
+        IMessageLogManager messageLogManager,
         ITextMessageManager textMessageManager,
         ILogger<ISeedDirector> logger
         )
@@ -135,7 +135,7 @@ internal class SeedDirector : ISeedDirector
             .ThrowIfNull(propertyTypeManager, nameof(propertyTypeManager))
             .ThrowIfNull(providerParameterManager, nameof(providerParameterManager))
             .ThrowIfNull(providerTypeManager, nameof(providerTypeManager))
-            .ThrowIfNull(providerLogManager, nameof(providerLogManager))
+            .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(textMessageManager, nameof(textMessageManager))
             .ThrowIfNull(logger, nameof(logger));
 
@@ -149,7 +149,7 @@ internal class SeedDirector : ISeedDirector
         _propertyTypeManager = propertyTypeManager;
         _providerParameterManager = providerParameterManager;
         _providerTypeManager = providerTypeManager;
-        _providerLogManager = providerLogManager;
+        _messageLogManager = messageLogManager;
         _textMessageManager = textMessageManager;
         _logger = logger;
     }
@@ -803,7 +803,7 @@ internal class SeedDirector : ISeedDirector
                 }
 
                 // Record what we did, in the log.
-                await _providerLogManager.CreateAsync(
+                await _messageLogManager.CreateAsync(
                     new MessageLog()
                     {
                         Message = mailMessage,
@@ -1418,7 +1418,7 @@ internal class SeedDirector : ISeedDirector
             if (!force)
             {
                 // Are there existing provider logs?
-                var hasExistingData = await _providerLogManager.AnyAsync(
+                var hasExistingData = await _messageLogManager.AnyAsync(
                     cancellationToken
                     ).ConfigureAwait(false);
 
@@ -1522,7 +1522,7 @@ internal class SeedDirector : ISeedDirector
                         );
 
                     // Create the provider log.
-                    _ = await _providerLogManager.CreateAsync(
+                    _ = await _messageLogManager.CreateAsync(
                         new MessageLog()
                         {
                             Message = mailMessage,
@@ -1562,7 +1562,7 @@ internal class SeedDirector : ISeedDirector
                         );
 
                     // Create the provider log.
-                    _ = await _providerLogManager.CreateAsync(
+                    _ = await _messageLogManager.CreateAsync(
                         new MessageLog()
                         {
                             Message = textMessage,
@@ -1782,7 +1782,7 @@ internal class SeedDirector : ISeedDirector
                 }
 
                 // Record what we did, in the log.
-                await _providerLogManager.CreateAsync(
+                await _messageLogManager.CreateAsync(
                     new MessageLog()
                     {
                         Message = textMessage,

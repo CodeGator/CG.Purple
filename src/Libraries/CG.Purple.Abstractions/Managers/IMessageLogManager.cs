@@ -39,7 +39,7 @@ public interface IMessageLogManager
     /// This method creates a new <see cref="MessageLog"/> object in the 
     /// underlying storage.
     /// </summary>
-    /// <param name="processLog">The model to create in the underlying storage.</param>
+    /// <param name="messageLog">The model to create in the underlying storage.</param>
     /// <param name="userName">The user name of the person performing the 
     /// operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -51,7 +51,7 @@ public interface IMessageLogManager
     /// <exception cref="ManagerException">This exception is thrown whenever the
     /// manager fails to complete the operation.</exception>
     Task<MessageLog> CreateAsync(
-        MessageLog processLog,
+        MessageLog messageLog,
         string userName,
         CancellationToken cancellationToken = default
         );
@@ -60,7 +60,7 @@ public interface IMessageLogManager
     /// This method deletes an existing <see cref="MessageLog"/> object from the 
     /// underlying storage.
     /// </summary>
-    /// <param name="processLog">The model to delete from the underlying storage.</param>
+    /// <param name="messageLog">The model to delete from the underlying storage.</param>
     /// <param name="userName">The user name of the person performing the 
     /// operation.</param>
     /// <param name="cancellationToken">A cancellation token that is monitored
@@ -71,7 +71,7 @@ public interface IMessageLogManager
     /// <exception cref="ManagerException">This exception is thrown whenever the
     /// manager fails to complete the operation.</exception>
     Task DeleteAsync(
-        MessageLog processLog,
+        MessageLog messageLog,
         string userName,
         CancellationToken cancellationToken = default
         );

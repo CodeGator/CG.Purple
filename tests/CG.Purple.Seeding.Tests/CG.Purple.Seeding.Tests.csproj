@@ -26,7 +26,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Directors\" />
+      <ProjectReference Include="..\..\src\Libraries\CG.Purple.Seeding\CG.Purple.Seeding.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="file1.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

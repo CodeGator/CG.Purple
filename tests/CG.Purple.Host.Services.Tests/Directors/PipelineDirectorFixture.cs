@@ -1,6 +1,4 @@
 ﻿
-using Microsoft.VisualBasic;
-
 namespace CG.Purple.Host.Directors;
 
 /// <summary>
