@@ -108,7 +108,7 @@ class.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SeedDirector(IAttachmentManager attachmenteManager, IFileTypeManager fileTypeManager, IMailMessageManager mailMessageManager, IMessagePropertyManager messagePropertyManager, IMimeTypeManager mimeTypeManager, IParameterTypeManager parameterTypeManager, IPropertyTypeManager propertyTypeManager, IProviderParameterManager providerParameterManager, IProviderTypeManager providerTypeManager, IMessageLogManager providerLogManager, ITextMessageManager textMessageManager, ILogger&lt;ISeedDirector&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public SeedDirector(IAttachmentManager attachmenteManager, IFileTypeManager fileTypeManager, IMailMessageManager mailMessageManager, IMessagePropertyManager messagePropertyManager, IMimeTypeManager mimeTypeManager, IParameterTypeManager parameterTypeManager, IPropertyTypeManager propertyTypeManager, IProviderParameterManager providerParameterManager, IProviderTypeManager providerTypeManager, IMessageLogManager messageLogManager, ITextMessageManager textMessageManager, ILogger&lt;ISeedDirector&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -185,8 +185,8 @@ with this director.</p>
       </tr>
       <tr>
         <td><span class="xref">IMessageLogManager</span></td>
-        <td><span class="parametername">providerLogManager</span></td>
-        <td><p>The provider log manager to use
+        <td><span class="parametername">messageLogManager</span></td>
+        <td><p>The message log manager to use
 with this director.</p>
 </td>
       </tr>
@@ -299,6 +299,29 @@ this director.</p>
       </tr>
     </tbody>
   </table>
+  <h4 id="CG_Purple_Seeding_Directors_SeedDirector__messageLogManager" data-uid="CG.Purple.Seeding.Directors.SeedDirector._messageLogManager">_messageLogManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the provider log manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMessageLogManager _messageLogManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessageLogManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h4 id="CG_Purple_Seeding_Directors_SeedDirector__messagePropertyManager" data-uid="CG.Purple.Seeding.Directors.SeedDirector._messagePropertyManager">_messagePropertyManager</h4>
   <div class="markdown level1 summary"><p>This field contains the message property manager for this director.</p>
 </div>
@@ -387,29 +410,6 @@ this director.</p>
     <tbody>
       <tr>
         <td><span class="xref">IPropertyTypeManager</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="CG_Purple_Seeding_Directors_SeedDirector__providerLogManager" data-uid="CG.Purple.Seeding.Directors.SeedDirector._providerLogManager">_providerLogManager</h4>
-  <div class="markdown level1 summary"><p>This field contains the provider log manager for this director.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly IMessageLogManager _providerLogManager</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IMessageLogManager</span></td>
         <td></td>
       </tr>
     </tbody>

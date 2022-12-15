@@ -12323,6 +12323,12 @@ references:
   commentId: F:CG.Purple.Seeding.Directors.SeedDirector._mailMessageManager
   fullName: CG.Purple.Seeding.Directors.SeedDirector._mailMessageManager
   nameWithType: SeedDirector._mailMessageManager
+- uid: CG.Purple.Seeding.Directors.SeedDirector._messageLogManager
+  name: _messageLogManager
+  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector__messageLogManager
+  commentId: F:CG.Purple.Seeding.Directors.SeedDirector._messageLogManager
+  fullName: CG.Purple.Seeding.Directors.SeedDirector._messageLogManager
+  nameWithType: SeedDirector._messageLogManager
 - uid: CG.Purple.Seeding.Directors.SeedDirector._messagePropertyManager
   name: _messagePropertyManager
   href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector__messagePropertyManager
@@ -12347,12 +12353,6 @@ references:
   commentId: F:CG.Purple.Seeding.Directors.SeedDirector._propertyTypeManager
   fullName: CG.Purple.Seeding.Directors.SeedDirector._propertyTypeManager
   nameWithType: SeedDirector._propertyTypeManager
-- uid: CG.Purple.Seeding.Directors.SeedDirector._providerLogManager
-  name: _providerLogManager
-  href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector__providerLogManager
-  commentId: F:CG.Purple.Seeding.Directors.SeedDirector._providerLogManager
-  fullName: CG.Purple.Seeding.Directors.SeedDirector._providerLogManager
-  nameWithType: SeedDirector._providerLogManager
 - uid: CG.Purple.Seeding.Directors.SeedDirector._providerParameterManager
   name: _providerParameterManager
   href: api/CG.Purple.Seeding.Directors.SeedDirector.html#CG_Purple_Seeding_Directors_SeedDirector__providerParameterManager
