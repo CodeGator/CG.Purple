@@ -219,12 +219,12 @@ public class SeedDirectorFixture
             It.IsAny<CancellationToken>()
             )).ReturnsAsync(new Models.PropertyType())
             .Verifiable();
-
-        propertyTypeManager.Setup(x => x.CreateAsync(
-            It.IsAny<Models.PropertyType>(),
+        
+        messagePropertyManager.Setup(x => x.CreateAsync(
+            It.IsAny<Models.MessageProperty>(),
             It.IsAny<string>(),
             It.IsAny<CancellationToken>()
-            )).ReturnsAsync(new Models.PropertyType())
+            )).ReturnsAsync(new Models.MessageProperty())
             .Verifiable();
 
         messageLogManager.Setup(x => x.CreateAsync(
