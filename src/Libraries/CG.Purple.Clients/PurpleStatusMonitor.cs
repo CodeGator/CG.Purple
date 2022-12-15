@@ -78,7 +78,7 @@ internal class PurpleStatusMonitor : IPurpleStatusMonitor
         _hubConnection = hubConnection;
 
         // Wire up a back-channel handler.
-        _hubConnection.On(
+        var foo = _hubConnection.On(
             "Status", 
             new[] { typeof(StatusNotification) },
             (arg1, arg2) => 
@@ -91,10 +91,10 @@ internal class PurpleStatusMonitor : IPurpleStatusMonitor
                         // Is the argument the right type?
                         if (arg1[0] is StatusNotification)
                         {
-                            // Raise the event.
 #pragma warning disable CS8604 // Possible null reference argument.
+                            // Raise the event.
                             Status?.Invoke(this, arg1[0] as StatusNotification);
-    #pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning restore CS8604 // Possible null reference argument.
                         }                        
                     }
                 }

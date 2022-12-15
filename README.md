@@ -11,7 +11,7 @@
 ![Alt](https://repobeats.axiom.co/api/embed/d5fcf6901ac54bfa82dbafed01638aedd01047cc.svg "Repobeats analytics image")
 
 ### What does it do?
-Purple is an idea for a self contained messaging microservice. The scenario is: You give Purple an email, or a text, via a REST call, and it takes care of storing that message, sending it, and tracking it's history and status, on your behalf.
+Purple is an idea for a self contained messaging microservice. The scenario is: You give Purple an email, or a text, via a REST call, and it takes care of storing that message, sending it, tracking it's history, and sending you status updates as the message processes.
 
 ### What's actually working, at this point?
 
@@ -36,18 +36,6 @@ Here are a few early screen shots (subject to change):
 Message page:
 ![messges](screens/messages.png)
 
-Mime Type page:
-![messges](screens/mimetypes.png)
-
-Property Type page:
-![messges](screens/propertytypes.png)
-
-Parameter Type page:
-![messges](screens/parametertypes.png)
-
-Provider Type page:
-![messges](screens/providertypes.png)
-
 ### What platform(s) does it support?
 * [.NET 7.x](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) or higher
 
@@ -64,6 +52,8 @@ We also have a discussion group [HERE](https://github.com/CodeGator/CG.Purple/di
 
 ### Is there any documentation?
 There is developer documentation [HERE](https://codegator.github.io/CG.Purple/)  (when the blasted CI/CD pipeline works and it gets updated).
+
+We have a WIKI for the project, [HERE](https://github.com/CodeGator/CG.Purple/wiki)
 
 We also blog about projects like this one on our website, [HERE](http://www.codegator.com)
 

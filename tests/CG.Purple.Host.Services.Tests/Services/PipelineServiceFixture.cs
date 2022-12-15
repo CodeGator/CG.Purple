@@ -1,11 +1,4 @@
 ﻿
-using Castle.Core.Logging;
-using CG.Purple.Host.Services.Options;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Moq;
-using System.Net.Http;
-
 namespace CG.Purple.Host.Services;
 
 /// <summary>
