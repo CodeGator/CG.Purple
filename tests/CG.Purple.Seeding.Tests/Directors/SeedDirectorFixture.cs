@@ -183,13 +183,6 @@ public class SeedDirectorFixture
             )).ReturnsAsync(new Models.MailMessage() { })
             .Verifiable();
 
-        messageLogManager.Setup(x => x.CreateAsync(
-            It.IsAny<Models.MessageLog>(),
-            It.IsAny<string>(),
-            It.IsAny<CancellationToken>()
-            )).ReturnsAsync(new Models.MessageLog() { })
-            .Verifiable();
-
         providerTypeManager.Setup(x => x.FindByNameAsync(
             It.IsAny<string>(),
             It.IsAny<CancellationToken>()
@@ -322,13 +315,6 @@ public class SeedDirectorFixture
             It.IsAny<CancellationToken>()
             )).ReturnsAsync(new Models.TextMessage());
 
-        messageLogManager.Setup(x => x.CreateAsync(
-            It.IsAny<Models.MessageLog>(),
-            It.IsAny<string>(),
-            It.IsAny<CancellationToken>()
-            )).ReturnsAsync(new Models.MessageLog() { })
-            .Verifiable();
-
         providerTypeManager.Setup(x => x.FindByNameAsync(
             It.IsAny<string>(),
             It.IsAny<CancellationToken>()
@@ -432,26 +418,6 @@ public class SeedDirectorFixture
             It.IsAny<string>(),
             It.IsAny<CancellationToken>()
             )).ReturnsAsync(new Models.TextMessage());
-
-        messageLogManager.Setup(x => x.CreateAsync(
-            It.IsAny<Models.MessageLog>(),
-            It.IsAny<string>(),
-            It.IsAny<CancellationToken>()
-            )).ReturnsAsync(new Models.MessageLog() { })
-            .Verifiable();
-
-        providerTypeManager.Setup(x => x.FindByNameAsync(
-            It.IsAny<string>(),
-            It.IsAny<CancellationToken>()
-            )).ReturnsAsync(new Models.ProviderType())
-            .Verifiable();
-
-        messageLogManager.Setup(x => x.CreateAsync(
-            It.IsAny<Models.MessageLog>(),
-            It.IsAny<string>(),
-            It.IsAny<CancellationToken>()
-            )).ReturnsAsync(new Models.MessageLog())
-            .Verifiable();
 
         mimeTypeManager.Setup(x => x.CreateAsync(
             It.IsAny<Models.MimeType>(),
