@@ -1,10 +1,5 @@
 ﻿
-using CG.Purple.Directors;
-using CG.Purple.Managers;
-using CG.Purple.Providers;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
-using System.Net.Http;
+using Microsoft.VisualBasic;
 
 namespace CG.Purple.Host.Directors;
 
@@ -91,7 +86,7 @@ public class PipelineDirectorFixture
     }
 
     // *******************************************************************
-    /*
+    
     /// <summary>
     /// This method ensures the <see cref="PipelineDirector.ProcessAsync(TimeSpan, CancellationToken)"/>
     /// method calls the proper manager methods.
@@ -108,8 +103,25 @@ public class PipelineDirectorFixture
         var providerTypeManager = new Mock<IProviderTypeManager>();
         var messageProviderFactory = new Mock<IMessageProviderFactory>();
         var logger = new Mock<ILogger<IPipelineDirector>>();
+        var provider = new Mock<IMessageProvider>();
 
-        var readyToProcess = new Models.Message[]
+        logger.Setup(x => x.Log<object>(
+            It.IsAny<LogLevel>(),
+            It.IsAny<EventId>(),
+            It.IsAny<object>(),
+            It.IsAny<Exception?>(),
+            It.IsAny<Func<object, Exception?, string>>()
+            )).Callback((LogLevel logLevel, EventId eventId, object state, Exception? ex, Func<object, Exception?, string> func) => 
+            { 
+                if (logLevel == LogLevel.Error) 
+                {
+                    Assert.Fail(
+                        "The logger logged an error during the method."
+                        );
+                }
+            });
+
+        var messages = new Models.Message[]
         {
             new Models.Message()
             {
@@ -126,15 +138,31 @@ public class PipelineDirectorFixture
 
         messageManager.Setup(x => x.FindReadyToProcessAsync(
             It.IsAny<CancellationToken>()
-            )).ReturnsAsync(readyToProcess)
+            )).ReturnsAsync(messages)
+            .Verifiable();
+
+        messageManager.Setup(x => x.FindReadyToRetryAsync(
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(messages)
+            .Verifiable();
+
+        messageManager.Setup(x => x.FindReadyToArchiveAsync(
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(messages)
             .Verifiable();
 
         messageManager.Setup(x => x.UpdateAsync(
             It.IsAny<Models.Message>(),
             It.IsAny<string>(),
             It.IsAny<CancellationToken>()
-            )).ReturnsAsync(readyToProcess.First())
+            )).ReturnsAsync(messages.First())
             .Verifiable();
+
+        messageManager.Setup(x => x.DeleteAsync(
+            It.IsAny<Models.Message>(),
+            It.IsAny<string>(),
+            It.IsAny<CancellationToken>()
+            )).Verifiable();
 
         var providerTypes = new Models.ProviderType[]
         {
@@ -144,6 +172,7 @@ public class PipelineDirectorFixture
                 Name = "test provider",
                 CanProcessEmails = true,
                 CanProcessTexts = true,
+                FactoryType = "DoNothing",
                 CreatedBy = "test",
                 CreatedOnUtc = DateTime.UtcNow,
             }
@@ -153,6 +182,29 @@ public class PipelineDirectorFixture
             It.IsAny<CancellationToken>()
             )).ReturnsAsync(providerTypes)
             .Verifiable();
+
+        messageLogManager.Setup(x => x.CreateAsync(
+            It.IsAny<Models.MessageLog>(),
+            It.IsAny<string>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(new Models.MessageLog()
+            {
+                Id = 1,
+                Message = messages.First(),
+                ProviderType = providerTypes.First(),
+                MessageEvent = Models.MessageEvent.Assigned
+            }).Verifiable();
+
+        messageProviderFactory.Setup(x => x.CreateAsync(
+            It.IsAny<Models.ProviderType>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(provider.Object);
+
+        provider.Setup(x => x.ProcessMessagesAsync(
+            It.IsAny<IEnumerable<Models.Message>>(),
+            It.IsAny<Models.ProviderType>(),
+            It.IsAny<CancellationToken>()
+            )).Verifiable();
 
         var director = new PipelineDirector(
             attachmentManager.Object,
@@ -179,6 +231,6 @@ public class PipelineDirectorFixture
             logger
             );
     }
-    */
+    
     #endregion
 }
