@@ -1,4 +1,6 @@
 ﻿
+using Moq;
+
 namespace CG.Purple.Seeding.Directors;
 
 
@@ -369,6 +371,132 @@ public class SeedDirectorFixture
             textMessageManager,
             logger
             );
+    }
+
+    // *******************************************************************
+
+    /// <summary>
+    /// This method ensures the <see cref="SeedDirector.SeedMimeTypesAsync(IConfiguration, string, bool, CancellationToken)"/>
+    /// method calls the proper manager methods.
+    /// </summary>
+    [TestMethod]
+    [TestCategory("Unit")]
+    public async Task SeedDirector_SeedMimeTypesAsync()
+    {
+        // Arrange ...
+        var attachmentManager = new Mock<IAttachmentManager>();
+        var fileTypeManager = new Mock<IFileTypeManager>();
+        var mailMessageManager = new Mock<IMailMessageManager>();
+        var messagePropertyManager = new Mock<IMessagePropertyManager>();
+        var mimeTypeManager = new Mock<IMimeTypeManager>();
+        var parameterTypeManager = new Mock<IParameterTypeManager>();
+        var propertyTypeManager = new Mock<IPropertyTypeManager>();
+        var providerParameterManager = new Mock<IProviderParameterManager>();
+        var providerTypeManager = new Mock<IProviderTypeManager>();
+        var messageLogManager = new Mock<IMessageLogManager>();
+        var textMessageManager = new Mock<ITextMessageManager>();
+        var logger = new Mock<ILogger<ISeedDirector>>();
+
+        var director = new SeedDirector(
+            attachmentManager.Object,
+            fileTypeManager.Object,
+            mailMessageManager.Object,
+            messagePropertyManager.Object,
+            mimeTypeManager.Object,
+            parameterTypeManager.Object,
+            propertyTypeManager.Object,
+            providerParameterManager.Object,
+            providerTypeManager.Object,
+            messageLogManager.Object,
+            textMessageManager.Object,
+            logger.Object
+            );
+
+        logger.Setup(x => x.Log<object>(
+            It.IsAny<LogLevel>(),
+            It.IsAny<EventId>(),
+            It.IsAny<object>(),
+            It.IsAny<Exception?>(),
+            It.IsAny<Func<object, Exception?, string>>()
+            )).Callback((LogLevel logLevel, EventId eventId, object state, Exception? ex, Func<object, Exception?, string> func) =>
+            {
+                if (logLevel == LogLevel.Error)
+                {
+                    Assert.Fail(
+                        "The logger logged an error during the method."
+                        );
+                }
+            });
+
+        textMessageManager.Setup(x => x.FindByKeyAsync(
+            It.IsAny<string>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(new Models.TextMessage());
+
+        messageLogManager.Setup(x => x.CreateAsync(
+            It.IsAny<Models.MessageLog>(),
+            It.IsAny<string>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(new Models.MessageLog() { })
+            .Verifiable();
+
+        providerTypeManager.Setup(x => x.FindByNameAsync(
+            It.IsAny<string>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(new Models.ProviderType())
+            .Verifiable();
+
+        messageLogManager.Setup(x => x.CreateAsync(
+            It.IsAny<Models.MessageLog>(),
+            It.IsAny<string>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(new Models.MessageLog())
+            .Verifiable();
+
+        mimeTypeManager.Setup(x => x.CreateAsync(
+            It.IsAny<Models.MimeType>(),
+            It.IsAny<string>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(new Models.MimeType())
+            .Verifiable();
+
+        fileTypeManager.Setup(x => x.CreateAsync(
+            It.IsAny<Models.FileType>(),
+            It.IsAny<string>(),
+            It.IsAny<CancellationToken>()
+            )).ReturnsAsync(new Models.FileType())
+            .Verifiable();
+
+        var configuration = new ConfigurationBuilder()
+            .AddInMemoryCollection(new[]
+            {
+                new KeyValuePair<string, string?>("MimeTypes:0:Type", "application"),
+                new KeyValuePair<string, string?>("MimeTypes:0:SubType", "text"),
+                new KeyValuePair<string, string?>("MimeTypes:0:Extensions:0", ".txt")
+            }.AsEnumerable()).Build();
+
+        // Act ...
+        await director.SeedMimeTypesAsync(
+            configuration,
+            "test",
+            false
+            );
+
+        Mock.Verify(
+            attachmentManager,
+            fileTypeManager,
+            mailMessageManager,
+            messagePropertyManager,
+            mimeTypeManager,
+            parameterTypeManager,
+            propertyTypeManager,
+            providerParameterManager,
+            providerTypeManager,
+            messageLogManager,
+            textMessageManager,
+            logger
+            );
+
     }
 
     #endregion
