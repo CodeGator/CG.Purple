@@ -1,6 +1,4 @@
 ﻿
-using System.Reflection;
-
 namespace CG.Purple.Providers;
 
 /// <summary>

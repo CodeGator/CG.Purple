@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.Extensions.DependencyInjection;
+
 namespace Microsoft.AspNetCore.Builder;
 
 /// <summary>
@@ -38,6 +40,62 @@ public static class WebApplicationBuilderExtensions003
             "Registering the '{name}' provider",
             nameof(SendGridProvider)
             );
+
+        // Add the SendGrid client.
+        webApplicationBuilder.Services.AddScoped<ISendGridClient>(serviceProvider =>
+        {
+            // We need to use the provider parameters to collect the required
+            //   setup for the SendGrid Client.
+
+            // Get the provider type manager.
+            var providerTypeManager = serviceProvider.GetRequiredService<
+                IProviderTypeManager
+                >();
+
+            // Get the provider type.
+            var providerType = providerTypeManager.FindByNameAsync(
+                "SendGrid"
+                ).Result;
+
+            // Did we fail?
+            if (providerType is null)
+            {
+                // Panic!!
+                throw new KeyNotFoundException(
+                    "The SendGrid provider type was not found!"
+                    );
+            }
+
+            // Get the api key.
+            var apiKeyParameter = providerType.Parameters.FirstOrDefault(x =>
+                x.ParameterType.Name == "ApiKey"
+                );
+
+            // Did we fail?
+            if (apiKeyParameter is null)
+            {
+                // Panic!!
+                throw new KeyNotFoundException(
+                    "The ApiKey parameter was not found!"
+                    );
+            }
+
+            // Create the SendGrid client.
+            var client = new SendGridClient(
+                new SendGridClientOptions()
+                {
+                    ApiKey = apiKeyParameter.Value,
+                    ReliabilitySettings = new ReliabilitySettings(
+                        2,
+                        TimeSpan.FromSeconds(1),
+                        TimeSpan.FromSeconds(10),
+                        TimeSpan.FromSeconds(3)
+                        )
+                });
+
+            // Return the results.
+            return client;
+        });
 
         // Add the provider.
         webApplicationBuilder.Services.AddScoped<SendGridProvider>();

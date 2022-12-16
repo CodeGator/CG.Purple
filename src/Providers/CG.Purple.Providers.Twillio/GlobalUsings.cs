@@ -6,3 +6,4 @@ global using CG.Purple.Providers.Twillio;
 global using Microsoft.Extensions.Logging;
 global using Twilio;
 global using Twilio.Rest.Api.V2010.Account;
+global using Twilio.Http;

@@ -1,6 +1,4 @@
 ﻿
-using CG.Purple.Managers;
-
 namespace CG.Purple.Providers;
 
 /// <summary>
@@ -58,7 +56,7 @@ public class StatusHub : Hub
     /// <param name="message">The message to use for the operation.</param>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>A task to perform the operation.</returns>
-    public async Task OnStatusAsync(
+    public async virtual Task OnStatusAsync(
         Message message,
         CancellationToken cancellationToken = default
         )

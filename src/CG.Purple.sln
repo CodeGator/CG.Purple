@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.SqlServer", "Data
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Solution Items", "00. Solution Items", "{A48756AF-260A-458D-891A-B2E51DF966BA}"
 	ProjectSection(SolutionItems) = preProject
-		..\Readme.md = ..\Readme.md
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Primitives", "Libraries\CG.Purple.Primitives\CG.Purple.Primitives.csproj", "{EF3DB6E8-6DA9-4878-9244-EE62886DCE26}"
@@ -70,9 +70,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Providers.Smtp.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Providers.Twillio.Tests", "..\tests\CG.Purple.Providers.Twillio.Tests\CG.Purple.Providers.Twillio.Tests.csproj", "{BCD3CAFA-5DE3-4F6D-8741-7868D9B1084D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.Purple.Clients", "Libraries\CG.Purple.Clients\CG.Purple.Clients.csproj", "{AC22C2A0-8BDE-497C-86EC-344AE09B24E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Clients", "Libraries\CG.Purple.Clients\CG.Purple.Clients.csproj", "{AC22C2A0-8BDE-497C-86EC-344AE09B24E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.Purple.Clients.Tests", "..\tests\CG.Purple.Clients.Tests\CG.Purple.Clients.Tests.csproj", "{4893F907-D3D3-4F2A-9EF5-8F885227030D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Purple.Clients.Tests", "..\tests\CG.Purple.Clients.Tests\CG.Purple.Clients.Tests.csproj", "{4893F907-D3D3-4F2A-9EF5-8F885227030D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

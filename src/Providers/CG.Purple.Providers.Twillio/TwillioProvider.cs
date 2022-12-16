@@ -1,6 +1,4 @@
 ﻿
-using Twilio.Http;
-
 namespace CG.Purple.Providers.Twillio;
 
 /// <summary>
@@ -212,6 +210,10 @@ internal class TwillioProvider :
                     // Step 3C: Send the message.
                     // ========
 
+                    // TODO : look into ways to support the mediaUrl parameter,
+                    //   on the Twillio client, which requires that all media
+                    //   be publicly accessible through a url. 
+
                     // Log what we are about to do.
                     _logger.LogDebug(
                         "Sending message: {id}",
@@ -303,156 +305,6 @@ internal class TwillioProvider :
                 innerException: ex
                 );
         }
-    }
-
-    #endregion
-
-    // *******************************************************************
-    // Private methods.
-    // *******************************************************************
-
-    #region Private methods
-
-    /// <summary>
-    /// This method creates a new .NET wrapper for an email.
-    /// </summary>
-    /// <param name="mailMessage">The mail message to use for the operation.</param>
-    /// <returns>An <see cref="System.Net.Mail.MailMessage"/> object.</returns>
-    private System.Net.Mail.MailMessage CreateDotNetMessage(
-        MailMessage mailMessage
-        )
-    {
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Creating a System.Net.Mail.MailMessage object"
-            );
-
-        var dotNetMessage = new System.Net.Mail.MailMessage()
-        {
-            From = new System.Net.Mail.MailAddress(mailMessage.From),
-            Subject = mailMessage.Subject,
-            Body = mailMessage.Body,
-            IsBodyHtml = mailMessage.IsHtml
-        };
-
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Setting To address(es) on the mail object"
-            );
-
-        // Set the target address(es).
-        foreach (var to in mailMessage.To.Split(';'))
-        {
-            if (!string.IsNullOrEmpty(to))
-            {
-                dotNetMessage.To.Add(to);
-            }
-        }
-
-        // Was a CC supplied?
-        if (!string.IsNullOrEmpty(mailMessage.CC))
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Setting CC address(es) on the mail object"
-                );
-
-            // Set the CC address(es).
-            foreach (var cc in mailMessage.CC.Split(';'))
-            {
-                if (!string.IsNullOrEmpty(cc))
-                {
-                    dotNetMessage.CC.Add(cc);
-                }
-            }
-        }
-
-        // Was a BCC supplied?
-        if (!string.IsNullOrEmpty(mailMessage.BCC))
-        {
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Setting BCC address(es) on the mail object"
-                );
-
-            // Set the BCC address(es).
-            foreach (var bcc in mailMessage.BCC.Split(';'))
-            {
-                if (!string.IsNullOrEmpty(bcc))
-                {
-                    dotNetMessage.Bcc.Add(bcc);
-                }
-            }
-        }
-
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Setting any attachment(s) on the mail object"
-            );
-
-        // Were there attachments?
-        foreach (var attachment in mailMessage.Attachments)
-        {
-            // Get the data and mime type.
-            using var contentStream = new MemoryStream(attachment.Data);
-            var mimeType = $"{attachment.MimeType.Type}/{attachment.MimeType.SubType}";
-
-            // Set the attachment.
-            dotNetMessage.Attachments.Add(
-                    new System.Net.Mail.Attachment(
-                        contentStream,
-                        mimeType
-                        )
-                    );
-        }
-
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Returning a populated mail object"
-            );
-
-        // Return the results.
-        return dotNetMessage;
-    }
-
-    // *******************************************************************
-
-    /// <summary>
-    /// This method resets the given message to a 'Pending' state and clears
-    /// the error count on the message. 
-    /// </summary>
-    /// <param name="message">The message to use for the operation.</param>
-    /// <param name="cancellationToken">A cancellation token that is monitored
-    /// for the lifetime of the method.</param>
-    /// <returns>A task to perform the operation.</returns>
-    private async Task ResetMessageAsync(
-        Message message,
-        CancellationToken cancellationToken = default
-        )
-    {
-        // Log what we are about to do.
-        _logger.LogDebug(
-            "Removing the provider from message: {id}",
-            message.Id
-            );
-
-        // Update the message.
-        message.ProviderType = null;
-
-        // Save the changes.
-        _ = await _messageManager.UpdateAsync(
-            message,
-            "host",
-            cancellationToken
-            ).ConfigureAwait(false);
-
-        // Transition back to the 'Pending' state.
-        await message.ToPendingStateAsync(
-            _messageManager,
-            _messageLogManager,
-            "host",
-            cancellationToken
-            ).ConfigureAwait(false);
     }
 
     #endregion

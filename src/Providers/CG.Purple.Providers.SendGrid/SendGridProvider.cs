@@ -16,6 +16,11 @@ internal class SendGridProvider :
     #region Fields
 
     /// <summary>
+    /// This field contains the SendGrid client for this provider.
+    /// </summary>
+    internal protected readonly ISendGridClient _sendGridClient;
+
+    /// <summary>
     /// This field contains the mail manager for this provider.
     /// </summary>
     internal protected readonly IMailMessageManager _mailMessageManager = null!;
@@ -32,6 +37,8 @@ internal class SendGridProvider :
     /// This constructor creates a new instance of the <see cref="SendGridProvider"/>
     /// class.
     /// </summary>
+    /// <param name="sendGridClient">The SendGrid client to use with this 
+    /// provider.</param>
     /// <param name="statusHub">The SignalR status hub to use with this 
     /// provider.</param>
     /// <param name="mailMessageManager">The mail message manager to use
@@ -44,6 +51,7 @@ internal class SendGridProvider :
     /// <exception cref="ArgumentException">This exception is thrown whenever
     /// one or more arguments are missing, or invalid.</exception>
     public SendGridProvider(
+        ISendGridClient sendGridClient,
         StatusHub statusHub,
         IMailMessageManager mailMessageManager,
         IMessageManager messageManager,
@@ -57,9 +65,11 @@ internal class SendGridProvider :
             )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(mailMessageManager, nameof(mailMessageManager));
+        Guard.Instance().ThrowIfNull(sendGridClient, nameof(sendGridClient))
+            .ThrowIfNull(mailMessageManager, nameof(mailMessageManager));
 
         // Save the reference(s).
+        _sendGridClient = sendGridClient;
         _mailMessageManager = mailMessageManager;
     }
 
@@ -85,52 +95,7 @@ internal class SendGridProvider :
         try
         {
             // =======
-            // Step 1: Find the parameters we'll need.
-            // =======
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Looking for the ServerUrl parameter"
-                );
-
-            // Get the API key.
-            var apiKeyParameter = providerType.Parameters.FirstOrDefault(
-                x => x.ParameterType.Name == "ApiKey"
-                );
-
-            // Did we fail?
-            if (apiKeyParameter is null)
-            {
-                // Panic!!
-                throw new KeyNotFoundException(
-                    $"The 'ApiKey' parameter is missing, or invalid!"
-                    );
-            }
-
-            // Get the max messages per day.
-            var maxMessagesPerDay = providerType.Parameters.FirstOrDefault(
-                x => x.ParameterType.Name == "MaxMessagesPerDay"
-                );
-
-            // =======
-            // Step 2: Create the .NET client.
-            // =======
-
-            // Create the SendGrid .NET client.
-            var client = new SendGridClient(
-                new SendGridClientOptions()
-                {
-                    ApiKey = apiKeyParameter.Value,
-                    ReliabilitySettings = new ReliabilitySettings(
-                        2,
-                        TimeSpan.FromSeconds(1),
-                        TimeSpan.FromSeconds(10),
-                        TimeSpan.FromSeconds(3)
-                        )
-                });
-
-            // =======
-            // Step 3: Process the individual messages.
+            // Step 1: Process the individual messages.
             // =======
 
             // Log what we are about to do.
@@ -145,7 +110,7 @@ internal class SendGridProvider :
                 try
                 {
                     // ========
-                    // Step 3A: Validate the message type.
+                    // Step 1A: Validate the message type.
                     // ========
 
                     // Log what we are about to do.
@@ -167,7 +132,7 @@ internal class SendGridProvider :
                     }
 
                     // ========
-                    // Step 3B: Get the complete message.
+                    // Step 1B: Get the complete message.
                     // ========
 
                     // Log what we are about to do.
@@ -195,7 +160,7 @@ internal class SendGridProvider :
                     }
 
                     // ========
-                    // Step 3C: Wrap the message.
+                    // Step 1C: Wrap the message.
                     // ========
 
                     // Log what we are about to do.
@@ -208,7 +173,7 @@ internal class SendGridProvider :
                     var msg = CreateDotNetMessage(mailMessage);
 
                     // ========
-                    // Step 3D: Send the message.
+                    // Step 1D: Send the message.
                     // ========
 
                     // Log what we are about to do.
@@ -218,13 +183,13 @@ internal class SendGridProvider :
                         );
 
                     // Send the message.
-                    var response = await client.SendEmailAsync(
+                    var response = await _sendGridClient.SendEmailAsync(
                         msg,
                         cancellationToken
                         ).ConfigureAwait(false);
 
                     // ========
-                    // Step 3E: Transition the message.
+                    // Step 1E: Transition the message.
                     // ========
 
                     // Did we fail?

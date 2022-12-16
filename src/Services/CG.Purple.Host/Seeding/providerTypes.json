@@ -12,7 +12,7 @@
     {
       "Name": "SendGrid",
       "Description": "Purple SendGrid provider",
-      "IsDisabled": true,
+      "IsDisabled": false,
       "CanProcessEmails": true,
       "CanProcessTexts": false,
       "Priority": 0,
@@ -30,7 +30,7 @@
     {
       "Name": "DoNothing",
       "Description": "Purple Test provider",
-      "IsDisabled": false,
+      "IsDisabled": true,
       "CanProcessEmails": true,
       "CanProcessTexts": true,
       "Priority": 0,
