@@ -7,7 +7,7 @@
       "Body": "This is test email # 1",
       "Attachments": [],
       "Properties": [],
-      "IsDisabled": true
+      "IsDisabled": false
     }
   ]
 }

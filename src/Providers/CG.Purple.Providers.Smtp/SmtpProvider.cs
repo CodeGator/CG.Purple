@@ -18,7 +18,7 @@ internal class SmtpProvider :
     /// <summary>
     /// This field contains the mail manager for this provider.
     /// </summary>
-    internal protected readonly System.Net.Mail.SmtpClient _smtpClient = null!;
+    internal protected readonly ISmtpClient _smtpClient = null!;
 
     /// <summary>
     /// This field contains the mail manager for this provider.
@@ -50,7 +50,7 @@ internal class SmtpProvider :
     /// <exception cref="ArgumentException">This exception is thrown whenever
     /// one or more arguments are missing, or invalid.</exception>
     public SmtpProvider(
-        System.Net.Mail.SmtpClient smtpClient,
+        ISmtpClient smtpClient,
         StatusHub statusHub,
         IMailMessageManager mailMessageManager,
         IMessageManager messageManager,

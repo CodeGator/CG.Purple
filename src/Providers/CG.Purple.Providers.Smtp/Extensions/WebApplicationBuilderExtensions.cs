@@ -40,7 +40,7 @@ public static class WebApplicationBuilderExtensions003
             );
 
         // Add the SMTP client.
-        webApplicationBuilder.Services.AddScoped<System.Net.Mail.SmtpClient>(serviceProvider =>
+        webApplicationBuilder.Services.AddScoped<ISmtpClient>(serviceProvider =>
         {
             // We need to use the provider parameters to collect the required
             //   setup for the SMTP Client.
@@ -119,7 +119,7 @@ public static class WebApplicationBuilderExtensions003
                );
 
             // Return the results.
-            return smtpClient;
+            return new SmtpClientWrapper(smtpClient);
         });
 
         // Add the provider.

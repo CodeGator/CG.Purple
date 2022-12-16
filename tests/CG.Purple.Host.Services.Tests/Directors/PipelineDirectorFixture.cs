@@ -15,7 +15,7 @@ public class PipelineDirectorFixture
     #region Public methods
 
     /// <summary>
-    /// This method ensures the <see cref="PipelineDirector.PipelineDirector(Managers.IAttachmentManager, Managers.IMessageManager, Managers.IMessageLogManager, Managers.IMessagePropertyManager, Managers.IProviderTypeManager, Providers.IMessageProviderFactory, ILogger{Purple.Directors.IPipelineDirector})"/>
+    /// This method ensures the <see cref="PipelineDirector.PipelineDirector(StatusHub, IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger{IPipelineDirector})"/>
     /// constructor properly initializes object instances.
     /// </summary>
     [TestMethod]
@@ -23,7 +23,8 @@ public class PipelineDirectorFixture
     public void PipelineDirector_ctor()
     {
         // Arrange ...
-        var statusHub = new Mock<StatusHub>();
+        var serviceProvider = new Mock<IServiceProvider>();
+        var statusHub = new Mock<StatusHub>(serviceProvider.Object);
         var attachmentManager = new Mock<IAttachmentManager>();
         var messageManager = new Mock<IMessageManager>();
         var messageLogManager = new Mock<IMessageLogManager>(); 
@@ -97,7 +98,8 @@ public class PipelineDirectorFixture
     public async Task PipelineDirector_ProcessAsync()
     {
         // Arrange ...
-        var statusHub = new Mock<StatusHub>();
+        var serviceProvider = new Mock<IServiceProvider>();
+        var statusHub = new Mock<StatusHub>(serviceProvider.Object);
         var attachmentManager = new Mock<IAttachmentManager>();
         var messageManager = new Mock<IMessageManager>();
         var messageLogManager = new Mock<IMessageLogManager>();

@@ -25,4 +25,8 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Providers\CG.Purple.Providers.Smtp\CG.Purple.Providers.Smtp.csproj" />
+    </ItemGroup>
+
 </Project>

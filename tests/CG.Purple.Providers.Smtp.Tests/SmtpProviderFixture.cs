@@ -1,12 +1,16 @@
 ﻿
-namespace CG.Purple.Providers.SendGrid;
+using CG.Purple.Managers;
+using CG.Purple.Models;
+using Microsoft.Extensions.Logging;
+using Moq;
+
+namespace CG.Purple.Providers.Smtp;
 
 /// <summary>
-/// This class is a test fixture for the <see cref="SendGridProvider"/>
-/// class.
+/// This class is a test fixture for the <see cref="SmtpProvider"/>
 /// </summary>
 [TestClass]
-public class SendGridProviderFixture
+public class SmtpProviderFixture
 {
     // *******************************************************************
     // Public methods.
@@ -15,25 +19,25 @@ public class SendGridProviderFixture
     #region Public methods
 
     /// <summary>
-    /// This method ensures the <see cref="SendGridProvider.SendGridProvider(ISendGridClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger{SendGridProvider})"/>
+    /// This method ensures the <see cref="SmtpProvider.SmtpProvider(Internal.ISmtpClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger{SmtpProvider})"/>
     /// constructor properly initializes object instances.
     /// </summary>
     [TestMethod]
-    [TestCategory("UnitTest")]  
-    public void SendGridProvider_ctor()
+    [TestCategory("UnitTest")]
+    public void SmtpProvider_ctor()
     {
         // Arrange ...
-        var sendGridClient = new Mock<ISendGridClient>();
+        var smtpClient = new Mock<Internal.ISmtpClient>();
         var serviceProvider = new Mock<IServiceProvider>();
         var statusHub = new Mock<StatusHub>(serviceProvider.Object);
         var mailMessageManager = new Mock<IMailMessageManager>();
         var messageManager = new Mock<IMessageManager>();
         var messageLogManager = new Mock<IMessageLogManager>();
-        var logger = new Mock<ILogger<SendGridProvider>>();
+        var logger = new Mock<ILogger<SmtpProvider>>();
 
         // Act ...
-        var result = new SendGridProvider(
-            sendGridClient.Object,
+        var result = new SmtpProvider(
+            smtpClient.Object,
             statusHub.Object,
             mailMessageManager.Object,
             messageManager.Object,
@@ -43,8 +47,8 @@ public class SendGridProviderFixture
 
         // Assert ...
         Assert.IsTrue(
-            result._sendGridClient != null,
-            "The _sendGridClient field is invalid"
+            result._smtpClient != null,
+            "The _smtpClient field is invalid"
             );
         Assert.IsTrue(
             result._mailMessageManager != null,
@@ -52,7 +56,7 @@ public class SendGridProviderFixture
             );
 
         Mock.Verify(
-            sendGridClient,
+            smtpClient,
             serviceProvider,
             statusHub,
             mailMessageManager,
@@ -65,31 +69,25 @@ public class SendGridProviderFixture
     // *******************************************************************
 
     /// <summary>
-    /// This method ensures the <see cref="SendGridProvider.ProcessMessagesAsync(IEnumerable{Purple.Models.Message}, Purple.Models.ProviderType, CancellationToken)"/>
-    /// method properly calls the provider methods.
+    /// This method ensures the <see cref="SmtpProvider.ProcessMessagesAsync(IEnumerable{Purple.Models.Message}, Purple.Models.ProviderType, CancellationToken)"/>
+    /// constructor properly initializes object instances.
     /// </summary>
     [TestMethod]
     [TestCategory("UnitTest")]
-    public async Task SendGridProvider_ProcessMessagesAsync()
+    public async Task SmtpProvider_ProcessMessagesAsync()
     {
         // Arrange ...
-        var sendGridClient = new Mock<ISendGridClient>();
+        var smtpClient = new Mock<Internal.ISmtpClient>();
         var serviceProvider = new Mock<IServiceProvider>();
         var statusHub = new Mock<StatusHub>(serviceProvider.Object);
         var mailMessageManager = new Mock<IMailMessageManager>();
         var messageManager = new Mock<IMessageManager>();
         var messageLogManager = new Mock<IMessageLogManager>();
-        var logger = new Mock<ILogger<SendGridProvider>>();
+        var logger = new Mock<ILogger<SmtpProvider>>();
 
-        sendGridClient.Setup(x => x.SendEmailAsync(
-            It.IsAny<SendGridMessage>(),
-            It.IsAny<CancellationToken>()
-            )).ReturnsAsync(new Response(
-                System.Net.HttpStatusCode.OK,
-                new StringContent(""),
-                null
-                ))
-            .Verifiable();
+        smtpClient.Setup(x => x.Send(
+            It.IsAny<System.Net.Mail.MailMessage>()
+            )).Verifiable();
 
         mailMessageManager.Setup(x => x.FindByIdAsync(
             It.IsAny<long>(),
@@ -139,8 +137,8 @@ public class SendGridProviderFixture
             It.IsAny<CancellationToken>()
             )).Verifiable();
 
-        var provider = new SendGridProvider(
-            sendGridClient.Object,
+        var provider = new SmtpProvider(
+            smtpClient.Object,
             statusHub.Object,
             mailMessageManager.Object,
             messageManager.Object,
@@ -153,23 +151,23 @@ public class SendGridProviderFixture
             Name = "Test Provider",
             Parameters = new List<ProviderParameter>()
             {
-                new ProviderParameter() 
-                { 
+                new ProviderParameter()
+                {
                     ParameterType = new ParameterType()
                     {
-                        Name = "ApiKey"
+                        Name = "TestParameter"
                     },
                     ProviderType = new ProviderType()
                     {
                         Name = "TestProvider"
                     },
-                    Value = "test apikey"
+                    Value = "thisisatestvalue"
                 }
             }
         };
 
-        var messages = new[] 
-        { 
+        var messages = new[]
+        {
             new Message()
             {
                 MessageType = MessageType.Mail
@@ -185,7 +183,7 @@ public class SendGridProviderFixture
         // Assert ...
 
         Mock.Verify(
-            sendGridClient,
+            smtpClient,
             serviceProvider,
             statusHub,
             mailMessageManager,
@@ -197,4 +195,3 @@ public class SendGridProviderFixture
 
     #endregion
 }
-
