@@ -1,0 +1,682 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PipelineDirector
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PipelineDirector
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Directors.PipelineDirector">
+  
+  
+  <h1 id="CG_Purple_Host_Directors_PipelineDirector" data-uid="CG.Purple.Host.Directors.PipelineDirector" class="text-break">Class PipelineDirector
+  </h1>
+  <div class="markdown level0 summary"><p>This class is a default implementation of the <see cref="!:IPipelineDirector"></see></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">PipelineDirector</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Directors.html">CG.Purple.Host.Directors</a></h6>
+  <h6><strong>Assembly</strong>: CG.Purple.Host.Services.dll</h6>
+  <h5 id="CG_Purple_Host_Directors_PipelineDirector_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class PipelineDirector : IPipelineDirector</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="CG_Purple_Host_Directors_PipelineDirector__ctor_" data-uid="CG.Purple.Host.Directors.PipelineDirector.#ctor*"></a>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector__ctor_StatusHub_IAttachmentManager_IMessageManager_IMessageLogManager_IMessagePropertyManager_IProviderTypeManager_IMessageProviderFactory_ILogger_IPipelineDirector__" data-uid="CG.Purple.Host.Directors.PipelineDirector.#ctor(StatusHub,IAttachmentManager,IMessageManager,IMessageLogManager,IMessagePropertyManager,IProviderTypeManager,IMessageProviderFactory,ILogger{IPipelineDirector})">PipelineDirector(StatusHub, IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger&lt;IPipelineDirector&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Host.Directors.PipelineDirector.html">PipelineDirector</a>
+class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PipelineDirector(StatusHub statusHub, IAttachmentManager attachmentManager, IMessageManager messageManager, IMessageLogManager messageLogManager, IMessagePropertyManager messagePropertyManager, IProviderTypeManager providerTypeManager, IMessageProviderFactory messageProviderFactory, ILogger&lt;IPipelineDirector&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">StatusHub</span></td>
+        <td><span class="parametername">statusHub</span></td>
+        <td><p>The SignalR status hub to use with this
+director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IAttachmentManager</span></td>
+        <td><span class="parametername">attachmentManager</span></td>
+        <td><p>The attachment manager to use with
+this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IMessageManager</span></td>
+        <td><span class="parametername">messageManager</span></td>
+        <td><p>The message manager to use with this
+director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IMessageLogManager</span></td>
+        <td><span class="parametername">messageLogManager</span></td>
+        <td><p>The message log manager to use with
+this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IMessagePropertyManager</span></td>
+        <td><span class="parametername">messagePropertyManager</span></td>
+        <td><p>The message property manager to
+use with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IProviderTypeManager</span></td>
+        <td><span class="parametername">providerTypeManager</span></td>
+        <td><p>The provider type manager to
+use with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IMessageProviderFactory</span></td>
+        <td><span class="parametername">messageProviderFactory</span></td>
+        <td><p>The message provider factory to
+use with this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IPipelineDirector</span>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger to use with this director.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector__attachmentManager" data-uid="CG.Purple.Host.Directors.PipelineDirector._attachmentManager">_attachmentManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the attachment manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IAttachmentManager _attachmentManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IAttachmentManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector__logger" data-uid="CG.Purple.Host.Directors.PipelineDirector._logger">_logger</h4>
+  <div class="markdown level1 summary"><p>This field contains the logger for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger&lt;IPipelineDirector&gt; _logger</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<span class="xref">IPipelineDirector</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector__messageLogManager" data-uid="CG.Purple.Host.Directors.PipelineDirector._messageLogManager">_messageLogManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the message log manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMessageLogManager _messageLogManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessageLogManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector__messageManager" data-uid="CG.Purple.Host.Directors.PipelineDirector._messageManager">_messageManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the message manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMessageManager _messageManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessageManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector__messagePropertyManager" data-uid="CG.Purple.Host.Directors.PipelineDirector._messagePropertyManager">_messagePropertyManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the message property manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMessagePropertyManager _messagePropertyManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessagePropertyManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector__messageProviderFactory" data-uid="CG.Purple.Host.Directors.PipelineDirector._messageProviderFactory">_messageProviderFactory</h4>
+  <div class="markdown level1 summary"><p>This field contains the message provider factory for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMessageProviderFactory _messageProviderFactory</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMessageProviderFactory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector__providerTypeManager" data-uid="CG.Purple.Host.Directors.PipelineDirector._providerTypeManager">_providerTypeManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the provider type manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IProviderTypeManager _providerTypeManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IProviderTypeManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector__statusHub" data-uid="CG.Purple.Host.Directors.PipelineDirector._statusHub">_statusHub</h4>
+  <div class="markdown level1 summary"><p>This field contains the SignalR status hub for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly StatusHub _statusHub</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">StatusHub</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Purple_Host_Directors_PipelineDirector_ArchiveMessagesAsync_" data-uid="CG.Purple.Host.Directors.PipelineDirector.ArchiveMessagesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector_ArchiveMessagesAsync_CancellationToken_" data-uid="CG.Purple.Host.Directors.PipelineDirector.ArchiveMessagesAsync(CancellationToken)">ArchiveMessagesAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method looks for any messages that can be archived and removes
+them, along with their associated logs and properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task ArchiveMessagesAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_PipelineDirector_AssignProviderMessagesAsync_" data-uid="CG.Purple.Host.Directors.PipelineDirector.AssignProviderMessagesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector_AssignProviderMessagesAsync_IEnumerable_Message__IEnumerable_ProviderType__CancellationToken_" data-uid="CG.Purple.Host.Directors.PipelineDirector.AssignProviderMessagesAsync(IEnumerable{Message},IEnumerable{ProviderType},CancellationToken)">AssignProviderMessagesAsync(IEnumerable&lt;Message&gt;, IEnumerable&lt;ProviderType&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method assigns a provider type to any messages that currently
+lack one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task&lt;IEnumerable&lt;Message&gt;&gt; AssignProviderMessagesAsync(IEnumerable&lt;Message&gt; messages, IEnumerable&lt;ProviderType&gt; providerTypes, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;</td>
+        <td><span class="parametername">messages</span></td>
+        <td><p>The messages to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">ProviderType</span>&gt;</td>
+        <td><span class="parametername">providerTypes</span></td>
+        <td><p>The provider types to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">Message</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns the collection
+of messages that are now ready to be processed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_PipelineDirector_GetProviderTypesAsync_" data-uid="CG.Purple.Host.Directors.PipelineDirector.GetProviderTypesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector_GetProviderTypesAsync_CancellationToken_" data-uid="CG.Purple.Host.Directors.PipelineDirector.GetProviderTypesAsync(CancellationToken)">GetProviderTypesAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method fetches a sequence of enabled provider types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task&lt;IEnumerable&lt;ProviderType&gt;&gt; GetProviderTypesAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IEnumerable</span>&lt;<span class="xref">ProviderType</span>&gt;&gt;</td>
+        <td><p>A task to perform the operation that returns a sequence of
+<see cref="!:ProviderType"></see> objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_PipelineDirector_ProcessAsync_" data-uid="CG.Purple.Host.Directors.PipelineDirector.ProcessAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector_ProcessAsync_TimeSpan_CancellationToken_" data-uid="CG.Purple.Host.Directors.PipelineDirector.ProcessAsync(TimeSpan,CancellationToken)">ProcessAsync(TimeSpan, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task ProcessAsync(TimeSpan sectionDelay, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td><span class="parametername">sectionDelay</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_PipelineDirector_ProcessMessagesAsync_" data-uid="CG.Purple.Host.Directors.PipelineDirector.ProcessMessagesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector_ProcessMessagesAsync_CancellationToken_" data-uid="CG.Purple.Host.Directors.PipelineDirector.ProcessMessagesAsync(CancellationToken)">ProcessMessagesAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method looks for any messages that can be processed, and sends
+those messages to the appropriate provider.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task ProcessMessagesAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Purple_Host_Directors_PipelineDirector_RetryMessagesAsync_" data-uid="CG.Purple.Host.Directors.PipelineDirector.RetryMessagesAsync*"></a>
+  <h4 id="CG_Purple_Host_Directors_PipelineDirector_RetryMessagesAsync_CancellationToken_" data-uid="CG.Purple.Host.Directors.PipelineDirector.RetryMessagesAsync(CancellationToken)">RetryMessagesAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method looks for any messages that can be retried, and sets
+them back to a pending state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task RetryMessagesAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
