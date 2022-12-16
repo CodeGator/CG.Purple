@@ -18,7 +18,7 @@ internal class SendGridProvider :
     /// <summary>
     /// This field contains the SendGrid client for this provider.
     /// </summary>
-    internal protected readonly ISendGridClient _sendGridClient;
+    internal protected readonly ISendGridClient _sendGridClient = null!;
 
     /// <summary>
     /// This field contains the mail manager for this provider.

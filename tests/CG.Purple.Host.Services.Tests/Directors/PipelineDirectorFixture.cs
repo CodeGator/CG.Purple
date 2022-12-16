@@ -23,6 +23,7 @@ public class PipelineDirectorFixture
     public void PipelineDirector_ctor()
     {
         // Arrange ...
+        var statusHub = new Mock<StatusHub>();
         var attachmentManager = new Mock<IAttachmentManager>();
         var messageManager = new Mock<IMessageManager>();
         var messageLogManager = new Mock<IMessageLogManager>(); 
@@ -33,6 +34,7 @@ public class PipelineDirectorFixture
 
         // Act ...
         var result = new PipelineDirector(
+            statusHub.Object,
             attachmentManager.Object,
             messageManager.Object,
             messageLogManager.Object,
@@ -73,6 +75,7 @@ public class PipelineDirectorFixture
            );
 
         Mock.Verify(
+            statusHub,
             attachmentManager,
             messageManager,
             messageLogManager, 
@@ -94,6 +97,7 @@ public class PipelineDirectorFixture
     public async Task PipelineDirector_ProcessAsync()
     {
         // Arrange ...
+        var statusHub = new Mock<StatusHub>();
         var attachmentManager = new Mock<IAttachmentManager>();
         var messageManager = new Mock<IMessageManager>();
         var messageLogManager = new Mock<IMessageLogManager>();
@@ -205,6 +209,7 @@ public class PipelineDirectorFixture
             )).Verifiable();
 
         var director = new PipelineDirector(
+            statusHub.Object,
             attachmentManager.Object,
             messageManager.Object,
             messageLogManager.Object,
@@ -220,6 +225,7 @@ public class PipelineDirectorFixture
         // Assert ...        
 
         Mock.Verify(
+            statusHub,
             attachmentManager,
             messageManager,
             messageLogManager,

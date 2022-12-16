@@ -18,6 +18,11 @@ internal class SmtpProvider :
     /// <summary>
     /// This field contains the mail manager for this provider.
     /// </summary>
+    internal protected readonly System.Net.Mail.SmtpClient _smtpClient = null!;
+
+    /// <summary>
+    /// This field contains the mail manager for this provider.
+    /// </summary>
     internal protected readonly IMailMessageManager _mailMessageManager = null!;
 
     #endregion
@@ -32,6 +37,7 @@ internal class SmtpProvider :
     /// This constructor creates a new instance of the <see cref="SmtpProvider"/>
     /// class.
     /// </summary>
+    /// <param name="smtpClient">The SMTP client to use with this provider.</param>
     /// <param name="statusHub">The SignalR status context to use with this 
     /// provider.</param>
     /// <param name="mailMessageManager">The mail message manager to use
@@ -44,6 +50,7 @@ internal class SmtpProvider :
     /// <exception cref="ArgumentException">This exception is thrown whenever
     /// one or more arguments are missing, or invalid.</exception>
     public SmtpProvider(
+        System.Net.Mail.SmtpClient smtpClient,
         StatusHub statusHub,
         IMailMessageManager mailMessageManager,
         IMessageManager messageManager,
@@ -57,9 +64,11 @@ internal class SmtpProvider :
             )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(mailMessageManager, nameof(mailMessageManager));
+        Guard.Instance().ThrowIfNull(smtpClient, nameof(smtpClient))
+            .ThrowIfNull(mailMessageManager, nameof(mailMessageManager));
 
         // Save the reference(s).
+        _smtpClient = smtpClient;
         _mailMessageManager = mailMessageManager;
     }
 
@@ -85,89 +94,7 @@ internal class SmtpProvider :
         try
         {
             // ========
-            // Step 1: Get the parameters we'll need.
-            // ========
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Looking for the ServerUrl parameter"
-                );
-
-            // Get the server url.
-            var serverUrlProperty = providerType.Parameters.FirstOrDefault(
-                x => x.ParameterType.Name == "ServerUrl"
-                );
-
-            // Did we fail?
-            if (serverUrlProperty is null)
-            {
-                // Panic!!
-                throw new KeyNotFoundException(
-                    $"The 'ServerUrl' parameter is missing, or invalid!"
-                    );
-            }
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Looking for the UserName parameter"
-                );
-
-            // Get the user name.
-            var userNameProperty = providerType.Parameters.FirstOrDefault(
-                x => x.ParameterType.Name == "UserName"
-                );
-
-            // Did we fail?
-            if (userNameProperty is null)
-            {
-                // Panic!!
-                throw new KeyNotFoundException(
-                    $"The 'UserName' parameter is missing, or invalid!"
-                    );
-            }
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Looking for the Password parameter"
-                );
-
-            // Get the password.
-            var passwordProperty = providerType.Parameters.FirstOrDefault(
-                x => x.ParameterType.Name == "Password"
-                );
-
-            // Did we fail?
-            if (passwordProperty is null)
-            {
-                // Panic!!
-                throw new KeyNotFoundException(
-                    $"The 'Password' parameter is missing, or invalid!"
-                    );
-            }
-
-            // ========
-            // Step 2: Create a .NET client
-            // ========
-
-            // Log what we are about to do.
-            _logger.LogDebug(
-                "Creating a .NET SMTP client"
-                );
-
-            // Create the SMTP client.
-            using var client = new System.Net.Mail.SmtpClient(
-                serverUrlProperty.Value
-                );
-
-            // Set the credentials for the client.
-            client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential(
-                userNameProperty.Value,
-                passwordProperty.Value
-                );
-
-            // ========
-            // Step 3: Process the message.
+            // Step 1: Process the message.
             // ========
 
             // Log what we are about to do.
@@ -182,7 +109,7 @@ internal class SmtpProvider :
                 try
                 {
                     // ========
-                    // Step 3A: Validate the message type.
+                    // Step 1A: Validate the message type.
                     // ========
 
                     // Log what we are about to do.
@@ -204,7 +131,7 @@ internal class SmtpProvider :
                     }
 
                     // ========
-                    // Step 3B: Get the complete message.
+                    // Step 1B: Get the complete message.
                     // ========
 
                     // Log what we are about to do.
@@ -232,7 +159,7 @@ internal class SmtpProvider :
                     }
 
                     // ========
-                    // Step 3C: Wrap the message.
+                    // Step 1C: Wrap the message.
                     // ========
 
                     // Log what we are about to do.
@@ -254,11 +181,11 @@ internal class SmtpProvider :
                         );
 
                     // ========
-                    // Step 3D: Send the message.
+                    // Step 1D: Send the message.
                     // ========
 
                     // Send the message.
-                    client.Send(msg);
+                    _smtpClient.Send(msg);
 
                     // Log what we did.
                     _logger.LogInformation(
@@ -268,7 +195,7 @@ internal class SmtpProvider :
                         );
 
                     // ========
-                    // Step 3E: Transition the message.
+                    // Step 1E: Transition the message.
                     // ========
 
                     // Update the message and record the event.

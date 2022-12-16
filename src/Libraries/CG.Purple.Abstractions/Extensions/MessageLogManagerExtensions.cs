@@ -14,8 +14,62 @@ public static class PipelineLogManagerExtensions001
     #region Public methods
 
     /// <summary>
+    /// This method writes an <see cref="MessageEvent.Error"/> event to
+    /// the processing log.
+    /// </summary>
+    /// <param name="messageLogManager">The message log manager to use
+    /// for the operation.</param>
+    /// <param name="message">The message to use for the operation.</param>
+    /// <param name="previousMessageState">The message state before the 
+    /// event took place.</param>
+    /// <param name="errorMessage">The error message to use for the 
+    /// operation.</param>
+    /// <param name="userName">The user name of the perform performing
+    /// the operation.</param>
+    /// <param name="cancellationToken">A cancellation token that is monitored
+    /// for the lifetime of the method.</param>
+    /// <returns>A task to perform the operation that returns the newly 
+    /// created <see cref="MessageLog"/> object.</returns>
+    /// <exception cref="ArgumentException">This exception is thrown whenever one
+    /// or more arguments are missing, or invalid.</exception>
+    public static async Task<MessageLog> LogErrorEventAsync(
+        this IMessageLogManager messageLogManager,
+        Message message,
+        MessageState previousMessageState,
+        string errorMessage,
+        string userName,
+        CancellationToken cancellationToken = default
+        )
+    {
+        // Validate the arguments before attempting to use them.
+        Guard.Instance().ThrowIfNull(messageLogManager, nameof(messageLogManager))
+            .ThrowIfNull(message, nameof(message))
+            .ThrowIfNullOrEmpty(errorMessage, nameof(errorMessage))
+            .ThrowIfNullOrEmpty(userName, nameof(userName));
+
+        // Record what we did, in the log.
+        var result = await messageLogManager.CreateAsync(
+            new MessageLog()
+            {
+                Message = message,
+                MessageEvent = MessageEvent.Error,
+                BeforeState = previousMessageState,
+                AfterState = message.MessageState,
+                Error = errorMessage
+            },
+            userName,
+            cancellationToken
+            ).ConfigureAwait(false);
+
+        // Return the results.
+        return result;
+    }
+
+    // *******************************************************************
+
+    /// <summary>
     /// This method writes an <see cref="MessageEvent.Assigned"/> event to
-    /// the processing log, for an even that caused a state transition in
+    /// the processing log, for an event that caused a state transition in
     /// the associated message.
     /// </summary>
     /// <param name="messageLogManager">The message log manager to use
@@ -69,7 +123,7 @@ public static class PipelineLogManagerExtensions001
 
     /// <summary>
     /// This method writes a <see cref="MessageEvent.Reset"/> event to
-    /// the processing log, for an even that caused a state transition in
+    /// the processing log, for an event that caused a state transition in
     /// the associated message.
     /// </summary>
     /// <param name="messageLogManager">The message log manager to use

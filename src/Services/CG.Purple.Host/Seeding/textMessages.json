@@ -6,7 +6,7 @@
       "Body": "This is test text # 1",
       "Attachments": [],
       "Properties": [],
-      "IsDisabled" :  true
+      "IsDisabled" :  false
     }
   ]
 }

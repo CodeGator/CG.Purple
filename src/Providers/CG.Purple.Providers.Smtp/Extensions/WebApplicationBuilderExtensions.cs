@@ -39,6 +39,89 @@ public static class WebApplicationBuilderExtensions003
             nameof(SmtpProvider)
             );
 
+        // Add the SMTP client.
+        webApplicationBuilder.Services.AddScoped<System.Net.Mail.SmtpClient>(serviceProvider =>
+        {
+            // We need to use the provider parameters to collect the required
+            //   setup for the SMTP Client.
+
+            // Get the provider type manager.
+            var providerTypeManager = serviceProvider.GetRequiredService<
+                IProviderTypeManager
+                >();
+
+            // Get the provider type.
+            var providerType = providerTypeManager.FindByNameAsync(
+                "Smtp"
+                ).Result;
+
+            // Did we fail?
+            if (providerType is null)
+            {
+                // Panic!!
+                throw new KeyNotFoundException(
+                    "The SMTP provider type was not found!"
+                    );
+            }
+
+            // Get the server url.
+            var serverUrlProperty = providerType.Parameters.FirstOrDefault(
+                x => x.ParameterType.Name == "ServerUrl"
+                );
+
+            // Did we fail?
+            if (serverUrlProperty is null)
+            {
+                // Panic!!
+                throw new KeyNotFoundException(
+                    $"The 'ServerUrl' parameter is missing, or invalid!"
+                    );
+            }
+
+            // Get the user name.
+            var userNameProperty = providerType.Parameters.FirstOrDefault(
+                x => x.ParameterType.Name == "UserName"
+                );
+
+            // Did we fail?
+            if (userNameProperty is null)
+            {
+                // Panic!!
+                throw new KeyNotFoundException(
+                    $"The 'UserName' parameter is missing, or invalid!"
+                    );
+            }
+
+            // Get the password.
+            var passwordProperty = providerType.Parameters.FirstOrDefault(
+                x => x.ParameterType.Name == "Password"
+                );
+
+            // Did we fail?
+            if (passwordProperty is null)
+            {
+                // Panic!!
+                throw new KeyNotFoundException(
+                    $"The 'Password' parameter is missing, or invalid!"
+                    );
+            }
+
+            // Create the SMTP client.
+            var smtpClient = new System.Net.Mail.SmtpClient(
+                serverUrlProperty.Value
+                );
+
+            // Set the credentials for the client.
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new System.Net.NetworkCredential(
+               userNameProperty.Value,
+               passwordProperty.Value
+               );
+
+            // Return the results.
+            return smtpClient;
+        });
+
         // Add the provider.
         webApplicationBuilder.Services.AddScoped<SmtpProvider>();
 

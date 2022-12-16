@@ -31,6 +31,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Framework\CG.Blazor\CG.Blazor.csproj" />
       <ProjectReference Include="..\..\Libraries\CG.Purple.Abstractions\CG.Purple.Abstractions.csproj" />
+      <ProjectReference Include="..\..\Libraries\CG.Purple.Providers\CG.Purple.Providers.csproj" />
     </ItemGroup>
 
 </Project>

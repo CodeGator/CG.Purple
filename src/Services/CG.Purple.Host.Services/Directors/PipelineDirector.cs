@@ -13,29 +13,34 @@ internal class PipelineDirector : IPipelineDirector
     #region Fields
 
     /// <summary>
+    /// This field contains the SignalR status hub for this director.
+    /// </summary>
+    internal protected readonly StatusHub _statusHub = null!;
+
+    /// <summary>
     /// This field contains the attachment manager for this director.
     /// </summary>
-    internal protected readonly IAttachmentManager _attachmentManager;
+    internal protected readonly IAttachmentManager _attachmentManager = null!;
 
     /// <summary>
     /// This field contains the message manager for this director.
     /// </summary>
-    internal protected readonly IMessageManager _messageManager;
+    internal protected readonly IMessageManager _messageManager = null!;
 
     /// <summary>
     /// This field contains the message log manager for this director.
     /// </summary>
-    internal protected readonly IMessageLogManager _messageLogManager;
+    internal protected readonly IMessageLogManager _messageLogManager = null!;
 
     /// <summary>
     /// This field contains the message property manager for this director.
     /// </summary>
-    internal protected readonly IMessagePropertyManager _messagePropertyManager;
+    internal protected readonly IMessagePropertyManager _messagePropertyManager = null!;
 
     /// <summary>
     /// This field contains the provider type manager for this director.
     /// </summary>
-    internal protected readonly IProviderTypeManager _providerTypeManager;
+    internal protected readonly IProviderTypeManager _providerTypeManager = null!;
 
     /// <summary>
     /// This field contains the message provider factory for this director.
@@ -59,6 +64,8 @@ internal class PipelineDirector : IPipelineDirector
     /// This constructor creates a new instance of the <see cref="PipelineDirector"/>
     /// class.
     /// </summary>
+    /// <param name="statusHub">The SignalR status hub to use with this 
+    /// director.</param>
     /// <param name="attachmentManager">The attachment manager to use with 
     /// this director.</param>
     /// <param name="messageManager">The message manager to use with this
@@ -73,6 +80,7 @@ internal class PipelineDirector : IPipelineDirector
     /// use with this director.</param>
     /// <param name="logger">The logger to use with this director.</param>
     public PipelineDirector(
+        StatusHub statusHub,
         IAttachmentManager attachmentManager,
         IMessageManager messageManager,
         IMessageLogManager messageLogManager,
@@ -83,7 +91,8 @@ internal class PipelineDirector : IPipelineDirector
         )
     {
         // Validate the parameters before attempting to use them.
-        Guard.Instance().ThrowIfNull(attachmentManager, nameof(attachmentManager))
+        Guard.Instance().ThrowIfNull(statusHub, nameof(statusHub))
+            .ThrowIfNull(attachmentManager, nameof(attachmentManager))
             .ThrowIfNull(messageManager, nameof(messageManager))
             .ThrowIfNull(messageLogManager, nameof(messageLogManager))
             .ThrowIfNull(messagePropertyManager, nameof(messagePropertyManager))
@@ -92,6 +101,7 @@ internal class PipelineDirector : IPipelineDirector
             .ThrowIfNull(logger, nameof(logger));
 
         // Save the reference(s).
+        _statusHub = statusHub; 
         _attachmentManager = attachmentManager;
         _messageManager = messageManager;
         _messageLogManager = messageLogManager;
@@ -142,30 +152,14 @@ internal class PipelineDirector : IPipelineDirector
         }
         catch (Exception ex)
         {
-            // If we get here then something died in one or more providers,
-            //   or in the pipeline itself. Either way, we're probably not
-            //   processing any messages, which is the primary purpose of
-            //   this microservice. Instead, we're just generating a ton
-            //   of error messages, in a loop. That's because we really
-            //   can't recover from here. All we can do is log the error
-            //   and continue.
-            // So, let's slow way down here, while we wait for someone to
-            //   come help us.
-
             // Remember the error.
             errors.Add(ex);
 
             // Log what happened.
             _logger.LogError(
                 ex,
-                "Failed to process messages - slowing the pipeline way down!"
+                "Failed to process messages!"
                 );
-
-            // Pause after error(s).
-            await Task.Delay(
-                TimeSpan.FromMinutes(5),
-                cancellationToken
-                ).ConfigureAwait(false);
         }
 
         // Log what we are about to do.
@@ -198,13 +192,6 @@ internal class PipelineDirector : IPipelineDirector
         }
         catch (Exception ex)
         {
-            // If we get here then something died in the pipeline. Either way,
-            //   we're probably not retrying any messages, which is, admittedly,
-            //   an important part of the microservice. But, if we slowdown for
-            //   this, we're also slowing down message processing, which may
-            //   be working fine.
-            // So, we'll just log the problem and continue.
-
             // Remember the error.
             errors.Add(ex);
 
@@ -245,13 +232,6 @@ internal class PipelineDirector : IPipelineDirector
         }
         catch (Exception ex)
         {
-            // If we get here then something died in the pipeline. Either way,
-            //   we're probably not archiving messages, which is, admittedly,
-            //   an important part of the microservice. But, if we slowdown
-            //   for this, we're also slowing down message processing, and
-            //   retry operations, both of which may be working fine.
-            // So, we'll just log the problem and continue.
-
             // Remember the error.
             errors.Add(ex);
 
@@ -384,11 +364,33 @@ internal class PipelineDirector : IPipelineDirector
             // Did we fail?
             if (assignedProviderType is null)
             {
-                // Panic!!
-                throw new InvalidDataException(
-                    $"A provider type capable of processing {message.MessageType} " +
-                    $"messages could not be assigned for message: {message.Id}!"
+                // If we get here then we've failed to find a provider that is 
+                //   capable of processing this message type. That should never
+                //   happen, but, theoretically it might, so we'll respond to
+                //   this edge case by failing the message.
+
+                // Log what happened.
+                _logger.LogWarning(
+                    "Failed to assign a provider for a {type} message!",
+                    Enum.GetName(message.MessageType)
                     );
+
+                // The message is now in a 'Failed' state.
+                await message.ToFailedStateAsync(
+                    _messageManager,
+                    _messageLogManager,
+                    $"No provider found for {Enum.GetName(message.MessageType)} messages",
+                    "host",
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                // Send the status update.
+                await _statusHub.OnStatusAsync(
+                    message,
+                    cancellationToken
+                    ).ConfigureAwait(false);
+
+                continue; // Skip the message.
             }
 
             // =======
@@ -477,6 +479,10 @@ internal class PipelineDirector : IPipelineDirector
         // Did we fail?
         if (!providerTypes.Any())
         {
+            // If we get here then something has happened to the data
+            //   integrity and we're now missing providers, for some
+            //   reason. We can't recover from this so, panic!
+
             // Panic!!
             throw new InvalidDataException(
                 "No provider types were found!"
@@ -489,6 +495,10 @@ internal class PipelineDirector : IPipelineDirector
         // Did we fail?
         if (!providerTypes.Any())
         {
+            // If we get here then something has disabled all the providers.
+            //   which should never happen, but theoretically might. We
+            //   can't recover from this so, panic!
+
             // Panic!!
             throw new InvalidDataException(
                 "No enabled provider types were found!"
