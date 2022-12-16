@@ -10797,15 +10797,15 @@ references:
   commentId: T:CG.Purple.Providers.SendGrid.SendGridProvider
   fullName: CG.Purple.Providers.SendGrid.SendGridProvider
   nameWithType: SendGridProvider
-- uid: CG.Purple.Providers.SendGrid.SendGridProvider.#ctor(CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.SendGrid.SendGridProvider})
-  name: SendGridProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SendGridProvider>)
-  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider__ctor_CG_Purple_Providers_StatusHub_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_SendGrid_SendGridProvider__
-  commentId: M:CG.Purple.Providers.SendGrid.SendGridProvider.#ctor(CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.SendGrid.SendGridProvider})
-  name.vb: SendGridProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SendGridProvider))
-  fullName: CG.Purple.Providers.SendGrid.SendGridProvider.SendGridProvider(CG.Purple.Providers.StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<CG.Purple.Providers.SendGrid.SendGridProvider>)
-  fullName.vb: CG.Purple.Providers.SendGrid.SendGridProvider.SendGridProvider(CG.Purple.Providers.StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of CG.Purple.Providers.SendGrid.SendGridProvider))
-  nameWithType: SendGridProvider.SendGridProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SendGridProvider>)
-  nameWithType.vb: SendGridProvider.SendGridProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SendGridProvider))
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider.#ctor(ISendGridClient,CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.SendGrid.SendGridProvider})
+  name: SendGridProvider(ISendGridClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SendGridProvider>)
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider__ctor_ISendGridClient_CG_Purple_Providers_StatusHub_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_SendGrid_SendGridProvider__
+  commentId: M:CG.Purple.Providers.SendGrid.SendGridProvider.#ctor(ISendGridClient,CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.SendGrid.SendGridProvider})
+  name.vb: SendGridProvider(ISendGridClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SendGridProvider))
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider.SendGridProvider(ISendGridClient, CG.Purple.Providers.StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<CG.Purple.Providers.SendGrid.SendGridProvider>)
+  fullName.vb: CG.Purple.Providers.SendGrid.SendGridProvider.SendGridProvider(ISendGridClient, CG.Purple.Providers.StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of CG.Purple.Providers.SendGrid.SendGridProvider))
+  nameWithType: SendGridProvider.SendGridProvider(ISendGridClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SendGridProvider>)
+  nameWithType.vb: SendGridProvider.SendGridProvider(ISendGridClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SendGridProvider))
 - uid: CG.Purple.Providers.SendGrid.SendGridProvider.#ctor*
   name: SendGridProvider
   href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider__ctor_
@@ -10819,6 +10819,12 @@ references:
   commentId: F:CG.Purple.Providers.SendGrid.SendGridProvider._mailMessageManager
   fullName: CG.Purple.Providers.SendGrid.SendGridProvider._mailMessageManager
   nameWithType: SendGridProvider._mailMessageManager
+- uid: CG.Purple.Providers.SendGrid.SendGridProvider._sendGridClient
+  name: _sendGridClient
+  href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider__sendGridClient
+  commentId: F:CG.Purple.Providers.SendGrid.SendGridProvider._sendGridClient
+  fullName: CG.Purple.Providers.SendGrid.SendGridProvider._sendGridClient
+  nameWithType: SendGridProvider._sendGridClient
 - uid: CG.Purple.Providers.SendGrid.SendGridProvider.CreateDotNetMessage(MailMessage)
   name: CreateDotNetMessage(MailMessage)
   href: api/CG.Purple.Providers.SendGrid.SendGridProvider.html#CG_Purple_Providers_SendGrid_SendGridProvider_CreateDotNetMessage_MailMessage_
@@ -10996,19 +11002,6 @@ references:
   commentId: F:CG.Purple.Providers.Twillio.TwillioProvider._textMessageManager
   fullName: CG.Purple.Providers.Twillio.TwillioProvider._textMessageManager
   nameWithType: TwillioProvider._textMessageManager
-- uid: CG.Purple.Providers.Twillio.TwillioProvider.CreateDotNetMessage(MailMessage)
-  name: CreateDotNetMessage(MailMessage)
-  href: api/CG.Purple.Providers.Twillio.TwillioProvider.html#CG_Purple_Providers_Twillio_TwillioProvider_CreateDotNetMessage_MailMessage_
-  commentId: M:CG.Purple.Providers.Twillio.TwillioProvider.CreateDotNetMessage(MailMessage)
-  fullName: CG.Purple.Providers.Twillio.TwillioProvider.CreateDotNetMessage(MailMessage)
-  nameWithType: TwillioProvider.CreateDotNetMessage(MailMessage)
-- uid: CG.Purple.Providers.Twillio.TwillioProvider.CreateDotNetMessage*
-  name: CreateDotNetMessage
-  href: api/CG.Purple.Providers.Twillio.TwillioProvider.html#CG_Purple_Providers_Twillio_TwillioProvider_CreateDotNetMessage_
-  commentId: Overload:CG.Purple.Providers.Twillio.TwillioProvider.CreateDotNetMessage
-  isSpec: "True"
-  fullName: CG.Purple.Providers.Twillio.TwillioProvider.CreateDotNetMessage
-  nameWithType: TwillioProvider.CreateDotNetMessage
 - uid: CG.Purple.Providers.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)
   name: ProcessMessagesAsync(IEnumerable<Message>, ProviderType, CancellationToken)
   href: api/CG.Purple.Providers.Twillio.TwillioProvider.html#CG_Purple_Providers_Twillio_TwillioProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_
@@ -11025,19 +11018,6 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Providers.Twillio.TwillioProvider.ProcessMessagesAsync
   nameWithType: TwillioProvider.ProcessMessagesAsync
-- uid: CG.Purple.Providers.Twillio.TwillioProvider.ResetMessageAsync(Message,CancellationToken)
-  name: ResetMessageAsync(Message, CancellationToken)
-  href: api/CG.Purple.Providers.Twillio.TwillioProvider.html#CG_Purple_Providers_Twillio_TwillioProvider_ResetMessageAsync_Message_CancellationToken_
-  commentId: M:CG.Purple.Providers.Twillio.TwillioProvider.ResetMessageAsync(Message,CancellationToken)
-  fullName: CG.Purple.Providers.Twillio.TwillioProvider.ResetMessageAsync(Message, CancellationToken)
-  nameWithType: TwillioProvider.ResetMessageAsync(Message, CancellationToken)
-- uid: CG.Purple.Providers.Twillio.TwillioProvider.ResetMessageAsync*
-  name: ResetMessageAsync
-  href: api/CG.Purple.Providers.Twillio.TwillioProvider.html#CG_Purple_Providers_Twillio_TwillioProvider_ResetMessageAsync_
-  commentId: Overload:CG.Purple.Providers.Twillio.TwillioProvider.ResetMessageAsync
-  isSpec: "True"
-  fullName: CG.Purple.Providers.Twillio.TwillioProvider.ResetMessageAsync
-  nameWithType: TwillioProvider.ResetMessageAsync
 - uid: CG.Purple.Repositories
   name: CG.Purple.Repositories
   href: api/CG.Purple.Repositories.html

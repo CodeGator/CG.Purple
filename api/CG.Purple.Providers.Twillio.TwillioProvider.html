@@ -242,49 +242,6 @@ with this provider.</p>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Providers_Twillio_TwillioProvider_CreateDotNetMessage_" data-uid="CG.Purple.Providers.Twillio.TwillioProvider.CreateDotNetMessage*"></a>
-  <h4 id="CG_Purple_Providers_Twillio_TwillioProvider_CreateDotNetMessage_MailMessage_" data-uid="CG.Purple.Providers.Twillio.TwillioProvider.CreateDotNetMessage(MailMessage)">CreateDotNetMessage(MailMessage)</h4>
-  <div class="markdown level1 summary"><p>This method creates a new .NET wrapper for an email.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">MailMessage CreateDotNetMessage(MailMessage mailMessage)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">MailMessage</span></td>
-        <td><span class="parametername">mailMessage</span></td>
-        <td><p>The mail message to use for the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Net.Mail.MailMessage</span></td>
-        <td><p>An <span class="xref">System.Net.Mail.MailMessage</span> object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="CG_Purple_Providers_Twillio_TwillioProvider_ProcessMessagesAsync_" data-uid="CG.Purple.Providers.Twillio.TwillioProvider.ProcessMessagesAsync*"></a>
   <h4 id="CG_Purple_Providers_Twillio_TwillioProvider_ProcessMessagesAsync_IEnumerable_Message__ProviderType_CancellationToken_" data-uid="CG.Purple.Providers.Twillio.TwillioProvider.ProcessMessagesAsync(IEnumerable{Message},ProviderType,CancellationToken)">ProcessMessagesAsync(IEnumerable&lt;Message&gt;, ProviderType, CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
@@ -332,57 +289,6 @@ with this provider.</p>
       <tr>
         <td><span class="xref">Task</span></td>
         <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Purple_Providers_Twillio_TwillioProvider_ResetMessageAsync_" data-uid="CG.Purple.Providers.Twillio.TwillioProvider.ResetMessageAsync*"></a>
-  <h4 id="CG_Purple_Providers_Twillio_TwillioProvider_ResetMessageAsync_Message_CancellationToken_" data-uid="CG.Purple.Providers.Twillio.TwillioProvider.ResetMessageAsync(Message,CancellationToken)">ResetMessageAsync(Message, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method resets the given message to a 'Pending' state and clears
-the error count on the message.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">async Task ResetMessageAsync(Message message, CancellationToken cancellationToken = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Message</span></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A cancellation token that is monitored
-for the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>A task to perform the operation.</p>
-</td>
       </tr>
     </tbody>
   </table>
