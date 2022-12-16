@@ -1,10 +1,4 @@
 ﻿
-using Castle.Core.Logging;
-using CG.Purple.Managers;
-using CG.Purple.Models;
-using Microsoft.Extensions.Logging;
-using Moq;
-
 namespace CG.Purple.Providers.SendGrid;
 
 /// <summary>
@@ -20,6 +14,10 @@ public class SendGridProviderFixture
 
     #region Public methods
 
+    // TODO : Waiting on the redesign of the providers, to inject the client
+    // from a DI factory.
+
+    /*
     /// <summary>
     /// This method ensures the <see cref="SendGridProvider.SendGridProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger{SendGridProvider})"/>
     /// constructor properly initializes object instances.
@@ -171,7 +169,7 @@ public class SendGridProviderFixture
             messageLogManager,
             logger
             );
-    }
+    }*/
 
     #endregion
 }
