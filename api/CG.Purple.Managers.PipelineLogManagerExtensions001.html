@@ -127,7 +127,7 @@ type.</p>
   <a id="CG_Purple_Managers_PipelineLogManagerExtensions001_LogAssignedEventAsync_" data-uid="CG.Purple.Managers.PipelineLogManagerExtensions001.LogAssignedEventAsync*"></a>
   <h4 id="CG_Purple_Managers_PipelineLogManagerExtensions001_LogAssignedEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_ProviderType_System_String_CancellationToken_" data-uid="CG.Purple.Managers.PipelineLogManagerExtensions001.LogAssignedEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,ProviderType,System.String,CancellationToken)">LogAssignedEventAsync(IMessageLogManager, Message, MessageState, ProviderType, String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method writes an <see cref="!:MessageEvent.Assigned"></see> event to
-the processing log, for an even that caused a state transition in
+the processing log, for an event that caused a state transition in
 the associated message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -204,10 +204,90 @@ created <see cref="!:MessageLog"></see> object.</p>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_" data-uid="CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync*"></a>
+  <h4 id="CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_System_String_CancellationToken_" data-uid="CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,System.String,CancellationToken)">LogErrorEventAsync(IMessageLogManager, Message, MessageState, String, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method writes an <see cref="!:MessageEvent.Error"></see> event to
+the processing log.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;MessageLog&gt; LogErrorEventAsync(this IMessageLogManager messageLogManager, Message message, MessageState previousMessageState, string errorMessage, string userName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Purple.Managers.IMessageLogManager.html">IMessageLogManager</a></td>
+        <td><span class="parametername">messageLogManager</span></td>
+        <td><p>The message log manager to use
+for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Message</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">MessageState</span></td>
+        <td><span class="parametername">previousMessageState</span></td>
+        <td><p>The message state before the
+event took place.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">errorMessage</span></td>
+        <td><p>The error message to use for the
+operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td><p>The user name of the perform performing
+the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">MessageLog</span>&gt;</td>
+        <td><p>A task to perform the operation that returns the newly
+created <see cref="!:MessageLog"></see> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Purple_Managers_PipelineLogManagerExtensions001_LogResetEventAsync_" data-uid="CG.Purple.Managers.PipelineLogManagerExtensions001.LogResetEventAsync*"></a>
   <h4 id="CG_Purple_Managers_PipelineLogManagerExtensions001_LogResetEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_CancellationToken_" data-uid="CG.Purple.Managers.PipelineLogManagerExtensions001.LogResetEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,CancellationToken)">LogResetEventAsync(IMessageLogManager, Message, MessageState, String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method writes a <see cref="!:MessageEvent.Reset"></see> event to
-the processing log, for an even that caused a state transition in
+the processing log, for an event that caused a state transition in
 the associated message.</p>
 </div>
   <div class="markdown level1 conceptual"></div>

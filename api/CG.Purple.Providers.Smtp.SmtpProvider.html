@@ -160,14 +160,14 @@ interface.</p>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Purple_Providers_Smtp_SmtpProvider__ctor_" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.#ctor*"></a>
-  <h4 id="CG_Purple_Providers_Smtp_SmtpProvider__ctor_CG_Purple_Providers_StatusHub_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_Smtp_SmtpProvider__" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.#ctor(CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.Smtp.SmtpProvider})">SmtpProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger&lt;SmtpProvider&gt;)</h4>
+  <h4 id="CG_Purple_Providers_Smtp_SmtpProvider__ctor_ISmtpClient_CG_Purple_Providers_StatusHub_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_Smtp_SmtpProvider__" data-uid="CG.Purple.Providers.Smtp.SmtpProvider.#ctor(ISmtpClient,CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.Smtp.SmtpProvider})">SmtpProvider(ISmtpClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger&lt;SmtpProvider&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Purple.Providers.Smtp.SmtpProvider.html">SmtpProvider</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SmtpProvider(StatusHub statusHub, IMailMessageManager mailMessageManager, IMessageManager messageManager, IMessageLogManager processLogManager, ILogger&lt;SmtpProvider&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public SmtpProvider(ISmtpClient smtpClient, StatusHub statusHub, IMailMessageManager mailMessageManager, IMessageManager messageManager, IMessageLogManager processLogManager, ILogger&lt;SmtpProvider&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -179,6 +179,12 @@ class.</p>
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">ISmtpClient</span></td>
+        <td><span class="parametername">smtpClient</span></td>
+        <td><p>The SMTP client to use with this provider.</p>
+</td>
+      </tr>
       <tr>
         <td><a class="xref" href="CG.Purple.Providers.StatusHub.html">StatusHub</a></td>
         <td><span class="parametername">statusHub</span></td>
@@ -236,6 +242,29 @@ with this provider.</p>
     <tbody>
       <tr>
         <td><span class="xref">IMailMessageManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Purple_Providers_Smtp_SmtpProvider__smtpClient" data-uid="CG.Purple.Providers.Smtp.SmtpProvider._smtpClient">_smtpClient</h4>
+  <div class="markdown level1 summary"><p>This field contains the mail manager for this provider.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ISmtpClient _smtpClient</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ISmtpClient</span></td>
         <td></td>
       </tr>
     </tbody>

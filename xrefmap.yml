@@ -1932,15 +1932,15 @@ references:
   commentId: T:CG.Purple.Host.Directors.PipelineDirector
   fullName: CG.Purple.Host.Directors.PipelineDirector
   nameWithType: PipelineDirector
-- uid: CG.Purple.Host.Directors.PipelineDirector.#ctor(IAttachmentManager,IMessageManager,IMessageLogManager,IMessagePropertyManager,IProviderTypeManager,IMessageProviderFactory,ILogger{IPipelineDirector})
-  name: PipelineDirector(IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger<IPipelineDirector>)
-  href: api/CG.Purple.Host.Directors.PipelineDirector.html#CG_Purple_Host_Directors_PipelineDirector__ctor_IAttachmentManager_IMessageManager_IMessageLogManager_IMessagePropertyManager_IProviderTypeManager_IMessageProviderFactory_ILogger_IPipelineDirector__
-  commentId: M:CG.Purple.Host.Directors.PipelineDirector.#ctor(IAttachmentManager,IMessageManager,IMessageLogManager,IMessagePropertyManager,IProviderTypeManager,IMessageProviderFactory,ILogger{IPipelineDirector})
-  name.vb: PipelineDirector(IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger(Of IPipelineDirector))
-  fullName: CG.Purple.Host.Directors.PipelineDirector.PipelineDirector(IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger<IPipelineDirector>)
-  fullName.vb: CG.Purple.Host.Directors.PipelineDirector.PipelineDirector(IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger(Of IPipelineDirector))
-  nameWithType: PipelineDirector.PipelineDirector(IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger<IPipelineDirector>)
-  nameWithType.vb: PipelineDirector.PipelineDirector(IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger(Of IPipelineDirector))
+- uid: CG.Purple.Host.Directors.PipelineDirector.#ctor(StatusHub,IAttachmentManager,IMessageManager,IMessageLogManager,IMessagePropertyManager,IProviderTypeManager,IMessageProviderFactory,ILogger{IPipelineDirector})
+  name: PipelineDirector(StatusHub, IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger<IPipelineDirector>)
+  href: api/CG.Purple.Host.Directors.PipelineDirector.html#CG_Purple_Host_Directors_PipelineDirector__ctor_StatusHub_IAttachmentManager_IMessageManager_IMessageLogManager_IMessagePropertyManager_IProviderTypeManager_IMessageProviderFactory_ILogger_IPipelineDirector__
+  commentId: M:CG.Purple.Host.Directors.PipelineDirector.#ctor(StatusHub,IAttachmentManager,IMessageManager,IMessageLogManager,IMessagePropertyManager,IProviderTypeManager,IMessageProviderFactory,ILogger{IPipelineDirector})
+  name.vb: PipelineDirector(StatusHub, IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger(Of IPipelineDirector))
+  fullName: CG.Purple.Host.Directors.PipelineDirector.PipelineDirector(StatusHub, IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger<IPipelineDirector>)
+  fullName.vb: CG.Purple.Host.Directors.PipelineDirector.PipelineDirector(StatusHub, IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger(Of IPipelineDirector))
+  nameWithType: PipelineDirector.PipelineDirector(StatusHub, IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger<IPipelineDirector>)
+  nameWithType.vb: PipelineDirector.PipelineDirector(StatusHub, IAttachmentManager, IMessageManager, IMessageLogManager, IMessagePropertyManager, IProviderTypeManager, IMessageProviderFactory, ILogger(Of IPipelineDirector))
 - uid: CG.Purple.Host.Directors.PipelineDirector.#ctor*
   name: PipelineDirector
   href: api/CG.Purple.Host.Directors.PipelineDirector.html#CG_Purple_Host_Directors_PipelineDirector__ctor_
@@ -1990,6 +1990,12 @@ references:
   commentId: F:CG.Purple.Host.Directors.PipelineDirector._providerTypeManager
   fullName: CG.Purple.Host.Directors.PipelineDirector._providerTypeManager
   nameWithType: PipelineDirector._providerTypeManager
+- uid: CG.Purple.Host.Directors.PipelineDirector._statusHub
+  name: _statusHub
+  href: api/CG.Purple.Host.Directors.PipelineDirector.html#CG_Purple_Host_Directors_PipelineDirector__statusHub
+  commentId: F:CG.Purple.Host.Directors.PipelineDirector._statusHub
+  fullName: CG.Purple.Host.Directors.PipelineDirector._statusHub
+  nameWithType: PipelineDirector._statusHub
 - uid: CG.Purple.Host.Directors.PipelineDirector.ArchiveMessagesAsync(CancellationToken)
   name: ArchiveMessagesAsync(CancellationToken)
   href: api/CG.Purple.Host.Directors.PipelineDirector.html#CG_Purple_Host_Directors_PipelineDirector_ArchiveMessagesAsync_CancellationToken_
@@ -8079,6 +8085,19 @@ references:
   isSpec: "True"
   fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogAssignedEventAsync
   nameWithType: PipelineLogManagerExtensions001.LogAssignedEventAsync
+- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,System.String,CancellationToken)
+  name: LogErrorEventAsync(IMessageLogManager, Message, MessageState, String, String, CancellationToken)
+  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync(CG.Purple.Managers.IMessageLogManager, Message, MessageState, System.String, System.String, CancellationToken)
+  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync(IMessageLogManager, Message, MessageState, String, String, CancellationToken)
+- uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync*
+  name: LogErrorEventAsync
+  href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogErrorEventAsync_
+  commentId: Overload:CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync
+  isSpec: "True"
+  fullName: CG.Purple.Managers.PipelineLogManagerExtensions001.LogErrorEventAsync
+  nameWithType: PipelineLogManagerExtensions001.LogErrorEventAsync
 - uid: CG.Purple.Managers.PipelineLogManagerExtensions001.LogResetEventAsync(CG.Purple.Managers.IMessageLogManager,Message,MessageState,System.String,CancellationToken)
   name: LogResetEventAsync(IMessageLogManager, Message, MessageState, String, CancellationToken)
   href: api/CG.Purple.Managers.PipelineLogManagerExtensions001.html#CG_Purple_Managers_PipelineLogManagerExtensions001_LogResetEventAsync_CG_Purple_Managers_IMessageLogManager_Message_MessageState_System_String_CancellationToken_
@@ -10397,6 +10416,19 @@ references:
   commentId: T:CG.Purple.Providers.MessageExtensions001
   fullName: CG.Purple.Providers.MessageExtensions001
   nameWithType: MessageExtensions001
+- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,IMessageManager,IMessageLogManager,System.String,System.String,CancellationToken)
+  name: ToFailedStateAsync(Message, IMessageManager, IMessageLogManager, String, String, CancellationToken)
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_Message_IMessageManager_IMessageLogManager_System_String_System_String_CancellationToken_
+  commentId: M:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message,IMessageManager,IMessageLogManager,System.String,System.String,CancellationToken)
+  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync(Message, IMessageManager, IMessageLogManager, System.String, System.String, CancellationToken)
+  nameWithType: MessageExtensions001.ToFailedStateAsync(Message, IMessageManager, IMessageLogManager, String, String, CancellationToken)
+- uid: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync*
+  name: ToFailedStateAsync
+  href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToFailedStateAsync_
+  commentId: Overload:CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync
+  isSpec: "True"
+  fullName: CG.Purple.Providers.MessageExtensions001.ToFailedStateAsync
+  nameWithType: MessageExtensions001.ToFailedStateAsync
 - uid: CG.Purple.Providers.MessageExtensions001.ToPendingStateAsync(Message,IMessageManager,IMessageLogManager,System.String,CancellationToken)
   name: ToPendingStateAsync(Message, IMessageManager, IMessageLogManager, String, CancellationToken)
   href: api/CG.Purple.Providers.MessageExtensions001.html#CG_Purple_Providers_MessageExtensions001_ToPendingStateAsync_Message_IMessageManager_IMessageLogManager_System_String_CancellationToken_
@@ -10860,21 +10892,84 @@ references:
   commentId: N:CG.Purple.Providers.Smtp
   fullName: CG.Purple.Providers.Smtp
   nameWithType: CG.Purple.Providers.Smtp
+- uid: CG.Purple.Providers.Smtp.Internal
+  name: CG.Purple.Providers.Smtp.Internal
+  href: api/CG.Purple.Providers.Smtp.Internal.html
+  commentId: N:CG.Purple.Providers.Smtp.Internal
+  fullName: CG.Purple.Providers.Smtp.Internal
+  nameWithType: CG.Purple.Providers.Smtp.Internal
+- uid: CG.Purple.Providers.Smtp.Internal.ISmtpClient
+  name: ISmtpClient
+  href: api/CG.Purple.Providers.Smtp.Internal.ISmtpClient.html
+  commentId: T:CG.Purple.Providers.Smtp.Internal.ISmtpClient
+  fullName: CG.Purple.Providers.Smtp.Internal.ISmtpClient
+  nameWithType: ISmtpClient
+- uid: CG.Purple.Providers.Smtp.Internal.ISmtpClient.Send(System.Net.Mail.MailMessage)
+  name: Send(MailMessage)
+  href: api/CG.Purple.Providers.Smtp.Internal.ISmtpClient.html#CG_Purple_Providers_Smtp_Internal_ISmtpClient_Send_System_Net_Mail_MailMessage_
+  commentId: M:CG.Purple.Providers.Smtp.Internal.ISmtpClient.Send(System.Net.Mail.MailMessage)
+  fullName: CG.Purple.Providers.Smtp.Internal.ISmtpClient.Send(System.Net.Mail.MailMessage)
+  nameWithType: ISmtpClient.Send(MailMessage)
+- uid: CG.Purple.Providers.Smtp.Internal.ISmtpClient.Send*
+  name: Send
+  href: api/CG.Purple.Providers.Smtp.Internal.ISmtpClient.html#CG_Purple_Providers_Smtp_Internal_ISmtpClient_Send_
+  commentId: Overload:CG.Purple.Providers.Smtp.Internal.ISmtpClient.Send
+  isSpec: "True"
+  fullName: CG.Purple.Providers.Smtp.Internal.ISmtpClient.Send
+  nameWithType: ISmtpClient.Send
+- uid: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper
+  name: SmtpClientWrapper
+  href: api/CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.html
+  commentId: T:CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper
+  fullName: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper
+  nameWithType: SmtpClientWrapper
+- uid: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.#ctor(System.Net.Mail.SmtpClient)
+  name: SmtpClientWrapper(SmtpClient)
+  href: api/CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.html#CG_Purple_Providers_Smtp_Internal_SmtpClientWrapper__ctor_System_Net_Mail_SmtpClient_
+  commentId: M:CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.#ctor(System.Net.Mail.SmtpClient)
+  fullName: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.SmtpClientWrapper(System.Net.Mail.SmtpClient)
+  nameWithType: SmtpClientWrapper.SmtpClientWrapper(SmtpClient)
+- uid: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.#ctor*
+  name: SmtpClientWrapper
+  href: api/CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.html#CG_Purple_Providers_Smtp_Internal_SmtpClientWrapper__ctor_
+  commentId: Overload:CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.#ctor
+  isSpec: "True"
+  fullName: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.SmtpClientWrapper
+  nameWithType: SmtpClientWrapper.SmtpClientWrapper
+- uid: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper._innerSmtpClient
+  name: _innerSmtpClient
+  href: api/CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.html#CG_Purple_Providers_Smtp_Internal_SmtpClientWrapper__innerSmtpClient
+  commentId: F:CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper._innerSmtpClient
+  fullName: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper._innerSmtpClient
+  nameWithType: SmtpClientWrapper._innerSmtpClient
+- uid: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.Send(System.Net.Mail.MailMessage)
+  name: Send(MailMessage)
+  href: api/CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.html#CG_Purple_Providers_Smtp_Internal_SmtpClientWrapper_Send_System_Net_Mail_MailMessage_
+  commentId: M:CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.Send(System.Net.Mail.MailMessage)
+  fullName: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.Send(System.Net.Mail.MailMessage)
+  nameWithType: SmtpClientWrapper.Send(MailMessage)
+- uid: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.Send*
+  name: Send
+  href: api/CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.html#CG_Purple_Providers_Smtp_Internal_SmtpClientWrapper_Send_
+  commentId: Overload:CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.Send
+  isSpec: "True"
+  fullName: CG.Purple.Providers.Smtp.Internal.SmtpClientWrapper.Send
+  nameWithType: SmtpClientWrapper.Send
 - uid: CG.Purple.Providers.Smtp.SmtpProvider
   name: SmtpProvider
   href: api/CG.Purple.Providers.Smtp.SmtpProvider.html
   commentId: T:CG.Purple.Providers.Smtp.SmtpProvider
   fullName: CG.Purple.Providers.Smtp.SmtpProvider
   nameWithType: SmtpProvider
-- uid: CG.Purple.Providers.Smtp.SmtpProvider.#ctor(CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.Smtp.SmtpProvider})
-  name: SmtpProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SmtpProvider>)
-  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider__ctor_CG_Purple_Providers_StatusHub_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_Smtp_SmtpProvider__
-  commentId: M:CG.Purple.Providers.Smtp.SmtpProvider.#ctor(CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.Smtp.SmtpProvider})
-  name.vb: SmtpProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SmtpProvider))
-  fullName: CG.Purple.Providers.Smtp.SmtpProvider.SmtpProvider(CG.Purple.Providers.StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<CG.Purple.Providers.Smtp.SmtpProvider>)
-  fullName.vb: CG.Purple.Providers.Smtp.SmtpProvider.SmtpProvider(CG.Purple.Providers.StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of CG.Purple.Providers.Smtp.SmtpProvider))
-  nameWithType: SmtpProvider.SmtpProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SmtpProvider>)
-  nameWithType.vb: SmtpProvider.SmtpProvider(StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SmtpProvider))
+- uid: CG.Purple.Providers.Smtp.SmtpProvider.#ctor(ISmtpClient,CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.Smtp.SmtpProvider})
+  name: SmtpProvider(ISmtpClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SmtpProvider>)
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider__ctor_ISmtpClient_CG_Purple_Providers_StatusHub_IMailMessageManager_IMessageManager_IMessageLogManager_ILogger_CG_Purple_Providers_Smtp_SmtpProvider__
+  commentId: M:CG.Purple.Providers.Smtp.SmtpProvider.#ctor(ISmtpClient,CG.Purple.Providers.StatusHub,IMailMessageManager,IMessageManager,IMessageLogManager,ILogger{CG.Purple.Providers.Smtp.SmtpProvider})
+  name.vb: SmtpProvider(ISmtpClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SmtpProvider))
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider.SmtpProvider(ISmtpClient, CG.Purple.Providers.StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<CG.Purple.Providers.Smtp.SmtpProvider>)
+  fullName.vb: CG.Purple.Providers.Smtp.SmtpProvider.SmtpProvider(ISmtpClient, CG.Purple.Providers.StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of CG.Purple.Providers.Smtp.SmtpProvider))
+  nameWithType: SmtpProvider.SmtpProvider(ISmtpClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger<SmtpProvider>)
+  nameWithType.vb: SmtpProvider.SmtpProvider(ISmtpClient, StatusHub, IMailMessageManager, IMessageManager, IMessageLogManager, ILogger(Of SmtpProvider))
 - uid: CG.Purple.Providers.Smtp.SmtpProvider.#ctor*
   name: SmtpProvider
   href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider__ctor_
@@ -10888,6 +10983,12 @@ references:
   commentId: F:CG.Purple.Providers.Smtp.SmtpProvider._mailMessageManager
   fullName: CG.Purple.Providers.Smtp.SmtpProvider._mailMessageManager
   nameWithType: SmtpProvider._mailMessageManager
+- uid: CG.Purple.Providers.Smtp.SmtpProvider._smtpClient
+  name: _smtpClient
+  href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider__smtpClient
+  commentId: F:CG.Purple.Providers.Smtp.SmtpProvider._smtpClient
+  fullName: CG.Purple.Providers.Smtp.SmtpProvider._smtpClient
+  nameWithType: SmtpProvider._smtpClient
 - uid: CG.Purple.Providers.Smtp.SmtpProvider.CreateDotNetMessage(MailMessage)
   name: CreateDotNetMessage(MailMessage)
   href: api/CG.Purple.Providers.Smtp.SmtpProvider.html#CG_Purple_Providers_Smtp_SmtpProvider_CreateDotNetMessage_MailMessage_
