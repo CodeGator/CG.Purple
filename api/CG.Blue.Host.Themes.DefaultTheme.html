@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MainLayout
+    <title>Class DefaultTheme
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MainLayout
+    <meta name="title" content="Class DefaultTheme
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,61 +78,48 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Purple.Host.Shared.MainLayout">
+            <article class="content wrap" id="_content" data-uid="CG.Blue.Host.Themes.DefaultTheme">
   
   
-  <h1 id="CG_Purple_Host_Shared_MainLayout" data-uid="CG.Purple.Host.Shared.MainLayout" class="text-break">Class MainLayout
+  <h1 id="CG_Blue_Host_Themes_DefaultTheme" data-uid="CG.Blue.Host.Themes.DefaultTheme" class="text-break">Class DefaultTheme
   </h1>
-  <div class="markdown level0 summary"><p>This class is the code-behind for the <a class="xref" href="CG.Purple.Host.Shared.MainLayout.html">MainLayout</a> page.</p>
+  <div class="markdown level0 summary"><p>This class represents the default MudBlazor UI theme.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">MainLayout</span></div>
+    <div class="level1"><span class="xref">DefaultTheme</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Purple.Host.Shared.html">CG.Purple.Host.Shared</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Host.dll</h6>
-  <h5 id="CG_Purple_Host_Shared_MainLayout_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Blue.Host.Themes.html">CG.Blue.Host.Themes</a></h6>
+  <h6><strong>Assembly</strong>: CG.Blue.Host.dll</h6>
+  <h5 id="CG_Blue_Host_Themes_DefaultTheme_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MainLayout</code></pre>
+    <pre><code class="lang-csharp hljs">public class DefaultTheme : MudTheme</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="constructors">Constructors
   </h3>
-  <a id="CG_Purple_Host_Shared_MainLayout_JsRuntime_" data-uid="CG.Purple.Host.Shared.MainLayout.JsRuntime*"></a>
-  <h4 id="CG_Purple_Host_Shared_MainLayout_JsRuntime" data-uid="CG.Purple.Host.Shared.MainLayout.JsRuntime">JsRuntime</h4>
-  <div class="markdown level1 summary"><p>This property contains the JS runtime for the page.</p>
+  <a id="CG_Blue_Host_Themes_DefaultTheme__ctor_" data-uid="CG.Blue.Host.Themes.DefaultTheme.#ctor*"></a>
+  <h4 id="CG_Blue_Host_Themes_DefaultTheme__ctor" data-uid="CG.Blue.Host.Themes.DefaultTheme.#ctor">DefaultTheme()</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Blue.Host.Themes.DefaultTheme.html">DefaultTheme</a>
+class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IJSRuntime JsRuntime { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected DefaultTheme()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Blue_Host_Themes_DefaultTheme__instance" data-uid="CG.Blue.Host.Themes.DefaultTheme._instance">_instance</h4>
+  <div class="markdown level1 summary"><p>This field contains the singleton theme instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static DefaultTheme _instance</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -142,41 +129,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IJSRuntime</span></td>
+        <td><a class="xref" href="CG.Blue.Host.Themes.DefaultTheme.html">DefaultTheme</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Purple_Host_Shared_MainLayout_OnAfterRenderAsync_" data-uid="CG.Purple.Host.Shared.MainLayout.OnAfterRenderAsync*"></a>
-  <h4 id="CG_Purple_Host_Shared_MainLayout_OnAfterRenderAsync_System_Boolean_" data-uid="CG.Purple.Host.Shared.MainLayout.OnAfterRenderAsync(System.Boolean)">OnAfterRenderAsync(Boolean)</h4>
-  <div class="markdown level1 summary"><p>This method is called after the page renders.</p>
+  <a id="CG_Blue_Host_Themes_DefaultTheme_Instance_" data-uid="CG.Blue.Host.Themes.DefaultTheme.Instance*"></a>
+  <h4 id="CG_Blue_Host_Themes_DefaultTheme_Instance" data-uid="CG.Blue.Host.Themes.DefaultTheme.Instance">Instance()</h4>
+  <div class="markdown level1 summary"><p>This method returns a singleton instance of <a class="xref" href="CG.Blue.Host.Themes.DefaultTheme.html">DefaultTheme</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override async Task OnAfterRenderAsync(bool firstRender)</code></pre>
+    <pre><code class="lang-csharp hljs">public static DefaultTheme Instance()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">firstRender</span></td>
-        <td><p><code>true</code> for the first render,
-<code>false</code> otherwise.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -187,8 +155,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
-        <td></td>
+        <td><a class="xref" href="CG.Blue.Host.Themes.DefaultTheme.html">DefaultTheme</a></td>
+        <td><p>The singleton instance of <a class="xref" href="CG.Blue.Host.Themes.DefaultTheme.html">DefaultTheme</a></p>
+</td>
       </tr>
     </tbody>
   </table>
