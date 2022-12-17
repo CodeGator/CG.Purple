@@ -14,11 +14,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Green.Host.Data.WeatherForecast.yml",
+      "source_relative_path": "api/CG.Blue.Host.Pages.ErrorModel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Green.Host.Data.WeatherForecast.html",
-          "hash": "n23W8XYtJG553fVekVdo6rheOFdE1eZH5qAgpU4lfzY="
+          "relative_path": "api/CG.Blue.Host.Pages.ErrorModel.html",
+          "hash": "WcmbR1cuPMtkrM8D9Eadzo13akZze2E6xnrvO8H41vo="
         }
       },
       "is_incremental": false,
@@ -26,11 +26,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Green.Host.Data.WeatherForecastService.yml",
+      "source_relative_path": "api/CG.Blue.Host.Pages.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Green.Host.Data.WeatherForecastService.html",
-          "hash": "CKlXCDIlSCYu+E+OWF/Tf4gg1R98aReIO8DwYbObUHg="
+          "relative_path": "api/CG.Blue.Host.Pages.html",
+          "hash": "dOaB2+ho6Jsw9EBCyJCTuJDjxTEvsjPN2kzxro5ZwTw="
         }
       },
       "is_incremental": false,
@@ -38,11 +38,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Green.Host.Data.yml",
+      "source_relative_path": "api/CG.Blue.Host.Themes.DefaultTheme.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Green.Host.Data.html",
-          "hash": "4fmIp157Le+mDweD5a4dIyhfY6vU5rytsVI8S0t37dc="
+          "relative_path": "api/CG.Blue.Host.Themes.DefaultTheme.html",
+          "hash": "HtkLlO+KLJdQN9lnVvW4QgtcEHssEe/oF9chW11xuxY="
         }
       },
       "is_incremental": false,
@@ -50,23 +50,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Green.Host.Pages.ErrorModel.yml",
+      "source_relative_path": "api/CG.Blue.Host.Themes.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Green.Host.Pages.ErrorModel.html",
-          "hash": "gDnnkVkOM1X+F612BS4C1dXQfK68sq/IPn890J+hvMw="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Green.Host.Pages.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Green.Host.Pages.html",
-          "hash": "ELXw7FmjYWk+hfpI7PlJH0zv6ONE+ujBp+pv9qXUJ5s="
+          "relative_path": "api/CG.Blue.Host.Themes.html",
+          "hash": "qwM9phwRvYiIHAjHWGn3iJ32z+U2+L6FQWKYL9IrNTo="
         }
       },
       "is_incremental": false,
@@ -78,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "vvqLjsmSuXTPeQlqZQkhZsdpPsLByghvARyXPsLR4eY="
+          "hash": "DVlCNBynnOpZOuqiJhoJZ/4GcCgTZmDaulA/2If4MDI="
         }
       },
       "is_incremental": false,
@@ -170,7 +158,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "WSPq+ETmfPmdjL2tqU7bnIBvKd56VOWxfWbRoe4dPho="
+          "hash": "yPBQNq6CYtCrItUInn+67Y+td52dQdSd53nxBnmcgaY="
         }
       },
       "is_incremental": false,
@@ -197,7 +185,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 5,
+          "total_file_count": 4,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
