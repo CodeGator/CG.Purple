@@ -14,11 +14,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Green.Host.Data.WeatherForecast.yml",
+      "source_relative_path": "api/CG.Blazor.Services.BackgroundService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Green.Host.Data.WeatherForecast.html",
-          "hash": "n23W8XYtJG553fVekVdo6rheOFdE1eZH5qAgpU4lfzY="
+          "relative_path": "api/CG.Blazor.Services.BackgroundService.html",
+          "hash": "OiEMLk6bwBb9A9STrQKl5Z5xVtuhdRMfWDBqXUS1HTY="
         }
       },
       "is_incremental": false,
@@ -26,11 +26,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Green.Host.Data.WeatherForecastService.yml",
+      "source_relative_path": "api/CG.Blazor.Services.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Green.Host.Data.WeatherForecastService.html",
-          "hash": "CKlXCDIlSCYu+E+OWF/Tf4gg1R98aReIO8DwYbObUHg="
+          "relative_path": "api/CG.Blazor.Services.html",
+          "hash": "HAbCcGXSAxPhYFyT5Xf75VFNpts4k7vkugaB56dQ5+Y="
         }
       },
       "is_incremental": false,
@@ -38,11 +38,587 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Green.Host.Data.yml",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.AccessDeniedModel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Green.Host.Data.html",
-          "hash": "4fmIp157Le+mDweD5a4dIyhfY6vU5rytsVI8S0t37dc="
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.AccessDeniedModel.html",
+          "hash": "ONZP7zwHg7xy8Z5nFOe0QyAye3N/5J9M+hYNeqQBxsE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ConfirmEmailChangeModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ConfirmEmailChangeModel.html",
+          "hash": "ScMOaLwCVVL+BeC1/2BbKOtCKPZwe52HJyjhKqjoZDw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ConfirmEmailModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ConfirmEmailModel.html",
+          "hash": "dCdibRFfTXNLz0btVofBlvYuW5/ts8TI4gt/ZUZB/6o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel.html",
+          "hash": "bJ5wvMaOQ5Tusa6kbDuzrY7kj7iVR3TMFhZxc7HIlso="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ExternalLoginModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ExternalLoginModel.html",
+          "hash": "rxteQaFgjucwnyvZn2YC8Ym4U5b+AXdXy/tBWsDlCr8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.html",
+          "hash": "qrUUDw9RChyV17Uj6p0HkJFPXNtfAxHpRVMG4L5BkmU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel.html",
+          "hash": "EojtAlzxXC3Ye9FlMjn7oc/W0rqxy9i4paAjlCdMuCc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ForgotPasswordModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ForgotPasswordModel.html",
+          "hash": "ug2wSpvoD1UIOF4tU8qvxSEu1hAjz6CvjtUpl3pMO1o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LockoutModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LockoutModel.html",
+          "hash": "Ny5HiwkbljWy+td5ps4go8O8ljwqH7R1vwV0uRoMM7w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginModel.InputModel.html",
+          "hash": "y18gHR2MyzBX1IWEUqK71ut+LAjQUWEnM/l1eHArqTI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginModel.html",
+          "hash": "oMGER8BVC9lgFuJmcpc2HRHjNwqOHLRW9/QkD23zInY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.html",
+          "hash": "w+PjwM9GXvUGcl7QKaeOmvBpj/dYLVzQPExG4svPzCY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginWith2faModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginWith2faModel.html",
+          "hash": "d8yjC1JAIyhIKQfkR7EnYOLOI1nTNIscCvQEYFjoUAQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.InputModel.html",
+          "hash": "BNkczN9qStjkk8kHiU0lyzoRJ8erHLs6IMvirYtGtpQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.html",
+          "hash": "X0qvWaVC9aUVnUIqEM6BOsdkq/olxi50rj/0MghAusI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LogoutModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.LogoutModel.html",
+          "hash": "yuqU7jGOcbHHL+WUFz8VpdEcw1PdifjOZWAv8z/v7zk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.html",
+          "hash": "/AffRocPVQ+opXw/RL1xyfz4phL2eC1CVZHOPq+sVKA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.html",
+          "hash": "2d4xpDAaj47yCWKsjVzhVvBXeF2XXuU6rTF7h0hWNxw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel.html",
+          "hash": "X2OU6FANy+ePoVllk2xOkw7EuZewRR/H+1Xtgrjqw54="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.html",
+          "hash": "NR6KpkvhUfJZM7rHA534iBArMCtEd7Rt42tcfyScK9M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.Disable2faModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.Disable2faModel.html",
+          "hash": "hs2lixPuWGKVnVg/QO6ZdhVajI/trqG5ZwDNvqifbHk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.html",
+          "hash": "FHBuP+xhJw0KoyxHvKCciEqe7L5NNhWgWR344ps92pI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.InputModel.html",
+          "hash": "FHLPOeISAKpzAKZMkrJ7ee7uFi867boBwyJP1d4Euv0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.html",
+          "hash": "iXNqu3Hr9NAqh9ObeyFcp0QvfkcYxCVIn8VmpsEs3Dc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel.html",
+          "hash": "zB3433EQ0K5ngJL+lAM1zWNyfPdaeW4knHqM8ODUujc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.html",
+          "hash": "EuZLUEPIn8rKY/NrFwYDgLdJ+Ko6iPK4CDuAILtNpv4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.html",
+          "hash": "Rq0NyfvMekk00cs5Hpr/KbPo5qbDYNBipjfmr+fHJMA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.html",
+          "hash": "q8V62Oo2Qr8MRnBbakEsaX29RM3EcSKCmQ7Uj1erggk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.html",
+          "hash": "YAujMu1beMk9iLrkQgDVliW539TlAHOVskvRP7vv82w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.IndexModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.IndexModel.html",
+          "hash": "1Et+0jF/G2zEv51P1VNlAoIhQMmipFbP/TBrrMqpTwM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ManageNavPages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ManageNavPages.html",
+          "hash": "/vSGXIyKJeJO/jOee3j41uOznzcjq0uhY26nAvqbnc4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.PersonalDataModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.PersonalDataModel.html",
+          "hash": "uG0LdnsChZ4bm0piEHy0fEVNDaoYBY1XdMiRnj8MyRs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.html",
+          "hash": "2SuxK7sBY3sG4WC1fqxrQAf4vVYXkbPgvpBlEMaKDgg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.html",
+          "hash": "zgfcJlUzFn5SudH1ab9TQ5pKovWbNCMZ2IAjHDp2GzI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.SetPasswordModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.SetPasswordModel.html",
+          "hash": "NJg/h9ghjxUHvV/c62c3fVXxPnYIGSzAlPeespORmvI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ShowRecoveryCodesModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.ShowRecoveryCodesModel.html",
+          "hash": "3Heg8NtbZIUM/eGatZ3+KbRa/icd2prnAkRJUPJSpxs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.html",
+          "hash": "jtT+kvSY9d0bKipPqFysE7rhvKa8dsmk0Z9O9/JsTXo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.Manage.html",
+          "hash": "Jv9fufL6vLvKlFt1ZlBXFD0hdfLtxOzXKQxgjwL5u7E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.RegisterConfirmationModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.RegisterConfirmationModel.html",
+          "hash": "JPmcMWLhMxJdPC+rzSZrFSpLVhnWfXTzkWhN7CEImco="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.RegisterModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.RegisterModel.InputModel.html",
+          "hash": "HBXcTr42v8ztoV2EwT9co+TvMqcVYObX5NIRVJjPLXk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.RegisterModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.RegisterModel.html",
+          "hash": "CqqjQIKzxF5mbDLEYMs5n7bY+yVqJvpyprRii+BKXhU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResendEmailConfirmationModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResendEmailConfirmationModel.InputModel.html",
+          "hash": "31gIjd0wgNILa2Qblb8xqJyMUn9TUdIUgyVE5/2a2Js="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResendEmailConfirmationModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResendEmailConfirmationModel.html",
+          "hash": "tJzZ0kuYPZtv8+09P85aXvSiQ4QjYv+HURzXb8Du+7c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel.html",
+          "hash": "654JwXcloMd38/HpjYSRbmJst9n/GsDeHreTjgg2z68="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.html",
+          "hash": "sXs6fV8huV6i2iDJwRwqqEJbcf6Ubz7PvWzz51r9qf8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResetPasswordModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.ResetPasswordModel.html",
+          "hash": "TTo0u5+LxYpOoZiOiwwN5ocmj3MwtTPCU8qpXHCThFE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.Account.html",
+          "hash": "W1q4LS/2Te27n1G0hzHADqVu8wZwEOYQAIQtzanjAKE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.ErrorModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.ErrorModel.html",
+          "hash": "brZ/KOvhyCyHNI/l1qw2jvwIVi6+48oTQxWekba5dfk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Areas.Identity.Pages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Areas.Identity.Pages.html",
+          "hash": "036zWQQltBee2xKgUiyuRs0cCJUzi3a1Iho376uvztg="
         }
       },
       "is_incremental": false,
@@ -54,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Green.Host.Pages.ErrorModel.html",
-          "hash": "gDnnkVkOM1X+F612BS4C1dXQfK68sq/IPn890J+hvMw="
+          "hash": "kk3P0PAcrhyPAR+Ts/oAJSMt6MoDoAVvF/bCm2jebMY="
         }
       },
       "is_incremental": false,
@@ -66,7 +642,319 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Green.Host.Pages.html",
-          "hash": "ELXw7FmjYWk+hfpI7PlJH0zv6ONE+ujBp+pv9qXUJ5s="
+          "hash": "Cq23LVhpqPYU05j2hOs/2Tt0xZL4rHWSOtYFLVoES3M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Themes.DefaultTheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Themes.DefaultTheme.html",
+          "hash": "SMAOnZXl892ftfIB2x5B5QZBh5TB/OqaeuJVWNprTzA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Host.Themes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Host.Themes.html",
+          "hash": "fac0DcWGd6lCvDJpTcMq0D+ng5nILqoRGNVOXu73qKc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Models.GreenIdentityUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Models.GreenIdentityUser.html",
+          "hash": "n9BEvgyHh2qLqpQr5NqOXY+gE8muSubqh6fXd0EXJYA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Models.html",
+          "hash": "AeSTyGBsMMxtVz7gYsDYdQvvjxtEg0gUK7gDxWTmbqA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Options.BllOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Options.BllOptions.html",
+          "hash": "x3b0OdU+EHZhEfUcVhW5B01+0GlLuIIEj0lPXSDghQI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Options.html",
+          "hash": "BudWA+LCIqWMEWrPWCPM7oe2N9IGJs3V6PnSMJrA03Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.SqlServer.Factories.GreenDbContextDesignTimeFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.SqlServer.Factories.GreenDbContextDesignTimeFactory.html",
+          "hash": "NZky7ThkI+zxjM/f820j12SsqQDIYQlTFYF2CG7QLS8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.SqlServer.Factories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.SqlServer.Factories.html",
+          "hash": "B3V81mJ1VkneeJ/jEoE8a9UGmHuXOE5TiGHSWXZdTgk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.SqlServer.GreenDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.SqlServer.GreenDbContext.html",
+          "hash": "GeqHpF0cTlzZVWu4nDvU6F8s2D4ZtxAtubGljRbrPmc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.SqlServer.Migrations.GreenDbContextModelSnapshot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.SqlServer.Migrations.GreenDbContextModelSnapshot.html",
+          "hash": "yKyycfBdQJYEh3q0bbHf3XQAlS+ohYJs2wg/maiT8e0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.SqlServer.Migrations.InitialCreate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.SqlServer.Migrations.InitialCreate.html",
+          "hash": "BuhTu/wZIzBD463GvxzXhfYRJI3UffSHyz0Ue6qW7yU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.SqlServer.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.SqlServer.Migrations.html",
+          "hash": "gMcgad0gPYf5W4Bv9apouIkVhwuGvpqyX7hrrHt1Xzg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.SqlServer.Options.DalOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.SqlServer.Options.DalOptions.html",
+          "hash": "CUmEfM5A3arkDeKyavcjncaCEacgp7uGDi81pGe39+M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.SqlServer.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.SqlServer.Options.html",
+          "hash": "KhuztWx/zlOWA7k2RvLpEUyYz7wQF9eV3ijobWHUI5o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.SqlServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.SqlServer.html",
+          "hash": "HFrQsjSCfxHlaPOqS7uXR4DfJLchasx25u3NQwo0T0E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.html",
+          "hash": "bSVLl7TXZlIqmzURx7IND/6fOiWwP5xkW+sWRrmu5vk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html",
+          "hash": "ttJsDL3lLVrNAhi2QC4MCm7Iq/7AGt9DR39eVK0PJuQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions010.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions010.html",
+          "hash": "VaW3k3YGWZPUQzO2QqU44O9nc9FRtuDG/VQHLjDTfxU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions011.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions011.html",
+          "hash": "N1tdj4GanpIPeJc7UrRoFjVvxDFAjFSuGeltr0yr1yU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions002.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions002.html",
+          "hash": "BFOu4HnIRgV8zIGUResLqyIaCjBB7ZOrZIqD0bw4UWk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.html",
+          "hash": "8sV+BgIeW8JPSnJ82uKL+3V3vyWKBpmDK86wto0NcbY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Identity.IdentityBuilderExtensions001.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Identity.IdentityBuilderExtensions001.html",
+          "hash": "5sjXxGjvmIvkAMOASHeSAWr/iyQg/AAE8sd1ebCrOWQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Identity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Identity.html",
+          "hash": "JroiTNYTC1tUjxuARVBqdE/XkEwfy+h+DafAncS9XvE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.IdentityServerBuilderExtensions001.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.IdentityServerBuilderExtensions001.html",
+          "hash": "+nFR1E3yv0EpLs4/wWUgPDdHZqKC4MIBJ7hxjadhPZc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.IdentityServerBuilderExtensions002.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.IdentityServerBuilderExtensions002.html",
+          "hash": "iaKv19UpcJY7QwJGj4DlOcZ/Qr3yt+6d8/R0wfGHxW4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html",
+          "hash": "TnvNm6JaGPIyOFev29dzajF0QOpvt3M5xANJBjtNlCI="
         }
       },
       "is_incremental": false,
@@ -78,7 +966,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "vvqLjsmSuXTPeQlqZQkhZsdpPsLByghvARyXPsLR4eY="
+          "hash": "RWmGIAbW0JVAA1p1E2boiiTFMPPV55NKWaV3kbLjidE="
         }
       },
       "is_incremental": false,
@@ -170,7 +1058,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "WSPq+ETmfPmdjL2tqU7bnIBvKd56VOWxfWbRoe4dPho="
+          "hash": "F5zaoYSFpLXAQp24n5X9aMtCRi3MkjeMfqnoNe6XoOY="
         }
       },
       "is_incremental": false,
@@ -197,7 +1085,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 5,
+          "total_file_count": 79,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

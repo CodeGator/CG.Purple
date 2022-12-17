@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ErrorModel
+    <title>Class EmailModel
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ErrorModel
+    <meta name="title" content="Class EmailModel
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,19 +78,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Green.Host.Pages.ErrorModel">
+            <article class="content wrap" id="_content" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel">
   
   
-  <h1 id="CG_Green_Host_Pages_ErrorModel" data-uid="CG.Green.Host.Pages.ErrorModel" class="text-break">Class ErrorModel
+  <h1 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel" class="text-break">Class EmailModel
   </h1>
-  <div class="markdown level0 summary"><p>This class is the code-behind for the Error page.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Microsoft.AspNetCore.Mvc.RazorPages.PageModel</span></div>
-    <div class="level2"><span class="xref">ErrorModel</span></div>
+    <div class="level2"><span class="xref">EmailModel</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -473,25 +472,21 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Green.Host.Pages.html">CG.Green.Host.Pages</a></h6>
-  <h6><strong>Assembly</strong>: CG.Green.Host.dll</h6>
-  <h5 id="CG_Green_Host_Pages_ErrorModel_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Green.Host.Areas.Identity.Pages.Account.Manage.html">CG.Green.Host.Areas.Identity.Pages.Account.Manage</a></h6>
+  <h6><strong>Assembly</strong>: CG.Green.Host.Identity.dll</h6>
+  <h5 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-[IgnoreAntiforgeryToken]
-public class ErrorModel : PageModel, IAsyncPageFilter, IPageFilter, IFilterMetadata</code></pre>
+    <pre><code class="lang-csharp hljs">public class EmailModel : PageModel, IAsyncPageFilter, IPageFilter, IFilterMetadata</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <a id="CG_Green_Host_Pages_ErrorModel__ctor_" data-uid="CG.Green.Host.Pages.ErrorModel.#ctor*"></a>
-  <h4 id="CG_Green_Host_Pages_ErrorModel__ctor_ILogger_CG_Green_Host_Pages_ErrorModel__" data-uid="CG.Green.Host.Pages.ErrorModel.#ctor(ILogger{CG.Green.Host.Pages.ErrorModel})">ErrorModel(ILogger&lt;ErrorModel&gt;)</h4>
-  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Green.Host.Pages.ErrorModel.html">ErrorModel</a>
-class.</p>
-</div>
+  <a id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel__ctor_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.#ctor*"></a>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel__ctor_Microsoft_AspNetCore_Identity_UserManager_GreenIdentityUser__Microsoft_AspNetCore_Identity_SignInManager_GreenIdentityUser__Microsoft_AspNetCore_Identity_UI_Services_IEmailSender_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.#ctor(Microsoft.AspNetCore.Identity.UserManager{GreenIdentityUser},Microsoft.AspNetCore.Identity.SignInManager{GreenIdentityUser},Microsoft.AspNetCore.Identity.UI.Services.IEmailSender)">EmailModel(UserManager&lt;GreenIdentityUser&gt;, SignInManager&lt;GreenIdentityUser&gt;, IEmailSender)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ErrorModel(ILogger&lt;ErrorModel&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public EmailModel(UserManager&lt;GreenIdentityUser&gt; userManager, SignInManager&lt;GreenIdentityUser&gt; signInManager, IEmailSender emailSender)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -504,22 +499,30 @@ class.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Green.Host.Pages.ErrorModel.html">ErrorModel</a>&gt;</td>
-        <td><span class="parametername">logger</span></td>
-        <td><p>The logger for this model</p>
-</td>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.UserManager</span>&lt;<span class="xref">GreenIdentityUser</span>&gt;</td>
+        <td><span class="parametername">userManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.SignInManager</span>&lt;<span class="xref">GreenIdentityUser</span>&gt;</td>
+        <td><span class="parametername">signInManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.UI.Services.IEmailSender</span></td>
+        <td><span class="parametername">emailSender</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="CG_Green_Host_Pages_ErrorModel__logger" data-uid="CG.Green.Host.Pages.ErrorModel._logger">_logger</h4>
-  <div class="markdown level1 summary"><p>This field contains the logger for this model.</p>
-</div>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel__emailSender" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel._emailSender">_emailSender</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">readonly ILogger&lt;ErrorModel&gt; _logger</code></pre>
+    <pre><code class="lang-csharp hljs">readonly IEmailSender _emailSender</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -531,21 +534,66 @@ class.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Green.Host.Pages.ErrorModel.html">ErrorModel</a>&gt;</td>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.UI.Services.IEmailSender</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel__signInManager" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel._signInManager">_signInManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly SignInManager&lt;GreenIdentityUser&gt; _signInManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.SignInManager</span>&lt;<span class="xref">GreenIdentityUser</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel__userManager" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel._userManager">_userManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly UserManager&lt;GreenIdentityUser&gt; _userManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Identity.UserManager</span>&lt;<span class="xref">GreenIdentityUser</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
-  <a id="CG_Green_Host_Pages_ErrorModel_RequestId_" data-uid="CG.Green.Host.Pages.ErrorModel.RequestId*"></a>
-  <h4 id="CG_Green_Host_Pages_ErrorModel_RequestId" data-uid="CG.Green.Host.Pages.ErrorModel.RequestId">RequestId</h4>
-  <div class="markdown level1 summary"><p>This property contains the request identifier for this model.</p>
+  <a id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_Email_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.Email*"></a>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_Email" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.Email">Email</h4>
+  <div class="markdown level1 summary"><p>This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+directly from your code. This API may change or be removed in future releases.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string RequestId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Email { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -562,15 +610,41 @@ class.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Green_Host_Pages_ErrorModel_ShowRequestId_" data-uid="CG.Green.Host.Pages.ErrorModel.ShowRequestId*"></a>
-  <h4 id="CG_Green_Host_Pages_ErrorModel_ShowRequestId" data-uid="CG.Green.Host.Pages.ErrorModel.ShowRequestId">ShowRequestId</h4>
-  <div class="markdown level1 summary"><p>This property indicates whether or not to show the <a class="xref" href="CG.Green.Host.Pages.ErrorModel.html#CG_Green_Host_Pages_ErrorModel_RequestId">RequestId</a>
-property on the error page.</p>
+  <a id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_Input_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.Input*"></a>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_Input" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.Input">Input</h4>
+  <div class="markdown level1 summary"><p>This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+directly from your code. This API may change or be removed in future releases.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool ShowRequestId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[BindProperty]
+public EmailModel.InputModel Input { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.InputModel.html">EmailModel.InputModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_IsEmailConfirmed_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.IsEmailConfirmed*"></a>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_IsEmailConfirmed" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.IsEmailConfirmed">IsEmailConfirmed</h4>
+  <div class="markdown level1 summary"><p>This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+directly from your code. This API may change or be removed in future releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEmailConfirmed { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -587,17 +661,143 @@ property on the error page.</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-  </h3>
-  <a id="CG_Green_Host_Pages_ErrorModel_OnGet_" data-uid="CG.Green.Host.Pages.ErrorModel.OnGet*"></a>
-  <h4 id="CG_Green_Host_Pages_ErrorModel_OnGet" data-uid="CG.Green.Host.Pages.ErrorModel.OnGet">OnGet()</h4>
-  <div class="markdown level1 summary"><p>This method is called when the page receives an HTTP GET verb.</p>
+  <a id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_StatusMessage_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.StatusMessage*"></a>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_StatusMessage" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.StatusMessage">StatusMessage</h4>
+  <div class="markdown level1 summary"><p>This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+directly from your code. This API may change or be removed in future releases.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnGet()</code></pre>
+    <pre><code class="lang-csharp hljs">[TempData]
+public string StatusMessage { get; set; }</code></pre>
   </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_LoadAsync_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.LoadAsync*"></a>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_LoadAsync_GreenIdentityUser_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.LoadAsync(GreenIdentityUser)">LoadAsync(GreenIdentityUser)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">async Task LoadAsync(GreenIdentityUser user)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GreenIdentityUser</span></td>
+        <td><span class="parametername">user</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_OnGetAsync_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.OnGetAsync*"></a>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_OnGetAsync" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.OnGetAsync">OnGetAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;IActionResult&gt; OnGetAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.IActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_OnPostChangeEmailAsync_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.OnPostChangeEmailAsync*"></a>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_OnPostChangeEmailAsync" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.OnPostChangeEmailAsync">OnPostChangeEmailAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;IActionResult&gt; OnPostChangeEmailAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.IActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_OnPostSendVerificationEmailAsync_" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.OnPostSendVerificationEmailAsync*"></a>
+  <h4 id="CG_Green_Host_Areas_Identity_Pages_Account_Manage_EmailModel_OnPostSendVerificationEmailAsync" data-uid="CG.Green.Host.Areas.Identity.Pages.Account.Manage.EmailModel.OnPostSendVerificationEmailAsync">OnPostSendVerificationEmailAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;IActionResult&gt; OnPostSendVerificationEmailAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Microsoft.AspNetCore.Mvc.IActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">Microsoft.AspNetCore.Mvc.Filters.IAsyncPageFilter</span>
