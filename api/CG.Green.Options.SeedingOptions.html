@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class DalOptions
+    <title>Class SeedingOptions
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class DalOptions
+    <meta name="title" content="Class SeedingOptions
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,19 +78,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Green.Options.DalOptions">
+            <article class="content wrap" id="_content" data-uid="CG.Green.Options.SeedingOptions">
   
   
-  <h1 id="CG_Green_Options_DalOptions" data-uid="CG.Green.Options.DalOptions" class="text-break">Class DalOptions
+  <h1 id="CG_Green_Options_SeedingOptions" data-uid="CG.Green.Options.SeedingOptions" class="text-break">Class SeedingOptions
   </h1>
-  <div class="markdown level0 summary"><p>This class contains configuration settings related to the data access layer
-for the <span class="xref">CG.Green</span> microservice.</p>
+  <div class="markdown level0 summary"><p>This class contains configuration settings related to database seeding
+operations for the <span class="xref">CG.Green</span> microservice.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">DalOptions</span></div>
+    <div class="level1"><span class="xref">SeedingOptions</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -118,20 +118,21 @@ for the <span class="xref">CG.Green</span> microservice.</p>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="CG.Green.Options.html">CG.Green.Options</a></h6>
   <h6><strong>Assembly</strong>: CG.Green.dll</h6>
-  <h5 id="CG_Green_Options_DalOptions_syntax">Syntax</h5>
+  <h5 id="CG_Green_Options_SeedingOptions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DalOptions</code></pre>
+    <pre><code class="lang-csharp hljs">class SeedingOptions</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
-  <a id="CG_Green_Options_DalOptions_ConnectionString_" data-uid="CG.Green.Options.DalOptions.ConnectionString*"></a>
-  <h4 id="CG_Green_Options_DalOptions_ConnectionString" data-uid="CG.Green.Options.DalOptions.ConnectionString">ConnectionString</h4>
-  <div class="markdown level1 summary"><p>This property contains the connection string for the DAL.</p>
+  <a id="CG_Green_Options_SeedingOptions_FileNames_" data-uid="CG.Green.Options.SeedingOptions.FileNames*"></a>
+  <h4 id="CG_Green_Options_SeedingOptions_FileNames" data-uid="CG.Green.Options.SeedingOptions.FileNames">FileNames</h4>
+  <div class="markdown level1 summary"><p>This property contains a list of external JSON file names, each
+one containing settings for a seeding operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ConnectionString { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt;? FileNames { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -143,20 +144,20 @@ for the <span class="xref">CG.Green</span> microservice.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Green_Options_DalOptions_DropDatabaseOnStartup_" data-uid="CG.Green.Options.DalOptions.DropDatabaseOnStartup*"></a>
-  <h4 id="CG_Green_Options_DalOptions_DropDatabaseOnStartup" data-uid="CG.Green.Options.DalOptions.DropDatabaseOnStartup">DropDatabaseOnStartup</h4>
-  <div class="markdown level1 summary"><p>This property directs the DAL to drop the underlying database on
-startup.</p>
+  <a id="CG_Green_Options_SeedingOptions_Force_" data-uid="CG.Green.Options.SeedingOptions.Force*"></a>
+  <h4 id="CG_Green_Options_SeedingOptions_Force" data-uid="CG.Green.Options.SeedingOptions.Force">Force</h4>
+  <div class="markdown level1 summary"><p>This property indicates whether to force the seeding operation, which
+has the effect of possibly seeding tables with existing data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool DropDatabaseOnStartup { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Force { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -173,20 +174,15 @@ startup.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="CG_Green_Options_DalOptions_DropDatabaseOnStartup_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-This property is ignored in production.
-</p>
-</div>
-  <a id="CG_Green_Options_DalOptions_MigrateDatabaseOnStartup_" data-uid="CG.Green.Options.DalOptions.MigrateDatabaseOnStartup*"></a>
-  <h4 id="CG_Green_Options_DalOptions_MigrateDatabaseOnStartup" data-uid="CG.Green.Options.DalOptions.MigrateDatabaseOnStartup">MigrateDatabaseOnStartup</h4>
-  <div class="markdown level1 summary"><p>This property directs the DAL to migrate the underlying database
+  <a id="CG_Green_Options_SeedingOptions_SeedOnStartup_" data-uid="CG.Green.Options.SeedingOptions.SeedOnStartup*"></a>
+  <h4 id="CG_Green_Options_SeedingOptions_SeedOnStartup" data-uid="CG.Green.Options.SeedingOptions.SeedOnStartup">SeedOnStartup</h4>
+  <div class="markdown level1 summary"><p>This property indicates whether to perform a data seeding operation
 on startup.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool MigrateDatabaseOnStartup { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool SeedOnStartup { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -203,17 +199,6 @@ on startup.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="CG_Green_Options_DalOptions_MigrateDatabaseOnStartup_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-This property is ignored in production.
-</p>
-<p>
-If the <a class="xref" href="CG.Green.Options.DalOptions.html#CG_Green_Options_DalOptions_DropDatabaseOnStartup">DropDatabaseOnStartup</a> property is set to 
-true then migrations are always applied, since the database is 
-then dropped and re-created. This property allows migrations to 
-be applied without dropping and re-creating the database.
-</p>
-</div>
 </article>
           </div>
           

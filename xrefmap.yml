@@ -3591,6 +3591,51 @@ references:
   isSpec: "True"
   fullName: CG.Green.Options.DalOptions.MigrateDatabaseOnStartup
   nameWithType: DalOptions.MigrateDatabaseOnStartup
+- uid: CG.Green.Options.SeedingOptions
+  name: SeedingOptions
+  href: api/CG.Green.Options.SeedingOptions.html
+  commentId: T:CG.Green.Options.SeedingOptions
+  fullName: CG.Green.Options.SeedingOptions
+  nameWithType: SeedingOptions
+- uid: CG.Green.Options.SeedingOptions.FileNames
+  name: FileNames
+  href: api/CG.Green.Options.SeedingOptions.html#CG_Green_Options_SeedingOptions_FileNames
+  commentId: P:CG.Green.Options.SeedingOptions.FileNames
+  fullName: CG.Green.Options.SeedingOptions.FileNames
+  nameWithType: SeedingOptions.FileNames
+- uid: CG.Green.Options.SeedingOptions.FileNames*
+  name: FileNames
+  href: api/CG.Green.Options.SeedingOptions.html#CG_Green_Options_SeedingOptions_FileNames_
+  commentId: Overload:CG.Green.Options.SeedingOptions.FileNames
+  isSpec: "True"
+  fullName: CG.Green.Options.SeedingOptions.FileNames
+  nameWithType: SeedingOptions.FileNames
+- uid: CG.Green.Options.SeedingOptions.Force
+  name: Force
+  href: api/CG.Green.Options.SeedingOptions.html#CG_Green_Options_SeedingOptions_Force
+  commentId: P:CG.Green.Options.SeedingOptions.Force
+  fullName: CG.Green.Options.SeedingOptions.Force
+  nameWithType: SeedingOptions.Force
+- uid: CG.Green.Options.SeedingOptions.Force*
+  name: Force
+  href: api/CG.Green.Options.SeedingOptions.html#CG_Green_Options_SeedingOptions_Force_
+  commentId: Overload:CG.Green.Options.SeedingOptions.Force
+  isSpec: "True"
+  fullName: CG.Green.Options.SeedingOptions.Force
+  nameWithType: SeedingOptions.Force
+- uid: CG.Green.Options.SeedingOptions.SeedOnStartup
+  name: SeedOnStartup
+  href: api/CG.Green.Options.SeedingOptions.html#CG_Green_Options_SeedingOptions_SeedOnStartup
+  commentId: P:CG.Green.Options.SeedingOptions.SeedOnStartup
+  fullName: CG.Green.Options.SeedingOptions.SeedOnStartup
+  nameWithType: SeedingOptions.SeedOnStartup
+- uid: CG.Green.Options.SeedingOptions.SeedOnStartup*
+  name: SeedOnStartup
+  href: api/CG.Green.Options.SeedingOptions.html#CG_Green_Options_SeedingOptions_SeedOnStartup_
+  commentId: Overload:CG.Green.Options.SeedingOptions.SeedOnStartup
+  isSpec: "True"
+  fullName: CG.Green.Options.SeedingOptions.SeedOnStartup
+  nameWithType: SeedingOptions.SeedOnStartup
 - uid: CG.Green.Pages
   name: CG.Green.Pages
   href: api/CG.Green.Pages.html
@@ -3664,6 +3709,160 @@ references:
   isSpec: "True"
   fullName: CG.Green.Pages.ErrorModel.ShowRequestId
   nameWithType: ErrorModel.ShowRequestId
+- uid: CG.Green.Services
+  name: CG.Green.Services
+  href: api/CG.Green.Services.html
+  commentId: N:CG.Green.Services
+  fullName: CG.Green.Services
+  nameWithType: CG.Green.Services
+- uid: CG.Green.Services.SeedingService
+  name: SeedingService
+  href: api/CG.Green.Services.SeedingService.html
+  commentId: T:CG.Green.Services.SeedingService
+  fullName: CG.Green.Services.SeedingService
+  nameWithType: SeedingService
+- uid: CG.Green.Services.SeedingService.#ctor(IDbContextFactory{ApplicationDbContext},IDbContextFactory{ConfigurationDbContext},IDbContextFactory{PersistedGrantDbContext},SignInManager{ApplicationUser},ILogger{CG.Green.Services.SeedingService})
+  name: SeedingService(IDbContextFactory<ApplicationDbContext>, IDbContextFactory<ConfigurationDbContext>, IDbContextFactory<PersistedGrantDbContext>, SignInManager<ApplicationUser>, ILogger<SeedingService>)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__ctor_IDbContextFactory_ApplicationDbContext__IDbContextFactory_ConfigurationDbContext__IDbContextFactory_PersistedGrantDbContext__SignInManager_ApplicationUser__ILogger_CG_Green_Services_SeedingService__
+  commentId: M:CG.Green.Services.SeedingService.#ctor(IDbContextFactory{ApplicationDbContext},IDbContextFactory{ConfigurationDbContext},IDbContextFactory{PersistedGrantDbContext},SignInManager{ApplicationUser},ILogger{CG.Green.Services.SeedingService})
+  name.vb: SeedingService(IDbContextFactory(Of ApplicationDbContext), IDbContextFactory(Of ConfigurationDbContext), IDbContextFactory(Of PersistedGrantDbContext), SignInManager(Of ApplicationUser), ILogger(Of SeedingService))
+  fullName: CG.Green.Services.SeedingService.SeedingService(IDbContextFactory<ApplicationDbContext>, IDbContextFactory<ConfigurationDbContext>, IDbContextFactory<PersistedGrantDbContext>, SignInManager<ApplicationUser>, ILogger<CG.Green.Services.SeedingService>)
+  fullName.vb: CG.Green.Services.SeedingService.SeedingService(IDbContextFactory(Of ApplicationDbContext), IDbContextFactory(Of ConfigurationDbContext), IDbContextFactory(Of PersistedGrantDbContext), SignInManager(Of ApplicationUser), ILogger(Of CG.Green.Services.SeedingService))
+  nameWithType: SeedingService.SeedingService(IDbContextFactory<ApplicationDbContext>, IDbContextFactory<ConfigurationDbContext>, IDbContextFactory<PersistedGrantDbContext>, SignInManager<ApplicationUser>, ILogger<SeedingService>)
+  nameWithType.vb: SeedingService.SeedingService(IDbContextFactory(Of ApplicationDbContext), IDbContextFactory(Of ConfigurationDbContext), IDbContextFactory(Of PersistedGrantDbContext), SignInManager(Of ApplicationUser), ILogger(Of SeedingService))
+- uid: CG.Green.Services.SeedingService.#ctor*
+  name: SeedingService
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__ctor_
+  commentId: Overload:CG.Green.Services.SeedingService.#ctor
+  isSpec: "True"
+  fullName: CG.Green.Services.SeedingService.SeedingService
+  nameWithType: SeedingService.SeedingService
+- uid: CG.Green.Services.SeedingService._applicationDbFactory
+  name: _applicationDbFactory
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__applicationDbFactory
+  commentId: F:CG.Green.Services.SeedingService._applicationDbFactory
+  fullName: CG.Green.Services.SeedingService._applicationDbFactory
+  nameWithType: SeedingService._applicationDbFactory
+- uid: CG.Green.Services.SeedingService._configurationDbFactory
+  name: _configurationDbFactory
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__configurationDbFactory
+  commentId: F:CG.Green.Services.SeedingService._configurationDbFactory
+  fullName: CG.Green.Services.SeedingService._configurationDbFactory
+  nameWithType: SeedingService._configurationDbFactory
+- uid: CG.Green.Services.SeedingService._logger
+  name: _logger
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__logger
+  commentId: F:CG.Green.Services.SeedingService._logger
+  fullName: CG.Green.Services.SeedingService._logger
+  nameWithType: SeedingService._logger
+- uid: CG.Green.Services.SeedingService._persistedGrantDbFactory
+  name: _persistedGrantDbFactory
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__persistedGrantDbFactory
+  commentId: F:CG.Green.Services.SeedingService._persistedGrantDbFactory
+  fullName: CG.Green.Services.SeedingService._persistedGrantDbFactory
+  nameWithType: SeedingService._persistedGrantDbFactory
+- uid: CG.Green.Services.SeedingService._signInManager
+  name: _signInManager
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__signInManager
+  commentId: F:CG.Green.Services.SeedingService._signInManager
+  fullName: CG.Green.Services.SeedingService._signInManager
+  nameWithType: SeedingService._signInManager
+- uid: CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IConfiguration,System.Boolean,CancellationToken)
+  name: SeedAspNetUsersAsync(IConfiguration, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetUsersAsync_IConfiguration_System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IConfiguration,System.Boolean,CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IConfiguration, System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedAspNetUsersAsync(IConfiguration, Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IEnumerable{ApplicationUser},System.Boolean,CancellationToken)
+  name: SeedAspNetUsersAsync(IEnumerable<ApplicationUser>, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetUsersAsync_IEnumerable_ApplicationUser__System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IEnumerable{ApplicationUser},System.Boolean,CancellationToken)
+  name.vb: SeedAspNetUsersAsync(IEnumerable(Of ApplicationUser), Boolean, CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IEnumerable<ApplicationUser>, System.Boolean, CancellationToken)
+  fullName.vb: CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IEnumerable(Of ApplicationUser), System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedAspNetUsersAsync(IEnumerable<ApplicationUser>, Boolean, CancellationToken)
+  nameWithType.vb: SeedingService.SeedAspNetUsersAsync(IEnumerable(Of ApplicationUser), Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedAspNetUsersAsync*
+  name: SeedAspNetUsersAsync
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetUsersAsync_
+  commentId: Overload:CG.Green.Services.SeedingService.SeedAspNetUsersAsync
+  isSpec: "True"
+  fullName: CG.Green.Services.SeedingService.SeedAspNetUsersAsync
+  nameWithType: SeedingService.SeedAspNetUsersAsync
+- uid: CG.Green.Services.SeedingService.SeedAsync(IEnumerable{System.String},System.Boolean,CancellationToken)
+  name: SeedAsync(IEnumerable<String>, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAsync_IEnumerable_System_String__System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedAsync(IEnumerable{System.String},System.Boolean,CancellationToken)
+  name.vb: SeedAsync(IEnumerable(Of String), Boolean, CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedAsync(IEnumerable<System.String>, System.Boolean, CancellationToken)
+  fullName.vb: CG.Green.Services.SeedingService.SeedAsync(IEnumerable(Of System.String), System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedAsync(IEnumerable<String>, Boolean, CancellationToken)
+  nameWithType.vb: SeedingService.SeedAsync(IEnumerable(Of String), Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedAsync*
+  name: SeedAsync
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAsync_
+  commentId: Overload:CG.Green.Services.SeedingService.SeedAsync
+  isSpec: "True"
+  fullName: CG.Green.Services.SeedingService.SeedAsync
+  nameWithType: SeedingService.SeedAsync
+- uid: CG.Green.Services.SeedingService.SeedDuendeClientsAsyc(IEnumerable{Duende.IdentityServer.Models.Client},System.Boolean,CancellationToken)
+  name: SeedDuendeClientsAsyc(IEnumerable<Client>, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedDuendeClientsAsyc_IEnumerable_Duende_IdentityServer_Models_Client__System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedDuendeClientsAsyc(IEnumerable{Duende.IdentityServer.Models.Client},System.Boolean,CancellationToken)
+  name.vb: SeedDuendeClientsAsyc(IEnumerable(Of Client), Boolean, CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedDuendeClientsAsyc(IEnumerable<Duende.IdentityServer.Models.Client>, System.Boolean, CancellationToken)
+  fullName.vb: CG.Green.Services.SeedingService.SeedDuendeClientsAsyc(IEnumerable(Of Duende.IdentityServer.Models.Client), System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedDuendeClientsAsyc(IEnumerable<Client>, Boolean, CancellationToken)
+  nameWithType.vb: SeedingService.SeedDuendeClientsAsyc(IEnumerable(Of Client), Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedDuendeClientsAsyc*
+  name: SeedDuendeClientsAsyc
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedDuendeClientsAsyc_
+  commentId: Overload:CG.Green.Services.SeedingService.SeedDuendeClientsAsyc
+  isSpec: "True"
+  fullName: CG.Green.Services.SeedingService.SeedDuendeClientsAsyc
+  nameWithType: SeedingService.SeedDuendeClientsAsyc
+- uid: CG.Green.Services.SeedingService.SeedDuendeClientsAsync(IConfiguration,System.Boolean,CancellationToken)
+  name: SeedDuendeClientsAsync(IConfiguration, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedDuendeClientsAsync_IConfiguration_System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedDuendeClientsAsync(IConfiguration,System.Boolean,CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedDuendeClientsAsync(IConfiguration, System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedDuendeClientsAsync(IConfiguration, Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedDuendeClientsAsync*
+  name: SeedDuendeClientsAsync
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedDuendeClientsAsync_
+  commentId: Overload:CG.Green.Services.SeedingService.SeedDuendeClientsAsync
+  isSpec: "True"
+  fullName: CG.Green.Services.SeedingService.SeedDuendeClientsAsync
+  nameWithType: SeedingService.SeedDuendeClientsAsync
+- uid: CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsyc(IEnumerable{Duende.IdentityServer.Models.IdentityResource},System.Boolean,CancellationToken)
+  name: SeedDuendeIdentityResourcesAsyc(IEnumerable<IdentityResource>, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedDuendeIdentityResourcesAsyc_IEnumerable_Duende_IdentityServer_Models_IdentityResource__System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsyc(IEnumerable{Duende.IdentityServer.Models.IdentityResource},System.Boolean,CancellationToken)
+  name.vb: SeedDuendeIdentityResourcesAsyc(IEnumerable(Of IdentityResource), Boolean, CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsyc(IEnumerable<Duende.IdentityServer.Models.IdentityResource>, System.Boolean, CancellationToken)
+  fullName.vb: CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsyc(IEnumerable(Of Duende.IdentityServer.Models.IdentityResource), System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedDuendeIdentityResourcesAsyc(IEnumerable<IdentityResource>, Boolean, CancellationToken)
+  nameWithType.vb: SeedingService.SeedDuendeIdentityResourcesAsyc(IEnumerable(Of IdentityResource), Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsyc*
+  name: SeedDuendeIdentityResourcesAsyc
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedDuendeIdentityResourcesAsyc_
+  commentId: Overload:CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsyc
+  isSpec: "True"
+  fullName: CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsyc
+  nameWithType: SeedingService.SeedDuendeIdentityResourcesAsyc
+- uid: CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsync(IConfiguration,System.Boolean,CancellationToken)
+  name: SeedDuendeIdentityResourcesAsync(IConfiguration, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedDuendeIdentityResourcesAsync_IConfiguration_System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsync(IConfiguration,System.Boolean,CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsync(IConfiguration, System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedDuendeIdentityResourcesAsync(IConfiguration, Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsync*
+  name: SeedDuendeIdentityResourcesAsync
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedDuendeIdentityResourcesAsync_
+  commentId: Overload:CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsync
+  isSpec: "True"
+  fullName: CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsync
+  nameWithType: SeedingService.SeedDuendeIdentityResourcesAsync
 - uid: CG.Green.Themes
   name: CG.Green.Themes
   href: api/CG.Green.Themes.html
@@ -3720,6 +3919,22 @@ references:
   commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions
   nameWithType: WebApplicationBuilderExtensions
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddGreenDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddGreenDataAccess_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddGreenDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions.AddGreenDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions.AddGreenDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenDataAccess*
+  name: AddGreenDataAccess
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddGreenDataAccess_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenDataAccess
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenDataAccess
+  nameWithType: WebApplicationBuilderExtensions.AddGreenDataAccess
 - uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenIdentity(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
   name: AddGreenIdentity(WebApplicationBuilder, String, Nullable<ILogger>)
   href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddGreenIdentity_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
@@ -3736,6 +3951,22 @@ references:
   isSpec: "True"
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenIdentity
   nameWithType: WebApplicationBuilderExtensions.AddGreenIdentity
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenSeeding(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddGreenSeeding(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddGreenSeeding_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenSeeding(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddGreenSeeding(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenSeeding(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenSeeding(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions.AddGreenSeeding(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions.AddGreenSeeding(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenSeeding*
+  name: AddGreenSeeding
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_AddGreenSeeding_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenSeeding
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.AddGreenSeeding
+  nameWithType: WebApplicationBuilderExtensions.AddGreenSeeding
 - uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions
   name: WebApplicationExtensions
   href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html
@@ -3784,6 +4015,19 @@ references:
   fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationExtensions.MigrateDataContextAsync(Of TContext)(Microsoft.AspNetCore.Builder.WebApplication, CancellationToken)
   nameWithType: WebApplicationExtensions.MigrateDataContextAsync<TContext>(WebApplication, CancellationToken)
   nameWithType.vb: WebApplicationExtensions.MigrateDataContextAsync(Of TContext)(WebApplication, CancellationToken)
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenDataAccess(Microsoft.AspNetCore.Builder.WebApplication)
+  name: UseGreenDataAccess(WebApplication)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_UseGreenDataAccess_Microsoft_AspNetCore_Builder_WebApplication_
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenDataAccess(Microsoft.AspNetCore.Builder.WebApplication)
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenDataAccess(Microsoft.AspNetCore.Builder.WebApplication)
+  nameWithType: WebApplicationExtensions.UseGreenDataAccess(WebApplication)
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenDataAccess*
+  name: UseGreenDataAccess
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_UseGreenDataAccess_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenDataAccess
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenDataAccess
+  nameWithType: WebApplicationExtensions.UseGreenDataAccess
 - uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenIdentity(Microsoft.AspNetCore.Builder.WebApplication)
   name: UseGreenIdentity(WebApplication)
   href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_UseGreenIdentity_Microsoft_AspNetCore_Builder_WebApplication_
@@ -3797,3 +4041,16 @@ references:
   isSpec: "True"
   fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenIdentity
   nameWithType: WebApplicationExtensions.UseGreenIdentity
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenSeeding(Microsoft.AspNetCore.Builder.WebApplication)
+  name: UseGreenSeeding(WebApplication)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_UseGreenSeeding_Microsoft_AspNetCore_Builder_WebApplication_
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenSeeding(Microsoft.AspNetCore.Builder.WebApplication)
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenSeeding(Microsoft.AspNetCore.Builder.WebApplication)
+  nameWithType: WebApplicationExtensions.UseGreenSeeding(WebApplication)
+- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenSeeding*
+  name: UseGreenSeeding
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions_UseGreenSeeding_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenSeeding
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions.UseGreenSeeding
+  nameWithType: WebApplicationExtensions.UseGreenSeeding

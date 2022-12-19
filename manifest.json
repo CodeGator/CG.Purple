@@ -774,7 +774,19 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Green.Options.DalOptions.html",
-          "hash": "4D8TW0n4vQzhu3HwkAXBULaKLH/SUGOlc3ufDZM+JpM="
+          "hash": "gwwhttiq3mKRXIA3mN+nXupCQNABFofpaZE87AlO6K8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Options.SeedingOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Options.SeedingOptions.html",
+          "hash": "snXVTEzBwABsnOjetvCIAR1Nwls+dfRlMQsvxCJLAXE="
         }
       },
       "is_incremental": false,
@@ -786,7 +798,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Green.Options.html",
-          "hash": "h0RTbMhUZ/n+nTh8C4WbSQ/NaM7bgnJtkFkbk0sQEXg="
+          "hash": "/LzQev40LBiWxtalv0RHw+IeOg1sVqt9sjwdMN0xCAs="
         }
       },
       "is_incremental": false,
@@ -811,6 +823,30 @@
         ".html": {
           "relative_path": "api/CG.Green.Pages.html",
           "hash": "VjPHzl050LQyLyxOy8ikqnQP78teDDXIgCFpIej6c74="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Services.SeedingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Services.SeedingService.html",
+          "hash": "WoREPL/+ti/gbj4HrgG/Eoslprf+hAljIzv9U/y05HI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Green.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Green.Services.html",
+          "hash": "cwKqeHQuFmpWAIWvzGMVsMYCiOYyiNq9vNRr0JWnrPA="
         }
       },
       "is_incremental": false,
@@ -846,7 +882,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html",
-          "hash": "M8biqTdrFK61cnL3T8F1/JPwpx5mB2I3K2XudijSW/g="
+          "hash": "FP4b6WhfAcNKxo1VtokCxZyPHxsfKtOpRCSsIZXrlWU="
         }
       },
       "is_incremental": false,
@@ -858,7 +894,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationExtensions.html",
-          "hash": "GmXznjSg8kM1H6ydxYBVcaC/GJygFdt0dDLthCz+LyI="
+          "hash": "o7qVsmrOmxWxmlzfl2GzjbMCsEYyP6ptO2nbkLNioQM="
         }
       },
       "is_incremental": false,
@@ -882,7 +918,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "nCuBbmqjV1zf61RnPptEO6W+00EeFDvlkLNc8pv92YU="
+          "hash": "MBtU6IMb+HUK65HKq9/kpE1ijPJWkadAnwCcKJA+kVY="
         }
       },
       "is_incremental": false,
@@ -1001,7 +1037,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 72,
+          "total_file_count": 75,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
