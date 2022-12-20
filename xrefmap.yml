@@ -3204,13 +3204,13 @@ references:
   fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser)
   nameWithType: RevalidatingIdentityAuthenticationStateProvider<TUser>
   nameWithType.vb: RevalidatingIdentityAuthenticationStateProvider(Of TUser)
-- uid: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.#ctor(ILoggerFactory,IServiceScopeFactory,Microsoft.Extensions.Options.IOptions{Microsoft.AspNetCore.Identity.IdentityOptions})
+- uid: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,IServiceScopeFactory,IOptions{IdentityOptions})
   name: RevalidatingIdentityAuthenticationStateProvider(ILoggerFactory, IServiceScopeFactory, IOptions<IdentityOptions>)
-  href: api/CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider-1.html#CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1__ctor_ILoggerFactory_IServiceScopeFactory_Microsoft_Extensions_Options_IOptions_Microsoft_AspNetCore_Identity_IdentityOptions__
-  commentId: M:CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.#ctor(ILoggerFactory,IServiceScopeFactory,Microsoft.Extensions.Options.IOptions{Microsoft.AspNetCore.Identity.IdentityOptions})
+  href: api/CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider-1.html#CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1__ctor_Microsoft_Extensions_Logging_ILoggerFactory_IServiceScopeFactory_IOptions_IdentityOptions__
+  commentId: M:CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,IServiceScopeFactory,IOptions{IdentityOptions})
   name.vb: RevalidatingIdentityAuthenticationStateProvider(ILoggerFactory, IServiceScopeFactory, IOptions(Of IdentityOptions))
-  fullName: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider<TUser>.RevalidatingIdentityAuthenticationStateProvider(ILoggerFactory, IServiceScopeFactory, Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Identity.IdentityOptions>)
-  fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser).RevalidatingIdentityAuthenticationStateProvider(ILoggerFactory, IServiceScopeFactory, Microsoft.Extensions.Options.IOptions(Of Microsoft.AspNetCore.Identity.IdentityOptions))
+  fullName: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider<TUser>.RevalidatingIdentityAuthenticationStateProvider(Microsoft.Extensions.Logging.ILoggerFactory, IServiceScopeFactory, IOptions<IdentityOptions>)
+  fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser).RevalidatingIdentityAuthenticationStateProvider(Microsoft.Extensions.Logging.ILoggerFactory, IServiceScopeFactory, IOptions(Of IdentityOptions))
   nameWithType: RevalidatingIdentityAuthenticationStateProvider<TUser>.RevalidatingIdentityAuthenticationStateProvider(ILoggerFactory, IServiceScopeFactory, IOptions<IdentityOptions>)
   nameWithType.vb: RevalidatingIdentityAuthenticationStateProvider(Of TUser).RevalidatingIdentityAuthenticationStateProvider(ILoggerFactory, IServiceScopeFactory, IOptions(Of IdentityOptions))
 - uid: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.#ctor*
@@ -3255,12 +3255,12 @@ references:
   fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser).RevalidationInterval
   nameWithType: RevalidatingIdentityAuthenticationStateProvider<TUser>.RevalidationInterval
   nameWithType.vb: RevalidatingIdentityAuthenticationStateProvider(Of TUser).RevalidationInterval
-- uid: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateAuthenticationStateAsync(Microsoft.AspNetCore.Components.Authorization.AuthenticationState,CancellationToken)
+- uid: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateAuthenticationStateAsync(AuthenticationState,CancellationToken)
   name: ValidateAuthenticationStateAsync(AuthenticationState, CancellationToken)
-  href: api/CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider-1.html#CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateAuthenticationStateAsync_Microsoft_AspNetCore_Components_Authorization_AuthenticationState_CancellationToken_
-  commentId: M:CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateAuthenticationStateAsync(Microsoft.AspNetCore.Components.Authorization.AuthenticationState,CancellationToken)
-  fullName: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider<TUser>.ValidateAuthenticationStateAsync(Microsoft.AspNetCore.Components.Authorization.AuthenticationState, CancellationToken)
-  fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateAuthenticationStateAsync(Microsoft.AspNetCore.Components.Authorization.AuthenticationState, CancellationToken)
+  href: api/CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider-1.html#CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateAuthenticationStateAsync_AuthenticationState_CancellationToken_
+  commentId: M:CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateAuthenticationStateAsync(AuthenticationState,CancellationToken)
+  fullName: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider<TUser>.ValidateAuthenticationStateAsync(AuthenticationState, CancellationToken)
+  fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateAuthenticationStateAsync(AuthenticationState, CancellationToken)
   nameWithType: RevalidatingIdentityAuthenticationStateProvider<TUser>.ValidateAuthenticationStateAsync(AuthenticationState, CancellationToken)
   nameWithType.vb: RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateAuthenticationStateAsync(AuthenticationState, CancellationToken)
 - uid: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateAuthenticationStateAsync*
@@ -3272,13 +3272,13 @@ references:
   fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateAuthenticationStateAsync
   nameWithType: RevalidatingIdentityAuthenticationStateProvider<TUser>.ValidateAuthenticationStateAsync
   nameWithType.vb: RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateAuthenticationStateAsync
-- uid: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateSecurityStampAsync(Microsoft.AspNetCore.Identity.UserManager{`0},System.Security.Claims.ClaimsPrincipal)
+- uid: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateSecurityStampAsync(UserManager{`0},ClaimsPrincipal)
   name: ValidateSecurityStampAsync(UserManager<TUser>, ClaimsPrincipal)
-  href: api/CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider-1.html#CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateSecurityStampAsync_Microsoft_AspNetCore_Identity_UserManager__0__System_Security_Claims_ClaimsPrincipal_
-  commentId: M:CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateSecurityStampAsync(Microsoft.AspNetCore.Identity.UserManager{`0},System.Security.Claims.ClaimsPrincipal)
+  href: api/CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider-1.html#CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateSecurityStampAsync_UserManager__0__ClaimsPrincipal_
+  commentId: M:CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateSecurityStampAsync(UserManager{`0},ClaimsPrincipal)
   name.vb: ValidateSecurityStampAsync(UserManager(Of TUser), ClaimsPrincipal)
-  fullName: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider<TUser>.ValidateSecurityStampAsync(Microsoft.AspNetCore.Identity.UserManager<TUser>, System.Security.Claims.ClaimsPrincipal)
-  fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateSecurityStampAsync(Microsoft.AspNetCore.Identity.UserManager(Of TUser), System.Security.Claims.ClaimsPrincipal)
+  fullName: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider<TUser>.ValidateSecurityStampAsync(UserManager<TUser>, ClaimsPrincipal)
+  fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateSecurityStampAsync(UserManager(Of TUser), ClaimsPrincipal)
   nameWithType: RevalidatingIdentityAuthenticationStateProvider<TUser>.ValidateSecurityStampAsync(UserManager<TUser>, ClaimsPrincipal)
   nameWithType.vb: RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateSecurityStampAsync(UserManager(Of TUser), ClaimsPrincipal)
 - uid: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateSecurityStampAsync*
@@ -3290,6 +3290,126 @@ references:
   fullName.vb: CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateSecurityStampAsync
   nameWithType: RevalidatingIdentityAuthenticationStateProvider<TUser>.ValidateSecurityStampAsync
   nameWithType.vb: RevalidatingIdentityAuthenticationStateProvider(Of TUser).ValidateSecurityStampAsync
+- uid: CG.Green.Attributes
+  name: CG.Green.Attributes
+  href: api/CG.Green.Attributes.html
+  commentId: N:CG.Green.Attributes
+  fullName: CG.Green.Attributes
+  nameWithType: CG.Green.Attributes
+- uid: CG.Green.Attributes.MustHaveLeastOneDigitAttribute
+  name: MustHaveLeastOneDigitAttribute
+  href: api/CG.Green.Attributes.MustHaveLeastOneDigitAttribute.html
+  commentId: T:CG.Green.Attributes.MustHaveLeastOneDigitAttribute
+  fullName: CG.Green.Attributes.MustHaveLeastOneDigitAttribute
+  nameWithType: MustHaveLeastOneDigitAttribute
+- uid: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.#ctor
+  name: MustHaveLeastOneDigitAttribute()
+  href: api/CG.Green.Attributes.MustHaveLeastOneDigitAttribute.html#CG_Green_Attributes_MustHaveLeastOneDigitAttribute__ctor
+  commentId: M:CG.Green.Attributes.MustHaveLeastOneDigitAttribute.#ctor
+  fullName: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.MustHaveLeastOneDigitAttribute()
+  nameWithType: MustHaveLeastOneDigitAttribute.MustHaveLeastOneDigitAttribute()
+- uid: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.#ctor(System.String)
+  name: MustHaveLeastOneDigitAttribute(String)
+  href: api/CG.Green.Attributes.MustHaveLeastOneDigitAttribute.html#CG_Green_Attributes_MustHaveLeastOneDigitAttribute__ctor_System_String_
+  commentId: M:CG.Green.Attributes.MustHaveLeastOneDigitAttribute.#ctor(System.String)
+  fullName: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.MustHaveLeastOneDigitAttribute(System.String)
+  nameWithType: MustHaveLeastOneDigitAttribute.MustHaveLeastOneDigitAttribute(String)
+- uid: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.#ctor*
+  name: MustHaveLeastOneDigitAttribute
+  href: api/CG.Green.Attributes.MustHaveLeastOneDigitAttribute.html#CG_Green_Attributes_MustHaveLeastOneDigitAttribute__ctor_
+  commentId: Overload:CG.Green.Attributes.MustHaveLeastOneDigitAttribute.#ctor
+  isSpec: "True"
+  fullName: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.MustHaveLeastOneDigitAttribute
+  nameWithType: MustHaveLeastOneDigitAttribute.MustHaveLeastOneDigitAttribute
+- uid: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.IsValid(System.Object,ValidationContext)
+  name: IsValid(Object, ValidationContext)
+  href: api/CG.Green.Attributes.MustHaveLeastOneDigitAttribute.html#CG_Green_Attributes_MustHaveLeastOneDigitAttribute_IsValid_System_Object_ValidationContext_
+  commentId: M:CG.Green.Attributes.MustHaveLeastOneDigitAttribute.IsValid(System.Object,ValidationContext)
+  fullName: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.IsValid(System.Object, ValidationContext)
+  nameWithType: MustHaveLeastOneDigitAttribute.IsValid(Object, ValidationContext)
+- uid: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.IsValid*
+  name: IsValid
+  href: api/CG.Green.Attributes.MustHaveLeastOneDigitAttribute.html#CG_Green_Attributes_MustHaveLeastOneDigitAttribute_IsValid_
+  commentId: Overload:CG.Green.Attributes.MustHaveLeastOneDigitAttribute.IsValid
+  isSpec: "True"
+  fullName: CG.Green.Attributes.MustHaveLeastOneDigitAttribute.IsValid
+  nameWithType: MustHaveLeastOneDigitAttribute.IsValid
+- uid: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute
+  name: MustHaveLeastOneNonAlphaAttribute
+  href: api/CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.html
+  commentId: T:CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute
+  fullName: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute
+  nameWithType: MustHaveLeastOneNonAlphaAttribute
+- uid: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.#ctor
+  name: MustHaveLeastOneNonAlphaAttribute()
+  href: api/CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.html#CG_Green_Attributes_MustHaveLeastOneNonAlphaAttribute__ctor
+  commentId: M:CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.#ctor
+  fullName: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.MustHaveLeastOneNonAlphaAttribute()
+  nameWithType: MustHaveLeastOneNonAlphaAttribute.MustHaveLeastOneNonAlphaAttribute()
+- uid: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.#ctor(System.String)
+  name: MustHaveLeastOneNonAlphaAttribute(String)
+  href: api/CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.html#CG_Green_Attributes_MustHaveLeastOneNonAlphaAttribute__ctor_System_String_
+  commentId: M:CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.#ctor(System.String)
+  fullName: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.MustHaveLeastOneNonAlphaAttribute(System.String)
+  nameWithType: MustHaveLeastOneNonAlphaAttribute.MustHaveLeastOneNonAlphaAttribute(String)
+- uid: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.#ctor*
+  name: MustHaveLeastOneNonAlphaAttribute
+  href: api/CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.html#CG_Green_Attributes_MustHaveLeastOneNonAlphaAttribute__ctor_
+  commentId: Overload:CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.#ctor
+  isSpec: "True"
+  fullName: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.MustHaveLeastOneNonAlphaAttribute
+  nameWithType: MustHaveLeastOneNonAlphaAttribute.MustHaveLeastOneNonAlphaAttribute
+- uid: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.IsValid(System.Object,ValidationContext)
+  name: IsValid(Object, ValidationContext)
+  href: api/CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.html#CG_Green_Attributes_MustHaveLeastOneNonAlphaAttribute_IsValid_System_Object_ValidationContext_
+  commentId: M:CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.IsValid(System.Object,ValidationContext)
+  fullName: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.IsValid(System.Object, ValidationContext)
+  nameWithType: MustHaveLeastOneNonAlphaAttribute.IsValid(Object, ValidationContext)
+- uid: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.IsValid*
+  name: IsValid
+  href: api/CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.html#CG_Green_Attributes_MustHaveLeastOneNonAlphaAttribute_IsValid_
+  commentId: Overload:CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.IsValid
+  isSpec: "True"
+  fullName: CG.Green.Attributes.MustHaveLeastOneNonAlphaAttribute.IsValid
+  nameWithType: MustHaveLeastOneNonAlphaAttribute.IsValid
+- uid: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute
+  name: MustHaveLeastOneUpperCaseAttribute
+  href: api/CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.html
+  commentId: T:CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute
+  fullName: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute
+  nameWithType: MustHaveLeastOneUpperCaseAttribute
+- uid: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.#ctor
+  name: MustHaveLeastOneUpperCaseAttribute()
+  href: api/CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.html#CG_Green_Attributes_MustHaveLeastOneUpperCaseAttribute__ctor
+  commentId: M:CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.#ctor
+  fullName: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.MustHaveLeastOneUpperCaseAttribute()
+  nameWithType: MustHaveLeastOneUpperCaseAttribute.MustHaveLeastOneUpperCaseAttribute()
+- uid: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.#ctor(System.String)
+  name: MustHaveLeastOneUpperCaseAttribute(String)
+  href: api/CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.html#CG_Green_Attributes_MustHaveLeastOneUpperCaseAttribute__ctor_System_String_
+  commentId: M:CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.#ctor(System.String)
+  fullName: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.MustHaveLeastOneUpperCaseAttribute(System.String)
+  nameWithType: MustHaveLeastOneUpperCaseAttribute.MustHaveLeastOneUpperCaseAttribute(String)
+- uid: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.#ctor*
+  name: MustHaveLeastOneUpperCaseAttribute
+  href: api/CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.html#CG_Green_Attributes_MustHaveLeastOneUpperCaseAttribute__ctor_
+  commentId: Overload:CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.#ctor
+  isSpec: "True"
+  fullName: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.MustHaveLeastOneUpperCaseAttribute
+  nameWithType: MustHaveLeastOneUpperCaseAttribute.MustHaveLeastOneUpperCaseAttribute
+- uid: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.IsValid(System.Object,ValidationContext)
+  name: IsValid(Object, ValidationContext)
+  href: api/CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.html#CG_Green_Attributes_MustHaveLeastOneUpperCaseAttribute_IsValid_System_Object_ValidationContext_
+  commentId: M:CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.IsValid(System.Object,ValidationContext)
+  fullName: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.IsValid(System.Object, ValidationContext)
+  nameWithType: MustHaveLeastOneUpperCaseAttribute.IsValid(Object, ValidationContext)
+- uid: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.IsValid*
+  name: IsValid
+  href: api/CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.html#CG_Green_Attributes_MustHaveLeastOneUpperCaseAttribute_IsValid_
+  commentId: Overload:CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.IsValid
+  isSpec: "True"
+  fullName: CG.Green.Attributes.MustHaveLeastOneUpperCaseAttribute.IsValid
+  nameWithType: MustHaveLeastOneUpperCaseAttribute.IsValid
 - uid: CG.Green.Data
   name: CG.Green.Data
   href: api/CG.Green.Data.html
@@ -3540,6 +3660,115 @@ references:
   commentId: T:CG.Green.Models.ApplicationUser
   fullName: CG.Green.Models.ApplicationUser
   nameWithType: ApplicationUser
+- uid: CG.Green.Models.ApplicationUserExtensions
+  name: ApplicationUserExtensions
+  href: api/CG.Green.Models.ApplicationUserExtensions.html
+  commentId: T:CG.Green.Models.ApplicationUserExtensions
+  fullName: CG.Green.Models.ApplicationUserExtensions
+  nameWithType: ApplicationUserExtensions
+- uid: CG.Green.Models.ApplicationUserExtensions.SafeEmail(CG.Green.Models.ApplicationUser)
+  name: SafeEmail(ApplicationUser)
+  href: api/CG.Green.Models.ApplicationUserExtensions.html#CG_Green_Models_ApplicationUserExtensions_SafeEmail_CG_Green_Models_ApplicationUser_
+  commentId: M:CG.Green.Models.ApplicationUserExtensions.SafeEmail(CG.Green.Models.ApplicationUser)
+  fullName: CG.Green.Models.ApplicationUserExtensions.SafeEmail(CG.Green.Models.ApplicationUser)
+  nameWithType: ApplicationUserExtensions.SafeEmail(ApplicationUser)
+- uid: CG.Green.Models.ApplicationUserExtensions.SafeEmail*
+  name: SafeEmail
+  href: api/CG.Green.Models.ApplicationUserExtensions.html#CG_Green_Models_ApplicationUserExtensions_SafeEmail_
+  commentId: Overload:CG.Green.Models.ApplicationUserExtensions.SafeEmail
+  isSpec: "True"
+  fullName: CG.Green.Models.ApplicationUserExtensions.SafeEmail
+  nameWithType: ApplicationUserExtensions.SafeEmail
+- uid: CG.Green.Models.ApplicationUserExtensions.SafeUserName(CG.Green.Models.ApplicationUser)
+  name: SafeUserName(ApplicationUser)
+  href: api/CG.Green.Models.ApplicationUserExtensions.html#CG_Green_Models_ApplicationUserExtensions_SafeUserName_CG_Green_Models_ApplicationUser_
+  commentId: M:CG.Green.Models.ApplicationUserExtensions.SafeUserName(CG.Green.Models.ApplicationUser)
+  fullName: CG.Green.Models.ApplicationUserExtensions.SafeUserName(CG.Green.Models.ApplicationUser)
+  nameWithType: ApplicationUserExtensions.SafeUserName(ApplicationUser)
+- uid: CG.Green.Models.ApplicationUserExtensions.SafeUserName*
+  name: SafeUserName
+  href: api/CG.Green.Models.ApplicationUserExtensions.html#CG_Green_Models_ApplicationUserExtensions_SafeUserName_
+  commentId: Overload:CG.Green.Models.ApplicationUserExtensions.SafeUserName
+  isSpec: "True"
+  fullName: CG.Green.Models.ApplicationUserExtensions.SafeUserName
+  nameWithType: ApplicationUserExtensions.SafeUserName
+- uid: CG.Green.Models.ChangePassword
+  name: ChangePassword
+  href: api/CG.Green.Models.ChangePassword.html
+  commentId: T:CG.Green.Models.ChangePassword
+  fullName: CG.Green.Models.ChangePassword
+  nameWithType: ChangePassword
+- uid: CG.Green.Models.ChangePassword.ConfirmPassword
+  name: ConfirmPassword
+  href: api/CG.Green.Models.ChangePassword.html#CG_Green_Models_ChangePassword_ConfirmPassword
+  commentId: P:CG.Green.Models.ChangePassword.ConfirmPassword
+  fullName: CG.Green.Models.ChangePassword.ConfirmPassword
+  nameWithType: ChangePassword.ConfirmPassword
+- uid: CG.Green.Models.ChangePassword.ConfirmPassword*
+  name: ConfirmPassword
+  href: api/CG.Green.Models.ChangePassword.html#CG_Green_Models_ChangePassword_ConfirmPassword_
+  commentId: Overload:CG.Green.Models.ChangePassword.ConfirmPassword
+  isSpec: "True"
+  fullName: CG.Green.Models.ChangePassword.ConfirmPassword
+  nameWithType: ChangePassword.ConfirmPassword
+- uid: CG.Green.Models.ChangePassword.CurrentPassword
+  name: CurrentPassword
+  href: api/CG.Green.Models.ChangePassword.html#CG_Green_Models_ChangePassword_CurrentPassword
+  commentId: P:CG.Green.Models.ChangePassword.CurrentPassword
+  fullName: CG.Green.Models.ChangePassword.CurrentPassword
+  nameWithType: ChangePassword.CurrentPassword
+- uid: CG.Green.Models.ChangePassword.CurrentPassword*
+  name: CurrentPassword
+  href: api/CG.Green.Models.ChangePassword.html#CG_Green_Models_ChangePassword_CurrentPassword_
+  commentId: Overload:CG.Green.Models.ChangePassword.CurrentPassword
+  isSpec: "True"
+  fullName: CG.Green.Models.ChangePassword.CurrentPassword
+  nameWithType: ChangePassword.CurrentPassword
+- uid: CG.Green.Models.ChangePassword.NewPassword
+  name: NewPassword
+  href: api/CG.Green.Models.ChangePassword.html#CG_Green_Models_ChangePassword_NewPassword
+  commentId: P:CG.Green.Models.ChangePassword.NewPassword
+  fullName: CG.Green.Models.ChangePassword.NewPassword
+  nameWithType: ChangePassword.NewPassword
+- uid: CG.Green.Models.ChangePassword.NewPassword*
+  name: NewPassword
+  href: api/CG.Green.Models.ChangePassword.html#CG_Green_Models_ChangePassword_NewPassword_
+  commentId: Overload:CG.Green.Models.ChangePassword.NewPassword
+  isSpec: "True"
+  fullName: CG.Green.Models.ChangePassword.NewPassword
+  nameWithType: ChangePassword.NewPassword
+- uid: CG.Green.Models.ChangePassword.User
+  name: User
+  href: api/CG.Green.Models.ChangePassword.html#CG_Green_Models_ChangePassword_User
+  commentId: P:CG.Green.Models.ChangePassword.User
+  fullName: CG.Green.Models.ChangePassword.User
+  nameWithType: ChangePassword.User
+- uid: CG.Green.Models.ChangePassword.User*
+  name: User
+  href: api/CG.Green.Models.ChangePassword.html#CG_Green_Models_ChangePassword_User_
+  commentId: Overload:CG.Green.Models.ChangePassword.User
+  isSpec: "True"
+  fullName: CG.Green.Models.ChangePassword.User
+  nameWithType: ChangePassword.User
+- uid: CG.Green.Models.NewApplicationUser
+  name: NewApplicationUser
+  href: api/CG.Green.Models.NewApplicationUser.html
+  commentId: T:CG.Green.Models.NewApplicationUser
+  fullName: CG.Green.Models.NewApplicationUser
+  nameWithType: NewApplicationUser
+- uid: CG.Green.Models.NewApplicationUser.Password
+  name: Password
+  href: api/CG.Green.Models.NewApplicationUser.html#CG_Green_Models_NewApplicationUser_Password
+  commentId: P:CG.Green.Models.NewApplicationUser.Password
+  fullName: CG.Green.Models.NewApplicationUser.Password
+  nameWithType: NewApplicationUser.Password
+- uid: CG.Green.Models.NewApplicationUser.Password*
+  name: Password
+  href: api/CG.Green.Models.NewApplicationUser.html#CG_Green_Models_NewApplicationUser_Password_
+  commentId: Overload:CG.Green.Models.NewApplicationUser.Password
+  isSpec: "True"
+  fullName: CG.Green.Models.NewApplicationUser.Password
+  nameWithType: NewApplicationUser.Password
 - uid: CG.Green.Options
   name: CG.Green.Options
   href: api/CG.Green.Options.html
@@ -3636,12 +3865,576 @@ references:
   isSpec: "True"
   fullName: CG.Green.Options.SeedingOptions.SeedOnStartup
   nameWithType: SeedingOptions.SeedOnStartup
+- uid: CG.Green.Options.UserRoleOptions
+  name: UserRoleOptions
+  href: api/CG.Green.Options.UserRoleOptions.html
+  commentId: T:CG.Green.Options.UserRoleOptions
+  fullName: CG.Green.Options.UserRoleOptions
+  nameWithType: UserRoleOptions
+- uid: CG.Green.Options.UserRoleOptions.RoleNames
+  name: RoleNames
+  href: api/CG.Green.Options.UserRoleOptions.html#CG_Green_Options_UserRoleOptions_RoleNames
+  commentId: P:CG.Green.Options.UserRoleOptions.RoleNames
+  fullName: CG.Green.Options.UserRoleOptions.RoleNames
+  nameWithType: UserRoleOptions.RoleNames
+- uid: CG.Green.Options.UserRoleOptions.RoleNames*
+  name: RoleNames
+  href: api/CG.Green.Options.UserRoleOptions.html#CG_Green_Options_UserRoleOptions_RoleNames_
+  commentId: Overload:CG.Green.Options.UserRoleOptions.RoleNames
+  isSpec: "True"
+  fullName: CG.Green.Options.UserRoleOptions.RoleNames
+  nameWithType: UserRoleOptions.RoleNames
+- uid: CG.Green.Options.UserRoleOptions.UserEmail
+  name: UserEmail
+  href: api/CG.Green.Options.UserRoleOptions.html#CG_Green_Options_UserRoleOptions_UserEmail
+  commentId: P:CG.Green.Options.UserRoleOptions.UserEmail
+  fullName: CG.Green.Options.UserRoleOptions.UserEmail
+  nameWithType: UserRoleOptions.UserEmail
+- uid: CG.Green.Options.UserRoleOptions.UserEmail*
+  name: UserEmail
+  href: api/CG.Green.Options.UserRoleOptions.html#CG_Green_Options_UserRoleOptions_UserEmail_
+  commentId: Overload:CG.Green.Options.UserRoleOptions.UserEmail
+  isSpec: "True"
+  fullName: CG.Green.Options.UserRoleOptions.UserEmail
+  nameWithType: UserRoleOptions.UserEmail
 - uid: CG.Green.Pages
   name: CG.Green.Pages
   href: api/CG.Green.Pages.html
   commentId: N:CG.Green.Pages
   fullName: CG.Green.Pages
   nameWithType: CG.Green.Pages
+- uid: CG.Green.Pages.Admin.Users
+  name: CG.Green.Pages.Admin.Users
+  href: api/CG.Green.Pages.Admin.Users.html
+  commentId: N:CG.Green.Pages.Admin.Users
+  fullName: CG.Green.Pages.Admin.Users
+  nameWithType: CG.Green.Pages.Admin.Users
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog
+  name: ChangePasswordDialog
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html
+  commentId: T:CG.Green.Pages.Admin.Users.ChangePasswordDialog
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog
+  nameWithType: ChangePasswordDialog
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputConfirm
+  name: _passwordInputConfirm
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog__passwordInputConfirm
+  commentId: F:CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputConfirm
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputConfirm
+  nameWithType: ChangePasswordDialog._passwordInputConfirm
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputCurrent
+  name: _passwordInputCurrent
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog__passwordInputCurrent
+  commentId: F:CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputCurrent
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputCurrent
+  nameWithType: ChangePasswordDialog._passwordInputCurrent
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputIconConfirm
+  name: _passwordInputIconConfirm
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog__passwordInputIconConfirm
+  commentId: F:CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputIconConfirm
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputIconConfirm
+  nameWithType: ChangePasswordDialog._passwordInputIconConfirm
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputIconCurrent
+  name: _passwordInputIconCurrent
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog__passwordInputIconCurrent
+  commentId: F:CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputIconCurrent
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputIconCurrent
+  nameWithType: ChangePasswordDialog._passwordInputIconCurrent
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputIconNew
+  name: _passwordInputIconNew
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog__passwordInputIconNew
+  commentId: F:CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputIconNew
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputIconNew
+  nameWithType: ChangePasswordDialog._passwordInputIconNew
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputNew
+  name: _passwordInputNew
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog__passwordInputNew
+  commentId: F:CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputNew
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog._passwordInputNew
+  nameWithType: ChangePasswordDialog._passwordInputNew
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Cancel
+  name: Cancel()
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_Cancel
+  commentId: M:CG.Green.Pages.Admin.Users.ChangePasswordDialog.Cancel
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Cancel()
+  nameWithType: ChangePasswordDialog.Cancel()
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Cancel*
+  name: Cancel
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_Cancel_
+  commentId: Overload:CG.Green.Pages.Admin.Users.ChangePasswordDialog.Cancel
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Cancel
+  nameWithType: ChangePasswordDialog.Cancel
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Logger
+  name: Logger
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_Logger
+  commentId: P:CG.Green.Pages.Admin.Users.ChangePasswordDialog.Logger
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Logger
+  nameWithType: ChangePasswordDialog.Logger
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Logger*
+  name: Logger
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_Logger_
+  commentId: Overload:CG.Green.Pages.Admin.Users.ChangePasswordDialog.Logger
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Logger
+  nameWithType: ChangePasswordDialog.Logger
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Model
+  name: Model
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_Model
+  commentId: P:CG.Green.Pages.Admin.Users.ChangePasswordDialog.Model
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Model
+  nameWithType: ChangePasswordDialog.Model
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Model*
+  name: Model
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_Model_
+  commentId: Overload:CG.Green.Pages.Admin.Users.ChangePasswordDialog.Model
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.Model
+  nameWithType: ChangePasswordDialog.Model
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_MudDialog
+  commentId: P:CG.Green.Pages.Admin.Users.ChangePasswordDialog.MudDialog
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.MudDialog
+  nameWithType: ChangePasswordDialog.MudDialog
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_MudDialog_
+  commentId: Overload:CG.Green.Pages.Admin.Users.ChangePasswordDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.MudDialog
+  nameWithType: ChangePasswordDialog.MudDialog
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.OnValidSubmit(Microsoft.AspNetCore.Components.Forms.EditContext)
+  name: OnValidSubmit(EditContext)
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_OnValidSubmit_Microsoft_AspNetCore_Components_Forms_EditContext_
+  commentId: M:CG.Green.Pages.Admin.Users.ChangePasswordDialog.OnValidSubmit(Microsoft.AspNetCore.Components.Forms.EditContext)
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.OnValidSubmit(Microsoft.AspNetCore.Components.Forms.EditContext)
+  nameWithType: ChangePasswordDialog.OnValidSubmit(EditContext)
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.OnValidSubmit*
+  name: OnValidSubmit
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_OnValidSubmit_
+  commentId: Overload:CG.Green.Pages.Admin.Users.ChangePasswordDialog.OnValidSubmit
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.OnValidSubmit
+  nameWithType: ChangePasswordDialog.OnValidSubmit
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityConfirm
+  name: TogglePasswordVisibilityConfirm()
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_TogglePasswordVisibilityConfirm
+  commentId: M:CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityConfirm
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityConfirm()
+  nameWithType: ChangePasswordDialog.TogglePasswordVisibilityConfirm()
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityConfirm*
+  name: TogglePasswordVisibilityConfirm
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_TogglePasswordVisibilityConfirm_
+  commentId: Overload:CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityConfirm
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityConfirm
+  nameWithType: ChangePasswordDialog.TogglePasswordVisibilityConfirm
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityCurrent
+  name: TogglePasswordVisibilityCurrent()
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_TogglePasswordVisibilityCurrent
+  commentId: M:CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityCurrent
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityCurrent()
+  nameWithType: ChangePasswordDialog.TogglePasswordVisibilityCurrent()
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityCurrent*
+  name: TogglePasswordVisibilityCurrent
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_TogglePasswordVisibilityCurrent_
+  commentId: Overload:CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityCurrent
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityCurrent
+  nameWithType: ChangePasswordDialog.TogglePasswordVisibilityCurrent
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityNew
+  name: TogglePasswordVisibilityNew()
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_TogglePasswordVisibilityNew
+  commentId: M:CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityNew
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityNew()
+  nameWithType: ChangePasswordDialog.TogglePasswordVisibilityNew()
+- uid: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityNew*
+  name: TogglePasswordVisibilityNew
+  href: api/CG.Green.Pages.Admin.Users.ChangePasswordDialog.html#CG_Green_Pages_Admin_Users_ChangePasswordDialog_TogglePasswordVisibilityNew_
+  commentId: Overload:CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityNew
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.ChangePasswordDialog.TogglePasswordVisibilityNew
+  nameWithType: ChangePasswordDialog.TogglePasswordVisibilityNew
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog
+  name: EditUserDialog
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html
+  commentId: T:CG.Green.Pages.Admin.Users.EditUserDialog
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog
+  nameWithType: EditUserDialog
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.Cancel
+  name: Cancel()
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_Cancel
+  commentId: M:CG.Green.Pages.Admin.Users.EditUserDialog.Cancel
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.Cancel()
+  nameWithType: EditUserDialog.Cancel()
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.Cancel*
+  name: Cancel
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_Cancel_
+  commentId: Overload:CG.Green.Pages.Admin.Users.EditUserDialog.Cancel
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.Cancel
+  nameWithType: EditUserDialog.Cancel
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.DialogService
+  name: DialogService
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_DialogService
+  commentId: P:CG.Green.Pages.Admin.Users.EditUserDialog.DialogService
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.DialogService
+  nameWithType: EditUserDialog.DialogService
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.DialogService*
+  name: DialogService
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_DialogService_
+  commentId: Overload:CG.Green.Pages.Admin.Users.EditUserDialog.DialogService
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.DialogService
+  nameWithType: EditUserDialog.DialogService
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.Logger
+  name: Logger
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_Logger
+  commentId: P:CG.Green.Pages.Admin.Users.EditUserDialog.Logger
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.Logger
+  nameWithType: EditUserDialog.Logger
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.Logger*
+  name: Logger
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_Logger_
+  commentId: Overload:CG.Green.Pages.Admin.Users.EditUserDialog.Logger
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.Logger
+  nameWithType: EditUserDialog.Logger
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.Model
+  name: Model
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_Model
+  commentId: P:CG.Green.Pages.Admin.Users.EditUserDialog.Model
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.Model
+  nameWithType: EditUserDialog.Model
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.Model*
+  name: Model
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_Model_
+  commentId: Overload:CG.Green.Pages.Admin.Users.EditUserDialog.Model
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.Model
+  nameWithType: EditUserDialog.Model
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_MudDialog
+  commentId: P:CG.Green.Pages.Admin.Users.EditUserDialog.MudDialog
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.MudDialog
+  nameWithType: EditUserDialog.MudDialog
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_MudDialog_
+  commentId: Overload:CG.Green.Pages.Admin.Users.EditUserDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.MudDialog
+  nameWithType: EditUserDialog.MudDialog
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.OnChangePasswordAsync
+  name: OnChangePasswordAsync()
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_OnChangePasswordAsync
+  commentId: M:CG.Green.Pages.Admin.Users.EditUserDialog.OnChangePasswordAsync
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.OnChangePasswordAsync()
+  nameWithType: EditUserDialog.OnChangePasswordAsync()
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.OnChangePasswordAsync*
+  name: OnChangePasswordAsync
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_OnChangePasswordAsync_
+  commentId: Overload:CG.Green.Pages.Admin.Users.EditUserDialog.OnChangePasswordAsync
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.OnChangePasswordAsync
+  nameWithType: EditUserDialog.OnChangePasswordAsync
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.OnValidSubmit(Microsoft.AspNetCore.Components.Forms.EditContext)
+  name: OnValidSubmit(EditContext)
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_OnValidSubmit_Microsoft_AspNetCore_Components_Forms_EditContext_
+  commentId: M:CG.Green.Pages.Admin.Users.EditUserDialog.OnValidSubmit(Microsoft.AspNetCore.Components.Forms.EditContext)
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.OnValidSubmit(Microsoft.AspNetCore.Components.Forms.EditContext)
+  nameWithType: EditUserDialog.OnValidSubmit(EditContext)
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.OnValidSubmit*
+  name: OnValidSubmit
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_OnValidSubmit_
+  commentId: Overload:CG.Green.Pages.Admin.Users.EditUserDialog.OnValidSubmit
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.OnValidSubmit
+  nameWithType: EditUserDialog.OnValidSubmit
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.SnackbarService
+  name: SnackbarService
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_SnackbarService
+  commentId: P:CG.Green.Pages.Admin.Users.EditUserDialog.SnackbarService
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.SnackbarService
+  nameWithType: EditUserDialog.SnackbarService
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_SnackbarService_
+  commentId: Overload:CG.Green.Pages.Admin.Users.EditUserDialog.SnackbarService
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.SnackbarService
+  nameWithType: EditUserDialog.SnackbarService
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.UserManager
+  name: UserManager
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_UserManager
+  commentId: P:CG.Green.Pages.Admin.Users.EditUserDialog.UserManager
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.UserManager
+  nameWithType: EditUserDialog.UserManager
+- uid: CG.Green.Pages.Admin.Users.EditUserDialog.UserManager*
+  name: UserManager
+  href: api/CG.Green.Pages.Admin.Users.EditUserDialog.html#CG_Green_Pages_Admin_Users_EditUserDialog_UserManager_
+  commentId: Overload:CG.Green.Pages.Admin.Users.EditUserDialog.UserManager
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.EditUserDialog.UserManager
+  nameWithType: EditUserDialog.UserManager
+- uid: CG.Green.Pages.Admin.Users.Index
+  name: Index
+  href: api/CG.Green.Pages.Admin.Users.Index.html
+  commentId: T:CG.Green.Pages.Admin.Users.Index
+  fullName: CG.Green.Pages.Admin.Users.Index
+  nameWithType: Index
+- uid: CG.Green.Pages.Admin.Users.Index._crumbs
+  name: _crumbs
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index__crumbs
+  commentId: F:CG.Green.Pages.Admin.Users.Index._crumbs
+  fullName: CG.Green.Pages.Admin.Users.Index._crumbs
+  nameWithType: Index._crumbs
+- uid: CG.Green.Pages.Admin.Users.Index._gridSearchString
+  name: _gridSearchString
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index__gridSearchString
+  commentId: F:CG.Green.Pages.Admin.Users.Index._gridSearchString
+  fullName: CG.Green.Pages.Admin.Users.Index._gridSearchString
+  nameWithType: Index._gridSearchString
+- uid: CG.Green.Pages.Admin.Users.Index.DialogService
+  name: DialogService
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_DialogService
+  commentId: P:CG.Green.Pages.Admin.Users.Index.DialogService
+  fullName: CG.Green.Pages.Admin.Users.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Green.Pages.Admin.Users.Index.DialogService*
+  name: DialogService
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_DialogService_
+  commentId: Overload:CG.Green.Pages.Admin.Users.Index.DialogService
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.Index.DialogService
+  nameWithType: Index.DialogService
+- uid: CG.Green.Pages.Admin.Users.Index.FilterFunc(ApplicationUser,System.String)
+  name: FilterFunc(ApplicationUser, String)
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_FilterFunc_ApplicationUser_System_String_
+  commentId: M:CG.Green.Pages.Admin.Users.Index.FilterFunc(ApplicationUser,System.String)
+  fullName: CG.Green.Pages.Admin.Users.Index.FilterFunc(ApplicationUser, System.String)
+  nameWithType: Index.FilterFunc(ApplicationUser, String)
+- uid: CG.Green.Pages.Admin.Users.Index.FilterFunc*
+  name: FilterFunc
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_FilterFunc_
+  commentId: Overload:CG.Green.Pages.Admin.Users.Index.FilterFunc
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.Index.FilterFunc
+  nameWithType: Index.FilterFunc
+- uid: CG.Green.Pages.Admin.Users.Index.FilterFunc1(ApplicationUser)
+  name: FilterFunc1(ApplicationUser)
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_FilterFunc1_ApplicationUser_
+  commentId: M:CG.Green.Pages.Admin.Users.Index.FilterFunc1(ApplicationUser)
+  fullName: CG.Green.Pages.Admin.Users.Index.FilterFunc1(ApplicationUser)
+  nameWithType: Index.FilterFunc1(ApplicationUser)
+- uid: CG.Green.Pages.Admin.Users.Index.FilterFunc1*
+  name: FilterFunc1
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_FilterFunc1_
+  commentId: Overload:CG.Green.Pages.Admin.Users.Index.FilterFunc1
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.Index.FilterFunc1
+  nameWithType: Index.FilterFunc1
+- uid: CG.Green.Pages.Admin.Users.Index.Logger
+  name: Logger
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_Logger
+  commentId: P:CG.Green.Pages.Admin.Users.Index.Logger
+  fullName: CG.Green.Pages.Admin.Users.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Green.Pages.Admin.Users.Index.Logger*
+  name: Logger
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_Logger_
+  commentId: Overload:CG.Green.Pages.Admin.Users.Index.Logger
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.Index.Logger
+  nameWithType: Index.Logger
+- uid: CG.Green.Pages.Admin.Users.Index.OnCreateAsync
+  name: OnCreateAsync()
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_OnCreateAsync
+  commentId: M:CG.Green.Pages.Admin.Users.Index.OnCreateAsync
+  fullName: CG.Green.Pages.Admin.Users.Index.OnCreateAsync()
+  nameWithType: Index.OnCreateAsync()
+- uid: CG.Green.Pages.Admin.Users.Index.OnCreateAsync*
+  name: OnCreateAsync
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_OnCreateAsync_
+  commentId: Overload:CG.Green.Pages.Admin.Users.Index.OnCreateAsync
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.Index.OnCreateAsync
+  nameWithType: Index.OnCreateAsync
+- uid: CG.Green.Pages.Admin.Users.Index.OnDeleteAsync(ApplicationUser)
+  name: OnDeleteAsync(ApplicationUser)
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_OnDeleteAsync_ApplicationUser_
+  commentId: M:CG.Green.Pages.Admin.Users.Index.OnDeleteAsync(ApplicationUser)
+  fullName: CG.Green.Pages.Admin.Users.Index.OnDeleteAsync(ApplicationUser)
+  nameWithType: Index.OnDeleteAsync(ApplicationUser)
+- uid: CG.Green.Pages.Admin.Users.Index.OnDeleteAsync*
+  name: OnDeleteAsync
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_OnDeleteAsync_
+  commentId: Overload:CG.Green.Pages.Admin.Users.Index.OnDeleteAsync
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.Index.OnDeleteAsync
+  nameWithType: Index.OnDeleteAsync
+- uid: CG.Green.Pages.Admin.Users.Index.OnEditAsync(ApplicationUser)
+  name: OnEditAsync(ApplicationUser)
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_OnEditAsync_ApplicationUser_
+  commentId: M:CG.Green.Pages.Admin.Users.Index.OnEditAsync(ApplicationUser)
+  fullName: CG.Green.Pages.Admin.Users.Index.OnEditAsync(ApplicationUser)
+  nameWithType: Index.OnEditAsync(ApplicationUser)
+- uid: CG.Green.Pages.Admin.Users.Index.OnEditAsync*
+  name: OnEditAsync
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_OnEditAsync_
+  commentId: Overload:CG.Green.Pages.Admin.Users.Index.OnEditAsync
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.Index.OnEditAsync
+  nameWithType: Index.OnEditAsync
+- uid: CG.Green.Pages.Admin.Users.Index.SnackbarService
+  name: SnackbarService
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_SnackbarService
+  commentId: P:CG.Green.Pages.Admin.Users.Index.SnackbarService
+  fullName: CG.Green.Pages.Admin.Users.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Green.Pages.Admin.Users.Index.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_SnackbarService_
+  commentId: Overload:CG.Green.Pages.Admin.Users.Index.SnackbarService
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.Index.SnackbarService
+  nameWithType: Index.SnackbarService
+- uid: CG.Green.Pages.Admin.Users.Index.UserManager
+  name: UserManager
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_UserManager
+  commentId: P:CG.Green.Pages.Admin.Users.Index.UserManager
+  fullName: CG.Green.Pages.Admin.Users.Index.UserManager
+  nameWithType: Index.UserManager
+- uid: CG.Green.Pages.Admin.Users.Index.UserManager*
+  name: UserManager
+  href: api/CG.Green.Pages.Admin.Users.Index.html#CG_Green_Pages_Admin_Users_Index_UserManager_
+  commentId: Overload:CG.Green.Pages.Admin.Users.Index.UserManager
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.Index.UserManager
+  nameWithType: Index.UserManager
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog
+  name: NewUserDialog
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html
+  commentId: T:CG.Green.Pages.Admin.Users.NewUserDialog
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog
+  nameWithType: NewUserDialog
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog._passwordInput
+  name: _passwordInput
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog__passwordInput
+  commentId: F:CG.Green.Pages.Admin.Users.NewUserDialog._passwordInput
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog._passwordInput
+  nameWithType: NewUserDialog._passwordInput
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog._passwordInputIcon
+  name: _passwordInputIcon
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog__passwordInputIcon
+  commentId: F:CG.Green.Pages.Admin.Users.NewUserDialog._passwordInputIcon
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog._passwordInputIcon
+  nameWithType: NewUserDialog._passwordInputIcon
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.Cancel
+  name: Cancel()
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_Cancel
+  commentId: M:CG.Green.Pages.Admin.Users.NewUserDialog.Cancel
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.Cancel()
+  nameWithType: NewUserDialog.Cancel()
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.Cancel*
+  name: Cancel
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_Cancel_
+  commentId: Overload:CG.Green.Pages.Admin.Users.NewUserDialog.Cancel
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.Cancel
+  nameWithType: NewUserDialog.Cancel
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.DialogService
+  name: DialogService
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_DialogService
+  commentId: P:CG.Green.Pages.Admin.Users.NewUserDialog.DialogService
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.DialogService
+  nameWithType: NewUserDialog.DialogService
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.DialogService*
+  name: DialogService
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_DialogService_
+  commentId: Overload:CG.Green.Pages.Admin.Users.NewUserDialog.DialogService
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.DialogService
+  nameWithType: NewUserDialog.DialogService
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.Logger
+  name: Logger
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_Logger
+  commentId: P:CG.Green.Pages.Admin.Users.NewUserDialog.Logger
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.Logger
+  nameWithType: NewUserDialog.Logger
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.Logger*
+  name: Logger
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_Logger_
+  commentId: Overload:CG.Green.Pages.Admin.Users.NewUserDialog.Logger
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.Logger
+  nameWithType: NewUserDialog.Logger
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.Model
+  name: Model
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_Model
+  commentId: P:CG.Green.Pages.Admin.Users.NewUserDialog.Model
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.Model
+  nameWithType: NewUserDialog.Model
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.Model*
+  name: Model
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_Model_
+  commentId: Overload:CG.Green.Pages.Admin.Users.NewUserDialog.Model
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.Model
+  nameWithType: NewUserDialog.Model
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.MudDialog
+  name: MudDialog
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_MudDialog
+  commentId: P:CG.Green.Pages.Admin.Users.NewUserDialog.MudDialog
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.MudDialog
+  nameWithType: NewUserDialog.MudDialog
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.MudDialog*
+  name: MudDialog
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_MudDialog_
+  commentId: Overload:CG.Green.Pages.Admin.Users.NewUserDialog.MudDialog
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.MudDialog
+  nameWithType: NewUserDialog.MudDialog
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.OnValidSubmit(Microsoft.AspNetCore.Components.Forms.EditContext)
+  name: OnValidSubmit(EditContext)
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_OnValidSubmit_Microsoft_AspNetCore_Components_Forms_EditContext_
+  commentId: M:CG.Green.Pages.Admin.Users.NewUserDialog.OnValidSubmit(Microsoft.AspNetCore.Components.Forms.EditContext)
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.OnValidSubmit(Microsoft.AspNetCore.Components.Forms.EditContext)
+  nameWithType: NewUserDialog.OnValidSubmit(EditContext)
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.OnValidSubmit*
+  name: OnValidSubmit
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_OnValidSubmit_
+  commentId: Overload:CG.Green.Pages.Admin.Users.NewUserDialog.OnValidSubmit
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.OnValidSubmit
+  nameWithType: NewUserDialog.OnValidSubmit
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.SnackbarService
+  name: SnackbarService
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_SnackbarService
+  commentId: P:CG.Green.Pages.Admin.Users.NewUserDialog.SnackbarService
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.SnackbarService
+  nameWithType: NewUserDialog.SnackbarService
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.SnackbarService*
+  name: SnackbarService
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_SnackbarService_
+  commentId: Overload:CG.Green.Pages.Admin.Users.NewUserDialog.SnackbarService
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.SnackbarService
+  nameWithType: NewUserDialog.SnackbarService
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.TogglePasswordVisibility
+  name: TogglePasswordVisibility()
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_TogglePasswordVisibility
+  commentId: M:CG.Green.Pages.Admin.Users.NewUserDialog.TogglePasswordVisibility
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.TogglePasswordVisibility()
+  nameWithType: NewUserDialog.TogglePasswordVisibility()
+- uid: CG.Green.Pages.Admin.Users.NewUserDialog.TogglePasswordVisibility*
+  name: TogglePasswordVisibility
+  href: api/CG.Green.Pages.Admin.Users.NewUserDialog.html#CG_Green_Pages_Admin_Users_NewUserDialog_TogglePasswordVisibility_
+  commentId: Overload:CG.Green.Pages.Admin.Users.NewUserDialog.TogglePasswordVisibility
+  isSpec: "True"
+  fullName: CG.Green.Pages.Admin.Users.NewUserDialog.TogglePasswordVisibility
+  nameWithType: NewUserDialog.TogglePasswordVisibility
 - uid: CG.Green.Pages.ErrorModel
   name: ErrorModel
   href: api/CG.Green.Pages.ErrorModel.html
@@ -3721,15 +4514,15 @@ references:
   commentId: T:CG.Green.Services.SeedingService
   fullName: CG.Green.Services.SeedingService
   nameWithType: SeedingService
-- uid: CG.Green.Services.SeedingService.#ctor(IDbContextFactory{ApplicationDbContext},IDbContextFactory{ConfigurationDbContext},IDbContextFactory{PersistedGrantDbContext},SignInManager{ApplicationUser},ILogger{CG.Green.Services.SeedingService})
-  name: SeedingService(IDbContextFactory<ApplicationDbContext>, IDbContextFactory<ConfigurationDbContext>, IDbContextFactory<PersistedGrantDbContext>, SignInManager<ApplicationUser>, ILogger<SeedingService>)
-  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__ctor_IDbContextFactory_ApplicationDbContext__IDbContextFactory_ConfigurationDbContext__IDbContextFactory_PersistedGrantDbContext__SignInManager_ApplicationUser__ILogger_CG_Green_Services_SeedingService__
-  commentId: M:CG.Green.Services.SeedingService.#ctor(IDbContextFactory{ApplicationDbContext},IDbContextFactory{ConfigurationDbContext},IDbContextFactory{PersistedGrantDbContext},SignInManager{ApplicationUser},ILogger{CG.Green.Services.SeedingService})
-  name.vb: SeedingService(IDbContextFactory(Of ApplicationDbContext), IDbContextFactory(Of ConfigurationDbContext), IDbContextFactory(Of PersistedGrantDbContext), SignInManager(Of ApplicationUser), ILogger(Of SeedingService))
-  fullName: CG.Green.Services.SeedingService.SeedingService(IDbContextFactory<ApplicationDbContext>, IDbContextFactory<ConfigurationDbContext>, IDbContextFactory<PersistedGrantDbContext>, SignInManager<ApplicationUser>, ILogger<CG.Green.Services.SeedingService>)
-  fullName.vb: CG.Green.Services.SeedingService.SeedingService(IDbContextFactory(Of ApplicationDbContext), IDbContextFactory(Of ConfigurationDbContext), IDbContextFactory(Of PersistedGrantDbContext), SignInManager(Of ApplicationUser), ILogger(Of CG.Green.Services.SeedingService))
-  nameWithType: SeedingService.SeedingService(IDbContextFactory<ApplicationDbContext>, IDbContextFactory<ConfigurationDbContext>, IDbContextFactory<PersistedGrantDbContext>, SignInManager<ApplicationUser>, ILogger<SeedingService>)
-  nameWithType.vb: SeedingService.SeedingService(IDbContextFactory(Of ApplicationDbContext), IDbContextFactory(Of ConfigurationDbContext), IDbContextFactory(Of PersistedGrantDbContext), SignInManager(Of ApplicationUser), ILogger(Of SeedingService))
+- uid: CG.Green.Services.SeedingService.#ctor(IDbContextFactory{ApplicationDbContext},IDbContextFactory{ConfigurationDbContext},IDbContextFactory{PersistedGrantDbContext},SignInManager{ApplicationUser},RoleManager{IdentityRole},ILogger{CG.Green.Services.SeedingService})
+  name: SeedingService(IDbContextFactory<ApplicationDbContext>, IDbContextFactory<ConfigurationDbContext>, IDbContextFactory<PersistedGrantDbContext>, SignInManager<ApplicationUser>, RoleManager<IdentityRole>, ILogger<SeedingService>)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__ctor_IDbContextFactory_ApplicationDbContext__IDbContextFactory_ConfigurationDbContext__IDbContextFactory_PersistedGrantDbContext__SignInManager_ApplicationUser__RoleManager_IdentityRole__ILogger_CG_Green_Services_SeedingService__
+  commentId: M:CG.Green.Services.SeedingService.#ctor(IDbContextFactory{ApplicationDbContext},IDbContextFactory{ConfigurationDbContext},IDbContextFactory{PersistedGrantDbContext},SignInManager{ApplicationUser},RoleManager{IdentityRole},ILogger{CG.Green.Services.SeedingService})
+  name.vb: SeedingService(IDbContextFactory(Of ApplicationDbContext), IDbContextFactory(Of ConfigurationDbContext), IDbContextFactory(Of PersistedGrantDbContext), SignInManager(Of ApplicationUser), RoleManager(Of IdentityRole), ILogger(Of SeedingService))
+  fullName: CG.Green.Services.SeedingService.SeedingService(IDbContextFactory<ApplicationDbContext>, IDbContextFactory<ConfigurationDbContext>, IDbContextFactory<PersistedGrantDbContext>, SignInManager<ApplicationUser>, RoleManager<IdentityRole>, ILogger<CG.Green.Services.SeedingService>)
+  fullName.vb: CG.Green.Services.SeedingService.SeedingService(IDbContextFactory(Of ApplicationDbContext), IDbContextFactory(Of ConfigurationDbContext), IDbContextFactory(Of PersistedGrantDbContext), SignInManager(Of ApplicationUser), RoleManager(Of IdentityRole), ILogger(Of CG.Green.Services.SeedingService))
+  nameWithType: SeedingService.SeedingService(IDbContextFactory<ApplicationDbContext>, IDbContextFactory<ConfigurationDbContext>, IDbContextFactory<PersistedGrantDbContext>, SignInManager<ApplicationUser>, RoleManager<IdentityRole>, ILogger<SeedingService>)
+  nameWithType.vb: SeedingService.SeedingService(IDbContextFactory(Of ApplicationDbContext), IDbContextFactory(Of ConfigurationDbContext), IDbContextFactory(Of PersistedGrantDbContext), SignInManager(Of ApplicationUser), RoleManager(Of IdentityRole), ILogger(Of SeedingService))
 - uid: CG.Green.Services.SeedingService.#ctor*
   name: SeedingService
   href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__ctor_
@@ -3761,12 +4554,62 @@ references:
   commentId: F:CG.Green.Services.SeedingService._persistedGrantDbFactory
   fullName: CG.Green.Services.SeedingService._persistedGrantDbFactory
   nameWithType: SeedingService._persistedGrantDbFactory
+- uid: CG.Green.Services.SeedingService._roleManager
+  name: _roleManager
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__roleManager
+  commentId: F:CG.Green.Services.SeedingService._roleManager
+  fullName: CG.Green.Services.SeedingService._roleManager
+  nameWithType: SeedingService._roleManager
 - uid: CG.Green.Services.SeedingService._signInManager
   name: _signInManager
   href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService__signInManager
   commentId: F:CG.Green.Services.SeedingService._signInManager
   fullName: CG.Green.Services.SeedingService._signInManager
   nameWithType: SeedingService._signInManager
+- uid: CG.Green.Services.SeedingService.SeedAspNetRolesAsync(IConfiguration,System.Boolean,CancellationToken)
+  name: SeedAspNetRolesAsync(IConfiguration, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetRolesAsync_IConfiguration_System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedAspNetRolesAsync(IConfiguration,System.Boolean,CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedAspNetRolesAsync(IConfiguration, System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedAspNetRolesAsync(IConfiguration, Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedAspNetRolesAsync(IEnumerable{IdentityRole},System.Boolean,CancellationToken)
+  name: SeedAspNetRolesAsync(IEnumerable<IdentityRole>, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetRolesAsync_IEnumerable_IdentityRole__System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedAspNetRolesAsync(IEnumerable{IdentityRole},System.Boolean,CancellationToken)
+  name.vb: SeedAspNetRolesAsync(IEnumerable(Of IdentityRole), Boolean, CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedAspNetRolesAsync(IEnumerable<IdentityRole>, System.Boolean, CancellationToken)
+  fullName.vb: CG.Green.Services.SeedingService.SeedAspNetRolesAsync(IEnumerable(Of IdentityRole), System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedAspNetRolesAsync(IEnumerable<IdentityRole>, Boolean, CancellationToken)
+  nameWithType.vb: SeedingService.SeedAspNetRolesAsync(IEnumerable(Of IdentityRole), Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedAspNetRolesAsync*
+  name: SeedAspNetRolesAsync
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetRolesAsync_
+  commentId: Overload:CG.Green.Services.SeedingService.SeedAspNetRolesAsync
+  isSpec: "True"
+  fullName: CG.Green.Services.SeedingService.SeedAspNetRolesAsync
+  nameWithType: SeedingService.SeedAspNetRolesAsync
+- uid: CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync(IConfiguration,System.Boolean,CancellationToken)
+  name: SeedAspNetUserRolesAsync(IConfiguration, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetUserRolesAsync_IConfiguration_System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync(IConfiguration,System.Boolean,CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync(IConfiguration, System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedAspNetUserRolesAsync(IConfiguration, Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync(IEnumerable{UserRoleOptions},System.Boolean,CancellationToken)
+  name: SeedAspNetUserRolesAsync(IEnumerable<UserRoleOptions>, Boolean, CancellationToken)
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetUserRolesAsync_IEnumerable_UserRoleOptions__System_Boolean_CancellationToken_
+  commentId: M:CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync(IEnumerable{UserRoleOptions},System.Boolean,CancellationToken)
+  name.vb: SeedAspNetUserRolesAsync(IEnumerable(Of UserRoleOptions), Boolean, CancellationToken)
+  fullName: CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync(IEnumerable<UserRoleOptions>, System.Boolean, CancellationToken)
+  fullName.vb: CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync(IEnumerable(Of UserRoleOptions), System.Boolean, CancellationToken)
+  nameWithType: SeedingService.SeedAspNetUserRolesAsync(IEnumerable<UserRoleOptions>, Boolean, CancellationToken)
+  nameWithType.vb: SeedingService.SeedAspNetUserRolesAsync(IEnumerable(Of UserRoleOptions), Boolean, CancellationToken)
+- uid: CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync*
+  name: SeedAspNetUserRolesAsync
+  href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetUserRolesAsync_
+  commentId: Overload:CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync
+  isSpec: "True"
+  fullName: CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync
+  nameWithType: SeedingService.SeedAspNetUserRolesAsync
 - uid: CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IConfiguration,System.Boolean,CancellationToken)
   name: SeedAspNetUsersAsync(IConfiguration, Boolean, CancellationToken)
   href: api/CG.Green.Services.SeedingService.html#CG_Green_Services_SeedingService_SeedAspNetUsersAsync_IConfiguration_System_Boolean_CancellationToken_

@@ -119,19 +119,19 @@
   <h6><strong>Assembly</strong>: CG.Green.dll</h6>
   <h5 id="CG_Green_Services_SeedingService_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SeedingService</code></pre>
+    <pre><code class="lang-csharp hljs">class SeedingService</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Green_Services_SeedingService__ctor_" data-uid="CG.Green.Services.SeedingService.#ctor*"></a>
-  <h4 id="CG_Green_Services_SeedingService__ctor_IDbContextFactory_ApplicationDbContext__IDbContextFactory_ConfigurationDbContext__IDbContextFactory_PersistedGrantDbContext__SignInManager_ApplicationUser__ILogger_CG_Green_Services_SeedingService__" data-uid="CG.Green.Services.SeedingService.#ctor(IDbContextFactory{ApplicationDbContext},IDbContextFactory{ConfigurationDbContext},IDbContextFactory{PersistedGrantDbContext},SignInManager{ApplicationUser},ILogger{CG.Green.Services.SeedingService})">SeedingService(IDbContextFactory&lt;ApplicationDbContext&gt;, IDbContextFactory&lt;ConfigurationDbContext&gt;, IDbContextFactory&lt;PersistedGrantDbContext&gt;, SignInManager&lt;ApplicationUser&gt;, ILogger&lt;SeedingService&gt;)</h4>
+  <h4 id="CG_Green_Services_SeedingService__ctor_IDbContextFactory_ApplicationDbContext__IDbContextFactory_ConfigurationDbContext__IDbContextFactory_PersistedGrantDbContext__SignInManager_ApplicationUser__RoleManager_IdentityRole__ILogger_CG_Green_Services_SeedingService__" data-uid="CG.Green.Services.SeedingService.#ctor(IDbContextFactory{ApplicationDbContext},IDbContextFactory{ConfigurationDbContext},IDbContextFactory{PersistedGrantDbContext},SignInManager{ApplicationUser},RoleManager{IdentityRole},ILogger{CG.Green.Services.SeedingService})">SeedingService(IDbContextFactory&lt;ApplicationDbContext&gt;, IDbContextFactory&lt;ConfigurationDbContext&gt;, IDbContextFactory&lt;PersistedGrantDbContext&gt;, SignInManager&lt;ApplicationUser&gt;, RoleManager&lt;IdentityRole&gt;, ILogger&lt;SeedingService&gt;)</h4>
   <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Green.Services.SeedingService.html">SeedingService</a>
 class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SeedingService(IDbContextFactory&lt;ApplicationDbContext&gt; applicationDbFactory, IDbContextFactory&lt;ConfigurationDbContext&gt; configurationDbFactory, IDbContextFactory&lt;PersistedGrantDbContext&gt; persistedGrantDbFactory, SignInManager&lt;ApplicationUser&gt; signInManager, ILogger&lt;SeedingService&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public SeedingService(IDbContextFactory&lt;ApplicationDbContext&gt; applicationDbFactory, IDbContextFactory&lt;ConfigurationDbContext&gt; configurationDbFactory, IDbContextFactory&lt;PersistedGrantDbContext&gt; persistedGrantDbFactory, SignInManager&lt;ApplicationUser&gt; signInManager, RoleManager&lt;IdentityRole&gt; roleManager, ILogger&lt;SeedingService&gt; logger)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -168,6 +168,13 @@ factory to use with this service.</p>
         <td><span class="xref">SignInManager</span>&lt;<span class="xref">ApplicationUser</span>&gt;</td>
         <td><span class="parametername">signInManager</span></td>
         <td><p>The ASP.NET sign in manager to use with
+this service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">RoleManager</span>&lt;<span class="xref">IdentityRole</span>&gt;</td>
+        <td><span class="parametername">roleManager</span></td>
+        <td><p>The ASP.NET userRole manager to use with
 this service.</p>
 </td>
       </tr>
@@ -275,6 +282,29 @@ service.</p>
       </tr>
     </tbody>
   </table>
+  <h4 id="CG_Green_Services_SeedingService__roleManager" data-uid="CG.Green.Services.SeedingService._roleManager">_roleManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the ASP.NET userRole manager for the service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly RoleManager&lt;IdentityRole&gt; _roleManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">RoleManager</span>&lt;<span class="xref">IdentityRole</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h4 id="CG_Green_Services_SeedingService__signInManager" data-uid="CG.Green.Services.SeedingService._signInManager">_signInManager</h4>
   <div class="markdown level1 summary"><p>This field contains the ASP.NET sign in manager for the service.</p>
 </div>
@@ -300,9 +330,248 @@ service.</p>
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="CG_Green_Services_SeedingService_SeedAspNetRolesAsync_" data-uid="CG.Green.Services.SeedingService.SeedAspNetRolesAsync*"></a>
+  <h4 id="CG_Green_Services_SeedingService_SeedAspNetRolesAsync_IConfiguration_System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedAspNetRolesAsync(IConfiguration,System.Boolean,CancellationToken)">SeedAspNetRolesAsync(IConfiguration, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method seeds the AspNetRoles table from the given <see cref="!:IConfiguration"></see>
+object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task SeedAspNetRolesAsync(IConfiguration configuration, bool force = false, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IConfiguration</span></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>The configuration to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Green_Services_SeedingService_SeedAspNetRolesAsync_" data-uid="CG.Green.Services.SeedingService.SeedAspNetRolesAsync*"></a>
+  <h4 id="CG_Green_Services_SeedingService_SeedAspNetRolesAsync_IEnumerable_IdentityRole__System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedAspNetRolesAsync(IEnumerable{IdentityRole},System.Boolean,CancellationToken)">SeedAspNetRolesAsync(IEnumerable&lt;IdentityRole&gt;, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sees the AspNetRoles table from the given collection of
+<see cref="!:IdentityRole"></see> objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task SeedAspNetRolesAsync(IEnumerable&lt;IdentityRole&gt; roles, bool force = false, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">IdentityRole</span>&gt;</td>
+        <td><span class="parametername">roles</span></td>
+        <td><p>The list of userRoles to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Green_Services_SeedingService_SeedAspNetUserRolesAsync_" data-uid="CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync*"></a>
+  <h4 id="CG_Green_Services_SeedingService_SeedAspNetUserRolesAsync_IConfiguration_System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync(IConfiguration,System.Boolean,CancellationToken)">SeedAspNetUserRolesAsync(IConfiguration, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method seeds the AspNetUserRoles table from the given <see cref="!:IConfiguration"></see>
+object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task SeedAspNetUserRolesAsync(IConfiguration configuration, bool force = false, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IConfiguration</span></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>The configuration to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Green_Services_SeedingService_SeedAspNetUserRolesAsync_" data-uid="CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync*"></a>
+  <h4 id="CG_Green_Services_SeedingService_SeedAspNetUserRolesAsync_IEnumerable_UserRoleOptions__System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedAspNetUserRolesAsync(IEnumerable{UserRoleOptions},System.Boolean,CancellationToken)">SeedAspNetUserRolesAsync(IEnumerable&lt;UserRoleOptions&gt;, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sees the AspNetUserRoles table from the given collection
+of <see cref="!:UserRoleOptions"></see> objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task SeedAspNetUserRolesAsync(IEnumerable&lt;UserRoleOptions&gt; userRoles, bool force = false, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">UserRoleOptions</span>&gt;</td>
+        <td><span class="parametername">userRoles</span></td>
+        <td><p>The list of user roles to use for the
+operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Green_Services_SeedingService_SeedAspNetUsersAsync_" data-uid="CG.Green.Services.SeedingService.SeedAspNetUsersAsync*"></a>
   <h4 id="CG_Green_Services_SeedingService_SeedAspNetUsersAsync_IConfiguration_System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IConfiguration,System.Boolean,CancellationToken)">SeedAspNetUsersAsync(IConfiguration, Boolean, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This method seeds the AspNetUsers table from the given <see cref="!:IConfiguration"></see>
+object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -321,17 +590,23 @@ service.</p>
       <tr>
         <td><span class="xref">IConfiguration</span></td>
         <td><span class="parametername">configuration</span></td>
-        <td></td>
+        <td><p>The configuration to use for the operation.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">force</span></td>
-        <td></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -346,13 +621,16 @@ service.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="CG_Green_Services_SeedingService_SeedAspNetUsersAsync_" data-uid="CG.Green.Services.SeedingService.SeedAspNetUsersAsync*"></a>
   <h4 id="CG_Green_Services_SeedingService_SeedAspNetUsersAsync_IEnumerable_ApplicationUser__System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedAspNetUsersAsync(IEnumerable{ApplicationUser},System.Boolean,CancellationToken)">SeedAspNetUsersAsync(IEnumerable&lt;ApplicationUser&gt;, Boolean, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This method sees the AspNetUsers table from the given collection of
+<see cref="!:ApplicationUser"></see> objects.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -371,17 +649,23 @@ service.</p>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">ApplicationUser</span>&gt;</td>
         <td><span class="parametername">users</span></td>
-        <td></td>
+        <td><p>The list of users to use for the operation.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">force</span></td>
-        <td></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -396,13 +680,16 @@ service.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="CG_Green_Services_SeedingService_SeedAsync_" data-uid="CG.Green.Services.SeedingService.SeedAsync*"></a>
   <h4 id="CG_Green_Services_SeedingService_SeedAsync_IEnumerable_System_String__System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedAsync(IEnumerable{System.String},System.Boolean,CancellationToken)">SeedAsync(IEnumerable&lt;String&gt;, Boolean, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This method performs a database seeding operation using the given
+set of JSON files, as input.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -421,17 +708,23 @@ service.</p>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">fileNames</span></td>
-        <td></td>
+        <td><p>The files to use for the operation.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">force</span></td>
-        <td></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -446,13 +739,16 @@ service.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="CG_Green_Services_SeedingService_SeedDuendeClientsAsyc_" data-uid="CG.Green.Services.SeedingService.SeedDuendeClientsAsyc*"></a>
   <h4 id="CG_Green_Services_SeedingService_SeedDuendeClientsAsyc_IEnumerable_Duende_IdentityServer_Models_Client__System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedDuendeClientsAsyc(IEnumerable{Duende.IdentityServer.Models.Client},System.Boolean,CancellationToken)">SeedDuendeClientsAsyc(IEnumerable&lt;Client&gt;, Boolean, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This method sees the Client table from the given collection of
+<span class="xref">Duende.IdentityServer.Models.Client</span> objects.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -471,17 +767,23 @@ service.</p>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Duende.IdentityServer.Models.Client</span>&gt;</td>
         <td><span class="parametername">clients</span></td>
-        <td></td>
+        <td><p>The list of clients to use for the operation.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">force</span></td>
-        <td></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -496,13 +798,16 @@ service.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="CG_Green_Services_SeedingService_SeedDuendeClientsAsync_" data-uid="CG.Green.Services.SeedingService.SeedDuendeClientsAsync*"></a>
   <h4 id="CG_Green_Services_SeedingService_SeedDuendeClientsAsync_IConfiguration_System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedDuendeClientsAsync(IConfiguration,System.Boolean,CancellationToken)">SeedDuendeClientsAsync(IConfiguration, Boolean, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This method seeds the clients table from the given <see cref="!:IConfiguration"></see>
+object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -521,17 +826,23 @@ service.</p>
       <tr>
         <td><span class="xref">IConfiguration</span></td>
         <td><span class="parametername">configuration</span></td>
-        <td></td>
+        <td><p>The configuration to use for the operation.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">force</span></td>
-        <td></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -546,13 +857,16 @@ service.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="CG_Green_Services_SeedingService_SeedDuendeIdentityResourcesAsyc_" data-uid="CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsyc*"></a>
   <h4 id="CG_Green_Services_SeedingService_SeedDuendeIdentityResourcesAsyc_IEnumerable_Duende_IdentityServer_Models_IdentityResource__System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsyc(IEnumerable{Duende.IdentityServer.Models.IdentityResource},System.Boolean,CancellationToken)">SeedDuendeIdentityResourcesAsyc(IEnumerable&lt;IdentityResource&gt;, Boolean, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This method sees the IdentityResources table from the given collection
+of <span class="xref">Duende.IdentityServer.Models.IdentityResource</span> objects.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -571,17 +885,24 @@ service.</p>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Duende.IdentityServer.Models.IdentityResource</span>&gt;</td>
         <td><span class="parametername">identityResources</span></td>
-        <td></td>
+        <td><p>The list of identity resources to use
+for the operation.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">force</span></td>
-        <td></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -596,13 +917,16 @@ service.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="CG_Green_Services_SeedingService_SeedDuendeIdentityResourcesAsync_" data-uid="CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsync*"></a>
   <h4 id="CG_Green_Services_SeedingService_SeedDuendeIdentityResourcesAsync_IConfiguration_System_Boolean_CancellationToken_" data-uid="CG.Green.Services.SeedingService.SeedDuendeIdentityResourcesAsync(IConfiguration,System.Boolean,CancellationToken)">SeedDuendeIdentityResourcesAsync(IConfiguration, Boolean, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This method seeds the IdentityResources table from the given <see cref="!:IConfiguration"></see>
+object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -621,17 +945,23 @@ service.</p>
       <tr>
         <td><span class="xref">IConfiguration</span></td>
         <td><span class="parametername">configuration</span></td>
-        <td></td>
+        <td><p>The configuration to use for the operation.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">force</span></td>
-        <td></td>
+        <td><p><code>true</code> to force the seeding operation to
+continue for tables that already have data in them, <code>false</code>
+to stop the seeding operation for those tables.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -646,7 +976,8 @@ service.</p>
     <tbody>
       <tr>
         <td><span class="xref">Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>

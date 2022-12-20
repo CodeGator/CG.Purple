@@ -83,71 +83,20 @@
   
   <h1 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1" class="text-break">Class RevalidatingIdentityAuthenticationStateProvider&lt;TUser&gt;
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>This class receive an authentication state from the host environment,
+and revalidates that state at regular intervals.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider</span></div>
-    <div class="level2"><span class="xref">Microsoft.AspNetCore.Components.Server.ServerAuthenticationStateProvider</span></div>
-    <div class="level3"><span class="xref">Microsoft.AspNetCore.Components.Server.RevalidatingServerAuthenticationStateProvider</span></div>
-    <div class="level4"><span class="xref">RevalidatingIdentityAuthenticationStateProvider&lt;TUser&gt;</span></div>
-  </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><span class="xref">Microsoft.AspNetCore.Components.Authorization.IHostEnvironmentAuthenticationStateProvider</span></div>
-    <div><span class="xref">System.IDisposable</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">Microsoft.AspNetCore.Components.Server.RevalidatingServerAuthenticationStateProvider.ValidateAuthenticationStateAsync(Microsoft.AspNetCore.Components.Authorization.AuthenticationState, System.Threading.CancellationToken)</span>
-    </div>
-    <div>
-      <span class="xref">Microsoft.AspNetCore.Components.Server.RevalidatingServerAuthenticationStateProvider.System.IDisposable.Dispose()</span>
-    </div>
-    <div>
-      <span class="xref">Microsoft.AspNetCore.Components.Server.RevalidatingServerAuthenticationStateProvider.Dispose(System.Boolean)</span>
-    </div>
-    <div>
-      <span class="xref">Microsoft.AspNetCore.Components.Server.ServerAuthenticationStateProvider.GetAuthenticationStateAsync()</span>
-    </div>
-    <div>
-      <span class="xref">Microsoft.AspNetCore.Components.Server.ServerAuthenticationStateProvider.SetAuthenticationState(System.Threading.Tasks.Task&lt;Microsoft.AspNetCore.Components.Authorization.AuthenticationState&gt;)</span>
-    </div>
-    <div>
-      <span class="xref">Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider.NotifyAuthenticationStateChanged(System.Threading.Tasks.Task&lt;Microsoft.AspNetCore.Components.Authorization.AuthenticationState&gt;)</span>
-    </div>
-    <div>
-      <span class="xref">Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider.AuthenticationStateChanged</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
+    <div class="level1"><span class="xref">RevalidatingIdentityAuthenticationStateProvider&lt;TUser&gt;</span></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="CG.Green.Areas.Identity.html">CG.Green.Areas.Identity</a></h6>
   <h6><strong>Assembly</strong>: CG.Green.dll</h6>
   <h5 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RevalidatingIdentityAuthenticationStateProvider&lt;TUser&gt; : RevalidatingServerAuthenticationStateProvider, IHostEnvironmentAuthenticationStateProvider, IDisposable where TUser : class</code></pre>
+    <pre><code class="lang-csharp hljs">public class RevalidatingIdentityAuthenticationStateProvider&lt;TUser&gt; : RevalidatingServerAuthenticationStateProvider where TUser : class</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -160,15 +109,18 @@
     <tbody>
       <tr>
         <td><span class="parametername">TUser</span></td>
-        <td></td>
+        <td><p>The type of associated user class.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h3 id="constructors">Constructors
   </h3>
   <a id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1__ctor_" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.#ctor*"></a>
-  <h4 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1__ctor_ILoggerFactory_IServiceScopeFactory_Microsoft_Extensions_Options_IOptions_Microsoft_AspNetCore_Identity_IdentityOptions__" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.#ctor(ILoggerFactory,IServiceScopeFactory,Microsoft.Extensions.Options.IOptions{Microsoft.AspNetCore.Identity.IdentityOptions})">RevalidatingIdentityAuthenticationStateProvider(ILoggerFactory, IServiceScopeFactory, IOptions&lt;IdentityOptions&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1__ctor_Microsoft_Extensions_Logging_ILoggerFactory_IServiceScopeFactory_IOptions_IdentityOptions__" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,IServiceScopeFactory,IOptions{IdentityOptions})">RevalidatingIdentityAuthenticationStateProvider(ILoggerFactory, IServiceScopeFactory, IOptions&lt;IdentityOptions&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider-1.html">RevalidatingIdentityAuthenticationStateProvider&lt;TUser&gt;</a>
+class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -185,30 +137,36 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ILoggerFactory</span></td>
+        <td><span class="xref">Microsoft.Extensions.Logging.ILoggerFactory</span></td>
         <td><span class="parametername">loggerFactory</span></td>
-        <td></td>
+        <td><p>The logger factory to use with this
+provider.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">IServiceScopeFactory</span></td>
         <td><span class="parametername">scopeFactory</span></td>
-        <td></td>
+        <td><p>The scope factory to use with this
+provider.</p>
+</td>
       </tr>
       <tr>
-        <td><span class="xref">Microsoft.Extensions.Options.IOptions</span>&lt;<span class="xref">Microsoft.AspNetCore.Identity.IdentityOptions</span>&gt;</td>
+        <td><span class="xref">IOptions</span>&lt;<span class="xref">IdentityOptions</span>&gt;</td>
         <td><span class="parametername">optionsAccessor</span></td>
-        <td></td>
+        <td><p>The options to use with this provider.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h3 id="fields">Fields
   </h3>
   <h4 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1__options" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1._options">_options</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This field contains the options for the provider.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">readonly IdentityOptions _options</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IdentityOptions _options</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -220,17 +178,18 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Identity.IdentityOptions</span></td>
+        <td><span class="xref">IdentityOptions</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h4 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1__scopeFactory" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1._scopeFactory">_scopeFactory</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This field contains the scope factory for the provider.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">readonly IServiceScopeFactory _scopeFactory</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly IServiceScopeFactory _scopeFactory</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -251,7 +210,8 @@
   </h3>
   <a id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_RevalidationInterval_" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.RevalidationInterval*"></a>
   <h4 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_RevalidationInterval" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.RevalidationInterval">RevalidationInterval</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This property contains the interval for revalidation.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -272,13 +232,12 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Microsoft.AspNetCore.Components.Server.RevalidatingServerAuthenticationStateProvider.RevalidationInterval</span></div>
   <h3 id="methods">Methods
   </h3>
   <a id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateAuthenticationStateAsync_" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateAuthenticationStateAsync*"></a>
-  <h4 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateAuthenticationStateAsync_Microsoft_AspNetCore_Components_Authorization_AuthenticationState_CancellationToken_" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateAuthenticationStateAsync(Microsoft.AspNetCore.Components.Authorization.AuthenticationState,CancellationToken)">ValidateAuthenticationStateAsync(AuthenticationState, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateAuthenticationStateAsync_AuthenticationState_CancellationToken_" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateAuthenticationStateAsync(AuthenticationState,CancellationToken)">ValidateAuthenticationStateAsync(AuthenticationState, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method performs the validation.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -295,14 +254,18 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Components.Authorization.AuthenticationState</span></td>
+        <td><span class="xref">AuthenticationState</span></td>
         <td><span class="parametername">authenticationState</span></td>
-        <td></td>
+        <td><p>The authentication state to use
+for the operation.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token that is monitored
+throughout the lifetime of the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -317,13 +280,17 @@
     <tbody>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
-        <td></td>
+        <td><p>A task to perform the operation that returns <code>true</code>
+if the user is authenticated, or <code>false</code> otherwise.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateSecurityStampAsync_" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateSecurityStampAsync*"></a>
-  <h4 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateSecurityStampAsync_Microsoft_AspNetCore_Identity_UserManager__0__System_Security_Claims_ClaimsPrincipal_" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateSecurityStampAsync(Microsoft.AspNetCore.Identity.UserManager{`0},System.Security.Claims.ClaimsPrincipal)">ValidateSecurityStampAsync(UserManager&lt;TUser&gt;, ClaimsPrincipal)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="CG_Green_Areas_Identity_RevalidatingIdentityAuthenticationStateProvider_1_ValidateSecurityStampAsync_UserManager__0__ClaimsPrincipal_" data-uid="CG.Green.Areas.Identity.RevalidatingIdentityAuthenticationStateProvider`1.ValidateSecurityStampAsync(UserManager{`0},ClaimsPrincipal)">ValidateSecurityStampAsync(UserManager&lt;TUser&gt;, ClaimsPrincipal)</h4>
+  <div class="markdown level1 summary"><p>This method validates whether or not the security stamp for the
+current user has changed.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -340,14 +307,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Identity.UserManager</span>&lt;TUser&gt;</td>
+        <td><span class="xref">UserManager</span>&lt;TUser&gt;</td>
         <td><span class="parametername">userManager</span></td>
-        <td></td>
+        <td><p>The user manager to use for the operation.</p>
+</td>
       </tr>
       <tr>
-        <td><span class="xref">System.Security.Claims.ClaimsPrincipal</span></td>
+        <td><span class="xref">ClaimsPrincipal</span></td>
         <td><span class="parametername">principal</span></td>
-        <td></td>
+        <td><p>The claims principal to use for the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -362,17 +331,12 @@
     <tbody>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
-        <td></td>
+        <td><p>A task to perform the operation that returns <code>true</code>
+if the user's security stamp has changed, or <code>false</code> otherwise.</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <span class="xref">Microsoft.AspNetCore.Components.Authorization.IHostEnvironmentAuthenticationStateProvider</span>
-  </div>
-  <div>
-      <span class="xref">System.IDisposable</span>
-  </div>
 </article>
           </div>
           
