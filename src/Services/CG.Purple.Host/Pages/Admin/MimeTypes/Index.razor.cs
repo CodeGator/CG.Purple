@@ -112,11 +112,6 @@ public partial class Index
             // We're busy.
             _isBusy = true;
 
-            // Log what we are about to do.
-            Logger.LogDebug(
-                "Setting the page state to dirty."
-                );
-
             // Give the UI time to show the busy indicator.
             await InvokeAsync(() => StateHasChanged());
             await Task.Delay(250);

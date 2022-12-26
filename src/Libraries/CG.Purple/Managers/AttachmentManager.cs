@@ -252,7 +252,7 @@ internal class AttachmentManager : IAttachmentManager
             // Log what we are about to do.
             _logger.LogTrace(
                 "Deferring to {name}",
-                nameof(IMessageRepository.FindAllAsync)
+                nameof(IAttachmentRepository.FindAllAsync)
                 );
 
             // Perform the operation.
