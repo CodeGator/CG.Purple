@@ -260,66 +260,66 @@ references:
   commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001
   nameWithType: WebApplicationBuilderExtensions001
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddInMemoryDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name: AddInMemoryDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddInMemoryDataAccess_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddInMemoryDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name.vb: AddInMemoryDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddInMemoryDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddInMemoryDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
-  nameWithType: WebApplicationBuilderExtensions001.AddInMemoryDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
-  nameWithType.vb: WebApplicationBuilderExtensions001.AddInMemoryDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddInMemoryDataAccess*
-  name: AddInMemoryDataAccess
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddInMemoryDataAccess_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddInMemoryDataAccess
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddBlueManagers(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddBlueManagers(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddBlueManagers_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddBlueManagers(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddBlueManagers(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddBlueManagers(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddBlueManagers(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions001.AddBlueManagers(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions001.AddBlueManagers(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddBlueManagers*
+  name: AddBlueManagers
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions001_AddBlueManagers_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddBlueManagers
   isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddInMemoryDataAccess
-  nameWithType: WebApplicationBuilderExtensions001.AddInMemoryDataAccess
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions001.AddBlueManagers
+  nameWithType: WebApplicationBuilderExtensions001.AddBlueManagers
 - uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002
   name: WebApplicationBuilderExtensions002
   href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.html
   commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002
   nameWithType: WebApplicationBuilderExtensions002
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddSqliteDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name: AddSqliteDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions002_AddSqliteDataAccess_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddSqliteDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name.vb: AddSqliteDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddSqliteDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddSqliteDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
-  nameWithType: WebApplicationBuilderExtensions002.AddSqliteDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
-  nameWithType.vb: WebApplicationBuilderExtensions002.AddSqliteDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddSqliteDataAccess*
-  name: AddSqliteDataAccess
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions002_AddSqliteDataAccess_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddSqliteDataAccess
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddBlueControllers(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddBlueControllers(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions002_AddBlueControllers_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddBlueControllers(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddBlueControllers(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddBlueControllers(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddBlueControllers(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions002.AddBlueControllers(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions002.AddBlueControllers(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddBlueControllers*
+  name: AddBlueControllers
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions002_AddBlueControllers_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddBlueControllers
   isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddSqliteDataAccess
-  nameWithType: WebApplicationBuilderExtensions002.AddSqliteDataAccess
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions002.AddBlueControllers
+  nameWithType: WebApplicationBuilderExtensions002.AddBlueControllers
 - uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003
   name: WebApplicationBuilderExtensions003
   href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html
   commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003
   nameWithType: WebApplicationBuilderExtensions003
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSqlServerDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name: AddSqlServerDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddSqlServerDataAccess_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSqlServerDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name.vb: AddSqlServerDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSqlServerDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSqlServerDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
-  nameWithType: WebApplicationBuilderExtensions003.AddSqlServerDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
-  nameWithType.vb: WebApplicationBuilderExtensions003.AddSqlServerDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSqlServerDataAccess*
-  name: AddSqlServerDataAccess
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddSqlServerDataAccess_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSqlServerDataAccess
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddBlueServices(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddBlueServices(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddBlueServices_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddBlueServices(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddBlueServices(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddBlueServices(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddBlueServices(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions003.AddBlueServices(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions003.AddBlueServices(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddBlueServices*
+  name: AddBlueServices
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddBlueServices_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddBlueServices
   isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSqlServerDataAccess
-  nameWithType: WebApplicationBuilderExtensions003.AddSqlServerDataAccess
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddBlueServices
+  nameWithType: WebApplicationBuilderExtensions003.AddBlueServices
 - uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004
   name: WebApplicationBuilderExtensions004
   href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions004.html
@@ -348,44 +348,66 @@ references:
   commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005
   nameWithType: WebApplicationBuilderExtensions005
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddBlueServices(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name: AddBlueServices(WebApplicationBuilder, String, Nullable<ILogger>)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions005_AddBlueServices_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddBlueServices(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name.vb: AddBlueServices(WebApplicationBuilder, String, Nullable(Of ILogger))
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddBlueServices(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddBlueServices(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
-  nameWithType: WebApplicationBuilderExtensions005.AddBlueServices(WebApplicationBuilder, String, Nullable<ILogger>)
-  nameWithType.vb: WebApplicationBuilderExtensions005.AddBlueServices(WebApplicationBuilder, String, Nullable(Of ILogger))
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddBlueServices*
-  name: AddBlueServices
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions005_AddBlueServices_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddBlueServices
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddInMemoryDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddInMemoryDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions005_AddInMemoryDataAccess_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddInMemoryDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddInMemoryDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddInMemoryDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddInMemoryDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions005.AddInMemoryDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions005.AddInMemoryDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddInMemoryDataAccess*
+  name: AddInMemoryDataAccess
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions005_AddInMemoryDataAccess_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddInMemoryDataAccess
   isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddBlueServices
-  nameWithType: WebApplicationBuilderExtensions005.AddBlueServices
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions005.AddInMemoryDataAccess
+  nameWithType: WebApplicationBuilderExtensions005.AddInMemoryDataAccess
 - uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006
   name: WebApplicationBuilderExtensions006
   href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.html
   commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006
   fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006
   nameWithType: WebApplicationBuilderExtensions006
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddBlueControllers(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name: AddBlueControllers(WebApplicationBuilder, String, Nullable<ILogger>)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions006_AddBlueControllers_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddBlueControllers(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
-  name.vb: AddBlueControllers(WebApplicationBuilder, String, Nullable(Of ILogger))
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddBlueControllers(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddBlueControllers(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
-  nameWithType: WebApplicationBuilderExtensions006.AddBlueControllers(WebApplicationBuilder, String, Nullable<ILogger>)
-  nameWithType.vb: WebApplicationBuilderExtensions006.AddBlueControllers(WebApplicationBuilder, String, Nullable(Of ILogger))
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddBlueControllers*
-  name: AddBlueControllers
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions006_AddBlueControllers_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddBlueControllers
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddSqliteDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddSqliteDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions006_AddSqliteDataAccess_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddSqliteDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddSqliteDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddSqliteDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddSqliteDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions006.AddSqliteDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions006.AddSqliteDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddSqliteDataAccess*
+  name: AddSqliteDataAccess
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions006_AddSqliteDataAccess_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddSqliteDataAccess
   isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddBlueControllers
-  nameWithType: WebApplicationBuilderExtensions006.AddBlueControllers
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions006.AddSqliteDataAccess
+  nameWithType: WebApplicationBuilderExtensions006.AddSqliteDataAccess
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007
+  name: WebApplicationBuilderExtensions007
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.html
+  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007
+  nameWithType: WebApplicationBuilderExtensions007
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.AddSqlServerDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name: AddSqlServerDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions007_AddSqlServerDataAccess_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__
+  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.AddSqlServerDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})
+  name.vb: AddSqlServerDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.AddSqlServerDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable<ILogger>)
+  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.AddSqlServerDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder, System.String, System.Nullable(Of ILogger))
+  nameWithType: WebApplicationBuilderExtensions007.AddSqlServerDataAccess(WebApplicationBuilder, String, Nullable<ILogger>)
+  nameWithType.vb: WebApplicationBuilderExtensions007.AddSqlServerDataAccess(WebApplicationBuilder, String, Nullable(Of ILogger))
+- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.AddSqlServerDataAccess*
+  name: AddSqlServerDataAccess
+  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions007_AddSqlServerDataAccess_
+  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.AddSqlServerDataAccess
+  isSpec: "True"
+  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions007.AddSqlServerDataAccess
+  nameWithType: WebApplicationBuilderExtensions007.AddSqlServerDataAccess
 - uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions001
   name: WebApplicationExtensions001
   href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions001.html
@@ -495,22 +517,3 @@ references:
   isSpec: "True"
   fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions003.UseSqlServerDataAccess
   nameWithType: WebApplicationExtensions003.UseSqlServerDataAccess
-- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions005
-  name: WebApplicationExtensions005
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions005.html
-  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationExtensions005
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions005
-  nameWithType: WebApplicationExtensions005
-- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions005.UseBlueControllers(Microsoft.AspNetCore.Builder.WebApplication)
-  name: UseBlueControllers(WebApplication)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions005.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions005_UseBlueControllers_Microsoft_AspNetCore_Builder_WebApplication_
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationExtensions005.UseBlueControllers(Microsoft.AspNetCore.Builder.WebApplication)
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions005.UseBlueControllers(Microsoft.AspNetCore.Builder.WebApplication)
-  nameWithType: WebApplicationExtensions005.UseBlueControllers(WebApplication)
-- uid: Microsoft.AspNetCore.Builder.WebApplicationExtensions005.UseBlueControllers*
-  name: UseBlueControllers
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationExtensions005.html#Microsoft_AspNetCore_Builder_WebApplicationExtensions005_UseBlueControllers_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationExtensions005.UseBlueControllers
-  isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationExtensions005.UseBlueControllers
-  nameWithType: WebApplicationExtensions005.UseBlueControllers
