@@ -117,128 +117,21 @@ type.</p>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.AspNetCore.Builder.html">Microsoft.AspNetCore.Builder</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Seeding.dll</h6>
+  <h6><strong>Assembly</strong>: CG.Blue.Data.InMemory.dll</h6>
   <h5 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class WebApplicationExtensions001</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_PerformSeeding_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions001.PerformSeeding*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_PerformSeeding_Microsoft_AspNetCore_Builder_WebApplication_IConfiguration_System_String_System_String_SeedStartupOptions_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions001.PerformSeeding(Microsoft.AspNetCore.Builder.WebApplication,IConfiguration,System.String,System.String,SeedStartupOptions)">PerformSeeding(WebApplication, IConfiguration, String, String, SeedStartupOptions)</h4>
-  <div class="markdown level1 summary"><p>This method iterates through the given list of file names and
-performs a seeding operation on each one.</p>
+  <a id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_UseInMemoryDataAccess_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions001.UseInMemoryDataAccess*"></a>
+  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_UseInMemoryDataAccess_Microsoft_AspNetCore_Builder_WebApplication_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions001.UseInMemoryDataAccess(Microsoft.AspNetCore.Builder.WebApplication)">UseInMemoryDataAccess(WebApplication)</h4>
+  <div class="markdown level1 summary"><p>This method performs startup operations for this in-memory provider.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">static void PerformSeeding(this WebApplication webApplication, IConfiguration configuration, string fileName, string userName, SeedStartupOptions seedStartupOptions)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplication</span></td>
-        <td><span class="parametername">webApplication</span></td>
-        <td><p>The web application to use for the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">IConfiguration</span></td>
-        <td><span class="parametername">configuration</span></td>
-        <td><p>The configuration to use for the seeding
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">fileName</span></td>
-        <td><p>The file name to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td><p>The name of the user performing the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">SeedStartupOptions</span></td>
-        <td><span class="parametername">seedStartupOptions</span></td>
-        <td><p>The seed startup options to use
-for the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_PerformSeeding_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions001.PerformSeeding*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_PerformSeeding_Microsoft_AspNetCore_Builder_WebApplication_List_System_String__System_String_SeedStartupOptions_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions001.PerformSeeding(Microsoft.AspNetCore.Builder.WebApplication,List{System.String},System.String,SeedStartupOptions)">PerformSeeding(WebApplication, List&lt;String&gt;, String, SeedStartupOptions)</h4>
-  <div class="markdown level1 summary"><p>This method iterates through the given list of file names and
-performs a seeding operation on each one.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">static void PerformSeeding(this WebApplication webApplication, List&lt;string&gt; fileNames, string userName, SeedStartupOptions seedStartupOptions)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Builder.WebApplication</span></td>
-        <td><span class="parametername">webApplication</span></td>
-        <td><p>The web application to use for the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">fileNames</span></td>
-        <td><p>The list of file names to use for the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td><p>The name of the user performing the
-operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">SeedStartupOptions</span></td>
-        <td><span class="parametername">seedStartupOptions</span></td>
-        <td><p>The seed startup options to use
-for the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_UseStartupSeeding_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions001.UseStartupSeeding*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_UseStartupSeeding_Microsoft_AspNetCore_Builder_WebApplication_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationExtensions001.UseStartupSeeding(Microsoft.AspNetCore.Builder.WebApplication)">UseStartupSeeding(WebApplication)</h4>
-  <div class="markdown level1 summary"><p>This method runs the startup seeding logic for the <span class="xref">CG.Purple</span>
-project.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static WebApplication UseStartupSeeding(this WebApplication webApplication)</code></pre>
+    <pre><code class="lang-csharp hljs">public static WebApplication UseInMemoryDataAccess(this WebApplication webApplication)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -276,6 +169,13 @@ parameter, for chaining calls together, Fluent style.</p>
       </tr>
     </tbody>
   </table>
+  <h5 id="Microsoft_AspNetCore_Builder_WebApplicationExtensions001_UseInMemoryDataAccess_Microsoft_AspNetCore_Builder_WebApplication__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method must NOT have its signature changed! The method follows 
+a convention used by the <span class="xref">CG.EntityFrameworkCore</span> 
+package.
+</p>
+</div>
 </article>
           </div>
           

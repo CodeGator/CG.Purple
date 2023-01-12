@@ -117,22 +117,21 @@ type.</p>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.AspNetCore.Builder.html">Microsoft.AspNetCore.Builder</a></h6>
-  <h6><strong>Assembly</strong>: CG.Purple.Providers.Smtp.dll</h6>
+  <h6><strong>Assembly</strong>: CG.Blue.Data.SqlServer.dll</h6>
   <h5 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class WebApplicationBuilderExtensions003</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddSmtpProvider_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSmtpProvider*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddSmtpProvider_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_Nullable_ILogger__" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSmtpProvider(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.Nullable{ILogger})">AddSmtpProvider(WebApplicationBuilder, Nullable&lt;ILogger&gt;)</h4>
-  <div class="markdown level1 summary"><p>This method adds the &quot;SMTP&quot; provider for the <span class="xref">CG.Purple</span>
-project.</p>
+  <a id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddSqlServerDataAccess_" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSqlServerDataAccess*"></a>
+  <h4 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddSqlServerDataAccess_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger__" data-uid="Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions003.AddSqlServerDataAccess(Microsoft.AspNetCore.Builder.WebApplicationBuilder,System.String,System.Nullable{ILogger})">AddSqlServerDataAccess(WebApplicationBuilder, String, Nullable&lt;ILogger&gt;)</h4>
+  <div class="markdown level1 summary"><p>This method adds required services for this SQLServer provider.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static WebApplicationBuilder AddSmtpProvider(this WebApplicationBuilder webApplicationBuilder, ILogger? bootstrapLogger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static WebApplicationBuilder AddSqlServerDataAccess(this WebApplicationBuilder webApplicationBuilder, string sectionName = &quot;DAL:SqlServer&quot;, ILogger? bootstrapLogger = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -149,6 +148,13 @@ project.</p>
         <td><span class="parametername">webApplicationBuilder</span></td>
         <td><p>The web application builder to
 use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sectionName</span></td>
+        <td><p>The configuration section to use for the
+operation. Defaults to <code>DAL:SqlServer</code>.</p>
 </td>
       </tr>
       <tr>
@@ -177,6 +183,13 @@ parameter, for chaining calls together, Fluent style.</p>
       </tr>
     </tbody>
   </table>
+  <h5 id="Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions003_AddSqlServerDataAccess_Microsoft_AspNetCore_Builder_WebApplicationBuilder_System_String_System_Nullable_ILogger___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method must NOT have its signature changed! The method follows 
+a convention used by the <span class="xref">CG.EntityFrameworkCore</span> 
+package.
+</p>
+</div>
 </article>
           </div>
           
