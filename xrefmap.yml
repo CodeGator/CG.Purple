@@ -1,6 +1,176 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: CG.Blue
+  name: CG.Blue
+  href: api/CG.Blue.html
+  commentId: N:CG.Blue
+  fullName: CG.Blue
+  nameWithType: CG.Blue
+- uid: CG.Blue.BlueApi
+  name: BlueApi
+  href: api/CG.Blue.BlueApi.html
+  commentId: T:CG.Blue.BlueApi
+  fullName: CG.Blue.BlueApi
+  nameWithType: BlueApi
+- uid: CG.Blue.BlueApi.#ctor(ISupportFacade)
+  name: BlueApi(ISupportFacade)
+  href: api/CG.Blue.BlueApi.html#CG_Blue_BlueApi__ctor_ISupportFacade_
+  commentId: M:CG.Blue.BlueApi.#ctor(ISupportFacade)
+  fullName: CG.Blue.BlueApi.BlueApi(ISupportFacade)
+  nameWithType: BlueApi.BlueApi(ISupportFacade)
+- uid: CG.Blue.BlueApi.#ctor*
+  name: BlueApi
+  href: api/CG.Blue.BlueApi.html#CG_Blue_BlueApi__ctor_
+  commentId: Overload:CG.Blue.BlueApi.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.BlueApi.BlueApi
+  nameWithType: BlueApi.BlueApi
+- uid: CG.Blue.BlueApi._supportFacade
+  name: _supportFacade
+  href: api/CG.Blue.BlueApi.html#CG_Blue_BlueApi__supportFacade
+  commentId: F:CG.Blue.BlueApi._supportFacade
+  fullName: CG.Blue.BlueApi._supportFacade
+  nameWithType: BlueApi._supportFacade
+- uid: CG.Blue.BlueApi.Support
+  name: Support
+  href: api/CG.Blue.BlueApi.html#CG_Blue_BlueApi_Support
+  commentId: P:CG.Blue.BlueApi.Support
+  fullName: CG.Blue.BlueApi.Support
+  nameWithType: BlueApi.Support
+- uid: CG.Blue.BlueApi.Support*
+  name: Support
+  href: api/CG.Blue.BlueApi.html#CG_Blue_BlueApi_Support_
+  commentId: Overload:CG.Blue.BlueApi.Support
+  isSpec: "True"
+  fullName: CG.Blue.BlueApi.Support
+  nameWithType: BlueApi.Support
+- uid: CG.Blue.Configuration
+  name: CG.Blue.Configuration
+  href: api/CG.Blue.Configuration.html
+  commentId: N:CG.Blue.Configuration
+  fullName: CG.Blue.Configuration
+  nameWithType: CG.Blue.Configuration
+- uid: CG.Blue.Configuration.FileTypeModelConfiguration
+  name: FileTypeModelConfiguration
+  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html
+  commentId: T:CG.Blue.Configuration.FileTypeModelConfiguration
+  fullName: CG.Blue.Configuration.FileTypeModelConfiguration
+  nameWithType: FileTypeModelConfiguration
+- uid: CG.Blue.Configuration.FileTypeModelConfiguration.Apply(ODataModelBuilder,ApiVersion,System.String)
+  name: Apply(ODataModelBuilder, ApiVersion, String)
+  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html#CG_Blue_Configuration_FileTypeModelConfiguration_Apply_ODataModelBuilder_ApiVersion_System_String_
+  commentId: M:CG.Blue.Configuration.FileTypeModelConfiguration.Apply(ODataModelBuilder,ApiVersion,System.String)
+  fullName: CG.Blue.Configuration.FileTypeModelConfiguration.Apply(ODataModelBuilder, ApiVersion, System.String)
+  nameWithType: FileTypeModelConfiguration.Apply(ODataModelBuilder, ApiVersion, String)
+- uid: CG.Blue.Configuration.FileTypeModelConfiguration.Apply*
+  name: Apply
+  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html#CG_Blue_Configuration_FileTypeModelConfiguration_Apply_
+  commentId: Overload:CG.Blue.Configuration.FileTypeModelConfiguration.Apply
+  isSpec: "True"
+  fullName: CG.Blue.Configuration.FileTypeModelConfiguration.Apply
+  nameWithType: FileTypeModelConfiguration.Apply
+- uid: CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
+  name: ConfigureV1(ODataModelBuilder)
+  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html#CG_Blue_Configuration_FileTypeModelConfiguration_ConfigureV1_ODataModelBuilder_
+  commentId: M:CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
+  fullName: CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
+  nameWithType: FileTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
+- uid: CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1*
+  name: ConfigureV1
+  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html#CG_Blue_Configuration_FileTypeModelConfiguration_ConfigureV1_
+  commentId: Overload:CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1
+  isSpec: "True"
+  fullName: CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1
+  nameWithType: FileTypeModelConfiguration.ConfigureV1
+- uid: CG.Blue.Configuration.MimeTypeModelConfiguration
+  name: MimeTypeModelConfiguration
+  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html
+  commentId: T:CG.Blue.Configuration.MimeTypeModelConfiguration
+  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration
+  nameWithType: MimeTypeModelConfiguration
+- uid: CG.Blue.Configuration.MimeTypeModelConfiguration.Apply(ODataModelBuilder,ApiVersion,System.String)
+  name: Apply(ODataModelBuilder, ApiVersion, String)
+  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html#CG_Blue_Configuration_MimeTypeModelConfiguration_Apply_ODataModelBuilder_ApiVersion_System_String_
+  commentId: M:CG.Blue.Configuration.MimeTypeModelConfiguration.Apply(ODataModelBuilder,ApiVersion,System.String)
+  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration.Apply(ODataModelBuilder, ApiVersion, System.String)
+  nameWithType: MimeTypeModelConfiguration.Apply(ODataModelBuilder, ApiVersion, String)
+- uid: CG.Blue.Configuration.MimeTypeModelConfiguration.Apply*
+  name: Apply
+  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html#CG_Blue_Configuration_MimeTypeModelConfiguration_Apply_
+  commentId: Overload:CG.Blue.Configuration.MimeTypeModelConfiguration.Apply
+  isSpec: "True"
+  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration.Apply
+  nameWithType: MimeTypeModelConfiguration.Apply
+- uid: CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
+  name: ConfigureV1(ODataModelBuilder)
+  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html#CG_Blue_Configuration_MimeTypeModelConfiguration_ConfigureV1_ODataModelBuilder_
+  commentId: M:CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
+  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
+  nameWithType: MimeTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
+- uid: CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1*
+  name: ConfigureV1
+  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html#CG_Blue_Configuration_MimeTypeModelConfiguration_ConfigureV1_
+  commentId: Overload:CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1
+  isSpec: "True"
+  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1
+  nameWithType: MimeTypeModelConfiguration.ConfigureV1
+- uid: CG.Blue.Controllers
+  name: CG.Blue.Controllers
+  href: api/CG.Blue.Controllers.html
+  commentId: N:CG.Blue.Controllers
+  fullName: CG.Blue.Controllers
+  nameWithType: CG.Blue.Controllers
+- uid: CG.Blue.Controllers.MimeTypesController
+  name: MimeTypesController
+  href: api/CG.Blue.Controllers.MimeTypesController.html
+  commentId: T:CG.Blue.Controllers.MimeTypesController
+  fullName: CG.Blue.Controllers.MimeTypesController
+  nameWithType: MimeTypesController
+- uid: CG.Blue.Controllers.MimeTypesController.#ctor(CG.Blue.IBlueApi,ILogger{CG.Blue.Controllers.MimeTypesController})
+  name: MimeTypesController(IBlueApi, ILogger<MimeTypesController>)
+  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController__ctor_CG_Blue_IBlueApi_ILogger_CG_Blue_Controllers_MimeTypesController__
+  commentId: M:CG.Blue.Controllers.MimeTypesController.#ctor(CG.Blue.IBlueApi,ILogger{CG.Blue.Controllers.MimeTypesController})
+  name.vb: MimeTypesController(IBlueApi, ILogger(Of MimeTypesController))
+  fullName: CG.Blue.Controllers.MimeTypesController.MimeTypesController(CG.Blue.IBlueApi, ILogger<CG.Blue.Controllers.MimeTypesController>)
+  fullName.vb: CG.Blue.Controllers.MimeTypesController.MimeTypesController(CG.Blue.IBlueApi, ILogger(Of CG.Blue.Controllers.MimeTypesController))
+  nameWithType: MimeTypesController.MimeTypesController(IBlueApi, ILogger<MimeTypesController>)
+  nameWithType.vb: MimeTypesController.MimeTypesController(IBlueApi, ILogger(Of MimeTypesController))
+- uid: CG.Blue.Controllers.MimeTypesController.#ctor*
+  name: MimeTypesController
+  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController__ctor_
+  commentId: Overload:CG.Blue.Controllers.MimeTypesController.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Controllers.MimeTypesController.MimeTypesController
+  nameWithType: MimeTypesController.MimeTypesController
+- uid: CG.Blue.Controllers.MimeTypesController._blueApi
+  name: _blueApi
+  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController__blueApi
+  commentId: F:CG.Blue.Controllers.MimeTypesController._blueApi
+  fullName: CG.Blue.Controllers.MimeTypesController._blueApi
+  nameWithType: MimeTypesController._blueApi
+- uid: CG.Blue.Controllers.MimeTypesController._logger
+  name: _logger
+  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController__logger
+  commentId: F:CG.Blue.Controllers.MimeTypesController._logger
+  fullName: CG.Blue.Controllers.MimeTypesController._logger
+  nameWithType: MimeTypesController._logger
+- uid: CG.Blue.Controllers.MimeTypesController.GetAsync(ODataQueryOptions{MimeTypeModel})
+  name: GetAsync(ODataQueryOptions<MimeTypeModel>)
+  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController_GetAsync_ODataQueryOptions_MimeTypeModel__
+  commentId: M:CG.Blue.Controllers.MimeTypesController.GetAsync(ODataQueryOptions{MimeTypeModel})
+  name.vb: GetAsync(ODataQueryOptions(Of MimeTypeModel))
+  fullName: CG.Blue.Controllers.MimeTypesController.GetAsync(ODataQueryOptions<MimeTypeModel>)
+  fullName.vb: CG.Blue.Controllers.MimeTypesController.GetAsync(ODataQueryOptions(Of MimeTypeModel))
+  nameWithType: MimeTypesController.GetAsync(ODataQueryOptions<MimeTypeModel>)
+  nameWithType.vb: MimeTypesController.GetAsync(ODataQueryOptions(Of MimeTypeModel))
+- uid: CG.Blue.Controllers.MimeTypesController.GetAsync*
+  name: GetAsync
+  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController_GetAsync_
+  commentId: Overload:CG.Blue.Controllers.MimeTypesController.GetAsync
+  isSpec: "True"
+  fullName: CG.Blue.Controllers.MimeTypesController.GetAsync
+  nameWithType: MimeTypesController.GetAsync
 - uid: CG.Blue.Data
   name: CG.Blue.Data
   href: api/CG.Blue.Data.html
@@ -29,6 +199,32 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Data.BlueDbContext.BlueDbContext
   nameWithType: BlueDbContext.BlueDbContext
+- uid: CG.Blue.Data.BlueDbContext.FileTypes
+  name: FileTypes
+  href: api/CG.Blue.Data.BlueDbContext.html#CG_Blue_Data_BlueDbContext_FileTypes
+  commentId: P:CG.Blue.Data.BlueDbContext.FileTypes
+  fullName: CG.Blue.Data.BlueDbContext.FileTypes
+  nameWithType: BlueDbContext.FileTypes
+- uid: CG.Blue.Data.BlueDbContext.FileTypes*
+  name: FileTypes
+  href: api/CG.Blue.Data.BlueDbContext.html#CG_Blue_Data_BlueDbContext_FileTypes_
+  commentId: Overload:CG.Blue.Data.BlueDbContext.FileTypes
+  isSpec: "True"
+  fullName: CG.Blue.Data.BlueDbContext.FileTypes
+  nameWithType: BlueDbContext.FileTypes
+- uid: CG.Blue.Data.BlueDbContext.MimeTypes
+  name: MimeTypes
+  href: api/CG.Blue.Data.BlueDbContext.html#CG_Blue_Data_BlueDbContext_MimeTypes
+  commentId: P:CG.Blue.Data.BlueDbContext.MimeTypes
+  fullName: CG.Blue.Data.BlueDbContext.MimeTypes
+  nameWithType: BlueDbContext.MimeTypes
+- uid: CG.Blue.Data.BlueDbContext.MimeTypes*
+  name: MimeTypes
+  href: api/CG.Blue.Data.BlueDbContext.html#CG_Blue_Data_BlueDbContext_MimeTypes_
+  commentId: Overload:CG.Blue.Data.BlueDbContext.MimeTypes
+  isSpec: "True"
+  fullName: CG.Blue.Data.BlueDbContext.MimeTypes
+  nameWithType: BlueDbContext.MimeTypes
 - uid: CG.Blue.Data.BlueDbContext.OnModelCreating(ModelBuilder)
   name: OnModelCreating(ModelBuilder)
   href: api/CG.Blue.Data.BlueDbContext.html#CG_Blue_Data_BlueDbContext_OnModelCreating_ModelBuilder_
@@ -42,6 +238,128 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Data.BlueDbContext.OnModelCreating
   nameWithType: BlueDbContext.OnModelCreating
+- uid: CG.Blue.Data.Entities
+  name: CG.Blue.Data.Entities
+  href: api/CG.Blue.Data.Entities.html
+  commentId: N:CG.Blue.Data.Entities
+  fullName: CG.Blue.Data.Entities
+  nameWithType: CG.Blue.Data.Entities
+- uid: CG.Blue.Data.Entities.FileTypeEntity
+  name: FileTypeEntity
+  href: api/CG.Blue.Data.Entities.FileTypeEntity.html
+  commentId: T:CG.Blue.Data.Entities.FileTypeEntity
+  fullName: CG.Blue.Data.Entities.FileTypeEntity
+  nameWithType: FileTypeEntity
+- uid: CG.Blue.Data.Entities.FileTypeEntity.Extension
+  name: Extension
+  href: api/CG.Blue.Data.Entities.FileTypeEntity.html#CG_Blue_Data_Entities_FileTypeEntity_Extension
+  commentId: P:CG.Blue.Data.Entities.FileTypeEntity.Extension
+  fullName: CG.Blue.Data.Entities.FileTypeEntity.Extension
+  nameWithType: FileTypeEntity.Extension
+- uid: CG.Blue.Data.Entities.FileTypeEntity.Extension*
+  name: Extension
+  href: api/CG.Blue.Data.Entities.FileTypeEntity.html#CG_Blue_Data_Entities_FileTypeEntity_Extension_
+  commentId: Overload:CG.Blue.Data.Entities.FileTypeEntity.Extension
+  isSpec: "True"
+  fullName: CG.Blue.Data.Entities.FileTypeEntity.Extension
+  nameWithType: FileTypeEntity.Extension
+- uid: CG.Blue.Data.Entities.FileTypeEntity.Id
+  name: Id
+  href: api/CG.Blue.Data.Entities.FileTypeEntity.html#CG_Blue_Data_Entities_FileTypeEntity_Id
+  commentId: P:CG.Blue.Data.Entities.FileTypeEntity.Id
+  fullName: CG.Blue.Data.Entities.FileTypeEntity.Id
+  nameWithType: FileTypeEntity.Id
+- uid: CG.Blue.Data.Entities.FileTypeEntity.Id*
+  name: Id
+  href: api/CG.Blue.Data.Entities.FileTypeEntity.html#CG_Blue_Data_Entities_FileTypeEntity_Id_
+  commentId: Overload:CG.Blue.Data.Entities.FileTypeEntity.Id
+  isSpec: "True"
+  fullName: CG.Blue.Data.Entities.FileTypeEntity.Id
+  nameWithType: FileTypeEntity.Id
+- uid: CG.Blue.Data.Entities.FileTypeEntity.MimeType
+  name: MimeType
+  href: api/CG.Blue.Data.Entities.FileTypeEntity.html#CG_Blue_Data_Entities_FileTypeEntity_MimeType
+  commentId: P:CG.Blue.Data.Entities.FileTypeEntity.MimeType
+  fullName: CG.Blue.Data.Entities.FileTypeEntity.MimeType
+  nameWithType: FileTypeEntity.MimeType
+- uid: CG.Blue.Data.Entities.FileTypeEntity.MimeType*
+  name: MimeType
+  href: api/CG.Blue.Data.Entities.FileTypeEntity.html#CG_Blue_Data_Entities_FileTypeEntity_MimeType_
+  commentId: Overload:CG.Blue.Data.Entities.FileTypeEntity.MimeType
+  isSpec: "True"
+  fullName: CG.Blue.Data.Entities.FileTypeEntity.MimeType
+  nameWithType: FileTypeEntity.MimeType
+- uid: CG.Blue.Data.Entities.FileTypeEntity.MimeTypeId
+  name: MimeTypeId
+  href: api/CG.Blue.Data.Entities.FileTypeEntity.html#CG_Blue_Data_Entities_FileTypeEntity_MimeTypeId
+  commentId: P:CG.Blue.Data.Entities.FileTypeEntity.MimeTypeId
+  fullName: CG.Blue.Data.Entities.FileTypeEntity.MimeTypeId
+  nameWithType: FileTypeEntity.MimeTypeId
+- uid: CG.Blue.Data.Entities.FileTypeEntity.MimeTypeId*
+  name: MimeTypeId
+  href: api/CG.Blue.Data.Entities.FileTypeEntity.html#CG_Blue_Data_Entities_FileTypeEntity_MimeTypeId_
+  commentId: Overload:CG.Blue.Data.Entities.FileTypeEntity.MimeTypeId
+  isSpec: "True"
+  fullName: CG.Blue.Data.Entities.FileTypeEntity.MimeTypeId
+  nameWithType: FileTypeEntity.MimeTypeId
+- uid: CG.Blue.Data.Entities.MimeTypeEntity
+  name: MimeTypeEntity
+  href: api/CG.Blue.Data.Entities.MimeTypeEntity.html
+  commentId: T:CG.Blue.Data.Entities.MimeTypeEntity
+  fullName: CG.Blue.Data.Entities.MimeTypeEntity
+  nameWithType: MimeTypeEntity
+- uid: CG.Blue.Data.Entities.MimeTypeEntity.FileTypes
+  name: FileTypes
+  href: api/CG.Blue.Data.Entities.MimeTypeEntity.html#CG_Blue_Data_Entities_MimeTypeEntity_FileTypes
+  commentId: P:CG.Blue.Data.Entities.MimeTypeEntity.FileTypes
+  fullName: CG.Blue.Data.Entities.MimeTypeEntity.FileTypes
+  nameWithType: MimeTypeEntity.FileTypes
+- uid: CG.Blue.Data.Entities.MimeTypeEntity.FileTypes*
+  name: FileTypes
+  href: api/CG.Blue.Data.Entities.MimeTypeEntity.html#CG_Blue_Data_Entities_MimeTypeEntity_FileTypes_
+  commentId: Overload:CG.Blue.Data.Entities.MimeTypeEntity.FileTypes
+  isSpec: "True"
+  fullName: CG.Blue.Data.Entities.MimeTypeEntity.FileTypes
+  nameWithType: MimeTypeEntity.FileTypes
+- uid: CG.Blue.Data.Entities.MimeTypeEntity.Id
+  name: Id
+  href: api/CG.Blue.Data.Entities.MimeTypeEntity.html#CG_Blue_Data_Entities_MimeTypeEntity_Id
+  commentId: P:CG.Blue.Data.Entities.MimeTypeEntity.Id
+  fullName: CG.Blue.Data.Entities.MimeTypeEntity.Id
+  nameWithType: MimeTypeEntity.Id
+- uid: CG.Blue.Data.Entities.MimeTypeEntity.Id*
+  name: Id
+  href: api/CG.Blue.Data.Entities.MimeTypeEntity.html#CG_Blue_Data_Entities_MimeTypeEntity_Id_
+  commentId: Overload:CG.Blue.Data.Entities.MimeTypeEntity.Id
+  isSpec: "True"
+  fullName: CG.Blue.Data.Entities.MimeTypeEntity.Id
+  nameWithType: MimeTypeEntity.Id
+- uid: CG.Blue.Data.Entities.MimeTypeEntity.SubType
+  name: SubType
+  href: api/CG.Blue.Data.Entities.MimeTypeEntity.html#CG_Blue_Data_Entities_MimeTypeEntity_SubType
+  commentId: P:CG.Blue.Data.Entities.MimeTypeEntity.SubType
+  fullName: CG.Blue.Data.Entities.MimeTypeEntity.SubType
+  nameWithType: MimeTypeEntity.SubType
+- uid: CG.Blue.Data.Entities.MimeTypeEntity.SubType*
+  name: SubType
+  href: api/CG.Blue.Data.Entities.MimeTypeEntity.html#CG_Blue_Data_Entities_MimeTypeEntity_SubType_
+  commentId: Overload:CG.Blue.Data.Entities.MimeTypeEntity.SubType
+  isSpec: "True"
+  fullName: CG.Blue.Data.Entities.MimeTypeEntity.SubType
+  nameWithType: MimeTypeEntity.SubType
+- uid: CG.Blue.Data.Entities.MimeTypeEntity.Type
+  name: Type
+  href: api/CG.Blue.Data.Entities.MimeTypeEntity.html#CG_Blue_Data_Entities_MimeTypeEntity_Type
+  commentId: P:CG.Blue.Data.Entities.MimeTypeEntity.Type
+  fullName: CG.Blue.Data.Entities.MimeTypeEntity.Type
+  nameWithType: MimeTypeEntity.Type
+- uid: CG.Blue.Data.Entities.MimeTypeEntity.Type*
+  name: Type
+  href: api/CG.Blue.Data.Entities.MimeTypeEntity.html#CG_Blue_Data_Entities_MimeTypeEntity_Type_
+  commentId: Overload:CG.Blue.Data.Entities.MimeTypeEntity.Type
+  isSpec: "True"
+  fullName: CG.Blue.Data.Entities.MimeTypeEntity.Type
+  nameWithType: MimeTypeEntity.Type
 - uid: CG.Blue.Data.InMemory.Factories
   name: CG.Blue.Data.InMemory.Factories
   href: api/CG.Blue.Data.InMemory.Factories.html
@@ -70,6 +388,358 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Data.InMemory.Factories.BlueDbContextDesignTimeFactory.OnConfigureDataContextOptions
   nameWithType: BlueDbContextDesignTimeFactory.OnConfigureDataContextOptions
+- uid: CG.Blue.Data.Maps
+  name: CG.Blue.Data.Maps
+  href: api/CG.Blue.Data.Maps.html
+  commentId: N:CG.Blue.Data.Maps
+  fullName: CG.Blue.Data.Maps
+  nameWithType: CG.Blue.Data.Maps
+- uid: CG.Blue.Data.Maps.FileTypeEntityMap
+  name: FileTypeEntityMap
+  href: api/CG.Blue.Data.Maps.FileTypeEntityMap.html
+  commentId: T:CG.Blue.Data.Maps.FileTypeEntityMap
+  fullName: CG.Blue.Data.Maps.FileTypeEntityMap
+  nameWithType: FileTypeEntityMap
+- uid: CG.Blue.Data.Maps.FileTypeEntityMap.#ctor(ModelBuilder)
+  name: FileTypeEntityMap(ModelBuilder)
+  href: api/CG.Blue.Data.Maps.FileTypeEntityMap.html#CG_Blue_Data_Maps_FileTypeEntityMap__ctor_ModelBuilder_
+  commentId: M:CG.Blue.Data.Maps.FileTypeEntityMap.#ctor(ModelBuilder)
+  fullName: CG.Blue.Data.Maps.FileTypeEntityMap.FileTypeEntityMap(ModelBuilder)
+  nameWithType: FileTypeEntityMap.FileTypeEntityMap(ModelBuilder)
+- uid: CG.Blue.Data.Maps.FileTypeEntityMap.#ctor*
+  name: FileTypeEntityMap
+  href: api/CG.Blue.Data.Maps.FileTypeEntityMap.html#CG_Blue_Data_Maps_FileTypeEntityMap__ctor_
+  commentId: Overload:CG.Blue.Data.Maps.FileTypeEntityMap.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Data.Maps.FileTypeEntityMap.FileTypeEntityMap
+  nameWithType: FileTypeEntityMap.FileTypeEntityMap
+- uid: CG.Blue.Data.Maps.FileTypeEntityMap.Configure(EntityTypeBuilder{FileTypeEntity})
+  name: Configure(EntityTypeBuilder<FileTypeEntity>)
+  href: api/CG.Blue.Data.Maps.FileTypeEntityMap.html#CG_Blue_Data_Maps_FileTypeEntityMap_Configure_EntityTypeBuilder_FileTypeEntity__
+  commentId: M:CG.Blue.Data.Maps.FileTypeEntityMap.Configure(EntityTypeBuilder{FileTypeEntity})
+  name.vb: Configure(EntityTypeBuilder(Of FileTypeEntity))
+  fullName: CG.Blue.Data.Maps.FileTypeEntityMap.Configure(EntityTypeBuilder<FileTypeEntity>)
+  fullName.vb: CG.Blue.Data.Maps.FileTypeEntityMap.Configure(EntityTypeBuilder(Of FileTypeEntity))
+  nameWithType: FileTypeEntityMap.Configure(EntityTypeBuilder<FileTypeEntity>)
+  nameWithType.vb: FileTypeEntityMap.Configure(EntityTypeBuilder(Of FileTypeEntity))
+- uid: CG.Blue.Data.Maps.FileTypeEntityMap.Configure*
+  name: Configure
+  href: api/CG.Blue.Data.Maps.FileTypeEntityMap.html#CG_Blue_Data_Maps_FileTypeEntityMap_Configure_
+  commentId: Overload:CG.Blue.Data.Maps.FileTypeEntityMap.Configure
+  isSpec: "True"
+  fullName: CG.Blue.Data.Maps.FileTypeEntityMap.Configure
+  nameWithType: FileTypeEntityMap.Configure
+- uid: CG.Blue.Data.Maps.MimeTypeEntityMap
+  name: MimeTypeEntityMap
+  href: api/CG.Blue.Data.Maps.MimeTypeEntityMap.html
+  commentId: T:CG.Blue.Data.Maps.MimeTypeEntityMap
+  fullName: CG.Blue.Data.Maps.MimeTypeEntityMap
+  nameWithType: MimeTypeEntityMap
+- uid: CG.Blue.Data.Maps.MimeTypeEntityMap.#ctor(ModelBuilder)
+  name: MimeTypeEntityMap(ModelBuilder)
+  href: api/CG.Blue.Data.Maps.MimeTypeEntityMap.html#CG_Blue_Data_Maps_MimeTypeEntityMap__ctor_ModelBuilder_
+  commentId: M:CG.Blue.Data.Maps.MimeTypeEntityMap.#ctor(ModelBuilder)
+  fullName: CG.Blue.Data.Maps.MimeTypeEntityMap.MimeTypeEntityMap(ModelBuilder)
+  nameWithType: MimeTypeEntityMap.MimeTypeEntityMap(ModelBuilder)
+- uid: CG.Blue.Data.Maps.MimeTypeEntityMap.#ctor*
+  name: MimeTypeEntityMap
+  href: api/CG.Blue.Data.Maps.MimeTypeEntityMap.html#CG_Blue_Data_Maps_MimeTypeEntityMap__ctor_
+  commentId: Overload:CG.Blue.Data.Maps.MimeTypeEntityMap.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Data.Maps.MimeTypeEntityMap.MimeTypeEntityMap
+  nameWithType: MimeTypeEntityMap.MimeTypeEntityMap
+- uid: CG.Blue.Data.Maps.MimeTypeEntityMap.Configure(EntityTypeBuilder{MimeTypeEntity})
+  name: Configure(EntityTypeBuilder<MimeTypeEntity>)
+  href: api/CG.Blue.Data.Maps.MimeTypeEntityMap.html#CG_Blue_Data_Maps_MimeTypeEntityMap_Configure_EntityTypeBuilder_MimeTypeEntity__
+  commentId: M:CG.Blue.Data.Maps.MimeTypeEntityMap.Configure(EntityTypeBuilder{MimeTypeEntity})
+  name.vb: Configure(EntityTypeBuilder(Of MimeTypeEntity))
+  fullName: CG.Blue.Data.Maps.MimeTypeEntityMap.Configure(EntityTypeBuilder<MimeTypeEntity>)
+  fullName.vb: CG.Blue.Data.Maps.MimeTypeEntityMap.Configure(EntityTypeBuilder(Of MimeTypeEntity))
+  nameWithType: MimeTypeEntityMap.Configure(EntityTypeBuilder<MimeTypeEntity>)
+  nameWithType.vb: MimeTypeEntityMap.Configure(EntityTypeBuilder(Of MimeTypeEntity))
+- uid: CG.Blue.Data.Maps.MimeTypeEntityMap.Configure*
+  name: Configure
+  href: api/CG.Blue.Data.Maps.MimeTypeEntityMap.html#CG_Blue_Data_Maps_MimeTypeEntityMap_Configure_
+  commentId: Overload:CG.Blue.Data.Maps.MimeTypeEntityMap.Configure
+  isSpec: "True"
+  fullName: CG.Blue.Data.Maps.MimeTypeEntityMap.Configure
+  nameWithType: MimeTypeEntityMap.Configure
+- uid: CG.Blue.Data.Repositories
+  name: CG.Blue.Data.Repositories
+  href: api/CG.Blue.Data.Repositories.html
+  commentId: N:CG.Blue.Data.Repositories
+  fullName: CG.Blue.Data.Repositories
+  nameWithType: CG.Blue.Data.Repositories
+- uid: CG.Blue.Data.Repositories.FileTypeRepository
+  name: FileTypeRepository
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html
+  commentId: T:CG.Blue.Data.Repositories.FileTypeRepository
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository
+  nameWithType: FileTypeRepository
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.#ctor(IMapper,CG.Blue.Data.BlueDbContext,ILogger{CG.Blue.Data.Repositories.FileTypeRepository})
+  name: FileTypeRepository(IMapper, BlueDbContext, ILogger<FileTypeRepository>)
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository__ctor_IMapper_CG_Blue_Data_BlueDbContext_ILogger_CG_Blue_Data_Repositories_FileTypeRepository__
+  commentId: M:CG.Blue.Data.Repositories.FileTypeRepository.#ctor(IMapper,CG.Blue.Data.BlueDbContext,ILogger{CG.Blue.Data.Repositories.FileTypeRepository})
+  name.vb: FileTypeRepository(IMapper, BlueDbContext, ILogger(Of FileTypeRepository))
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.FileTypeRepository(IMapper, CG.Blue.Data.BlueDbContext, ILogger<CG.Blue.Data.Repositories.FileTypeRepository>)
+  fullName.vb: CG.Blue.Data.Repositories.FileTypeRepository.FileTypeRepository(IMapper, CG.Blue.Data.BlueDbContext, ILogger(Of CG.Blue.Data.Repositories.FileTypeRepository))
+  nameWithType: FileTypeRepository.FileTypeRepository(IMapper, BlueDbContext, ILogger<FileTypeRepository>)
+  nameWithType.vb: FileTypeRepository.FileTypeRepository(IMapper, BlueDbContext, ILogger(Of FileTypeRepository))
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.#ctor*
+  name: FileTypeRepository
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository__ctor_
+  commentId: Overload:CG.Blue.Data.Repositories.FileTypeRepository.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.FileTypeRepository
+  nameWithType: FileTypeRepository.FileTypeRepository
+- uid: CG.Blue.Data.Repositories.FileTypeRepository._mapper
+  name: _mapper
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository__mapper
+  commentId: F:CG.Blue.Data.Repositories.FileTypeRepository._mapper
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository._mapper
+  nameWithType: FileTypeRepository._mapper
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.AnyAsync(CancellationToken)
+  name: AnyAsync(CancellationToken)
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_AnyAsync_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.FileTypeRepository.AnyAsync(CancellationToken)
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.AnyAsync(CancellationToken)
+  nameWithType: FileTypeRepository.AnyAsync(CancellationToken)
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.AnyAsync*
+  name: AnyAsync
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_AnyAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.FileTypeRepository.AnyAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.AnyAsync
+  nameWithType: FileTypeRepository.AnyAsync
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.CountAsync(CancellationToken)
+  name: CountAsync(CancellationToken)
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_CountAsync_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.FileTypeRepository.CountAsync(CancellationToken)
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.CountAsync(CancellationToken)
+  nameWithType: FileTypeRepository.CountAsync(CancellationToken)
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.CountAsync*
+  name: CountAsync
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_CountAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.FileTypeRepository.CountAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.CountAsync
+  nameWithType: FileTypeRepository.CountAsync
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.CreateAsync(FileTypeModel,CancellationToken)
+  name: CreateAsync(FileTypeModel, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_CreateAsync_FileTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.FileTypeRepository.CreateAsync(FileTypeModel,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.CreateAsync(FileTypeModel, CancellationToken)
+  nameWithType: FileTypeRepository.CreateAsync(FileTypeModel, CancellationToken)
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.CreateAsync*
+  name: CreateAsync
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_CreateAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.FileTypeRepository.CreateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.CreateAsync
+  nameWithType: FileTypeRepository.CreateAsync
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.DeleteAsync(FileTypeModel,CancellationToken)
+  name: DeleteAsync(FileTypeModel, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_DeleteAsync_FileTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.FileTypeRepository.DeleteAsync(FileTypeModel,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.DeleteAsync(FileTypeModel, CancellationToken)
+  nameWithType: FileTypeRepository.DeleteAsync(FileTypeModel, CancellationToken)
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_DeleteAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.FileTypeRepository.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.DeleteAsync
+  nameWithType: FileTypeRepository.DeleteAsync
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.FileTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: FileTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.FileTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.FindAllAsync
+  nameWithType: FileTypeRepository.FindAllAsync
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
+  name: FindByExtensionAsync(String, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_FindByExtensionAsync_System_String_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.FileTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.FindByExtensionAsync(System.String, CancellationToken)
+  nameWithType: FileTypeRepository.FindByExtensionAsync(String, CancellationToken)
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.FindByExtensionAsync*
+  name: FindByExtensionAsync
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_FindByExtensionAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.FileTypeRepository.FindByExtensionAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.FindByExtensionAsync
+  nameWithType: FileTypeRepository.FindByExtensionAsync
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.UpdateAsync(FileTypeModel,CancellationToken)
+  name: UpdateAsync(FileTypeModel, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_UpdateAsync_FileTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.FileTypeRepository.UpdateAsync(FileTypeModel,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.UpdateAsync(FileTypeModel, CancellationToken)
+  nameWithType: FileTypeRepository.UpdateAsync(FileTypeModel, CancellationToken)
+- uid: CG.Blue.Data.Repositories.FileTypeRepository.UpdateAsync*
+  name: UpdateAsync
+  href: api/CG.Blue.Data.Repositories.FileTypeRepository.html#CG_Blue_Data_Repositories_FileTypeRepository_UpdateAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.FileTypeRepository.UpdateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.FileTypeRepository.UpdateAsync
+  nameWithType: FileTypeRepository.UpdateAsync
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository
+  name: MimeTypeRepository
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html
+  commentId: T:CG.Blue.Data.Repositories.MimeTypeRepository
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository
+  nameWithType: MimeTypeRepository
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.#ctor(IMapper,CG.Blue.Data.BlueDbContext,ILogger{CG.Blue.Data.Repositories.MimeTypeRepository})
+  name: MimeTypeRepository(IMapper, BlueDbContext, ILogger<MimeTypeRepository>)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository__ctor_IMapper_CG_Blue_Data_BlueDbContext_ILogger_CG_Blue_Data_Repositories_MimeTypeRepository__
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.#ctor(IMapper,CG.Blue.Data.BlueDbContext,ILogger{CG.Blue.Data.Repositories.MimeTypeRepository})
+  name.vb: MimeTypeRepository(IMapper, BlueDbContext, ILogger(Of MimeTypeRepository))
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.MimeTypeRepository(IMapper, CG.Blue.Data.BlueDbContext, ILogger<CG.Blue.Data.Repositories.MimeTypeRepository>)
+  fullName.vb: CG.Blue.Data.Repositories.MimeTypeRepository.MimeTypeRepository(IMapper, CG.Blue.Data.BlueDbContext, ILogger(Of CG.Blue.Data.Repositories.MimeTypeRepository))
+  nameWithType: MimeTypeRepository.MimeTypeRepository(IMapper, BlueDbContext, ILogger<MimeTypeRepository>)
+  nameWithType.vb: MimeTypeRepository.MimeTypeRepository(IMapper, BlueDbContext, ILogger(Of MimeTypeRepository))
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.#ctor*
+  name: MimeTypeRepository
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository__ctor_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.MimeTypeRepository
+  nameWithType: MimeTypeRepository.MimeTypeRepository
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository._mapper
+  name: _mapper
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository__mapper
+  commentId: F:CG.Blue.Data.Repositories.MimeTypeRepository._mapper
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository._mapper
+  nameWithType: MimeTypeRepository._mapper
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.AnyAsync(CancellationToken)
+  name: AnyAsync(CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_AnyAsync_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.AnyAsync(CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.AnyAsync(CancellationToken)
+  nameWithType: MimeTypeRepository.AnyAsync(CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.AnyAsync(System.String,System.String,CancellationToken)
+  name: AnyAsync(String, String, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_AnyAsync_System_String_System_String_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.AnyAsync(System.String,System.String,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.AnyAsync(System.String, System.String, CancellationToken)
+  nameWithType: MimeTypeRepository.AnyAsync(String, String, CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.AnyAsync*
+  name: AnyAsync
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_AnyAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.AnyAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.AnyAsync
+  nameWithType: MimeTypeRepository.AnyAsync
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.CountAsync(CancellationToken)
+  name: CountAsync(CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_CountAsync_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.CountAsync(CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.CountAsync(CancellationToken)
+  nameWithType: MimeTypeRepository.CountAsync(CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.CountAsync*
+  name: CountAsync
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_CountAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.CountAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.CountAsync
+  nameWithType: MimeTypeRepository.CountAsync
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.CreateAsync(MimeTypeModel,CancellationToken)
+  name: CreateAsync(MimeTypeModel, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_CreateAsync_MimeTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.CreateAsync(MimeTypeModel,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.CreateAsync(MimeTypeModel, CancellationToken)
+  nameWithType: MimeTypeRepository.CreateAsync(MimeTypeModel, CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.CreateAsync*
+  name: CreateAsync
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_CreateAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.CreateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.CreateAsync
+  nameWithType: MimeTypeRepository.CreateAsync
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.DeleteAsync(MimeTypeModel,CancellationToken)
+  name: DeleteAsync(MimeTypeModel, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_DeleteAsync_MimeTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.DeleteAsync(MimeTypeModel,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.DeleteAsync(MimeTypeModel, CancellationToken)
+  nameWithType: MimeTypeRepository.DeleteAsync(MimeTypeModel, CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_DeleteAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.DeleteAsync
+  nameWithType: MimeTypeRepository.DeleteAsync
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: MimeTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.FindAllAsync
+  nameWithType: MimeTypeRepository.FindAllAsync
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
+  name: FindByExtensionAsync(String, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_FindByExtensionAsync_System_String_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.FindByExtensionAsync(System.String, CancellationToken)
+  nameWithType: MimeTypeRepository.FindByExtensionAsync(String, CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.FindByExtensionAsync*
+  name: FindByExtensionAsync
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_FindByExtensionAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.FindByExtensionAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.FindByExtensionAsync
+  nameWithType: MimeTypeRepository.FindByExtensionAsync
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.FindByIdAsync(System.Int32,CancellationToken)
+  name: FindByIdAsync(Int32, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_FindByIdAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.FindByIdAsync(System.Int32,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.FindByIdAsync(System.Int32, CancellationToken)
+  nameWithType: MimeTypeRepository.FindByIdAsync(Int32, CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.FindByIdAsync*
+  name: FindByIdAsync
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_FindByIdAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.FindByIdAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.FindByIdAsync
+  nameWithType: MimeTypeRepository.FindByIdAsync
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.FindByTypesAsync(System.String,System.String,CancellationToken)
+  name: FindByTypesAsync(String, String, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_FindByTypesAsync_System_String_System_String_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.FindByTypesAsync(System.String,System.String,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.FindByTypesAsync(System.String, System.String, CancellationToken)
+  nameWithType: MimeTypeRepository.FindByTypesAsync(String, String, CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.FindByTypesAsync*
+  name: FindByTypesAsync
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_FindByTypesAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.FindByTypesAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.FindByTypesAsync
+  nameWithType: MimeTypeRepository.FindByTypesAsync
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.UpdateAsync(MimeTypeModel,CancellationToken)
+  name: UpdateAsync(MimeTypeModel, CancellationToken)
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_UpdateAsync_MimeTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Data.Repositories.MimeTypeRepository.UpdateAsync(MimeTypeModel,CancellationToken)
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.UpdateAsync(MimeTypeModel, CancellationToken)
+  nameWithType: MimeTypeRepository.UpdateAsync(MimeTypeModel, CancellationToken)
+- uid: CG.Blue.Data.Repositories.MimeTypeRepository.UpdateAsync*
+  name: UpdateAsync
+  href: api/CG.Blue.Data.Repositories.MimeTypeRepository.html#CG_Blue_Data_Repositories_MimeTypeRepository_UpdateAsync_
+  commentId: Overload:CG.Blue.Data.Repositories.MimeTypeRepository.UpdateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Data.Repositories.MimeTypeRepository.UpdateAsync
+  nameWithType: MimeTypeRepository.UpdateAsync
 - uid: CG.Blue.Data.Sqlite
   name: CG.Blue.Data.Sqlite
   href: api/CG.Blue.Data.Sqlite.html
@@ -98,6 +768,76 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Data.Sqlite.BlueDbContextDesignTimeFactory.OnConfigureDataContextOptions
   nameWithType: BlueDbContextDesignTimeFactory.OnConfigureDataContextOptions
+- uid: CG.Blue.Data.Sqlite.Migrations
+  name: CG.Blue.Data.Sqlite.Migrations
+  href: api/CG.Blue.Data.Sqlite.Migrations.html
+  commentId: N:CG.Blue.Data.Sqlite.Migrations
+  fullName: CG.Blue.Data.Sqlite.Migrations
+  nameWithType: CG.Blue.Data.Sqlite.Migrations
+- uid: CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot
+  name: BlueDbContextModelSnapshot
+  href: api/CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot.html
+  commentId: T:CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot
+  fullName: CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot
+  nameWithType: BlueDbContextModelSnapshot
+- uid: CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot.BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildModel(ModelBuilder)
+  href: api/CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot.html#CG_Blue_Data_Sqlite_Migrations_BlueDbContextModelSnapshot_BuildModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot.BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot.BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: BlueDbContextModelSnapshot.BuildModel(ModelBuilder)
+- uid: CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot.BuildModel*
+  name: BuildModel
+  href: api/CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot.html#CG_Blue_Data_Sqlite_Migrations_BlueDbContextModelSnapshot_BuildModel_
+  commentId: Overload:CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot.BuildModel
+  isSpec: "True"
+  fullName: CG.Blue.Data.Sqlite.Migrations.BlueDbContextModelSnapshot.BuildModel
+  nameWithType: BlueDbContextModelSnapshot.BuildModel
+- uid: CG.Blue.Data.Sqlite.Migrations.InitialCreate
+  name: InitialCreate
+  href: api/CG.Blue.Data.Sqlite.Migrations.InitialCreate.html
+  commentId: T:CG.Blue.Data.Sqlite.Migrations.InitialCreate
+  fullName: CG.Blue.Data.Sqlite.Migrations.InitialCreate
+  nameWithType: InitialCreate
+- uid: CG.Blue.Data.Sqlite.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/CG.Blue.Data.Sqlite.Migrations.InitialCreate.html#CG_Blue_Data_Sqlite_Migrations_InitialCreate_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:CG.Blue.Data.Sqlite.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: CG.Blue.Data.Sqlite.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: InitialCreate.BuildTargetModel(ModelBuilder)
+- uid: CG.Blue.Data.Sqlite.Migrations.InitialCreate.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/CG.Blue.Data.Sqlite.Migrations.InitialCreate.html#CG_Blue_Data_Sqlite_Migrations_InitialCreate_BuildTargetModel_
+  commentId: Overload:CG.Blue.Data.Sqlite.Migrations.InitialCreate.BuildTargetModel
+  isSpec: "True"
+  fullName: CG.Blue.Data.Sqlite.Migrations.InitialCreate.BuildTargetModel
+  nameWithType: InitialCreate.BuildTargetModel
+- uid: CG.Blue.Data.Sqlite.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/CG.Blue.Data.Sqlite.Migrations.InitialCreate.html#CG_Blue_Data_Sqlite_Migrations_InitialCreate_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:CG.Blue.Data.Sqlite.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: CG.Blue.Data.Sqlite.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: InitialCreate.Down(MigrationBuilder)
+- uid: CG.Blue.Data.Sqlite.Migrations.InitialCreate.Down*
+  name: Down
+  href: api/CG.Blue.Data.Sqlite.Migrations.InitialCreate.html#CG_Blue_Data_Sqlite_Migrations_InitialCreate_Down_
+  commentId: Overload:CG.Blue.Data.Sqlite.Migrations.InitialCreate.Down
+  isSpec: "True"
+  fullName: CG.Blue.Data.Sqlite.Migrations.InitialCreate.Down
+  nameWithType: InitialCreate.Down
+- uid: CG.Blue.Data.Sqlite.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/CG.Blue.Data.Sqlite.Migrations.InitialCreate.html#CG_Blue_Data_Sqlite_Migrations_InitialCreate_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:CG.Blue.Data.Sqlite.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: CG.Blue.Data.Sqlite.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: InitialCreate.Up(MigrationBuilder)
+- uid: CG.Blue.Data.Sqlite.Migrations.InitialCreate.Up*
+  name: Up
+  href: api/CG.Blue.Data.Sqlite.Migrations.InitialCreate.html#CG_Blue_Data_Sqlite_Migrations_InitialCreate_Up_
+  commentId: Overload:CG.Blue.Data.Sqlite.Migrations.InitialCreate.Up
+  isSpec: "True"
+  fullName: CG.Blue.Data.Sqlite.Migrations.InitialCreate.Up
+  nameWithType: InitialCreate.Up
 - uid: CG.Blue.Data.SqlServer
   name: CG.Blue.Data.SqlServer
   href: api/CG.Blue.Data.SqlServer.html
@@ -126,6 +866,405 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Data.SqlServer.BlueDbContextDesignTimeFactory.OnConfigureDataContextOptions
   nameWithType: BlueDbContextDesignTimeFactory.OnConfigureDataContextOptions
+- uid: CG.Blue.Data.SqlServer.Migrations
+  name: CG.Blue.Data.SqlServer.Migrations
+  href: api/CG.Blue.Data.SqlServer.Migrations.html
+  commentId: N:CG.Blue.Data.SqlServer.Migrations
+  fullName: CG.Blue.Data.SqlServer.Migrations
+  nameWithType: CG.Blue.Data.SqlServer.Migrations
+- uid: CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot
+  name: BlueDbContextModelSnapshot
+  href: api/CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot.html
+  commentId: T:CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot
+  fullName: CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot
+  nameWithType: BlueDbContextModelSnapshot
+- uid: CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot.BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildModel(ModelBuilder)
+  href: api/CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot.html#CG_Blue_Data_SqlServer_Migrations_BlueDbContextModelSnapshot_BuildModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot.BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot.BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: BlueDbContextModelSnapshot.BuildModel(ModelBuilder)
+- uid: CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot.BuildModel*
+  name: BuildModel
+  href: api/CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot.html#CG_Blue_Data_SqlServer_Migrations_BlueDbContextModelSnapshot_BuildModel_
+  commentId: Overload:CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot.BuildModel
+  isSpec: "True"
+  fullName: CG.Blue.Data.SqlServer.Migrations.BlueDbContextModelSnapshot.BuildModel
+  nameWithType: BlueDbContextModelSnapshot.BuildModel
+- uid: CG.Blue.Data.SqlServer.Migrations.InitialCreate
+  name: InitialCreate
+  href: api/CG.Blue.Data.SqlServer.Migrations.InitialCreate.html
+  commentId: T:CG.Blue.Data.SqlServer.Migrations.InitialCreate
+  fullName: CG.Blue.Data.SqlServer.Migrations.InitialCreate
+  nameWithType: InitialCreate
+- uid: CG.Blue.Data.SqlServer.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/CG.Blue.Data.SqlServer.Migrations.InitialCreate.html#CG_Blue_Data_SqlServer_Migrations_InitialCreate_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:CG.Blue.Data.SqlServer.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: CG.Blue.Data.SqlServer.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: InitialCreate.BuildTargetModel(ModelBuilder)
+- uid: CG.Blue.Data.SqlServer.Migrations.InitialCreate.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/CG.Blue.Data.SqlServer.Migrations.InitialCreate.html#CG_Blue_Data_SqlServer_Migrations_InitialCreate_BuildTargetModel_
+  commentId: Overload:CG.Blue.Data.SqlServer.Migrations.InitialCreate.BuildTargetModel
+  isSpec: "True"
+  fullName: CG.Blue.Data.SqlServer.Migrations.InitialCreate.BuildTargetModel
+  nameWithType: InitialCreate.BuildTargetModel
+- uid: CG.Blue.Data.SqlServer.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/CG.Blue.Data.SqlServer.Migrations.InitialCreate.html#CG_Blue_Data_SqlServer_Migrations_InitialCreate_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:CG.Blue.Data.SqlServer.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: CG.Blue.Data.SqlServer.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: InitialCreate.Down(MigrationBuilder)
+- uid: CG.Blue.Data.SqlServer.Migrations.InitialCreate.Down*
+  name: Down
+  href: api/CG.Blue.Data.SqlServer.Migrations.InitialCreate.html#CG_Blue_Data_SqlServer_Migrations_InitialCreate_Down_
+  commentId: Overload:CG.Blue.Data.SqlServer.Migrations.InitialCreate.Down
+  isSpec: "True"
+  fullName: CG.Blue.Data.SqlServer.Migrations.InitialCreate.Down
+  nameWithType: InitialCreate.Down
+- uid: CG.Blue.Data.SqlServer.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/CG.Blue.Data.SqlServer.Migrations.InitialCreate.html#CG_Blue_Data_SqlServer_Migrations_InitialCreate_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:CG.Blue.Data.SqlServer.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: CG.Blue.Data.SqlServer.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: InitialCreate.Up(MigrationBuilder)
+- uid: CG.Blue.Data.SqlServer.Migrations.InitialCreate.Up*
+  name: Up
+  href: api/CG.Blue.Data.SqlServer.Migrations.InitialCreate.html#CG_Blue_Data_SqlServer_Migrations_InitialCreate_Up_
+  commentId: Overload:CG.Blue.Data.SqlServer.Migrations.InitialCreate.Up
+  isSpec: "True"
+  fullName: CG.Blue.Data.SqlServer.Migrations.InitialCreate.Up
+  nameWithType: InitialCreate.Up
+- uid: CG.Blue.Directors
+  name: CG.Blue.Directors
+  href: api/CG.Blue.Directors.html
+  commentId: N:CG.Blue.Directors
+  fullName: CG.Blue.Directors
+  nameWithType: CG.Blue.Directors
+- uid: CG.Blue.Directors.DirectorException
+  name: DirectorException
+  href: api/CG.Blue.Directors.DirectorException.html
+  commentId: T:CG.Blue.Directors.DirectorException
+  fullName: CG.Blue.Directors.DirectorException
+  nameWithType: DirectorException
+- uid: CG.Blue.Directors.DirectorException.#ctor
+  name: DirectorException()
+  href: api/CG.Blue.Directors.DirectorException.html#CG_Blue_Directors_DirectorException__ctor
+  commentId: M:CG.Blue.Directors.DirectorException.#ctor
+  fullName: CG.Blue.Directors.DirectorException.DirectorException()
+  nameWithType: DirectorException.DirectorException()
+- uid: CG.Blue.Directors.DirectorException.#ctor(SerializationInfo,StreamingContext)
+  name: DirectorException(SerializationInfo, StreamingContext)
+  href: api/CG.Blue.Directors.DirectorException.html#CG_Blue_Directors_DirectorException__ctor_SerializationInfo_StreamingContext_
+  commentId: M:CG.Blue.Directors.DirectorException.#ctor(SerializationInfo,StreamingContext)
+  fullName: CG.Blue.Directors.DirectorException.DirectorException(SerializationInfo, StreamingContext)
+  nameWithType: DirectorException.DirectorException(SerializationInfo, StreamingContext)
+- uid: CG.Blue.Directors.DirectorException.#ctor(System.String)
+  name: DirectorException(String)
+  href: api/CG.Blue.Directors.DirectorException.html#CG_Blue_Directors_DirectorException__ctor_System_String_
+  commentId: M:CG.Blue.Directors.DirectorException.#ctor(System.String)
+  fullName: CG.Blue.Directors.DirectorException.DirectorException(System.String)
+  nameWithType: DirectorException.DirectorException(String)
+- uid: CG.Blue.Directors.DirectorException.#ctor(System.String,Exception)
+  name: DirectorException(String, Exception)
+  href: api/CG.Blue.Directors.DirectorException.html#CG_Blue_Directors_DirectorException__ctor_System_String_Exception_
+  commentId: M:CG.Blue.Directors.DirectorException.#ctor(System.String,Exception)
+  fullName: CG.Blue.Directors.DirectorException.DirectorException(System.String, Exception)
+  nameWithType: DirectorException.DirectorException(String, Exception)
+- uid: CG.Blue.Directors.DirectorException.#ctor*
+  name: DirectorException
+  href: api/CG.Blue.Directors.DirectorException.html#CG_Blue_Directors_DirectorException__ctor_
+  commentId: Overload:CG.Blue.Directors.DirectorException.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Directors.DirectorException.DirectorException
+  nameWithType: DirectorException.DirectorException
+- uid: CG.Blue.Directors.ISeedDirector
+  name: ISeedDirector
+  href: api/CG.Blue.Directors.ISeedDirector.html
+  commentId: T:CG.Blue.Directors.ISeedDirector
+  fullName: CG.Blue.Directors.ISeedDirector
+  nameWithType: ISeedDirector
+- uid: CG.Blue.Directors.ISeedDirector.SeedFileTypesAsync(List{CG.Blue.Options.FileTypeOptions},System.String,System.Boolean,CancellationToken)
+  name: SeedFileTypesAsync(List<FileTypeOptions>, String, Boolean, CancellationToken)
+  href: api/CG.Blue.Directors.ISeedDirector.html#CG_Blue_Directors_ISeedDirector_SeedFileTypesAsync_List_CG_Blue_Options_FileTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Blue.Directors.ISeedDirector.SeedFileTypesAsync(List{CG.Blue.Options.FileTypeOptions},System.String,System.Boolean,CancellationToken)
+  name.vb: SeedFileTypesAsync(List(Of FileTypeOptions), String, Boolean, CancellationToken)
+  fullName: CG.Blue.Directors.ISeedDirector.SeedFileTypesAsync(List<CG.Blue.Options.FileTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Blue.Directors.ISeedDirector.SeedFileTypesAsync(List(Of CG.Blue.Options.FileTypeOptions), System.String, System.Boolean, CancellationToken)
+  nameWithType: ISeedDirector.SeedFileTypesAsync(List<FileTypeOptions>, String, Boolean, CancellationToken)
+  nameWithType.vb: ISeedDirector.SeedFileTypesAsync(List(Of FileTypeOptions), String, Boolean, CancellationToken)
+- uid: CG.Blue.Directors.ISeedDirector.SeedFileTypesAsync*
+  name: SeedFileTypesAsync
+  href: api/CG.Blue.Directors.ISeedDirector.html#CG_Blue_Directors_ISeedDirector_SeedFileTypesAsync_
+  commentId: Overload:CG.Blue.Directors.ISeedDirector.SeedFileTypesAsync
+  isSpec: "True"
+  fullName: CG.Blue.Directors.ISeedDirector.SeedFileTypesAsync
+  nameWithType: ISeedDirector.SeedFileTypesAsync
+- uid: CG.Blue.Directors.ISeedDirector.SeedMimeTypesAsync(List{MimeTypeModel},System.String,System.Boolean,CancellationToken)
+  name: SeedMimeTypesAsync(List<MimeTypeModel>, String, Boolean, CancellationToken)
+  href: api/CG.Blue.Directors.ISeedDirector.html#CG_Blue_Directors_ISeedDirector_SeedMimeTypesAsync_List_MimeTypeModel__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Blue.Directors.ISeedDirector.SeedMimeTypesAsync(List{MimeTypeModel},System.String,System.Boolean,CancellationToken)
+  name.vb: SeedMimeTypesAsync(List(Of MimeTypeModel), String, Boolean, CancellationToken)
+  fullName: CG.Blue.Directors.ISeedDirector.SeedMimeTypesAsync(List<MimeTypeModel>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Blue.Directors.ISeedDirector.SeedMimeTypesAsync(List(Of MimeTypeModel), System.String, System.Boolean, CancellationToken)
+  nameWithType: ISeedDirector.SeedMimeTypesAsync(List<MimeTypeModel>, String, Boolean, CancellationToken)
+  nameWithType.vb: ISeedDirector.SeedMimeTypesAsync(List(Of MimeTypeModel), String, Boolean, CancellationToken)
+- uid: CG.Blue.Directors.ISeedDirector.SeedMimeTypesAsync*
+  name: SeedMimeTypesAsync
+  href: api/CG.Blue.Directors.ISeedDirector.html#CG_Blue_Directors_ISeedDirector_SeedMimeTypesAsync_
+  commentId: Overload:CG.Blue.Directors.ISeedDirector.SeedMimeTypesAsync
+  isSpec: "True"
+  fullName: CG.Blue.Directors.ISeedDirector.SeedMimeTypesAsync
+  nameWithType: ISeedDirector.SeedMimeTypesAsync
+- uid: CG.Blue.Directors.SeedDirector
+  name: SeedDirector
+  href: api/CG.Blue.Directors.SeedDirector.html
+  commentId: T:CG.Blue.Directors.SeedDirector
+  fullName: CG.Blue.Directors.SeedDirector
+  nameWithType: SeedDirector
+- uid: CG.Blue.Directors.SeedDirector.#ctor(IFileTypeManager,IMimeTypeManager,ILogger{CG.Blue.Directors.SeedDirector})
+  name: SeedDirector(IFileTypeManager, IMimeTypeManager, ILogger<SeedDirector>)
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector__ctor_IFileTypeManager_IMimeTypeManager_ILogger_CG_Blue_Directors_SeedDirector__
+  commentId: M:CG.Blue.Directors.SeedDirector.#ctor(IFileTypeManager,IMimeTypeManager,ILogger{CG.Blue.Directors.SeedDirector})
+  name.vb: SeedDirector(IFileTypeManager, IMimeTypeManager, ILogger(Of SeedDirector))
+  fullName: CG.Blue.Directors.SeedDirector.SeedDirector(IFileTypeManager, IMimeTypeManager, ILogger<CG.Blue.Directors.SeedDirector>)
+  fullName.vb: CG.Blue.Directors.SeedDirector.SeedDirector(IFileTypeManager, IMimeTypeManager, ILogger(Of CG.Blue.Directors.SeedDirector))
+  nameWithType: SeedDirector.SeedDirector(IFileTypeManager, IMimeTypeManager, ILogger<SeedDirector>)
+  nameWithType.vb: SeedDirector.SeedDirector(IFileTypeManager, IMimeTypeManager, ILogger(Of SeedDirector))
+- uid: CG.Blue.Directors.SeedDirector.#ctor*
+  name: SeedDirector
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector__ctor_
+  commentId: Overload:CG.Blue.Directors.SeedDirector.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Directors.SeedDirector.SeedDirector
+  nameWithType: SeedDirector.SeedDirector
+- uid: CG.Blue.Directors.SeedDirector._fileTypeManager
+  name: _fileTypeManager
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector__fileTypeManager
+  commentId: F:CG.Blue.Directors.SeedDirector._fileTypeManager
+  fullName: CG.Blue.Directors.SeedDirector._fileTypeManager
+  nameWithType: SeedDirector._fileTypeManager
+- uid: CG.Blue.Directors.SeedDirector._mimeTypeManager
+  name: _mimeTypeManager
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector__mimeTypeManager
+  commentId: F:CG.Blue.Directors.SeedDirector._mimeTypeManager
+  fullName: CG.Blue.Directors.SeedDirector._mimeTypeManager
+  nameWithType: SeedDirector._mimeTypeManager
+- uid: CG.Blue.Directors.SeedDirector.BeforeSeedAsync(System.String,System.Boolean,CancellationToken)
+  name: BeforeSeedAsync(String, Boolean, CancellationToken)
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_BeforeSeedAsync_System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Blue.Directors.SeedDirector.BeforeSeedAsync(System.String,System.Boolean,CancellationToken)
+  fullName: CG.Blue.Directors.SeedDirector.BeforeSeedAsync(System.String, System.Boolean, CancellationToken)
+  nameWithType: SeedDirector.BeforeSeedAsync(String, Boolean, CancellationToken)
+- uid: CG.Blue.Directors.SeedDirector.BeforeSeedAsync*
+  name: BeforeSeedAsync
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_BeforeSeedAsync_
+  commentId: Overload:CG.Blue.Directors.SeedDirector.BeforeSeedAsync
+  isSpec: "True"
+  fullName: CG.Blue.Directors.SeedDirector.BeforeSeedAsync
+  nameWithType: SeedDirector.BeforeSeedAsync
+- uid: CG.Blue.Directors.SeedDirector.SeedFileTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
+  name: SeedFileTypesAsync(IConfiguration, String, Boolean, CancellationToken)
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_SeedFileTypesAsync_IConfiguration_System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Blue.Directors.SeedDirector.SeedFileTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)
+  fullName: CG.Blue.Directors.SeedDirector.SeedFileTypesAsync(IConfiguration, System.String, System.Boolean, CancellationToken)
+  nameWithType: SeedDirector.SeedFileTypesAsync(IConfiguration, String, Boolean, CancellationToken)
+- uid: CG.Blue.Directors.SeedDirector.SeedFileTypesAsync(List{FileTypeOptions},System.String,System.Boolean,CancellationToken)
+  name: SeedFileTypesAsync(List<FileTypeOptions>, String, Boolean, CancellationToken)
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_SeedFileTypesAsync_List_FileTypeOptions__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Blue.Directors.SeedDirector.SeedFileTypesAsync(List{FileTypeOptions},System.String,System.Boolean,CancellationToken)
+  name.vb: SeedFileTypesAsync(List(Of FileTypeOptions), String, Boolean, CancellationToken)
+  fullName: CG.Blue.Directors.SeedDirector.SeedFileTypesAsync(List<FileTypeOptions>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Blue.Directors.SeedDirector.SeedFileTypesAsync(List(Of FileTypeOptions), System.String, System.Boolean, CancellationToken)
+  nameWithType: SeedDirector.SeedFileTypesAsync(List<FileTypeOptions>, String, Boolean, CancellationToken)
+  nameWithType.vb: SeedDirector.SeedFileTypesAsync(List(Of FileTypeOptions), String, Boolean, CancellationToken)
+- uid: CG.Blue.Directors.SeedDirector.SeedFileTypesAsync*
+  name: SeedFileTypesAsync
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_SeedFileTypesAsync_
+  commentId: Overload:CG.Blue.Directors.SeedDirector.SeedFileTypesAsync
+  isSpec: "True"
+  fullName: CG.Blue.Directors.SeedDirector.SeedFileTypesAsync
+  nameWithType: SeedDirector.SeedFileTypesAsync
+- uid: CG.Blue.Directors.SeedDirector.SeedFromConfiguration(System.String,IConfiguration,System.String,System.Boolean,CancellationToken)
+  name: SeedFromConfiguration(String, IConfiguration, String, Boolean, CancellationToken)
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_SeedFromConfiguration_System_String_IConfiguration_System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Blue.Directors.SeedDirector.SeedFromConfiguration(System.String,IConfiguration,System.String,System.Boolean,CancellationToken)
+  fullName: CG.Blue.Directors.SeedDirector.SeedFromConfiguration(System.String, IConfiguration, System.String, System.Boolean, CancellationToken)
+  nameWithType: SeedDirector.SeedFromConfiguration(String, IConfiguration, String, Boolean, CancellationToken)
+- uid: CG.Blue.Directors.SeedDirector.SeedFromConfiguration*
+  name: SeedFromConfiguration
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_SeedFromConfiguration_
+  commentId: Overload:CG.Blue.Directors.SeedDirector.SeedFromConfiguration
+  isSpec: "True"
+  fullName: CG.Blue.Directors.SeedDirector.SeedFromConfiguration
+  nameWithType: SeedDirector.SeedFromConfiguration
+- uid: CG.Blue.Directors.SeedDirector.SeedMimeTypesAsync(List{MimeTypeModel},System.String,System.Boolean,CancellationToken)
+  name: SeedMimeTypesAsync(List<MimeTypeModel>, String, Boolean, CancellationToken)
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_SeedMimeTypesAsync_List_MimeTypeModel__System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Blue.Directors.SeedDirector.SeedMimeTypesAsync(List{MimeTypeModel},System.String,System.Boolean,CancellationToken)
+  name.vb: SeedMimeTypesAsync(List(Of MimeTypeModel), String, Boolean, CancellationToken)
+  fullName: CG.Blue.Directors.SeedDirector.SeedMimeTypesAsync(List<MimeTypeModel>, System.String, System.Boolean, CancellationToken)
+  fullName.vb: CG.Blue.Directors.SeedDirector.SeedMimeTypesAsync(List(Of MimeTypeModel), System.String, System.Boolean, CancellationToken)
+  nameWithType: SeedDirector.SeedMimeTypesAsync(List<MimeTypeModel>, String, Boolean, CancellationToken)
+  nameWithType.vb: SeedDirector.SeedMimeTypesAsync(List(Of MimeTypeModel), String, Boolean, CancellationToken)
+- uid: CG.Blue.Directors.SeedDirector.SeedMimeTypesAsync*
+  name: SeedMimeTypesAsync
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_SeedMimeTypesAsync_
+  commentId: Overload:CG.Blue.Directors.SeedDirector.SeedMimeTypesAsync
+  isSpec: "True"
+  fullName: CG.Blue.Directors.SeedDirector.SeedMimeTypesAsync
+  nameWithType: SeedDirector.SeedMimeTypesAsync
+- uid: CG.Blue.Directors.SeedDirector.SeedMimeTypesFromIanaAsync(System.String,System.Boolean,CancellationToken)
+  name: SeedMimeTypesFromIanaAsync(String, Boolean, CancellationToken)
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_SeedMimeTypesFromIanaAsync_System_String_System_Boolean_CancellationToken_
+  commentId: M:CG.Blue.Directors.SeedDirector.SeedMimeTypesFromIanaAsync(System.String,System.Boolean,CancellationToken)
+  fullName: CG.Blue.Directors.SeedDirector.SeedMimeTypesFromIanaAsync(System.String, System.Boolean, CancellationToken)
+  nameWithType: SeedDirector.SeedMimeTypesFromIanaAsync(String, Boolean, CancellationToken)
+- uid: CG.Blue.Directors.SeedDirector.SeedMimeTypesFromIanaAsync*
+  name: SeedMimeTypesFromIanaAsync
+  href: api/CG.Blue.Directors.SeedDirector.html#CG_Blue_Directors_SeedDirector_SeedMimeTypesFromIanaAsync_
+  commentId: Overload:CG.Blue.Directors.SeedDirector.SeedMimeTypesFromIanaAsync
+  isSpec: "True"
+  fullName: CG.Blue.Directors.SeedDirector.SeedMimeTypesFromIanaAsync
+  nameWithType: SeedDirector.SeedMimeTypesFromIanaAsync
+- uid: CG.Blue.Facades
+  name: CG.Blue.Facades
+  href: api/CG.Blue.Facades.html
+  commentId: N:CG.Blue.Facades
+  fullName: CG.Blue.Facades
+  nameWithType: CG.Blue.Facades
+- uid: CG.Blue.Facades.ISupportFacade
+  name: ISupportFacade
+  href: api/CG.Blue.Facades.ISupportFacade.html
+  commentId: T:CG.Blue.Facades.ISupportFacade
+  fullName: CG.Blue.Facades.ISupportFacade
+  nameWithType: ISupportFacade
+- uid: CG.Blue.Facades.ISupportFacade.FileTypes
+  name: FileTypes
+  href: api/CG.Blue.Facades.ISupportFacade.html#CG_Blue_Facades_ISupportFacade_FileTypes
+  commentId: P:CG.Blue.Facades.ISupportFacade.FileTypes
+  fullName: CG.Blue.Facades.ISupportFacade.FileTypes
+  nameWithType: ISupportFacade.FileTypes
+- uid: CG.Blue.Facades.ISupportFacade.FileTypes*
+  name: FileTypes
+  href: api/CG.Blue.Facades.ISupportFacade.html#CG_Blue_Facades_ISupportFacade_FileTypes_
+  commentId: Overload:CG.Blue.Facades.ISupportFacade.FileTypes
+  isSpec: "True"
+  fullName: CG.Blue.Facades.ISupportFacade.FileTypes
+  nameWithType: ISupportFacade.FileTypes
+- uid: CG.Blue.Facades.ISupportFacade.MimeTypes
+  name: MimeTypes
+  href: api/CG.Blue.Facades.ISupportFacade.html#CG_Blue_Facades_ISupportFacade_MimeTypes
+  commentId: P:CG.Blue.Facades.ISupportFacade.MimeTypes
+  fullName: CG.Blue.Facades.ISupportFacade.MimeTypes
+  nameWithType: ISupportFacade.MimeTypes
+- uid: CG.Blue.Facades.ISupportFacade.MimeTypes*
+  name: MimeTypes
+  href: api/CG.Blue.Facades.ISupportFacade.html#CG_Blue_Facades_ISupportFacade_MimeTypes_
+  commentId: Overload:CG.Blue.Facades.ISupportFacade.MimeTypes
+  isSpec: "True"
+  fullName: CG.Blue.Facades.ISupportFacade.MimeTypes
+  nameWithType: ISupportFacade.MimeTypes
+- uid: CG.Blue.Facades.SupportFacade
+  name: SupportFacade
+  href: api/CG.Blue.Facades.SupportFacade.html
+  commentId: T:CG.Blue.Facades.SupportFacade
+  fullName: CG.Blue.Facades.SupportFacade
+  nameWithType: SupportFacade
+- uid: CG.Blue.Facades.SupportFacade.#ctor(IMimeTypeManager,IFileTypeManager)
+  name: SupportFacade(IMimeTypeManager, IFileTypeManager)
+  href: api/CG.Blue.Facades.SupportFacade.html#CG_Blue_Facades_SupportFacade__ctor_IMimeTypeManager_IFileTypeManager_
+  commentId: M:CG.Blue.Facades.SupportFacade.#ctor(IMimeTypeManager,IFileTypeManager)
+  fullName: CG.Blue.Facades.SupportFacade.SupportFacade(IMimeTypeManager, IFileTypeManager)
+  nameWithType: SupportFacade.SupportFacade(IMimeTypeManager, IFileTypeManager)
+- uid: CG.Blue.Facades.SupportFacade.#ctor*
+  name: SupportFacade
+  href: api/CG.Blue.Facades.SupportFacade.html#CG_Blue_Facades_SupportFacade__ctor_
+  commentId: Overload:CG.Blue.Facades.SupportFacade.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Facades.SupportFacade.SupportFacade
+  nameWithType: SupportFacade.SupportFacade
+- uid: CG.Blue.Facades.SupportFacade._fileTypeManager
+  name: _fileTypeManager
+  href: api/CG.Blue.Facades.SupportFacade.html#CG_Blue_Facades_SupportFacade__fileTypeManager
+  commentId: F:CG.Blue.Facades.SupportFacade._fileTypeManager
+  fullName: CG.Blue.Facades.SupportFacade._fileTypeManager
+  nameWithType: SupportFacade._fileTypeManager
+- uid: CG.Blue.Facades.SupportFacade._mimeTypeManager
+  name: _mimeTypeManager
+  href: api/CG.Blue.Facades.SupportFacade.html#CG_Blue_Facades_SupportFacade__mimeTypeManager
+  commentId: F:CG.Blue.Facades.SupportFacade._mimeTypeManager
+  fullName: CG.Blue.Facades.SupportFacade._mimeTypeManager
+  nameWithType: SupportFacade._mimeTypeManager
+- uid: CG.Blue.Facades.SupportFacade.FileTypes
+  name: FileTypes
+  href: api/CG.Blue.Facades.SupportFacade.html#CG_Blue_Facades_SupportFacade_FileTypes
+  commentId: P:CG.Blue.Facades.SupportFacade.FileTypes
+  fullName: CG.Blue.Facades.SupportFacade.FileTypes
+  nameWithType: SupportFacade.FileTypes
+- uid: CG.Blue.Facades.SupportFacade.FileTypes*
+  name: FileTypes
+  href: api/CG.Blue.Facades.SupportFacade.html#CG_Blue_Facades_SupportFacade_FileTypes_
+  commentId: Overload:CG.Blue.Facades.SupportFacade.FileTypes
+  isSpec: "True"
+  fullName: CG.Blue.Facades.SupportFacade.FileTypes
+  nameWithType: SupportFacade.FileTypes
+- uid: CG.Blue.Facades.SupportFacade.MimeTypes
+  name: MimeTypes
+  href: api/CG.Blue.Facades.SupportFacade.html#CG_Blue_Facades_SupportFacade_MimeTypes
+  commentId: P:CG.Blue.Facades.SupportFacade.MimeTypes
+  fullName: CG.Blue.Facades.SupportFacade.MimeTypes
+  nameWithType: SupportFacade.MimeTypes
+- uid: CG.Blue.Facades.SupportFacade.MimeTypes*
+  name: MimeTypes
+  href: api/CG.Blue.Facades.SupportFacade.html#CG_Blue_Facades_SupportFacade_MimeTypes_
+  commentId: Overload:CG.Blue.Facades.SupportFacade.MimeTypes
+  isSpec: "True"
+  fullName: CG.Blue.Facades.SupportFacade.MimeTypes
+  nameWithType: SupportFacade.MimeTypes
+- uid: CG.Blue.Globals
+  name: Globals
+  href: api/CG.Blue.Globals.html
+  commentId: T:CG.Blue.Globals
+  fullName: CG.Blue.Globals
+  nameWithType: Globals
+- uid: CG.Blue.Globals.Models
+  name: Globals.Models
+  href: api/CG.Blue.Globals.Models.html
+  commentId: T:CG.Blue.Globals.Models
+  fullName: CG.Blue.Globals.Models
+  nameWithType: Globals.Models
+- uid: CG.Blue.Globals.Models.FileTypes
+  name: Globals.Models.FileTypes
+  href: api/CG.Blue.Globals.Models.FileTypes.html
+  commentId: T:CG.Blue.Globals.Models.FileTypes
+  fullName: CG.Blue.Globals.Models.FileTypes
+  nameWithType: Globals.Models.FileTypes
+- uid: CG.Blue.Globals.Models.FileTypes.ExtensionLength
+  name: ExtensionLength
+  href: api/CG.Blue.Globals.Models.FileTypes.html#CG_Blue_Globals_Models_FileTypes_ExtensionLength
+  commentId: F:CG.Blue.Globals.Models.FileTypes.ExtensionLength
+  fullName: CG.Blue.Globals.Models.FileTypes.ExtensionLength
+  nameWithType: Globals.Models.FileTypes.ExtensionLength
+- uid: CG.Blue.Globals.Models.MimeTypes
+  name: Globals.Models.MimeTypes
+  href: api/CG.Blue.Globals.Models.MimeTypes.html
+  commentId: T:CG.Blue.Globals.Models.MimeTypes
+  fullName: CG.Blue.Globals.Models.MimeTypes
+  nameWithType: Globals.Models.MimeTypes
+- uid: CG.Blue.Globals.Models.MimeTypes.SubTypeLength
+  name: SubTypeLength
+  href: api/CG.Blue.Globals.Models.MimeTypes.html#CG_Blue_Globals_Models_MimeTypes_SubTypeLength
+  commentId: F:CG.Blue.Globals.Models.MimeTypes.SubTypeLength
+  fullName: CG.Blue.Globals.Models.MimeTypes.SubTypeLength
+  nameWithType: Globals.Models.MimeTypes.SubTypeLength
+- uid: CG.Blue.Globals.Models.MimeTypes.TypeLength
+  name: TypeLength
+  href: api/CG.Blue.Globals.Models.MimeTypes.html#CG_Blue_Globals_Models_MimeTypes_TypeLength
+  commentId: F:CG.Blue.Globals.Models.MimeTypes.TypeLength
+  fullName: CG.Blue.Globals.Models.MimeTypes.TypeLength
+  nameWithType: Globals.Models.MimeTypes.TypeLength
 - uid: CG.Blue.Host.Options
   name: CG.Blue.Host.Options
   href: api/CG.Blue.Host.Options.html
@@ -236,6 +1375,717 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Host.Themes.BlueTheme.BlueTheme
   nameWithType: BlueTheme.BlueTheme
+- uid: CG.Blue.IBlueApi
+  name: IBlueApi
+  href: api/CG.Blue.IBlueApi.html
+  commentId: T:CG.Blue.IBlueApi
+  fullName: CG.Blue.IBlueApi
+  nameWithType: IBlueApi
+- uid: CG.Blue.IBlueApi.Support
+  name: Support
+  href: api/CG.Blue.IBlueApi.html#CG_Blue_IBlueApi_Support
+  commentId: P:CG.Blue.IBlueApi.Support
+  fullName: CG.Blue.IBlueApi.Support
+  nameWithType: IBlueApi.Support
+- uid: CG.Blue.IBlueApi.Support*
+  name: Support
+  href: api/CG.Blue.IBlueApi.html#CG_Blue_IBlueApi_Support_
+  commentId: Overload:CG.Blue.IBlueApi.Support
+  isSpec: "True"
+  fullName: CG.Blue.IBlueApi.Support
+  nameWithType: IBlueApi.Support
+- uid: CG.Blue.Managers
+  name: CG.Blue.Managers
+  href: api/CG.Blue.Managers.html
+  commentId: N:CG.Blue.Managers
+  fullName: CG.Blue.Managers
+  nameWithType: CG.Blue.Managers
+- uid: CG.Blue.Managers.FileTypeManager
+  name: FileTypeManager
+  href: api/CG.Blue.Managers.FileTypeManager.html
+  commentId: T:CG.Blue.Managers.FileTypeManager
+  fullName: CG.Blue.Managers.FileTypeManager
+  nameWithType: FileTypeManager
+- uid: CG.Blue.Managers.FileTypeManager.#ctor(IFileTypeRepository,ILogger{CG.Blue.Managers.IFileTypeManager})
+  name: FileTypeManager(IFileTypeRepository, ILogger<IFileTypeManager>)
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager__ctor_IFileTypeRepository_ILogger_CG_Blue_Managers_IFileTypeManager__
+  commentId: M:CG.Blue.Managers.FileTypeManager.#ctor(IFileTypeRepository,ILogger{CG.Blue.Managers.IFileTypeManager})
+  name.vb: FileTypeManager(IFileTypeRepository, ILogger(Of IFileTypeManager))
+  fullName: CG.Blue.Managers.FileTypeManager.FileTypeManager(IFileTypeRepository, ILogger<CG.Blue.Managers.IFileTypeManager>)
+  fullName.vb: CG.Blue.Managers.FileTypeManager.FileTypeManager(IFileTypeRepository, ILogger(Of CG.Blue.Managers.IFileTypeManager))
+  nameWithType: FileTypeManager.FileTypeManager(IFileTypeRepository, ILogger<IFileTypeManager>)
+  nameWithType.vb: FileTypeManager.FileTypeManager(IFileTypeRepository, ILogger(Of IFileTypeManager))
+- uid: CG.Blue.Managers.FileTypeManager.#ctor*
+  name: FileTypeManager
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager__ctor_
+  commentId: Overload:CG.Blue.Managers.FileTypeManager.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Managers.FileTypeManager.FileTypeManager
+  nameWithType: FileTypeManager.FileTypeManager
+- uid: CG.Blue.Managers.FileTypeManager._fileTypeRepository
+  name: _fileTypeRepository
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager__fileTypeRepository
+  commentId: F:CG.Blue.Managers.FileTypeManager._fileTypeRepository
+  fullName: CG.Blue.Managers.FileTypeManager._fileTypeRepository
+  nameWithType: FileTypeManager._fileTypeRepository
+- uid: CG.Blue.Managers.FileTypeManager._logger
+  name: _logger
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager__logger
+  commentId: F:CG.Blue.Managers.FileTypeManager._logger
+  fullName: CG.Blue.Managers.FileTypeManager._logger
+  nameWithType: FileTypeManager._logger
+- uid: CG.Blue.Managers.FileTypeManager.AnyAsync(CancellationToken)
+  name: AnyAsync(CancellationToken)
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_AnyAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.FileTypeManager.AnyAsync(CancellationToken)
+  fullName: CG.Blue.Managers.FileTypeManager.AnyAsync(CancellationToken)
+  nameWithType: FileTypeManager.AnyAsync(CancellationToken)
+- uid: CG.Blue.Managers.FileTypeManager.AnyAsync*
+  name: AnyAsync
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_AnyAsync_
+  commentId: Overload:CG.Blue.Managers.FileTypeManager.AnyAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.FileTypeManager.AnyAsync
+  nameWithType: FileTypeManager.AnyAsync
+- uid: CG.Blue.Managers.FileTypeManager.CountAsync(CancellationToken)
+  name: CountAsync(CancellationToken)
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_CountAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.FileTypeManager.CountAsync(CancellationToken)
+  fullName: CG.Blue.Managers.FileTypeManager.CountAsync(CancellationToken)
+  nameWithType: FileTypeManager.CountAsync(CancellationToken)
+- uid: CG.Blue.Managers.FileTypeManager.CountAsync*
+  name: CountAsync
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_CountAsync_
+  commentId: Overload:CG.Blue.Managers.FileTypeManager.CountAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.FileTypeManager.CountAsync
+  nameWithType: FileTypeManager.CountAsync
+- uid: CG.Blue.Managers.FileTypeManager.CreateAsync(FileTypeModel,System.String,CancellationToken)
+  name: CreateAsync(FileTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_CreateAsync_FileTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.FileTypeManager.CreateAsync(FileTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.FileTypeManager.CreateAsync(FileTypeModel, System.String, CancellationToken)
+  nameWithType: FileTypeManager.CreateAsync(FileTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.FileTypeManager.CreateAsync*
+  name: CreateAsync
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_CreateAsync_
+  commentId: Overload:CG.Blue.Managers.FileTypeManager.CreateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.FileTypeManager.CreateAsync
+  nameWithType: FileTypeManager.CreateAsync
+- uid: CG.Blue.Managers.FileTypeManager.DeleteAsync(FileTypeModel,System.String,CancellationToken)
+  name: DeleteAsync(FileTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_DeleteAsync_FileTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.FileTypeManager.DeleteAsync(FileTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.FileTypeManager.DeleteAsync(FileTypeModel, System.String, CancellationToken)
+  nameWithType: FileTypeManager.DeleteAsync(FileTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.FileTypeManager.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_DeleteAsync_
+  commentId: Overload:CG.Blue.Managers.FileTypeManager.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.FileTypeManager.DeleteAsync
+  nameWithType: FileTypeManager.DeleteAsync
+- uid: CG.Blue.Managers.FileTypeManager.FindByExtensionAsync(System.String,CancellationToken)
+  name: FindByExtensionAsync(String, CancellationToken)
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_FindByExtensionAsync_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.FileTypeManager.FindByExtensionAsync(System.String,CancellationToken)
+  fullName: CG.Blue.Managers.FileTypeManager.FindByExtensionAsync(System.String, CancellationToken)
+  nameWithType: FileTypeManager.FindByExtensionAsync(String, CancellationToken)
+- uid: CG.Blue.Managers.FileTypeManager.FindByExtensionAsync*
+  name: FindByExtensionAsync
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_FindByExtensionAsync_
+  commentId: Overload:CG.Blue.Managers.FileTypeManager.FindByExtensionAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.FileTypeManager.FindByExtensionAsync
+  nameWithType: FileTypeManager.FindByExtensionAsync
+- uid: CG.Blue.Managers.FileTypeManager.UpdateAsync(FileTypeModel,System.String,CancellationToken)
+  name: UpdateAsync(FileTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_UpdateAsync_FileTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.FileTypeManager.UpdateAsync(FileTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.FileTypeManager.UpdateAsync(FileTypeModel, System.String, CancellationToken)
+  nameWithType: FileTypeManager.UpdateAsync(FileTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.FileTypeManager.UpdateAsync*
+  name: UpdateAsync
+  href: api/CG.Blue.Managers.FileTypeManager.html#CG_Blue_Managers_FileTypeManager_UpdateAsync_
+  commentId: Overload:CG.Blue.Managers.FileTypeManager.UpdateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.FileTypeManager.UpdateAsync
+  nameWithType: FileTypeManager.UpdateAsync
+- uid: CG.Blue.Managers.IFileTypeManager
+  name: IFileTypeManager
+  href: api/CG.Blue.Managers.IFileTypeManager.html
+  commentId: T:CG.Blue.Managers.IFileTypeManager
+  fullName: CG.Blue.Managers.IFileTypeManager
+  nameWithType: IFileTypeManager
+- uid: CG.Blue.Managers.IFileTypeManager.AnyAsync(CancellationToken)
+  name: AnyAsync(CancellationToken)
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_AnyAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.IFileTypeManager.AnyAsync(CancellationToken)
+  fullName: CG.Blue.Managers.IFileTypeManager.AnyAsync(CancellationToken)
+  nameWithType: IFileTypeManager.AnyAsync(CancellationToken)
+- uid: CG.Blue.Managers.IFileTypeManager.AnyAsync*
+  name: AnyAsync
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_AnyAsync_
+  commentId: Overload:CG.Blue.Managers.IFileTypeManager.AnyAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IFileTypeManager.AnyAsync
+  nameWithType: IFileTypeManager.AnyAsync
+- uid: CG.Blue.Managers.IFileTypeManager.CountAsync(CancellationToken)
+  name: CountAsync(CancellationToken)
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_CountAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.IFileTypeManager.CountAsync(CancellationToken)
+  fullName: CG.Blue.Managers.IFileTypeManager.CountAsync(CancellationToken)
+  nameWithType: IFileTypeManager.CountAsync(CancellationToken)
+- uid: CG.Blue.Managers.IFileTypeManager.CountAsync*
+  name: CountAsync
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_CountAsync_
+  commentId: Overload:CG.Blue.Managers.IFileTypeManager.CountAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IFileTypeManager.CountAsync
+  nameWithType: IFileTypeManager.CountAsync
+- uid: CG.Blue.Managers.IFileTypeManager.CreateAsync(FileTypeModel,System.String,CancellationToken)
+  name: CreateAsync(FileTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_CreateAsync_FileTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IFileTypeManager.CreateAsync(FileTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IFileTypeManager.CreateAsync(FileTypeModel, System.String, CancellationToken)
+  nameWithType: IFileTypeManager.CreateAsync(FileTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.IFileTypeManager.CreateAsync*
+  name: CreateAsync
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_CreateAsync_
+  commentId: Overload:CG.Blue.Managers.IFileTypeManager.CreateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IFileTypeManager.CreateAsync
+  nameWithType: IFileTypeManager.CreateAsync
+- uid: CG.Blue.Managers.IFileTypeManager.DeleteAsync(FileTypeModel,System.String,CancellationToken)
+  name: DeleteAsync(FileTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_DeleteAsync_FileTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IFileTypeManager.DeleteAsync(FileTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IFileTypeManager.DeleteAsync(FileTypeModel, System.String, CancellationToken)
+  nameWithType: IFileTypeManager.DeleteAsync(FileTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.IFileTypeManager.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_DeleteAsync_
+  commentId: Overload:CG.Blue.Managers.IFileTypeManager.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IFileTypeManager.DeleteAsync
+  nameWithType: IFileTypeManager.DeleteAsync
+- uid: CG.Blue.Managers.IFileTypeManager.FindByExtensionAsync(System.String,CancellationToken)
+  name: FindByExtensionAsync(String, CancellationToken)
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_FindByExtensionAsync_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IFileTypeManager.FindByExtensionAsync(System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IFileTypeManager.FindByExtensionAsync(System.String, CancellationToken)
+  nameWithType: IFileTypeManager.FindByExtensionAsync(String, CancellationToken)
+- uid: CG.Blue.Managers.IFileTypeManager.FindByExtensionAsync*
+  name: FindByExtensionAsync
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_FindByExtensionAsync_
+  commentId: Overload:CG.Blue.Managers.IFileTypeManager.FindByExtensionAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IFileTypeManager.FindByExtensionAsync
+  nameWithType: IFileTypeManager.FindByExtensionAsync
+- uid: CG.Blue.Managers.IFileTypeManager.UpdateAsync(FileTypeModel,System.String,CancellationToken)
+  name: UpdateAsync(FileTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_UpdateAsync_FileTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IFileTypeManager.UpdateAsync(FileTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IFileTypeManager.UpdateAsync(FileTypeModel, System.String, CancellationToken)
+  nameWithType: IFileTypeManager.UpdateAsync(FileTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.IFileTypeManager.UpdateAsync*
+  name: UpdateAsync
+  href: api/CG.Blue.Managers.IFileTypeManager.html#CG_Blue_Managers_IFileTypeManager_UpdateAsync_
+  commentId: Overload:CG.Blue.Managers.IFileTypeManager.UpdateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IFileTypeManager.UpdateAsync
+  nameWithType: IFileTypeManager.UpdateAsync
+- uid: CG.Blue.Managers.IMimeTypeManager
+  name: IMimeTypeManager
+  href: api/CG.Blue.Managers.IMimeTypeManager.html
+  commentId: T:CG.Blue.Managers.IMimeTypeManager
+  fullName: CG.Blue.Managers.IMimeTypeManager
+  nameWithType: IMimeTypeManager
+- uid: CG.Blue.Managers.IMimeTypeManager.AnyAsync(CancellationToken)
+  name: AnyAsync(CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_AnyAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.AnyAsync(CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.AnyAsync(CancellationToken)
+  nameWithType: IMimeTypeManager.AnyAsync(CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.AnyAsync(System.String,System.String,CancellationToken)
+  name: AnyAsync(String, String, CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_AnyAsync_System_String_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.AnyAsync(System.String,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.AnyAsync(System.String, System.String, CancellationToken)
+  nameWithType: IMimeTypeManager.AnyAsync(String, String, CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.AnyAsync*
+  name: AnyAsync
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_AnyAsync_
+  commentId: Overload:CG.Blue.Managers.IMimeTypeManager.AnyAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IMimeTypeManager.AnyAsync
+  nameWithType: IMimeTypeManager.AnyAsync
+- uid: CG.Blue.Managers.IMimeTypeManager.CountAsync(CancellationToken)
+  name: CountAsync(CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_CountAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.CountAsync(CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.CountAsync(CancellationToken)
+  nameWithType: IMimeTypeManager.CountAsync(CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.CountAsync*
+  name: CountAsync
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_CountAsync_
+  commentId: Overload:CG.Blue.Managers.IMimeTypeManager.CountAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IMimeTypeManager.CountAsync
+  nameWithType: IMimeTypeManager.CountAsync
+- uid: CG.Blue.Managers.IMimeTypeManager.CreateAsync(MimeTypeModel,System.String,CancellationToken)
+  name: CreateAsync(MimeTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_CreateAsync_MimeTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.CreateAsync(MimeTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.CreateAsync(MimeTypeModel, System.String, CancellationToken)
+  nameWithType: IMimeTypeManager.CreateAsync(MimeTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.CreateAsync*
+  name: CreateAsync
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_CreateAsync_
+  commentId: Overload:CG.Blue.Managers.IMimeTypeManager.CreateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IMimeTypeManager.CreateAsync
+  nameWithType: IMimeTypeManager.CreateAsync
+- uid: CG.Blue.Managers.IMimeTypeManager.DeleteAsync(MimeTypeModel,System.String,CancellationToken)
+  name: DeleteAsync(MimeTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_DeleteAsync_MimeTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.DeleteAsync(MimeTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.DeleteAsync(MimeTypeModel, System.String, CancellationToken)
+  nameWithType: IMimeTypeManager.DeleteAsync(MimeTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_DeleteAsync_
+  commentId: Overload:CG.Blue.Managers.IMimeTypeManager.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IMimeTypeManager.DeleteAsync
+  nameWithType: IMimeTypeManager.DeleteAsync
+- uid: CG.Blue.Managers.IMimeTypeManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.FindAllAsync(CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.FindAllAsync(CancellationToken)
+  nameWithType: IMimeTypeManager.FindAllAsync(CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_FindAllAsync_
+  commentId: Overload:CG.Blue.Managers.IMimeTypeManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IMimeTypeManager.FindAllAsync
+  nameWithType: IMimeTypeManager.FindAllAsync
+- uid: CG.Blue.Managers.IMimeTypeManager.FindByExtensionAsync(System.String,CancellationToken)
+  name: FindByExtensionAsync(String, CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_FindByExtensionAsync_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.FindByExtensionAsync(System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.FindByExtensionAsync(System.String, CancellationToken)
+  nameWithType: IMimeTypeManager.FindByExtensionAsync(String, CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.FindByExtensionAsync*
+  name: FindByExtensionAsync
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_FindByExtensionAsync_
+  commentId: Overload:CG.Blue.Managers.IMimeTypeManager.FindByExtensionAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IMimeTypeManager.FindByExtensionAsync
+  nameWithType: IMimeTypeManager.FindByExtensionAsync
+- uid: CG.Blue.Managers.IMimeTypeManager.FindByIdAsync(System.Int32,CancellationToken)
+  name: FindByIdAsync(Int32, CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_FindByIdAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.FindByIdAsync(System.Int32,CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.FindByIdAsync(System.Int32, CancellationToken)
+  nameWithType: IMimeTypeManager.FindByIdAsync(Int32, CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.FindByIdAsync*
+  name: FindByIdAsync
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_FindByIdAsync_
+  commentId: Overload:CG.Blue.Managers.IMimeTypeManager.FindByIdAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IMimeTypeManager.FindByIdAsync
+  nameWithType: IMimeTypeManager.FindByIdAsync
+- uid: CG.Blue.Managers.IMimeTypeManager.FindByTypesAsync(System.String,System.String,CancellationToken)
+  name: FindByTypesAsync(String, String, CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_FindByTypesAsync_System_String_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.FindByTypesAsync(System.String,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.FindByTypesAsync(System.String, System.String, CancellationToken)
+  nameWithType: IMimeTypeManager.FindByTypesAsync(String, String, CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.FindByTypesAsync*
+  name: FindByTypesAsync
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_FindByTypesAsync_
+  commentId: Overload:CG.Blue.Managers.IMimeTypeManager.FindByTypesAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IMimeTypeManager.FindByTypesAsync
+  nameWithType: IMimeTypeManager.FindByTypesAsync
+- uid: CG.Blue.Managers.IMimeTypeManager.UpdateAsync(MimeTypeModel,System.String,CancellationToken)
+  name: UpdateAsync(MimeTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_UpdateAsync_MimeTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.IMimeTypeManager.UpdateAsync(MimeTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.IMimeTypeManager.UpdateAsync(MimeTypeModel, System.String, CancellationToken)
+  nameWithType: IMimeTypeManager.UpdateAsync(MimeTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.IMimeTypeManager.UpdateAsync*
+  name: UpdateAsync
+  href: api/CG.Blue.Managers.IMimeTypeManager.html#CG_Blue_Managers_IMimeTypeManager_UpdateAsync_
+  commentId: Overload:CG.Blue.Managers.IMimeTypeManager.UpdateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.IMimeTypeManager.UpdateAsync
+  nameWithType: IMimeTypeManager.UpdateAsync
+- uid: CG.Blue.Managers.ManagerException
+  name: ManagerException
+  href: api/CG.Blue.Managers.ManagerException.html
+  commentId: T:CG.Blue.Managers.ManagerException
+  fullName: CG.Blue.Managers.ManagerException
+  nameWithType: ManagerException
+- uid: CG.Blue.Managers.ManagerException.#ctor
+  name: ManagerException()
+  href: api/CG.Blue.Managers.ManagerException.html#CG_Blue_Managers_ManagerException__ctor
+  commentId: M:CG.Blue.Managers.ManagerException.#ctor
+  fullName: CG.Blue.Managers.ManagerException.ManagerException()
+  nameWithType: ManagerException.ManagerException()
+- uid: CG.Blue.Managers.ManagerException.#ctor(SerializationInfo,StreamingContext)
+  name: ManagerException(SerializationInfo, StreamingContext)
+  href: api/CG.Blue.Managers.ManagerException.html#CG_Blue_Managers_ManagerException__ctor_SerializationInfo_StreamingContext_
+  commentId: M:CG.Blue.Managers.ManagerException.#ctor(SerializationInfo,StreamingContext)
+  fullName: CG.Blue.Managers.ManagerException.ManagerException(SerializationInfo, StreamingContext)
+  nameWithType: ManagerException.ManagerException(SerializationInfo, StreamingContext)
+- uid: CG.Blue.Managers.ManagerException.#ctor(System.String)
+  name: ManagerException(String)
+  href: api/CG.Blue.Managers.ManagerException.html#CG_Blue_Managers_ManagerException__ctor_System_String_
+  commentId: M:CG.Blue.Managers.ManagerException.#ctor(System.String)
+  fullName: CG.Blue.Managers.ManagerException.ManagerException(System.String)
+  nameWithType: ManagerException.ManagerException(String)
+- uid: CG.Blue.Managers.ManagerException.#ctor(System.String,Exception)
+  name: ManagerException(String, Exception)
+  href: api/CG.Blue.Managers.ManagerException.html#CG_Blue_Managers_ManagerException__ctor_System_String_Exception_
+  commentId: M:CG.Blue.Managers.ManagerException.#ctor(System.String,Exception)
+  fullName: CG.Blue.Managers.ManagerException.ManagerException(System.String, Exception)
+  nameWithType: ManagerException.ManagerException(String, Exception)
+- uid: CG.Blue.Managers.ManagerException.#ctor*
+  name: ManagerException
+  href: api/CG.Blue.Managers.ManagerException.html#CG_Blue_Managers_ManagerException__ctor_
+  commentId: Overload:CG.Blue.Managers.ManagerException.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Managers.ManagerException.ManagerException
+  nameWithType: ManagerException.ManagerException
+- uid: CG.Blue.Managers.MimeTypeManager
+  name: MimeTypeManager
+  href: api/CG.Blue.Managers.MimeTypeManager.html
+  commentId: T:CG.Blue.Managers.MimeTypeManager
+  fullName: CG.Blue.Managers.MimeTypeManager
+  nameWithType: MimeTypeManager
+- uid: CG.Blue.Managers.MimeTypeManager.#ctor(IMimeTypeRepository,ILogger{CG.Blue.Managers.IMimeTypeManager})
+  name: MimeTypeManager(IMimeTypeRepository, ILogger<IMimeTypeManager>)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager__ctor_IMimeTypeRepository_ILogger_CG_Blue_Managers_IMimeTypeManager__
+  commentId: M:CG.Blue.Managers.MimeTypeManager.#ctor(IMimeTypeRepository,ILogger{CG.Blue.Managers.IMimeTypeManager})
+  name.vb: MimeTypeManager(IMimeTypeRepository, ILogger(Of IMimeTypeManager))
+  fullName: CG.Blue.Managers.MimeTypeManager.MimeTypeManager(IMimeTypeRepository, ILogger<CG.Blue.Managers.IMimeTypeManager>)
+  fullName.vb: CG.Blue.Managers.MimeTypeManager.MimeTypeManager(IMimeTypeRepository, ILogger(Of CG.Blue.Managers.IMimeTypeManager))
+  nameWithType: MimeTypeManager.MimeTypeManager(IMimeTypeRepository, ILogger<IMimeTypeManager>)
+  nameWithType.vb: MimeTypeManager.MimeTypeManager(IMimeTypeRepository, ILogger(Of IMimeTypeManager))
+- uid: CG.Blue.Managers.MimeTypeManager.#ctor*
+  name: MimeTypeManager
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager__ctor_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.MimeTypeManager
+  nameWithType: MimeTypeManager.MimeTypeManager
+- uid: CG.Blue.Managers.MimeTypeManager._logger
+  name: _logger
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager__logger
+  commentId: F:CG.Blue.Managers.MimeTypeManager._logger
+  fullName: CG.Blue.Managers.MimeTypeManager._logger
+  nameWithType: MimeTypeManager._logger
+- uid: CG.Blue.Managers.MimeTypeManager._mimeTypeRepository
+  name: _mimeTypeRepository
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager__mimeTypeRepository
+  commentId: F:CG.Blue.Managers.MimeTypeManager._mimeTypeRepository
+  fullName: CG.Blue.Managers.MimeTypeManager._mimeTypeRepository
+  nameWithType: MimeTypeManager._mimeTypeRepository
+- uid: CG.Blue.Managers.MimeTypeManager.AnyAsync(CancellationToken)
+  name: AnyAsync(CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_AnyAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.AnyAsync(CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.AnyAsync(CancellationToken)
+  nameWithType: MimeTypeManager.AnyAsync(CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.AnyAsync(System.String,System.String,CancellationToken)
+  name: AnyAsync(String, String, CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_AnyAsync_System_String_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.AnyAsync(System.String,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.AnyAsync(System.String, System.String, CancellationToken)
+  nameWithType: MimeTypeManager.AnyAsync(String, String, CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.AnyAsync*
+  name: AnyAsync
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_AnyAsync_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.AnyAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.AnyAsync
+  nameWithType: MimeTypeManager.AnyAsync
+- uid: CG.Blue.Managers.MimeTypeManager.CountAsync(CancellationToken)
+  name: CountAsync(CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_CountAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.CountAsync(CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.CountAsync(CancellationToken)
+  nameWithType: MimeTypeManager.CountAsync(CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.CountAsync*
+  name: CountAsync
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_CountAsync_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.CountAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.CountAsync
+  nameWithType: MimeTypeManager.CountAsync
+- uid: CG.Blue.Managers.MimeTypeManager.CreateAsync(MimeTypeModel,System.String,CancellationToken)
+  name: CreateAsync(MimeTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_CreateAsync_MimeTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.CreateAsync(MimeTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.CreateAsync(MimeTypeModel, System.String, CancellationToken)
+  nameWithType: MimeTypeManager.CreateAsync(MimeTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.CreateAsync*
+  name: CreateAsync
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_CreateAsync_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.CreateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.CreateAsync
+  nameWithType: MimeTypeManager.CreateAsync
+- uid: CG.Blue.Managers.MimeTypeManager.DeleteAsync(MimeTypeModel,System.String,CancellationToken)
+  name: DeleteAsync(MimeTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_DeleteAsync_MimeTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.DeleteAsync(MimeTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.DeleteAsync(MimeTypeModel, System.String, CancellationToken)
+  nameWithType: MimeTypeManager.DeleteAsync(MimeTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_DeleteAsync_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.DeleteAsync
+  nameWithType: MimeTypeManager.DeleteAsync
+- uid: CG.Blue.Managers.MimeTypeManager.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_FindAllAsync_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.FindAllAsync(CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.FindAllAsync(CancellationToken)
+  nameWithType: MimeTypeManager.FindAllAsync(CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_FindAllAsync_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.FindAllAsync
+  nameWithType: MimeTypeManager.FindAllAsync
+- uid: CG.Blue.Managers.MimeTypeManager.FindByExtensionAsync(System.String,CancellationToken)
+  name: FindByExtensionAsync(String, CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_FindByExtensionAsync_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.FindByExtensionAsync(System.String,CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.FindByExtensionAsync(System.String, CancellationToken)
+  nameWithType: MimeTypeManager.FindByExtensionAsync(String, CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.FindByExtensionAsync*
+  name: FindByExtensionAsync
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_FindByExtensionAsync_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.FindByExtensionAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.FindByExtensionAsync
+  nameWithType: MimeTypeManager.FindByExtensionAsync
+- uid: CG.Blue.Managers.MimeTypeManager.FindByIdAsync(System.Int32,CancellationToken)
+  name: FindByIdAsync(Int32, CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_FindByIdAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.FindByIdAsync(System.Int32,CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.FindByIdAsync(System.Int32, CancellationToken)
+  nameWithType: MimeTypeManager.FindByIdAsync(Int32, CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.FindByIdAsync*
+  name: FindByIdAsync
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_FindByIdAsync_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.FindByIdAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.FindByIdAsync
+  nameWithType: MimeTypeManager.FindByIdAsync
+- uid: CG.Blue.Managers.MimeTypeManager.FindByTypesAsync(System.String,System.String,CancellationToken)
+  name: FindByTypesAsync(String, String, CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_FindByTypesAsync_System_String_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.FindByTypesAsync(System.String,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.FindByTypesAsync(System.String, System.String, CancellationToken)
+  nameWithType: MimeTypeManager.FindByTypesAsync(String, String, CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.FindByTypesAsync*
+  name: FindByTypesAsync
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_FindByTypesAsync_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.FindByTypesAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.FindByTypesAsync
+  nameWithType: MimeTypeManager.FindByTypesAsync
+- uid: CG.Blue.Managers.MimeTypeManager.UpdateAsync(MimeTypeModel,System.String,CancellationToken)
+  name: UpdateAsync(MimeTypeModel, String, CancellationToken)
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_UpdateAsync_MimeTypeModel_System_String_CancellationToken_
+  commentId: M:CG.Blue.Managers.MimeTypeManager.UpdateAsync(MimeTypeModel,System.String,CancellationToken)
+  fullName: CG.Blue.Managers.MimeTypeManager.UpdateAsync(MimeTypeModel, System.String, CancellationToken)
+  nameWithType: MimeTypeManager.UpdateAsync(MimeTypeModel, String, CancellationToken)
+- uid: CG.Blue.Managers.MimeTypeManager.UpdateAsync*
+  name: UpdateAsync
+  href: api/CG.Blue.Managers.MimeTypeManager.html#CG_Blue_Managers_MimeTypeManager_UpdateAsync_
+  commentId: Overload:CG.Blue.Managers.MimeTypeManager.UpdateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Managers.MimeTypeManager.UpdateAsync
+  nameWithType: MimeTypeManager.UpdateAsync
+- uid: CG.Blue.Models
+  name: CG.Blue.Models
+  href: api/CG.Blue.Models.html
+  commentId: N:CG.Blue.Models
+  fullName: CG.Blue.Models
+  nameWithType: CG.Blue.Models
+- uid: CG.Blue.Models.AuditedModelBase
+  name: AuditedModelBase
+  href: api/CG.Blue.Models.AuditedModelBase.html
+  commentId: T:CG.Blue.Models.AuditedModelBase
+  fullName: CG.Blue.Models.AuditedModelBase
+  nameWithType: AuditedModelBase
+- uid: CG.Blue.Models.AuditedModelBase.CreatedBy
+  name: CreatedBy
+  href: api/CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_CreatedBy
+  commentId: P:CG.Blue.Models.AuditedModelBase.CreatedBy
+  fullName: CG.Blue.Models.AuditedModelBase.CreatedBy
+  nameWithType: AuditedModelBase.CreatedBy
+- uid: CG.Blue.Models.AuditedModelBase.CreatedBy*
+  name: CreatedBy
+  href: api/CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_CreatedBy_
+  commentId: Overload:CG.Blue.Models.AuditedModelBase.CreatedBy
+  isSpec: "True"
+  fullName: CG.Blue.Models.AuditedModelBase.CreatedBy
+  nameWithType: AuditedModelBase.CreatedBy
+- uid: CG.Blue.Models.AuditedModelBase.CreatedOnUtc
+  name: CreatedOnUtc
+  href: api/CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_CreatedOnUtc
+  commentId: P:CG.Blue.Models.AuditedModelBase.CreatedOnUtc
+  fullName: CG.Blue.Models.AuditedModelBase.CreatedOnUtc
+  nameWithType: AuditedModelBase.CreatedOnUtc
+- uid: CG.Blue.Models.AuditedModelBase.CreatedOnUtc*
+  name: CreatedOnUtc
+  href: api/CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_CreatedOnUtc_
+  commentId: Overload:CG.Blue.Models.AuditedModelBase.CreatedOnUtc
+  isSpec: "True"
+  fullName: CG.Blue.Models.AuditedModelBase.CreatedOnUtc
+  nameWithType: AuditedModelBase.CreatedOnUtc
+- uid: CG.Blue.Models.AuditedModelBase.LastUpdatedBy
+  name: LastUpdatedBy
+  href: api/CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_LastUpdatedBy
+  commentId: P:CG.Blue.Models.AuditedModelBase.LastUpdatedBy
+  fullName: CG.Blue.Models.AuditedModelBase.LastUpdatedBy
+  nameWithType: AuditedModelBase.LastUpdatedBy
+- uid: CG.Blue.Models.AuditedModelBase.LastUpdatedBy*
+  name: LastUpdatedBy
+  href: api/CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_LastUpdatedBy_
+  commentId: Overload:CG.Blue.Models.AuditedModelBase.LastUpdatedBy
+  isSpec: "True"
+  fullName: CG.Blue.Models.AuditedModelBase.LastUpdatedBy
+  nameWithType: AuditedModelBase.LastUpdatedBy
+- uid: CG.Blue.Models.AuditedModelBase.LastUpdatedOnUtc
+  name: LastUpdatedOnUtc
+  href: api/CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_LastUpdatedOnUtc
+  commentId: P:CG.Blue.Models.AuditedModelBase.LastUpdatedOnUtc
+  fullName: CG.Blue.Models.AuditedModelBase.LastUpdatedOnUtc
+  nameWithType: AuditedModelBase.LastUpdatedOnUtc
+- uid: CG.Blue.Models.AuditedModelBase.LastUpdatedOnUtc*
+  name: LastUpdatedOnUtc
+  href: api/CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_LastUpdatedOnUtc_
+  commentId: Overload:CG.Blue.Models.AuditedModelBase.LastUpdatedOnUtc
+  isSpec: "True"
+  fullName: CG.Blue.Models.AuditedModelBase.LastUpdatedOnUtc
+  nameWithType: AuditedModelBase.LastUpdatedOnUtc
+- uid: CG.Blue.Models.FileTypeModel
+  name: FileTypeModel
+  href: api/CG.Blue.Models.FileTypeModel.html
+  commentId: T:CG.Blue.Models.FileTypeModel
+  fullName: CG.Blue.Models.FileTypeModel
+  nameWithType: FileTypeModel
+- uid: CG.Blue.Models.FileTypeModel.Extension
+  name: Extension
+  href: api/CG.Blue.Models.FileTypeModel.html#CG_Blue_Models_FileTypeModel_Extension
+  commentId: P:CG.Blue.Models.FileTypeModel.Extension
+  fullName: CG.Blue.Models.FileTypeModel.Extension
+  nameWithType: FileTypeModel.Extension
+- uid: CG.Blue.Models.FileTypeModel.Extension*
+  name: Extension
+  href: api/CG.Blue.Models.FileTypeModel.html#CG_Blue_Models_FileTypeModel_Extension_
+  commentId: Overload:CG.Blue.Models.FileTypeModel.Extension
+  isSpec: "True"
+  fullName: CG.Blue.Models.FileTypeModel.Extension
+  nameWithType: FileTypeModel.Extension
+- uid: CG.Blue.Models.FileTypeModel.Id
+  name: Id
+  href: api/CG.Blue.Models.FileTypeModel.html#CG_Blue_Models_FileTypeModel_Id
+  commentId: P:CG.Blue.Models.FileTypeModel.Id
+  fullName: CG.Blue.Models.FileTypeModel.Id
+  nameWithType: FileTypeModel.Id
+- uid: CG.Blue.Models.FileTypeModel.Id*
+  name: Id
+  href: api/CG.Blue.Models.FileTypeModel.html#CG_Blue_Models_FileTypeModel_Id_
+  commentId: Overload:CG.Blue.Models.FileTypeModel.Id
+  isSpec: "True"
+  fullName: CG.Blue.Models.FileTypeModel.Id
+  nameWithType: FileTypeModel.Id
+- uid: CG.Blue.Models.FileTypeModel.MimeType
+  name: MimeType
+  href: api/CG.Blue.Models.FileTypeModel.html#CG_Blue_Models_FileTypeModel_MimeType
+  commentId: P:CG.Blue.Models.FileTypeModel.MimeType
+  fullName: CG.Blue.Models.FileTypeModel.MimeType
+  nameWithType: FileTypeModel.MimeType
+- uid: CG.Blue.Models.FileTypeModel.MimeType*
+  name: MimeType
+  href: api/CG.Blue.Models.FileTypeModel.html#CG_Blue_Models_FileTypeModel_MimeType_
+  commentId: Overload:CG.Blue.Models.FileTypeModel.MimeType
+  isSpec: "True"
+  fullName: CG.Blue.Models.FileTypeModel.MimeType
+  nameWithType: FileTypeModel.MimeType
+- uid: CG.Blue.Models.MimeTypeModel
+  name: MimeTypeModel
+  href: api/CG.Blue.Models.MimeTypeModel.html
+  commentId: T:CG.Blue.Models.MimeTypeModel
+  fullName: CG.Blue.Models.MimeTypeModel
+  nameWithType: MimeTypeModel
+- uid: CG.Blue.Models.MimeTypeModel.FileTypes
+  name: FileTypes
+  href: api/CG.Blue.Models.MimeTypeModel.html#CG_Blue_Models_MimeTypeModel_FileTypes
+  commentId: P:CG.Blue.Models.MimeTypeModel.FileTypes
+  fullName: CG.Blue.Models.MimeTypeModel.FileTypes
+  nameWithType: MimeTypeModel.FileTypes
+- uid: CG.Blue.Models.MimeTypeModel.FileTypes*
+  name: FileTypes
+  href: api/CG.Blue.Models.MimeTypeModel.html#CG_Blue_Models_MimeTypeModel_FileTypes_
+  commentId: Overload:CG.Blue.Models.MimeTypeModel.FileTypes
+  isSpec: "True"
+  fullName: CG.Blue.Models.MimeTypeModel.FileTypes
+  nameWithType: MimeTypeModel.FileTypes
+- uid: CG.Blue.Models.MimeTypeModel.Id
+  name: Id
+  href: api/CG.Blue.Models.MimeTypeModel.html#CG_Blue_Models_MimeTypeModel_Id
+  commentId: P:CG.Blue.Models.MimeTypeModel.Id
+  fullName: CG.Blue.Models.MimeTypeModel.Id
+  nameWithType: MimeTypeModel.Id
+- uid: CG.Blue.Models.MimeTypeModel.Id*
+  name: Id
+  href: api/CG.Blue.Models.MimeTypeModel.html#CG_Blue_Models_MimeTypeModel_Id_
+  commentId: Overload:CG.Blue.Models.MimeTypeModel.Id
+  isSpec: "True"
+  fullName: CG.Blue.Models.MimeTypeModel.Id
+  nameWithType: MimeTypeModel.Id
+- uid: CG.Blue.Models.MimeTypeModel.SubType
+  name: SubType
+  href: api/CG.Blue.Models.MimeTypeModel.html#CG_Blue_Models_MimeTypeModel_SubType
+  commentId: P:CG.Blue.Models.MimeTypeModel.SubType
+  fullName: CG.Blue.Models.MimeTypeModel.SubType
+  nameWithType: MimeTypeModel.SubType
+- uid: CG.Blue.Models.MimeTypeModel.SubType*
+  name: SubType
+  href: api/CG.Blue.Models.MimeTypeModel.html#CG_Blue_Models_MimeTypeModel_SubType_
+  commentId: Overload:CG.Blue.Models.MimeTypeModel.SubType
+  isSpec: "True"
+  fullName: CG.Blue.Models.MimeTypeModel.SubType
+  nameWithType: MimeTypeModel.SubType
+- uid: CG.Blue.Models.MimeTypeModel.Type
+  name: Type
+  href: api/CG.Blue.Models.MimeTypeModel.html#CG_Blue_Models_MimeTypeModel_Type
+  commentId: P:CG.Blue.Models.MimeTypeModel.Type
+  fullName: CG.Blue.Models.MimeTypeModel.Type
+  nameWithType: MimeTypeModel.Type
+- uid: CG.Blue.Models.MimeTypeModel.Type*
+  name: Type
+  href: api/CG.Blue.Models.MimeTypeModel.html#CG_Blue_Models_MimeTypeModel_Type_
+  commentId: Overload:CG.Blue.Models.MimeTypeModel.Type
+  isSpec: "True"
+  fullName: CG.Blue.Models.MimeTypeModel.Type
+  nameWithType: MimeTypeModel.Type
 - uid: CG.Blue.Options
   name: CG.Blue.Options
   href: api/CG.Blue.Options.html
@@ -248,6 +2098,402 @@ references:
   commentId: T:CG.Blue.Options.BlueBllOptions
   fullName: CG.Blue.Options.BlueBllOptions
   nameWithType: BlueBllOptions
+- uid: CG.Blue.Options.FileTypeOptions
+  name: FileTypeOptions
+  href: api/CG.Blue.Options.FileTypeOptions.html
+  commentId: T:CG.Blue.Options.FileTypeOptions
+  fullName: CG.Blue.Options.FileTypeOptions
+  nameWithType: FileTypeOptions
+- uid: CG.Blue.Options.FileTypeOptions.Extensions
+  name: Extensions
+  href: api/CG.Blue.Options.FileTypeOptions.html#CG_Blue_Options_FileTypeOptions_Extensions
+  commentId: P:CG.Blue.Options.FileTypeOptions.Extensions
+  fullName: CG.Blue.Options.FileTypeOptions.Extensions
+  nameWithType: FileTypeOptions.Extensions
+- uid: CG.Blue.Options.FileTypeOptions.Extensions*
+  name: Extensions
+  href: api/CG.Blue.Options.FileTypeOptions.html#CG_Blue_Options_FileTypeOptions_Extensions_
+  commentId: Overload:CG.Blue.Options.FileTypeOptions.Extensions
+  isSpec: "True"
+  fullName: CG.Blue.Options.FileTypeOptions.Extensions
+  nameWithType: FileTypeOptions.Extensions
+- uid: CG.Blue.Options.FileTypeOptions.MimeType
+  name: MimeType
+  href: api/CG.Blue.Options.FileTypeOptions.html#CG_Blue_Options_FileTypeOptions_MimeType
+  commentId: P:CG.Blue.Options.FileTypeOptions.MimeType
+  fullName: CG.Blue.Options.FileTypeOptions.MimeType
+  nameWithType: FileTypeOptions.MimeType
+- uid: CG.Blue.Options.FileTypeOptions.MimeType*
+  name: MimeType
+  href: api/CG.Blue.Options.FileTypeOptions.html#CG_Blue_Options_FileTypeOptions_MimeType_
+  commentId: Overload:CG.Blue.Options.FileTypeOptions.MimeType
+  isSpec: "True"
+  fullName: CG.Blue.Options.FileTypeOptions.MimeType
+  nameWithType: FileTypeOptions.MimeType
+- uid: CG.Blue.Options.FileTypesOptions
+  name: FileTypesOptions
+  href: api/CG.Blue.Options.FileTypesOptions.html
+  commentId: T:CG.Blue.Options.FileTypesOptions
+  fullName: CG.Blue.Options.FileTypesOptions
+  nameWithType: FileTypesOptions
+- uid: CG.Blue.Options.FileTypesOptions.FileTypes
+  name: FileTypes
+  href: api/CG.Blue.Options.FileTypesOptions.html#CG_Blue_Options_FileTypesOptions_FileTypes
+  commentId: P:CG.Blue.Options.FileTypesOptions.FileTypes
+  fullName: CG.Blue.Options.FileTypesOptions.FileTypes
+  nameWithType: FileTypesOptions.FileTypes
+- uid: CG.Blue.Options.FileTypesOptions.FileTypes*
+  name: FileTypes
+  href: api/CG.Blue.Options.FileTypesOptions.html#CG_Blue_Options_FileTypesOptions_FileTypes_
+  commentId: Overload:CG.Blue.Options.FileTypesOptions.FileTypes
+  isSpec: "True"
+  fullName: CG.Blue.Options.FileTypesOptions.FileTypes
+  nameWithType: FileTypesOptions.FileTypes
+- uid: CG.Blue.Repositories
+  name: CG.Blue.Repositories
+  href: api/CG.Blue.Repositories.html
+  commentId: N:CG.Blue.Repositories
+  fullName: CG.Blue.Repositories
+  nameWithType: CG.Blue.Repositories
+- uid: CG.Blue.Repositories.IFileTypeRepository
+  name: IFileTypeRepository
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html
+  commentId: T:CG.Blue.Repositories.IFileTypeRepository
+  fullName: CG.Blue.Repositories.IFileTypeRepository
+  nameWithType: IFileTypeRepository
+- uid: CG.Blue.Repositories.IFileTypeRepository.AnyAsync(CancellationToken)
+  name: AnyAsync(CancellationToken)
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_AnyAsync_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IFileTypeRepository.AnyAsync(CancellationToken)
+  fullName: CG.Blue.Repositories.IFileTypeRepository.AnyAsync(CancellationToken)
+  nameWithType: IFileTypeRepository.AnyAsync(CancellationToken)
+- uid: CG.Blue.Repositories.IFileTypeRepository.AnyAsync*
+  name: AnyAsync
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_AnyAsync_
+  commentId: Overload:CG.Blue.Repositories.IFileTypeRepository.AnyAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IFileTypeRepository.AnyAsync
+  nameWithType: IFileTypeRepository.AnyAsync
+- uid: CG.Blue.Repositories.IFileTypeRepository.CountAsync(CancellationToken)
+  name: CountAsync(CancellationToken)
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_CountAsync_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IFileTypeRepository.CountAsync(CancellationToken)
+  fullName: CG.Blue.Repositories.IFileTypeRepository.CountAsync(CancellationToken)
+  nameWithType: IFileTypeRepository.CountAsync(CancellationToken)
+- uid: CG.Blue.Repositories.IFileTypeRepository.CountAsync*
+  name: CountAsync
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_CountAsync_
+  commentId: Overload:CG.Blue.Repositories.IFileTypeRepository.CountAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IFileTypeRepository.CountAsync
+  nameWithType: IFileTypeRepository.CountAsync
+- uid: CG.Blue.Repositories.IFileTypeRepository.CreateAsync(FileTypeModel,CancellationToken)
+  name: CreateAsync(FileTypeModel, CancellationToken)
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_CreateAsync_FileTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IFileTypeRepository.CreateAsync(FileTypeModel,CancellationToken)
+  fullName: CG.Blue.Repositories.IFileTypeRepository.CreateAsync(FileTypeModel, CancellationToken)
+  nameWithType: IFileTypeRepository.CreateAsync(FileTypeModel, CancellationToken)
+- uid: CG.Blue.Repositories.IFileTypeRepository.CreateAsync*
+  name: CreateAsync
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_CreateAsync_
+  commentId: Overload:CG.Blue.Repositories.IFileTypeRepository.CreateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IFileTypeRepository.CreateAsync
+  nameWithType: IFileTypeRepository.CreateAsync
+- uid: CG.Blue.Repositories.IFileTypeRepository.DeleteAsync(FileTypeModel,CancellationToken)
+  name: DeleteAsync(FileTypeModel, CancellationToken)
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_DeleteAsync_FileTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IFileTypeRepository.DeleteAsync(FileTypeModel,CancellationToken)
+  fullName: CG.Blue.Repositories.IFileTypeRepository.DeleteAsync(FileTypeModel, CancellationToken)
+  nameWithType: IFileTypeRepository.DeleteAsync(FileTypeModel, CancellationToken)
+- uid: CG.Blue.Repositories.IFileTypeRepository.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_DeleteAsync_
+  commentId: Overload:CG.Blue.Repositories.IFileTypeRepository.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IFileTypeRepository.DeleteAsync
+  nameWithType: IFileTypeRepository.DeleteAsync
+- uid: CG.Blue.Repositories.IFileTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IFileTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Blue.Repositories.IFileTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: IFileTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Blue.Repositories.IFileTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Blue.Repositories.IFileTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IFileTypeRepository.FindAllAsync
+  nameWithType: IFileTypeRepository.FindAllAsync
+- uid: CG.Blue.Repositories.IFileTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
+  name: FindByExtensionAsync(String, CancellationToken)
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_FindByExtensionAsync_System_String_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IFileTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
+  fullName: CG.Blue.Repositories.IFileTypeRepository.FindByExtensionAsync(System.String, CancellationToken)
+  nameWithType: IFileTypeRepository.FindByExtensionAsync(String, CancellationToken)
+- uid: CG.Blue.Repositories.IFileTypeRepository.FindByExtensionAsync*
+  name: FindByExtensionAsync
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_FindByExtensionAsync_
+  commentId: Overload:CG.Blue.Repositories.IFileTypeRepository.FindByExtensionAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IFileTypeRepository.FindByExtensionAsync
+  nameWithType: IFileTypeRepository.FindByExtensionAsync
+- uid: CG.Blue.Repositories.IFileTypeRepository.UpdateAsync(FileTypeModel,CancellationToken)
+  name: UpdateAsync(FileTypeModel, CancellationToken)
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_UpdateAsync_FileTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IFileTypeRepository.UpdateAsync(FileTypeModel,CancellationToken)
+  fullName: CG.Blue.Repositories.IFileTypeRepository.UpdateAsync(FileTypeModel, CancellationToken)
+  nameWithType: IFileTypeRepository.UpdateAsync(FileTypeModel, CancellationToken)
+- uid: CG.Blue.Repositories.IFileTypeRepository.UpdateAsync*
+  name: UpdateAsync
+  href: api/CG.Blue.Repositories.IFileTypeRepository.html#CG_Blue_Repositories_IFileTypeRepository_UpdateAsync_
+  commentId: Overload:CG.Blue.Repositories.IFileTypeRepository.UpdateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IFileTypeRepository.UpdateAsync
+  nameWithType: IFileTypeRepository.UpdateAsync
+- uid: CG.Blue.Repositories.IMimeTypeRepository
+  name: IMimeTypeRepository
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html
+  commentId: T:CG.Blue.Repositories.IMimeTypeRepository
+  fullName: CG.Blue.Repositories.IMimeTypeRepository
+  nameWithType: IMimeTypeRepository
+- uid: CG.Blue.Repositories.IMimeTypeRepository.AnyAsync(CancellationToken)
+  name: AnyAsync(CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_AnyAsync_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.AnyAsync(CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.AnyAsync(CancellationToken)
+  nameWithType: IMimeTypeRepository.AnyAsync(CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.AnyAsync(System.String,System.String,CancellationToken)
+  name: AnyAsync(String, String, CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_AnyAsync_System_String_System_String_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.AnyAsync(System.String,System.String,CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.AnyAsync(System.String, System.String, CancellationToken)
+  nameWithType: IMimeTypeRepository.AnyAsync(String, String, CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.AnyAsync*
+  name: AnyAsync
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_AnyAsync_
+  commentId: Overload:CG.Blue.Repositories.IMimeTypeRepository.AnyAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.AnyAsync
+  nameWithType: IMimeTypeRepository.AnyAsync
+- uid: CG.Blue.Repositories.IMimeTypeRepository.CountAsync(CancellationToken)
+  name: CountAsync(CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_CountAsync_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.CountAsync(CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.CountAsync(CancellationToken)
+  nameWithType: IMimeTypeRepository.CountAsync(CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.CountAsync*
+  name: CountAsync
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_CountAsync_
+  commentId: Overload:CG.Blue.Repositories.IMimeTypeRepository.CountAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.CountAsync
+  nameWithType: IMimeTypeRepository.CountAsync
+- uid: CG.Blue.Repositories.IMimeTypeRepository.CreateAsync(MimeTypeModel,CancellationToken)
+  name: CreateAsync(MimeTypeModel, CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_CreateAsync_MimeTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.CreateAsync(MimeTypeModel,CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.CreateAsync(MimeTypeModel, CancellationToken)
+  nameWithType: IMimeTypeRepository.CreateAsync(MimeTypeModel, CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.CreateAsync*
+  name: CreateAsync
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_CreateAsync_
+  commentId: Overload:CG.Blue.Repositories.IMimeTypeRepository.CreateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.CreateAsync
+  nameWithType: IMimeTypeRepository.CreateAsync
+- uid: CG.Blue.Repositories.IMimeTypeRepository.DeleteAsync(MimeTypeModel,CancellationToken)
+  name: DeleteAsync(MimeTypeModel, CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_DeleteAsync_MimeTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.DeleteAsync(MimeTypeModel,CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.DeleteAsync(MimeTypeModel, CancellationToken)
+  nameWithType: IMimeTypeRepository.DeleteAsync(MimeTypeModel, CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.DeleteAsync*
+  name: DeleteAsync
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_DeleteAsync_
+  commentId: Overload:CG.Blue.Repositories.IMimeTypeRepository.DeleteAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.DeleteAsync
+  nameWithType: IMimeTypeRepository.DeleteAsync
+- uid: CG.Blue.Repositories.IMimeTypeRepository.FindAllAsync(CancellationToken)
+  name: FindAllAsync(CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_FindAllAsync_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.FindAllAsync(CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.FindAllAsync(CancellationToken)
+  nameWithType: IMimeTypeRepository.FindAllAsync(CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.FindAllAsync*
+  name: FindAllAsync
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_FindAllAsync_
+  commentId: Overload:CG.Blue.Repositories.IMimeTypeRepository.FindAllAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.FindAllAsync
+  nameWithType: IMimeTypeRepository.FindAllAsync
+- uid: CG.Blue.Repositories.IMimeTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
+  name: FindByExtensionAsync(String, CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_FindByExtensionAsync_System_String_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.FindByExtensionAsync(System.String,CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.FindByExtensionAsync(System.String, CancellationToken)
+  nameWithType: IMimeTypeRepository.FindByExtensionAsync(String, CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.FindByExtensionAsync*
+  name: FindByExtensionAsync
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_FindByExtensionAsync_
+  commentId: Overload:CG.Blue.Repositories.IMimeTypeRepository.FindByExtensionAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.FindByExtensionAsync
+  nameWithType: IMimeTypeRepository.FindByExtensionAsync
+- uid: CG.Blue.Repositories.IMimeTypeRepository.FindByIdAsync(System.Int32,CancellationToken)
+  name: FindByIdAsync(Int32, CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_FindByIdAsync_System_Int32_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.FindByIdAsync(System.Int32,CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.FindByIdAsync(System.Int32, CancellationToken)
+  nameWithType: IMimeTypeRepository.FindByIdAsync(Int32, CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.FindByIdAsync*
+  name: FindByIdAsync
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_FindByIdAsync_
+  commentId: Overload:CG.Blue.Repositories.IMimeTypeRepository.FindByIdAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.FindByIdAsync
+  nameWithType: IMimeTypeRepository.FindByIdAsync
+- uid: CG.Blue.Repositories.IMimeTypeRepository.FindByTypesAsync(System.String,System.String,CancellationToken)
+  name: FindByTypesAsync(String, String, CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_FindByTypesAsync_System_String_System_String_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.FindByTypesAsync(System.String,System.String,CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.FindByTypesAsync(System.String, System.String, CancellationToken)
+  nameWithType: IMimeTypeRepository.FindByTypesAsync(String, String, CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.FindByTypesAsync*
+  name: FindByTypesAsync
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_FindByTypesAsync_
+  commentId: Overload:CG.Blue.Repositories.IMimeTypeRepository.FindByTypesAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.FindByTypesAsync
+  nameWithType: IMimeTypeRepository.FindByTypesAsync
+- uid: CG.Blue.Repositories.IMimeTypeRepository.UpdateAsync(MimeTypeModel,CancellationToken)
+  name: UpdateAsync(MimeTypeModel, CancellationToken)
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_UpdateAsync_MimeTypeModel_CancellationToken_
+  commentId: M:CG.Blue.Repositories.IMimeTypeRepository.UpdateAsync(MimeTypeModel,CancellationToken)
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.UpdateAsync(MimeTypeModel, CancellationToken)
+  nameWithType: IMimeTypeRepository.UpdateAsync(MimeTypeModel, CancellationToken)
+- uid: CG.Blue.Repositories.IMimeTypeRepository.UpdateAsync*
+  name: UpdateAsync
+  href: api/CG.Blue.Repositories.IMimeTypeRepository.html#CG_Blue_Repositories_IMimeTypeRepository_UpdateAsync_
+  commentId: Overload:CG.Blue.Repositories.IMimeTypeRepository.UpdateAsync
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.IMimeTypeRepository.UpdateAsync
+  nameWithType: IMimeTypeRepository.UpdateAsync
+- uid: CG.Blue.Repositories.RepositoryException
+  name: RepositoryException
+  href: api/CG.Blue.Repositories.RepositoryException.html
+  commentId: T:CG.Blue.Repositories.RepositoryException
+  fullName: CG.Blue.Repositories.RepositoryException
+  nameWithType: RepositoryException
+- uid: CG.Blue.Repositories.RepositoryException.#ctor
+  name: RepositoryException()
+  href: api/CG.Blue.Repositories.RepositoryException.html#CG_Blue_Repositories_RepositoryException__ctor
+  commentId: M:CG.Blue.Repositories.RepositoryException.#ctor
+  fullName: CG.Blue.Repositories.RepositoryException.RepositoryException()
+  nameWithType: RepositoryException.RepositoryException()
+- uid: CG.Blue.Repositories.RepositoryException.#ctor(SerializationInfo,StreamingContext)
+  name: RepositoryException(SerializationInfo, StreamingContext)
+  href: api/CG.Blue.Repositories.RepositoryException.html#CG_Blue_Repositories_RepositoryException__ctor_SerializationInfo_StreamingContext_
+  commentId: M:CG.Blue.Repositories.RepositoryException.#ctor(SerializationInfo,StreamingContext)
+  fullName: CG.Blue.Repositories.RepositoryException.RepositoryException(SerializationInfo, StreamingContext)
+  nameWithType: RepositoryException.RepositoryException(SerializationInfo, StreamingContext)
+- uid: CG.Blue.Repositories.RepositoryException.#ctor(System.String)
+  name: RepositoryException(String)
+  href: api/CG.Blue.Repositories.RepositoryException.html#CG_Blue_Repositories_RepositoryException__ctor_System_String_
+  commentId: M:CG.Blue.Repositories.RepositoryException.#ctor(System.String)
+  fullName: CG.Blue.Repositories.RepositoryException.RepositoryException(System.String)
+  nameWithType: RepositoryException.RepositoryException(String)
+- uid: CG.Blue.Repositories.RepositoryException.#ctor(System.String,Exception)
+  name: RepositoryException(String, Exception)
+  href: api/CG.Blue.Repositories.RepositoryException.html#CG_Blue_Repositories_RepositoryException__ctor_System_String_Exception_
+  commentId: M:CG.Blue.Repositories.RepositoryException.#ctor(System.String,Exception)
+  fullName: CG.Blue.Repositories.RepositoryException.RepositoryException(System.String, Exception)
+  nameWithType: RepositoryException.RepositoryException(String, Exception)
+- uid: CG.Blue.Repositories.RepositoryException.#ctor*
+  name: RepositoryException
+  href: api/CG.Blue.Repositories.RepositoryException.html#CG_Blue_Repositories_RepositoryException__ctor_
+  commentId: Overload:CG.Blue.Repositories.RepositoryException.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Repositories.RepositoryException.RepositoryException
+  nameWithType: RepositoryException.RepositoryException
+- uid: CG.Blue.Swagger
+  name: CG.Blue.Swagger
+  href: api/CG.Blue.Swagger.html
+  commentId: N:CG.Blue.Swagger
+  fullName: CG.Blue.Swagger
+  nameWithType: CG.Blue.Swagger
+- uid: CG.Blue.Swagger.SwaggerConfiguration
+  name: SwaggerConfiguration
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html
+  commentId: T:CG.Blue.Swagger.SwaggerConfiguration
+  fullName: CG.Blue.Swagger.SwaggerConfiguration
+  nameWithType: SwaggerConfiguration
+- uid: CG.Blue.Swagger.SwaggerConfiguration.#ctor(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider)
+  name: SwaggerConfiguration(IApiVersionDescriptionProvider)
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration__ctor_Asp_Versioning_ApiExplorer_IApiVersionDescriptionProvider_
+  commentId: M:CG.Blue.Swagger.SwaggerConfiguration.#ctor(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider)
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.SwaggerConfiguration(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider)
+  nameWithType: SwaggerConfiguration.SwaggerConfiguration(IApiVersionDescriptionProvider)
+- uid: CG.Blue.Swagger.SwaggerConfiguration.#ctor*
+  name: SwaggerConfiguration
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration__ctor_
+  commentId: Overload:CG.Blue.Swagger.SwaggerConfiguration.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.SwaggerConfiguration
+  nameWithType: SwaggerConfiguration.SwaggerConfiguration
+- uid: CG.Blue.Swagger.SwaggerConfiguration.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)
+  name: Configure(SwaggerGenOptions)
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_Configure_Swashbuckle_AspNetCore_SwaggerGen_SwaggerGenOptions_
+  commentId: M:CG.Blue.Swagger.SwaggerConfiguration.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)
+  nameWithType: SwaggerConfiguration.Configure(SwaggerGenOptions)
+- uid: CG.Blue.Swagger.SwaggerConfiguration.Configure*
+  name: Configure
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_Configure_
+  commentId: Overload:CG.Blue.Swagger.SwaggerConfiguration.Configure
+  isSpec: "True"
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.Configure
+  nameWithType: SwaggerConfiguration.Configure
+- uid: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion(Asp.Versioning.ApiExplorer.ApiVersionDescription)
+  name: CreateInfoForApiVersion(ApiVersionDescription)
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_CreateInfoForApiVersion_Asp_Versioning_ApiExplorer_ApiVersionDescription_
+  commentId: M:CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion(Asp.Versioning.ApiExplorer.ApiVersionDescription)
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion(Asp.Versioning.ApiExplorer.ApiVersionDescription)
+  nameWithType: SwaggerConfiguration.CreateInfoForApiVersion(ApiVersionDescription)
+- uid: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion*
+  name: CreateInfoForApiVersion
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_CreateInfoForApiVersion_
+  commentId: Overload:CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion
+  isSpec: "True"
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion
+  nameWithType: SwaggerConfiguration.CreateInfoForApiVersion
+- uid: CG.Blue.Swagger.SwaggerConfiguration.provider
+  name: provider
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_provider
+  commentId: F:CG.Blue.Swagger.SwaggerConfiguration.provider
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.provider
+  nameWithType: SwaggerConfiguration.provider
+- uid: CG.Blue.Swagger.SwaggerDefaultValues
+  name: SwaggerDefaultValues
+  href: api/CG.Blue.Swagger.SwaggerDefaultValues.html
+  commentId: T:CG.Blue.Swagger.SwaggerDefaultValues
+  fullName: CG.Blue.Swagger.SwaggerDefaultValues
+  nameWithType: SwaggerDefaultValues
+- uid: CG.Blue.Swagger.SwaggerDefaultValues.Apply(OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
+  name: Apply(OpenApiOperation, OperationFilterContext)
+  href: api/CG.Blue.Swagger.SwaggerDefaultValues.html#CG_Blue_Swagger_SwaggerDefaultValues_Apply_OpenApiOperation_Swashbuckle_AspNetCore_SwaggerGen_OperationFilterContext_
+  commentId: M:CG.Blue.Swagger.SwaggerDefaultValues.Apply(OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
+  fullName: CG.Blue.Swagger.SwaggerDefaultValues.Apply(OpenApiOperation, Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
+  nameWithType: SwaggerDefaultValues.Apply(OpenApiOperation, OperationFilterContext)
+- uid: CG.Blue.Swagger.SwaggerDefaultValues.Apply*
+  name: Apply
+  href: api/CG.Blue.Swagger.SwaggerDefaultValues.html#CG_Blue_Swagger_SwaggerDefaultValues_Apply_
+  commentId: Overload:CG.Blue.Swagger.SwaggerDefaultValues.Apply
+  isSpec: "True"
+  fullName: CG.Blue.Swagger.SwaggerDefaultValues.Apply
+  nameWithType: SwaggerDefaultValues.Apply
 - uid: Microsoft.AspNetCore.Builder
   name: Microsoft.AspNetCore.Builder
   href: api/Microsoft.AspNetCore.Builder.html

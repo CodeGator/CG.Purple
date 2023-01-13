@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class BlueBllOptions
+    <title>Class FileTypeModel
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class BlueBllOptions
+    <meta name="title" content="Class FileTypeModel
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,22 +78,34 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Blue.Options.BlueBllOptions">
+            <article class="content wrap" id="_content" data-uid="CG.Blue.Models.FileTypeModel">
   
   
-  <h1 id="CG_Blue_Options_BlueBllOptions" data-uid="CG.Blue.Options.BlueBllOptions" class="text-break">Class BlueBllOptions
+  <h1 id="CG_Blue_Models_FileTypeModel" data-uid="CG.Blue.Models.FileTypeModel" class="text-break">Class FileTypeModel
   </h1>
-  <div class="markdown level0 summary"><p>This class contains configuration settings for the <a class="xref" href="CG.Blue.html">CG.Blue</a>
-business logic layer.</p>
+  <div class="markdown level0 summary"><p>This class is a model that represents a file type.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">BlueBllOptions</span></div>
+    <div class="level1"><a class="xref" href="CG.Blue.Models.AuditedModelBase.html">AuditedModelBase</a></div>
+    <div class="level2"><span class="xref">FileTypeModel</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_CreatedBy">AuditedModelBase.CreatedBy</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_CreatedOnUtc">AuditedModelBase.CreatedOnUtc</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_LastUpdatedBy">AuditedModelBase.LastUpdatedBy</a>
+    </div>
+    <div>
+      <a class="xref" href="CG.Blue.Models.AuditedModelBase.html#CG_Blue_Models_AuditedModelBase_LastUpdatedOnUtc">AuditedModelBase.LastUpdatedOnUtc</a>
+    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -116,12 +128,86 @@ business logic layer.</p>
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Blue.Options.html">CG.Blue.Options</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Blue.Models.html">CG.Blue.Models</a></h6>
   <h6><strong>Assembly</strong>: CG.Blue.Primitives.dll</h6>
-  <h5 id="CG_Blue_Options_BlueBllOptions_syntax">Syntax</h5>
+  <h5 id="CG_Blue_Models_FileTypeModel_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class BlueBllOptions</code></pre>
+    <pre><code class="lang-csharp hljs">public class FileTypeModel : AuditedModelBase</code></pre>
   </div>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="CG_Blue_Models_FileTypeModel_Extension_" data-uid="CG.Blue.Models.FileTypeModel.Extension*"></a>
+  <h4 id="CG_Blue_Models_FileTypeModel_Extension" data-uid="CG.Blue.Models.FileTypeModel.Extension">Extension</h4>
+  <div class="markdown level1 summary"><p>This property contains the extension for the file type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Extension { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blue_Models_FileTypeModel_Id_" data-uid="CG.Blue.Models.FileTypeModel.Id*"></a>
+  <h4 id="CG_Blue_Models_FileTypeModel_Id" data-uid="CG.Blue.Models.FileTypeModel.Id">Id</h4>
+  <div class="markdown level1 summary"><p>This property contains the unique identifier for the file type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Id { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blue_Models_FileTypeModel_MimeType_" data-uid="CG.Blue.Models.FileTypeModel.MimeType*"></a>
+  <h4 id="CG_Blue_Models_FileTypeModel_MimeType" data-uid="CG.Blue.Models.FileTypeModel.MimeType">MimeType</h4>
+  <div class="markdown level1 summary"><p>This property contains the associated MIME type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual MimeTypeModel MimeType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Blue.Models.MimeTypeModel.html">MimeTypeModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

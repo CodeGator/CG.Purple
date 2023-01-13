@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class BlueBllOptions
+    <title>Class BlueApi
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class BlueBllOptions
+    <meta name="title" content="Class BlueApi
    ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,19 +78,23 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Blue.Options.BlueBllOptions">
+            <article class="content wrap" id="_content" data-uid="CG.Blue.BlueApi">
   
   
-  <h1 id="CG_Blue_Options_BlueBllOptions" data-uid="CG.Blue.Options.BlueBllOptions" class="text-break">Class BlueBllOptions
+  <h1 id="CG_Blue_BlueApi" data-uid="CG.Blue.BlueApi" class="text-break">Class BlueApi
   </h1>
-  <div class="markdown level0 summary"><p>This class contains configuration settings for the <a class="xref" href="CG.Blue.html">CG.Blue</a>
-business logic layer.</p>
+  <div class="markdown level0 summary"><p>This class is a default implementation of the <a class="xref" href="CG.Blue.IBlueApi.html">IBlueApi</a>
+interface.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">BlueBllOptions</span></div>
+    <div class="level1"><span class="xref">BlueApi</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CG.Blue.IBlueApi.html">IBlueApi</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -116,11 +120,95 @@ business logic layer.</p>
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Blue.Options.html">CG.Blue.Options</a></h6>
-  <h6><strong>Assembly</strong>: CG.Blue.Primitives.dll</h6>
-  <h5 id="CG_Blue_Options_BlueBllOptions_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Blue.html">CG.Blue</a></h6>
+  <h6><strong>Assembly</strong>: CG.Blue.dll</h6>
+  <h5 id="CG_Blue_BlueApi_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class BlueBllOptions</code></pre>
+    <pre><code class="lang-csharp hljs">class BlueApi : IBlueApi</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="CG_Blue_BlueApi__ctor_" data-uid="CG.Blue.BlueApi.#ctor*"></a>
+  <h4 id="CG_Blue_BlueApi__ctor_ISupportFacade_" data-uid="CG.Blue.BlueApi.#ctor(ISupportFacade)">BlueApi(ISupportFacade)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Blue.BlueApi.html">BlueApi</a>
+class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BlueApi(ISupportFacade supportFacade)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ISupportFacade</span></td>
+        <td><span class="parametername">supportFacade</span></td>
+        <td><p>The support wrapper to use with this API.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Blue_BlueApi__supportFacade" data-uid="CG.Blue.BlueApi._supportFacade">_supportFacade</h4>
+  <div class="markdown level1 summary"><p>This field contains the support wrapper for this api.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ISupportFacade _supportFacade</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ISupportFacade</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="CG_Blue_BlueApi_Support_" data-uid="CG.Blue.BlueApi.Support*"></a>
+  <h4 id="CG_Blue_BlueApi_Support" data-uid="CG.Blue.BlueApi.Support">Support</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ISupportFacade Support { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ISupportFacade</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CG.Blue.IBlueApi.html">IBlueApi</a>
   </div>
 </article>
           </div>

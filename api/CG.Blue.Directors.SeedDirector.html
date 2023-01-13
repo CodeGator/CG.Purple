@@ -1,0 +1,571 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SeedDirector
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SeedDirector
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CG.Blue.Directors.SeedDirector">
+  
+  
+  <h1 id="CG_Blue_Directors_SeedDirector" data-uid="CG.Blue.Directors.SeedDirector" class="text-break">Class SeedDirector
+  </h1>
+  <div class="markdown level0 summary"><p>This class is a default implementation of the <a class="xref" href="CG.Blue.Directors.ISeedDirector.html">ISeedDirector</a>
+interface.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SeedDirector</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CG.Blue.Directors.ISeedDirector.html">ISeedDirector</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Blue.Directors.html">CG.Blue.Directors</a></h6>
+  <h6><strong>Assembly</strong>: CG.Blue.dll</h6>
+  <h5 id="CG_Blue_Directors_SeedDirector_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SeedDirector : SeedDirectorBase&lt;SeedDirector&gt;, ISeedDirector</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="CG_Blue_Directors_SeedDirector__ctor_" data-uid="CG.Blue.Directors.SeedDirector.#ctor*"></a>
+  <h4 id="CG_Blue_Directors_SeedDirector__ctor_IFileTypeManager_IMimeTypeManager_ILogger_CG_Blue_Directors_SeedDirector__" data-uid="CG.Blue.Directors.SeedDirector.#ctor(IFileTypeManager,IMimeTypeManager,ILogger{CG.Blue.Directors.SeedDirector})">SeedDirector(IFileTypeManager, IMimeTypeManager, ILogger&lt;SeedDirector&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Blue.Directors.SeedDirector.html">SeedDirector</a>
+class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SeedDirector(IFileTypeManager fileTypeManager, IMimeTypeManager mimeTypeManager, ILogger&lt;SeedDirector&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IFileTypeManager</span></td>
+        <td><span class="parametername">fileTypeManager</span></td>
+        <td><p>The file type manager to use with
+this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IMimeTypeManager</span></td>
+        <td><span class="parametername">mimeTypeManager</span></td>
+        <td><p>The mime type manager to use with
+this director.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Blue.Directors.SeedDirector.html">SeedDirector</a>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger to use with this director.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="CG_Blue_Directors_SeedDirector__fileTypeManager" data-uid="CG.Blue.Directors.SeedDirector._fileTypeManager">_fileTypeManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the file type manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IFileTypeManager _fileTypeManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IFileTypeManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="CG_Blue_Directors_SeedDirector__mimeTypeManager" data-uid="CG.Blue.Directors.SeedDirector._mimeTypeManager">_mimeTypeManager</h4>
+  <div class="markdown level1 summary"><p>This field contains the mime type manager for this director.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMimeTypeManager _mimeTypeManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMimeTypeManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="CG_Blue_Directors_SeedDirector_BeforeSeedAsync_" data-uid="CG.Blue.Directors.SeedDirector.BeforeSeedAsync*"></a>
+  <h4 id="CG_Blue_Directors_SeedDirector_BeforeSeedAsync_System_String_System_Boolean_CancellationToken_" data-uid="CG.Blue.Directors.SeedDirector.BeforeSeedAsync(System.String,System.Boolean,CancellationToken)">BeforeSeedAsync(String, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override async Task BeforeSeedAsync(string userName, bool force = false, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blue_Directors_SeedDirector_SeedFileTypesAsync_" data-uid="CG.Blue.Directors.SeedDirector.SeedFileTypesAsync*"></a>
+  <h4 id="CG_Blue_Directors_SeedDirector_SeedFileTypesAsync_IConfiguration_System_String_System_Boolean_CancellationToken_" data-uid="CG.Blue.Directors.SeedDirector.SeedFileTypesAsync(IConfiguration,System.String,System.Boolean,CancellationToken)">SeedFileTypesAsync(IConfiguration, String, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method performs a seeding operation for <see cref="!:FileTypesOptions"></see>
+objects, from the given configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual async Task SeedFileTypesAsync(IConfiguration dataSection, string userName, bool force, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IConfiguration</span></td>
+        <td><span class="parametername">dataSection</span></td>
+        <td><p>The data to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td><p>The user name of the person performing the
+operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td><p><code>true</code> to force the seeding operation when data
+already exists in the associated table(s), <code>false</code> to stop the
+operation whenever data is detected in the associated table(s).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token that is monitored
+for the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blue_Directors_SeedDirector_SeedFileTypesAsync_" data-uid="CG.Blue.Directors.SeedDirector.SeedFileTypesAsync*"></a>
+  <h4 id="CG_Blue_Directors_SeedDirector_SeedFileTypesAsync_List_FileTypeOptions__System_String_System_Boolean_CancellationToken_" data-uid="CG.Blue.Directors.SeedDirector.SeedFileTypesAsync(List{FileTypeOptions},System.String,System.Boolean,CancellationToken)">SeedFileTypesAsync(List&lt;FileTypeOptions&gt;, String, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task SeedFileTypesAsync(List&lt;FileTypeOptions&gt; fileTypes, string userName, bool force = false, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">FileTypeOptions</span>&gt;</td>
+        <td><span class="parametername">fileTypes</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blue_Directors_SeedDirector_SeedFromConfiguration_" data-uid="CG.Blue.Directors.SeedDirector.SeedFromConfiguration*"></a>
+  <h4 id="CG_Blue_Directors_SeedDirector_SeedFromConfiguration_System_String_IConfiguration_System_String_System_Boolean_CancellationToken_" data-uid="CG.Blue.Directors.SeedDirector.SeedFromConfiguration(System.String,IConfiguration,System.String,System.Boolean,CancellationToken)">SeedFromConfiguration(String, IConfiguration, String, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override async Task SeedFromConfiguration(string objectName, IConfiguration dataSection, string userName, bool force = false, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">objectName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IConfiguration</span></td>
+        <td><span class="parametername">dataSection</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blue_Directors_SeedDirector_SeedMimeTypesAsync_" data-uid="CG.Blue.Directors.SeedDirector.SeedMimeTypesAsync*"></a>
+  <h4 id="CG_Blue_Directors_SeedDirector_SeedMimeTypesAsync_List_MimeTypeModel__System_String_System_Boolean_CancellationToken_" data-uid="CG.Blue.Directors.SeedDirector.SeedMimeTypesAsync(List{MimeTypeModel},System.String,System.Boolean,CancellationToken)">SeedMimeTypesAsync(List&lt;MimeTypeModel&gt;, String, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task SeedMimeTypesAsync(List&lt;MimeTypeModel&gt; mimeTypes, string userName, bool force = false, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">MimeTypeModel</span>&gt;</td>
+        <td><span class="parametername">mimeTypes</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blue_Directors_SeedDirector_SeedMimeTypesFromIanaAsync_" data-uid="CG.Blue.Directors.SeedDirector.SeedMimeTypesFromIanaAsync*"></a>
+  <h4 id="CG_Blue_Directors_SeedDirector_SeedMimeTypesFromIanaAsync_System_String_System_Boolean_CancellationToken_" data-uid="CG.Blue.Directors.SeedDirector.SeedMimeTypesFromIanaAsync(System.String,System.Boolean,CancellationToken)">SeedMimeTypesFromIanaAsync(String, Boolean, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task SeedMimeTypesFromIanaAsync(string userName, bool force = false, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CG.Blue.Directors.ISeedDirector.html">ISeedDirector</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
