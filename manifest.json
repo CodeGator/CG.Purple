@@ -26,66 +26,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Blue.Configuration.FileTypeModelConfiguration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Blue.Configuration.FileTypeModelConfiguration.html",
-          "hash": "0JKl/TI6FZxBJlpor2sqwrjD2+HEC7phjbBTAz3wEcY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Blue.Configuration.MimeTypeModelConfiguration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Blue.Configuration.MimeTypeModelConfiguration.html",
-          "hash": "b0qv4nTOr6jY9cT1WQZ7mlpzwn52VlclHlJGqteSWiY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Blue.Configuration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Blue.Configuration.html",
-          "hash": "7cFzDjtVE913oM/r1V/4zXp7BqoZ2Y6s+vUay9XCxk0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Blue.Controllers.MimeTypesController.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Blue.Controllers.MimeTypesController.html",
-          "hash": "95JCGL4j2MUpRgZsgR52liwgcLcZnKMXFJEeabtkMWs="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Blue.Controllers.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Blue.Controllers.html",
-          "hash": "vPi5LAjlN9HaF4q5KIQHrqFizIovHHLyM4L8xULffNo="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/CG.Blue.Data.BlueDbContext.yml",
       "output": {
         ".html": {
@@ -210,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Blue.Data.Repositories.MimeTypeRepository.html",
-          "hash": "59vwkF3BpkTdMHoS2nXHdB3YSXpUKyFG8akmRMXbgBk="
+          "hash": "TgXT23IB5lNNbY8x4RCy9A2NUdVFnAwUNDfzI9nfF5c="
         }
       },
       "is_incremental": false,
@@ -606,7 +546,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Blue.Managers.IMimeTypeManager.html",
-          "hash": "BW26/gKG88/YqnqyRqzPqmBcw4KXI2GaG2cyxKGwsnU="
+          "hash": "YYQXH+i0msGKxQMWnJe1YwE0vY2Sn79I9uMTebQElDQ="
         }
       },
       "is_incremental": false,
@@ -630,7 +570,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Blue.Managers.MimeTypeManager.html",
-          "hash": "tZ/GSN/VDvWi4k8tcIiGNTKfnbMaWio0+ezPo0nCNiw="
+          "hash": "pV/dwlWmBa3GMhHrqDC8mngikubi2uUxkz5/regNTns="
         }
       },
       "is_incremental": false,
@@ -678,7 +618,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Blue.Models.MimeTypeModel.html",
-          "hash": "5FFAnGEdJ3WaTuWdy8+AkWzgpBSjmo+eu2G8B2HcrLc="
+          "hash": "83rRC6pvkJfcHQWr+M1ahCFvfS/W99WfcwoTqPQhO3A="
         }
       },
       "is_incremental": false,
@@ -690,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Blue.Models.html",
-          "hash": "t3mij8j3xdinmLNQOWBf+OQ3De9b1LLpWKA8m/rd1OA="
+          "hash": "1vWeLB8TPhFMyKxggQKvXJE63Lo0mI6WMd97cxkdOQU="
         }
       },
       "is_incremental": false,
@@ -762,7 +702,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Blue.Repositories.IMimeTypeRepository.html",
-          "hash": "u7RHEJ/DDmEiL8hfrYrB/F7Kv1am4Hu07n0muO+kvB8="
+          "hash": "NHu4vuyof7QmUuj27nM+BA71tQhp0W7UCCt9aCAozSY="
         }
       },
       "is_incremental": false,
@@ -798,7 +738,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Blue.Swagger.SwaggerConfiguration.html",
-          "hash": "HOiEE6DAOHPYnNLBzXCGC3BKdUk2tLo6/M3ZIzozIJQ="
+          "hash": "njsALBqY3Td/8vRA4iBbPvalQp5BDpvrcUaxLjObYO4="
         }
       },
       "is_incremental": false,
@@ -810,7 +750,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Blue.Swagger.SwaggerDefaultValues.html",
-          "hash": "TIArr/HyoXcg8uPmy5ea5BDydVuljU6u0L4mlO2q1ZE="
+          "hash": "7ASsjRqCSIHPlXxD6lF2azvcHcKHtYhs6Gg2LmCSEVU="
         }
       },
       "is_incremental": false,
@@ -822,7 +762,55 @@
       "output": {
         ".html": {
           "relative_path": "api/CG.Blue.Swagger.html",
-          "hash": "xC48umHU/kTiTiXGILOkb8M1iDYQTZEs0wnQSUq+TUk="
+          "hash": "aZeTyxMcogLFznBeLbSSehPoeaOdfm0ZdaTVOFqP6as="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Blue.V1.Controllers.MimeTypesController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Blue.V1.Controllers.MimeTypesController.html",
+          "hash": "zELgUISA01izK/R2a9ILlWd2Rz/z8eOfpZlo2NlQ9DE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Blue.V1.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Blue.V1.Controllers.html",
+          "hash": "X/R/gX51/+YJP8LRmcGlUobM7UDh6c1I3uVWgPNwM7s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Blue.V1.Models.MimeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Blue.V1.Models.MimeType.html",
+          "hash": "oae3MMhmc3JO2to11ZNTjQZpznaF+2WOb48c5DKU7Cw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CG.Blue.V1.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CG.Blue.V1.Models.html",
+          "hash": "2OseI7J7SReVkEeVE6vvSHEhh5jqf28jPC4Izr/LMmo="
         }
       },
       "is_incremental": false,
@@ -978,7 +966,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "AB49Q+8Vt0u9QDGcZiYREPPc+wKFBzySkC51QU80QIE="
+          "hash": "pAAulctx0ZrZFY4pheoKwQFB1vTV2OKE7qFY3ywS8io="
         }
       },
       "is_incremental": false,
@@ -1097,7 +1085,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 80,
+          "total_file_count": 79,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

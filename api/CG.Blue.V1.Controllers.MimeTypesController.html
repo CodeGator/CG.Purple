@@ -78,12 +78,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Blue.Controllers.MimeTypesController">
+            <article class="content wrap" id="_content" data-uid="CG.Blue.V1.Controllers.MimeTypesController">
   
   
-  <h1 id="CG_Blue_Controllers_MimeTypesController" data-uid="CG.Blue.Controllers.MimeTypesController" class="text-break">Class MimeTypesController
+  <h1 id="CG_Blue_V1_Controllers_MimeTypesController" data-uid="CG.Blue.V1.Controllers.MimeTypesController" class="text-break">Class MimeTypesController
   </h1>
-  <div class="markdown level0 summary"><p>This class is a REST controller for <see cref="!:MimeTypeModel"></see> resources.</p>
+  <div class="markdown level0 summary"><p>This class is a REST controller for <see cref="!:MimeType"></see> resources.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -91,17 +91,17 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">MimeTypesController</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Blue.Controllers.html">CG.Blue.Controllers</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Blue.V1.Controllers.html">CG.Blue.V1.Controllers</a></h6>
   <h6><strong>Assembly</strong>: CG.Blue.Controllers.dll</h6>
-  <h5 id="CG_Blue_Controllers_MimeTypesController_syntax">Syntax</h5>
+  <h5 id="CG_Blue_V1_Controllers_MimeTypesController_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MimeTypesController : ODataController</code></pre>
+    <pre><code class="lang-csharp hljs">public class MimeTypesController : ControllerBase</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <a id="CG_Blue_Controllers_MimeTypesController__ctor_" data-uid="CG.Blue.Controllers.MimeTypesController.#ctor*"></a>
-  <h4 id="CG_Blue_Controllers_MimeTypesController__ctor_CG_Blue_IBlueApi_ILogger_CG_Blue_Controllers_MimeTypesController__" data-uid="CG.Blue.Controllers.MimeTypesController.#ctor(CG.Blue.IBlueApi,ILogger{CG.Blue.Controllers.MimeTypesController})">MimeTypesController(IBlueApi, ILogger&lt;MimeTypesController&gt;)</h4>
-  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Blue.Controllers.MimeTypesController.html">MimeTypesController</a></p>
+  <a id="CG_Blue_V1_Controllers_MimeTypesController__ctor_" data-uid="CG.Blue.V1.Controllers.MimeTypesController.#ctor*"></a>
+  <h4 id="CG_Blue_V1_Controllers_MimeTypesController__ctor_CG_Blue_IBlueApi_ILogger_CG_Blue_V1_Controllers_MimeTypesController__" data-uid="CG.Blue.V1.Controllers.MimeTypesController.#ctor(CG.Blue.IBlueApi,ILogger{CG.Blue.V1.Controllers.MimeTypesController})">MimeTypesController(IBlueApi, ILogger&lt;MimeTypesController&gt;)</h4>
+  <div class="markdown level1 summary"><p>This constructor creates a new instance of the <a class="xref" href="CG.Blue.V1.Controllers.MimeTypesController.html">MimeTypesController</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -125,7 +125,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Blue.Controllers.MimeTypesController.html">MimeTypesController</a>&gt;</td>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Blue.V1.Controllers.MimeTypesController.html">MimeTypesController</a>&gt;</td>
         <td><span class="parametername">logger</span></td>
         <td><p>The logger to use with this controller.</p>
 </td>
@@ -134,7 +134,7 @@
   </table>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="CG_Blue_Controllers_MimeTypesController__blueApi" data-uid="CG.Blue.Controllers.MimeTypesController._blueApi">_blueApi</h4>
+  <h4 id="CG_Blue_V1_Controllers_MimeTypesController__blueApi" data-uid="CG.Blue.V1.Controllers.MimeTypesController._blueApi">_blueApi</h4>
   <div class="markdown level1 summary"><p>This field contains the api for this controller.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -157,7 +157,7 @@
       </tr>
     </tbody>
   </table>
-  <h4 id="CG_Blue_Controllers_MimeTypesController__logger" data-uid="CG.Blue.Controllers.MimeTypesController._logger">_logger</h4>
+  <h4 id="CG_Blue_V1_Controllers_MimeTypesController__logger" data-uid="CG.Blue.V1.Controllers.MimeTypesController._logger">_logger</h4>
   <div class="markdown level1 summary"><p>This field contains the logger for this controller.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -175,21 +175,48 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Blue.Controllers.MimeTypesController.html">MimeTypesController</a>&gt;</td>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="CG.Blue.V1.Controllers.MimeTypesController.html">MimeTypesController</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Blue_Controllers_MimeTypesController_GetAsync_" data-uid="CG.Blue.Controllers.MimeTypesController.GetAsync*"></a>
-  <h4 id="CG_Blue_Controllers_MimeTypesController_GetAsync_ODataQueryOptions_MimeTypeModel__" data-uid="CG.Blue.Controllers.MimeTypesController.GetAsync(ODataQueryOptions{MimeTypeModel})">GetAsync(ODataQueryOptions&lt;MimeTypeModel&gt;)</h4>
-  <div class="markdown level1 summary"><p>This method gets a collection of <see cref="!:MimeTypeModel"></see> objects.</p>
+  <a id="CG_Blue_V1_Controllers_MimeTypesController_GetAsync_" data-uid="CG.Blue.V1.Controllers.MimeTypesController.GetAsync*"></a>
+  <h4 id="CG_Blue_V1_Controllers_MimeTypesController_GetAsync" data-uid="CG.Blue.V1.Controllers.MimeTypesController.GetAsync">GetAsync()</h4>
+  <div class="markdown level1 summary"><p>This method gets a collection of <see cref="!:MimeType"></see> objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IActionResult&gt; GetAsync(ODataQueryOptions&lt;MimeTypeModel&gt; options)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IActionResult&gt; GetAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IActionResult</span>&gt;</td>
+        <td><p>A task to perform the operation that returns a collection of <see cref="!:MimeType"></see>
+objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blue_V1_Controllers_MimeTypesController_GetAsync_" data-uid="CG.Blue.V1.Controllers.MimeTypesController.GetAsync*"></a>
+  <h4 id="CG_Blue_V1_Controllers_MimeTypesController_GetAsync_System_String_" data-uid="CG.Blue.V1.Controllers.MimeTypesController.GetAsync(System.String)">GetAsync(String)</h4>
+  <div class="markdown level1 summary"><p>This method gets a single <see cref="!:MimeType"></see> object, by matching
+the type and subtype to the given key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IActionResult&gt; GetAsync(string key)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -202,8 +229,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ODataQueryOptions</span>&lt;<span class="xref">MimeTypeModel</span>&gt;</td>
-        <td><span class="parametername">options</span></td>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -219,8 +246,54 @@
     <tbody>
       <tr>
         <td><span class="xref">Task</span>&lt;<span class="xref">IActionResult</span>&gt;</td>
-        <td><p>A task to perform the operation that returns a collection of <see cref="!:MimeTypeModel"></see>
-objects.</p>
+        <td><p>A task to perform the operation that returns a matching
+<see cref="!:MimeType"></see> object, if a match was found, or <code>NULL</code>
+otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blue_V1_Controllers_MimeTypesController_GetByExtAsync_" data-uid="CG.Blue.V1.Controllers.MimeTypesController.GetByExtAsync*"></a>
+  <h4 id="CG_Blue_V1_Controllers_MimeTypesController_GetByExtAsync_System_String_" data-uid="CG.Blue.V1.Controllers.MimeTypesController.GetByExtAsync(System.String)">GetByExtAsync(String)</h4>
+  <div class="markdown level1 summary"><p>This method gets a collection of <see cref="!:MimeType"></see> objects,
+by matching their file extension to the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IActionResult&gt; GetByExtAsync(string extension)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">extension</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IActionResult</span>&gt;</td>
+        <td><p>A task to perform the operation that returns a collection
+of matching <see cref="!:MimeType"></see> objects, if a match was found,
+or <code>NULL</code> otherwise.</p>
 </td>
       </tr>
     </tbody>

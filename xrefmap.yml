@@ -45,132 +45,6 @@ references:
   isSpec: "True"
   fullName: CG.Blue.BlueApi.Support
   nameWithType: BlueApi.Support
-- uid: CG.Blue.Configuration
-  name: CG.Blue.Configuration
-  href: api/CG.Blue.Configuration.html
-  commentId: N:CG.Blue.Configuration
-  fullName: CG.Blue.Configuration
-  nameWithType: CG.Blue.Configuration
-- uid: CG.Blue.Configuration.FileTypeModelConfiguration
-  name: FileTypeModelConfiguration
-  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html
-  commentId: T:CG.Blue.Configuration.FileTypeModelConfiguration
-  fullName: CG.Blue.Configuration.FileTypeModelConfiguration
-  nameWithType: FileTypeModelConfiguration
-- uid: CG.Blue.Configuration.FileTypeModelConfiguration.Apply(ODataModelBuilder,ApiVersion,System.String)
-  name: Apply(ODataModelBuilder, ApiVersion, String)
-  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html#CG_Blue_Configuration_FileTypeModelConfiguration_Apply_ODataModelBuilder_ApiVersion_System_String_
-  commentId: M:CG.Blue.Configuration.FileTypeModelConfiguration.Apply(ODataModelBuilder,ApiVersion,System.String)
-  fullName: CG.Blue.Configuration.FileTypeModelConfiguration.Apply(ODataModelBuilder, ApiVersion, System.String)
-  nameWithType: FileTypeModelConfiguration.Apply(ODataModelBuilder, ApiVersion, String)
-- uid: CG.Blue.Configuration.FileTypeModelConfiguration.Apply*
-  name: Apply
-  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html#CG_Blue_Configuration_FileTypeModelConfiguration_Apply_
-  commentId: Overload:CG.Blue.Configuration.FileTypeModelConfiguration.Apply
-  isSpec: "True"
-  fullName: CG.Blue.Configuration.FileTypeModelConfiguration.Apply
-  nameWithType: FileTypeModelConfiguration.Apply
-- uid: CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
-  name: ConfigureV1(ODataModelBuilder)
-  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html#CG_Blue_Configuration_FileTypeModelConfiguration_ConfigureV1_ODataModelBuilder_
-  commentId: M:CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
-  fullName: CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
-  nameWithType: FileTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
-- uid: CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1*
-  name: ConfigureV1
-  href: api/CG.Blue.Configuration.FileTypeModelConfiguration.html#CG_Blue_Configuration_FileTypeModelConfiguration_ConfigureV1_
-  commentId: Overload:CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1
-  isSpec: "True"
-  fullName: CG.Blue.Configuration.FileTypeModelConfiguration.ConfigureV1
-  nameWithType: FileTypeModelConfiguration.ConfigureV1
-- uid: CG.Blue.Configuration.MimeTypeModelConfiguration
-  name: MimeTypeModelConfiguration
-  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html
-  commentId: T:CG.Blue.Configuration.MimeTypeModelConfiguration
-  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration
-  nameWithType: MimeTypeModelConfiguration
-- uid: CG.Blue.Configuration.MimeTypeModelConfiguration.Apply(ODataModelBuilder,ApiVersion,System.String)
-  name: Apply(ODataModelBuilder, ApiVersion, String)
-  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html#CG_Blue_Configuration_MimeTypeModelConfiguration_Apply_ODataModelBuilder_ApiVersion_System_String_
-  commentId: M:CG.Blue.Configuration.MimeTypeModelConfiguration.Apply(ODataModelBuilder,ApiVersion,System.String)
-  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration.Apply(ODataModelBuilder, ApiVersion, System.String)
-  nameWithType: MimeTypeModelConfiguration.Apply(ODataModelBuilder, ApiVersion, String)
-- uid: CG.Blue.Configuration.MimeTypeModelConfiguration.Apply*
-  name: Apply
-  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html#CG_Blue_Configuration_MimeTypeModelConfiguration_Apply_
-  commentId: Overload:CG.Blue.Configuration.MimeTypeModelConfiguration.Apply
-  isSpec: "True"
-  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration.Apply
-  nameWithType: MimeTypeModelConfiguration.Apply
-- uid: CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
-  name: ConfigureV1(ODataModelBuilder)
-  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html#CG_Blue_Configuration_MimeTypeModelConfiguration_ConfigureV1_ODataModelBuilder_
-  commentId: M:CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
-  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
-  nameWithType: MimeTypeModelConfiguration.ConfigureV1(ODataModelBuilder)
-- uid: CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1*
-  name: ConfigureV1
-  href: api/CG.Blue.Configuration.MimeTypeModelConfiguration.html#CG_Blue_Configuration_MimeTypeModelConfiguration_ConfigureV1_
-  commentId: Overload:CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1
-  isSpec: "True"
-  fullName: CG.Blue.Configuration.MimeTypeModelConfiguration.ConfigureV1
-  nameWithType: MimeTypeModelConfiguration.ConfigureV1
-- uid: CG.Blue.Controllers
-  name: CG.Blue.Controllers
-  href: api/CG.Blue.Controllers.html
-  commentId: N:CG.Blue.Controllers
-  fullName: CG.Blue.Controllers
-  nameWithType: CG.Blue.Controllers
-- uid: CG.Blue.Controllers.MimeTypesController
-  name: MimeTypesController
-  href: api/CG.Blue.Controllers.MimeTypesController.html
-  commentId: T:CG.Blue.Controllers.MimeTypesController
-  fullName: CG.Blue.Controllers.MimeTypesController
-  nameWithType: MimeTypesController
-- uid: CG.Blue.Controllers.MimeTypesController.#ctor(CG.Blue.IBlueApi,ILogger{CG.Blue.Controllers.MimeTypesController})
-  name: MimeTypesController(IBlueApi, ILogger<MimeTypesController>)
-  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController__ctor_CG_Blue_IBlueApi_ILogger_CG_Blue_Controllers_MimeTypesController__
-  commentId: M:CG.Blue.Controllers.MimeTypesController.#ctor(CG.Blue.IBlueApi,ILogger{CG.Blue.Controllers.MimeTypesController})
-  name.vb: MimeTypesController(IBlueApi, ILogger(Of MimeTypesController))
-  fullName: CG.Blue.Controllers.MimeTypesController.MimeTypesController(CG.Blue.IBlueApi, ILogger<CG.Blue.Controllers.MimeTypesController>)
-  fullName.vb: CG.Blue.Controllers.MimeTypesController.MimeTypesController(CG.Blue.IBlueApi, ILogger(Of CG.Blue.Controllers.MimeTypesController))
-  nameWithType: MimeTypesController.MimeTypesController(IBlueApi, ILogger<MimeTypesController>)
-  nameWithType.vb: MimeTypesController.MimeTypesController(IBlueApi, ILogger(Of MimeTypesController))
-- uid: CG.Blue.Controllers.MimeTypesController.#ctor*
-  name: MimeTypesController
-  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController__ctor_
-  commentId: Overload:CG.Blue.Controllers.MimeTypesController.#ctor
-  isSpec: "True"
-  fullName: CG.Blue.Controllers.MimeTypesController.MimeTypesController
-  nameWithType: MimeTypesController.MimeTypesController
-- uid: CG.Blue.Controllers.MimeTypesController._blueApi
-  name: _blueApi
-  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController__blueApi
-  commentId: F:CG.Blue.Controllers.MimeTypesController._blueApi
-  fullName: CG.Blue.Controllers.MimeTypesController._blueApi
-  nameWithType: MimeTypesController._blueApi
-- uid: CG.Blue.Controllers.MimeTypesController._logger
-  name: _logger
-  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController__logger
-  commentId: F:CG.Blue.Controllers.MimeTypesController._logger
-  fullName: CG.Blue.Controllers.MimeTypesController._logger
-  nameWithType: MimeTypesController._logger
-- uid: CG.Blue.Controllers.MimeTypesController.GetAsync(ODataQueryOptions{MimeTypeModel})
-  name: GetAsync(ODataQueryOptions<MimeTypeModel>)
-  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController_GetAsync_ODataQueryOptions_MimeTypeModel__
-  commentId: M:CG.Blue.Controllers.MimeTypesController.GetAsync(ODataQueryOptions{MimeTypeModel})
-  name.vb: GetAsync(ODataQueryOptions(Of MimeTypeModel))
-  fullName: CG.Blue.Controllers.MimeTypesController.GetAsync(ODataQueryOptions<MimeTypeModel>)
-  fullName.vb: CG.Blue.Controllers.MimeTypesController.GetAsync(ODataQueryOptions(Of MimeTypeModel))
-  nameWithType: MimeTypesController.GetAsync(ODataQueryOptions<MimeTypeModel>)
-  nameWithType.vb: MimeTypesController.GetAsync(ODataQueryOptions(Of MimeTypeModel))
-- uid: CG.Blue.Controllers.MimeTypesController.GetAsync*
-  name: GetAsync
-  href: api/CG.Blue.Controllers.MimeTypesController.html#CG_Blue_Controllers_MimeTypesController_GetAsync_
-  commentId: Overload:CG.Blue.Controllers.MimeTypesController.GetAsync
-  isSpec: "True"
-  fullName: CG.Blue.Controllers.MimeTypesController.GetAsync
-  nameWithType: MimeTypesController.GetAsync
 - uid: CG.Blue.Data
   name: CG.Blue.Data
   href: api/CG.Blue.Data.html
@@ -2430,11 +2304,11 @@ references:
   commentId: T:CG.Blue.Swagger.SwaggerConfiguration
   fullName: CG.Blue.Swagger.SwaggerConfiguration
   nameWithType: SwaggerConfiguration
-- uid: CG.Blue.Swagger.SwaggerConfiguration.#ctor(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider)
+- uid: CG.Blue.Swagger.SwaggerConfiguration.#ctor(IApiVersionDescriptionProvider)
   name: SwaggerConfiguration(IApiVersionDescriptionProvider)
-  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration__ctor_Asp_Versioning_ApiExplorer_IApiVersionDescriptionProvider_
-  commentId: M:CG.Blue.Swagger.SwaggerConfiguration.#ctor(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider)
-  fullName: CG.Blue.Swagger.SwaggerConfiguration.SwaggerConfiguration(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider)
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration__ctor_IApiVersionDescriptionProvider_
+  commentId: M:CG.Blue.Swagger.SwaggerConfiguration.#ctor(IApiVersionDescriptionProvider)
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.SwaggerConfiguration(IApiVersionDescriptionProvider)
   nameWithType: SwaggerConfiguration.SwaggerConfiguration(IApiVersionDescriptionProvider)
 - uid: CG.Blue.Swagger.SwaggerConfiguration.#ctor*
   name: SwaggerConfiguration
@@ -2443,11 +2317,17 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Swagger.SwaggerConfiguration.SwaggerConfiguration
   nameWithType: SwaggerConfiguration.SwaggerConfiguration
-- uid: CG.Blue.Swagger.SwaggerConfiguration.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)
+- uid: CG.Blue.Swagger.SwaggerConfiguration._provider
+  name: _provider
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration__provider
+  commentId: F:CG.Blue.Swagger.SwaggerConfiguration._provider
+  fullName: CG.Blue.Swagger.SwaggerConfiguration._provider
+  nameWithType: SwaggerConfiguration._provider
+- uid: CG.Blue.Swagger.SwaggerConfiguration.Configure(SwaggerGenOptions)
   name: Configure(SwaggerGenOptions)
-  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_Configure_Swashbuckle_AspNetCore_SwaggerGen_SwaggerGenOptions_
-  commentId: M:CG.Blue.Swagger.SwaggerConfiguration.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)
-  fullName: CG.Blue.Swagger.SwaggerConfiguration.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_Configure_SwaggerGenOptions_
+  commentId: M:CG.Blue.Swagger.SwaggerConfiguration.Configure(SwaggerGenOptions)
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.Configure(SwaggerGenOptions)
   nameWithType: SwaggerConfiguration.Configure(SwaggerGenOptions)
 - uid: CG.Blue.Swagger.SwaggerConfiguration.Configure*
   name: Configure
@@ -2456,11 +2336,11 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Swagger.SwaggerConfiguration.Configure
   nameWithType: SwaggerConfiguration.Configure
-- uid: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion(Asp.Versioning.ApiExplorer.ApiVersionDescription)
+- uid: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion(ApiVersionDescription)
   name: CreateInfoForApiVersion(ApiVersionDescription)
-  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_CreateInfoForApiVersion_Asp_Versioning_ApiExplorer_ApiVersionDescription_
-  commentId: M:CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion(Asp.Versioning.ApiExplorer.ApiVersionDescription)
-  fullName: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion(Asp.Versioning.ApiExplorer.ApiVersionDescription)
+  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_CreateInfoForApiVersion_ApiVersionDescription_
+  commentId: M:CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion(ApiVersionDescription)
+  fullName: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion(ApiVersionDescription)
   nameWithType: SwaggerConfiguration.CreateInfoForApiVersion(ApiVersionDescription)
 - uid: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion*
   name: CreateInfoForApiVersion
@@ -2469,23 +2349,17 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Swagger.SwaggerConfiguration.CreateInfoForApiVersion
   nameWithType: SwaggerConfiguration.CreateInfoForApiVersion
-- uid: CG.Blue.Swagger.SwaggerConfiguration.provider
-  name: provider
-  href: api/CG.Blue.Swagger.SwaggerConfiguration.html#CG_Blue_Swagger_SwaggerConfiguration_provider
-  commentId: F:CG.Blue.Swagger.SwaggerConfiguration.provider
-  fullName: CG.Blue.Swagger.SwaggerConfiguration.provider
-  nameWithType: SwaggerConfiguration.provider
 - uid: CG.Blue.Swagger.SwaggerDefaultValues
   name: SwaggerDefaultValues
   href: api/CG.Blue.Swagger.SwaggerDefaultValues.html
   commentId: T:CG.Blue.Swagger.SwaggerDefaultValues
   fullName: CG.Blue.Swagger.SwaggerDefaultValues
   nameWithType: SwaggerDefaultValues
-- uid: CG.Blue.Swagger.SwaggerDefaultValues.Apply(OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
+- uid: CG.Blue.Swagger.SwaggerDefaultValues.Apply(OpenApiOperation,OperationFilterContext)
   name: Apply(OpenApiOperation, OperationFilterContext)
-  href: api/CG.Blue.Swagger.SwaggerDefaultValues.html#CG_Blue_Swagger_SwaggerDefaultValues_Apply_OpenApiOperation_Swashbuckle_AspNetCore_SwaggerGen_OperationFilterContext_
-  commentId: M:CG.Blue.Swagger.SwaggerDefaultValues.Apply(OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
-  fullName: CG.Blue.Swagger.SwaggerDefaultValues.Apply(OpenApiOperation, Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)
+  href: api/CG.Blue.Swagger.SwaggerDefaultValues.html#CG_Blue_Swagger_SwaggerDefaultValues_Apply_OpenApiOperation_OperationFilterContext_
+  commentId: M:CG.Blue.Swagger.SwaggerDefaultValues.Apply(OpenApiOperation,OperationFilterContext)
+  fullName: CG.Blue.Swagger.SwaggerDefaultValues.Apply(OpenApiOperation, OperationFilterContext)
   nameWithType: SwaggerDefaultValues.Apply(OpenApiOperation, OperationFilterContext)
 - uid: CG.Blue.Swagger.SwaggerDefaultValues.Apply*
   name: Apply
@@ -2494,6 +2368,116 @@ references:
   isSpec: "True"
   fullName: CG.Blue.Swagger.SwaggerDefaultValues.Apply
   nameWithType: SwaggerDefaultValues.Apply
+- uid: CG.Blue.V1.Controllers
+  name: CG.Blue.V1.Controllers
+  href: api/CG.Blue.V1.Controllers.html
+  commentId: N:CG.Blue.V1.Controllers
+  fullName: CG.Blue.V1.Controllers
+  nameWithType: CG.Blue.V1.Controllers
+- uid: CG.Blue.V1.Controllers.MimeTypesController
+  name: MimeTypesController
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html
+  commentId: T:CG.Blue.V1.Controllers.MimeTypesController
+  fullName: CG.Blue.V1.Controllers.MimeTypesController
+  nameWithType: MimeTypesController
+- uid: CG.Blue.V1.Controllers.MimeTypesController.#ctor(CG.Blue.IBlueApi,ILogger{CG.Blue.V1.Controllers.MimeTypesController})
+  name: MimeTypesController(IBlueApi, ILogger<MimeTypesController>)
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html#CG_Blue_V1_Controllers_MimeTypesController__ctor_CG_Blue_IBlueApi_ILogger_CG_Blue_V1_Controllers_MimeTypesController__
+  commentId: M:CG.Blue.V1.Controllers.MimeTypesController.#ctor(CG.Blue.IBlueApi,ILogger{CG.Blue.V1.Controllers.MimeTypesController})
+  name.vb: MimeTypesController(IBlueApi, ILogger(Of MimeTypesController))
+  fullName: CG.Blue.V1.Controllers.MimeTypesController.MimeTypesController(CG.Blue.IBlueApi, ILogger<CG.Blue.V1.Controllers.MimeTypesController>)
+  fullName.vb: CG.Blue.V1.Controllers.MimeTypesController.MimeTypesController(CG.Blue.IBlueApi, ILogger(Of CG.Blue.V1.Controllers.MimeTypesController))
+  nameWithType: MimeTypesController.MimeTypesController(IBlueApi, ILogger<MimeTypesController>)
+  nameWithType.vb: MimeTypesController.MimeTypesController(IBlueApi, ILogger(Of MimeTypesController))
+- uid: CG.Blue.V1.Controllers.MimeTypesController.#ctor*
+  name: MimeTypesController
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html#CG_Blue_V1_Controllers_MimeTypesController__ctor_
+  commentId: Overload:CG.Blue.V1.Controllers.MimeTypesController.#ctor
+  isSpec: "True"
+  fullName: CG.Blue.V1.Controllers.MimeTypesController.MimeTypesController
+  nameWithType: MimeTypesController.MimeTypesController
+- uid: CG.Blue.V1.Controllers.MimeTypesController._blueApi
+  name: _blueApi
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html#CG_Blue_V1_Controllers_MimeTypesController__blueApi
+  commentId: F:CG.Blue.V1.Controllers.MimeTypesController._blueApi
+  fullName: CG.Blue.V1.Controllers.MimeTypesController._blueApi
+  nameWithType: MimeTypesController._blueApi
+- uid: CG.Blue.V1.Controllers.MimeTypesController._logger
+  name: _logger
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html#CG_Blue_V1_Controllers_MimeTypesController__logger
+  commentId: F:CG.Blue.V1.Controllers.MimeTypesController._logger
+  fullName: CG.Blue.V1.Controllers.MimeTypesController._logger
+  nameWithType: MimeTypesController._logger
+- uid: CG.Blue.V1.Controllers.MimeTypesController.GetAsync
+  name: GetAsync()
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html#CG_Blue_V1_Controllers_MimeTypesController_GetAsync
+  commentId: M:CG.Blue.V1.Controllers.MimeTypesController.GetAsync
+  fullName: CG.Blue.V1.Controllers.MimeTypesController.GetAsync()
+  nameWithType: MimeTypesController.GetAsync()
+- uid: CG.Blue.V1.Controllers.MimeTypesController.GetAsync(System.String)
+  name: GetAsync(String)
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html#CG_Blue_V1_Controllers_MimeTypesController_GetAsync_System_String_
+  commentId: M:CG.Blue.V1.Controllers.MimeTypesController.GetAsync(System.String)
+  fullName: CG.Blue.V1.Controllers.MimeTypesController.GetAsync(System.String)
+  nameWithType: MimeTypesController.GetAsync(String)
+- uid: CG.Blue.V1.Controllers.MimeTypesController.GetAsync*
+  name: GetAsync
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html#CG_Blue_V1_Controllers_MimeTypesController_GetAsync_
+  commentId: Overload:CG.Blue.V1.Controllers.MimeTypesController.GetAsync
+  isSpec: "True"
+  fullName: CG.Blue.V1.Controllers.MimeTypesController.GetAsync
+  nameWithType: MimeTypesController.GetAsync
+- uid: CG.Blue.V1.Controllers.MimeTypesController.GetByExtAsync(System.String)
+  name: GetByExtAsync(String)
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html#CG_Blue_V1_Controllers_MimeTypesController_GetByExtAsync_System_String_
+  commentId: M:CG.Blue.V1.Controllers.MimeTypesController.GetByExtAsync(System.String)
+  fullName: CG.Blue.V1.Controllers.MimeTypesController.GetByExtAsync(System.String)
+  nameWithType: MimeTypesController.GetByExtAsync(String)
+- uid: CG.Blue.V1.Controllers.MimeTypesController.GetByExtAsync*
+  name: GetByExtAsync
+  href: api/CG.Blue.V1.Controllers.MimeTypesController.html#CG_Blue_V1_Controllers_MimeTypesController_GetByExtAsync_
+  commentId: Overload:CG.Blue.V1.Controllers.MimeTypesController.GetByExtAsync
+  isSpec: "True"
+  fullName: CG.Blue.V1.Controllers.MimeTypesController.GetByExtAsync
+  nameWithType: MimeTypesController.GetByExtAsync
+- uid: CG.Blue.V1.Models
+  name: CG.Blue.V1.Models
+  href: api/CG.Blue.V1.Models.html
+  commentId: N:CG.Blue.V1.Models
+  fullName: CG.Blue.V1.Models
+  nameWithType: CG.Blue.V1.Models
+- uid: CG.Blue.V1.Models.MimeType
+  name: MimeType
+  href: api/CG.Blue.V1.Models.MimeType.html
+  commentId: T:CG.Blue.V1.Models.MimeType
+  fullName: CG.Blue.V1.Models.MimeType
+  nameWithType: MimeType
+- uid: CG.Blue.V1.Models.MimeType.Extensions
+  name: Extensions
+  href: api/CG.Blue.V1.Models.MimeType.html#CG_Blue_V1_Models_MimeType_Extensions
+  commentId: P:CG.Blue.V1.Models.MimeType.Extensions
+  fullName: CG.Blue.V1.Models.MimeType.Extensions
+  nameWithType: MimeType.Extensions
+- uid: CG.Blue.V1.Models.MimeType.Extensions*
+  name: Extensions
+  href: api/CG.Blue.V1.Models.MimeType.html#CG_Blue_V1_Models_MimeType_Extensions_
+  commentId: Overload:CG.Blue.V1.Models.MimeType.Extensions
+  isSpec: "True"
+  fullName: CG.Blue.V1.Models.MimeType.Extensions
+  nameWithType: MimeType.Extensions
+- uid: CG.Blue.V1.Models.MimeType.Key
+  name: Key
+  href: api/CG.Blue.V1.Models.MimeType.html#CG_Blue_V1_Models_MimeType_Key
+  commentId: P:CG.Blue.V1.Models.MimeType.Key
+  fullName: CG.Blue.V1.Models.MimeType.Key
+  nameWithType: MimeType.Key
+- uid: CG.Blue.V1.Models.MimeType.Key*
+  name: Key
+  href: api/CG.Blue.V1.Models.MimeType.html#CG_Blue_V1_Models_MimeType_Key_
+  commentId: Overload:CG.Blue.V1.Models.MimeType.Key
+  isSpec: "True"
+  fullName: CG.Blue.V1.Models.MimeType.Key
+  nameWithType: MimeType.Key
 - uid: Microsoft.AspNetCore.Builder
   name: Microsoft.AspNetCore.Builder
   href: api/Microsoft.AspNetCore.Builder.html
